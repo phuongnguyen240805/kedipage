@@ -1,0 +1,427 @@
+{
+  "navigation": {
+    "introduction": "Giới thiệu",
+    "services": "Dịch vụ",
+    "projects": "Dự án",
+    "clients": "Khách hàng",
+    "blog": "Blog",
+    "activities": "Hoạt động",
+    "partnership": "Hợp tác với MONA"
+  },
+  "nav": {
+    "services": "Dịch vụ",
+    "blog": "Blog",
+    "link": "Liên kết",
+    "unnamed": "Mục chưa đặt tên"
+  },
+  "common": {
+    "back": "Quay lại"
+  },
+  "blog": {
+    "seoGuide": "Hướng dẫn SEO",
+    "digitalMarketing": "Digital Marketing",
+    "webDesignExperience": "Kinh nghiệm Thiết kế Web",
+    "hostingKnowledge": "Kiến thức Hosting",
+    "education": "Giáo dục",
+    "noPosts": "Chưa có bài viết nào"
+  },
+  "hero": {
+    "role": "Người đam mê AI",
+    "resume": "Hồ sơ năng lực",
+    "hireMe": "Thuê tôi",
+    "tooltip": "làm ơn 🥹 🙏"
+  },
+  "skill": {
+    "skills": "Kỹ năng",
+    "hint": "(Gợi ý: nhấn một phím)"
+  },
+  "contact": {
+    "titleLine1": "HÃY CÙNG NHAU",
+    "titleLine2": "LÀM VIỆC"
+  },
+  "footer": {
+    "aboutMonaTitle": "Về Mona",
+    "websiteSolutionsTitle": "Giải pháp Website",
+    "onlineMarketingTitle": "Marketing Online",
+    "hostingVpsServerTitle": "Hosting & VPS",
+    "managementSolutionsTitle": "Giải pháp Quản lý",
+    "mediaBrandingTitle": "Truyền thông & Thương hiệu",
+    "aboutMona": {
+      "links": {
+        "intro": "Giới thiệu Mona",
+        "successProjects": "Dự án thành công",
+        "monaSuccess": "Thành công của Mona",
+        "clients": "Khách hàng",
+        "careers": "Tuyển dụng",
+        "contact": "Liên hệ",
+        "blog": "Blog",
+        "newsletter": "Bản tin MONA"
+      }
+
+    },
+    "websiteSolutions": {
+      "title": "Giải pháp Website",
+      "links": {
+        "domain": "Đăng ký tên miền",
+        "professionalWebDesign": "Thiết kế Website chuyên nghiệp",
+        "webHosting": "Web Hosting",
+        "buySSL": "Mua SSL cho Website",
+        "registerWithMoIT": "Đăng ký Website với Bộ Công Thương",
+        "webManagement": "Dịch vụ quản trị Website",
+        "totalMarketing": "Marketing Website tổng thể",
+        "advancedWebsite": "Website tính năng nâng cao",
+        "websiteTemplates": "Mẫu Website"
+      }
+    },
+    "onlineMarketing": {
+      "title": "Marketing Online",
+      "links": {
+        "seoService": "Dịch vụ SEO",
+        "digitalMarketing": "Dịch vụ Digital Marketing",
+        "facebookAds": "Dịch vụ quảng cáo Facebook",
+        "landingPage": "Thiết kế Landing Page",
+        "consulting": "Tư vấn – Cố vấn Marketing Online",
+        "outsourcedDept": "Phòng Marketing thuê ngoài",
+        "affiliatePolicy": "Chính sách Affiliate"
+      }
+    },
+    "hostingVpsServer": {
+      "title": "Hosting / VPS / Server",
+      "links": {
+        "premiumHosting": "Hosting cao cấp",
+        "serverRental": "Thuê máy chủ",
+        "cloudVps": "Cloud VPS",
+        "enterpriseEmail": "Email doanh nghiệp",
+        "drm": "DRM",
+        "videoProtect": "Giải pháp bảo vệ Video",
+        "migration": "Chuyển Hosting"
+      }
+    },
+    "managementSolutions": {
+      "title": "Giải pháp Quản lý",
+      "links": {
+        "lms": "Hệ thống LMS - cho Trung tâm giáo dục",
+        "nhtq": "Hệ thống NHTQ - cho Nhập hàng Trung Quốc",
+        "multiChannel": "Hệ thống quản lý bán hàng đa kênh",
+        "restaurant": "Phần mềm quản lý nhà hàng",
+        "gold": "Phần mềm Vàng"
+      }
+    },
+    "mediaBranding": {
+      "title": "Truyền thông & Thương hiệu",
+      "links": {
+        "brandIdentity": "Xây dựng bộ nhận diện thương hiệu",
+        "brandMarketing": "Marketing thương hiệu phủ sóng thương hiệu",
+        "videoProduction": "Sản xuất Video doanh nghiệp",
+        "profilePhotography": "Chụp ảnh Profile doanh nghiệp",
+        "tvcProduction": "Sản xuất TVC"
+      }
+    },
+    "contact": "Liên hệ",
+    "email": "Email",
+    "address": "Địa chỉ",
+    "callUs": "Gọi cho chúng tôi ngay!",
+    "allRights": "Đã đăng ký bản quyền",
+    "terms": "Điều khoản",
+    "companyInfoTitle": "Thông tin công ty",
+    "notification": "ĐÃ THÔNG BÁO",
+    "notificationSub": "Bộ Công Thương",
+    "dmca": "DMCA",
+    "contactInfo": {
+      "address": "1073/23 Cách Mạng Tháng Tám, P. Tân Sơn Nhì, TP.HCM"
+    },
+    "companiesInfo": {
+      "monaMedia": {
+        "name": "MONA.Media",
+        "fullName": "Công ty TNHH Mona Media",
+        "taxCode": "Mã số thuế: 0313728397",
+        "bankName": "Ngân hàng Á Châu (ACB)",
+        "bankAccount": "Số tài khoản: 21634154"
+      },
+      "monaSoftware": {
+        "name": "MONA.Software",
+        "fullName": "Công ty Cổ phần Mona Software",
+        "taxCode": "Mã số thuế: 0316094442",
+        "bankName": "Ngân hàng Á Châu (ACB)",
+        "bankAccount": "Số tài khoản: 17268177"
+      },
+      "monaHost": {
+        "name": "MONA.Host",
+        "fullName": "Công ty TNHH Dịch vụ Mona Host",
+        "taxCode": "Mã số thuế: 0317401755",
+        "bankName": "Ngân hàng Á Châu (ACB)",
+        "bankAccount": "Số tài khoản: 1900636648"
+      }
+    },
+    "bottomLeftSection": {
+      "companyName": "MONA.Media",
+      "description": "Dẫn đầu trong lĩnh vực phát triển web và giải pháp số."
+    },
+    "bottomRightSection": {
+      "notification": "Đã đăng ký với Bộ Công Thương",
+      "notificationSub": "Bản quyền thuộc về © MONA.Media",
+      "dmca": "Được bảo vệ bởi DMCA"
+    }
+  },
+  "common": {
+    "no_title": "Không có tiêu đề",
+    "premium": "Premium",
+    "updating_services": "Đang cập nhật dịch vụ..."
+  },
+  "services": {
+    "categories": {
+      "business_services": {
+        "key": "business_services",
+        "title": "BẠN ĐANG MUỐN KINH DOANH DỊCH VỤ"
+      },
+      "selling": {
+        "key": "selling",
+        "title": "BẠN ĐANG BÁN HÀNG"
+      },
+      "software_solutions": {
+        "key": "software_solutions",
+        "title": "GIẢI PHÁP PHẦN MỀM"
+      },
+      "hosting_infrastructure": {
+        "key": "hosting_infrastructure",
+        "title": "HẠ TẦNG HOSTING, VPS"
+      },
+      "course_instructor": {
+        "key": "course_instructor",
+        "title": "BẠN LÀ MỘT GIẢNG VIÊN KINH DOANH KHÓA HỌC"
+      }
+    },
+    "items": {
+      "seo_service": {
+        "key": "seo_service",
+        "title": "Dịch vụ SEO",
+        "description": "Tìm kiếm các traffic từ các khách hàng tiềm năng. Nhu cầu sẵn có",
+        "href": "/dich-vu-seo"
+      },
+      "corporate_video": {
+        "key": "corporate_video",
+        "title": "Quay video doanh nghiệp",
+        "description": "Thu hút các sự chú ý của khách hàng với video chất lượng, nâng tầm uy tín doanh nghiệp",
+        "href": "/quay-phim-gioi-thieu-doanh-nghiep"
+      },
+      "corporate_photography": {
+        "key": "corporate_photography",
+        "title": "Chụp hình doanh nghiệp chuyên nghiệp",
+        "description": "Xây dựng hình ảnh chuyên nghiệp trong mắt khách hàng",
+        "href": "/chup-anh-profile-cong-ty"
+      },
+      "website_design": {
+        "key": "website_design",
+        "title": "Thiết kế website",
+        "description": "Một trang web cần vừa đẹp vừa thuyết phục khách hàng",
+        "href": "/thiet-ke-website-tai-hcm"
+      },
+      "landing_page_design": {
+        "key": "landing_page_design",
+        "title": "Thiết kế landing page",
+        "description": "Theo mục đích riêng cho từng chiến dịch",
+        "href": "/thiet-ke-landing-page"
+      },
+      "ready_website": {
+        "key": "ready_website",
+        "title": "Website sẵn có",
+        "description": "Tiêu chuẩn cao, tiện lợi và phát triển nhanh",
+        "href": "/mau-website"
+      },
+      "ecommerce_website": {
+        "key": "ecommerce_website",
+        "title": "Thiết kế website bán hàng",
+        "description": "Tăng chuyển đổi khách cho doanh nghiệp của bạn",
+        "href": "/thiet-ke-website-ban-hang"
+      },
+      "ecommerce_templates": {
+        "key": "ecommerce_templates",
+        "title": "Mẫu Website bán hàng",
+        "description": "Website tiêu chuẩn cao, tiện lợi và triển khai nhanh chóng",
+        "href": "/mau-web-danh-muc/mau-web-ban-hang/?linh-vuc=mau-web-ban-hang"
+      },
+      "cloud_hosting": {
+        "key": "cloud_hosting",
+        "title": "Cloud Hosting",
+        "description": "Hệ thống hosting mạnh mẽ và bảo mật toàn diện",
+        "href": "/cloud-hosting"
+      },
+      "warehouse_management": {
+        "key": "warehouse_management",
+        "title": "Phần mềm quản lý kho",
+        "description": "",
+        "href": "/phan-mem-quan-ly-kho-bai-container",
+        "icon": "📦"
+      },
+      "wholesale_management": {
+        "key": "wholesale_management",
+        "title": "Phần mềm quản bán sỉ",
+        "description": "",
+        "href": "/phan-mem-quan-ly-ban-hang",
+        "icon": "🛒"
+      },
+      "printer_integration": {
+        "key": "printer_integration",
+        "title": "Tích hợp máy in, tích hợp máy chấm công",
+        "description": "",
+        "href": "/phan-mem-quan-ly-ban-hang",
+        "icon": "🖨️"
+      },
+      "payment_gateway": {
+        "key": "payment_gateway",
+        "title": "Liên kết cổng thanh toán online",
+        "description": "",
+        "href": "/tich-hop-thanh-toan-visa-vao-website",
+        "icon": "💳"
+      },
+      "agency_management": {
+        "key": "agency_management",
+        "title": "Phần mềm quản lý đại lý",
+        "description": "",
+        "href": "/phan-mem-quan-ly-ban-hang",
+        "icon": "🏪"
+      },
+      "brand_building": {
+        "key": "brand_building",
+        "title": "Xây dựng thương hiệu",
+        "description": "Tạo sức hút với hình ảnh, câu chuyện ghi dấu ấn trong tâm trí khách hàng",
+        "href": "/dich-vu-xay-kenh-tiktok"
+      },
+      "nhtq_system": {
+        "key": "nhtq_system",
+        "title": "Hệ thống NHTQ",
+        "description": "Đáp ứng toàn bộ nghiệp vụ chuyển Trung - Việt",
+        "href": "/nhtq/"
+      },
+      "mona_skillhub": {
+        "key": "mona_skillhub",
+        "title": "MONA SHILLHUB",
+        "description": "Phần mềm đào tạo nội bộ của doanh nghiệp",
+        "href": "/phan-mem-dao-tao-noi-bo/"
+      },
+      "nhahang_ai": {
+        "key": "nhahang_ai",
+        "title": "nhahang AI",
+        "description": "Phần mềm quản lý nhà hàng, quán ăn",
+        "href": "/select-trial"
+      },
+      "tools_ngon": {
+        "key": "tools_ngon",
+        "title": "Tools Ngon",
+        "description": "Phần mềm quản lý nhà hàng, quán ăn",
+        "href": "/tools-ngon"
+      },
+      "lms_solution": {
+        "key": "lms_solution",
+        "title": "Giải pháp cho toàn ngành LMS",
+        "description": "Giải pháp toàn diện cho ngành học tập trực tuyến",
+        "href": "/edutech/"
+      },
+      "domain_registration": {
+        "key": "domain_registration",
+        "title": "Domain riêng",
+        "description": "Đăng ký tên miền riêng cho doanh nghiệp của bạn",
+        "href": "/dang-ky-ten-mien",
+        "icon": "🌐",
+        "premium": true
+      },
+      "business_email": {
+        "key": "business_email",
+        "title": "Email doanh nghiệp",
+        "description": "Tạo email chuyên nghiệp cho đội ngũ của bạn",
+        "href": "/email-doanh-nghiep",
+        "icon": "📧",
+        "premium": false
+      },
+      "ssl_certificate": {
+        "key": "ssl_certificate",
+        "title": "SSL",
+        "description": "Bảo mật website với chứng chỉ SSL",
+        "href": "/mua-ssl",
+        "icon": "🔒",
+        "premium": true
+      },
+      "wordpress_hosting": {
+        "key": "wordpress_hosting",
+        "title": "WordPress Hosting",
+        "description": "Giải pháp hosting tối ưu cho Website WordPress",
+        "href": "/wordpress-hosting",
+        "icon": "📝",
+        "premium": true
+      },
+      "elearning_hosting": {
+        "key": "elearning_hosting",
+        "title": "Elearning Hosting",
+        "description": "Hosting chuyên dụng cho hệ thống học trực tuyến",
+        "href": "/lms-hosting",
+        "icon": "🎓",
+        "premium": false
+      },
+      "mona_cloud_hosting": {
+        "key": "mona_cloud_hosting",
+        "title": "MONA Cloud Hosting",
+        "description": "Hosting mạnh mẽ và bảo mật toàn diện",
+        "href": "/cloud-hosting",
+        "icon": "☁️",
+        "premium": true
+      },
+      "linux_vps": {
+        "key": "linux_vps",
+        "title": "MONA LINUX VPS",
+        "description": "Dịch vụ VPS với hệ điều hành Linux",
+        "href": "/vps-linux",
+        "icon": "🐧",
+        "premium": false
+      },
+      "windows_vps": {
+        "key": "windows_vps",
+        "title": "MONA Windows VPS",
+        "description": "Dịch vụ VPS với hệ điều hành Windows",
+        "href": "/vps-windows",
+        "icon": "🪟",
+        "premium": false
+      },
+      "mona_elearning": {
+        "key": "mona_elearning",
+        "title": "MONA E-Learning",
+        "description": "Hệ thống website đầy đủ tính năng để bán một khóa học thành công",
+        "href": "/thiet-ke-website-ban-khoa-hoc-online"
+      },
+      "course_business_training": {
+        "key": "course_business_training",
+        "title": "Khóa học kinh doanh khóa học",
+        "description": "30+ Bài giảng Miễn phí giúp bạn bán khóa học hoàn toàn tự động",
+        "href": "/learn"
+      },
+      "poster_banner": {
+        "key": "poster_banner",
+        "title": "Banner Poster",
+        "description": "",
+        "href": "/poster"
+      },
+      "wedding_invitation": {
+        "key": "wedding_invitation",
+        "title": "Mẫu Thiệp Online",
+        "description": "Dịch vụ thiết kế và in ấn thiệp cưới trọn gói, đa dạng mẫu mã, giao hàng tận nơi.",
+        "href": "/mau-thiep-cuoi"
+      },
+      "digitalTransformation": {
+        "key": "Chuyển đổi số",
+        "title": "Chuyển đổi số doanh nghiệp",
+        "description": "Tư vấn, triển khai giải pháp chuyển đổi số toàn diện cho doanh nghiệp: quy trình, phần mềm, website, dữ liệu, tự động hóa, tối ưu vận hành và tăng trưởng.",
+        "href": "/chuyen-doi-so"
+      }
+    },
+    "layout_types": {
+      "list": "Danh sách",
+      "card_image_top": "Thẻ ảnh trên",
+      "horizontal": "Ngang",
+      "icon_grid": "Lưới biểu tượng",
+      "feature_card": "Thẻ tính năng",
+      "compact_list": "Danh sách gọn",
+      "mixed": "Kết hợp",
+      "feature_card_right": "Thẻ tính năng phải",
+      "banner": "Banner"
+    }
+  }
+}

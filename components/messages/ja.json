@@ -1,0 +1,430 @@
+{
+  "navigation": {
+    "introduction": "紹介",
+    "services": "サービス",
+    "projects": "プロジェクト",
+    "clients": "クライアント",
+    "blog": "ブログ",
+    "activities": "活動",
+    "partnership": "MONAとのパートナーシップ",
+    "digitalTransformation": "デジタルトランスフォーメーション"
+  },
+  "nav": {
+    "services": "サービス",
+    "blog": "ブログ",
+    "link": "リンク",
+    "unnamed": "名前なしのアイテム"
+  },
+  "common": {
+    "back": "戻る"
+  },
+  "blog": {
+    "seoGuide": "SEOガイド",
+    "digitalMarketing": "デジタルマーケティング",
+    "webDesignExperience": "ウェブデザイン経験",
+    "hostingKnowledge": "ホスティング知識",
+    "education": "教育",
+    "noPosts": "まだ投稿がありません"
+  },
+  "hero": {
+    "role": "AI愛好家",
+    "resume": "履歴書",
+    "hireMe": "採用する",
+    "tooltip": "お願いします 🥹 🙏"
+  },
+  "skill": {
+    "skills": "スキル",
+    "hint": "(ヒント: キーを押してください)"
+  },
+  "project": {
+    "title": "プロジェクト"
+  },
+  "contact": {
+    "titleLine1": "一緒に",
+    "titleLine2": "働きましょう"
+  },
+  "footer": {
+    "aboutMonaTitle": "Monaについて",
+    "websiteSolutionsTitle": "ウェブサイトソリューション",
+    "onlineMarketingTitle": "オンラインマーケティング",
+    "hostingVpsServerTitle": "ホスティング & VPS",
+    "managementSolutionsTitle": "管理ソリューション",
+    "mediaBrandingTitle": "メディア & ブランディング",
+    "aboutMona": {
+      "links": {
+        "intro": "Monaの紹介",
+        "successProjects": "成功したプロジェクト",
+        "monaSuccess": "Monaの成功",
+        "clients": "クライアント",
+        "careers": "採用情報",
+        "contact": "お問い合わせ",
+        "blog": "ブログ",
+        "newsletter": "MONAニュースレター"
+      },
+      "digitalTransformation": {
+        "key": "digitalTransformation",
+        "title": "企業向けデジタルトランスフォーメーション",
+        "description": "企業のための包括的なデジタルトランスフォーメーション：プロセス、ソフトウェア、ウェブサイト、データ、自動化、運用最適化、成長を支援します。",
+        "href": "/chuyen-doi-so"
+      }
+    },
+    "websiteSolutions": {
+      "title": "ウェブサイトソリューション",
+      "links": {
+        "domain": "ドメイン名登録",
+        "professionalWebDesign": "プロフェッショナルなウェブサイトデザイン",
+        "webHosting": "ウェブホスティング",
+        "buySSL": "ウェブサイト用SSLの購入",
+        "registerWithMoIT": "商工省へのウェブサイト登録",
+        "webManagement": "ウェブサイト管理サービス",
+        "totalMarketing": "総合ウェブサイトマーケティング",
+        "advancedWebsite": "高度な機能を持つウェブサイト",
+        "websiteTemplates": "ウェブサイトテンプレート"
+      }
+    },
+    "onlineMarketing": {
+      "title": "オンラインマーケティング",
+      "links": {
+        "seoService": "SEOサービス",
+        "digitalMarketing": "デジタルマーケティングサービス",
+        "facebookAds": "Facebook広告サービス",
+        "landingPage": "ランディングページデザイン",
+        "consulting": "コンサルティング – オンラインマーケティングメンター",
+        "outsourcedDept": "外部委託マーケティング部門",
+        "affiliatePolicy": "アフィリエイトポリシー"
+      }
+    },
+    "hostingVpsServer": {
+      "title": "ホスティング / VPS / サーバー",
+      "links": {
+        "premiumHosting": "プレミアムホスティング",
+        "serverRental": "サーバーレンタル",
+        "cloudVps": "クラウドVPS",
+        "enterpriseEmail": "法人向けEメール",
+        "drm": "DRM",
+        "videoProtect": "ビデオ保護ソリューション",
+        "migration": "ホスティング移行"
+      }
+    },
+    "managementSolutions": {
+      "title": "管理ソリューション",
+      "links": {
+        "lms": "LMSシステム - 教育センター向け",
+        "nhtq": "NHTQシステム - 中国製品輸入向け",
+        "multiChannel": "マルチチャネル販売管理システム",
+        "restaurant": "レストラン管理ソフトウェア",
+        "gold": "ゴールドソフトウェア"
+      }
+    },
+    "mediaBranding": {
+      "title": "メディア & ブランディング",
+      "links": {
+        "brandIdentity": "ブランドアイデンティティキットの構築",
+        "brandMarketing": "ブランド認知度向上のためのブランディングマーケティング",
+        "videoProduction": "ビジネスビデオ制作",
+        "profilePhotography": "ビジネスプロフィール写真撮影",
+        "tvcProduction": "テレビCM制作"
+      }
+    },
+    "contact": "お問い合わせ",
+    "email": "Eメール",
+    "address": "住所",
+    "callUs": "今すぐお電話ください！",
+    "allRights": "無断複写・転載を禁じます",
+    "terms": "利用規約",
+    "companyInfoTitle": "会社情報",
+    "notification": "届出済み",
+    "notificationSub": "商工省",
+    "dmca": "DMCA",
+    "contactInfo": {
+      "address": "1073/23 Cach Mang Thang Tam St, Tan Son Nhi Ward, HCMC"
+    },
+    "companiesInfo": {
+      "monaMedia": {
+        "name": "MONA.Media",
+        "fullName": "Mona Media有限会社",
+        "taxCode": "税コード: 0313728397",
+        "bankName": "アジア商業銀行 (ACB)",
+        "bankAccount": "口座番号: 21634154"
+      },
+      "monaSoftware": {
+        "name": "MONA.Software",
+        "fullName": "Mona Software株式会社",
+        "taxCode": "税コード: 0316094442",
+        "bankName": "アジア商業銀行 (ACB)",
+        "bankAccount": "口座番号: 17268177"
+      },
+      "monaHost": {
+        "name": "MONA.Host",
+        "fullName": "Mona Host Service有限会社",
+        "taxCode": "税コード: 0317401755",
+        "bankName": "アジア商業銀行 (ACB)",
+        "bankAccount": "口座番号: 1900636648"
+      }
+    },
+    "bottomLeftSection": {
+      "companyName": "MONA.Media",
+      "description": "ウェブ開発とデジタルソリューションのリーディングカンパニー"
+    },
+    "bottomRightSection": {
+      "notification": "商工省に登録済み",
+      "notificationSub": "無断複写・転載を禁じます © MONA.Media",
+      "dmca": "DMCAにより保護されています"
+    }
+  },
+  "common": {
+    "no_title": "無題",
+    "premium": "プレミアム",
+    "updating_services": "サービスを更新中..."
+  },
+  "services": {
+    "categories": {
+      "business_services": {
+        "key": "business_services",
+        "title": "サービス事業の方向け"
+      },
+      "selling": {
+        "key": "selling",
+        "title": "小売・Eコマースの方向け"
+      },
+      "software_solutions": {
+        "key": "software_solutions",
+        "title": "ソフトウェアソリューション"
+      },
+      "hosting_infrastructure": {
+        "key": "hosting_infrastructure",
+        "title": "ホスティング & VPSインフラ"
+      },
+      "course_instructor": {
+        "key": "course_instructor",
+        "title": "コース作成者・講師の方向け"
+      }
+    },
+    "items": {
+      "seo_service": {
+        "key": "seo_service",
+        "title": "SEOサービス",
+        "description": "既存の需要を持つ潜在顧客からのトラフィックを引きつけます。",
+        "href": "/dich-vu-seo"
+      },
+      "corporate_video": {
+        "key": "corporate_video",
+        "title": "企業ビデオ制作",
+        "description": "企業の信頼性を高める高品質なビデオで顧客の注目を集めます。",
+        "href": "/quay-phim-gioi-thieu-doanh-nghiep"
+      },
+      "corporate_photography": {
+        "key": "corporate_photography",
+        "title": "プロフェッショナル企業撮影",
+        "description": "顧客の目に映るプロフェッショナルなイメージを構築します。",
+        "href": "/chup-anh-profile-cong-ty"
+      },
+      "website_design": {
+        "key": "website_design",
+        "title": "ウェブサイト制作",
+        "description": "ウェブサイトは美しく、かつ顧客を説得する力が必要です。",
+        "href": "/thiet-ke-website-tai-hcm"
+      },
+      "landing_page_design": {
+        "key": "landing_page_design",
+        "title": "ランディングページ制作",
+        "description": "各キャンペーンの特定の目的に合わせて調整します。",
+        "href": "/thiet-ke-landing-page"
+      },
+      "ready_website": {
+        "key": "ready_website",
+        "title": "既製ウェブサイト",
+        "description": "高水準、便利で迅速な開発。",
+        "href": "/mau-website"
+      },
+      "ecommerce_website": {
+        "key": "ecommerce_website",
+        "title": "Eコマースサイト制作",
+        "description": "あなたのビジネスの顧客コンバージョンを向上させます。",
+        "href": "/thiet-ke-website-ban-hang"
+      },
+      "ecommerce_templates": {
+        "key": "ecommerce_templates",
+        "title": "Eコマースサイトテンプレート",
+        "description": "便利で迅速に展開できる高水準のウェブサイト。",
+        "href": "/mau-web-danh-muc/mau-web-ban-hang/?linh-vuc=mau-web-ban-hang"
+      },
+      "cloud_hosting": {
+        "key": "cloud_hosting",
+        "title": "クラウドホスティング",
+        "description": "強力で包括的に安全なホスティングシステム。",
+        "href": "/cloud-hosting"
+      },
+      "warehouse_management": {
+        "key": "warehouse_management",
+        "title": "倉庫管理ソフトウェア",
+        "description": "",
+        "href": "/phan-mem-quan-ly-kho-bai-container",
+        "icon": "📦"
+      },
+      "wholesale_management": {
+        "key": "wholesale_management",
+        "title": "卸売管理ソフトウェア",
+        "description": "",
+        "href": "/phan-mem-quan-ly-ban-hang",
+        "icon": "🛒"
+      },
+      "printer_integration": {
+        "key": "printer_integration",
+        "title": "プリンター・タイムレコーダー連携",
+        "description": "",
+        "href": "/phan-mem-quan-ly-ban-hang",
+        "icon": "🖨️"
+      },
+      "payment_gateway": {
+        "key": "payment_gateway",
+        "title": "オンライン決済ゲートウェイ連携",
+        "description": "",
+        "href": "/tich-hop-thanh-toan-visa-vao-website",
+        "icon": "💳"
+      },
+      "agency_management": {
+        "key": "agency_management",
+        "title": "代理店管理ソフトウェア",
+        "description": "",
+        "href": "/phan-mem-quan-ly-ban-hang",
+        "icon": "🏪"
+      },
+      "brand_building": {
+        "key": "brand_building",
+        "title": "ブランド構築",
+        "description": "顧客の心に残るイメージとストーリーで魅力を創造します。",
+        "href": "/dich-vu-xay-kenh-tiktok"
+      },
+      "nhtq_system": {
+        "key": "nhtq_system",
+        "title": "NHTQシステム",
+        "description": "中国-ベトナム間の物流業務ニーズに完全対応。",
+        "href": "/nhtq/"
+      },
+      "mona_skillhub": {
+        "key": "mona_skillhub",
+        "title": "MONA SKILLHUB",
+        "description": "社内研修ソフトウェア",
+        "href": "/phan-mem-dao-tao-noi-bo/"
+      },
+      "nhahang_ai": {
+        "key": "nhahang_ai",
+        "title": "nhahang AI",
+        "description": "レストラン・飲食店向け管理ソフトウェア。",
+        "href": "/select-trial"
+      },
+      "tools_ngon": {
+        "key": "tools_ngon",
+        "title": "Tools Ngon",
+        "description": "レストラン・飲食店向け管理ソフトウェア。",
+        "href": "/tools-ngon"
+      },
+      "lms_solution": {
+        "key": "lms_solution",
+        "title": "包括的LMSソリューション",
+        "description": "オンライン学習業界向けの完全なソリューション。",
+        "href": "/edutech/"
+      },
+      "domain_registration": {
+        "key": "domain_registration",
+        "title": "カスタムドメイン",
+        "description": "あなたのビジネスのためにカスタムドメイン名を登録します。",
+        "href": "/dang-ky-ten-mien",
+        "icon": "🌐",
+        "premium": true
+      },
+      "business_email": {
+        "key": "business_email",
+        "title": "ビジネスメール",
+        "description": "チームのためにプロフェッショナルなメールアドレスを作成します。",
+        "href": "/email-doanh-nghiep",
+        "icon": "📧",
+        "premium": false
+      },
+      "ssl_certificate": {
+        "key": "ssl_certificate",
+        "title": "SSL証明書",
+        "description": "SSL証明書でウェブサイトを保護します。",
+        "href": "/mua-ssl",
+        "icon": "🔒",
+        "premium": true
+      },
+      "wordpress_hosting": {
+        "key": "wordpress_hosting",
+        "title": "WordPressホスティング",
+        "description": "WordPressウェブサイトに最適化されたホスティングソリューション。",
+        "href": "/wordpress-hosting",
+        "icon": "📝",
+        "premium": true
+      },
+      "elearning_hosting": {
+        "key": "elearning_hosting",
+        "title": "Eラーニングホスティング",
+        "description": "オンライン学習システム専用のホスティング。",
+        "href": "/lms-hosting",
+        "icon": "🎓",
+        "premium": false
+      },
+      "mona_cloud_hosting": {
+        "key": "mona_cloud_hosting",
+        "title": "MONAクラウドホスティング",
+        "description": "強力で包括的に安全なホスティング。",
+        "href": "/cloud-hosting",
+        "icon": "☁️",
+        "premium": true
+      },
+      "linux_vps": {
+        "key": "linux_vps",
+        "title": "MONA LINUX VPS",
+        "description": "Linuxオペレーティングシステムを搭載したVPSサービス。",
+        "href": "/vps-linux",
+        "icon": "🐧",
+        "premium": false
+      },
+      "windows_vps": {
+        "key": "windows_vps",
+        "title": "MONA Windows VPS",
+        "description": "Windowsオペレーティングシステムを搭載したVPSサービス。",
+        "href": "/vps-windows",
+        "icon": "🪟",
+        "premium": false
+      },
+      "mona_elearning": {
+        "key": "mona_elearning",
+        "title": "MONA E-Learning",
+        "description": "オンラインコースを成功裏に販売するための全機能ウェブサイトシステム。",
+        "href": "/thiet-ke-website-ban-khoa-hoc-online"
+      },
+      "course_business_training": {
+        "key": "course_business_training",
+        "title": "コースビジネス研修",
+        "description": "完全自動でコースを販売するための30以上の無料講義。",
+        "href": "/learn"
+      },
+      "poster_banner": {
+        "key": "poster_banner",
+        "title": "ポスター・バナー",
+        "description": "",
+        "href": "/poster"
+      },
+      "wedding_invitation": {
+        "key": "wedding_invitation",
+        "title": "結婚式招待状",
+        "description": "結婚式招待状のデザインと印刷のフルパッケージサービス、多様なテンプレート、自宅配送。",
+        "href": "/dich-vu-thiet-ke-website"
+      }
+    },
+    "layout_types": {
+      "list": "リスト",
+      "card_image_top": "上部画像カード",
+      "horizontal": "横型",
+      "icon_grid": "アイコングリッド",
+      "feature_card": "フィーチャーカード",
+      "compact_list": "コンパクトリスト",
+      "mixed": "混合",
+      "feature_card_right": "右フィーチャーカード",
+      "banner": "バナー"
+    }
+  }
+}

@@ -1,0 +1,429 @@
+{
+  "navigation": {
+    "introduction": "소개",
+    "services": "서비스",
+    "projects": "프로젝트",
+    "clients": "고객",
+    "blog": "블로그",
+    "activities": "활동",
+    "partnership": "MONA와 파트너십",
+    "digitalTransformation": "디지털 전환"
+  },
+  "nav": {
+    "services": "서비스",
+    "blog": "블로그",
+    "link": "링크",
+    "unnamed": "이름 없는 항목"
+  },
+  "common": {
+    "back": "뒤로"
+  },
+  "blog": {
+    "seoGuide": "SEO 가이드",
+    "digitalMarketing": "디지털 마케팅",
+    "webDesignExperience": "웹 디자인 경험",
+    "hostingKnowledge": "호스팅 지식",
+    "education": "교육",
+    "noPosts": "아직 게시물이 없습니다"
+  },
+  "hero": {
+    "role": "AI 애호가",
+    "resume": "이력서",
+    "hireMe": "고용하기",
+    "tooltip": "제발요 🥹 🙏"
+  },
+  "skill": {
+    "skills": "기술",
+    "hint": "(힌트: 키를 누르세요)"
+  },
+  "project": {
+    "title": "프로젝트"
+  },
+  "contact": {
+    "titleLine1": "함께",
+    "titleLine2": "일합시다"
+  },
+  "footer": {
+    "aboutMonaTitle": "Mona 정보",
+    "websiteSolutionsTitle": "웹사이트 솔루션",
+    "onlineMarketingTitle": "온라인 마케팅",
+    "hostingVpsServerTitle": "호스팅 & VPS",
+    "managementSolutionsTitle": "관리 솔루션",
+    "mediaBrandingTitle": "미디어 & 브랜딩",
+    "aboutMona": {
+      "links": {
+        "intro": "Mona 소개",
+        "successProjects": "성공적인 프로젝트",
+        "monaSuccess": "Mona의 성공",
+        "clients": "고객",
+        "careers": "채용",
+        "contact": "문의",
+        "blog": "블로그",
+        "newsletter": "MONA 뉴스레터"
+      },
+      "digitalTransformation": {
+        "key": "digitalTransformation",
+        "title": "기업용 디지털 전환",
+        "description": "기업을 위한 포괄적인 디지털 전환 컨설팅 및 구현: 프로세스, 소프트웨어, 웹사이트, 데이터, 자동화, 운영 최적화 및 성장.",
+        "href": "/chuyen-doi-so"
+      }
+    },
+    "websiteSolutions": {
+      "title": "웹사이트 솔루션",
+      "links": {
+        "domain": "도메인 이름 등록",
+        "professionalWebDesign": "전문 웹사이트 디자인",
+        "webHosting": "웹 호스팅",
+        "buySSL": "웹사이트용 SSL 구매",
+        "registerWithMoIT": "산업무역부에 웹사이트 등록",
+        "webManagement": "웹사이트 관리 서비스",
+        "totalMarketing": "종합 웹사이트 마케팅",
+        "advancedWebsite": "고급 기능 웹사이트",
+        "websiteTemplates": "웹사이트 템플릿"
+      }
+    },
+    "onlineMarketing": {
+      "title": "온라인 마케팅",
+      "links": {
+        "seoService": "SEO 서비스",
+        "digitalMarketing": "디지털 마케팅 서비스",
+        "facebookAds": "페이스북 광고 서비스",
+        "landingPage": "랜딩 페이지 디자인",
+        "consulting": "컨설팅 – 온라인 마케팅 멘토",
+        "outsourcedDept": "외주 마케팅 부서",
+        "affiliatePolicy": "제휴 정책"
+      }
+    },
+    "hostingVpsServer": {
+      "title": "호스팅 / VPS / 서버",
+      "links": {
+        "premiumHosting": "프리미엄 호스팅",
+        "serverRental": "서버 임대",
+        "cloudVps": "클라우드 VPS",
+        "enterpriseEmail": "기업 이메일",
+        "drm": "DRM",
+        "videoProtect": "비디오 보호 솔루션",
+        "migration": "호스팅 이전"
+      }
+    },
+    "managementSolutions": {
+      "title": "관리 솔루션",
+      "links": {
+        "lms": "LMS 시스템 - 교육 센터용",
+        "nhtq": "NHTQ 시스템 - 중국 상품 수입용",
+        "multiChannel": "다중 채널 판매 관리 시스템",
+        "restaurant": "레스토랑 관리 소프트웨어",
+        "gold": "골드 소프트웨어"
+      }
+    },
+    "mediaBranding": {
+      "title": "미디어 & 브랜딩",
+      "links": {
+        "brandIdentity": "브랜드 아이덴티티 키트 구축",
+        "brandMarketing": "브랜드 인지도 확산을 위한 브랜딩 마케팅",
+        "videoProduction": "비즈니스 비디오 제작",
+        "profilePhotography": "비즈니스 프로필 사진 촬영",
+        "tvcProduction": "TVC 제작"
+      }
+    },
+    "contact": "문의",
+    "email": "이메일",
+    "address": "주소",
+    "callUs": "지금 전화하세요!",
+    "allRights": "모든 권리 보유",
+    "terms": "이용 약관",
+    "companyInfoTitle": "회사 정보",
+    "notification": "통지됨",
+    "notificationSub": "산업무역부",
+    "dmca": "DMCA",
+    "contactInfo": {
+      "address": "호치민시 떤선니동 깍망탕땀 거리 1073/23"
+    },
+    "companiesInfo": {
+      "monaMedia": {
+        "name": "MONA.Media",
+        "fullName": "모나 미디어 유한회사",
+        "taxCode": "세금 코드: 0313728397",
+        "bankName": "아시아 상업 은행 (ACB)",
+        "bankAccount": "계좌 번호: 21634154"
+      },
+      "monaSoftware": {
+        "name": "MONA.Software",
+        "fullName": "모나 소프트웨어 주식회사",
+        "taxCode": "세금 코드: 0316094442",
+        "bankName": "아시아 상업 은행 (ACB)",
+        "bankAccount": "계좌 번호: 17268177"
+      },
+      "monaHost": {
+        "name": "MONA.Host",
+        "fullName": "모나 호스트 서비스 유한회사",
+        "taxCode": "세금 코드: 0317401755",
+        "bankName": "아시아 상업 은행 (ACB)",
+        "bankAccount": "계좌 번호: 1900636648"
+      }
+    },
+    "bottomLeftSection": {
+      "companyName": "MONA.Media",
+      "description": "웹 개발 및 디지털 솔루션 분야의 선두 주자입니다."
+    },
+    "bottomRightSection": {
+      "notification": "산업무역부에 등록됨",
+      "notificationSub": "모든 권리 보유 © MONA.Media",
+      "dmca": "DMCA 보호됨"
+    }
+  },
+  "common": {
+    "no_title": "제목 없음",
+    "premium": "프리미엄",
+    "updating_services": "서비스 업데이트 중..."
+  },
+  "services": {
+    "categories": {
+      "business_services": {
+        "key": "business_services",
+        "title": "서비스 비즈니스 운영자 대상"
+      },
+      "selling": {
+        "key": "selling",
+        "title": "소매 및 이커머스 사업자 대상"
+      },
+      "software_solutions": {
+        "key": "software_solutions",
+        "title": "소프트웨어 솔루션"
+      },
+      "hosting_infrastructure": {
+        "key": "hosting_infrastructure",
+        "title": "호스팅 및 VPS 인프라"
+      },
+      "course_instructor": {
+        "key": "course_instructor",
+        "title": "강의 제작자 및 강사 대상"
+      }
+    },
+    "items": {
+      "seo_service": {
+        "key": "seo_service",
+        "title": "SEO 서비스",
+        "description": "기존 수요가 있는 잠재 고객으로부터 트래픽을 유도합니다.",
+        "href": "/dich-vu-seo"
+      },
+      "corporate_video": {
+        "key": "corporate_video",
+        "title": "기업 영상 제작",
+        "description": "비즈니스 위상을 높이는 고품질 영상으로 고객의 시선을 사로잡습니다.",
+        "href": "/quay-phim-gioi-thieu-doanh-nghiep"
+      },
+      "corporate_photography": {
+        "key": "corporate_photography",
+        "title": "전문 기업 사진 촬영",
+        "description": "고객의 눈에 비치는 전문적인 이미지를 구축합니다.",
+        "href": "/chup-anh-profile-cong-ty"
+      },
+      "website_design": {
+        "key": "website_design",
+        "title": "웹사이트 디자인",
+        "description": "웹사이트는 아름다우면서도 고객을 설득할 수 있어야 합니다.",
+        "href": "/thiet-ke-website-tai-hcm"
+      },
+      "landing_page_design": {
+        "key": "landing_page_design",
+        "title": "랜딩 페이지 디자인",
+        "description": "각 캠페인의 특정 목표에 맞게 맞춤 제작됩니다.",
+        "href": "/thiet-ke-landing-page"
+      },
+      "ready_website": {
+        "key": "ready_website",
+        "title": "기성 웹사이트",
+        "description": "높은 수준, 편리함, 신속한 개발.",
+        "href": "/mau-website"
+      },
+      "ecommerce_website": {
+        "key": "ecommerce_website",
+        "title": "이커머스 웹사이트 디자인",
+        "description": "비즈니스의 고객 전환율을 높입니다.",
+        "href": "/thiet-ke-website-ban-hang"
+      },
+      "ecommerce_templates": {
+        "key": "ecommerce_templates",
+        "title": "이커머스 웹사이트 템플릿",
+        "description": "편리하고 신속하게 배포할 수 있는 높은 수준의 웹사이트.",
+        "href": "/mau-web-danh-muc/mau-web-ban-hang/?linh-vuc=mau-web-ban-hang"
+      },
+      "cloud_hosting": {
+        "key": "cloud_hosting",
+        "title": "클라우드 호스팅",
+        "description": "강력하고 포괄적으로 안전한 호스팅 시스템.",
+        "href": "/cloud-hosting"
+      },
+      "warehouse_management": {
+        "key": "warehouse_management",
+        "title": "창고 관리 소프트웨어",
+        "description": "",
+        "href": "/phan-mem-quan-ly-kho-bai-container",
+        "icon": "📦"
+      },
+      "wholesale_management": {
+        "key": "wholesale_management",
+        "title": "도매 관리 소프트웨어",
+        "description": "",
+        "href": "/phan-mem-quan-ly-ban-hang",
+        "icon": "🛒"
+      },
+      "printer_integration": {
+        "key": "printer_integration",
+        "title": "프린터 및 근태 관리기 연동",
+        "description": "",
+        "href": "/phan-mem-quan-ly-ban-hang",
+        "icon": "🖨️"
+      },
+      "payment_gateway": {
+        "key": "payment_gateway",
+        "title": "온라인 결제 게이트웨이 연동",
+        "description": "",
+        "href": "/tich-hop-thanh-toan-visa-vao-website",
+        "icon": "💳"
+      },
+      "agency_management": {
+        "key": "agency_management",
+        "title": "대리점 관리 소프트웨어",
+        "description": "",
+        "href": "/phan-mem-quan-ly-ban-hang",
+        "icon": "🏪"
+      },
+      "brand_building": {
+        "key": "brand_building",
+        "title": "브랜드 구축",
+        "description": "고객의 마음에 각인될 이미지와 스토리로 매력을 창출합니다.",
+        "href": "/dich-vu-xay-kenh-tiktok"
+      },
+      "nhtq_system": {
+        "key": "nhtq_system",
+        "title": "NHTQ 시스템",
+        "description": "중국-베트남 물류의 모든 운영 요구 사항을 충족합니다.",
+        "href": "/nhtq/"
+      },
+      "mona_skillhub": {
+        "key": "mona_skillhub",
+        "title": "모나 스킬허브",
+        "description": "내부 교육 소프트웨어",
+        "href": "/phan-mem-dao-tao-noi-bo/"
+      },
+      "nhahang_ai": {
+        "key": "nhahang_ai",
+        "title": "레스토랑 AI",
+        "description": "레스토랑 및 식당 관리 소프트웨어.",
+        "href": "/select-trial"
+      },
+      "tools_ngon": {
+        "key": "tools_ngon",
+        "title": "Tools Ngon",
+        "description": "레스토랑 및 식당 관리 소프트웨어.",
+        "href": "/tools-ngon"
+      },
+      "lms_solution": {
+        "key": "lms_solution",
+        "title": "종합 LMS 솔루션",
+        "description": "온라인 학습 산업을 위한 완벽한 솔루션.",
+        "href": "/edutech/"
+      },
+      "domain_registration": {
+        "key": "domain_registration",
+        "title": "맞춤 도메인",
+        "description": "비즈니스를 위한 맞춤 도메인 이름을 등록하세요.",
+        "href": "/dang-ky-ten-mien",
+        "icon": "🌐",
+        "premium": true
+      },
+      "business_email": {
+        "key": "business_email",
+        "title": "비즈니스 이메일",
+        "description": "팀을 위한 전문적인 이메일 주소를 만드세요.",
+        "href": "/email-doanh-nghiep",
+        "icon": "📧",
+        "premium": false
+      },
+      "ssl_certificate": {
+        "key": "ssl_certificate",
+        "title": "SSL 인증서",
+        "description": "SSL 인증서로 웹사이트를 보호하세요.",
+        "href": "/mua-ssl",
+        "icon": "🔒",
+        "premium": true
+      },
+      "wordpress_hosting": {
+        "key": "wordpress_hosting",
+        "title": "워드프레스 호스팅",
+        "description": "워드프레스 웹사이트에 최적화된 호스팅 솔루션.",
+        "href": "/wordpress-hosting",
+        "icon": "📝",
+        "premium": true
+      },
+      "elearning_hosting": {
+        "key": "elearning_hosting",
+        "title": "이러닝 호스팅",
+        "description": "온라인 학습 시스템을 위한 전문 호스팅.",
+        "href": "/lms-hosting",
+        "icon": "🎓",
+        "premium": false
+      },
+      "mona_cloud_hosting": {
+        "key": "mona_cloud_hosting",
+        "title": "모나 클라우드 호스팅",
+        "description": "강력하고 포괄적으로 안전한 호스팅.",
+        "href": "/cloud-hosting",
+        "icon": "☁️",
+        "premium": true
+      },
+      "linux_vps": {
+        "key": "linux_vps",
+        "title": "모나 리눅스 VPS",
+        "description": "리눅스 운영 체제를 사용하는 VPS 서비스.",
+        "href": "/vps-linux",
+        "icon": "🐧",
+        "premium": false
+      },
+      "windows_vps": {
+        "key": "windows_vps",
+        "title": "모나 윈도우 VPS",
+        "description": "윈도우 운영 체제를 사용하는 VPS 서비스.",
+        "href": "/vps-windows",
+        "icon": "🪟",
+        "premium": false
+      },
+      "mona_elearning": {
+        "key": "mona_elearning",
+        "title": "모나 이러닝",
+        "description": "온라인 강의를 성공적으로 판매하기 위한 모든 기능을 갖춘 웹사이트 시스템.",
+        "href": "/thiet-ke-website-ban-khoa-hoc-online"
+      },
+      "course_business_training": {
+        "key": "course_business_training",
+        "title": "강의 비즈니스 교육",
+        "description": "완전 자동화된 강의 판매를 돕는 30개 이상의 무료 강의.",
+        "href": "/learn"
+      },
+      "poster_banner": {
+        "key": "poster_banner",
+        "title": "포스터 배너",
+        "description": "",
+        "href": "/poster"
+      },
+      "wedding_invitation": {
+        "key": "wedding_invitation",
+         "title": "온라인 청첩장",
+        "description": "웨딩 청첩장 디자인 및 인쇄 풀 패키지 서비스, 다양한 템플릿, 집까지 배송."
+      }
+    },
+    "layout_types": {
+      "list": "목록",
+      "card_image_top": "상단 이미지 카드",
+      "horizontal": "가로형",
+      "icon_grid": "아이콘 그리드",
+      "feature_card": "특징 카드",
+      "compact_list": "간결한 목록",
+      "mixed": "혼합형",
+      "feature_card_right": "오른쪽 특징 카드",
+      "banner": "배너"
+    }
+  }
+}

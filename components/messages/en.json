@@ -1,0 +1,429 @@
+{
+  "navigation": {
+    "introduction": "Introduction",
+    "services": "Services",
+    "projects": "Projects",
+    "clients": "Clients",
+    "blog": "Blog",
+    "activities": "Activities",
+    "partnership": "Partner with MONA"
+
+  },
+  "nav": {
+    "services": "Services",
+    "blog": "Blog",
+    "link": "Link",
+    "unnamed": "Unnamed Item"
+  },
+  "common": {
+    "back": "Back"
+  },
+  "blog": {
+    "seoGuide": "SEO Guide",
+    "digitalMarketing": "Digital Marketing",
+    "webDesignExperience": "Web Design Experience",
+    "hostingKnowledge": "Hosting Knowledge",
+    "education": "Education",
+    "noPosts": "No posts yet"
+  },
+  "hero": {
+    "role": "AI Enthusiast",
+    "resume": "Resume",
+    "hireMe": "Hire Me",
+    "tooltip": "pls 🥹 🙏"
+  },
+  "skill": {
+    "skills": "Skills",
+    "hint": "(Hint: press a key)"
+  },
+  "project": {
+    "title": "Projects"
+  },
+  "contact": {
+    "titleLine1": "LET'S WORK",
+    "titleLine2": "TOGETHER"
+  },
+  "footer": {
+    "aboutMonaTitle": "Về Mona",
+    "websiteSolutionsTitle": "Giải pháp Website",
+    "onlineMarketingTitle": "Marketing Online",
+    "hostingVpsServerTitle": "Hosting & VPS",
+    "managementSolutionsTitle": "Giải pháp Quản lý",
+    "mediaBrandingTitle": "Truyền thông & Thương hiệu",
+    "aboutMona": {
+      "links": {
+        "intro": "Introduction to Mona",
+        "successProjects": "Successful Projects",
+        "monaSuccess": "Mona's Success",
+        "clients": "Clients",
+        "careers": "Recruitment",
+        "contact": "Contact",
+        "blog": "Blog",
+        "newsletter": "MONA Newsletter"
+      }
+    },
+    "websiteSolutions": {
+      "title": "Website Solutions",
+      "links": {
+        "domain": "Domain Name Registration",
+        "professionalWebDesign": "Professional Website Design",
+        "webHosting": "Web Hosting",
+        "buySSL": "Buy SSL for Website",
+        "registerWithMoIT": "Website Registration with MOIT",
+        "webManagement": "Website Management Service",
+        "totalMarketing": "Comprehensive Website Marketing",
+        "advancedWebsite": "Advanced Feature Website",
+        "websiteTemplates": "Website Templates"
+      }
+    },
+    "onlineMarketing": {
+      "title": "Online Marketing",
+      "links": {
+        "seoService": "SEO Service",
+        "digitalMarketing": "Digital Marketing Service",
+        "facebookAds": "Facebook Ad Service",
+        "landingPage": "Landing Page Design",
+        "consulting": "Consulting – Online Marketing Mentor",
+        "outsourcedDept": "Outsourced Marketing Department",
+        "affiliatePolicy": "Affiliate Policy"
+      }
+    },
+    "hostingVpsServer": {
+      "title": "Hosting / VPS / Server",
+      "links": {
+        "premiumHosting": "Premium Hosting",
+        "serverRental": "Server Rental",
+        "cloudVps": "Cloud VPS",
+        "enterpriseEmail": "Enterprise Email",
+        "drm": "DRM",
+        "videoProtect": "Video Protect Solution",
+        "migration": "Hosting Migration"
+      }
+    },
+    "managementSolutions": {
+      "title": "Management Solutions",
+      "links": {
+        "lms": "LMS System - for Educational Centers",
+        "nhtq": "NHTQ System - for China Goods Import",
+        "multiChannel": "Multi-Channel Sales Management System",
+        "restaurant": "Restaurant Management Software",
+        "gold": "Gold Software"
+      }
+    },
+    "mediaBranding": {
+      "title": "Media & Branding",
+      "links": {
+        "brandIdentity": "Building Brand Identity Kit",
+        "brandMarketing": "Branding Marketing for Brand Coverage",
+        "videoProduction": "Business Video Production",
+        "profilePhotography": "Business Profile Photography",
+        "tvcProduction": "TVC Production"
+      }
+    },
+    "contact": "Contact",
+    "email": "Email",
+    "address": "Address",
+    "callUs": "Call us now!",
+    "allRights": "All rights reserved",
+    "terms": "Terms",
+    "companyInfoTitle": "Company Information",
+    "notification": "NOTIFIED",
+    "notificationSub": "Ministry of Industry and Trade",
+    "dmca": "DMCA",
+    "contactInfo": {
+      "address": "1073/23 Cach Mang Thang Tam St, Tan Son Nhi Ward, HCMC"
+    },
+    "companiesInfo": {
+      "monaMedia": {
+        "name": "MONA.Media",
+        "fullName": "Mona Media Co., Ltd",
+        "taxCode": "Tax code: 0313728397",
+        "bankName": "Asia Commercial Bank (ACB)",
+        "bankAccount": "Account number: 21634154"
+      },
+      "monaSoftware": {
+        "name": "MONA.Software",
+        "fullName": "Mona Software JSC",
+        "taxCode": "Tax code: 0316094442",
+        "bankName": "Asia Commercial Bank (ACB)",
+        "bankAccount": "Account number: 17268177"
+      },
+      "monaHost": {
+        "name": "MONA.Host",
+        "fullName": "Mona Host Service Co., Ltd",
+        "taxCode": "Tax code: 0317401755",
+        "bankName": "Asia Commercial Bank (ACB)",
+        "bankAccount": "Account number: 1900636648"
+      }
+    },
+    "bottomLeftSection": {
+      "companyName": "MONA.Media",
+      "description": "Leading in web development and digital solutions."
+    },
+    "bottomRightSection": {
+      "notification": "Registered with the Ministry of Industry and Trade",
+      "notificationSub": "All rights reserved © MONA.Media",
+      "dmca": "DMCA Protected"
+    }
+  },
+  "common": {
+    "no_title": "No Title",
+    "premium": "Premium",
+    "updating_services": "Updating services..."
+  },
+  "services": {
+    "categories": {
+      "business_services": {
+        "key": "business_services",
+        "title": "FOR SERVICE BUSINESSES"
+      },
+      "selling": {
+        "key": "selling",
+        "title": "FOR RETAIL & E-COMMERCE"
+      },
+      "software_solutions": {
+        "key": "software_solutions",
+        "title": "SOFTWARE SOLUTIONS"
+      },
+      "hosting_infrastructure": {
+        "key": "hosting_infrastructure",
+        "title": "HOSTING & VPS INFRASTRUCTURE"
+      },
+      "course_instructor": {
+        "key": "course_instructor",
+        "title": "FOR COURSE CREATORS & INSTRUCTORS"
+      }
+    },
+    "items": {
+      "seo_service": {
+        "key": "seo_service",
+        "title": "SEO Service",
+        "description": "Attract traffic from potential customers with existing demand.",
+        "href": "/dich-vu-seo"
+      },
+      "corporate_video": {
+        "key": "corporate_video",
+        "title": "Corporate Video Production",
+        "description": "Capture customer attention with high-quality videos that elevate your business's prestige.",
+        "href": "/quay-phim-gioi-thieu-doanh-nghiep"
+      },
+      "corporate_photography": {
+        "key": "corporate_photography",
+        "title": "Professional Corporate Photography",
+        "description": "Build a professional image in the eyes of your customers.",
+        "href": "/chup-anh-profile-cong-ty"
+      },
+      "website_design": {
+        "key": "website_design",
+        "title": "Website Design",
+        "description": "A website needs to be both beautiful and persuasive to customers.",
+        "href": "/thiet-ke-website-tai-hcm"
+      },
+      "landing_page_design": {
+        "key": "landing_page_design",
+        "title": "Landing Page Design",
+        "description": "Tailored for the specific goals of each campaign.",
+        "href": "/thiet-ke-landing-page"
+      },
+      "ready_website": {
+        "key": "ready_website",
+        "title": "Ready-Made Websites",
+        "description": "High standards, convenient, and rapid development.",
+        "href": "/mau-website"
+      },
+      "ecommerce_website": {
+        "key": "ecommerce_website",
+        "title": "E-commerce Website Design",
+        "description": "Increase customer conversions for your business.",
+        "href": "/thiet-ke-website-ban-hang"
+      },
+      "ecommerce_templates": {
+        "key": "ecommerce_templates",
+        "title": "E-commerce Website Templates",
+        "description": "High-standard websites that are convenient and quick to deploy.",
+        "href": "/mau-web-danh-muc/mau-web-ban-hang/?linh-vuc=mau-web-ban-hang"
+      },
+      "cloud_hosting": {
+        "key": "cloud_hosting",
+        "title": "Cloud Hosting",
+        "description": "A powerful and comprehensively secure hosting system.",
+        "href": "/cloud-hosting"
+      },
+      "warehouse_management": {
+        "key": "warehouse_management",
+        "title": "Warehouse Management Software",
+        "description": "",
+        "href": "/phan-mem-quan-ly-kho-bai-container",
+        "icon": "📦"
+      },
+      "wholesale_management": {
+        "key": "wholesale_management",
+        "title": "Wholesale Management Software",
+        "description": "",
+        "href": "/phan-mem-quan-ly-ban-hang",
+        "icon": "🛒"
+      },
+      "printer_integration": {
+        "key": "printer_integration",
+        "title": "Printer & Time Clock Integration",
+        "description": "",
+        "href": "/phan-mem-quan-ly-ban-hang",
+        "icon": "🖨️"
+      },
+      "payment_gateway": {
+        "key": "payment_gateway",
+        "title": "Online Payment Gateway Integration",
+        "description": "",
+        "href": "/tich-hop-thanh-toan-visa-vao-website",
+        "icon": "💳"
+      },
+      "agency_management": {
+        "key": "agency_management",
+        "title": "Agency Management Software",
+        "description": "",
+        "href": "/phan-mem-quan-ly-ban-hang",
+        "icon": "🏪"
+      },
+      "brand_building": {
+        "key": "brand_building",
+        "title": "Brand Building",
+        "description": "Create appeal with images and stories that leave a mark in the customer's mind.",
+        "href": "/dich-vu-xay-kenh-tiktok"
+      },
+      "nhtq_system": {
+        "key": "nhtq_system",
+        "title": "NHTQ System",
+        "description": "Meets all operational needs for China-Vietnam logistics.",
+        "href": "/nhtq/"
+      },
+      "mona_skillhub": {
+        "key": "mona_skillhub",
+        "title": "MONA SKILLHUB",
+        "description": "Internal Training Software",
+        "href": "/phan-mem-dao-tao-noi-bo/"
+      },
+      "nhahang_ai": {
+        "key": "nhahang_ai",
+        "title": "nhahang AI",
+        "description": "Management software for restaurants and eateries.",
+        "href": "/select-trial"
+      },
+      "tools_ngon": {
+        "key": "tools_ngon",
+        "title": "Tools Ngon",
+        "description": "Management software for restaurants and eateries.",
+        "href": "/tools-ngon"
+      },
+      "lms_solution": {
+        "key": "lms_solution",
+        "title": "Comprehensive LMS Solution",
+        "description": "A complete solution for the online learning industry.",
+        "href": "/edutech/"
+      },
+      "domain_registration": {
+        "key": "domain_registration",
+        "title": "Custom Domain",
+        "description": "Register a custom domain name for your business.",
+        "href": "/dang-ky-ten-mien",
+        "icon": "🌐",
+        "premium": true
+      },
+      "business_email": {
+        "key": "business_email",
+        "title": "Business Email",
+        "description": "Create professional email addresses for your team.",
+        "href": "/email-doanh-nghiep",
+        "icon": "📧",
+        "premium": false
+      },
+      "ssl_certificate": {
+        "key": "ssl_certificate",
+        "title": "SSL Certificate",
+        "description": "Secure your website with an SSL certificate.",
+        "href": "/mua-ssl",
+        "icon": "🔒",
+        "premium": true
+      },
+      "wordpress_hosting": {
+        "key": "wordpress_hosting",
+        "title": "WordPress Hosting",
+        "description": "Optimized hosting solution for WordPress websites.",
+        "href": "/wordpress-hosting",
+        "icon": "📝",
+        "premium": true
+      },
+      "elearning_hosting": {
+        "key": "elearning_hosting",
+        "title": "E-learning Hosting",
+        "description": "Specialized hosting for online learning systems.",
+        "href": "/lms-hosting",
+        "icon": "🎓",
+        "premium": false
+      },
+      "mona_cloud_hosting": {
+        "key": "mona_cloud_hosting",
+        "title": "MONA Cloud Hosting",
+        "description": "Powerful and comprehensively secure hosting.",
+        "href": "/cloud-hosting",
+        "icon": "☁️",
+        "premium": true
+      },
+      "linux_vps": {
+        "key": "linux_vps",
+        "title": "MONA LINUX VPS",
+        "description": "VPS service with the Linux operating system.",
+        "href": "/vps-linux",
+        "icon": "🐧",
+        "premium": false
+      },
+      "windows_vps": {
+        "key": "windows_vps",
+        "title": "MONA Windows VPS",
+        "description": "VPS service with the Windows operating system.",
+        "href": "/vps-windows",
+        "icon": "🪟",
+        "premium": false
+      },
+      "mona_elearning": {
+        "key": "mona_elearning",
+        "title": "MONA E-Learning",
+        "description": "A full-featured website system to successfully sell online courses.",
+        "href": "/thiet-ke-website-ban-khoa-hoc-online"
+      },
+      "course_business_training": {
+        "key": "course_business_training",
+        "title": "Course Business Training",
+        "description": "30+ Free lectures to help you sell courses on complete autopilot.",
+        "href": "/learn"
+      },
+      "poster_banner": {
+        "key": "poster_banner",
+        "title": "Poster Banner",
+        "description": "",
+        "href": "/poster"
+      },
+      "wedding_invitation": {
+        "key": "wedding_invitation",
+        "title": "Wedding Invitation",
+        "description": "Full-package wedding invitation design and printing service, various templates, home delivery."
+      },
+      "digitalTransformation": {
+        "key": "digitalTransformation",
+        "title": "Digital Transformation for Business",
+        "description": "Consulting and implementing comprehensive digital transformation solutions for businesses: processes, software, websites, data, automation, operational optimization, and growth.",
+        "href": "/chuyen-doi-so"
+      }
+    },
+    "layout_types": {
+      "list": "List",
+      "card_image_top": "Card with Top Image",
+      "horizontal": "Horizontal",
+      "icon_grid": "Icon Grid",
+      "feature_card": "Feature Card",
+      "compact_list": "Compact List",
+      "mixed": "Mixed",
+      "feature_card_right": "Right Feature Card",
+      "banner": "Banner"
+    }
+  }
+}

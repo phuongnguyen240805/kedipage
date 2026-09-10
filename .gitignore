@@ -1,0 +1,100 @@
+# ==============================================================================
+# DEPENDENCIES & PACKAGE MANAGERS
+# ==============================================================================
+node_modules/
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+.yarn/install-state.gz
+
+# Lockfiles (Nếu bạn muốn commit lockfile thì thêm dấu ! ở đầu, ví dụ: !package-lock.json)
+yarn.lock
+pnpm-lock.yaml
+package-lock.json
+bun-lockb
+
+# ==============================================================================
+# NEXT.JS & BUILD OUTPUTS
+# ==============================================================================
+.next/
+out/
+build/
+dist/
+.vercel
+.open-next/
+.cache/
+.turbo/
+.parcel-cache/
+.sass-cache/
+
+# ==============================================================================
+# ENVIRONMENT FILES & KEYS (QUAN TRỌNG: BẢO MẬT)
+# ==============================================================================
+.env
+.env.local
+.env.*.local
+.env.production.local
+.envrc
+*.pem
+*.key
+"Resend API key.txt"
+
+# ==============================================================================
+# TYPESCRIPT
+# ==============================================================================
+*.tsbuildinfo
+next-env.d.ts
+
+# ==============================================================================
+# TESTING & LOGS
+# ==============================================================================
+coverage/
+.nyc_output/
+.jest/
+jest-cache/
+reports/
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+
+# ==============================================================================
+# OS & EDITORS
+# ==============================================================================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# ==============================================================================
+# PROJECT SPECIFIC (SCREENSHOTS / MISC)
+# ==============================================================================
+public/assets/projects-screenshots/codingducks/
+public/assets/projects-screenshots/couponluxury
+public/assets/projects-screenshots/ghostchat
+public/assets/projects-screenshots/jra
+public/assets/projects-screenshots/the-booking-desk
+updated-readme.md
+
+# Databases
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+
+# Backend / Strapi
+.tmp/
+uploads/
+
+# Docker
+docker-compose.override.yml
+docker-compose.*.local.yml

@@ -1,0 +1,430 @@
+{
+  "navigation": {
+    "introduction": "介绍",
+    "services": "服务",
+    "projects": "项目",
+    "clients": "客户",
+    "blog": "博客",
+    "activities": "活动",
+    "partnership": "与MONA合作",
+    "digitalTransformation": "数字化转型"
+  },
+  "nav": {
+    "services": "服务",
+    "blog": "博客",
+    "link": "链接",
+    "unnamed": "未命名项目"
+  },
+  "common": {
+    "back": "返回"
+  },
+  "blog": {
+    "seoGuide": "SEO指南",
+    "digitalMarketing": "数字营销",
+    "webDesignExperience": "网页设计经验",
+    "hostingKnowledge": "主机知识",
+    "education": "教育",
+    "noPosts": "暂无文章"
+  },
+  "hero": {
+    "role": "AI爱好者",
+    "resume": "简历",
+    "hireMe": "雇用我",
+    "tooltip": "求你了 🥹 🙏"
+  },
+  "skill": {
+    "skills": "技能",
+    "hint": "(提示: 按下一个键)"
+  },
+  "project": {
+    "title": "项目"
+  },
+  "contact": {
+    "titleLine1": "让我们",
+    "titleLine2": "携手合作"
+  },
+  "footer": {
+    "aboutMonaTitle": "关于 Mona",
+    "websiteSolutionsTitle": "网站解决方案",
+    "onlineMarketingTitle": "在线营销",
+    "hostingVpsServerTitle": "主机 & VPS",
+    "managementSolutionsTitle": "管理解决方案",
+    "mediaBrandingTitle": "媒体与品牌",
+    "aboutMona": {
+      "links": {
+        "intro": "Mona 介绍",
+        "successProjects": "成功项目",
+        "monaSuccess": "Mona 的成功",
+        "clients": "客户",
+        "careers": "招聘",
+        "contact": "联系我们",
+        "blog": "博客",
+        "newsletter": "MONA 简报"
+      },
+      "digitalTransformation": {
+        "key": "digitalTransformation",
+        "title": "企业数字化转型",
+        "description": "为企业提供全面的数字化转型咨询与实施：流程、软件、网站、数据、自动化、运营优化与增长。",
+        "href": "/chuyen-doi-so"
+      }
+    },
+    "websiteSolutions": {
+      "title": "网站解决方案",
+      "links": {
+        "domain": "域名注册",
+        "professionalWebDesign": "专业网站设计",
+        "webHosting": "虚拟主机",
+        "buySSL": "购买网站SSL证书",
+        "registerWithMoIT": "在工贸部注册网站",
+        "webManagement": "网站管理服务",
+        "totalMarketing": "综合网站营销",
+        "advancedWebsite": "高级功能网站",
+        "websiteTemplates": "网站模板"
+      }
+    },
+    "onlineMarketing": {
+      "title": "在线营销",
+      "links": {
+        "seoService": "SEO 服务",
+        "digitalMarketing": "数字营销服务",
+        "facebookAds": "Facebook 广告服务",
+        "landingPage": "着陆页设计",
+        "consulting": "咨询 – 在线营销导师",
+        "outsourcedDept": "外包营销部门",
+        "affiliatePolicy": "联盟政策"
+      }
+    },
+    "hostingVpsServer": {
+      "title": "主机 / VPS / 服务器",
+      "links": {
+        "premiumHosting": "高级主机",
+        "serverRental": "服务器租赁",
+        "cloudVps": "云 VPS",
+        "enterpriseEmail": "企业邮箱",
+        "drm": "数字版权管理",
+        "videoProtect": "视频保护解决方案",
+        "migration": "主机迁移"
+      }
+    },
+    "managementSolutions": {
+      "title": "管理解决方案",
+      "links": {
+        "lms": "LMS 系统 - 用于教育中心",
+        "nhtq": "NHTQ 系统 - 用于中国商品进口",
+        "multiChannel": "多渠道销售管理系统",
+        "restaurant": "餐厅管理软件",
+        "gold": "黄金软件"
+      }
+    },
+    "mediaBranding": {
+      "title": "媒体与品牌",
+      "links": {
+        "brandIdentity": "建立品牌识别套件",
+        "brandMarketing": "品牌营销以扩大品牌覆盖面",
+        "videoProduction": "商业视频制作",
+        "profilePhotography": "商业形象摄影",
+        "tvcProduction": "电视广告制作"
+      }
+    },
+    "contact": "联系我们",
+    "email": "电子邮件",
+    "address": "地址",
+    "callUs": "立即致电我们！",
+    "allRights": "版权所有",
+    "terms": "条款",
+    "companyInfoTitle": "公司信息",
+    "notification": "已通知",
+    "notificationSub": "工业和贸易部",
+    "dmca": "DMCA",
+    "contactInfo": {
+      "address": "胡志明市新山二坊八月革命街1073/23号"
+    },
+    "companiesInfo": {
+      "monaMedia": {
+        "name": "MONA.Media",
+        "fullName": "Mona Media 有限公司",
+        "taxCode": "税号：0313728397",
+        "bankName": "亚洲商业银行 (ACB)",
+        "bankAccount": "账号：21634154"
+      },
+      "monaSoftware": {
+        "name": "MONA.Software",
+        "fullName": "Mona 软件股份公司",
+        "taxCode": "税号：0316094442",
+        "bankName": "亚洲商业银行 (ACB)",
+        "bankAccount": "账号：17268177"
+      },
+      "monaHost": {
+        "name": "MONA.Host",
+        "fullName": "Mona Host 服务有限公司",
+        "taxCode": "税号：0317401755",
+        "bankName": "亚洲商业银行 (ACB)",
+        "bankAccount": "账号：1900636648"
+      }
+    },
+    "bottomLeftSection": {
+      "companyName": "MONA.Media",
+      "description": "网站开发和数字解决方案的领导者。"
+    },
+    "bottomRightSection": {
+      "notification": "已在工贸部注册",
+      "notificationSub": "版权所有 © MONA.Media",
+      "dmca": "受 DMCA 保护"
+    }
+  },
+  "common": {
+    "no_title": "无标题",
+    "premium": "高级版",
+    "updating_services": "服务更新中..."
+  },
+  "services": {
+    "categories": {
+      "business_services": {
+        "key": "business_services",
+        "title": "针对服务型企业"
+      },
+      "selling": {
+        "key": "selling",
+        "title": "针对零售与电子商务"
+      },
+      "software_solutions": {
+        "key": "software_solutions",
+        "title": "软件解决方案"
+      },
+      "hosting_infrastructure": {
+        "key": "hosting_infrastructure",
+        "title": "主机与VPS基础设施"
+      },
+      "course_instructor": {
+        "key": "course_instructor",
+        "title": "针对课程创建者与讲师"
+      }
+    },
+    "items": {
+      "seo_service": {
+        "key": "seo_service",
+        "title": "SEO服务",
+        "description": "从现有需求的潜在客户中吸引流量。",
+        "href": "/dich-vu-seo"
+      },
+      "corporate_video": {
+        "key": "corporate_video",
+        "title": "企业视频制作",
+        "description": "用高质量视频吸引客户注意力，提升企业声望。",
+        "href": "/quay-phim-gioi-thieu-doanh-nghiep"
+      },
+      "corporate_photography": {
+        "key": "corporate_photography",
+        "title": "专业企业摄影",
+        "description": "在客户眼中树立专业形象。",
+        "href": "/chup-anh-profile-cong-ty"
+      },
+      "website_design": {
+        "key": "website_design",
+        "title": "网站设计",
+        "description": "一个网站既要美观，又要能说服客户。",
+        "href": "/thiet-ke-website-tai-hcm"
+      },
+      "landing_page_design": {
+        "key": "landing_page_design",
+        "title": "着陆页设计",
+        "description": "为每个营销活动的具体目标量身定制。",
+        "href": "/thiet-ke-landing-page"
+      },
+      "ready_website": {
+        "key": "ready_website",
+        "title": "现成网站",
+        "description": "高标准、方便、快速开发。",
+        "href": "/mau-website"
+      },
+      "ecommerce_website": {
+        "key": "ecommerce_website",
+        "title": "电子商务网站设计",
+        "description": "为您的企业提高客户转化率。",
+        "href": "/thiet-ke-website-ban-hang"
+      },
+      "ecommerce_templates": {
+        "key": "ecommerce_templates",
+        "title": "电子商务网站模板",
+        "description": "方便快捷部署的高标准网站。",
+        "href": "/mau-web-danh-muc/mau-web-ban-hang/?linh-vuc=mau-web-ban-hang"
+      },
+      "cloud_hosting": {
+        "key": "cloud_hosting",
+        "title": "云主机",
+        "description": "一个功能强大且全面安全的主机系统。",
+        "href": "/cloud-hosting"
+      },
+      "warehouse_management": {
+        "key": "warehouse_management",
+        "title": "仓库管理软件",
+        "description": "",
+        "href": "/phan-mem-quan-ly-kho-bai-container",
+        "icon": "📦"
+      },
+      "wholesale_management": {
+        "key": "wholesale_management",
+        "title": "批发管理软件",
+        "description": "",
+        "href": "/phan-mem-quan-ly-ban-hang",
+        "icon": "🛒"
+      },
+      "printer_integration": {
+        "key": "printer_integration",
+        "title": "打印机与考勤机集成",
+        "description": "",
+        "href": "/phan-mem-quan-ly-ban-hang",
+        "icon": "🖨️"
+      },
+      "payment_gateway": {
+        "key": "payment_gateway",
+        "title": "在线支付网关集成",
+        "description": "",
+        "href": "/tich-hop-thanh-toan-visa-vao-website",
+        "icon": "💳"
+      },
+      "agency_management": {
+        "key": "agency_management",
+        "title": "代理商管理软件",
+        "description": "",
+        "href": "/phan-mem-quan-ly-ban-hang",
+        "icon": "🏪"
+      },
+      "brand_building": {
+        "key": "brand_building",
+        "title": "品牌建设",
+        "description": "用图像和故事创造吸引力，在顾客心中留下印记。",
+        "href": "/dich-vu-xay-kenh-tiktok"
+      },
+      "nhtq_system": {
+        "key": "nhtq_system",
+        "title": "NHTQ系统",
+        "description": "满足中越物流的所有运营需求。",
+        "href": "/nhtq/"
+      },
+      "mona_skillhub": {
+        "key": "mona_skillhub",
+        "title": "MONA技能中心",
+        "description": "内部培训软件",
+        "href": "/phan-mem-dao-tao-noi-bo/"
+      },
+      "nhahang_ai": {
+        "key": "nhahang_ai",
+        "title": "餐厅AI",
+        "description": "餐厅和餐馆的管理软件。",
+        "href": "/select-trial"
+      },
+      "tools_ngon": {
+        "key": "tools_ngon",
+        "title": "Tools Ngon",
+        "description": "餐厅和餐馆的管理软件。",
+        "href": "/tools-ngon"
+      },
+      "lms_solution": {
+        "key": "lms_solution",
+        "title": "综合LMS解决方案",
+        "description": "为在线学习行业提供完整的解决方案。",
+        "href": "/edutech/"
+      },
+      "domain_registration": {
+        "key": "domain_registration",
+        "title": "自定义域名",
+        "description": "为您的企业注册一个自定义域名。",
+        "href": "/dang-ky-ten-mien",
+        "icon": "🌐",
+        "premium": true
+      },
+      "business_email": {
+        "key": "business_email",
+        "title": "企业邮箱",
+        "description": "为您的团队创建专业的电子邮件地址。",
+        "href": "/email-doanh-nghiep",
+        "icon": "📧",
+        "premium": false
+      },
+      "ssl_certificate": {
+        "key": "ssl_certificate",
+        "title": "SSL证书",
+        "description": "使用SSL证书保护您的网站安全。",
+        "href": "/mua-ssl",
+        "icon": "🔒",
+        "premium": true
+      },
+      "wordpress_hosting": {
+        "key": "wordpress_hosting",
+        "title": "WordPress主机",
+        "description": "为WordPress网站优化的主机解决方案。",
+        "href": "/wordpress-hosting",
+        "icon": "📝",
+        "premium": true
+      },
+      "elearning_hosting": {
+        "key": "elearning_hosting",
+        "title": "电子学习主机",
+        "description": "专为在线学习系统设计的专业主机。",
+        "href": "/lms-hosting",
+        "icon": "🎓",
+        "premium": false
+      },
+      "mona_cloud_hosting": {
+        "key": "mona_cloud_hosting",
+        "title": "MONA云主机",
+        "description": "功能强大且全面安全的主机。",
+        "href": "/cloud-hosting",
+        "icon": "☁️",
+        "premium": true
+      },
+      "linux_vps": {
+        "key": "linux_vps",
+        "title": "MONA LINUX VPS",
+        "description": "使用Linux操作系统的VPS服务。",
+        "href": "/vps-linux",
+        "icon": "🐧",
+        "premium": false
+      },
+      "windows_vps": {
+        "key": "windows_vps",
+        "title": "MONA Windows VPS",
+        "description": "使用Windows操作系统的VPS服务。",
+        "href": "/vps-windows",
+        "icon": "🪟",
+        "premium": false
+      },
+      "mona_elearning": {
+        "key": "mona_elearning",
+        "title": "MONA电子学习",
+        "description": "一个功能齐全的网站系统，助您成功销售在线课程。",
+        "href": "/thiet-ke-website-ban-khoa-hoc-online"
+      },
+      "course_business_training": {
+        "key": "course_business_training",
+        "title": "课程业务培训",
+        "description": "超过30个免费讲座，助您全自动销售课程。",
+        "href": "/learn"
+      },
+      "poster_banner": {
+        "key": "poster_banner",
+        "title": "海报横幅",
+        "description": "",
+        "href": "/poster"
+      },
+      "wedding_invitation": {
+          "key": "wedding_invitation",
+          "title": "线上请柬",
+          "description": "婚礼请柬设计和印刷全套服务，多样模板，送货上门。",
+        "href": "/wedding-invitation"
+      }
+    },
+    "layout_types": {
+      "list": "列表",
+      "card_image_top": "顶部图片卡片",
+      "horizontal": "水平",
+      "icon_grid": "图标网格",
+      "feature_card": "特色卡片",
+      "compact_list": "紧凑列表",
+      "mixed": "混合",
+      "feature_card_right": "右侧特色卡片",
+      "banner": "横幅"
+    }
+  }
+}

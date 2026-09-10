@@ -1,0 +1,428 @@
+{
+  "navigation": {
+    "introduction": "Introduction",
+    "services": "Services",
+    "projects": "Projets",
+    "clients": "Clients",
+    "blog": "Blog",
+    "activities": "Activités",
+    "partnership": "Devenir partenaire de MONA",
+    "digitalTransformation": "Transformation numérique"
+  },
+  "nav": {
+    "services": "Services",
+    "blog": "Blog",
+    "link": "Lien",
+    "unnamed": "Élément sans nom"
+  },
+  "common": {
+    "back": "Retour"
+  },
+  "blog": {
+    "seoGuide": "Guide SEO",
+    "digitalMarketing": "Marketing Numérique",
+    "webDesignExperience": "Expérience en Conception Web",
+    "hostingKnowledge": "Connaissances en Hébergement",
+    "education": "Éducation",
+    "noPosts": "Aucun article pour le moment"
+  },
+  "hero": {
+    "role": "Passionné d'IA",
+    "resume": "CV",
+    "hireMe": "Engagez-moi",
+    "tooltip": "s'il vous plaît 🥹 🙏"
+  },
+  "skill": {
+    "skills": "Compétences",
+    "hint": "(Astuce : appuyez sur une touche)"
+  },
+  "project": {
+    "title": "project"
+  },
+  "contact": {
+    "titleLine1": "TRAVAILLONS",
+    "titleLine2": "ENSEMBLE"
+  },
+  "footer": {
+    "aboutMonaTitle": "À propos de Mona",
+    "websiteSolutionsTitle": "Solutions Web",
+    "onlineMarketingTitle": "Marketing en Ligne",
+    "hostingVpsServerTitle": "Hébergement & VPS",
+    "managementSolutionsTitle": "Solutions de Gestion",
+    "mediaBrandingTitle": "Média & Image de Marque",
+    "aboutMona": {
+      "links": {
+        "intro": "Introduction à Mona",
+        "successProjects": "Projets Réussis",
+        "monaSuccess": "Le Succès de Mona",
+        "clients": "Clients",
+        "careers": "Recrutement",
+        "contact": "Contact",
+        "blog": "Blog",
+        "newsletter": "Newsletter MONA"
+      },
+      "digitalTransformation": {
+        "key": "digitalTransformation",
+        "title": "Transformation numérique pour les entreprises",
+        "description": "Conseil et mise en œuvre de solutions de transformation numérique complètes pour les entreprises : processus, logiciels, sites web, données, automatisation, optimisation opérationnelle et croissance.",
+        "href": "/chuyen-doi-so"
+      }
+    },
+    "websiteSolutions": {
+      "title": "Solutions Web",
+      "links": {
+        "domain": "Enregistrement de Nom de Domaine",
+        "professionalWebDesign": "Conception de Site Web Professionnelle",
+        "webHosting": "Hébergement Web",
+        "buySSL": "Acheter un SSL pour site web",
+        "registerWithMoIT": "Enregistrement de site web auprès du MCI",
+        "webManagement": "Service de Gestion de Site Web",
+        "totalMarketing": "Marketing de Site Web Complet",
+        "advancedWebsite": "Site Web à Fonctionnalités Avancées",
+        "websiteTemplates": "Modèles de Site Web"
+      }
+    },
+    "onlineMarketing": {
+      "title": "Marketing en Ligne",
+      "links": {
+        "seoService": "Service de SEO",
+        "digitalMarketing": "Service de Marketing Numérique",
+        "facebookAds": "Service de Publicité Facebook",
+        "landingPage": "Conception de Page d'Accueil",
+        "consulting": "Conseil – Mentor en Marketing en Ligne",
+        "outsourcedDept": "Département Marketing Externalisé",
+        "affiliatePolicy": "Politique d'Affiliation"
+      }
+    },
+    "hostingVpsServer": {
+      "title": "Hébergement / VPS / Serveur",
+      "links": {
+        "premiumHosting": "Hébergement Premium",
+        "serverRental": "Location de Serveur",
+        "cloudVps": "Cloud VPS",
+        "enterpriseEmail": "Email d'Entreprise",
+        "drm": "DRM",
+        "videoProtect": "Solution de Protection Vidéo",
+        "migration": "Migration d'Hébergement"
+      }
+    },
+    "managementSolutions": {
+      "title": "Solutions de Gestion",
+      "links": {
+        "lms": "Système LMS - pour Centres Éducatifs",
+        "nhtq": "Système NHTQ - pour l'Import de Marchandises Chinoises",
+        "multiChannel": "Système de Gestion des Ventes Multicanal",
+        "restaurant": "Logiciel de Gestion de Restaurant",
+        "gold": "Logiciel Gold"
+      }
+    },
+    "mediaBranding": {
+      "title": "Média & Image de Marque",
+      "links": {
+        "brandIdentity": "Création d'un Kit d'Identité de Marque",
+        "brandMarketing": "Marketing de Marque pour Couverture de Marque",
+        "videoProduction": "Production de Vidéos d'Entreprise",
+        "profilePhotography": "Photographie de Profil d'Entreprise",
+        "tvcProduction": "Production de Publicités Télévisées"
+      }
+    },
+    "contact": "Contact",
+    "email": "Email",
+    "address": "Adresse",
+    "callUs": "Appelez-nous !",
+    "allRights": "Tous droits réservés",
+    "terms": "Conditions",
+    "companyInfoTitle": "Informations sur l'entreprise",
+    "notification": "NOTIFIÉ",
+    "notificationSub": "Ministère de l'Industrie et du Commerce",
+    "dmca": "DMCA",
+    "contactInfo": {
+      "address": "1073/23 rue Cach Mang Thang Tam, quartier Tan Son Nhi, HCMC"
+    },
+    "companiesInfo": {
+      "monaMedia": {
+        "name": "MONA.Media",
+        "fullName": "Mona Media S.à.r.l",
+        "taxCode": "Numéro d'identification fiscale : 0313728397",
+        "bankName": "Asia Commercial Bank (ACB)",
+        "bankAccount": "Numéro de compte : 21634154"
+      },
+      "monaSoftware": {
+        "name": "MONA.Software",
+        "fullName": "Mona Software S.A.",
+        "taxCode": "Numéro d'identification fiscale : 0316094442",
+        "bankName": "Asia Commercial Bank (ACB)",
+        "bankAccount": "Numéro de compte : 17268177"
+      },
+      "monaHost": {
+        "name": "MONA.Host",
+        "fullName": "Mona Host Service S.à.r.l",
+        "taxCode": "Numéro d'identification fiscale : 0317401755",
+        "bankName": "Asia Commercial Bank (ACB)",
+        "bankAccount": "Numéro de compte : 1900636648"
+      }
+    },
+    "bottomLeftSection": {
+      "companyName": "MONA.Media",
+      "description": "Leader en développement web et solutions numériques."
+    },
+    "bottomRightSection": {
+      "notification": "Enregistré auprès du Ministère de l'Industrie et du Commerce",
+      "notificationSub": "Tous droits réservés © MONA.Media",
+      "dmca": "Protégé par DMCA"
+    }
+  },
+  "common": {
+    "no_title": "Sans titre",
+    "premium": "Premium",
+    "updating_services": "Mise à jour des services..."
+  },
+  "services": {
+    "categories": {
+      "business_services": {
+        "key": "business_services",
+        "title": "POUR LES ENTREPRISES DE SERVICES"
+      },
+      "selling": {
+        "key": "selling",
+        "title": "POUR LE COMMERCE ET L'E-COMMERCE"
+      },
+      "software_solutions": {
+        "key": "software_solutions",
+        "title": "SOLUTIONS LOGICIELLES"
+      },
+      "hosting_infrastructure": {
+        "key": "hosting_infrastructure",
+        "title": "INFRASTRUCTURE D'HÉBERGEMENT ET VPS"
+      },
+      "course_instructor": {
+        "key": "course_instructor",
+        "title": "POUR LES CRÉATEURS DE COURS ET FORMATEURS"
+      }
+    },
+    "items": {
+      "seo_service": {
+        "key": "seo_service",
+        "title": "Service de SEO",
+        "description": "Attirez du trafic de clients potentiels ayant une demande existante.",
+        "href": "/dich-vu-seo"
+      },
+      "corporate_video": {
+        "key": "corporate_video",
+        "title": "Production de Vidéos d'Entreprise",
+        "description": "Captez l'attention des clients avec des vidéos de haute qualité qui rehaussent le prestige de votre entreprise.",
+        "href": "/quay-phim-gioi-thieu-doanh-nghiep"
+      },
+      "corporate_photography": {
+        "key": "corporate_photography",
+        "title": "Photographie d'Entreprise Professionnelle",
+        "description": "Construisez une image professionnelle aux yeux de vos clients.",
+        "href": "/chup-anh-profile-cong-ty"
+      },
+      "website_design": {
+        "key": "website_design",
+        "title": "Conception de Site Web",
+        "description": "Un site web doit être à la fois esthétique et convaincant pour les clients.",
+        "href": "/thiet-ke-website-tai-hcm"
+      },
+      "landing_page_design": {
+        "key": "landing_page_design",
+        "title": "Conception de Page de Destination",
+        "description": "Adaptée aux objectifs spécifiques de chaque campagne.",
+        "href": "/thiet-ke-landing-page"
+      },
+      "ready_website": {
+        "key": "ready_website",
+        "title": "Sites Web Prêts à l'Emploi",
+        "description": "Hauts standards, pratique et développement rapide.",
+        "href": "/mau-website"
+      },
+      "ecommerce_website": {
+        "key": "ecommerce_website",
+        "title": "Conception de Site E-commerce",
+        "description": "Augmentez les conversions de clients pour votre entreprise.",
+        "href": "/thiet-ke-website-ban-hang"
+      },
+      "ecommerce_templates": {
+        "key": "ecommerce_templates",
+        "title": "Modèles de Site E-commerce",
+        "description": "Sites web de haute qualité, pratiques et rapides à déployer.",
+        "href": "/mau-web-danh-muc/mau-web-ban-hang/?linh-vuc=mau-web-ban-hang"
+      },
+      "cloud_hosting": {
+        "key": "cloud_hosting",
+        "title": "Hébergement Cloud",
+        "description": "Un système d'hébergement puissant et entièrement sécurisé.",
+        "href": "/cloud-hosting"
+      },
+      "warehouse_management": {
+        "key": "warehouse_management",
+        "title": "Logiciel de Gestion d'Entrepôt",
+        "description": "",
+        "href": "/phan-mem-quan-ly-kho-bai-container",
+        "icon": "📦"
+      },
+      "wholesale_management": {
+        "key": "wholesale_management",
+        "title": "Logiciel de Gestion de Vente en Gros",
+        "description": "",
+        "href": "/phan-mem-quan-ly-ban-hang",
+        "icon": "🛒"
+      },
+      "printer_integration": {
+        "key": "printer_integration",
+        "title": "Intégration d'Imprimante et de Pointeuse",
+        "description": "",
+        "href": "/phan-mem-quan-ly-ban-hang",
+        "icon": "🖨️"
+      },
+      "payment_gateway": {
+        "key": "payment_gateway",
+        "title": "Intégration de Passerelle de Paiement",
+        "description": "",
+        "href": "/tich-hop-thanh-toan-visa-vao-website",
+        "icon": "💳"
+      },
+      "agency_management": {
+        "key": "agency_management",
+        "title": "Logiciel de Gestion d'Agence",
+        "description": "",
+        "href": "/phan-mem-quan-ly-ban-hang",
+        "icon": "🏪"
+      },
+      "brand_building": {
+        "key": "brand_building",
+        "title": "Création de Marque",
+        "description": "Créez de l'attrait avec des images et des histoires qui marquent l'esprit du client.",
+        "href": "/dich-vu-xay-kenh-tiktok"
+      },
+      "nhtq_system": {
+        "key": "nhtq_system",
+        "title": "Système NHTQ",
+        "description": "Répond à tous les besoins opérationnels pour la logistique Chine-Vietnam.",
+        "href": "/nhtq/"
+      },
+      "mona_skillhub": {
+        "key": "mona_skillhub",
+        "title": "MONA SKILLHUB",
+        "description": "Logiciel de Formation Interne",
+        "href": "/phan-mem-dao-tao-noi-bo/"
+      },
+      "nhahang_ai": {
+        "key": "nhahang_ai",
+        "title": "nhahang AI",
+        "description": "Logiciel de gestion pour restaurants et cafés.",
+        "href": "/select-trial"
+      },
+      "tools_ngon": {
+        "key": "tools_ngon",
+        "title": "Tools Ngon",
+        "description": "Logiciel de gestion pour restaurants et cafés.",
+        "href": "/tools-ngon"
+      },
+      "lms_solution": {
+        "key": "lms_solution",
+        "title": "Solution LMS Complète",
+        "description": "Une solution complète pour le secteur de l'apprentissage en ligne.",
+        "href": "/edutech/"
+      },
+      "domain_registration": {
+        "key": "domain_registration",
+        "title": "Domaine Personnalisé",
+        "description": "Enregistrez un nom de domaine personnalisé pour votre entreprise.",
+        "href": "/dang-ky-ten-mien",
+        "icon": "🌐",
+        "premium": true
+      },
+      "business_email": {
+        "key": "business_email",
+        "title": "Email Professionnel",
+        "description": "Créez des adresses e-mail professionnelles pour votre équipe.",
+        "href": "/email-doanh-nghiep",
+        "icon": "📧",
+        "premium": false
+      },
+      "ssl_certificate": {
+        "key": "ssl_certificate",
+        "title": "Certificat SSL",
+        "description": "Sécurisez votre site web avec un certificat SSL.",
+        "href": "/mua-ssl",
+        "icon": "🔒",
+        "premium": true
+      },
+      "wordpress_hosting": {
+        "key": "wordpress_hosting",
+        "title": "Hébergement WordPress",
+        "description": "Solution d'hébergement optimisée pour les sites WordPress.",
+        "href": "/wordpress-hosting",
+        "icon": "📝",
+        "premium": true
+      },
+      "elearning_hosting": {
+        "key": "elearning_hosting",
+        "title": "Hébergement E-learning",
+        "description": "Hébergement spécialisé pour les systèmes d'apprentissage en ligne.",
+        "href": "/lms-hosting",
+        "icon": "🎓",
+        "premium": false
+      },
+      "mona_cloud_hosting": {
+        "key": "mona_cloud_hosting",
+        "title": "Hébergement Cloud MONA",
+        "description": "Hébergement puissant et entièrement sécurisé.",
+        "href": "/cloud-hosting",
+        "icon": "☁️",
+        "premium": true
+      },
+      "linux_vps": {
+        "key": "linux_vps",
+        "title": "VPS LINUX MONA",
+        "description": "Service VPS avec le système d'exploitation Linux.",
+        "href": "/vps-linux",
+        "icon": "🐧",
+        "premium": false
+      },
+      "windows_vps": {
+        "key": "windows_vps",
+        "title": "VPS Windows MONA",
+        "description": "Service VPS avec le système d'exploitation Windows.",
+        "href": "/vps-windows",
+        "icon": "🪟",
+        "premium": false
+      },
+      "mona_elearning": {
+        "key": "mona_elearning",
+        "title": "MONA E-Learning",
+        "description": "Un système de site web complet pour vendre des cours en ligne avec succès.",
+        "href": "/thiet-ke-website-ban-khoa-hoc-online"
+      },
+      "course_business_training": {
+        "key": "course_business_training",
+        "title": "Formation en Vente de Cours",
+        "description": "Plus de 30 leçons gratuites pour vous aider à vendre des cours en pilote automatique.",
+        "href": "/learn"
+      },
+      "poster_banner": {
+        "key": "poster_banner",
+        "title": "Affiche Bannière",
+        "description": "",
+        "href": "/poster"
+      },
+      "wedding_invitation": {
+          "title": "Faire-part en ligne",
+          "description": "Service complet de conception et d'impression de faire-part de mariage, divers modèles, livraison à domicile."
+      }
+    },
+    "layout_types": {
+      "list": "Liste",
+      "card_image_top": "Carte avec Image en Haut",
+      "horizontal": "Horizontal",
+      "icon_grid": "Grille d'Icônes",
+      "feature_card": "Carte de Fonctionnalité",
+      "compact_list": "Liste Compacte",
+      "mixed": "Mixte",
+      "feature_card_right": "Carte de Fonctionnalité à Droite",
+      "banner": "Bannière"
+    }
+  }
+}
