@@ -80,7 +80,7 @@ export default function ClientsGetCloseSection() {
               <div className="relative w-full aspect-video">
                 <iframe
                   src={youtubeEmbedUrl}
-                  title="Lời tri ân Mona"
+                  title="Lời tri ân Kedi"
                   className="absolute top-0 left-0 w-full h-full border-0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -91,7 +91,7 @@ export default function ClientsGetCloseSection() {
 
           <FadeIn>
             <p className="mt-10 text-lg leading-relaxed max-w-[600px] mx-auto font-medium">
-              Đây chính là điều giúp MONA phát triển mạnh mẽ không ngừng. <br />
+              Đây chính là điều giúp KEDI phát triển mạnh mẽ không ngừng. <br />
               <span className="text-[#3ee1ff] font-bold drop-shadow-sm">
                 &quot;Và chúng tôi vẫn đang không ngừng tìm kiếm những người bạn&quot;
               </span>

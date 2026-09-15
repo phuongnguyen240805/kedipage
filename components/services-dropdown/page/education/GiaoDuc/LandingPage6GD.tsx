@@ -53,9 +53,9 @@ export default function LandingPage6GD() {
           </p>,
           <p key="4">
             <Highlight>
-              TỰ ĐỘNG MÃ HÓA VIDEOS VỚI MONA DRM CHỐNG TẢI LẬU.
+              TỰ ĐỘNG MÃ HÓA VIDEOS VỚI KEDI DRM CHỐNG TẢI LẬU.
             </Highlight>{' '}
-            Netflix như nào thì hệ thống MONA E-LEARNING có y chang như thế.
+            Netflix như nào thì hệ thống KEDI E-LEARNING có y chang như thế.
           </p>,
         ]}
       />
@@ -77,9 +77,9 @@ export default function LandingPage6GD() {
           </p>,
           <p key="4">
             <Highlight>
-              TỰ ĐỘNG MÃ HÓA VIDEOS VỚI MONA DRM CHỐNG TẢI LẬU.
+              TỰ ĐỘNG MÃ HÓA VIDEOS VỚI KEDI DRM CHỐNG TẢI LẬU.
             </Highlight>{' '}
-            Netflix như nào thì hệ thống MONA E-LEARNING có y chang như thế.
+            Netflix như nào thì hệ thống KEDI E-LEARNING có y chang như thế.
           </p>,
         ]}
       />
@@ -102,9 +102,9 @@ export default function LandingPage6GD() {
           </p>,
           <p key="4">
             <Highlight>
-              TỰ ĐỘNG MÃ HÓA VIDEOS VỚI MONA DRM CHỐNG TẢI LẬU.
+              TỰ ĐỘNG MÃ HÓA VIDEOS VỚI KEDI DRM CHỐNG TẢI LẬU.
             </Highlight>{' '}
-            Netflix như nào thì hệ thống MONA E-LEARNING có y chang như thế.
+            Netflix như nào thì hệ thống KEDI E-LEARNING có y chang như thế.
           </p>,
         ]}
       />

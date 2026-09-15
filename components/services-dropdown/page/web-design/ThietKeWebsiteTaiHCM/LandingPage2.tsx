@@ -12,7 +12,7 @@ export default function LandingPage2() {
               <div className="bg-black rounded-lg shadow-2xl p-3 lg:p-6 max-w-[360px] lg:max-w-[520px] w-full">
                 {/* Top banner label */}
                 <div className="bg-[#7c1bd6] text-white text-center py-2 px-3 rounded-t-md mb-3 lg:mb-4 font-medium">
-                  Bí kíp MONA Convert Khách hàng!
+                  Bí kíp KEDI Convert Khách hàng!
                 </div>
 
                 {/* Video wrapper: rounded, overflow-hidden */}
@@ -84,7 +84,7 @@ export default function LandingPage2() {
           {/* Right: Headline + CTA */}
           <div className="flex flex-col items-start lg:items-start justify-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight max-w-lg">
-              MONA xây dựng
+              KEDI xây dựng
               <br /> website công nghiệp
               <br /> và thực dụng
             </h2>

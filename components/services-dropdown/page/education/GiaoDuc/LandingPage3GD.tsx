@@ -77,7 +77,7 @@ export default function LandingPage3GD() {
 
         <FadeIn>
           <h2 className="text-2xl md:text-3xl font-extrabold text-white leading-tight mb-2 uppercase">
-            đang được CEO/FOUNDER MONA
+            đang được CEO/FOUNDER KEDI
           </h2>
           <h3 className="text-xl md:text-2xl font-bold text-white mb-6 uppercase">
             sử dụng cho chính Khoá học của mình

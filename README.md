@@ -1,4 +1,4 @@
-# MONA Full - Huong Dan Chay Du An
+# KEDI Full - Huong Dan Chay Du An
 
 ## 1. Yeu cau moi truong
 
@@ -22,7 +22,7 @@ npm install
 
 ## 3. Cau hinh bien moi truong
 
-Tao file `.env.local` trong thu muc goc (`d:\DATN\mona_full`) va khai bao cac bien can thiet.
+Tao file `.env.local` trong thu muc goc (`d:\DATN\kedi_full`) va khai bao cac bien can thiet.
 
 Mau:
 

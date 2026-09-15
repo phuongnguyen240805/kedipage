@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Star, Check } from 'lucide-react';
 import FadeIn from '@/components/ui/Fadeoad';
 
-const logoMona = 'https://mona.media/template/assets/images/about/logo-mona.png';
+const logoKedi = 'https://mona.media/template/assets/images/about/logo-mona.png';
 
 const LandingPage9GD = () => {
   const items = [
@@ -16,7 +16,7 @@ const LandingPage9GD = () => {
       originalPrice: null,
     },
     {
-      title: 'MONA E-Learning Base:',
+      title: 'KEDI E-Learning Base:',
       desc: '',
       price: null,
       originalPrice: '500.000.000 Đ',
@@ -53,13 +53,13 @@ const LandingPage9GD = () => {
     },
     {
       title: 'Nền tảng server video DRM:',
-      desc: '(Gói Mona DRM 5K views)',
+      desc: '(Gói Kedi DRM 5K views)',
       price: '4.000.000 Đ/THÁNG',
       isStrikeDescription: true,
     },
     {
       title: 'Hosting:',
-      desc: '(Gói Mona Linux VPS X-Large: 8 CPU, 16GB RAM)',
+      desc: '(Gói Kedi Linux VPS X-Large: 8 CPU, 16GB RAM)',
       price: '4.200.000 Đ/THÁNG',
       isStrikeDescription: true,
     },
@@ -94,7 +94,7 @@ const LandingPage9GD = () => {
         <FadeIn delay={0.2}>
           <div className="mb-12 bg-black/20 backdrop-blur-md p-6 rounded-3xl border border-white/5 shadow-inner">
             <h3 className="text-xl font-bold mb-6 uppercase tracking-wide text-[#ff0099]">
-              MONA E-Learning Bundle đã bao gồm:
+              KEDI E-Learning Bundle đã bao gồm:
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-5 gap-x-12 text-sm md:text-base">
               {[
@@ -111,8 +111,8 @@ const LandingPage9GD = () => {
                     {feature.text}
                     {feature.hasLogo && (
                       <Image
-                        src={logoMona}
-                        alt="Mona"
+                        src={logoKedi}
+                        alt="Kedi"
                         width={32}
                         height={32}
                         className="inline-block h-[0.9em] w-auto align-middle mx-2 -mt-1 brightness-125"

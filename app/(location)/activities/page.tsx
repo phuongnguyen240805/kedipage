@@ -8,7 +8,7 @@ export default function ActivitiesPage() {
       {/* 1. Phần Slideshow */}
       <section className="mb-10">
          <ActivitiesSlideShow
-            title="Hoạt động nổi bật MONA Media"
+            title="Hoạt động nổi bật KEDI Media"
             show={featuredShow}
           />
       </section>

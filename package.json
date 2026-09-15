@@ -1,13 +1,15 @@
 {
-	"name": "mona_web",
+	"name": "kedi-web",
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
-		"build:cf": "opennextjs-cloudflare build --dangerouslyUseUnsupportedNextVersion",
-		"preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-		"deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+		"ensure-next": "node scripts/ensure-next.cjs",
+		"build:cf": "node scripts/ensure-next.cjs && node scripts/run-with-symlink-fallback.cjs opennextjs-cloudflare build --dangerouslyUseUnsupportedNextVersion",
+		"preview": "node scripts/ensure-next.cjs && node scripts/run-with-symlink-fallback.cjs opennextjs-cloudflare build --dangerouslyUseUnsupportedNextVersion && wrangler dev",
+		"deploy": "node scripts/ensure-next.cjs && node scripts/run-with-symlink-fallback.cjs opennextjs-cloudflare build --dangerouslyUseUnsupportedNextVersion && node scripts/wrangler-deploy.cjs",
+		"deploy:only": "node scripts/wrangler-deploy.cjs",
 		"cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
 		"start": "next start -H 0.0.0.0 -p 3000",
 		"lint": "next lint"
@@ -50,6 +52,9 @@
 		"tailwindcss-animate": "^1.0.7",
 		"tsparticles": "^3.9.1",
 		"zod": "^4.3.5"
+	},
+	"optionalDependencies": {
+		"@next/swc-win32-x64-msvc": "14.2.33"
 	},
 	"devDependencies": {
 		"@radix-ui/react-dropdown-menu": "^2.1.16",

@@ -37,7 +37,7 @@ export default function Langdingwebcs1() {
           <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 border border-white/10 text-white text-xs md:text-sm mb-8 backdrop-blur-2xl shadow-xl">
             <Rocket size={16} className="text-orange-400" />
             <span className="tracking-widest uppercase font-semibold">
-              DỊCH VỤ THIẾT KẾ WEB TẠI MONA.Media
+              DỊCH VỤ THIẾT KẾ WEB TẠI KEDI.Media
             </span>
           </div>
         </FadeIn>
@@ -62,7 +62,7 @@ export default function Langdingwebcs1() {
             <Boderyelow>
               <button className="whitespace-nowrap px-6 py-3 md:px-10 md:py-4 bg-orange-500 hover:bg-orange-600 text-white font-black rounded-xl md:rounded-xl transition-all shadow-[0_10px_20px_rgba(249,115,22,0.3)] flex items-center justify-center gap-2 md:gap-3 uppercase text-xs md:text-base">
                 <Phone size={16} className="md:w-5 md:h-5" />
-                <span>Liên hệ với MONA</span>
+                <span>Liên hệ với KEDI</span>
               </button>
             </Boderyelow>
             <Boderyelow>

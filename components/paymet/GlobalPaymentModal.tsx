@@ -73,7 +73,7 @@ export default function GlobalPaymentModal({
                 </div>
                 <h3 className="text-2xl font-black text-white uppercase tracking-tighter mb-2">Giao dịch đang chờ</h3>
                 <p className="text-gray-400 text-sm max-w-xs italic font-light leading-relaxed">
-                  Hệ thống sẽ tự động kích hoạt sau khi chuyên viên MONA xác nhận thanh toán từ {customer.phone}.
+                  Hệ thống sẽ tự động kích hoạt sau khi chuyên viên KEDI xác nhận thanh toán từ {customer.phone}.
                 </p>
                 <button onClick={resetAndClose} className="mt-8 text-yellow-500 font-bold uppercase text-[10px] tracking-widest border-b border-yellow-500/50 pb-1">Đóng cửa sổ</button>
               </div>

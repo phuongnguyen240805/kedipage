@@ -1,35 +1,34 @@
 import type { ImageLoaderProps } from 'next/image';
 
-// Optional: set NEXT_PUBLIC_CF_IMAGES_BASE to your site origin (e.g. https://example.com)
-// If not set, the loader will fall back to the raw src (no transformation).
-const getBase = () =>
-  (
-    process.env.NEXT_PUBLIC_CF_IMAGES_BASE ||
-    process.env.NEXT_PUBLIC_SITE_URL ||
-    ''
-  ).replace(/\/$/, '');
+/**
+ * Keep this file only as a fallback helper for raw <img> tags.
+ * next.config no longer uses a custom loader: production Workers
+ * optimize via /_next/image + wrangler [images] binding = "IMAGES".
+ *
+ * /cdn-cgi/image does not reach the Worker on *.workers.dev, so that
+ * path cannot resize images for this deploy.
+ */
+const PASSTHROUGH = /\.(svg)(\?|$)/i;
 
-const buildTarget = (src: string, base: string) => {
-  if (!src) return '';
-  if (src.startsWith('http')) return src;
-  const trimmed = src.startsWith('/') ? src.slice(1) : src;
-  return base ? `${base}/${trimmed}` : `/${trimmed}`;
-};
+export function cfSrc(src: string, width = 1080, quality = 75): string {
+  if (!src) return src;
+  if (
+    src.startsWith('data:') ||
+    src.startsWith('blob:') ||
+    PASSTHROUGH.test(src)
+  ) {
+    return src;
+  }
+  return `/_next/image?url=${encodeURIComponent(src)}&w=${width}&q=${quality}`;
+}
 
 export default function cloudflareImageLoader({
   src,
   width,
   quality,
 }: ImageLoaderProps) {
-  const base = getBase();
-  const target = buildTarget(src, base);
-  const q = quality || 75;
-
-  if (base) {
-    // Cloudflare Images/Polish style transform via cdn-cgi/image
-    return `${base}/cdn-cgi/image/width=${width},quality=${q},format=auto/${target}`;
+  if (process.env.NODE_ENV !== 'production') {
+    return src;
   }
-
-  // Fallback: return original target without transformation
-  return target;
+  return cfSrc(src, width, quality || 75);
 }

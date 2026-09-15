@@ -63,7 +63,7 @@ const logos = [
     style: { bottom: "10%", left: "20%" },
     textLines: [
       "Chị rất thích làm việc",
-      "cùng team MONA, luôn",
+      "cùng team KEDI, luôn",
       "nhiệt tình và sáng tạo",
     ],
   },
@@ -143,7 +143,7 @@ export default function PortfolioCloudSection() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-3xl px-4 text-center z-20">
            <FadeIn>
             <p className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 leading-snug">
-              Khách hàng đã làm với MONA
+              Khách hàng đã làm với KEDI
             </p>
             <p className="text-xl sm:text-2xl md:text-3xl font-extrabold bg-pink-600 inline-block px-4 py-1 rounded mb-2 leading-snug whitespace-nowrap">
               thì không có chuyện ký 1 hợp đồng rồi rời đi
@@ -161,7 +161,7 @@ export default function PortfolioCloudSection() {
            <FadeIn>
           {/* Text chính */}
           <div className="mb-10 px-2">
-            <p className="text-lg font-bold mb-2">Khách hàng đã làm với MONA</p>
+            <p className="text-lg font-bold mb-2">Khách hàng đã làm với KEDI</p>
             <p className="text-lg font-extrabold bg-pink-600 inline-block px-3 py-1 rounded mb-2">
               thì không có chuyện ký 1 hợp đồng rồi rời đi
             </p>

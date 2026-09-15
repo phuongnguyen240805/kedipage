@@ -72,7 +72,7 @@ export const testimonialImages: TestimonialImages = {
     rightImage: {
       id: 'footer-right',
       src: '/assets/Picture.png',
-      alt: 'Người Mona',
+      alt: 'Người Kedi',
       width: 300,
       height: 300,
     },

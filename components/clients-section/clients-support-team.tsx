@@ -9,7 +9,7 @@ export default function ClientsSupportTeam() {
       <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
           <FadeIn>
              <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4">
-          MONA còn có một đội ngũ
+          KEDI còn có một đội ngũ
         </h2>
           </FadeIn>
          <FadeIn>

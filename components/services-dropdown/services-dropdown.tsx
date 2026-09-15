@@ -81,9 +81,9 @@ if (isSellingTab) {
           />
         </div>
         {/* 2. Khung nội dung dính liền với Tab */}
-        <div className="w-full dark:bg-[#1a1a1a] border border-border/50 dark:border-white/10 p-8 shadow-2xl -mt-[1px] rounded-b-xl">
+        <div className="w-full bg-kedi-navy border border-white/15 p-8 shadow-2xl -mt-[1px] rounded-b-xl">
           <p className="mb-6 italic text-gray-400 text-[13px] text-left">
-            MONA thiết kế sẵn lộ trình và giải pháp triển khai cho bạn
+            KEDI thiết kế sẵn lộ trình và giải pháp triển khai cho bạn
           </p>
           <div className="grid grid-cols-12 gap-8 text-left">
             {/* Cột trái - 9 cột */}

@@ -6,7 +6,7 @@ import { landingPageGD4Assets } from "./giaoduc";
 import FadeIn from "@/components/ui/Fadeoad";
 
 const LangdingPage4GD = () => {
-  const { logoMona, logoKha, trophy } = landingPageGD4Assets;
+  const { logoKedi, logoKha, trophy } = landingPageGD4Assets;
 
   return (
     <section className="w-full bg-black text-white font-sans min-h-[600px] flex items-center justify-center overflow-hidden py-16 relative">
@@ -67,7 +67,7 @@ const LangdingPage4GD = () => {
             <span className="absolute top-0 left-0 w-full h-full z-0 block select-none text-transparent [-webkit-text-stroke:1px_white]">
               HỆ THỐNG ĐƯỢC CHÍNH KHÁNH HÙNG CEO CỦA
               <Image
-                src={logoMona}
+                src={logoKedi}
                 alt=""
                 width={32}
                 height={32}
@@ -81,8 +81,8 @@ const LangdingPage4GD = () => {
             <span className="relative z-10 text-[#d1348f] block drop-shadow-sm">
               HỆ THỐNG ĐƯỢC CHÍNH KHÁNH HÙNG CEO CỦA
               <Image
-                src={logoMona}
-                alt="Mona"
+                src={logoKedi}
+                alt="Kedi"
                 width={32}
                 height={32}
                 className="inline-block h-[0.9em] w-auto align-middle mx-2 -mt-2"
@@ -133,7 +133,7 @@ const LangdingPage4GD = () => {
         <FadeIn>
           {/* --- DESCRIPTION --- */}
           <p className="text-white/80 text-base md:text-lg mb-4 font-medium">
-            Tính từ 2024 đến nay, hệ thống MONA ELearning đã có
+            Tính từ 2024 đến nay, hệ thống KEDI ELearning đã có
           </p>
 
           {/* --- TROPHY --- */}

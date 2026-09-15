@@ -6,7 +6,7 @@
     "clients": "Clients",
     "blog": "Blog",
     "activities": "Activities",
-    "partnership": "Partner with MONA"
+    "partnership": "Partner with KEDI"
 
   },
   "nav": {
@@ -44,22 +44,22 @@
     "titleLine2": "TOGETHER"
   },
   "footer": {
-    "aboutMonaTitle": "Về Mona",
+    "aboutKediTitle": "Về Kedi",
     "websiteSolutionsTitle": "Giải pháp Website",
     "onlineMarketingTitle": "Marketing Online",
     "hostingVpsServerTitle": "Hosting & VPS",
     "managementSolutionsTitle": "Giải pháp Quản lý",
     "mediaBrandingTitle": "Truyền thông & Thương hiệu",
-    "aboutMona": {
+    "aboutKedi": {
       "links": {
-        "intro": "Introduction to Mona",
+        "intro": "Introduction to Kedi",
         "successProjects": "Successful Projects",
-        "monaSuccess": "Mona's Success",
+        "kediSuccess": "Kedi's Success",
         "clients": "Clients",
         "careers": "Recruitment",
         "contact": "Contact",
         "blog": "Blog",
-        "newsletter": "MONA Newsletter"
+        "newsletter": "KEDI Newsletter"
       }
     },
     "websiteSolutions": {
@@ -134,35 +134,35 @@
       "address": "1073/23 Cach Mang Thang Tam St, Tan Son Nhi Ward, HCMC"
     },
     "companiesInfo": {
-      "monaMedia": {
-        "name": "MONA.Media",
-        "fullName": "Mona Media Co., Ltd",
+      "kediMedia": {
+        "name": "KEDI.Media",
+        "fullName": "Kedi Media Co., Ltd",
         "taxCode": "Tax code: 0313728397",
         "bankName": "Asia Commercial Bank (ACB)",
         "bankAccount": "Account number: 21634154"
       },
-      "monaSoftware": {
-        "name": "MONA.Software",
-        "fullName": "Mona Software JSC",
+      "kediSoftware": {
+        "name": "KEDI.Software",
+        "fullName": "Kedi Software JSC",
         "taxCode": "Tax code: 0316094442",
         "bankName": "Asia Commercial Bank (ACB)",
         "bankAccount": "Account number: 17268177"
       },
-      "monaHost": {
-        "name": "MONA.Host",
-        "fullName": "Mona Host Service Co., Ltd",
+      "kediHost": {
+        "name": "KEDI.Host",
+        "fullName": "Kedi Host Service Co., Ltd",
         "taxCode": "Tax code: 0317401755",
         "bankName": "Asia Commercial Bank (ACB)",
         "bankAccount": "Account number: 1900636648"
       }
     },
     "bottomLeftSection": {
-      "companyName": "MONA.Media",
+      "companyName": "KEDI.Media",
       "description": "Leading in web development and digital solutions."
     },
     "bottomRightSection": {
       "notification": "Registered with the Ministry of Industry and Trade",
-      "notificationSub": "All rights reserved © MONA.Media",
+      "notificationSub": "All rights reserved © KEDI.Media",
       "dmca": "DMCA Protected"
     }
   },
@@ -296,9 +296,9 @@
         "description": "Meets all operational needs for China-Vietnam logistics.",
         "href": "/nhtq/"
       },
-      "mona_skillhub": {
-        "key": "mona_skillhub",
-        "title": "MONA SKILLHUB",
+      "kedi_skillhub": {
+        "key": "kedi_skillhub",
+        "title": "KEDI SKILLHUB",
         "description": "Internal Training Software",
         "href": "/phan-mem-dao-tao-noi-bo/"
       },
@@ -360,9 +360,9 @@
         "icon": "🎓",
         "premium": false
       },
-      "mona_cloud_hosting": {
-        "key": "mona_cloud_hosting",
-        "title": "MONA Cloud Hosting",
+      "kedi_cloud_hosting": {
+        "key": "kedi_cloud_hosting",
+        "title": "KEDI Cloud Hosting",
         "description": "Powerful and comprehensively secure hosting.",
         "href": "/cloud-hosting",
         "icon": "☁️",
@@ -370,7 +370,7 @@
       },
       "linux_vps": {
         "key": "linux_vps",
-        "title": "MONA LINUX VPS",
+        "title": "KEDI LINUX VPS",
         "description": "VPS service with the Linux operating system.",
         "href": "/vps-linux",
         "icon": "🐧",
@@ -378,15 +378,15 @@
       },
       "windows_vps": {
         "key": "windows_vps",
-        "title": "MONA Windows VPS",
+        "title": "KEDI Windows VPS",
         "description": "VPS service with the Windows operating system.",
         "href": "/vps-windows",
         "icon": "🪟",
         "premium": false
       },
-      "mona_elearning": {
-        "key": "mona_elearning",
-        "title": "MONA E-Learning",
+      "kedi_elearning": {
+        "key": "kedi_elearning",
+        "title": "KEDI E-Learning",
         "description": "A full-featured website system to successfully sell online courses.",
         "href": "/thiet-ke-website-ban-khoa-hoc-online"
       },

@@ -76,18 +76,18 @@ export default function dichVuSeo() {
       <ServiceLanding
         title="ĐEM VỀ KHÁCH HÀNG TIỀM NĂNG CÓ SẴN NHU CẦU CHO BẠN"
         subtitle="SEO là hình thức Marketing giúp"
-        description="Đang được sử dụng bởi CEO Khánh Hùng tại KHA và hơn 200+ anh chị giảng viên khác tại mona"
+        description="Đang được sử dụng bởi CEO Khánh Hùng tại KHA và hơn 200+ anh chị giảng viên khác tại kedi"
         videoSrc="https://www.w3schools.com/html/mov_bbb.mp4"
         videoAlt="Video giới thiệu giải pháp SEO"
         mascotSrc="https://mona.media/template/assets/images/dvs/domain-panda.png"
-        mascotAlt="Mascot MONA Media"
+        mascotAlt="Mascot KEDI Media"
         features={[
           'Giao diện độc quyền',
           'Toàn quyền quản lý',
           'Đầy đủ tính năng',
           'Thao tác dễ dàng',
         ]}
-        brandText="MONA ∞ MONA.Media / Digital +*"
+        brandText="KEDI ∞ KEDI.Media / Digital +*"
         ctaButtonText="Kiểm tra sức khỏe Domain MIỄN PHÍ!"
         className="pb-0"
       />

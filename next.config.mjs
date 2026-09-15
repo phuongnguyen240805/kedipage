@@ -18,6 +18,10 @@ const nextConfig = {
     optimizePackageImports: ['lucide-react'],
   },
   webpack: (config, options) => {
+    // Webpack filesystem cache can fill the disk on small D: volumes (ENOSPC).
+    if (!options.dev) {
+      config.cache = false;
+    }
     if (!options.isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
@@ -27,8 +31,11 @@ const nextConfig = {
     return config;
   },
   images: {
-    loader: 'custom',
-    loaderFile: './lib/cloudflare-image-loader.ts',
+    // Default /_next/image optimizer. OpenNext resizes via the IMAGES binding
+    // (not /cdn-cgi/image, which does not run on workers.dev).
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     remotePatterns: [
       {
         protocol: 'https',
@@ -118,6 +125,10 @@ const nextConfig = {
       {
         source: '/hoat-dong',
         destination: '/activities',
+      },
+      {
+        source: '/hop-tac-lam-an-voi-kedi',
+        destination: '/partnership',
       },
       {
         source: '/hop-tac-lam-an-voi-mona',

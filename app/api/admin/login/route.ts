@@ -5,12 +5,12 @@ export async function POST(request: Request) {
   const body = await request.json();
   const { username, password } = body;
 
-  const ADMIN_USER = "admin_mona";
-  const ADMIN_PASS = "monamedia@2026"; 
+  const ADMIN_USER = "admin_kedi";
+  const ADMIN_PASS = "kedimedia@2026"; 
 
   if (username === ADMIN_USER && password === ADMIN_PASS) {
     // Thiết lập Cookie bảo mật tồn tại trong 24h
-    cookies().set('admin_token', 'mona_secret_token_2026', {
+    cookies().set('admin_token', 'kedi_secret_token_2026', {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'strict',

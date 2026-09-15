@@ -6,7 +6,7 @@
     "clients": "クライアント",
     "blog": "ブログ",
     "activities": "活動",
-    "partnership": "MONAとのパートナーシップ",
+    "partnership": "KEDIとのパートナーシップ",
     "digitalTransformation": "デジタルトランスフォーメーション"
   },
   "nav": {
@@ -44,22 +44,22 @@
     "titleLine2": "働きましょう"
   },
   "footer": {
-    "aboutMonaTitle": "Monaについて",
+    "aboutKediTitle": "Kediについて",
     "websiteSolutionsTitle": "ウェブサイトソリューション",
     "onlineMarketingTitle": "オンラインマーケティング",
     "hostingVpsServerTitle": "ホスティング & VPS",
     "managementSolutionsTitle": "管理ソリューション",
     "mediaBrandingTitle": "メディア & ブランディング",
-    "aboutMona": {
+    "aboutKedi": {
       "links": {
-        "intro": "Monaの紹介",
+        "intro": "Kediの紹介",
         "successProjects": "成功したプロジェクト",
-        "monaSuccess": "Monaの成功",
+        "kediSuccess": "Kediの成功",
         "clients": "クライアント",
         "careers": "採用情報",
         "contact": "お問い合わせ",
         "blog": "ブログ",
-        "newsletter": "MONAニュースレター"
+        "newsletter": "KEDIニュースレター"
       },
       "digitalTransformation": {
         "key": "digitalTransformation",
@@ -140,35 +140,35 @@
       "address": "1073/23 Cach Mang Thang Tam St, Tan Son Nhi Ward, HCMC"
     },
     "companiesInfo": {
-      "monaMedia": {
-        "name": "MONA.Media",
-        "fullName": "Mona Media有限会社",
+      "kediMedia": {
+        "name": "KEDI.Media",
+        "fullName": "Kedi Media有限会社",
         "taxCode": "税コード: 0313728397",
         "bankName": "アジア商業銀行 (ACB)",
         "bankAccount": "口座番号: 21634154"
       },
-      "monaSoftware": {
-        "name": "MONA.Software",
-        "fullName": "Mona Software株式会社",
+      "kediSoftware": {
+        "name": "KEDI.Software",
+        "fullName": "Kedi Software株式会社",
         "taxCode": "税コード: 0316094442",
         "bankName": "アジア商業銀行 (ACB)",
         "bankAccount": "口座番号: 17268177"
       },
-      "monaHost": {
-        "name": "MONA.Host",
-        "fullName": "Mona Host Service有限会社",
+      "kediHost": {
+        "name": "KEDI.Host",
+        "fullName": "Kedi Host Service有限会社",
         "taxCode": "税コード: 0317401755",
         "bankName": "アジア商業銀行 (ACB)",
         "bankAccount": "口座番号: 1900636648"
       }
     },
     "bottomLeftSection": {
-      "companyName": "MONA.Media",
+      "companyName": "KEDI.Media",
       "description": "ウェブ開発とデジタルソリューションのリーディングカンパニー"
     },
     "bottomRightSection": {
       "notification": "商工省に登録済み",
-      "notificationSub": "無断複写・転載を禁じます © MONA.Media",
+      "notificationSub": "無断複写・転載を禁じます © KEDI.Media",
       "dmca": "DMCAにより保護されています"
     }
   },
@@ -302,9 +302,9 @@
         "description": "中国-ベトナム間の物流業務ニーズに完全対応。",
         "href": "/nhtq/"
       },
-      "mona_skillhub": {
-        "key": "mona_skillhub",
-        "title": "MONA SKILLHUB",
+      "kedi_skillhub": {
+        "key": "kedi_skillhub",
+        "title": "KEDI SKILLHUB",
         "description": "社内研修ソフトウェア",
         "href": "/phan-mem-dao-tao-noi-bo/"
       },
@@ -366,9 +366,9 @@
         "icon": "🎓",
         "premium": false
       },
-      "mona_cloud_hosting": {
-        "key": "mona_cloud_hosting",
-        "title": "MONAクラウドホスティング",
+      "kedi_cloud_hosting": {
+        "key": "kedi_cloud_hosting",
+        "title": "KEDIクラウドホスティング",
         "description": "強力で包括的に安全なホスティング。",
         "href": "/cloud-hosting",
         "icon": "☁️",
@@ -376,7 +376,7 @@
       },
       "linux_vps": {
         "key": "linux_vps",
-        "title": "MONA LINUX VPS",
+        "title": "KEDI LINUX VPS",
         "description": "Linuxオペレーティングシステムを搭載したVPSサービス。",
         "href": "/vps-linux",
         "icon": "🐧",
@@ -384,15 +384,15 @@
       },
       "windows_vps": {
         "key": "windows_vps",
-        "title": "MONA Windows VPS",
+        "title": "KEDI Windows VPS",
         "description": "Windowsオペレーティングシステムを搭載したVPSサービス。",
         "href": "/vps-windows",
         "icon": "🪟",
         "premium": false
       },
-      "mona_elearning": {
-        "key": "mona_elearning",
-        "title": "MONA E-Learning",
+      "kedi_elearning": {
+        "key": "kedi_elearning",
+        "title": "KEDI E-Learning",
         "description": "オンラインコースを成功裏に販売するための全機能ウェブサイトシステム。",
         "href": "/thiet-ke-website-ban-khoa-hoc-online"
       },

@@ -51,7 +51,7 @@ export const landingPageGD3Screenshots: LandingImage[] = [
 ];
 
 export const landingPageGD4Assets = {
-  logoMona:
+  logoKedi:
     'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198765/logo-mona_dxpuvu.png',
   logoKha: 'https://mona.media/template/assets/images/about/logo-kha.png',
   trophy: 'https://mona.media/template/assets/images/about/ic-cup-home.png',

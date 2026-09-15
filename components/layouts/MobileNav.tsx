@@ -10,7 +10,8 @@ import ServiceItem from '../services-dropdown/service-item';
 import { serviceCategories } from '../services-dropdown/datas/services-data';
 import LanguageSwitcher from '@/components/layouts/LanguageSwitcher';
 import { Button } from '../ui/button';
-import { navigationConfig } from '../../data/navigation-config';
+import { isNavItemActive, navigationConfig } from '../../data/navigation-config';
+import { usePathname } from 'next/navigation';
 import Boderyelow from '../ui/boder-yelow';
 import BrandLogo from './brand-logo';
 
@@ -22,6 +23,7 @@ export default function MobileNav({
   onClose?: () => void;
 }) {
   const { t } = useTranslation();
+  const pathname = usePathname();
   const [activePanel, setActivePanel] = useState<'main' | 'services' | 'blog'>(
     'main'
   );
@@ -54,10 +56,10 @@ export default function MobileNav({
     title: string;
     onBack: () => void;
   }) => (
-    <div className="px-4 py-3 border-b border-gray-800 flex items-center justify-between sticky top-0 bg-[#071022] z-20">
+    <div className="px-4 py-3 border-b border-white/15 flex items-center justify-between sticky top-0 bg-kedi-navy z-20">
       <Button
         onClick={onBack}
-        className="bg-white/10 text-[#D4AF37] hover:bg-white/20 px-3 py-1.5 h-auto rounded-lg text-sm font-bold flex items-center gap-1 shadow-none"
+        className="bg-white/10 text-kedi-yellow hover:bg-white/20 px-3 py-1.5 h-auto rounded-lg text-sm font-bold flex items-center gap-1 shadow-none"
       >
         <ArrowLeft size={16} /> {t('common.back') || 'Quay lại'}
       </Button>
@@ -74,14 +76,14 @@ export default function MobileNav({
   );
 
   const content = (
-    <div className="fixed inset-0 z-[99999] md:hidden bg-[#071022] overflow-hidden font-sans">
+    <div className="fixed inset-0 z-[99999] lg:hidden bg-kedi-navy overflow-hidden font-sans">
       {/* 1. MÀN HÌNH CHÍNH */}
       <div
-        className={`absolute inset-0 bg-[#071022] transition-transform duration-300 z-10 ${activePanel === 'main' ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`absolute inset-0 bg-kedi-navy transition-transform duration-300 z-10 ${activePanel === 'main' ? 'translate-x-0' : '-translate-x-full'}`}
       >
-        <div className="px-4 py-3 flex items-center justify-between border-b border-gray-800">
-          <Link href="/" onClick={closeAll}>
-            <BrandLogo className="h-12" />
+        <div className="flex h-14 items-center justify-between border-b border-white/15 px-4">
+          <Link href="/" onClick={closeAll} className="flex items-center">
+            <BrandLogo className="h-8" />
           </Link>
           <div className="flex items-center gap-2">
             <LanguageSwitcher />
@@ -101,13 +103,21 @@ export default function MobileNav({
               : item.label || 'Link';
 
             // TĂNG PADDING Ở ĐÂY (py-4) ĐỂ KHÔNG BỊ XẸP
+            const isActive = isNavItemActive(item, pathname);
             const InnerContent = (
-              <div className="flex items-center justify-between w-full text-left py-4 px-1">
-                <span className="text-[15px] font-bold text-white uppercase tracking-wide leading-tight">
+              <div className="flex items-center justify-between w-full text-left py-4 px-3">
+                <span
+                  className={`text-[15px] font-bold uppercase tracking-wide leading-tight ${
+                    isActive ? 'text-kedi-navy' : 'text-white'
+                  }`}
+                >
                   {label}
                 </span>
                 {item.type !== 'link' && (
-                  <ChevronRight size={18} className="text-[#D4AF37] shrink-0" />
+                  <ChevronRight
+                    size={18}
+                    className={`shrink-0 ${isActive ? 'text-kedi-navy' : 'text-kedi-yellow'}`}
+                  />
                 )}
               </div>
             );
@@ -118,13 +128,17 @@ export default function MobileNav({
                   <Link
                     href={item.href || '#'}
                     onClick={closeAll}
-                    className="block w-full"
+                    className={`block w-full rounded-xl transition-colors duration-300 ${
+                      isActive ? 'bg-kedi-yellow' : 'hover:bg-kedi-yellow/10'
+                    }`}
                   >
                     {InnerContent}
                   </Link>
                 ) : (
                   <button
-                    className="w-full"
+                    className={`w-full rounded-xl transition-colors duration-300 ${
+                      isActive ? 'bg-kedi-yellow' : 'hover:bg-kedi-yellow/10'
+                    }`}
                     onClick={() =>
                       setActivePanel(
                         item.dropdownType === 'services' ? 'services' : 'blog'
@@ -142,7 +156,7 @@ export default function MobileNav({
 
       {/* 2. PANEL DỊCH VỤ */}
       <div
-        className={`absolute inset-0 bg-[#071022] transition-transform duration-300 z-20 overflow-y-auto ${activePanel === 'services' ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`absolute inset-0 bg-kedi-navy transition-transform duration-300 z-20 overflow-y-auto ${activePanel === 'services' ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <PanelHeader
           title={
@@ -170,7 +184,7 @@ export default function MobileNav({
                     </span>
                     <ChevronRight
                       size={18}
-                      className="text-[#D4AF37] shrink-0"
+                      className="text-kedi-yellow shrink-0"
                     />
                   </button>
                 </Boderyelow>
@@ -206,7 +220,7 @@ export default function MobileNav({
       </div>
       {/* 3. PANEL BLOG */}
       <div
-        className={`absolute inset-0 bg-[#071022] transition-transform duration-300 z-30 overflow-y-auto ${activePanel === 'blog' ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`absolute inset-0 bg-kedi-navy transition-transform duration-300 z-30 overflow-y-auto ${activePanel === 'blog' ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <PanelHeader
           title={t('nav.blog') || 'Blog'}
@@ -220,10 +234,18 @@ export default function MobileNav({
                 <Link
                   href={post.href}
                   onClick={closeAll}
-                  className="flex items-center justify-between w-full py-5 px-5 group active:bg-white/5 transition-colors"
+                  className={`flex items-center justify-between w-full py-5 px-5 group rounded-xl transition-colors duration-300 ${
+                    pathname === post.href
+                      ? 'bg-kedi-yellow'
+                      : 'hover:bg-kedi-yellow/10 active:bg-white/5'
+                  }`}
                 >
                   <div className="flex flex-col">
-                    <span className="text-[15px] font-bold text-white leading-tight">
+                    <span
+                      className={`text-[15px] font-bold leading-tight ${
+                        pathname === post.href ? 'text-kedi-navy' : 'text-white'
+                      }`}
+                    >
                       {post.labelKey ? t(`blog.${post.labelKey}`) : post.label}
                     </span>
                     {/* Nếu muốn thêm icon hoặc text phụ nhỏ ở đây */}

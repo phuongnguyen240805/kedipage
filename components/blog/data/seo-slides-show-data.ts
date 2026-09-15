@@ -5,7 +5,7 @@ const slides = [
     title: 'SEO là gì? Tất tần tật về SEO và Nghề SEO trong Marketing',
     tag: 'SEO',
     author: {
-      name: 'MONA.Media',
+      name: 'KEDI.Media',
       title: 'ADMIN',
       avatar:
         'https://mona.media/wp-content/uploads/2023/02/monasoftware_logo.svg',
@@ -40,7 +40,7 @@ const slides = [
     title: 'Tư vấn SEO cho doanh nghiệp, Giải pháp SEO hiệu quả',
     tag: 'Digital Marketing',
     author: {
-      name: 'MONA.Media',
+      name: 'KEDI.Media',
       title: 'ADMIN',
       avatar:
         'https://mona.media/wp-content/uploads/2023/02/monasoftware_logo.svg',
@@ -58,7 +58,7 @@ const slides = [
       'Case Study là gì? Cách sử dụng Case Study trong chiến lược Marketing',
     tag: 'Kiến thức kinh doanh',
     author: {
-      name: 'MONA.Media',
+      name: 'KEDI.Media',
       title: 'ADMIN',
       avatar:
         'https://mona.media/wp-content/uploads/2023/02/monasoftware_logo.svg',

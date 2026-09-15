@@ -44,7 +44,7 @@ export const featuredShow: Show[] = [
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
   },
   {
-    title: 'Hackathon MONA 2024',
+    title: 'Hackathon KEDI 2024',
     image:
       'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765269188/1080x1920-1-576x1024_nwplhj.png',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',

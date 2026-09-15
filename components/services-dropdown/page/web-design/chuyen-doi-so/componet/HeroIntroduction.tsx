@@ -22,7 +22,7 @@ export default function HeroIntroduction() {
               <span className="text-orange-500">giải pháp thiết kế riêng</span>
             </h1>
             <p className="max-w-4xl mx-auto text-zinc-400 text-lg md:text-xl leading-relaxed">
-              80 Module cốt lõi và hơn 26.000 ứng dụng tùy chỉnh, Mona đã dần
+              80 Module cốt lõi và hơn 26.000 ứng dụng tùy chỉnh, Kedi đã dần
               thế chỗ hầu hết phần mềm quản trị doanh nghiệp riêng lẻ, giúp
               doanh nghiệp gia tăng doanh số bền vững trong dài hạn.
             </p>
@@ -49,7 +49,7 @@ export default function HeroIntroduction() {
                 Về chúng tôi
               </h2>
               <p className="text-zinc-400 leading-relaxed text-lg border-l-4 border-orange-500 pl-6">
-                Hệ thống phần mềm quản trị doanh nghiệp Mona ra đời với mục
+                Hệ thống phần mềm quản trị doanh nghiệp Kedi ra đời với mục
                 đích giúp các doanh nghiệp ứng dụng CNTT để quản trị hiệu quả,
                 nâng cao trình độ nhân sự và gia tăng lợi nhuận.
               </p>

@@ -1,19 +1,19 @@
 export const affiliateTexts = {
   invitation: {
     title: 'LỜI MỜI HỢP TÁC',
-    subtitle: 'LÀM ĂN CÙNG MONA',
+    subtitle: 'LÀM ĂN CÙNG KEDI',
     tagline: 'Trở thành bạn thân - Cùng nhau kiếm tiền',
-    videoTitle: 'Lời tri ân của Mona',
+    videoTitle: 'Lời tri ân của Kedi',
   },
   commission: {
     heading: 'Với mức hoa hồng LÊN TỚI',
     percent: '40%',
-    negotiation: 'MONA và anh chị thoải mái thương lượng để cùng win-win',
-    winwin: 'MONA luôn có tinh thần deal để ĐÔI BÊN CÙNG CÓ LỢI',
-    offer: 'offer từ MONA cũng đủ đầy để thể hiện thành ý với anh chị',
+    negotiation: 'KEDI và anh chị thoải mái thương lượng để cùng win-win',
+    winwin: 'KEDI luôn có tinh thần deal để ĐÔI BÊN CÙNG CÓ LỢI',
+    offer: 'offer từ KEDI cũng đủ đầy để thể hiện thành ý với anh chị',
     notes: {
       note1:
-        'Anh chị chỉ cần giới thiệu khách hàng cho MONA, mọi thứ từ tư vấn, chốt sale đến triển khai dự án đã có MONA lo',
+        'Anh chị chỉ cần giới thiệu khách hàng cho KEDI, mọi thứ từ tư vấn, chốt sale đến triển khai dự án đã có KEDI lo',
       note2:
         'Mạng lưới càng lớn - Thu nhập càng khủng - Không giới hạn mức trần',
       note3:
@@ -24,7 +24,7 @@ export const affiliateTexts = {
   },
   commissionPolicy: {
     titleImageAlt: 'Chính sách hoa hồng',
-    intro: `Để thể hiện rõ thành ý của MONA trong việc hợp tác cùng anh chị, mức hoa hồng cực hấp dẫn mà anh chị nhận được khi giới thiệu khách hàng cho MONA chính là hoa hồng NET dựa trên hợp đồng`,
+    intro: `Để thể hiện rõ thành ý của KEDI trong việc hợp tác cùng anh chị, mức hoa hồng cực hấp dẫn mà anh chị nhận được khi giới thiệu khách hàng cho KEDI chính là hoa hồng NET dựa trên hợp đồng`,
     title: 'HOA HỒNG GIỚI THIỆU',
     subtitle:
       'Tỷ lệ hoa hồng tăng dần từ 5% đến 10%, tùy thuộc vào tổng tích lũy hoa hồng (TLHH) của anh chị.',
@@ -37,22 +37,22 @@ export const affiliateTexts = {
         [
           'Bậc cao hơn',
           '???',
-          'Tuỳ theo mức TLHH và chính sách đặc biệt từ MONA',
+          'Tuỳ theo mức TLHH và chính sách đặc biệt từ KEDI',
         ],
       ],
     },
     note: {
       fixedRate:
-        'Một số sản phẩm/dịch vụ của MONA có mức hoa hồng cố định cao hơn và được áp dụng ngay từ đầu, không cần tích lũy cấp bậc.',
+        'Một số sản phẩm/dịch vụ của KEDI có mức hoa hồng cố định cao hơn và được áp dụng ngay từ đầu, không cần tích lũy cấp bậc.',
       example:
         'Ví dụ: SaaS E-learning: Hoa hồng 15% ngay từ đầu. Doanh thu từ các sản phẩm/dịch vụ này vẫn được tính vào TLHH chung để xét các cấp bậc hoa hồng cho các sản phẩm khác.',
     },
   },
   lifetimeCommission: {
     title: 'Đặc biệt',
-    policy: `MONA áp dụng chính sách hoa hồng tái tục trọn đời: nếu khách hàng tiếp tục sử dụng dịch vụ hoặc mở rộng thêm sản phẩm/dịch vụ khác, MONA vẫn gửi hoa hồng cho anh chị như một lời cảm ơn.`,
+    policy: `KEDI áp dụng chính sách hoa hồng tái tục trọn đời: nếu khách hàng tiếp tục sử dụng dịch vụ hoặc mở rộng thêm sản phẩm/dịch vụ khác, KEDI vẫn gửi hoa hồng cho anh chị như một lời cảm ơn.`,
     example:
-      'Ví dụ: Khi khách hàng mà anh chị giới thiệu đã xong hợp đồng bên MONA nhưng sang năm lại làm thêm dịch vụ “Thiết kế Website”, bên em sẽ gửi ngay hoa hồng của hợp đồng này đến anh chị.',
+      'Ví dụ: Khi khách hàng mà anh chị giới thiệu đã xong hợp đồng bên KEDI nhưng sang năm lại làm thêm dịch vụ “Thiết kế Website”, bên em sẽ gửi ngay hoa hồng của hợp đồng này đến anh chị.',
   },
   supportDeal: {
     title: 'HOA HỒNG HỖ TRỢ DEAL KHÁCH - ĐỒNG HÀNH',
@@ -67,7 +67,7 @@ export const affiliateTexts = {
       'Anh/chị giới thiệu một khách hàng cần làm website với ngân sách 100 triệu',
     options: [
       {
-        title: 'Nếu chỉ giới thiệu khách, MONA lo hết từ A-Z',
+        title: 'Nếu chỉ giới thiệu khách, KEDI lo hết từ A-Z',
         description:
           '➜ Anh/chị nhận hoa hồng theo bậc (10% - hơn) dựa trên tổng hoa hồng tích lũy',
       },

@@ -23,7 +23,7 @@ type FilterOption = {
 // Constants - moved outside component
 const FILTER_OPTIONS: readonly FilterOption[] = [
   {
-    label: { count: "500+", title: "Dự án", subtitle: "MONA's Buddy" },
+    label: { count: "500+", title: "Dự án", subtitle: "KEDI's Buddy" },
     value: "buddy",
     color: "from-orange-400 to-pink-500",
   },

@@ -51,7 +51,7 @@ export default function LandingPage7GD() {
             </h1>
             <p className="text-gray-300 text-sm md:text-base mb-8">
               Sản phẩm dành riêng cho khách hàng đặt làm tại website E-Learning
-              tại MONA - Chúng tôi không bán lẻ
+              tại KEDI - Chúng tôi không bán lẻ
             </p>
           </FadeIn>
 
@@ -66,13 +66,13 @@ export default function LandingPage7GD() {
               <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-cyan-400 translate-x-1 translate-y-1"></div>
               <FadeIn>
                 <p className="text-white text-base md:text-lg leading-relaxed">
-                  MONA sau nhiều năm nghiên cứu, chúng tôi đã thành công phát
+                  KEDI sau nhiều năm nghiên cứu, chúng tôi đã thành công phát
                   triển server chứa video đi kèm với{" "}
                   <span className="text-cyan-400 font-semibold">
                     tính năng chặn download 100%
                   </span>{" "}
                   dành riêng cho khách hàng thiết kế website học trực tuyến tại
-                  MONA
+                  KEDI
                 </p>
               </FadeIn>
 
@@ -99,7 +99,7 @@ export default function LandingPage7GD() {
             <div className="relative z-10 flex items-center gap-2 px-4 bg-[#0f0529]">
               <ShieldCheck className="text-blue-500 w-6 h-6" />
               <span className="font-bold text-sm md:text-base">
-                MONA áp dụng những công nghệ hiện đại để{" "}
+                KEDI áp dụng những công nghệ hiện đại để{" "}
                 <span className="uppercase">
                   BẢO VỆ VIDEO CỦA BẠN AN TOÀN TUYỆT ĐỐI
                 </span>
@@ -112,7 +112,7 @@ export default function LandingPage7GD() {
           {/* Cột trái: Tiêu đề lớn */}
           <div className="lg:col-span-1 text-center lg:text-left">
             <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-              <span className="text-cyan-400">MONA.Host</span> <br />
+              <span className="text-cyan-400">KEDI.Host</span> <br />
               sẽ giúp cho <br />
               website của bạn
             </h2>

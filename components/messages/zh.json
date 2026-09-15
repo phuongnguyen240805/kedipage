@@ -6,7 +6,7 @@
     "clients": "客户",
     "blog": "博客",
     "activities": "活动",
-    "partnership": "与MONA合作",
+    "partnership": "与KEDI合作",
     "digitalTransformation": "数字化转型"
   },
   "nav": {
@@ -44,22 +44,22 @@
     "titleLine2": "携手合作"
   },
   "footer": {
-    "aboutMonaTitle": "关于 Mona",
+    "aboutKediTitle": "关于 Kedi",
     "websiteSolutionsTitle": "网站解决方案",
     "onlineMarketingTitle": "在线营销",
     "hostingVpsServerTitle": "主机 & VPS",
     "managementSolutionsTitle": "管理解决方案",
     "mediaBrandingTitle": "媒体与品牌",
-    "aboutMona": {
+    "aboutKedi": {
       "links": {
-        "intro": "Mona 介绍",
+        "intro": "Kedi 介绍",
         "successProjects": "成功项目",
-        "monaSuccess": "Mona 的成功",
+        "kediSuccess": "Kedi 的成功",
         "clients": "客户",
         "careers": "招聘",
         "contact": "联系我们",
         "blog": "博客",
-        "newsletter": "MONA 简报"
+        "newsletter": "KEDI 简报"
       },
       "digitalTransformation": {
         "key": "digitalTransformation",
@@ -140,35 +140,35 @@
       "address": "胡志明市新山二坊八月革命街1073/23号"
     },
     "companiesInfo": {
-      "monaMedia": {
-        "name": "MONA.Media",
-        "fullName": "Mona Media 有限公司",
+      "kediMedia": {
+        "name": "KEDI.Media",
+        "fullName": "Kedi Media 有限公司",
         "taxCode": "税号：0313728397",
         "bankName": "亚洲商业银行 (ACB)",
         "bankAccount": "账号：21634154"
       },
-      "monaSoftware": {
-        "name": "MONA.Software",
-        "fullName": "Mona 软件股份公司",
+      "kediSoftware": {
+        "name": "KEDI.Software",
+        "fullName": "Kedi 软件股份公司",
         "taxCode": "税号：0316094442",
         "bankName": "亚洲商业银行 (ACB)",
         "bankAccount": "账号：17268177"
       },
-      "monaHost": {
-        "name": "MONA.Host",
-        "fullName": "Mona Host 服务有限公司",
+      "kediHost": {
+        "name": "KEDI.Host",
+        "fullName": "Kedi Host 服务有限公司",
         "taxCode": "税号：0317401755",
         "bankName": "亚洲商业银行 (ACB)",
         "bankAccount": "账号：1900636648"
       }
     },
     "bottomLeftSection": {
-      "companyName": "MONA.Media",
+      "companyName": "KEDI.Media",
       "description": "网站开发和数字解决方案的领导者。"
     },
     "bottomRightSection": {
       "notification": "已在工贸部注册",
-      "notificationSub": "版权所有 © MONA.Media",
+      "notificationSub": "版权所有 © KEDI.Media",
       "dmca": "受 DMCA 保护"
     }
   },
@@ -302,9 +302,9 @@
         "description": "满足中越物流的所有运营需求。",
         "href": "/nhtq/"
       },
-      "mona_skillhub": {
-        "key": "mona_skillhub",
-        "title": "MONA技能中心",
+      "kedi_skillhub": {
+        "key": "kedi_skillhub",
+        "title": "KEDI技能中心",
         "description": "内部培训软件",
         "href": "/phan-mem-dao-tao-noi-bo/"
       },
@@ -366,9 +366,9 @@
         "icon": "🎓",
         "premium": false
       },
-      "mona_cloud_hosting": {
-        "key": "mona_cloud_hosting",
-        "title": "MONA云主机",
+      "kedi_cloud_hosting": {
+        "key": "kedi_cloud_hosting",
+        "title": "KEDI云主机",
         "description": "功能强大且全面安全的主机。",
         "href": "/cloud-hosting",
         "icon": "☁️",
@@ -376,7 +376,7 @@
       },
       "linux_vps": {
         "key": "linux_vps",
-        "title": "MONA LINUX VPS",
+        "title": "KEDI LINUX VPS",
         "description": "使用Linux操作系统的VPS服务。",
         "href": "/vps-linux",
         "icon": "🐧",
@@ -384,15 +384,15 @@
       },
       "windows_vps": {
         "key": "windows_vps",
-        "title": "MONA Windows VPS",
+        "title": "KEDI Windows VPS",
         "description": "使用Windows操作系统的VPS服务。",
         "href": "/vps-windows",
         "icon": "🪟",
         "premium": false
       },
-      "mona_elearning": {
-        "key": "mona_elearning",
-        "title": "MONA电子学习",
+      "kedi_elearning": {
+        "key": "kedi_elearning",
+        "title": "KEDI电子学习",
         "description": "一个功能齐全的网站系统，助您成功销售在线课程。",
         "href": "/thiet-ke-website-ban-khoa-hoc-online"
       },

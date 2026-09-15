@@ -54,7 +54,7 @@ const MOCK_PROJECTS: any = {
     `,
 
     solutionTitle:
-      "Bài toán đặt ra cho MONA là phải giải quyết triệt để nhằm gia tăng doanh số",
+      "Bài toán đặt ra cho KEDI là phải giải quyết triệt để nhằm gia tăng doanh số",
     solutionContent: `
       <ul>
         <li>Gia tăng doanh số bán hàng thông qua luồng UX tối ưu và rút ngắn các bước đặt hàng</li>
@@ -89,7 +89,7 @@ const MOCK_PROJECTS: any = {
     },
 
     feedback:
-      "Sản phẩm hoàn thiện vượt xa mong đợi. Quy trình làm việc chuyên nghiệp, đội ngũ MONA hỗ trợ cực kỳ nhiệt tình ngay cả sau khi bàn giao.",
+      "Sản phẩm hoàn thiện vượt xa mong đợi. Quy trình làm việc chuyên nghiệp, đội ngũ KEDI hỗ trợ cực kỳ nhiệt tình ngay cả sau khi bàn giao.",
     customerName: "Mr. Nguyễn - CEO WOA Network",
   },
 };
@@ -233,7 +233,7 @@ export default function ProjectDetail({
               <Boderyelow>
                 <div className="p-10 bg-white h-full rounded-2xl">
                   <div className="flex items-center gap-3 text-green-600 mb-6 font-black uppercase tracking-tighter text-sm">
-                    <Lightbulb size={22} /> Giải pháp từ MONA
+                    <Lightbulb size={22} /> Giải pháp từ KEDI
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-6 leading-tight">
                     {data.solutionTitle}
@@ -244,7 +244,7 @@ export default function ProjectDetail({
                   />
                   <div className="mt-8 p-6 bg-blue-50/50 rounded-xl border border-blue-100 border-dashed">
                     <p className="text-blue-800 font-bold italic text-sm">
-                      💡 MONA tối ưu lại toàn bộ hành trình trải nghiệm người dùng
+                      💡 KEDI tối ưu lại toàn bộ hành trình trải nghiệm người dùng
                       để đạt hiệu quả chuyển đổi cao nhất.
                     </p>
                   </div>
@@ -278,7 +278,7 @@ export default function ProjectDetail({
               <p className="text-gray-600 leading-relaxed italic">
                 Việc tối ưu trải nghiệm người dùng đa thiết bị, đặc biệt là trên
                 di động là điều cần thiết để tăng trưởng doanh thu vững mạnh cho
-                doanh nghiệp. Tại MONA, chúng tôi đảm bảo website của bạn luôn
+                doanh nghiệp. Tại KEDI, chúng tôi đảm bảo website của bạn luôn
                 mượt mà trên mọi kích thước màn hình.
               </p>
             </div>
@@ -335,7 +335,7 @@ export default function ProjectDetail({
               <h2 className="text-3xl md:text-5xl font-black text-gray-800 leading-tight">
                 Đánh giá dự án dựa trên thông số <br />
                 <span className="text-purple-700 underline decoration-purple-200">
-                  MONA tự thống kê
+                  KEDI tự thống kê
                 </span>{" "}
                 <br />
                 và <span className="text-purple-500/60 italic">

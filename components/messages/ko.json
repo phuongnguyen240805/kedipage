@@ -6,7 +6,7 @@
     "clients": "고객",
     "blog": "블로그",
     "activities": "활동",
-    "partnership": "MONA와 파트너십",
+    "partnership": "KEDI와 파트너십",
     "digitalTransformation": "디지털 전환"
   },
   "nav": {
@@ -44,22 +44,22 @@
     "titleLine2": "일합시다"
   },
   "footer": {
-    "aboutMonaTitle": "Mona 정보",
+    "aboutKediTitle": "Kedi 정보",
     "websiteSolutionsTitle": "웹사이트 솔루션",
     "onlineMarketingTitle": "온라인 마케팅",
     "hostingVpsServerTitle": "호스팅 & VPS",
     "managementSolutionsTitle": "관리 솔루션",
     "mediaBrandingTitle": "미디어 & 브랜딩",
-    "aboutMona": {
+    "aboutKedi": {
       "links": {
-        "intro": "Mona 소개",
+        "intro": "Kedi 소개",
         "successProjects": "성공적인 프로젝트",
-        "monaSuccess": "Mona의 성공",
+        "kediSuccess": "Kedi의 성공",
         "clients": "고객",
         "careers": "채용",
         "contact": "문의",
         "blog": "블로그",
-        "newsletter": "MONA 뉴스레터"
+        "newsletter": "KEDI 뉴스레터"
       },
       "digitalTransformation": {
         "key": "digitalTransformation",
@@ -140,22 +140,22 @@
       "address": "호치민시 떤선니동 깍망탕땀 거리 1073/23"
     },
     "companiesInfo": {
-      "monaMedia": {
-        "name": "MONA.Media",
+      "kediMedia": {
+        "name": "KEDI.Media",
         "fullName": "모나 미디어 유한회사",
         "taxCode": "세금 코드: 0313728397",
         "bankName": "아시아 상업 은행 (ACB)",
         "bankAccount": "계좌 번호: 21634154"
       },
-      "monaSoftware": {
-        "name": "MONA.Software",
+      "kediSoftware": {
+        "name": "KEDI.Software",
         "fullName": "모나 소프트웨어 주식회사",
         "taxCode": "세금 코드: 0316094442",
         "bankName": "아시아 상업 은행 (ACB)",
         "bankAccount": "계좌 번호: 17268177"
       },
-      "monaHost": {
-        "name": "MONA.Host",
+      "kediHost": {
+        "name": "KEDI.Host",
         "fullName": "모나 호스트 서비스 유한회사",
         "taxCode": "세금 코드: 0317401755",
         "bankName": "아시아 상업 은행 (ACB)",
@@ -163,12 +163,12 @@
       }
     },
     "bottomLeftSection": {
-      "companyName": "MONA.Media",
+      "companyName": "KEDI.Media",
       "description": "웹 개발 및 디지털 솔루션 분야의 선두 주자입니다."
     },
     "bottomRightSection": {
       "notification": "산업무역부에 등록됨",
-      "notificationSub": "모든 권리 보유 © MONA.Media",
+      "notificationSub": "모든 권리 보유 © KEDI.Media",
       "dmca": "DMCA 보호됨"
     }
   },
@@ -302,8 +302,8 @@
         "description": "중국-베트남 물류의 모든 운영 요구 사항을 충족합니다.",
         "href": "/nhtq/"
       },
-      "mona_skillhub": {
-        "key": "mona_skillhub",
+      "kedi_skillhub": {
+        "key": "kedi_skillhub",
         "title": "모나 스킬허브",
         "description": "내부 교육 소프트웨어",
         "href": "/phan-mem-dao-tao-noi-bo/"
@@ -366,8 +366,8 @@
         "icon": "🎓",
         "premium": false
       },
-      "mona_cloud_hosting": {
-        "key": "mona_cloud_hosting",
+      "kedi_cloud_hosting": {
+        "key": "kedi_cloud_hosting",
         "title": "모나 클라우드 호스팅",
         "description": "강력하고 포괄적으로 안전한 호스팅.",
         "href": "/cloud-hosting",
@@ -390,8 +390,8 @@
         "icon": "🪟",
         "premium": false
       },
-      "mona_elearning": {
-        "key": "mona_elearning",
+      "kedi_elearning": {
+        "key": "kedi_elearning",
         "title": "모나 이러닝",
         "description": "온라인 강의를 성공적으로 판매하기 위한 모든 기능을 갖춘 웹사이트 시스템.",
         "href": "/thiet-ke-website-ban-khoa-hoc-online"

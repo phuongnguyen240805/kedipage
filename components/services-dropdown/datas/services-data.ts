@@ -213,8 +213,8 @@ export const serviceCategories: ServiceCategories = {
       },
       {
         href: '/phan-mem-dao-tao-noi-bo/',
-        titleKey: 'services.items.mona_skillhub.title',
-        descriptionKey: 'services.items.mona_skillhub.description',
+        titleKey: 'services.items.kedi_skillhub.title',
+        descriptionKey: 'services.items.kedi_skillhub.description',
         cloudinaryId: 'mega-menu-new-content-13_zyhkmv',
         layoutType: 'card-image-top',
       },
@@ -246,8 +246,8 @@ export const serviceCategories: ServiceCategories = {
       },
       {
         href: '/phan-mem-dao-tao-noi-bo/',
-        titleKey: 'services.items.mona_skillhub.title',
-        descriptionKey: 'services.items.mona_skillhub.description',
+        titleKey: 'services.items.kedi_skillhub.title',
+        descriptionKey: 'services.items.kedi_skillhub.description',
         cloudinaryId: 'mega-menu-new-content-13_zyhkmv',
       },
     ],
@@ -272,8 +272,8 @@ export const serviceCategories: ServiceCategories = {
       },
       {
         href: '/phan-mem-dao-tao-noi-bo/',
-        titleKey: 'services.items.mona_skillhub.title',
-        descriptionKey: 'services.items.mona_skillhub.description',
+        titleKey: 'services.items.kedi_skillhub.title',
+        descriptionKey: 'services.items.kedi_skillhub.description',
         cloudinaryId: 'mega-menu-new-content-13_zyhkmv',
       },
       {
@@ -310,8 +310,8 @@ export const serviceCategories: ServiceCategories = {
       },
       {
         href: '/cloud-hosting',
-        titleKey: 'services.items.mona_cloud_hosting.title',
-        descriptionKey: 'services.items.mona_cloud_hosting.description',
+        titleKey: 'services.items.kedi_cloud_hosting.title',
+        descriptionKey: 'services.items.kedi_cloud_hosting.description',
         icon: '☁️',
         premium: true,
         layoutType: 'compact-list',
@@ -334,8 +334,8 @@ export const serviceCategories: ServiceCategories = {
       },
       {
         href: '/cloud-hosting',
-        titleKey: 'services.items.mona_cloud_hosting.title',
-        descriptionKey: 'services.items.mona_cloud_hosting.description',
+        titleKey: 'services.items.kedi_cloud_hosting.title',
+        descriptionKey: 'services.items.kedi_cloud_hosting.description',
         icon: '☁️',
         premium: true,
         layoutType: 'compact-list',
@@ -384,8 +384,8 @@ export const serviceCategories: ServiceCategories = {
     services: [
       {
         href: '/thiet-ke-website-ban-khoa-hoc-online',
-        titleKey: 'services.items.mona_elearning.title',
-        descriptionKey: 'services.items.mona_elearning.description',
+        titleKey: 'services.items.kedi_elearning.title',
+        descriptionKey: 'services.items.kedi_elearning.description',
         cloudinaryId: 'mega-menu-new-content-19_odjina',
       },
       {

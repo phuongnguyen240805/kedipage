@@ -12,8 +12,8 @@ const BlogPost = [
       sizes: '(max-width: 1281px) 100vw, 1281px',
     },
     author: {
-      name: 'MONA.Media',
-      url: '/author/monamedia/',
+      name: 'KEDI.Media',
+      url: '/author/kedimedia/',
       avatar:
         'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765268033/agency-la-gi_b924gf.png',
     },
@@ -29,8 +29,8 @@ const BlogPost = [
       height: 960,
     },
     author: {
-      name: 'MONA.Media',
-      url: '/author/monamedia/',
+      name: 'KEDI.Media',
+      url: '/author/kedimedia/',
       avatar:
         'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765268033/agency-la-gi_b924gf.png',
     },
@@ -46,8 +46,8 @@ const BlogPost = [
       height: 960,
     },
     author: {
-      name: 'MONA.Media',
-      url: '/author/monamedia/',
+      name: 'KEDI.Media',
+      url: '/author/kedimedia/',
       avatar:
         'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765268033/agency-la-gi_b924gf.png',
     },
@@ -63,8 +63,8 @@ const BlogPost = [
       height: 960,
     },
     author: {
-      name: 'MONA.Media',
-      url: '/author/monamedia/',
+      name: 'KEDI.Media',
+      url: '/author/kedimedia/',
       avatar:
         'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765268033/agency-la-gi_b924gf.png',
     },
@@ -80,8 +80,8 @@ const BlogPost = [
       height: 960,
     },
     author: {
-      name: 'MONA.Media',
-      url: '/author/monamedia/',
+      name: 'KEDI.Media',
+      url: '/author/kedimedia/',
       avatar:
         'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765268033/agency-la-gi_b924gf.png',
     },
@@ -97,8 +97,8 @@ const BlogPost = [
       height: 960,
     },
     author: {
-      name: 'MONA.Media',
-      url: '/author/monamedia/',
+      name: 'KEDI.Media',
+      url: '/author/kedimedia/',
       avatar:
         'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765268033/agency-la-gi_b924gf.png',
     },
@@ -114,8 +114,8 @@ const BlogPost = [
       height: 960,
     },
     author: {
-      name: 'MONA.Media',
-      url: '/author/monamedia/',
+      name: 'KEDI.Media',
+      url: '/author/kedimedia/',
       avatar:
         'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765268033/agency-la-gi_b924gf.png',
     },
@@ -131,8 +131,8 @@ const BlogPost = [
       height: 960,
     },
     author: {
-      name: 'MONA.Media',
-      url: '/author/monamedia/',
+      name: 'KEDI.Media',
+      url: '/author/kedimedia/',
       avatar:
         'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765268033/agency-la-gi_b924gf.png',
     },

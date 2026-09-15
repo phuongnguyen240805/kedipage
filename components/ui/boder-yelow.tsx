@@ -13,17 +13,17 @@ export default function Boderyelow({ children, className = "" }: GoldenFrameProp
           relative
           h-full
           rounded-xl
-          border border-[#D4AF37]/50
+          border border-kedi-yellow/50
           
           /* Shadow mặc định - Đã xóa inset để không lấn vào trong */
-          shadow-[0_0_15px_rgba(212,175,55,0.3)]
+          shadow-[0_0_15px_rgba(255,198,41,0.3)]
           
           transition-all duration-500
           
           /* HIỆU ỨNG HOVER */
-          hover:border-[#D4AF37] 
+          hover:border-kedi-yellow 
           /* Tăng cường độ sáng tỏa ra bên ngoài */
-          hover:shadow-[0_0_30px_rgba(212,175,55,0.5),0_0_10px_rgba(212,175,55,0.3)]
+          hover:shadow-[0_0_30px_rgba(255,198,41,0.5),0_0_10px_rgba(255,198,41,0.3)]
           
           /* KHÔNG DÙNG brightness ở đây để bảo vệ nội dung bên trong */
         `}>

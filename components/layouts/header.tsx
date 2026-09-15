@@ -2,7 +2,7 @@
 import LanguageSwitcher from "@/components/layouts/LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation"; // Thêm usePathname
+import { useRouter, usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import BrandLogo from "@/components/layouts/brand-logo";
 import {
@@ -12,46 +12,62 @@ import {
   NavigationMenuTrigger,
   NavigationMenuContent,
 } from "@/components/ui/navigation-menu";
-import { useState, useCallback, useMemo, useEffect } from "react";
-import { navigationConfig } from "../../data/navigation-config";
+import { useState, useCallback, useMemo, useEffect, useRef } from "react";
+import { isNavItemActive, navigationConfig } from "../../data/navigation-config";
 import NavLink from "./nav-link";
 import BlogDropdown from "./blog-dropdown";
 import SearchDropdown from "./search-dropdown";
 import HostlineSection from "./hostline-section";
 import { FiMenu, FiX } from "react-icons/fi";
-import { Button } from "../ui/button";
 import MobileNav from "@/components/layouts/MobileNav";
 import ServicesDropdown from "../services-dropdown/services-dropdown";
+
+const navTextClass =
+  "text-[13px] lg:text-[14px] font-medium uppercase tracking-[0.08em] whitespace-nowrap px-0 py-0 h-auto bg-transparent text-current transition-colors duration-300";
 
 const Header = ({ className }: { className?: string }) => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isCompact, setIsCompact] = useState(false);
+  const lastScrollY = useRef(0);
+  const mobileMenuOpenRef = useRef(false);
 
   const router = useRouter();
-  const pathname = usePathname(); // Xác định trang hiện tại
+  const pathname = usePathname();
   const { t } = useTranslation();
 
-  const controlHeader = useCallback(() => {
-    const currentScrollY = window.scrollY;
-    if (currentScrollY < 10) {
-      setIsVisible(true);
-    } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
-      setIsVisible(false);
-    } else if (currentScrollY < lastScrollY) {
-      setIsVisible(true);
-    }
-    setLastScrollY(currentScrollY);
-  }, [lastScrollY]);
+  mobileMenuOpenRef.current = isMobileMenuOpen;
 
   useEffect(() => {
-    window.addEventListener("scroll", controlHeader);
-    return () => window.removeEventListener("scroll", controlHeader);
-  }, [controlHeader]);
+    const onScroll = () => {
+      const y = window.scrollY;
+      const last = lastScrollY.current;
+      const delta = y - last;
+
+      setIsCompact(y > 16);
+
+      if (mobileMenuOpenRef.current || y < 16) {
+        setIsVisible(true);
+      } else if (delta > 8 && y > 72) {
+        setIsVisible(false);
+      } else if (delta < -8) {
+        setIsVisible(true);
+      }
+
+      lastScrollY.current = y;
+    };
+
+    lastScrollY.current = window.scrollY;
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const toggleSearch = useCallback(() => setIsSearchOpen((prev) => !prev), []);
-  const toggleMobileMenu = useCallback(() => setIsMobileMenuOpen((prev) => !prev), []);
+  const toggleMobileMenu = useCallback(
+    () => setIsMobileMenuOpen((prev) => !prev),
+    []
+  );
   const closeMobileMenu = useCallback(() => setIsMobileMenuOpen(false), []);
 
   const navigationTriggerStyle = useMemo(
@@ -62,31 +78,36 @@ const Header = ({ className }: { className?: string }) => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 w-full transition-transform duration-500 ease-in-out border-b bg-black z-[1000]",
+        "fixed top-0 left-0 right-0 z-[1000] w-full max-w-[100vw] border-b border-white/10 bg-kedi-navy/95 backdrop-blur-md",
+        "transition-[transform,box-shadow] duration-500 ease-in-out will-change-transform",
         isVisible ? "translate-y-0" : "-translate-y-full",
+        isCompact ? "shadow-[0_8px_24px_rgba(0,0,0,0.28)]" : "shadow-none",
         className
       )}
     >
-      <div className="w-full flex items-center justify-between py-[20px] gap-[2vw]">
-        
-        <Link href="/" className="flex-shrink-0 flex items-center" prefetch={true}>
-          <BrandLogo className="h-10 md:h-12 w-auto object-contain" />
+      <div className="flex h-14 w-full items-center justify-between gap-3 px-4 md:px-6 lg:h-16 lg:gap-6 lg:px-8">
+        <Link
+          href="/"
+          className="flex shrink-0 items-center transition-opacity duration-200 hover:opacity-90"
+          prefetch={true}
+          aria-label="Kedi.Media home"
+        >
+          <BrandLogo className="h-8 lg:h-10" />
         </Link>
 
-        <nav className="hidden md:flex items-center justify-center flex-grow">
+        <nav className="hidden min-w-0 flex-1 items-center justify-center lg:flex">
           <NavigationMenu viewport={false} className="max-w-none">
-            {/* GIỮ NGUYÊN GAP CŨ CỦA BẠN: lg:gap-[2.5vw] */}
-            <NavigationMenuList className="flex items-center gap-[0.5vw] lg:gap-[1.5vw]">
+            <NavigationMenuList className="flex items-center gap-0.5 xl:gap-1">
               {navigationConfig.map((item: any) => {
                 const key = item.label || item.href || JSON.stringify(item);
                 const label = item.label ? t(`navigation.${item.labelKey}`) : "";
-                const isActive = pathname === item.href;
-
-                // CLASS CHUNG CHO Ô VUÔNG (Không bọc div mới, chỉ dùng class)
+                const isActive = isNavItemActive(item, pathname);
                 const boxEffectClass = cn(
-                  "relative rounded-xl transition-all duration-300 px-3 py-2 flex items-center justify-center",
-                  "hover:bg-white/10", // Hiệu ứng hover nhạt
-                  isActive ? "bg-white/15 shadow-sm" : "bg-transparent" // Sáng hơn chút khi active
+                  "relative flex items-center justify-center rounded-xl px-3 py-1.5",
+                  "transition-all duration-300 ease-out",
+                  isActive
+                    ? "bg-kedi-yellow text-kedi-navy shadow-[0_0_18px_rgba(255,198,41,0.38)]"
+                    : "bg-transparent text-white hover:bg-kedi-yellow/15 hover:text-kedi-yellow has-[[data-state=open]]:bg-kedi-yellow/15 has-[[data-state=open]]:text-kedi-yellow"
                 );
 
                 return (
@@ -96,21 +117,18 @@ const Header = ({ className }: { className?: string }) => {
                         <NavLink
                           href={item.href}
                           label={label}
-                          hoverColor={item.hoverColor}
-                          className={cn(
-                            "text-[14px] lg:text-[clamp(14px,1.1vw,18px)] font-medium whitespace-nowrap px-0 uppercase tracking-wider transition-colors",
-                            isActive ? "text-yellow-500" : "text-white"
-                          )}
+                          className={navTextClass}
                         />
                       ) : null
                     ) : (
                       <>
                         <NavigationMenuTrigger
                           className={cn(
-                            "after:hidden [&>svg]:hidden [&>svg]:!hidden bg-transparent hover:bg-transparent focus:bg-transparent",
-                            "text-[14px] lg:text-[clamp(14px,1.1vw,18px)] font-medium px-0 py-0 uppercase tracking-wider transition-colors h-auto",
-                            isActive ? "text-yellow-500" : "text-white",
-                            item.hoverColor
+                            "after:hidden [&>svg]:!hidden",
+                            "hover:bg-transparent focus:bg-transparent",
+                            "data-[state=open]:bg-transparent data-[state=open]:hover:bg-transparent data-[state=open]:text-current",
+                            "hover:text-current",
+                            navTextClass
                           )}
                           style={navigationTriggerStyle}
                           onClick={(e: React.MouseEvent) => {
@@ -128,7 +146,10 @@ const Header = ({ className }: { className?: string }) => {
                           </NavigationMenuContent>
                         ) : (
                           item.items && (
-                            <BlogDropdown items={item.items} hoverColor={item.hoverColor} />
+                            <BlogDropdown
+                              items={item.items}
+                              hoverColor={item.hoverColor}
+                            />
                           )
                         )}
                       </>
@@ -140,26 +161,23 @@ const Header = ({ className }: { className?: string }) => {
           </NavigationMenu>
         </nav>
 
-        {/* Right Actions */}
-        <div className="hidden md:flex items-center gap-[1.5vw] flex-shrink-0">
-          <div className="flex items-center gap-[1vw]">
-            <SearchDropdown isOpen={isSearchOpen} onToggle={toggleSearch} />
-            <div className="w-px h-6 bg-white/20 mx-1" />
-            <LanguageSwitcher />
-          </div>
-          <div className="pl-[1vw] border-l border-white/20">
+        <div className="hidden shrink-0 items-center gap-2.5 lg:flex xl:gap-3">
+          <SearchDropdown isOpen={isSearchOpen} onToggle={toggleSearch} />
+          <div className="h-5 w-px bg-white/20" />
+          <LanguageSwitcher />
+          <div className="border-l border-white/20 pl-2.5 xl:pl-3">
             <HostlineSection />
           </div>
         </div>
 
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden text-white p-0 hover:bg-transparent"
+        <button
+          type="button"
+          className="ml-auto flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/25 text-white transition-colors duration-200 hover:border-kedi-yellow hover:text-kedi-yellow lg:hidden"
           onClick={toggleMobileMenu}
+          aria-label={isMobileMenuOpen ? "Đóng menu" : "Mở menu"}
         >
-          {isMobileMenuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
-        </Button>
+          {isMobileMenuOpen ? <FiX size={18} /> : <FiMenu size={18} />}
+        </button>
       </div>
 
       <MobileNav isOpen={isMobileMenuOpen} onClose={closeMobileMenu} />

@@ -65,7 +65,7 @@ export default function BusinessSupportSlider() {
         <FadeIn direction="up">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter">
-            Mona có thể <span className="text-orange-500">hỗ trợ gì</span> cho doanh nghiệp?
+            Kedi có thể <span className="text-orange-500">hỗ trợ gì</span> cho doanh nghiệp?
             </h2>
           </div>
         </FadeIn>

@@ -1,6 +1,6 @@
 export { default as eyes } from './eyes.svg';
-export { default as logo } from './logo.svg';
-export { default as mobileLogo } from './mobile-logo.png';
+export { default as logo } from './brand/kedi-logo-navy.png';
+export { default as mobileLogo } from './brand/kedi-icon.png';
 export { default as awwwards } from './awwwards.svg';
 export { default as aboutImg } from './aboutImg.webp';
 export { default as videoImg } from './videoImg.jpeg';

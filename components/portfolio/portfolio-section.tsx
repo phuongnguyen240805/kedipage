@@ -6,7 +6,7 @@ import FadeIn from '../ui/Fadeoad';
 const portfolioSolutions = [
   {
     id: 'website',
-    label: 'MONA.Media / Website',
+    label: 'KEDI.Media / Website',
     title: 'GIẢI PHÁP PREMIUM WEBSITE CHUYÊN NGHIỆP, SÁNG TẠO CHO DOANH NGHIỆP',
     detailLink: 'https://mona.media/thiet-ke-website-tai-hcm/',
     balls: [
@@ -16,7 +16,7 @@ const portfolioSolutions = [
   },
   {
     id: 'digital',
-    label: 'Mona.Media / Digital',
+    label: 'Kedi.Media / Digital',
     title: 'GIẢI PHÁP MARKETING GIÚP TĂNG KHÁCH HÀNG & DOANH THU LIÊN TỤC',
     detailLink: 'https://mona.media/dich-vu-seo/',
     balls: [
@@ -26,7 +26,7 @@ const portfolioSolutions = [
   },
   {
     id: 'studio',
-    label: 'Mona.Media / Studio',
+    label: 'Kedi.Media / Studio',
     title: 'GIẢI PHÁP THƯƠNG HIỆU MEDIA SÁNG TẠO, CHẤT LƯỢNG CAO CHO BẠN',
     detailLink: 'https://mona.media/chup-anh-profile-cong-ty/',
     balls: [
@@ -36,7 +36,7 @@ const portfolioSolutions = [
   },
   {
     id: 'branding',
-    label: 'Mona.Media / Branding',
+    label: 'Kedi.Media / Branding',
     title: 'GIẢI PHÁP GIÚP TĂNG NHẬN DIỆN VÀ SỰ CHUYÊN NGHIỆP CHO DOANH NGHIỆP',
     detailLink: 'https://mona.media/branding-la-gi/',
     balls: [
@@ -88,7 +88,7 @@ export default function PortfolioSection() {
             <h2 className="text-xl md:text-2xl font-bold mb-2">
               <FadeIn>
               <span className="inline-block bg-pink-500 text-white px-3 py-1 rounded-md">
-                MONA thiết kế sẵn lộ trình và giải pháp
+                KEDI thiết kế sẵn lộ trình và giải pháp
               </span>
               </FadeIn>
             </h2>
@@ -134,7 +134,7 @@ export default function PortfolioSection() {
                   <div className="flex items-center gap-2 mb-2">
                     <Image
                       src="https://mona.media/template/assets/images/du_an_tong-21_11_23/mona-icon-small.png"
-                      alt="Mona Logo"
+                      alt="Kedi Logo"
                       width={18}
                       height={18}
                     />

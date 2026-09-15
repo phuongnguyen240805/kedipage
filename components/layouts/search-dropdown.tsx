@@ -28,7 +28,7 @@ const SearchDropdown = ({ isOpen, onToggle }: SearchDropdownProps) => {
   }, [t]);
 
   const otherSuggestions = [
-    { title: 'Câu chuyện thành công của Mona', href: '/success-stories' },
+    { title: 'Câu chuyện thành công của Kedi', href: '/success-stories' },
     { title: 'Tuyển dụng', href: '/career' },
   ];
 
@@ -58,21 +58,23 @@ const SearchDropdown = ({ isOpen, onToggle }: SearchDropdownProps) => {
     <div ref={containerRef} className="relative">
       {/* Nút bấm tìm kiếm trên Header - Chỉnh màu để hợp nền đen */}
       <Button
-        className="flex items-center text-black justify-center w-10 h-10 rounded-full bg-white hover:bg-black hover:text-white transition-colors"
+        size="icon"
+        className="h-9 w-9 rounded-full bg-kedi-yellow text-kedi-navy transition-all duration-200 hover:scale-105 hover:bg-white hover:text-kedi-navy"
         onClick={onToggle}
+        aria-label="Tìm kiếm"
       >
-        <Search className="w-5 h-5" />
+        <Search className="h-4 w-4" />
       </Button>
 
       {isOpen && (
-        <div className="absolute top-full right-0 mt-3 w-[380px] z-[100]">
+        <div className="absolute top-full right-0 z-[100] mt-3 w-[380px] animate-in fade-in-0 slide-in-from-top-2 duration-200">
           {/* Bọc toàn bộ Dropdown bằng Boderyelow */}
           <Boderyelow>
-            <div className="bg-[#1a1a1a] rounded-xl shadow-2xl overflow-hidden border border-white/5">
+            <div className="bg-kedi-navy rounded-xl shadow-2xl overflow-hidden border border-white/5">
               
               {/* Input Search - Nền tối chữ trắng */}
               <div className="p-4 border-b border-white/10">
-                <div className="flex items-center gap-3 bg-white/5 px-3 py-2.5 rounded-lg border border-white/10 focus-within:border-yellow-500/50 focus-within:bg-white/10 rounded-xl transition-all">
+                <div className="flex items-center gap-3 bg-white/5 px-3 py-2.5 rounded-lg border border-white/10 focus-within:border-kedi-yellow/50 focus-within:bg-white/10 rounded-xl transition-all">
                   <Search className="w-4 h-4 text-gray-400" />
                   <input
                     ref={inputRef}
@@ -90,7 +92,7 @@ const SearchDropdown = ({ isOpen, onToggle }: SearchDropdownProps) => {
                   <>
                     {/* Phần Dịch vụ phổ biến */}
                     <div className="px-4 py-2">
-                      <h3 className="text-[11px] font-bold text-yellow-500 uppercase tracking-widest mb-2 opacity-80">Dịch vụ phổ biến</h3>
+                      <h3 className="text-[11px] font-bold text-kedi-yellow uppercase tracking-widest mb-2 opacity-80">Dịch vụ phổ biến</h3>
                       <div className="space-y-0.5">
                         {allServices.slice(0, 4).map((item, idx) => (
                           <Link 
@@ -99,7 +101,7 @@ const SearchDropdown = ({ isOpen, onToggle }: SearchDropdownProps) => {
                             onClick={onToggle}
                             className="w-full flex items-center gap-3 px-2 py-2.5 rounded-lg hover:bg-white/5 text-gray-300 transition-colors group"
                           >
-                            <Clock className="w-4 h-4 text-gray-500 group-hover:text-yellow-500" />
+                            <Clock className="w-4 h-4 text-gray-500 group-hover:text-kedi-yellow" />
                             <span className="text-[14px] font-medium group-hover:text-white">{item.title}</span>
                           </Link>
                         ))}
@@ -108,7 +110,7 @@ const SearchDropdown = ({ isOpen, onToggle }: SearchDropdownProps) => {
 
                     {/* Phần Khác */}
                     <div className="px-4 py-2 mt-2 border-t border-white/10">
-                      <h3 className="text-[11px] font-bold text-yellow-500 uppercase tracking-widest mb-2 opacity-80">Thông tin khác</h3>
+                      <h3 className="text-[11px] font-bold text-kedi-yellow uppercase tracking-widest mb-2 opacity-80">Thông tin khác</h3>
                       <div className="space-y-0.5">
                         {otherSuggestions.map((item, idx) => (
                           <Link 
@@ -117,7 +119,7 @@ const SearchDropdown = ({ isOpen, onToggle }: SearchDropdownProps) => {
                             onClick={onToggle}
                             className="w-full flex items-center gap-3 px-2 py-2.5 rounded-lg hover:bg-white/5 text-gray-300 transition-colors group"
                           >
-                            <Clock className="w-4 h-4 text-gray-500 group-hover:text-yellow-500" />
+                            <Clock className="w-4 h-4 text-gray-500 group-hover:text-kedi-yellow" />
                             <span className="text-[14px] font-medium group-hover:text-white">{item.title}</span>
                           </Link>
                         ))}
@@ -131,10 +133,10 @@ const SearchDropdown = ({ isOpen, onToggle }: SearchDropdownProps) => {
                         <Link
                           key={idx}
                           href={item.href}
-                          className="w-full flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-yellow-500/10 text-gray-200 transition-all group"
+                          className="w-full flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-kedi-yellow/10 text-gray-200 transition-all group"
                           onClick={onToggle}
                         >
-                          <Search className="w-4 h-4 text-yellow-500/50 group-hover:text-yellow-500" />
+                          <Search className="w-4 h-4 text-kedi-yellow/50 group-hover:text-kedi-yellow" />
                           <span className="text-[14px] font-semibold group-hover:text-white">{item.title}</span>
                         </Link>
                       ))

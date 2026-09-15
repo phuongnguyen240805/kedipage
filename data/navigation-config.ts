@@ -1,4 +1,30 @@
 import ServicesDropdown from '@/components/services-dropdown/services-dropdown';
+import { serviceCategories } from '@/components/services-dropdown/datas/services-data';
+
+const serviceHrefs = Object.values(serviceCategories).flatMap((category) =>
+  category.services
+    .map((service) => service.href)
+    .filter((href): href is string => Boolean(href))
+);
+
+export function isNavItemActive(
+  item: (typeof navigationConfig)[number],
+  pathname: string
+) {
+  if (item.dropdownType === 'blog') {
+    return pathname === '/blog' || pathname.startsWith('/blog/');
+  }
+
+  if (item.dropdownType === 'services') {
+    return serviceHrefs.some(
+      (href) => pathname === href || pathname.startsWith(`${href}/`)
+    );
+  }
+
+  if (!item.href) return false;
+  if (pathname === item.href) return true;
+  return item.href !== '/' && pathname.startsWith(`${item.href}/`);
+}
 
 export const navigationConfig = [
   {
@@ -6,28 +32,28 @@ export const navigationConfig = [
     href: '/introduction',
     labelKey: 'introduction',
     label: 'Giới thiệu',
-    hoverColor: 'hover:bg-blue-100 hover:text-blue-900',
+    hoverColor: 'hover:bg-kedi-yellow/10 hover:text-kedi-yellow',
   },
   {
     type: 'dropdown',
     dropdownType: 'services',
     labelKey: 'services',
     component: ServicesDropdown,
-    hoverColor: 'hover:bg-green-100 hover:text-green-900',
+    hoverColor: 'hover:bg-kedi-yellow/10 hover:text-kedi-yellow',
   },
   {
     type: 'link',
     href: '/du-an',
     labelKey: 'projects',
     label: 'Dự án',
-    hoverColor: 'hover:bg-purple-100 hover:text-purple-900',
+    hoverColor: 'hover:bg-kedi-yellow/10 hover:text-kedi-yellow',
   },
   {
     type: 'link',
     href: '/khach-hang',
     labelKey: 'clients',
     label: 'Khách hàng',
-    hoverColor: 'hover:bg-orange-100 hover:text-orange-900',
+    hoverColor: 'hover:bg-kedi-yellow/10 hover:text-kedi-yellow',
   },
   {
     type: 'dropdown',
@@ -35,7 +61,7 @@ export const navigationConfig = [
     label: 'Blog',
     href: '/blog',
     dropdownType: 'blog',
-    hoverColor: 'hover:bg-pink-100 hover:text-pink-900',
+    hoverColor: 'hover:bg-kedi-yellow/10 hover:text-kedi-yellow',
     items: [
       { href: '/blog/seo-guide', labelKey: 'seoGuide', label: 'Cẩm nang SEO' },
       {
@@ -61,6 +87,6 @@ export const navigationConfig = [
     href: '/hoat-dong',
     labelKey: 'activities',
     label: 'Hoạt động',
-    hoverColor: 'hover:bg-yellow-100 hover:text-yellow-900',
+    hoverColor: 'hover:bg-kedi-yellow/10 hover:text-kedi-yellow',
   },
 ];

@@ -209,7 +209,7 @@ export default function Langdingmauweb1(props: any) {
                 </div>
                 <div className="pt-8 border-t border-dashed border-gray-200 space-y-4 text-sm font-bold">
                   <div className="flex justify-between text-gray-400"><span>Giá gốc</span><span>15.000.000đ</span></div>
-                  <div className="flex justify-between text-red-500"><span>Hỗ trợ MONA</span><span>-4.500.000đ</span></div>
+                  <div className="flex justify-between text-red-500"><span>Hỗ trợ KEDI</span><span>-4.500.000đ</span></div>
                   <div className="flex justify-between items-center pt-8">
                     <span className="text-lg font-black text-gray-900 uppercase">Tổng cộng</span>
                     <span className="text-4xl font-black text-purple-700 tracking-tighter italic">

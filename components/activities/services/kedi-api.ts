@@ -1,4 +1,4 @@
-// File: src/services/mona-api.ts
+// File: src/services/kedi-api.ts
 
 const API_BASE = process.env.NEXT_PUBLIC_STRAPI_API as string;
 
@@ -183,7 +183,7 @@ export async function fetchArticleBySlug(
 export function getArticleContent(article: StrapiArticle) {
   let title = '';
   let content = '';
-  let author = 'MONA Media';
+  let author = 'KEDI Media';
   let publishDate = article.createdAt || '';
   let externalUrl: string | null = null;
 
@@ -234,8 +234,8 @@ export function getArticleContent(article: StrapiArticle) {
 
     author =
       jsonData.author === 'Unknown'
-        ? 'MONA Media'
-        : jsonData.author || 'MONA Media';
+        ? 'KEDI Media'
+        : jsonData.author || 'KEDI Media';
     publishDate = jsonData.date || publishDate;
     externalUrl = jsonData.url || null;
   } else if (article.description && article.description.trim()) {

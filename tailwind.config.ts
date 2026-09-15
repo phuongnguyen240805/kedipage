@@ -42,17 +42,27 @@ const config = {
       },
       colors: {
         // Màu sắc đặc trưng Ochi bạn đã dùng
+        kedi: {
+          navy: "#0B2D5B",
+          yellow: "#FFC629",
+          white: "#FFFFFF",
+        },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         marquee: "#161B25", // Màu xanh Marquee
         about: "#cdea68",   // Màu xanh Neon của About
-        secondry: "#212121",
+        secondry: "#0B2D5B",
         
         // Cấu hình màu hệ thống (Shadcn UI)
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        brand: "var(--brand)",
+        brand: {
+          DEFAULT: "#FFC629",
+          navy: "#0B2D5B",
+          yellow: "#FFC629",
+          white: "#FFFFFF",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

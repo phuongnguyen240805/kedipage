@@ -1,12 +1,24 @@
-name = "mona_web"
+name = "kedi-web"
 main = ".open-next/worker.js"
-
-compatibility_date = "2026-01-04"
-compatibility_flags = ["nodejs_compat"]
+compatibility_date = "2026-09-14"
+compatibility_flags = ["nodejs_compat", "global_fetch_strictly_public"]
 
 [assets]
 directory = ".open-next/assets"
 binding = "ASSETS"
 
+[vars]
+NEXTJS_ENV = "production"
+
 [observability]
 enabled = true
+
+# Cloudflare Images binding — OpenNext uses this for /_next/image resizing.
+[images]
+binding = "IMAGES"
+
+# Self-reference required by OpenNext caching / revalidation.
+# Service name must match the Worker name.
+[[services]]
+binding = "WORKER_SELF_REFERENCE"
+service = "kedi-web"

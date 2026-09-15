@@ -6,6 +6,7 @@ import FadeIn from "@/components/ui/Fadeoad";
 import { Rocket, Eye, Phone, Play } from "lucide-react";
 import ScrollRevealHighlight from "@/components/ui/ScrollRevealHighlight";
 import Boderyelow from "@/components/ui/boder-yelow";
+import { cfSrc } from "@/lib/cloudflare-image-loader";
 
 export default function PortfolioHero() {
   const [isStarted, setIsStarted] = useState(false);
@@ -62,7 +63,7 @@ export default function PortfolioHero() {
             <Boderyelow>
               <button className="whitespace-nowrap px-6 py-3 md:px-10 md:py-4 bg-orange-500 hover:bg-orange-600 text-white font-black rounded-xl md:rounded-xl transition-all shadow-[0_10px_20px_rgba(249,115,22,0.3)] flex items-center justify-center gap-2 md:gap-3 uppercase text-xs md:text-base">
                 <Phone size={16} className="md:w-5 md:h-5" />
-                <span>Liên hệ với MONA</span>
+                <span>Liên hệ với KEDI</span>
               </button>
             </Boderyelow>
             <Boderyelow>
@@ -88,7 +89,10 @@ export default function PortfolioHero() {
                 // Đây là phần bạn đang nhìn thấy (Ảnh tĩnh)
                 <div className="absolute inset-0 z-20 flex items-center justify-center">
                   <img
-                    src={`https://res.cloudinary.com/dzkcqktcl/image/upload/v1767416863/about-background_bd6zlk.png`}
+                    src={cfSrc(
+                      'https://res.cloudinary.com/dzkcqktcl/image/upload/v1767416863/about-background_bd6zlk.png',
+                      1200
+                    )}
                     className="w-full h-full object-cover opacity-50"
                     alt="thumbnail"
                   />

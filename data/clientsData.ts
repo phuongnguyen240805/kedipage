@@ -20,7 +20,7 @@ export const clients: ClientData[] = [
       { label: 'Chi tiết dự án' },
       { label: 'Thiết kế website', variant: 'outline' },
     ],
-    title: 'MONA xin trân trọng cảm ơn',
+    title: 'KEDI xin trân trọng cảm ơn',
     subtitle: 'Những đánh giá của quý anh chị suốt 8 năm vừa qua',
   },
 
@@ -33,7 +33,7 @@ export const clients: ClientData[] = [
     clientName: 'Chị Annie Quỳnh Anh',
     clientRole: 'Senior PR & Comms Specialist',
     clientDescription:
-      'Là người đại diện phía VinAI làm việc trực tiếp với MONA...',
+      'Là người đại diện phía VinAI làm việc trực tiếp với KEDI...',
     companySummary:
       'VinAI là công ty Cổ phần Nghiên cứu và Ứng dụng Trí tuệ nhân tạo (thuộc Tập đoàn Vingroup)...',
     youtubeVideoId: 'czmj2NNaPJI',
@@ -53,7 +53,7 @@ export const clients: ClientData[] = [
     clientLogo: 'https://mona.media/wp-content/uploads/2024/01/logo-6.png',
     clientName: 'Nguyễn Thùy Linh',
     clientRole: 'Bộ phận Marketing SCONNECT',
-    clientDescription: `Là người đại diện SCONNECT làm việc trực tiếp với MONA trong hành trình tạo nên một thế giới Wolfoo hoàn chỉnh.`,
+    clientDescription: `Là người đại diện SCONNECT làm việc trực tiếp với KEDI trong hành trình tạo nên một thế giới Wolfoo hoàn chỉnh.`,
     companySummary: `Trải qua hơn 5 năm, thương hiệu Wolfoo sở hữu hệ sinh thái kinh doanh đồ sộ, đa dạng sản phẩm dịch vụ và đang không ngừng tăng trưởng...`,
     youtubeVideoId: 'czmj2NNaPJI',
     leftImage:
@@ -75,7 +75,7 @@ export const clients: ClientData[] = [
     clientLogo: 'https://mona.media/wp-content/uploads/2025/03/logo.svg',
     clientName: 'Anh Duy',
     clientRole: 'Marketing Leader tại VIETPASSION',
-    clientDescription: `Anh Duy – Marketing Leader tại VIETPASSION là người trực tiếp làm việc với đội ngũ MONA trong suốt hơn 2 năm qua.`,
+    clientDescription: `Anh Duy – Marketing Leader tại VIETPASSION là người trực tiếp làm việc với đội ngũ KEDI trong suốt hơn 2 năm qua.`,
     companySummary: `Là một thương hiệu nổi bật trong ngành phuộc xe - phụ tùng ô tô, VIETPASSION không chỉ chú trọng vào chất lượng sản phẩm mà còn đầu tư mạnh mẽ vào hệ thống...`,
     youtubeVideoId: 'czmj2NNaPJI',
     leftImage:
@@ -94,7 +94,7 @@ export const clients: ClientData[] = [
     clientLogo: 'https://mona.media/wp-content/uploads/2024/01/400x400.png',
     clientName: 'Chị Duyên',
     clientRole: 'ABM team Marketing tại Finviet',
-    clientDescription: `Chị Duyên là đại diện cho công ty Finviet trong thời gian hợp tác dự án làm mới website.\nChị đồng hành xuyên suốt hỗ trợ đội ngũ MONA trong việc nắm bắt được mong muốn của doanh nghiệp.`,
+    clientDescription: `Chị Duyên là đại diện cho công ty Finviet trong thời gian hợp tác dự án làm mới website.\nChị đồng hành xuyên suốt hỗ trợ đội ngũ KEDI trong việc nắm bắt được mong muốn của doanh nghiệp.`,
     companySummary: `Finviet là một công ty tài chính tiên phong tại Việt Nam, chuyên cung cấp các dịch vụ tài chính và tín dụng tiêu dùng chất lượng cao.\nFinviet tập trung vào việc tạo ra các giải pháp tài chính sáng tạo,...`,
     youtubeVideoId: 'czmj2NNaPJI',
     leftImage: 'https://mona.media/wp-content/uploads/2024/10/trai.jpg',
@@ -113,7 +113,7 @@ export const clients: ClientData[] = [
     clientDescription:
       'Đồng hành cùng doanh nghiệp nước hoa cao cấp trong hành trình phát triển thương hiệu bền vững',
     companySummary:
-      'MONA và LALUZ đã có cơ hội hợp tác trong dịch vụ thiết kế website, SEO, hosting, email doanh nghiệp, quản lý domain, ads',
+      'KEDI và LALUZ đã có cơ hội hợp tác trong dịch vụ thiết kế website, SEO, hosting, email doanh nghiệp, quản lý domain, ads',
     youtubeVideoId: 'czmj2NNaPJI',
     leftImage:
       'https://mona.media/wp-content/uploads/2024/04/Laluz-2-600x401.jpg',

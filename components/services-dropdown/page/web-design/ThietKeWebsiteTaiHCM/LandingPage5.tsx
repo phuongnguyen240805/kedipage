@@ -23,7 +23,7 @@ export default function LandingPage5() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            MONA sẽ dụng cho bạn một website đẹp
+            KEDI sẽ dụng cho bạn một website đẹp
           </h1>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             phù hợp ngành hàng và khách hàng của bạn

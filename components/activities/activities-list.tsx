@@ -1,9 +1,10 @@
 'use client'; // 👈 QUAN TRỌNG: Bắt buộc có dòng này
 
 import { useState } from 'react';
-import { getArticleContent } from './services/mona-api'; 
+import { getArticleContent } from './services/kedi-api'; 
 import { formatTimeAgo, getImagesFromArticle } from './utils/helpers'; 
 import Boderyelow from '../ui/boder-yelow';
+import { cfSrc } from '@/lib/cloudflare-image-loader';
 
 
 // --- COPY LẠI COMPONENT CON (BlueCheck, ImageGrid) VÀO ĐÂY HOẶC IMPORT ---
@@ -15,12 +16,12 @@ const BlueCheck = () => (
 
 const ImageGrid = ({ images }: { images: string[] }) => {
   if (!images || images.length === 0) return null;
-  if (images.length === 1) return <img src={images[0]} alt="Post" className="w-full h-auto rounded-lg object-cover mt-3 border border-gray-100" />;
-  if (images.length === 2) return <div className="grid grid-cols-2 gap-1 mt-3">{images.map((img, idx) => <img key={idx} src={img} alt="" className="w-full h-48 object-cover rounded-lg border border-gray-100" />)}</div>;
+  if (images.length === 1) return <img src={cfSrc(images[0], 1080)} alt="Post" className="w-full h-auto rounded-lg object-cover mt-3 border border-gray-100" />;
+  if (images.length === 2) return <div className="grid grid-cols-2 gap-1 mt-3">{images.map((img, idx) => <img key={idx} src={cfSrc(img, 640)} alt="" className="w-full h-48 object-cover rounded-lg border border-gray-100" />)}</div>;
   return (
     <div className="grid grid-cols-2 gap-1 mt-3 relative">
-      <img src={images[0]} alt="" className="col-span-2 w-full h-48 object-cover rounded-lg border border-gray-100" />
-      {images.slice(1, 3).map((img, idx) => <img key={idx} src={img} alt="" className="w-full h-32 object-cover rounded-lg border border-gray-100" />)}
+      <img src={cfSrc(images[0], 1080)} alt="" className="col-span-2 w-full h-48 object-cover rounded-lg border border-gray-100" />
+      {images.slice(1, 3).map((img, idx) => <img key={idx} src={cfSrc(img, 640)} alt="" className="w-full h-32 object-cover rounded-lg border border-gray-100" />)}
       {images.length > 3 && <div className="absolute bottom-2 right-2 bg-black/60 text-white px-2 py-1 rounded text-xs font-bold">+{images.length - 3}</div>}
     </div>
   );
@@ -39,7 +40,7 @@ export default function ActivitiesList({ initialArticles }: { initialArticles: a
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h2 className="text-5xl font-bold text-white mb-8">Bản tin Mona hôm nay</h2>
+      <h2 className="text-5xl font-bold text-white mb-8">Bản tin Kedi hôm nay</h2>
 
       <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
         {visibleArticles.map((article, index) => {

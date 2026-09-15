@@ -9,7 +9,7 @@ import Boderyelow from '@/components/ui/boder-yelow';
 // Dữ liệu tĩnh dự phòng khi không có bài viết từ BE
 const fallbackData = {
   title: "Hướng dẫn tối ưu hóa giao diện người dùng chuyên nghiệp 2024",
-  author: "MONA Team",
+  author: "KEDI Team",
   publishDate: new Date().toISOString(),
   content: `
     <h2 id="gioi-thieu">1. Giới thiệu tổng quan</h2>

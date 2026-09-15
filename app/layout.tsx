@@ -20,6 +20,8 @@ export default function RootLayout({ children, params }: { children: React.React
     <html lang={locale} suppressHydrationWarning>
       <head>
         <meta name="google" content="notranslate" />
+        <link rel="icon" href="/brand/kedi-app-icon.png" />
+        <link rel="apple-touch-icon" href="/brand/kedi-app-icon.png" />
       </head>
       <body>
         <ChatwootWidget
@@ -42,7 +44,7 @@ export default function RootLayout({ children, params }: { children: React.React
             <SocketContextProvider>
               <TooltipProvider>
                 <Header />
-                <main className="min-h-screen pt-20">
+                <main className="min-h-screen pt-14 lg:pt-16">
                   {children}
                 </main>
               

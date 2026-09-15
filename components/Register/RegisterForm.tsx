@@ -155,7 +155,7 @@ const RegisterForm = ({
 
       <div className="mb-8 text-center relative z-10">
         <h3 className="text-2xl font-bold text-gray-900">
-          Level-Up Cùng <span className="text-purple-600">MONA</span>
+          Level-Up Cùng <span className="text-purple-600">KEDI</span>
         </h3>
         <p className="text-sm text-gray-500 mt-2 font-light leading-relaxed">
           Biến website thành cỗ máy &ldquo;render Tiền&rdquo; đúng nghĩa.
@@ -196,7 +196,7 @@ const RegisterForm = ({
         <div className="flex items-start gap-3 bg-purple-50 rounded-lg p-3 border border-purple-100">
           <HeartHandshake className="h-6 w-6 text-purple-600 flex-shrink-0 mt-0.5" />
           <p className="text-xs text-gray-600 leading-relaxed text-left">
-            <span className="font-bold text-gray-800">MONA</span> sẽ cử riêng
+            <span className="font-bold text-gray-800">KEDI</span> sẽ cử riêng
             một{' '}
             <span className="text-purple-700 font-bold">
               &quot;Người Bạn Thân&quot;

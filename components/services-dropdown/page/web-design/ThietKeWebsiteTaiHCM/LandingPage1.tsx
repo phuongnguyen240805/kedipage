@@ -19,7 +19,7 @@ export default function LandingPage1() {
 
               <div className="space-y-2">
                 <h1 className="text-xl lg:text-1xl font-bold leading-tight">
-                  Hãy để ∞ MONA.Media / Digital •:
+                  Hãy để ∞ KEDI.Media / Digital •:
                 </h1>
                 <div className="text-xl lg:text-2xl font-bold">
                   Thiết kế Website{' '}
@@ -92,7 +92,7 @@ export default function LandingPage1() {
                   <p className="text-lg md:text-xl text-white leading-relaxed">
                     <span className="font-bold">CINO</span> và{' '}
                     <span className="font-bold">Trọng Hy</span> cùng các{' '}
-                    <span className="font-bold">anh em MONA</span>
+                    <span className="font-bold">anh em KEDI</span>
                     <br />
                     sẽ{' '}
                     <span className="text-orange-500 font-extrabold text-xl md:text-2xl">

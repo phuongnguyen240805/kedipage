@@ -8,23 +8,24 @@ const BrandLogo = ({
   dark?: boolean;
   className?: string;
 }) => {
-  // ⚡ Dùng ảnh trong public (không có /public ở path)
   const logoSrc = dark
-    ? 'https://res.cloudinary.com/dzkcqktcl/image/upload/v1769418552/ChatGPT_Image_16_08_00_26_thg_1__2026-removebg-preview_g1msvy.png'
-    : 'https://res.cloudinary.com/dzkcqktcl/image/upload/v1769418552/ChatGPT_Image_16_08_00_26_thg_1__2026-removebg-preview_g1msvy.png';
+    ? '/brand/kedi-logo-navy.png'
+    : '/brand/kedi-logo-reverse.png';
 
   return (
-    <div className={cn(className, 'flex items-center gap-2')}>
+    <div
+      className={cn(
+        'relative shrink-0 aspect-[19/5]',
+        className
+      )}
+    >
       <Image
         src={logoSrc}
-        alt="Brand Logo"
-        className="object-contain"
-        width={380}
-        height={100}
-        style={{ height: 'auto' }}
+        alt="Kedi.Media"
+        fill
+        className="object-contain object-left"
+        sizes="(max-width: 1024px) 122px, 152px"
         priority
-        sizes="(max-width: 768px) 200px, (max-width: 1200px) 300px, 380px"
-        placeholder="empty"
       />
     </div>
   );

@@ -3,7 +3,7 @@ export const storyData = [
     id: 1,
     src: 'https://mona.media/template/assets/hq-images/customer-intro/solution_kimthanh.jpg',
     alt: 'Khách hàng Kim Thành',
-    desc: 'Tất niên về anh em Mona thất lạc kính. Không sao, có Mắt Việt tài trợ rồi!',
+    desc: 'Tất niên về anh em Kedi thất lạc kính. Không sao, có Mắt Việt tài trợ rồi!',
     date: 'Ngày 10/01/2023',
   },
   {
@@ -17,14 +17,14 @@ export const storyData = [
     id: 3,
     src: 'https://mona.media/template/assets/hq-images/customer-intro/solution_kimthanh.jpg',
     alt: 'Khách hàng 3',
-    desc: 'Khách alo nhậu, Mona có mặt! Ngày họp fan bóng đá của Mona và khách.',
+    desc: 'Khách alo nhậu, Kedi có mặt! Ngày họp fan bóng đá của Kedi và khách.',
     date: 'Ngày 10/01/2023',
   },
   {
     id: 4,
     src: 'https://mona.media/template/assets/hq-images/customer-intro/solution_kimthanh.jpg',
     alt: 'Khách hàng 4',
-    desc: 'Mona Media cứ lo tổ chức tiệc, rượu nhậu Kim Thành tài trợ khỏi lo!',
+    desc: 'Kedi Media cứ lo tổ chức tiệc, rượu nhậu Kim Thành tài trợ khỏi lo!',
     date: 'Ngày 13/01/2023',
   },
   {

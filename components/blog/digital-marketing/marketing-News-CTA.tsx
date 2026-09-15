@@ -51,7 +51,7 @@ const NewsCTA = () => {
               KHÔNG THỂ BỎ LỠ
             </p>
             <p className="text-5xl lg:text-4xl font-bold text-white whitespace-nowrap">
-              Nhận bản tin của MONA.Media
+              Nhận bản tin của KEDI.Media
             </p>
           </div>
 

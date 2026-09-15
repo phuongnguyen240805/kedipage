@@ -24,7 +24,7 @@ export const seoEducationData = {
   landing1: {
     title: 'Chọn đúng đơn vị SEO đồng hành',
     subtitle:
-      'MONA có độ hiểu biết ngành và khách hàng để xây dựng một chiến lược SEO hiệu quả',
+      'KEDI có độ hiểu biết ngành và khách hàng để xây dựng một chiến lược SEO hiệu quả',
     description: 'Doanh nghiệp nhận được nhiều hơn cả ON TOP',
     features: [
       'Website chuẩn SEO',
@@ -44,7 +44,7 @@ export const seoEducationData = {
   landing2: {
     title: 'Từ khóa lên top không phải ngẫu nhiên',
     subtitle: 'Dù sử dụng bất kỳ công cụ tìm kiếm nào',
-    description: 'MONA cũng nằm sẵn ở đó chờ anh chị ',
+    description: 'KEDI cũng nằm sẵn ở đó chờ anh chị ',
     features: [],
     images: [
       {
@@ -65,12 +65,12 @@ export const seoEducationData = {
       },
     ],
     className: 'pb-0 mb-0',
-    highlightText: 'MONA cũng nằm sẵn ở đó chờ anh chị',
+    highlightText: 'KEDI cũng nằm sẵn ở đó chờ anh chị',
   },
   landing3: {
     title: 'Từ khóa lên top không phải ngẫu nhiên',
     subtitle: 'AI lên ngôi - GOOGLE thay đổi',
-    description: 'thì MONA vẫn LÊN TOP vững vàng',
+    description: 'thì KEDI vẫn LÊN TOP vững vàng',
     features: [],
     images: [
       {

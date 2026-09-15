@@ -94,7 +94,7 @@ const CTACard: React.FC<CTACardProps> = ({ onClickGift, className = '' }) => {
             <div className="flex items-center justify-center px-4 py-2 border-r border-pink-400/110">
               <Image
                 src="https://mona.media/wp-content/uploads/2023/03/media-less-white-logo.png"
-                alt="monamedia"
+                alt="kedimedia"
                 width={120}
                 height={40}
                 className="object-contain"

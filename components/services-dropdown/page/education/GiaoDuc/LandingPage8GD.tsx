@@ -89,11 +89,11 @@ export default function LandingPage8GD() {
         <div className="text-center mb-12 relative z-10">
           <FadeIn>
             <h3 className="text-[#ff6b00] font-bold text-xl md:text-2xl mb-4">
-              MONA có hai gói sản phẩm để bạn linh hoạt khi thanh toán
+              KEDI có hai gói sản phẩm để bạn linh hoạt khi thanh toán
             </h3>
             <div className="inline-block bg-[#FF2D88] text-white font-bold text-xl md:text-2xl px-6 py-3 uppercase transform -skew-x-6">
               <span className="block transform skew-x-6">
-                KHI MUA HỆ THỐNG MONA E-learning
+                KHI MUA HỆ THỐNG KEDI E-learning
               </span>
             </div>
           </FadeIn>
@@ -112,14 +112,14 @@ export default function LandingPage8GD() {
               </h4>
 
               <p className="text-gray-600 mb-6 text-sm leading-relaxed">
-                Đối với phương thức thanh toán này, MONA sẽ chỉ hỗ trợ bạn MỘT
+                Đối với phương thức thanh toán này, KEDI sẽ chỉ hỗ trợ bạn MỘT
                 LẦN cho các đầu mục sau:
               </p>
             </FadeIn>
 
             <ul className="space-y-4">
               {[
-                "MONA sẽ triển khai và giao toàn bộ source code",
+                "KEDI sẽ triển khai và giao toàn bộ source code",
                 "Chuyển giao Document hướng dẫn build source",
                 "Hỗ trợ bổ sung các cấu hình tiện ích theo yêu cầu",
               ].map((item, idx) => (
@@ -183,7 +183,7 @@ export default function LandingPage8GD() {
         <div className="mt-8 text-center">
           <p className="text-xs md:text-sm font-semibold text-gray-800">
             *Trong trường hợp, bạn cần hỗ trợ cài đặt hoặc bổ sung thêm các tính
-            năng khác trên hệ thống, MONA sẽ thu phí hỗ trợ!
+            năng khác trên hệ thống, KEDI sẽ thu phí hỗ trợ!
           </p>
         </div>
       </div>

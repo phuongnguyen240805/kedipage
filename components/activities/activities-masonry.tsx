@@ -1,4 +1,4 @@
-import { fetchArticlesSafe } from './services/mona-api'; 
+import { fetchArticlesSafe } from './services/kedi-api'; 
 import ActivitiesList from './activities-list'; // Nhớ import file vừa tạo ở trên
 
 // --- GIỮ NGUYÊN MOCK DATA CŨ CỦA BẠN Ở ĐÂY ---
@@ -9,9 +9,9 @@ const MOCK_DATA: any[] = [
     createdAt: new Date(Date.now() - 1000 * 60 * 30).toISOString(), // 30 phút trước
     content_json: [
       {
-        author: 'MONA Media',
+        author: 'KEDI Media',
         title: 'Chào mừng năm mới 2026',
-        content: '<p>Tết đến xuân về, MONA Media xin chúc tất cả quý khách hàng và đối tác một năm mới An Khang Thịnh Vượng, Vạn Sự Như Ý! Năm nay chúng tôi sẽ tập trung vào các giải pháp AI đột phá.</p>',
+        content: '<p>Tết đến xuân về, KEDI Media xin chúc tất cả quý khách hàng và đối tác một năm mới An Khang Thịnh Vượng, Vạn Sự Như Ý! Năm nay chúng tôi sẽ tập trung vào các giải pháp AI đột phá.</p>',
       }
     ],
     images: {
@@ -44,7 +44,7 @@ const MOCK_DATA: any[] = [
     createdAt: new Date(Date.now() - 1000 * 60 * 60 * 24).toISOString(), // 1 ngày trước
     content_json: [
       {
-        author: 'MONA Media',
+        author: 'KEDI Media',
         title: 'Teambuilding Đà Nẵng',
         content: '<p>Chuyến đi Đà Nẵng 3 ngày 2 đêm đã kết thúc nhưng dư âm vẫn còn mãi. Cảm ơn ban tổ chức đã tạo ra một sân chơi tuyệt vời để anh em gắn kết. Cùng xem lại những khoảnh khắc "lầy lội" nhất nhé!</p>',
       }
@@ -81,9 +81,9 @@ const MOCK_DATA: any[] = [
     createdAt: new Date(Date.now() - 1000 * 60 * 60 * 24 * 5).toISOString(), // 5 ngày trước
     content_json: [
       {
-        author: 'Tuyển dụng MONA',
+        author: 'Tuyển dụng KEDI',
         title: 'Thông báo tuyển dụng',
-        content: '<p>🔥 GÓC TÌM ĐỒNG ĐỘI 🔥<br>MONA đang tìm kiếm 05 bạn Frontend Developer (React/Next.js) gia nhập biệt đội siêu anh hùng. Môi trường trẻ trung, trà sữa miễn phí mỗi ngày!</p>',
+        content: '<p>🔥 GÓC TÌM ĐỒNG ĐỘI 🔥<br>KEDI đang tìm kiếm 05 bạn Frontend Developer (React/Next.js) gia nhập biệt đội siêu anh hùng. Môi trường trẻ trung, trà sữa miễn phí mỗi ngày!</p>',
       }
     ],
     // Bài viết này không có ảnh để test giao diện text only

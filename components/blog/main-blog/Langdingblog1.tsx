@@ -27,7 +27,7 @@ const Langdingblog1 = () => {
               phát triển trên Internet
             </h2>
             <p className="text-gray-500 text-sm max-w-2xl mx-auto leading-relaxed">
-              Kiến thức tại Mona Blog không phải để kiếm tiền, bán khóa học hay
+              Kiến thức tại Kedi Blog không phải để kiếm tiền, bán khóa học hay
               các việc kiếm lợi nhuận tương tự.
               <br />
               Chúng tôi chia sẻ miễn phí nguồn tài nguyên dành cho các khách
@@ -52,7 +52,7 @@ const Langdingblog1 = () => {
 
                   <div className="text-gray-500 text-sm space-y-3">
                     <p>
-                      Kiến thức tại Mona Blog không phải để kiếm tiền, bán khóa học
+                      Kiến thức tại Kedi Blog không phải để kiếm tiền, bán khóa học
                       hay các mục đích kinh doanh tại lợi nhuận.
                     </p>
                     <p>

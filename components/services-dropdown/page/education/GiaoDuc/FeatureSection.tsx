@@ -95,7 +95,7 @@ export default function FeatureSection({
   showCta = true,
 
   ctaText = "BẮT ĐẦU TRẢI NGHIỆM NGAY HỆ THỐNG",
-  ctaSubtext = "Mona có phần quà vô cùng đặc biệt cho bạn",
+  ctaSubtext = "Kedi có phần quà vô cùng đặc biệt cho bạn",
 
   showPlayIcon = true, // Mặc định hiển thị icon play
 }: FeatureSectionProps) {

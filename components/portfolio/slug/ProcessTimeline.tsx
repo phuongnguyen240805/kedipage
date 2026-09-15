@@ -4,7 +4,7 @@ import { Search, Lightbulb, PenTool, BarChart3, MessageSquare } from "lucide-rea
 
 const steps = [
   { title: "Nghiên cứu dự án", icon: <Search size={24} />, color: "bg-blue-500" },
-  { title: "Giải pháp MONA", icon: <Lightbulb size={24} />, color: "bg-orange-500" },
+  { title: "Giải pháp KEDI", icon: <Lightbulb size={24} />, color: "bg-orange-500" },
   { title: "Thiết kế UI/UX", icon: <PenTool size={24} />, color: "bg-purple-500" },
   { title: "Hiệu quả dự án", icon: <BarChart3 size={24} />, color: "bg-green-500" },
   { title: "Đánh giá khách", icon: <MessageSquare size={24} />, color: "bg-pink-500" },

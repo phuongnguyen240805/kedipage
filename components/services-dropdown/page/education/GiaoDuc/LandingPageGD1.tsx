@@ -53,7 +53,7 @@ const LandingPage1GD = () => {
               <div className="mt-2">
                 <img
                   src="https://mona.media/template/assets/images/logo/logo/media-white-logo-less.svg"
-                  alt="Mona Media"
+                  alt="Kedi Media"
                   className="h-10 w-auto"
                 />
               </div>

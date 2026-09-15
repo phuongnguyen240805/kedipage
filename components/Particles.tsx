@@ -29,7 +29,7 @@ const ParticlesBackground = () => {
       },
       // ------------------------------------
       background: {
-        color: { value: "#05070a" },
+        color: { value: "#0B2D5B" },
       },
       fpsLimit: 120,
       interactivity: {
@@ -44,7 +44,7 @@ const ParticlesBackground = () => {
             distance: 200,
             links: {
               opacity: 1,
-              color: "#0077ff",
+              color: "#FFC629",
               width: 3,
             },
           },
@@ -53,14 +53,14 @@ const ParticlesBackground = () => {
             size: 8,
             duration: 0.3,
             opacity: 0.8,
-            color: "#00d2ff",
+            color: "#FFC629",
           },
         },
       },
       particles: {
-        color: { value: "#00d2ff" },
+        color: { value: "#FFC629" },
         links: {
-          color: "#00d2ff",
+          color: "#FFC629",
           distance: 150,
           enable: true,
           opacity: 0.1,

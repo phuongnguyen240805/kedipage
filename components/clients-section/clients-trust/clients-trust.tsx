@@ -13,7 +13,7 @@ import Image from "next/image";
 
 const otherClients = [
   // ... data giữ nguyên của bạn
-  { id: 1, img: "https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765201163/solution_kimthanh_elkvoi.jpg", title: "Mona Media và Levents", desc: "Tự hào đồng hành cùng thương hiệu thời trang nổi tiếng Châu Á...", solutionLink: "#", websiteLink: "#" },
+  { id: 1, img: "https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765201163/solution_kimthanh_elkvoi.jpg", title: "Kedi Media và Levents", desc: "Tự hào đồng hành cùng thương hiệu thời trang nổi tiếng Châu Á...", solutionLink: "#", websiteLink: "#" },
   { id: 2, img: "https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765201163/solution_kimthanh_elkvoi.jpg", title: "Chuỗi hệ thống Mắt Việt", desc: "Tăng trưởng doanh thu vượt trội sau dự án thiết kế website bán hàng...", solutionLink: "#", websiteLink: "#" },
   { id: 3, img: "https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765201163/solution_kimthanh_elkvoi.jpg", title: "Anh Ngữ The Forum Center", desc: "Tiếp tục tin tưởng với hợp đồng dịch vụ thứ 3 về Website & App...", solutionLink: "#", websiteLink: "#" },
 ];

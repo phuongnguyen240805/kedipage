@@ -10,7 +10,7 @@ export default function Sidebar() {
         <div className="relative overflow-hidden rounded-xl shadow-lg">
           <div className="bg-gradient-to-br from-purple-600 via-pink-500 to-green-400 p-6 text-white">
             <div className="text-xs font-semibold mb-2 opacity-90">
-              🎓 MONA.Media / Digital-2
+              🎓 KEDI.Media / Digital-2
             </div>
             <div className="text-xs font-bold mb-1">
               KHÓA HỌC KINH DOANH KHÓA HỌC
@@ -46,7 +46,7 @@ export default function Sidebar() {
         <div className="relative overflow-hidden rounded-xl shadow-lg">
           <div className="bg-gradient-to-br from-purple-700 via-blue-600 to-purple-800 p-6 text-white">
             <div className="text-xs font-semibold mb-2 opacity-90">
-              🚀 MONA.Media / Digital-2
+              🚀 KEDI.Media / Digital-2
             </div>
 
             <h3 className="text-2xl font-bold mb-2 leading-tight">

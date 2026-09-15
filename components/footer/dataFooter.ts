@@ -1,19 +1,19 @@
 // ✅ dataFooter.ts - phiên bản tương thích hoàn toàn i18n JSON mới
-export const aboutMonaLinks = [
-  { href: '/gioi-thieu-ve-mona', label: 'footer.aboutMona.links.intro' },
+export const aboutKediLinks = [
+  { href: '/gioi-thieu-ve-kedi', label: 'footer.aboutKedi.links.intro' },
   {
     href: '/du-an-thanh-cong',
-    label: 'footer.aboutMona.links.successProjects',
+    label: 'footer.aboutKedi.links.successProjects',
   },
   {
-    href: '/su-thanh-cong-cua-mona',
-    label: 'footer.aboutMona.links.monaSuccess',
+    href: '/su-thanh-cong-cua-kedi',
+    label: 'footer.aboutKedi.links.kediSuccess',
   },
-  { href: '/khach-hang', label: 'footer.aboutMona.links.clients' },
-  { href: '/tuyen-dung', label: 'footer.aboutMona.links.careers' },
-  { href: '/lien-he', label: 'footer.aboutMona.links.contact' },
-  { href: '/blog', label: 'footer.aboutMona.links.blog' },
-  { href: '/ban-tin-mona', label: 'footer.aboutMona.links.newsletter' },
+  { href: '/khach-hang', label: 'footer.aboutKedi.links.clients' },
+  { href: '/tuyen-dung', label: 'footer.aboutKedi.links.careers' },
+  { href: '/lien-he', label: 'footer.aboutKedi.links.contact' },
+  { href: '/blog', label: 'footer.aboutKedi.links.blog' },
+  { href: '/ban-tin-kedi', label: 'footer.aboutKedi.links.newsletter' },
 ];
 
 export const websiteSolutionsLinks = [
@@ -134,43 +134,43 @@ export const mediaBrandingLinks = [
 ];
 
 export const contactInfo = {
-  email: 'info@mona.global',
+  email: 'info@kedi.global',
   address: '1073/23 Cách Mạng Tháng Tám, phường Tân Sơn Nhì, TPHCM',
 };
 
 export const companiesInfo = [
   {
-    name: 'MONA.Media',
+    name: 'KEDI.Media',
     bgColor: 'bg-purple-600',
     logoText: 'M',
-    fullName: 'footer.companiesInfo.monaMedia.fullName',
-    taxCode: 'footer.companiesInfo.monaMedia.taxCode',
-    bankName: 'footer.companiesInfo.monaMedia.bankName',
-    bankAccount: 'footer.companiesInfo.monaMedia.bankAccount',
+    fullName: 'footer.companiesInfo.kediMedia.fullName',
+    taxCode: 'footer.companiesInfo.kediMedia.taxCode',
+    bankName: 'footer.companiesInfo.kediMedia.bankName',
+    bankAccount: 'footer.companiesInfo.kediMedia.bankAccount',
   },
   {
-    name: 'MONA.Software',
+    name: 'KEDI.Software',
     bgColor: 'bg-blue-600',
     logoText: 'S',
-    fullName: 'footer.companiesInfo.monaSoftware.fullName',
-    taxCode: 'footer.companiesInfo.monaSoftware.taxCode',
-    bankName: 'footer.companiesInfo.monaSoftware.bankName',
-    bankAccount: 'footer.companiesInfo.monaSoftware.bankAccount',
+    fullName: 'footer.companiesInfo.kediSoftware.fullName',
+    taxCode: 'footer.companiesInfo.kediSoftware.taxCode',
+    bankName: 'footer.companiesInfo.kediSoftware.bankName',
+    bankAccount: 'footer.companiesInfo.kediSoftware.bankAccount',
   },
   {
-    name: 'MONA.Host',
+    name: 'KEDI.Host',
     bgColor: 'bg-cyan-600',
     logoText: 'H',
-    fullName: 'footer.companiesInfo.monaHost.fullName',
-    taxCode: 'footer.companiesInfo.monaHost.taxCode',
-    bankName: 'footer.companiesInfo.monaHost.bankName',
-    bankAccount: 'footer.companiesInfo.monaHost.bankAccount',
+    fullName: 'footer.companiesInfo.kediHost.fullName',
+    taxCode: 'footer.companiesInfo.kediHost.taxCode',
+    bankName: 'footer.companiesInfo.kediHost.bankName',
+    bankAccount: 'footer.companiesInfo.kediHost.bankAccount',
   },
 ];
 
 export const bottomLeftSection = {
   logo: '🐼',
-  companyName: 'MONA.Media',
+  companyName: 'KEDI.Media',
   description: 'footer.bottomLeftSection.description',
 };
 

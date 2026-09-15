@@ -31,7 +31,7 @@ const RegisterMain = () => {
           <div className="relative z-10 max-w-lg text-center">
             <h1 className="text-5xl md:text-6xl font-black tracking-tighter mb-6 leading-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2547f4] to-[#a855f7]">
-                Mona
+                Kedi
               </span>
             </h1>
             <p className="text-[#909acb] text-xl font-light leading-relaxed">
@@ -40,7 +40,7 @@ const RegisterMain = () => {
             
             <div className="mt-12 flex items-center justify-center gap-4 text-[10px] font-bold text-[#2547f4] uppercase tracking-[0.3em]">
               <span className="w-12 h-[1px] bg-[#2547f4]/40"></span>
-              Hệ thống MONA
+              Hệ thống KEDI
               <span className="w-12 h-[1px] bg-[#2547f4]/40"></span>
             </div>
           </div>

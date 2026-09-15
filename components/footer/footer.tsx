@@ -8,7 +8,7 @@ import { Button } from '../ui/button';
 
 
 import {
-  aboutMonaLinks,
+  aboutKediLinks,
   websiteSolutionsLinks,
   onlineMarketingLinks,
   hostingVpsServerLinks,
@@ -37,11 +37,11 @@ const renderLinkList = (
   t: (key: string) => string
 ) => (
   <div>
-    <h3 className="text-purple-600 font-semibold mb-4 font-[Archivo_Black,Arial,sans-serif]">{title}</h3>
+    <h3 className="text-kedi-navy font-semibold mb-4 font-[Archivo_Black,Arial,sans-serif]">{title}</h3>
     <ul className="space-y-2 text-sm text-gray-600">
       {links.map(({ href, label }) => (
         <li key={href}>
-          <Link href={href} className="hover:text-purple-600">
+          <Link href={href} className="hover:text-kedi-navy">
             {t(label)} {/* Dịch label bằng i18n */}
           </Link>
         </li>
@@ -57,8 +57,8 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* ✅ RESPONSIVE GRID: 2 columns on mobile, 4 columns on desktop */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-          {/* Row 1: Về Mona & Giải pháp website */}
-          {renderLinkList(t('footer.aboutMonaTitle'), aboutMonaLinks, t)}
+          {/* Row 1: Về Kedi & Giải pháp website */}
+          {renderLinkList(t('footer.aboutKediTitle'), aboutKediLinks, t)}
           {renderLinkList(
             t('footer.websiteSolutionsTitle'),
             websiteSolutionsLinks,
@@ -89,19 +89,19 @@ const Footer: React.FC = () => {
 
           {/* Contact Section - spans both columns on mobile */}
           <div className="col-span-2 md:col-span-1">
-            <h3 className="text-purple-600 font-semibold mb-4 font-[Archivo_Black,Arial,sans-serif]">
+            <h3 className="text-kedi-navy font-semibold mb-4 font-[Archivo_Black,Arial,sans-serif]">
               {t('footer.contact')}
             </h3>
             <div className="space-y-3 text-sm text-gray-600">
               <div className="flex items-start space-x-2">
-                <Mail className="w-4 h-4 text-purple-600 mt-1" />
+                <Mail className="w-4 h-4 text-kedi-navy mt-1" />
                 <div>
                   <p>{t('footer.email')}</p>
-                  <p className="text-purple-600">{contactInfo.email}</p>
+                  <p className="text-kedi-navy">{contactInfo.email}</p>
                 </div>
               </div>
               <div className="flex items-start space-x-2">
-                <MapPin className="w-4 h-4 text-purple-600 mt-1" />
+                <MapPin className="w-4 h-4 text-kedi-navy mt-1" />
                 <div>
                   <p>{t('footer.address')}</p>
                   <p>{contactInfo.address}</p>
@@ -112,7 +112,7 @@ const Footer: React.FC = () => {
 
           {/* Call to Action - spans both columns on mobile */}
           <div className="col-span-2 md:col-span-1 mt-8 relative overflow-visible">
-            <div className="bg-purple-600 p-1 text-white text-center relative z-0">
+            <div className="bg-kedi-yellow p-1 text-kedi-navy text-center relative z-0">
               <p className="text-sm font-medium font-[Archivo_Black,Arial,sans-serif]">{t('footer.callToAction')}</p>
             </div>
             <Image
@@ -142,7 +142,7 @@ const Footer: React.FC = () => {
               <p className="text-sm text-gray-600">{t(company.fullName)}</p>
               <p className="text-sm text-gray-600">{t(company.taxCode)}</p>
               <p className="text-sm text-gray-600">
-                <span className="text-blue-600 font-semibold font-[Archivo_Black,Arial,sans-serif]">
+                <span className="text-kedi-navy font-semibold font-[Archivo_Black,Arial,sans-serif]">
                   {t(company.bankName)}
                 </span>
               </p>
@@ -157,11 +157,13 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center">
-                <span className="text-white text-xs">
-                  {bottomLeftSection.logo}
-                </span>
-              </div>
+              <Image
+                src="/brand/kedi-icon.png"
+                alt="Kedi.Media icon"
+                width={32}
+                height={32}
+                className="w-8 h-8 object-contain"
+              />
               <div>
                 <span className="font-bold font-[Archivo_Black,Arial,sans-serif]">
                   {t(bottomLeftSection.companyName)}
@@ -201,7 +203,7 @@ const Footer: React.FC = () => {
             <Button
               onClick={() => navigateTo('/dieu-khoan')}
               onKeyDown={(e) => handleKeyPress(e, '/dieu-khoan')}
-              className="text-purple-600 hover:text-purple-700 cursor-pointer"
+              className="text-kedi-navy hover:text-kedi-navy/80 cursor-pointer"
             >
               {t('footer.terms')}
             </Button>

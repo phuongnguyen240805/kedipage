@@ -20,7 +20,7 @@ export default function Langdingwebsc4() {
             Nếu bạn chưa tìm được mẫu website
           </h2>
           <h3 className="text-3xl md:text-5xl font-black mb-4 leading-tight">
-            Thì hãy liên hệ ngay với MONA
+            Thì hãy liên hệ ngay với KEDI
           </h3>
           <p className="text-3xl md:text-5xl font-black mb-16 text-[#f98a22]">
             để được tư vấn những mẫu website ưng ý
@@ -38,7 +38,7 @@ export default function Langdingwebsc4() {
                 </div>
                 <div className="text-left">
                   <span className="block text-2xl font-black uppercase tracking-tight">
-                    Liên hệ MONA ngay!
+                    Liên hệ KEDI ngay!
                   </span>
                   <span className="block text-sm font-medium opacity-80 italic">
                     Để được tư vấn thêm về mẫu website
@@ -57,7 +57,7 @@ export default function Langdingwebsc4() {
                 <Lock size={16} className="text-yellow-400" />
               </div>
               <p className="text-sm md:text-base font-medium opacity-90 max-w-md">
-                MONA cam kết tuyệt đối không sử dụng thông tin của bạn để bán
+                KEDI cam kết tuyệt đối không sử dụng thông tin của bạn để bán
                 hoặc SPAM
               </p>
             </div>
@@ -72,7 +72,7 @@ export default function Langdingwebsc4() {
             </h4>
 
             <div className="inline-block relative group">
-              {/* Khung Hotline chuẩn thiết kế Mona */}
+              {/* Khung Hotline chuẩn thiết kế Kedi */}
               <div className="bg-[#112a73] px-16 py-6 rounded-2xl border-2 border-dashed border-yellow-400/50 shadow-2xl relative overflow-hidden">
                 <span className="text-5xl md:text-7xl font-black text-[#f98a22] tracking-tighter transition-colors group-hover:text-white">
                   1900 636 648

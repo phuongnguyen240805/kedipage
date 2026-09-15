@@ -65,13 +65,13 @@ export default function LanguageSwitcher() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="bg-black flex items-center gap-2 px-3 py-2 rounded-xl border hover:bg-accent">
-        <Globe className="w-4 h-4" />
-        <span className="text-sm font-medium uppercase">{locale}</span>
+      <DropdownMenuTrigger className="flex h-9 items-center gap-1.5 rounded-full border border-white/20 bg-transparent px-2.5 text-white transition-colors duration-200 hover:border-kedi-yellow hover:text-kedi-yellow focus:outline-none data-[state=open]:border-kedi-yellow data-[state=open]:text-kedi-yellow">
+        <Globe className="h-3.5 w-3.5" />
+        <span className="text-[12px] font-medium uppercase tracking-wider">{locale}</span>
       </DropdownMenuTrigger>
 
       <DropdownMenuContent
-        className="w-40 max-h-48 overflow-y-auto z-[100001] bg-black text-white"
+        className="w-40 max-h-48 overflow-y-auto z-[100001] bg-kedi-navy text-white border-white/15"
         align="end"
       >
         <DropdownMenuLabel className="text-white">Chọn ngôn ngữ</DropdownMenuLabel>
@@ -82,7 +82,7 @@ export default function LanguageSwitcher() {
             key={lang.code}
             onClick={() => changeLanguage(lang.code)}
             disabled={isPending}
-            className={`flex items-center gap-2 ${locale === lang.code ? 'bg-accent text-white' : 'text-white'}`}
+            className={`flex items-center gap-2 ${locale === lang.code ? 'bg-kedi-yellow text-kedi-navy' : 'text-white hover:bg-kedi-yellow/10 hover:text-kedi-yellow'}`}
           >
             <span>{lang.emoji}</span>
             <span>{lang.name}</span>

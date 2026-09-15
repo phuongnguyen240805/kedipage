@@ -1,7 +1,9 @@
-name = "mona_web"
-main = ".open-next/worker.js" 
-compatibility_date = "2026-01-04"
-compatibility_flags = ["nodejs_compat"]
+# Legacy duplicate of wrangler.toml. Wrangler uses wrangler.toml by default.
+# Keep in sync; do not add [build].command here (it re-enters build:cf).
+name = "kedi-web"
+main = ".open-next/worker.js"
+compatibility_date = "2026-09-14"
+compatibility_flags = ["nodejs_compat", "global_fetch_strictly_public"]
 
 [assets]
 directory = ".open-next/assets"
@@ -13,8 +15,9 @@ NEXTJS_ENV = "production"
 [observability]
 enabled = true
 
-# THÊM ĐOẠN NÀY: Ép Wrangler build theo định dạng ESM
-[build]
-command = "npm run build:cf"
-[build.upload]
-format = "modules"
+[images]
+binding = "IMAGES"
+
+[[services]]
+binding = "WORKER_SELF_REFERENCE"
+service = "kedi-web"
