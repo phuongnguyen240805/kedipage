@@ -27,9 +27,9 @@ export default function PartnershipAffiliate() {
             <Image
               src="https://mona.media/template/assets/images/affiliate/banner-img-1920w.avif"
               alt="Team Kedi"
+              width={640}
+              height={360}
               className="w-[640px] max-w-full h-auto object-contain mx-auto -mt-28"
-              layout="fill"
-              objectFit="cover"
             />
           </div>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] z-20 group">

@@ -2,6 +2,16 @@
 
 const API_BASE = process.env.NEXT_PUBLIC_STRAPI_API as string;
 
+function isHttpUrl(value?: string): boolean {
+  if (!value) return false;
+  try {
+    const url = new URL(value);
+    return url.protocol === 'http:' || url.protocol === 'https:';
+  } catch {
+    return false;
+  }
+}
+
 export interface StrapiArticle {
   id: number;
   documentId: string;
@@ -33,8 +43,10 @@ export async function fetchArticles(): Promise<{
   articles: StrapiArticle[];
   total: number;
 }> {
-  if (!API_BASE)
-    throw new Error('NEXT_PUBLIC_STRAPI_API environment variable is not set');
+  if (!isHttpUrl(API_BASE))
+    throw new Error(
+      'NEXT_PUBLIC_STRAPI_API is missing or not a valid http(s) URL'
+    );
   const base = API_BASE.replace(/\/$/, '');
   const qs = new URLSearchParams({
     'pagination[limit]': '1000',
@@ -68,8 +80,10 @@ export async function fetchArticles(): Promise<{
 export async function fetchArticleBySlug(
   slug: string
 ): Promise<StrapiArticle | null> {
-  if (!API_BASE)
-    throw new Error('NEXT_PUBLIC_STRAPI_API environment variable is not set');
+  if (!isHttpUrl(API_BASE))
+    throw new Error(
+      'NEXT_PUBLIC_STRAPI_API is missing or not a valid http(s) URL'
+    );
   const base = API_BASE.replace(/\/$/, '');
   const candidates = [`${base}/api/monas`, `${base}/monas`];
   const filters = [
@@ -253,6 +267,12 @@ export async function fetchArticlesSafe(): Promise<{
   articles: StrapiArticle[];
   total: number;
 }> {
+  if (!isHttpUrl(API_BASE)) {
+    console.warn(
+      '[activities] NEXT_PUBLIC_STRAPI_API is not a valid http(s) URL; showing empty list'
+    );
+    return { articles: [], total: 0 };
+  }
   try {
     return await fetchArticles();
   } catch (error) {
