@@ -10,6 +10,9 @@ interface CustomerFormProps {
 }
 
 const CustomerForm: React.FC<CustomerFormProps> = ({ onSuccess }) => {
+  const recaptchaSiteKey =
+    process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || process.env.siteKey || '';
+
   const [data, setData] = useState<CustomerData>({
     fullName: '',
     email: '',
@@ -26,6 +29,10 @@ const CustomerForm: React.FC<CustomerFormProps> = ({ onSuccess }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!recaptchaSiteKey) {
+      setMessage({ type: 'error', text: 'reCAPTCHA chưa được cấu hình.' });
+      return;
+    }
     if (!captchaToken) {
       setMessage({ type: 'error', text: 'Vui lòng xác nhận reCAPTCHA.' });
       return;
@@ -71,9 +78,13 @@ const CustomerForm: React.FC<CustomerFormProps> = ({ onSuccess }) => {
 
       <div className="flex flex-col">
        
-          <ReCAPTCHA theme="dark" sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} onChange={setCaptchaToken} />
+          {recaptchaSiteKey ? (
+            <ReCAPTCHA theme="dark" sitekey={recaptchaSiteKey} onChange={setCaptchaToken} />
+          ) : (
+            <p className="text-[11px] text-red-400">reCAPTCHA chưa được cấu hình.</p>
+          )}
       
-        <button disabled={submitting} className="w-full mt-3 py-4 bg-white text-black rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-gray-200 transition-all active:scale-[0.98] disabled:bg-gray-700 disabled:text-gray-400">
+        <button disabled={submitting || !recaptchaSiteKey} className="w-full mt-3 py-4 bg-white text-black rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-gray-200 transition-all active:scale-[0.98] disabled:bg-gray-700 disabled:text-gray-400">
           {submitting ? 'ĐANG XỬ LÝ...' : 'GỬI YÊU CẦU TƯ VẤN'}
         </button>
       </div>

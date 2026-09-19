@@ -10,7 +10,6 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuContent,
 } from "@/components/ui/navigation-menu";
 import { useState, useCallback, useMemo, useEffect, useRef } from "react";
 import { isNavItemActive, navigationConfig } from "../../data/navigation-config";
@@ -28,16 +27,21 @@ const navTextClass =
 const Header = ({ className }: { className?: string }) => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [isCompact, setIsCompact] = useState(false);
   const lastScrollY = useRef(0);
   const mobileMenuOpenRef = useRef(false);
+  const servicesMenuOpenRef = useRef(false);
+  const servicesTriggerRef = useRef<HTMLButtonElement>(null);
+  const servicesDropdownRef = useRef<HTMLDivElement>(null);
 
   const router = useRouter();
   const pathname = usePathname();
   const { t } = useTranslation();
 
   mobileMenuOpenRef.current = isMobileMenuOpen;
+  servicesMenuOpenRef.current = isServicesOpen;
 
   useEffect(() => {
     const onScroll = () => {
@@ -47,7 +51,7 @@ const Header = ({ className }: { className?: string }) => {
 
       setIsCompact(y > 16);
 
-      if (mobileMenuOpenRef.current || y < 16) {
+      if (mobileMenuOpenRef.current || servicesMenuOpenRef.current || y < 16) {
         setIsVisible(true);
       } else if (delta > 8 && y > 72) {
         setIsVisible(false);
@@ -62,6 +66,33 @@ const Header = ({ className }: { className?: string }) => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    setIsServicesOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!isServicesOpen) return;
+
+    const handlePointerDown = (event: PointerEvent) => {
+      const target = event.target as Node;
+      if (servicesTriggerRef.current?.contains(target)) return;
+      if (servicesDropdownRef.current?.contains(target)) return;
+      setIsServicesOpen(false);
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsServicesOpen(false);
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isServicesOpen]);
 
   const toggleSearch = useCallback(() => setIsSearchOpen((prev) => !prev), []);
   const toggleMobileMenu = useCallback(
@@ -111,8 +142,43 @@ const Header = ({ className }: { className?: string }) => {
                 );
 
                 return (
-                  <NavigationMenuItem key={key} className={boxEffectClass}>
-                    {item.type === "link" ? (
+                  <NavigationMenuItem
+                    key={key}
+                    className={cn(
+                      boxEffectClass,
+                      item.dropdownType === "services" &&
+                        isServicesOpen &&
+                        "bg-kedi-yellow/15 text-kedi-yellow"
+                    )}
+                  >
+                    {item.dropdownType === "services" ? (
+                      <>
+                        <button
+                          ref={servicesTriggerRef}
+                          type="button"
+                          className={cn(
+                            "hover:bg-transparent focus:bg-transparent hover:text-current",
+                            navTextClass
+                          )}
+                          style={navigationTriggerStyle}
+                          aria-haspopup="menu"
+                          aria-expanded={isServicesOpen}
+                          aria-controls="kedi-services-dropdown"
+                          onClick={() => setIsServicesOpen((prev) => !prev)}
+                        >
+                          {item.labelKey ? t(`navigation.${item.labelKey}`) : ""}
+                        </button>
+
+                        {isServicesOpen && (
+                          <div
+                            ref={servicesDropdownRef}
+                            id="kedi-services-dropdown"
+                          >
+                            <ServicesDropdown />
+                          </div>
+                        )}
+                      </>
+                    ) : item.type === "link" ? (
                       item.href && item.label ? (
                         <NavLink
                           href={item.href}
@@ -140,17 +206,11 @@ const Header = ({ className }: { className?: string }) => {
                         >
                           {item.labelKey ? t(`navigation.${item.labelKey}`) : ""}
                         </NavigationMenuTrigger>
-                        {item.dropdownType === "services" ? (
-                          <NavigationMenuContent>
-                            <ServicesDropdown />
-                          </NavigationMenuContent>
-                        ) : (
-                          item.items && (
-                            <BlogDropdown
-                              items={item.items}
-                              hoverColor={item.hoverColor}
-                            />
-                          )
+                        {item.items && (
+                          <BlogDropdown
+                            items={item.items}
+                            hoverColor={item.hoverColor}
+                          />
                         )}
                       </>
                     )}

@@ -21,6 +21,9 @@ const RegisterForm = ({
   position = 'center',
   getRecaptchaToken,
 }: RegisterFormProps) => {
+  const recaptchaSiteKey =
+    process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || process.env.siteKey || '';
+
   // --- GIỮ NGUYÊN LOGIC ---
   const [formData, setFormData] = useState({
     fullName: '',
@@ -56,6 +59,13 @@ const RegisterForm = ({
       } catch (err) {
         console.error('Error executing parent reCAPTCHA:', err);
       }
+    }
+
+    if (!recaptchaSiteKey) {
+      setSubmitMessage('reCAPTCHA chưa được cấu hình. Vui lòng kiểm tra biến môi trường.');
+      setIsSubmitError(true);
+      setIsSubmitting(false);
+      return;
     }
 
     if (!token) {
@@ -185,11 +195,17 @@ const RegisterForm = ({
 
         <div className="mt-4 flex justify-center py-2">
           <div className="transform scale-[0.85] sm:scale-[0.9] origin-center">
-            <ReCAPTCHA
-              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-              onChange={(token) => setCaptchaToken(token)}
-              theme="light"
-            />
+            {recaptchaSiteKey ? (
+              <ReCAPTCHA
+                sitekey={recaptchaSiteKey}
+                onChange={(token) => setCaptchaToken(token)}
+                theme="light"
+              />
+            ) : (
+              <p className="text-xs text-red-500 text-center">
+                reCAPTCHA chưa được cấu hình.
+              </p>
+            )}
           </div>
         </div>
 
@@ -207,7 +223,7 @@ const RegisterForm = ({
 
         <Button
           onClick={handleSubmit}
-          disabled={isSubmitting}
+          disabled={isSubmitting || !recaptchaSiteKey}
           className="w-full bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600 hover:from-purple-700 hover:via-fuchsia-700 hover:to-pink-700 py-6 rounded-xl font-bold text-base tracking-wide text-white transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-purple-200 hover:shadow-purple-400/40 relative overflow-hidden group"
         >
           <span className="relative z-10">{isSubmitting ? 'ĐANG GỬI...' : 'ĐĂNG KÝ NGAY'}</span>

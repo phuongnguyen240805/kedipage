@@ -5,6 +5,9 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { CandidateData } from './types';
 
 const CandidateForm = () => {
+  const recaptchaSiteKey =
+    process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || process.env.siteKey || '';
+
   const [data, setData] = useState<CandidateData>({
     fullName: '', email: '', phone: '', position: '', experience: '', portfolio: '',
   });
@@ -16,6 +19,7 @@ const CandidateForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!recaptchaSiteKey) return setMessage({ type: 'error', text: 'reCAPTCHA chưa được cấu hình.' });
     if (!captchaToken) return setMessage({ type: 'error', text: 'Xác nhận Captcha' });
     setSubmitting(true);
     // Logic fetch tương tự CustomerForm...
@@ -41,8 +45,12 @@ const CandidateForm = () => {
       </div>
       
             <div className="flex flex-col ">
-                <ReCAPTCHA theme="dark" sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} onChange={setCaptchaToken} />
-              <button disabled={submitting} className="mt-3 w-full py-4 bg-white text-black rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-gray-200 transition-all active:scale-[0.98] disabled:bg-gray-700 disabled:text-gray-400">
+                {recaptchaSiteKey ? (
+                  <ReCAPTCHA theme="dark" sitekey={recaptchaSiteKey} onChange={setCaptchaToken} />
+                ) : (
+                  <p className="text-[11px] text-red-400">reCAPTCHA chưa được cấu hình.</p>
+                )}
+              <button disabled={submitting || !recaptchaSiteKey} className="mt-3 w-full py-4 bg-white text-black rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-gray-200 transition-all active:scale-[0.98] disabled:bg-gray-700 disabled:text-gray-400">
                 {submitting ? 'ĐANG XỬ LÝ...' : 'GỬI YÊU CẦU TƯ VẤN'}
               </button>
             </div>
