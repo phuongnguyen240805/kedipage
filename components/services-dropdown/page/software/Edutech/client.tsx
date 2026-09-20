@@ -126,7 +126,7 @@ export default function ClientEdutech() {
 
       ScrollTrigger.addEventListener = ((type: string, callback: (...args: any[]) => void) => {
         stListeners.push({ type, callback });
-        originalSTAdd(type, callback);
+        originalSTAdd(type as Parameters<typeof originalSTAdd>[0], callback);
       }) as typeof ScrollTrigger.addEventListener;
 
       gsap.matchMedia = ((...args: Parameters<typeof gsap.matchMedia>) => {
@@ -166,7 +166,9 @@ export default function ClientEdutech() {
         windowListeners.forEach(({ type, listener, options }) => {
           nativeRemoveEventListener(type, listener, options as EventListenerOptions);
         });
-        stListeners.forEach(({ type, callback }) => originalSTRemove(type, callback));
+        stListeners.forEach(({ type, callback }) =>
+          originalSTRemove(type as Parameters<typeof originalSTRemove>[0], callback),
+        );
         timeoutIds.forEach((id) => nativeClearTimeout(id));
         rafIds.forEach((id) => nativeCancelRAF(id));
         mediaContexts.forEach((context) => context.revert());
