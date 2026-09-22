@@ -50,7 +50,7 @@ const ServiceItem = ({
   } else {
     title = service.title ?? '';
   }
-  const description = service.descriptionKey ? translate(service.descriptionKey) : undefined;
+  const description = service.descriptionKey ? translate(service.descriptionKey, service.description) : service.description;
 
   const renderImage = (width: number, height: number, alt: string) => {
     if (service.imageUrl || service.cloudinaryId) {
@@ -65,7 +65,7 @@ const ServiceItem = ({
         />
       );
     }
-    return <div className="w-full h-full flex items-center justify-center text-[clamp(8px,0.6vw,10px)] bg-accent/20">No Image</div>;
+    return <div className="w-full h-full flex items-center justify-center text-[clamp(18px,2vw,32px)] font-black tracking-tight bg-accent/20 text-primary">{service.icon || title.slice(0, 3).toUpperCase()}</div>;
   };
 
   // Class tiêu đề dùng clamp để chữ tự to ra khi màn hình rộng

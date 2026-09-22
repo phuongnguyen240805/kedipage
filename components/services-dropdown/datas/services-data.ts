@@ -3,6 +3,7 @@ export type Service = {
   titleKey?: string; // Changed from title to titleKey
   title?: string; // Optional local fallback title
   descriptionKey?: string; // Changed from description to descriptionKey
+  description?: string; // Local fallback description
   imageUrl?: string;
   cloudinaryId?: string;
   icon?: string;
@@ -205,6 +206,105 @@ export const serviceCategories: ServiceCategories = {
     gridCols: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4',
     services: [
       {
+        href: '/kedi-os',
+        title: 'Kedi OS',
+        description: 'Hệ điều hành SaaS/doanh nghiệp',
+        icon: '◉',
+        layoutType: 'card-image-top',
+      },
+      {
+        href: '/kedi-crm',
+        title: 'Kedi CRM',
+        description: 'Customer Relationship Management',
+        icon: 'CRM',
+        layoutType: 'card-image-top',
+      },
+      {
+        href: '/kedi-commerce',
+        title: 'Kedi Commerce',
+        description: 'Catalog, order và inventory',
+        icon: '◫',
+        layoutType: 'card-image-top',
+      },
+      {
+        href: '/kedi-agents',
+        title: 'Kedi Agents',
+        description: 'Agent runtime & AI workforce',
+        icon: 'AI',
+        layoutType: 'card-image-top',
+      },
+      {
+        href: '/kedi-outreach',
+        title: 'Kedi Outreach',
+        description: 'Prospecting, messaging & engagement',
+        icon: '↗',
+        layoutType: 'card-image-top',
+      },
+      {
+        href: '/kedi-profiles',
+        title: 'Kedi Profiles',
+        description: 'Multi-account/browser profiles',
+        icon: 'ID',
+        layoutType: 'card-image-top',
+      },
+      {
+        href: '/kedi-ai-flow',
+        title: 'Kedi AI Flow',
+        description: 'AI-platform workflow automation',
+        icon: '⌁',
+        layoutType: 'card-image-top',
+      },
+      {
+        href: '/kedi-video',
+        title: 'Kedi Video',
+        description: 'Video production automation',
+        icon: '▶',
+        layoutType: 'card-image-top',
+      },
+      {
+        href: '/kedi-pod',
+        title: 'Kedi POD',
+        description: 'Print-on-Demand automation',
+        icon: 'POD',
+        layoutType: 'card-image-top',
+      },
+      {
+        href: '/kedi-funnel',
+        title: 'Kedi Funnel',
+        description: 'Landing page & conversion funnel',
+        icon: '▽',
+        layoutType: 'card-image-top',
+      },
+      {
+        href: '/kedi-seo',
+        title: 'Kedi SEO',
+        description: 'SEO/GEO intelligence & optimization',
+        icon: 'SEO',
+        layoutType: 'card-image-top',
+      },
+      {
+        href: '/kedi-ads',
+        title: 'Kedi Ads',
+        description: 'Meta/Facebook advertising',
+        icon: 'ADS',
+        layoutType: 'card-image-top',
+      },
+      {
+        href: '/kedi-analytics',
+        title: 'Kedi Analytics',
+        description: 'Business & marketing analytics',
+        icon: '↗',
+        layoutType: 'card-image-top',
+      },
+      {
+        href: '/kedi-automate',
+        title: 'Kedi Automate',
+        description: 'Cross-app business workflow',
+        icon: '⚡',
+        layoutType: 'card-image-top',
+      },
+
+      {
         href: '/nhtq/',
         titleKey: 'services.items.nhtq_system.title',
         descriptionKey: 'services.items.nhtq_system.description',
@@ -216,6 +316,12 @@ export const serviceCategories: ServiceCategories = {
         titleKey: 'services.items.kedi_skillhub.title',
         descriptionKey: 'services.items.kedi_skillhub.description',
         cloudinaryId: 'mega-menu-new-content-13_zyhkmv',
+        layoutType: 'card-image-top',
+      },
+      {
+        href: '/phan-mem-quan-ly-tiem-vang/',
+        title: 'KEDI JMS – Quản lý tiệm vàng',
+        imageUrl: '/software-clone/jms/assets/top-phan-mem-quan-ly-tiem-vang.png',
         layoutType: 'card-image-top',
       },
       {
@@ -237,18 +343,7 @@ export const serviceCategories: ServiceCategories = {
         titleKey: 'services.items.lms_solution.title',
         descriptionKey: 'services.items.lms_solution.description',
         cloudinaryId: 'mega-menu-new-content-15_sc3ggl',
-      },
-      {
-        href: '/nhtq/',
-        titleKey: 'services.items.nhtq_system.title',
-        descriptionKey: 'services.items.nhtq_system.description',
-        cloudinaryId: 'mega-menu-new-content-12_drpmej',
-      },
-      {
-        href: '/phan-mem-dao-tao-noi-bo/',
-        titleKey: 'services.items.kedi_skillhub.title',
-        descriptionKey: 'services.items.kedi_skillhub.description',
-        cloudinaryId: 'mega-menu-new-content-13_zyhkmv',
+        layoutType: 'card-image-top',
       },
     ],
   },
@@ -263,18 +358,6 @@ export const serviceCategories: ServiceCategories = {
         titleKey: 'services.items.lms_solution.title',
         descriptionKey: 'services.items.lms_solution.description',
         cloudinaryId: 'mega-menu-new-content-15_sc3ggl',
-      },
-      {
-        href: '/nhtq/',
-        titleKey: 'services.items.nhtq_system.title',
-        descriptionKey: 'services.items.nhtq_system.description',
-        cloudinaryId: 'mega-menu-new-content-12_drpmej',
-      },
-      {
-        href: '/phan-mem-dao-tao-noi-bo/',
-        titleKey: 'services.items.kedi_skillhub.title',
-        descriptionKey: 'services.items.kedi_skillhub.description',
-        cloudinaryId: 'mega-menu-new-content-13_zyhkmv',
       },
       {
         href: '/dang-ky-ten-mien',

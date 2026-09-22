@@ -1,10 +1,14 @@
-'use client';
-import React from 'react';
+"use client";
 
-export default function ClientNHTQ() {
+import MonaCloneRuntime from "../shared/MonaCloneRuntime";
+import { nhtqMarkup } from "./content";
+
+export default function ClientPage() {
   return (
-    <div>
-      <h1>Phần Mềm NHTQ</h1>
-    </div>
+    <MonaCloneRuntime
+      kind="nhtq"
+      cssHref="/software-clone/nhtq/page.css"
+      markup={nhtqMarkup}
+    />
   );
 }

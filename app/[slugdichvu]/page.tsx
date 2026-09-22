@@ -24,9 +24,26 @@ const getAllSlugs = () => [
   // GIẢI PHÁP PHẦN MỀM
   'nhtq',
   'phan-mem-dao-tao-noi-bo',
+  'phan-mem-quan-ly-tiem-vang',
   'select-trial',
   'tools-ngon',
   'edutech',
+
+  // HỆ SẢN PHẨM KEDI
+  'kedi-os',
+  'kedi-crm',
+  'kedi-commerce',
+  'kedi-agents',
+  'kedi-outreach',
+  'kedi-profiles',
+  'kedi-ai-flow',
+  'kedi-video',
+  'kedi-pod',
+  'kedi-funnel',
+  'kedi-seo',
+  'kedi-ads',
+  'kedi-analytics',
+  'kedi-automate',
 
   // HẠ TẦNG HOSTING, VPS
   'dang-ky-ten-mien',
@@ -88,12 +105,30 @@ const getComponentBySlug = (slug: string) => {
       import('@/components/services-dropdown/page/software/NHTQ/page'),
     'phan-mem-dao-tao-noi-bo': () =>
       import('@/components/services-dropdown/page/software/PhanMemDaoTaoNoiBo/page'),
+    'phan-mem-quan-ly-tiem-vang': () =>
+      import('@/components/services-dropdown/page/software/PhanMemQuanLyTiemVang/page'),
     'select-trial': () =>
       import('@/components/services-dropdown/page/software/SelectTrial/page'),
     'tools-ngon': () =>
       import('@/components/services-dropdown/page/software/toolsngon/HeroSection'),
     edutech: () =>
       import('@/components/services-dropdown/page/software/Edutech/page'),
+
+    // 🧩 HỆ SẢN PHẨM KEDI — 13 route clone trực tiếp UI /edutech; Kedi AI Flow giữ layout riêng
+    'kedi-os': () => import('@/components/services-dropdown/page/software/KediProduct/kedi-os/page'),
+    'kedi-crm': () => import('@/components/services-dropdown/page/software/KediProduct/kedi-crm/page'),
+    'kedi-commerce': () => import('@/components/services-dropdown/page/software/KediProduct/kedi-commerce/page'),
+    'kedi-agents': () => import('@/components/services-dropdown/page/software/KediProduct/kedi-agents/page'),
+    'kedi-outreach': () => import('@/components/services-dropdown/page/software/KediProduct/kedi-outreach/page'),
+    'kedi-profiles': () => import('@/components/services-dropdown/page/software/KediProduct/kedi-profiles/page'),
+    'kedi-ai-flow': () => import('@/components/services-dropdown/page/software/KediProduct/kedi-ai-flow/page'),
+    'kedi-video': () => import('@/components/services-dropdown/page/software/KediProduct/kedi-video/page'),
+    'kedi-pod': () => import('@/components/services-dropdown/page/software/KediProduct/kedi-pod/page'),
+    'kedi-funnel': () => import('@/components/services-dropdown/page/software/KediProduct/kedi-funnel/page'),
+    'kedi-seo': () => import('@/components/services-dropdown/page/software/KediProduct/kedi-seo/page'),
+    'kedi-ads': () => import('@/components/services-dropdown/page/software/KediProduct/kedi-ads/page'),
+    'kedi-analytics': () => import('@/components/services-dropdown/page/software/KediProduct/kedi-analytics/page'),
+    'kedi-automate': () => import('@/components/services-dropdown/page/software/KediProduct/kedi-automate/page'),
 
     // ☁️ HẠ TẦNG HOSTING, VPS
     'dang-ky-ten-mien': () =>

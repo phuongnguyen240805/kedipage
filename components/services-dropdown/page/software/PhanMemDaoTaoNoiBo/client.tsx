@@ -1,10 +1,14 @@
-'use client';
-import React from 'react';
+"use client";
 
-export default function ClientPhanMemDaoTaoNoiBo() {
+import MonaCloneRuntime from "../shared/MonaCloneRuntime";
+import { skillhubMarkup } from "./content";
+
+export default function ClientPage() {
   return (
-    <div>
-      <h1>Phần Mềm Đào Tạo Nội Bộ</h1>
-    </div>
+    <MonaCloneRuntime
+      kind="skillhub"
+      cssHref="/software-clone/skillhub/page.css"
+      markup={skillhubMarkup}
+    />
   );
 }
