@@ -188,6 +188,7 @@ export default function EdutechMotionRuntime({
   return (
     <div ref={rootRef} className={`${className} relative z-[1] w-full`}>
       <style dangerouslySetInnerHTML={{ __html: css }} />
+      <link rel="stylesheet" href="/software-clone/kedi-brand-theme.css" />
       {markup ? <div dangerouslySetInnerHTML={{ __html: markup }} /> : children}
     </div>
   );

@@ -43,6 +43,13 @@ export const navigationConfig = [
   },
   {
     type: 'link',
+    href: '/bo-ai-agent',
+    labelKey: 'ai',
+    label: 'AI',
+    hoverColor: 'hover:bg-kedi-yellow/10 hover:text-kedi-yellow',
+  },
+  {
+    type: 'link',
     href: '/du-an',
     labelKey: 'projects',
     label: 'Dự án',

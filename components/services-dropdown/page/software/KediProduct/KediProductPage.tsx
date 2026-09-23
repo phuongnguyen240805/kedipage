@@ -23,6 +23,7 @@ export default function KediProductPage({ config }: { config: KediProductConfig 
         @media(max-width:980px){.kp-hero-grid,.kp-trust,.kp-faq{grid-template-columns:1fr}.kp-visual{min-height:390px}.kp-cards,.kp-steps{grid-template-columns:repeat(2,1fr)}.kp-features,.kp-gallery{grid-template-columns:repeat(2,1fr)}.kp-stats{grid-template-columns:repeat(2,1fr)}}
         @media(max-width:620px){.kp-wrap{width:min(100% - 24px,1180px)}.kp-hero{padding-top:92px}.kp-cards,.kp-features,.kp-steps,.kp-gallery{grid-template-columns:1fr}.kp-stat{padding:20px}.kp-visual{min-height:320px}.kp-node{display:none}.kp-final{align-items:flex-start;flex-direction:column}.kp-heading h2{font-size:38px}}
       `}</style>
+      <link rel="stylesheet" href="/software-clone/kedi-brand-theme.css" />
 
       <section className="kp-hero">
         <div className="kp-wrap">

@@ -1,0 +1,315 @@
+/* ========================================================================
+   KEDI clone brand theme
+   Shared visual layer for all cloned / duplicated software pages.
+   Palette: Navy #0B2D5B · Yellow #FFC629 · White #FFFFFF
+   Loaded AFTER source-clone CSS so the original layout and motion stay intact.
+   ======================================================================== */
+:root{
+  --kedi-brand-navy:#0B2D5B;
+  --kedi-brand-navy-2:#174A82;
+  --kedi-brand-navy-3:#2468A6;
+  --kedi-brand-yellow:#FFC629;
+  --kedi-brand-yellow-2:#FFD75E;
+  --kedi-brand-yellow-soft:#FFF5CC;
+  --kedi-brand-white:#FFFFFF;
+  --kedi-brand-surface:#F5F9FD;
+  --kedi-brand-surface-2:#EDF4FA;
+  --kedi-brand-ink:#102A43;
+  --kedi-brand-muted:#5A7188;
+  --kedi-brand-line:#D9E5EF;
+  --kedi-brand-shadow:0 20px 54px -28px rgba(11,45,91,.28);
+}
+
+/* ---------- shared clone foundation ---------- */
+.mona-clone-root{
+  --clone-navy:var(--kedi-brand-navy);
+  --clone-navy-2:var(--kedi-brand-navy-2);
+  --clone-navy-3:var(--kedi-brand-navy-3);
+  --clone-yellow:var(--kedi-brand-yellow);
+  --clone-yellow-2:var(--kedi-brand-yellow-2);
+  --clone-white:var(--kedi-brand-white);
+  --clone-surface:var(--kedi-brand-surface);
+  --clone-surface-2:var(--kedi-brand-surface-2);
+  --clone-ink:var(--kedi-brand-ink);
+  --clone-muted:var(--kedi-brand-muted);
+  --clone-line:var(--kedi-brand-line);
+  background:var(--clone-white);
+  color:var(--clone-ink);
+}
+.mona-clone-root .mona-body,
+.mona-clone-root .mona-source-main{background-color:var(--clone-white)}
+.mona-clone-root :is(h1,h2,h3,h4,h5,h6){text-wrap:balance}
+.mona-clone-root :is(a,button,[role="button"]){transition:color .25s ease,background-color .25s ease,border-color .25s ease,box-shadow .25s ease,transform .25s ease}
+.mona-clone-root :focus-visible{outline:3px solid var(--clone-yellow);outline-offset:3px}
+
+/* Shared legacy MONA color utilities that appear in NHTQ / SkillHub / JMS. */
+.mona-clone-root :is(.hl-nhtq,.hl-software,.hl-pri,.txt-nhtq,.txt-software,.txt-host,.hl-host,.hl-lms){color:var(--clone-navy)!important}
+.mona-clone-root :is(.bg-nhtq,.bg-software){
+  background:linear-gradient(105deg,var(--clone-yellow),var(--clone-yellow-2))!important;
+  color:var(--clone-navy)!important;
+  -webkit-text-fill-color:var(--clone-navy)!important;
+}
+.mona-clone-root .sec-tt :is(h1,h2,h3),
+.mona-clone-root .sec-com-tt{color:var(--clone-navy)!important}
+.mona-clone-root :is(.btn-big-link,.btn-second){
+  border-color:var(--clone-yellow)!important;
+}
+
+/* ---------- NHTQ ---------- */
+.mona-nhtq .mona-body{background:var(--clone-white)!important;color:var(--clone-ink)!important}
+.mona-nhtq .nhtq-hero{
+  background:
+    radial-gradient(circle at 82% 12%,rgba(255,198,41,.25),transparent 28%),
+    linear-gradient(180deg,#fff 0%,#f5f9fd 62%,#edf5fb 100%)!important;
+}
+.mona-nhtq .nhtq-hero :is(h1,h2,.nhtq-hero-desc){color:var(--clone-navy)!important}
+.mona-nhtq .nhtq-page-sec{background-color:transparent}
+.mona-nhtq :is(.nhtq-never-stop,.nhtq-units,.nhtq-pioneers,.nhtq-super-imported,.we-confident,.nhtq-service-other){
+  background-color:var(--clone-white)!important;
+}
+.mona-nhtq :is(.nhtq-capture,.nhtq-co-customer,.nhtq-pj,.nhtq-package,.nhtq-port,.mona-security,.nhtq-faq){
+  background-color:var(--clone-surface)!important;
+}
+.mona-nhtq .nhtq-capture-transfer-wrap,
+.mona-nhtq .nhtq-package-item,
+.mona-nhtq .nhtq-port-item,
+.mona-nhtq .collapse-item{
+  border-color:var(--clone-line)!important;
+  box-shadow:var(--kedi-brand-shadow)!important;
+}
+.mona-nhtq .nhtq-capture-transfer-wrap{background:rgba(255,255,255,.9)!important}
+.mona-nhtq .nhtq-co-customer-img-airplane .airplane-btn .btn,
+.mona-nhtq .btn-big-link{
+  background:linear-gradient(180deg,var(--clone-yellow-2),var(--clone-yellow))!important;
+  color:var(--clone-navy)!important;
+  border-color:rgba(11,45,91,.12)!important;
+  box-shadow:0 14px 30px -18px rgba(11,45,91,.38)!important;
+}
+.mona-nhtq .btn-big-link :is(.hl-pri,.hl-nhtq,.hl-gray,.hl-software,.hl-host){color:var(--clone-navy)!important}
+.mona-nhtq .nhtq-co-customer-img-airplane .airplane-btn .btn:hover,
+.mona-nhtq .btn-big-link:hover{background:var(--clone-navy)!important;color:#fff!important;transform:translateY(-2px)}
+.mona-nhtq .nhtq-faq .collapse-item.active .collapse-head,
+.mona-nhtq .nhtq-faq .collapse-head:hover{color:var(--clone-navy)!important}
+
+/* ---------- SkillHub / internal training ---------- */
+.mona-skillhub .mona-body{background:#fff!important;color:var(--clone-ink)!important}
+.mona-skillhub .banner{
+  background:
+    radial-gradient(circle at 84% 20%,rgba(255,198,41,.28),transparent 28%),
+    linear-gradient(145deg,#fff 0%,#f4f9fd 62%,#fff7d8 100%)!important;
+}
+.mona-skillhub .banner :is(.banner-subtt,.banner-tt,.form-tkw-tt){color:var(--clone-navy)!important}
+.mona-skillhub :is(.skillhub-about,.culture,.knowledge,.all-in-one,.hrm,.ensure){background-color:#fff!important}
+.mona-skillhub :is(.update-level,.knowledge-ensure,.sec-feature){background-color:var(--clone-surface)!important}
+.mona-skillhub :is(.item,.wrap,.knowledge-inner,.ensure-item-inner,.all-in-one-product-item,.content-wrapper,.form-tkw){
+  border-color:var(--clone-line)!important;
+}
+.mona-skillhub :is(.knowledge-inner,.ensure-item-inner,.all-in-one-product-item,.form-tkw){
+  background:#fff!important;
+  box-shadow:var(--kedi-brand-shadow)!important;
+}
+.mona-skillhub :is(.btn-skillhub-flex a,.btn-second,.all-in-one-btn){
+  background:linear-gradient(180deg,var(--clone-yellow-2),var(--clone-yellow))!important;
+  color:var(--clone-navy)!important;
+  border-color:var(--clone-yellow)!important;
+  box-shadow:0 14px 30px -20px rgba(11,45,91,.42)!important;
+}
+.mona-skillhub :is(.btn-skillhub-flex a,.btn-second,.all-in-one-btn):hover{background:var(--clone-navy)!important;color:#fff!important}
+.mona-skillhub :is(.tab-button,.tab-product-js).active{color:var(--clone-navy)!important;border-color:var(--clone-yellow)!important}
+
+/* ---------- JMS / cloned article-software surface ---------- */
+.mona-jms .mona-body{background:#fff!important;color:var(--clone-ink)!important}
+.mona-jms :is(h1,h2,h3,h4,h5,h6,.mona-head-title,.mcs-t,.mcs-logo-text,.mcs-n){color:var(--clone-navy)!important}
+.mona-jms :is(.blogdt-top,.sec-blogdt,.blog-large-ctn,.mona-content){background-color:#fff!important}
+.mona-jms :is(.sec-blogsw,.sec-blogb,.mcs-band){background-color:var(--clone-surface)!important}
+.mona-jms .mcs-in{background:var(--clone-surface)!important;border:1px solid var(--clone-line)!important}
+.mona-jms .mcs .mcs-a{background:#fff!important;border-color:var(--clone-line)!important}
+.mona-jms .mcs .mcs-a:hover,
+.mona-jms .mcs .mcs-a[aria-current=page]{background:#fffaf0!important;border-color:var(--clone-yellow)!important;box-shadow:var(--kedi-brand-shadow)!important}
+.mona-jms .mcs-tag{background:var(--kedi-brand-yellow-soft)!important;color:var(--clone-navy)!important}
+.mona-jms :is(.mcs .mcs-ft a,.blogt-link,a:hover){color:var(--clone-navy-2)!important}
+.mona-jms :is(.mq-pill,.mq-dl){background:linear-gradient(135deg,var(--clone-navy),var(--clone-navy-2))!important;color:#fff!important}
+.mona-jms .mq-size.on{border-color:var(--clone-yellow)!important;color:var(--clone-navy)!important;background:#fffaf0!important}
+.mona-jms #monaPodBar{background:var(--clone-navy)!important;border-color:rgba(255,198,41,.42)!important}
+.mona-jms #monaPodBar .mpb-play,
+.mona-jms #monaPodBar .mpb-pr,
+.mona-jms .mona-pod-inbody .mpi-btn{background:var(--clone-yellow)!important;color:var(--clone-navy)!important}
+.mona-jms .mona-pod-inbody{background:var(--clone-surface)!important;border-color:var(--clone-yellow)!important}
+.mona-jms .mona-pod-inbody .mpi-ic{background:var(--clone-navy)!important;color:var(--clone-yellow)!important}
+
+/* ---------- AI Agent ---------- */
+.mona-aiagent{background:#fff!important;color:var(--clone-ink)!important}
+.mona-aiagent .bag{
+  --p950:#0B2D5B;
+  --pu:#0B2D5B;
+  --pu2:#174A82;
+  --pu3:#2468A6;
+  --or:#FFC629;
+  --or2:#FFD75E;
+  --ink:#102A43;
+  --ink2:#4D667F;
+  --ink3:#71869A;
+  --lav:#F4F8FC;
+  --line:#D9E5EF;
+}
+.mona-aiagent .bag.bag-hero{
+  background:linear-gradient(135deg,#0B2D5B 0%,#123E72 62%,#1B568E 100%)!important;
+}
+.mona-aiagent .bag.bag-hero::before{
+  background:
+    radial-gradient(52% 64% at 78% 42%,rgba(255,198,41,.22),transparent 68%),
+    radial-gradient(42% 52% at 3% 2%,rgba(255,255,255,.12),transparent 72%)!important;
+}
+.mona-aiagent .bag .bag-kick{color:#fff3b7!important}
+.mona-aiagent .bag .bag-tg,
+.mona-aiagent .bag .bag-tg2{
+  background:linear-gradient(100deg,#fff 0%,#dbeeff 46%,#ffc629 100%)!important;
+  -webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;
+}
+.mona-aiagent .bag .bag-core{
+  background:radial-gradient(circle at 34% 28%,#4F86BA 0%,#2468A6 38%,#174A82 68%,#0B2D5B 100%)!important;
+  box-shadow:0 0 0 12px rgba(255,198,41,.12),0 0 0 30px rgba(255,255,255,.06),0 30px 90px -12px rgba(5,27,54,.62)!important;
+}
+.mona-aiagent .bag .bag-ob-mono{background:linear-gradient(135deg,var(--clone-navy),var(--clone-navy-3))!important}
+.mona-aiagent .bag .bag-front{background:rgba(11,45,91,.84)!important;border-color:rgba(255,255,255,.22)!important}
+.mona-aiagent .bag .bag-btn-or{
+  background:linear-gradient(180deg,var(--clone-yellow-2),var(--clone-yellow))!important;
+  color:var(--clone-navy)!important;
+  box-shadow:0 16px 34px -18px rgba(255,198,41,.65)!important;
+}
+.mona-aiagent .bag .bag-btn-or:hover{background:#fff!important;color:var(--clone-navy)!important}
+.mona-aiagent .bag .bag-btn-gh{background:rgba(255,255,255,.08)!important;border-color:rgba(255,255,255,.42)!important}
+.mona-aiagent .bag.bag-list,
+.mona-aiagent .bag.bag-vs,
+.mona-aiagent .bag.bag-dept,
+.mona-aiagent .bag.bag-gain,
+.mona-aiagent .bag.bag-faq{background:#fff!important}
+.mona-aiagent .bag.bag-osgrid,
+.mona-aiagent .bag.bag-sales{background:var(--clone-surface)!important}
+.mona-aiagent .bag.bag-dk{
+  background:
+    radial-gradient(circle at 82% 10%,rgba(255,198,41,.16),transparent 30%),
+    linear-gradient(135deg,#0B2D5B,#174A82)!important;
+}
+.mona-aiagent .bag :is(.bag-card,.bag-oscard,.bag-num,.bag-faq-ask,.bag-drow,.bag-spine-row){border-color:var(--clone-line)!important}
+.mona-aiagent .bag :is(.bag-num,.bag-faq-ask,.bag-drow){box-shadow:0 16px 42px -30px rgba(11,45,91,.35)}
+.mona-aiagent .bag .bag-pill-ban{color:var(--clone-navy)!important;background:#eaf3fb!important}
+.mona-aiagent .bag .bag-pill-trienkhai{color:#765800!important;background:var(--kedi-brand-yellow-soft)!important}
+.mona-aiagent .bag .bag-pill-noibo{color:#fff!important;background:var(--clone-navy)!important}
+
+/* ---------- EduTech foundation + all Kedi product pages built on it ---------- */
+.kedi-lms-route .edu,
+.kedi-product-route .edu{
+  --tim:#0B2D5B!important;
+  --tim-sau:#082542!important;
+  --tim-sang:#2468A6!important;
+  --hong:#FFC629!important;
+  --vang:#FFC629!important;
+  --cam:#FFD75E!important;
+  --lam:#4C91C7!important;
+  --muc:#102A43!important;
+  --muc2:#4D667F!important;
+  --muc3:#71869A!important;
+  --nhat:#F4F8FC!important;
+  --nhat2:#FFFFFF!important;
+  --vien:#D9E5EF!important;
+  --indigo:#0B2D5B!important;
+  --violet:#2468A6!important;
+  --coral:#FFC629!important;
+  --mint:#2E7D68!important;
+  background:var(--nhat)!important;
+}
+.kedi-lms-route .e-hero,
+.kedi-product-route .e-hero{
+  background:
+    radial-gradient(circle at 84% 12%,rgba(255,198,41,.22),transparent 25%),
+    linear-gradient(135deg,#0B2D5B 0%,#174A82 62%,#205F9B 100%)!important;
+}
+.kedi-lms-route :is(.e-mat-tim,.e-mat-tim2),
+.kedi-product-route :is(.e-mat-tim,.e-mat-tim2){
+  background:linear-gradient(145deg,#0B2D5B,#174A82)!important;
+}
+.kedi-lms-route :is(.e-mat-nhat,.e-mat-trang),
+.kedi-product-route :is(.e-mat-nhat,.e-mat-trang){background:#fff!important}
+.kedi-lms-route .e-btn,
+.kedi-product-route .e-btn{
+  background:linear-gradient(180deg,var(--kedi-brand-yellow-2),var(--kedi-brand-yellow))!important;
+  color:var(--kedi-brand-navy)!important;
+  border-color:var(--kedi-brand-yellow)!important;
+  box-shadow:0 14px 34px -20px rgba(11,45,91,.46)!important;
+}
+.kedi-lms-route .e-btn:hover,
+.kedi-product-route .e-btn:hover{background:#fff!important;color:var(--kedi-brand-navy)!important}
+.kedi-lms-route .e-btn.e-btn--vien,
+.kedi-product-route .e-btn.e-btn--vien{background:rgba(255,255,255,.08)!important;color:#fff!important;border-color:rgba(255,255,255,.45)!important}
+.kedi-lms-route .e-to,
+.kedi-lms-route .e-trang,
+.kedi-lms-route .e-tomtat,
+.kedi-product-route .e-to,
+.kedi-product-route .e-trang,
+.kedi-product-route .e-tomtat{border-color:var(--kedi-brand-line)!important;box-shadow:var(--kedi-brand-shadow)!important}
+.kedi-lms-route .e-cta-goi,
+.kedi-product-route .e-cta-goi{background:linear-gradient(160deg,#fff7d7 0%,#ffc629 72%,#f4b900 100%)!important}
+.kedi-lms-route .e-cta-hot,
+.kedi-product-route .e-cta-hot{color:var(--kedi-brand-navy)!important}
+
+/* ---------- Kedi AI Flow / generic KediProductPage ---------- */
+.kp-page{
+  --kp-accent:#FFC629!important;
+  --ink:#102A43!important;
+  --muted:#5A7188!important;
+  --paper:#F4F8FC!important;
+  --night:#0B2D5B!important;
+  --line:#D9E5EF!important;
+  background:var(--paper)!important;
+}
+.kp-page .kp-hero{
+  background:
+    radial-gradient(circle at 82% 16%,rgba(255,198,41,.24),transparent 30%),
+    linear-gradient(145deg,#0B2D5B 0%,#174A82 66%,#205F9B 100%)!important;
+}
+.kp-page .kp-dark{background:linear-gradient(145deg,#0B2D5B,#174A82)!important}
+.kp-page .kp-btn{background:var(--kedi-brand-yellow)!important;color:var(--kedi-brand-navy)!important;border-color:var(--kedi-brand-yellow)!important}
+.kp-page .kp-btn--ghost{background:rgba(255,255,255,.08)!important;color:#fff!important;border-color:rgba(255,255,255,.42)!important}
+.kp-page .kp-card,
+.kp-page .kp-step,
+.kp-page .kp-trust-item{background:#fff!important;border-color:var(--kedi-brand-line)!important;box-shadow:var(--kedi-brand-shadow)!important}
+.kp-page .kp-feature{background:rgba(255,255,255,.085)!important;border-color:rgba(255,255,255,.2)!important}
+.kp-page .kp-stat b,
+.kp-page .kp-feature span{color:var(--kedi-brand-yellow)!important}
+.kp-page .kp-final{background:linear-gradient(135deg,#FFC629,#FFD75E)!important;color:var(--kedi-brand-navy)!important}
+.kp-page .kp-final p{color:rgba(11,45,91,.78)!important}
+.kp-page .kp-final .kp-btn{background:var(--kedi-brand-navy)!important;color:#fff!important;border-color:var(--kedi-brand-navy)!important}
+
+@media (prefers-reduced-motion:reduce){
+  .mona-clone-root *,
+  .kedi-lms-route *,
+  .kedi-product-route *,
+  .kp-page *{scroll-behavior:auto!important}
+}
+
+/* AI Agent hard-coded accents that do not read the token variables. */
+.mona-aiagent .bag .bag-slab-core{
+  background:linear-gradient(135deg,#2468A6,#0B2D5B)!important;
+  box-shadow:0 0 70px -16px rgba(36,104,166,.58),0 32px 54px -30px rgba(11,45,91,.55)!important;
+}
+.mona-aiagent .bag .bag-slab.is-on{border-color:var(--clone-yellow)!important;box-shadow:0 0 0 2px rgba(255,198,41,.28),0 20px 44px -26px rgba(11,45,91,.45)!important}
+.mona-aiagent .bag .bag-lyr li.bag-lyr-core h3{
+  background:linear-gradient(100deg,#fff,#b9daf5 55%,#ffc629)!important;
+  -webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;
+}
+.mona-aiagent .bag .bag-os-xl{background:linear-gradient(150deg,#0B2D5B,#174A82 68%,#2468A6)!important}
+.mona-aiagent .bag .bag-os-xl .bag-gates-av img{border-color:#174A82!important}
+.mona-aiagent .bag .bag-phone{background:#0B2D5B!important;box-shadow:0 28px 56px -34px rgba(11,45,91,.55)!important}
+.mona-aiagent .bag .bag-spine-end p:last-child{background:linear-gradient(120deg,#0B2D5B,#2468A6 64%,#FFC629 135%)!important}
+.mona-aiagent .bag .bag-step-loop{background:linear-gradient(150deg,#FFD75E,#FFC629)!important;color:#0B2D5B!important}
+.mona-aiagent .bag.bag-gain{
+  color:#0B2D5B!important;
+  background:
+    radial-gradient(circle at 82% 15%,rgba(255,255,255,.54),transparent 27%),
+    linear-gradient(120deg,#FFF1A8 0%,#FFC629 48%,#FFD75E 100%)!important;
+}
+.mona-aiagent .bag.bag-gain :is(.bag-h2,.bag-lead,.bag-num b,.bag-num span){color:#0B2D5B!important}
+.mona-aiagent .bag .bag-faq-ask{background:linear-gradient(150deg,#0B2D5B,#174A82)!important;color:#fff!important}
+.mona-aiagent .masdlc-wrap{background:linear-gradient(115deg,#0B2D5B,#174A82 58%,#205F9B)!important}
+.mona-aiagent .masdlc-cta .masdlc-btn-main{background:#FFC629!important;color:#0B2D5B!important}

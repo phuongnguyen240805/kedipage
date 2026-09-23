@@ -10,11 +10,11 @@ const HostlineSection = ({ isMobile }: HostlineSectionProps) => {
     <div className={`relative flex items-center ${isMobile ? 'space-x-2' : ''}`}>
       <Link href="/" className="flex items-center" aria-label="Hotline">
         <Image
-          src="https://mona.media/template/assets/images/header/hotline-panda.png"
-          alt="Hotline"
-          width={150}
+          src="/software-clone/ai-agent/assets/kedi-cham-soc-lead.png"
+          alt="Kedi AI Support"
+          width={82}
           height={82}
-          className="h-8 w-auto object-contain drop-shadow-md"
+          className="h-9 w-9 object-contain drop-shadow-md"
         />
       </Link>
     </div>
