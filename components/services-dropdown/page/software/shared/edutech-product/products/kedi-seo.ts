@@ -1,0 +1,142 @@
+import { createProductMascot } from "../mascots";
+import type { ProductLandingConfig } from "../types";
+
+const base = "https://serpupdate.com/wp-content/uploads/2026/08";
+const kediMascot = createProductMascot("kedi-seo", "Kedi SEO mascot 3D");
+
+export const kediSeoConfig: ProductLandingConfig = {
+  slug: "kedi-seo",
+  productName: "Kedi SEO",
+  sourceLabel: "SERPUpdate crawl",
+  routeClass: "kedi-seo-route",
+  motionMascotSrc: kediMascot.src,
+  hero: {
+    eyebrow: "THE KEDI GROUP · KEDI SEO",
+    titleLines: ["Theo dõi SERP, audit GEO,", "tự động content và API", "trong Kedi SEO"],
+    emphasisLine: 2,
+    lead: "Kedi SEO gom rank tracking, on-page/GEO audit, AI content automation và SERP API vào một workflow để team nghiên cứu, sản xuất và đo lường bằng cùng một lớp dữ liệu.",
+    primaryCta: { label: "Xem toolkit", href: "#bo-san-pham" },
+    secondaryCta: { label: "Xem dashboard", href: "#giao-dien" },
+    statusNote: "SEO · GEO · AI visibility · API",
+    mainImage: { src: `${base}/serpupdate-dashboard-en.webp`, alt: "SERP dashboard tham chiếu từ crawl SERPUpdate", caption: "rank tracking · AI visibility" },
+    secondaryImage: { src: `${base}/serpupdate-extension-en.webp`, alt: "SEO extension reference", caption: "on-page & GEO checks" },
+    floatingBadges: ["Top 100 · AI Overview", "Extension · API · Content"],
+    mascot: kediMascot,
+    stats: [
+      { value: 4, label: "toolkit module chính trong crawl" },
+      { value: 3, label: "bước workflow: research · content · measure" },
+      { value: 128, label: "audit signal trong capability extension nguồn" },
+      { value: 1, label: "data loop từ keyword tới optimization" },
+    ],
+  },
+  marquee: ["SERP Checker", "AI Overview", "Brand Mention", "GEO Audit", "On-page", "Keyword Planning", "AI Content", "Entity", "Topic Authority", "SERP API", "PDF/Excel", "Multi-region"],
+  pain: {
+    eyebrow: "01 · Chỗ tắc",
+    titleLines: ["SEO stack càng nhiều tool,", "data loop càng dễ bị đứt"],
+    lead: "Rank tracking, audit, content và reporting thường chạy trên những hệ riêng. Vấn đề không chỉ là chi phí mà là keyword, entity, bài viết và kết quả SERP không còn cùng một ngữ cảnh.",
+    mascot: kediMascot,
+    items: [
+      { kicker: "Rank", title: "Theo dõi Google nhưng bỏ sót AI Overview và brand mention", description: "GEO đưa thêm một lớp visibility ngoài organic ranking truyền thống; nếu đo ở tool khác, team khó nhìn một query theo cùng một timeline." },
+      { kicker: "Audit", title: "On-page check không nối với kế hoạch content", description: "Audit phát hiện vấn đề nhưng insight không đi tiếp vào outline, entity và cấu trúc bài viết nên team phải dịch lại dữ liệu bằng tay." },
+      { kicker: "Content", title: "AI viết bài nhưng không đọc dữ liệu dự án đang tracking", description: "Content automation chỉ thực sự có giá trị khi dùng chung keyword, competitor và entity data thay vì tạo nội dung tách rời." },
+      { kicker: "Cost", title: "Nhiều fixed plan cho nhiều tool nhưng usage thực tế không đều", description: "SEO team có nhu cầu tracking, audit và API theo thời điểm; một kiến trúc linh hoạt cần để usage bám vào workload thay vì số tool mua sẵn." },
+    ],
+  },
+  modules: {
+    eyebrow: "02 · Toolkit",
+    title: "Bốn module, một vòng SEO & GEO",
+    items: [
+      { name: "SERP Checker", short: "Theo dõi organic, AI Overview và brand mention trong cùng lượt đo.", description: "Rank tracking tập trung từ keyword tới region để team nhìn được organic visibility và các bề mặt AI search trên cùng một dashboard.", bullets: ["Top organic ranking", "AI Overview / brand mention", "Theo dõi theo quốc gia và location"], image: { src: `${base}/serpupdate-dashboard-en.webp`, alt: "SERP checker dashboard reference" }, tag: "measure" },
+      { name: "SEO / GEO Extension", short: "Audit ngay trong browser để biết trang đang thiếu gì trước khi tối ưu.", description: "Extension biến on-page và GEO criteria thành checklist tức thời, hỗ trợ entity và cấu trúc nội dung mà không cần mở dashboard riêng cho từng trang.", bullets: ["SEO + GEO criteria", "Moz reference signals", "AI suggestion cho entity và structure"], image: { src: `${base}/serpupdate-extension-en.webp`, alt: "SEO extension reference" }, tag: "audit" },
+      { name: "AI Content Automation", short: "Research, outline và sản xuất content bám theo dữ liệu SEO/GEO.", description: "Lớp content automation được thiết kế để dùng keyword, entity và project context thay vì sinh bài độc lập ngoài data loop.", bullets: ["Research và outline", "Entity-aware content", "Bulk publishing workflow"], image: { src: `${base}/serpupdate-ai-content-en.webp`, alt: "AI content automation reference" }, tag: "content" },
+      { name: "SERP API", short: "Đưa search data vào pipeline nội bộ mà không bắt buộc dùng dashboard.", description: "API phục vụ agency hoặc hệ thống cần query SERP programmatically, nhận JSON và nối kết quả vào automation/reporting riêng.", bullets: ["JSON response", "Automation-friendly", "Phù hợp tracking quy mô lớn"], image: { src: `${base}/serpupdate-serp-api-en.webp`, alt: "SERP API reference" }, tag: "api" },
+    ],
+  },
+  workflow: {
+    eyebrow: "03 · SEO/GEO loop",
+    titleLines: ["Research trước, content sau,", "đo lường quay lại tối ưu"],
+    lead: "Ba stage lớn trong crawl được mở rộng thành một flow đủ dùng cho team: chuẩn hóa nền tảng, tạo content, đo visibility và đưa insight quay lại backlog.",
+    items: [
+      { title: "Cluster keyword và chuẩn hóa intent / topic", owner: "Kedi SEO" },
+      { title: "Audit technical, on-page và GEO criteria", owner: "Kedi SEO" },
+      { title: "Research, outline và sản xuất content theo project data", owner: "Kedi SEO" },
+      { title: "Theo dõi SERP, AI Overview và brand visibility", owner: "Kedi SEO" },
+      { title: "Đưa dữ liệu đo lường trở lại backlog optimization", owner: "Kedi SEO" },
+      { title: "SEO lead quyết định ưu tiên business và nội dung", keepHuman: true },
+      { title: "Editor / SME duyệt chất lượng trước publish", keepHuman: true },
+    ],
+    humanSummary: "Tool có thể nối data loop; chiến lược keyword, tính đúng của nội dung và quyết định ưu tiên vẫn cần SEO lead, editor hoặc subject-matter expert.",
+  },
+  ecosystem: {
+    eyebrow: "04 · Bản đồ dữ liệu",
+    titleLines: ["Bốn module khác nhau,", "cùng đọc một SEO project context"],
+    lead: "SERP, extension, content và API được xem như bốn interface của cùng một data layer, nhờ đó keyword và entity không bị dịch lại giữa mỗi công cụ.",
+    centerTitle: "SEO Data Core",
+    centerSubtitle: "Keyword · Entity · Visibility",
+    nodes: [
+      { title: "SERP", description: "Rank & AI surfaces" },
+      { title: "Audit", description: "SEO/GEO criteria" },
+      { title: "Content", description: "Research & generation" },
+      { title: "API", description: "Programmatic access" },
+    ],
+  },
+  capability: {
+    eyebrow: "05 · Capability map",
+    titleLines: ["Một bảng đủ để", "SEO lead và dev cùng đọc"],
+    lead: "Thông số được rút từ crawl SERPUpdate và viết lại theo nhóm use case để dễ map vào kiến trúc Kedi SEO.",
+    chips: ["Top 100", "AI Overview", "128 Audit", "JSON API", "Reports"],
+    rows: [
+      { label: "Rank tracking", value: "Organic + AI Overview + Brand Mention", why: "Gom nhiều bề mặt search visibility vào cùng một lượt kiểm tra." },
+      { label: "Location", value: "Multi-country / location tracking", why: "Phù hợp local SEO và agency cần so sánh ranking theo khu vực." },
+      { label: "On-page / GEO", value: "128 criteria theo capability nguồn", why: "Biến audit thành checklist chuẩn hóa thay vì review hoàn toàn thủ công." },
+      { label: "Content", value: "Research · outline · bulk workflow", why: "Nối production với keyword và entity data của dự án." },
+      { label: "API", value: "SERP JSON response", why: "Cho phép hệ thống khác tiêu thụ search data trực tiếp." },
+      { label: "Reporting", value: "PDF / Excel", why: "Phục vụ team nội bộ và agency cần đóng gói kết quả theo dự án." },
+    ],
+    caption: "Capability map Kedi SEO được chuẩn hóa từ nội dung crawl SERPUpdate; số user, uptime, pricing và testimonial nguồn không được chuyển thành claim Kedi.",
+  },
+  gallery: {
+    eyebrow: "06 · Product screens",
+    quote: "SEO data nên được nhìn từ nhiều góc nhưng không bị chia thành nhiều sản phẩm: dashboard rank, extension audit, content automation và API cùng xuất hiện trong một narrative.",
+    sourceNote: "Ảnh giao diện lấy từ crawl SERPUpdate làm visual reference cho Kedi SEO; logo khách hàng và testimonial nguồn không được tái sử dụng.",
+    items: [
+      { src: `${base}/serpupdate-dashboard-en.webp`, alt: "SERP dashboard", title: "SERP Dashboard", description: "Rank và visibility theo keyword" },
+      { src: `${base}/serpupdate-extension-en.webp`, alt: "SEO extension", title: "Extension", description: "On-page & GEO audit trong browser" },
+      { src: `${base}/serpupdate-ai-content-en.webp`, alt: "AI content automation", title: "AI Content", description: "Research, outline và production" },
+      { src: `${base}/serpupdate-serp-api-en.webp`, alt: "SERP API", title: "SERP API", description: "Search data cho workflow nội bộ" },
+    ],
+  },
+  comparison: {
+    eyebrow: "07 · Một stack hay nhiều tool",
+    titleLines: ["Giảm bước chuyển dữ liệu,", "không chỉ giảm số subscription"],
+    lead: "Lợi ích kiến trúc lớn nhất là mỗi stage đọc cùng project context, không bắt team copy keyword, URL và report qua nhiều hệ.",
+    columns: [
+      { label: "Stack rời", title: "Rank, audit, content và API không cùng context", bullets: ["Keyword list bị copy nhiều nơi", "Audit insight không đi vào outline", "AI content không đọc dữ liệu tracking", "Reporting phải ghép thủ công"], summary: "Có thể linh hoạt nhưng chi phí tích hợp và vận hành tăng theo số tool." },
+      { label: "Kedi SEO", title: "Một data loop từ research tới optimization", bullets: ["Project context dùng chung", "Audit nối vào content", "Visibility quay lại backlog", "API mở cùng data layer cho hệ khác"], summary: "Tập trung vào luồng dữ liệu thay vì chỉ gom nhiều menu vào một dashboard.", accent: true },
+    ],
+  },
+  faq: {
+    eyebrow: "08 · Câu hỏi hay gặp",
+    titleLines: ["Những câu SEO team sẽ hỏi", "trước khi gom stack"],
+    lead: "FAQ giữ lại các điểm kỹ thuật đáng chú ý từ crawl: AI search, ổn định dữ liệu, extension vs API, audit và report.",
+    mascot: kediMascot,
+    items: [
+      { question: "Kedi SEO theo dõi gì ngoài organic ranking?", answer: "Capability map có AI Overview và brand mention bên cạnh organic ranking, nhằm hỗ trợ cả SEO truyền thống lẫn GEO/AI visibility trong cùng project." },
+      { question: "Extension và SERP API dùng khi nào?", answer: "Extension phù hợp kiểm tra trực tiếp trong browser và audit từng trang; API phù hợp workflow cần query search data programmatically hoặc chạy khối lượng lớn theo lịch." },
+      { question: "On-page audit có chỉ chấm SEO truyền thống không?", answer: "Không. Capability nguồn kết hợp tiêu chí SEO và GEO, thêm signal tham chiếu và gợi ý entity/structure cho nội dung." },
+      { question: "AI Content có nên publish tự động hoàn toàn không?", answer: "Không mặc định. Automation có thể research, outline và tạo draft; editor hoặc SME vẫn cần duyệt factual accuracy, brand voice và mục đích kinh doanh." },
+      { question: "Có thể xuất report cho khách hàng hoặc management không?", answer: "Capability map có report PDF/Excel. Khi triển khai thực tế, template report nên được map theo stakeholder và KPI của từng dự án." },
+    ],
+    closingTitle: "Có stack SEO hiện tại để map?",
+    closingText: "Liệt kê tool đang dùng cho rank, audit, content và report; từ đó xác định phần nào nên gom vào Kedi SEO và phần nào nên tiếp tục giữ qua API.",
+  },
+  cta: {
+    eyebrow: "Bước tiếp theo",
+    titleLines: ["Đưa keyword, content và SERP", "về cùng một data loop"],
+    lead: "Bắt đầu từ một project SEO đang chạy: keyword set, website, content backlog và report hiện tại. Kedi SEO sẽ được map quanh luồng dữ liệu đó trước khi mở rộng sang nhiều dự án.",
+    mascot: kediMascot,
+    sideTitle: "Research → Content → Measure",
+    sideText: "Một project context, nhiều interface: dashboard, extension, content automation và API.",
+  },
+  sectionOrder: ["marquee", "pain", "modules", "workflow", "ecosystem", "capability", "gallery", "comparison", "faq", "cta"],
+};

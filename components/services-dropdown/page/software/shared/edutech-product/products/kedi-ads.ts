@@ -1,0 +1,131 @@
+import { createProductMascot } from "../mascots";
+import type { ProductLandingConfig } from "../types";
+
+const base = "https://adsmeta.io";
+const kediMascot = createProductMascot("kedi-ads", "Kedi Ads mascot 3D");
+
+export const kediAdsConfig: ProductLandingConfig = {
+  slug: "kedi-ads",
+  productName: "Kedi Ads",
+  sourceLabel: "AdsMeta crawl",
+  routeClass: "kedi-ads-route",
+  motionMascotSrc: kediMascot.src,
+  hero: {
+    eyebrow: "THE KEDI GROUP · KEDI ADS",
+    titleLines: ["Nhiều tài khoản Meta Ads,", "một dashboard để theo dõi", "và vận hành cùng Kedi Ads"],
+    emphasisLine: 2,
+    lead: "Kedi Ads gom tài khoản quảng cáo, Business Manager, chiến dịch, số dư, hiệu suất, phân quyền, báo cáo và lịch sử hoạt động về cùng một workspace cho media buyer và agency.",
+    primaryCta: { label: "Xem capability", href: "#bo-san-pham" },
+    secondaryCta: { label: "Xem visual", href: "#giao-dien" },
+    statusNote: "multi-account · realtime · reporting · team",
+    mainImage: { src: `${base}/videos/hero.mp4`, alt: "Ads management hero video từ crawl AdsMeta", caption: "account · campaign · spend", kind: "video" },
+    secondaryImage: { src: `${base}/uploads/community/post_cmokw59zz0003jw656zel1d9p_1780543270026.jpg`, alt: "AdsMeta community banner reference", caption: "campaign management reference" },
+    floatingBadges: ["Chrome sync", "Admin · Analyst · Viewer"],
+    mascot: kediMascot,
+    stats: [
+      { value: 9, label: "nhóm feature quản lý quảng cáo được crawl" },
+      { value: 3, label: "bước onboarding chính" },
+      { value: 3, label: "vai trò mẫu: Admin · Analyst · Viewer" },
+      { value: 2, label: "format report: Excel · PDF" },
+    ],
+  },
+  marquee: ["Ad Accounts", "Business Manager", "Campaign", "Balance", "Realtime", "CPC", "CPM", "ROAS", "Extension", "Permissions", "Reports", "Audit Log"],
+  pain: {
+    eyebrow: "01 · Chỗ tắc",
+    titleLines: ["Media buyer không thiếu dashboard,", "họ thiếu một nơi nhìn toàn bộ account"],
+    lead: "Khi tài khoản quảng cáo, BM, campaign và quyền team bị chia qua nhiều tab, media buyer mất thời gian không phải vì thiếu dữ liệu mà vì phải liên tục chuyển ngữ cảnh.",
+    mascot: kediMascot,
+    items: [
+      { kicker: "Accounts", title: "Theo dõi nhiều ad account bằng nhiều tab và file riêng", description: "Số dư, trạng thái và spend không nằm cùng một bảng khiến team khó phát hiện account nào đang cần xử lý." },
+      { kicker: "Realtime", title: "Số liệu phải refresh thủ công trước mỗi lần ra quyết định", description: "Khi data không đồng bộ tập trung, media buyer dễ làm việc với snapshot cũ hoặc bỏ sót biến động giữa nhiều account." },
+      { kicker: "Team", title: "Chia quyền bằng tài khoản đăng nhập thay vì vai trò rõ ràng", description: "Agency cần tách người xem, người phân tích và người có quyền hành động để giảm rủi ro thao tác nhầm." },
+      { kicker: "Audit", title: "Không biết ai đã thay đổi gì khi campaign có vấn đề", description: "Thiếu activity log khiến việc truy vết thay đổi theo người, thời gian và IP trở nên khó khăn." },
+    ],
+  },
+  modules: {
+    eyebrow: "02 · Ad operations",
+    title: "Sáu module đủ để team nhìn và vận hành tập trung",
+    items: [
+      { name: "Multi-account Hub", short: "Ad account, Business Manager và Page đi vào một workspace thay vì nhiều tab.", description: "Gom trạng thái, số dư và spend của nhiều account vào bảng chung để media buyer ưu tiên đúng nơi cần hành động.", bullets: ["Ad account & BM tập trung", "Theo dõi trạng thái account", "Một bảng để lọc và so sánh"], tag: "accounts" },
+      { name: "Realtime Monitoring", short: "Theo dõi số dư, spend và trạng thái mà không phải F5 từng nơi.", description: "Lớp monitoring cập nhật những metric vận hành quan trọng để team phát hiện biến động sớm hơn.", bullets: ["Balance & spend", "Account status", "Theo dõi biến động theo thời gian"], tag: "monitoring" },
+      { name: "Campaign Analytics", short: "Đọc CPC, CPM, ROAS và kết quả theo campaign / ad set / creative.", description: "Đưa performance analysis về gần account monitoring để media buyer không phải chuyển giữa báo cáo và trang vận hành.", bullets: ["CPC / CPM / ROAS", "Campaign · ad set · ad", "So sánh performance theo cấu trúc"], tag: "analytics" },
+      { name: "Browser Sync", short: "Extension làm lớp lấy dữ liệu từ Facebook Ads Manager vào workspace.", description: "Crawl mô tả mô hình extension để đồng bộ dữ liệu từ browser mà không bắt người dùng cấu hình API phức tạp cho bước đầu.", bullets: ["Chrome extension", "Đồng bộ account data", "Giảm bước import thủ công"], tag: "extension" },
+      { name: "Team & Permissions", short: "Tách Admin, Analyst và Viewer thay vì cho mọi người cùng một quyền.", description: "Role-based access giúp agency chia nhiệm vụ mà vẫn giữ kiểm soát dữ liệu và thao tác nhạy cảm.", bullets: ["Role-based access", "Team collaboration", "Có thể quản lý thiết bị/IP theo chính sách"], tag: "team" },
+      { name: "Reports & Audit", short: "Report định kỳ đi cùng activity log để nhìn cả hiệu suất lẫn thao tác.", description: "Xuất report và lưu lịch sử giúp agency vừa giao tiếp với khách hàng vừa truy vết thay đổi khi campaign có sự cố.", bullets: ["Excel / PDF report", "Lịch gửi report", "Activity log theo người và thời gian"], tag: "reporting" },
+    ],
+  },
+  workflow: {
+    eyebrow: "03 · Ba bước vào việc",
+    titleLines: ["Đồng bộ account,", "quan sát rồi mới hành động"],
+    lead: "Onboarding được giữ rất gọn: kết nối lớp browser, gom account về workspace rồi để team dùng dashboard như điểm vào chung cho monitoring và analysis.",
+    items: [
+      { title: "Kết nối workspace và browser extension", owner: "Kedi Ads" },
+      { title: "Đồng bộ ad account, BM, Page và campaign data", owner: "Kedi Ads" },
+      { title: "Theo dõi balance, spend và performance tập trung", owner: "Kedi Ads" },
+      { title: "Phân quyền team và lên lịch report", owner: "Kedi Ads" },
+      { title: "Lưu lịch sử thay đổi để truy vết", owner: "Kedi Ads" },
+      { title: "Media buyer quyết định budget và tối ưu chiến dịch", keepHuman: true },
+      { title: "Account owner chịu trách nhiệm với policy và tài sản quảng cáo", keepHuman: true },
+    ],
+    humanSummary: "Dashboard và automation hỗ trợ quan sát, đồng bộ và reporting; budget, strategy và các hành động có rủi ro với account vẫn cần media buyer hoặc account owner chịu trách nhiệm.",
+  },
+  capability: {
+    eyebrow: "04 · Capability map",
+    titleLines: ["Một bảng cho media buyer,", "một bảng cho team lead"],
+    lead: "Các capability được nhóm theo công việc: account inventory, monitoring, analysis, browser sync, quyền, report và audit trail.",
+    chips: ["Multi-account", "Realtime", "ROAS", "Roles", "Audit Log"],
+    rows: [
+      { label: "Inventory", value: "Ad Account · BM · Page", why: "Cho team nhìn tài sản quảng cáo ở cùng một nơi." },
+      { label: "Monitoring", value: "Balance · spend · status", why: "Giảm việc mở từng account chỉ để kiểm tra tình trạng." },
+      { label: "Analysis", value: "CPC · CPM · ROAS · result", why: "Đưa performance data sát với nơi team đang vận hành account." },
+      { label: "Data sync", value: "Chrome Extension", why: "Làm lớp kết nối browser-first trước khi cần tích hợp sâu hơn." },
+      { label: "Access", value: "Admin · Analyst · Viewer", why: "Tách quyền theo vai trò và trách nhiệm." },
+      { label: "Reporting", value: "Excel · PDF · schedule", why: "Chuẩn hóa giao tiếp với khách hàng hoặc management." },
+      { label: "Audit", value: "User · time · IP activity", why: "Truy vết thay đổi khi có sự cố hoặc cần kiểm tra nội bộ." },
+    ],
+    caption: "Capability map Kedi Ads được chuẩn hóa từ crawl AdsMeta; user count, rating, pricing và testimonial nguồn không được chuyển thành claim Kedi.",
+  },
+  gallery: {
+    eyebrow: "05 · Visual reference",
+    quote: "Nguồn crawl AdsMeta dùng video hero và community banner nhiều hơn screenshot tĩnh. Gallery giữ đúng dữ liệu đã crawl thay vì tự bịa thêm dashboard asset.",
+    sourceNote: "Video và banner lấy từ output crawl AdsMeta. Chúng dùng để kiểm tra motion/layout; production cần thay bằng asset Kedi Ads được phê duyệt.",
+    items: [
+      { src: `${base}/videos/hero.mp4`, alt: "AdsMeta hero video", title: "Dashboard Motion", description: "Video tổng quan account và campaign", kind: "video" },
+      { src: `${base}/uploads/community/post_cmokw59zz0003jw656zel1d9p_1780543270026.jpg`, alt: "AdsMeta banner one", title: "Community 01", description: "Banner visual từ crawl" },
+      { src: `${base}/uploads/community/post_cmompngcg0000rlqy7phqfmre_1780552738970.jpg`, alt: "AdsMeta banner two", title: "Community 02", description: "Banner visual từ crawl" },
+    ],
+  },
+  comparison: {
+    eyebrow: "06 · Trước và sau",
+    titleLines: ["Không phải thêm dashboard,", "mà là giảm số nơi phải kiểm tra"],
+    lead: "Trang nhấn vào consolidation: dữ liệu và quyền team được tổ chức quanh account/campaign thay vì mỗi loại thông tin nằm trong một tab khác nhau.",
+    columns: [
+      { label: "Nhiều tab", title: "Monitoring và analysis bị chia nhỏ", bullets: ["Số dư kiểm tra từng account", "Metric nằm ở nhiều view", "Quyền team khó kiểm soát", "Report và audit tách rời"], summary: "Chấp nhận được với vài account nhưng nhanh chóng thành bottleneck khi agency mở rộng." },
+      { label: "Kedi Ads", title: "Một workspace cho inventory và operations", bullets: ["Account/BM/Page trong một inventory", "Realtime metric gần campaign", "Role-based access", "Report và audit cùng workspace"], summary: "Media buyer giảm thao tác kiểm tra; quyết định tối ưu vẫn ở con người.", accent: true },
+    ],
+  },
+  faq: {
+    eyebrow: "07 · Câu hỏi hay gặp",
+    titleLines: ["Những câu agency sẽ hỏi", "trước khi gom account"],
+    lead: "FAQ tập trung vào dữ liệu, extension, quyền team, report và phạm vi automation.",
+    mascot: kediMascot,
+    items: [
+      { question: "Có thể quản lý nhiều ad account và Business Manager cùng lúc không?", answer: "Đó là capability trung tâm của page: inventory nhiều ad account, BM và Page trong một workspace để team lọc và theo dõi tập trung." },
+      { question: "Chrome Extension dùng để làm gì?", answer: "Trong mô hình crawl, extension là lớp đồng bộ dữ liệu từ browser/Facebook Ads Manager vào workspace, giúp onboarding đơn giản hơn trước khi cần API integration sâu." },
+      { question: "Có thể phân quyền cho team không?", answer: "Có. Capability map tham chiếu ba vai trò Admin, Analyst và Viewer; triển khai thực tế có thể mở rộng theo role matrix của agency." },
+      { question: "Report có thể xuất định kỳ không?", answer: "Capability nguồn có report Excel/PDF và lịch gửi. Kedi Ads có thể dùng cùng pattern để chuẩn hóa reporting theo khách hàng hoặc team." },
+      { question: "Kedi Ads có tự quyết định ngân sách và tối ưu chiến dịch không?", answer: "Không mặc định. Dashboard có thể cung cấp data và rule hỗ trợ, nhưng budget, chiến lược và hành động có rủi ro cần media buyer chịu trách nhiệm." },
+    ],
+    closingTitle: "Có inventory account hiện tại?",
+    closingText: "Bắt đầu từ danh sách ad account/BM/Page, role của team và report đang gửi; từ đó xác định dashboard và quyền nào cần ưu tiên.",
+  },
+  cta: {
+    eyebrow: "Bước tiếp theo",
+    titleLines: ["Gom account inventory", "về một ads workspace"],
+    lead: "Chọn một nhóm account đang quản lý, map balance/spend/performance và quyền người dùng hiện tại. Đó là đủ để dựng workspace Kedi Ads đầu tiên.",
+    mascot: kediMascot,
+    sideTitle: "One ads workspace",
+    sideText: "Inventory, monitoring, analytics, team permissions, reporting và audit cùng một điểm vào cho media buyer.",
+  },
+  sectionOrder: ["marquee", "pain", "modules", "workflow", "capability", "gallery", "comparison", "faq", "cta"],
+};

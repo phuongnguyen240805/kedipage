@@ -1,4 +1,5 @@
 import ClientEdutech from '../Edutech/client';
+import type { ProductMascotKey } from '../shared/edutech-product/mascots';
 
 /**
  * Exact UI/content clone of /edutech for the Kedi product routes.
@@ -8,6 +9,6 @@ import ClientEdutech from '../Edutech/client';
  * every product route. Each route remains independent and can be given its
  * own content later without duplicating the LMS UI foundation.
  */
-export default function LmsClonePage() {
-  return <ClientEdutech />;
+export default function LmsClonePage({ routeKey }: { routeKey?: ProductMascotKey }) {
+  return <ClientEdutech routeKey={routeKey} />;
 }

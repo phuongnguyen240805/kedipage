@@ -1,5 +1,5 @@
-import LmsClonePage from '../LmsClonePage';
+import KediOutreachPage from '../../KediOutreach/page';
 
 export default function Page() {
-  return <LmsClonePage />;
+  return <KediOutreachPage />;
 }
