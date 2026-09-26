@@ -8,6 +8,8 @@ import { useTranslation } from 'react-i18next';
 import '@/app/globals.css';
 import {
   serviceCategories,
+  SOFTWARE_SERVICE_MENU_IMAGES,
+  VISIBLE_SERVICE_CATEGORY_KEYS,
   type Service,
 } from '../services-dropdown/datas/services-data';
 
@@ -93,7 +95,9 @@ const KEDI_DROPDOWN_EASE = [0.22, 1, 0.36, 1] as const;
 
 const ServicesDropdown = () => {
   const { t } = useTranslation();
-  const categoryKeys = Object.keys(serviceCategories);
+  const categoryKeys: string[] = VISIBLE_SERVICE_CATEGORY_KEYS.filter(
+    (category) => Boolean(serviceCategories[category])
+  );
   const [activeTab, setActiveTab] = useState<string>(categoryKeys[0]);
   const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const prefersReducedMotion = useReducedMotion();
@@ -147,6 +151,10 @@ const ServicesDropdown = () => {
   };
 
   const getImage = (service: MenuService, width = 180, height = 120) => {
+    const localSoftwareImage = service.href
+      ? SOFTWARE_SERVICE_MENU_IMAGES[service.href]
+      : undefined;
+    if (localSoftwareImage) return localSoftwareImage;
     if (service.imageUrl) return service.imageUrl;
     if (!service.cloudinaryId) return null;
 

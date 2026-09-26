@@ -34,6 +34,39 @@ export type ServiceCategory = {
 
 export type ServiceCategories = Record<string, ServiceCategory>;
 
+// Only these groups are rendered in the Services dropdown.
+// Hidden groups remain in serviceCategories so their routes/data can be re-enabled later.
+export const VISIBLE_SERVICE_CATEGORY_KEYS = [
+  'business_services',
+  'selling',
+  'software_solutions',
+] as const;
+
+// Reliable local thumbnails for the Software Solutions menu.
+// Keeping this map next to the service data gives desktop/mobile one shared image source.
+export const SOFTWARE_SERVICE_MENU_IMAGES: Record<string, string> = {
+  '/kedi-os': '/service-menu/software/kedi-os.svg',
+  '/kedi-crm': '/service-menu/software/kedi-crm.svg',
+  '/kedi-commerce': '/service-menu/software/kedi-commerce.svg',
+  '/kedi-agents': '/service-menu/software/kedi-agents.svg',
+  '/kedi-outreach': '/service-menu/software/kedi-outreach.svg',
+  '/kedi-profiles': '/service-menu/software/kedi-profiles.svg',
+  '/kedi-ai-flow': '/service-menu/software/kedi-ai-flow.svg',
+  '/kedi-video': '/service-menu/software/kedi-video.svg',
+  '/kedi-pod': '/service-menu/software/kedi-pod.svg',
+  '/kedi-funnel': '/service-menu/software/kedi-funnel.svg',
+  '/kedi-seo': '/service-menu/software/kedi-seo.svg',
+  '/kedi-ads': '/service-menu/software/kedi-ads.svg',
+  '/kedi-analytics': '/service-menu/software/kedi-analytics.svg',
+  '/kedi-automate': '/service-menu/software/kedi-automate.svg',
+  '/nhtq/': '/service-menu/software/nhtq.svg',
+  '/phan-mem-dao-tao-noi-bo/': '/service-menu/software/skillhub.svg',
+  '/phan-mem-quan-ly-tiem-vang/': '/service-menu/software/jms.svg',
+  '/select-trial': '/service-menu/software/restaurant-ai.svg',
+  '/tools-ngon': '/service-menu/software/tools-ngon.svg',
+  '/edutech/': '/service-menu/software/kedi-lms.svg',
+};
+
 export const serviceCategories: ServiceCategories = {
   business_services: {
     titleKey: 'services.categories.business_services.title',
@@ -353,12 +386,6 @@ export const serviceCategories: ServiceCategories = {
     layout: 'horizontal',
     gridCols: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4',
     services: [
-      {
-        href: '/edutech/',
-        titleKey: 'services.items.lms_solution.title',
-        descriptionKey: 'services.items.lms_solution.description',
-        cloudinaryId: 'mega-menu-new-content-15_sc3ggl',
-      },
       {
         href: '/dang-ky-ten-mien',
         titleKey: 'services.items.domain_registration.title',

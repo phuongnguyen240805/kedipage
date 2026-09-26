@@ -7,7 +7,10 @@ import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 
 import ServiceItem from '../services-dropdown/service-item';
-import { serviceCategories } from '../services-dropdown/datas/services-data';
+import {
+  serviceCategories,
+  VISIBLE_SERVICE_CATEGORY_KEYS,
+} from '../services-dropdown/datas/services-data';
 import LanguageSwitcher from '@/components/layouts/LanguageSwitcher';
 import { Button } from '../ui/button';
 import { isNavItemActive, navigationConfig } from '../../data/navigation-config';
@@ -173,7 +176,7 @@ export default function MobileNav({
           {!activeCategory ? (
             /* --- Màn hình chọn danh mục lớn --- */
             <div className="space-y-2">
-              {Object.keys(serviceCategories).map((key) => (
+              {VISIBLE_SERVICE_CATEGORY_KEYS.map((key) => (
                 <Boderyelow key={key} className="!p-0">
                   <button
                     onClick={() => setActiveCategory(key)}
