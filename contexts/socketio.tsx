@@ -8,7 +8,7 @@ import React, {
   useState,
 } from "react";
 import { io, Socket } from "socket.io-client";
-import { generateRandomCursor } from "../lib/generate-random-cursor"
+import { generateRandomCursor } from "../lib/generate-random-cursor";
 
 export type User = {
   socketId: string;
@@ -53,25 +53,54 @@ const SocketContextProvider = ({ children }: { children: ReactNode }) => {
 
   // SETUP SOCKET.IO
   useEffect(() => {
-    const username =  localStorage.getItem("username") || generateRandomCursor().name
-    const socket = io(process.env.NEXT_PUBLIC_WS_URL!, {
-      query: { username },
+    const fallbackUsername = generateRandomCursor().name;
+    let username = fallbackUsername;
+
+    try {
+      username = window.localStorage.getItem("username") || fallbackUsername;
+    } catch (error) {
+      // Một số WebView / privacy mode có thể chặn localStorage.
+      console.warn("[socket] localStorage unavailable", error);
+    }
+
+    const wsUrl = process.env.NEXT_PUBLIC_WS_URL;
+    if (!wsUrl) {
+      console.warn("[socket] NEXT_PUBLIC_WS_URL is not configured; realtime disabled");
+      return;
+    }
+
+    let socketInstance: Socket;
+
+    try {
+      socketInstance = io(wsUrl, {
+        query: { username },
+      });
+    } catch (error) {
+      console.error("[socket] failed to initialize Socket.IO", error);
+      return;
+    }
+
+    setSocket(socketInstance);
+
+    socketInstance.on("connect", () => {});
+    socketInstance.on("connect_error", (error) => {
+      console.warn("[socket] connection error", error.message);
     });
-    setSocket(socket);
-    socket.on("connect", () => {});
-    socket.on("msgs-receive-init", (msgs) => {
-      setMsgs(msgs);
+    socketInstance.on("msgs-receive-init", (initialMessages: Message[]) => {
+      setMsgs(initialMessages);
     });
-    socket.on("msg-receive", (msgs) => {
-      setMsgs((p) => [...p, msgs]);
+    socketInstance.on("msg-receive", (message: Message) => {
+      setMsgs((current) => [...current, message]);
     });
+
     return () => {
-      socket.disconnect();
+      socketInstance.removeAllListeners();
+      socketInstance.disconnect();
     };
   }, []);
 
   return (
-    <SocketContext.Provider value={{ socket: socket, users, setUsers, msgs }}>
+    <SocketContext.Provider value={{ socket, users, setUsers, msgs }}>
       {children}
     </SocketContext.Provider>
   );

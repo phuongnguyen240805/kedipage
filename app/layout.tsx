@@ -1,5 +1,7 @@
 'use client';
 import "./globals.css";
+import "@/components/features/quote-share/styles/quote-share.css";
+import "@/components/features/quote-share/styles/quote-share.override.css";
 import ElasticCursor from "@/components/ui/ElasticCursor";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
@@ -9,6 +11,7 @@ import SocketContextProvider from "@/contexts/socketio";
 import Header from "@/components/layouts/header";
 import PreloaderWrapper from "@/components/PreloaderWrapper";
 import ChatwootWidget from "@/components/ChatProvider/ChatwootWidget";
+import { QuoteShareProvider } from "@/components/features/quote-share";
 
 import Script from "next/script"; 
 import ParticlesBackground from "@/components/Particles";
@@ -57,6 +60,8 @@ export default function RootLayout({ children, params }: { children: React.React
           <Toaster />
           <ElasticCursor />
         </ThemeProvider>
+
+        <QuoteShareProvider />
       </body>
     </html>
   );

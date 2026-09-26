@@ -98,6 +98,20 @@ const nextConfig = {
       },
     ];
   },
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: '/portfolio',
+  //       destination: '/du-an',
+  //       permanent: true,
+  //     },
+  //     {
+  //       source: '/clients-section',
+  //       destination: '/khach-hang',
+  //       permanent: true,
+  //     },
+  //   ];
+  // },
 };
 
 export default withNextIntl(nextConfig);

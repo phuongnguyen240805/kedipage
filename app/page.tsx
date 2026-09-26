@@ -11,10 +11,28 @@ import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
-    (async () => {
-      const LocomotiveScroll = (await import("locomotive-scroll")).default;
-      new LocomotiveScroll();
-    })();
+    let scrollInstance: { destroy?: () => void } | null = null;
+    let cancelled = false;
+
+    const initializeScroll = async () => {
+      try {
+        const module = await import("locomotive-scroll");
+        if (cancelled) return;
+
+        const LocomotiveScroll = module.default;
+        scrollInstance = new LocomotiveScroll();
+      } catch (error) {
+        // Smooth scroll là enhancement, không được phép làm crash homepage.
+        console.warn("[locomotive-scroll] initialization failed", error);
+      }
+    };
+
+    void initializeScroll();
+
+    return () => {
+      cancelled = true;
+      scrollInstance?.destroy?.();
+    };
   }, []);
 
   return (

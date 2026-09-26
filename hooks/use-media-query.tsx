@@ -4,15 +4,36 @@ export function useMediaQuery(query: string) {
   const [value, setValue] = React.useState(false);
 
   React.useEffect(() => {
-    function onChange(event: MediaQueryListEvent) {
-      setValue(event.matches);
+    if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
+      setValue(false);
+      return;
     }
 
-    const result = matchMedia(query);
-    result.addEventListener("change", onChange);
-    setValue(result.matches);
+    const mediaQuery = window.matchMedia(query);
 
-    return () => result.removeEventListener("change", onChange);
+    const onChange = (event: MediaQueryListEvent) => {
+      setValue(event.matches);
+    };
+
+    setValue(mediaQuery.matches);
+
+    // Modern browsers / WebView.
+    if (
+      typeof mediaQuery.addEventListener === "function" &&
+      typeof mediaQuery.removeEventListener === "function"
+    ) {
+      mediaQuery.addEventListener("change", onChange);
+      return () => mediaQuery.removeEventListener("change", onChange);
+    }
+
+    // Safari / Android WebView cũ.
+    if (
+      typeof mediaQuery.addListener === "function" &&
+      typeof mediaQuery.removeListener === "function"
+    ) {
+      mediaQuery.addListener(onChange);
+      return () => mediaQuery.removeListener(onChange);
+    }
   }, [query]);
 
   return value;

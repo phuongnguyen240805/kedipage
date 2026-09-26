@@ -1,0 +1,4 @@
+a2585df21ffe31d6567f671945d10d67883f22c49fe61ed1e2c14bf359e89e89  components/features/quote-share/upstream/quote-share.mona.js
+ca56dff0a46639e922879bb3329868888fc81d04f21c7920c90459e17ab8a16a  components/features/quote-share/styles/quote-share.css
+bb2365e4902f4f84852cf4025e6f6a60325a682aeafa43fb63b7fc8f098d1ef2  public/quote-share/vendor/qrcode.min.js
+44817c8e4d7c3ce8e41105f8a54ef12c360ccbf9c94e896c19115625efb3d844  public/quote-share/quote-share.js

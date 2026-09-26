@@ -1,0 +1,169 @@
+/*
+ * KEDI-only compatibility + visual layer.
+ * The vendored MONA geometry remains in quote-share.css.  This file owns
+ * KEDI branding so the upstream stylesheet stays easy to diff/replace.
+ */
+.mq-modal,
+.mq-pill {
+  --mq-navy: var(--kedi-navy, #0b2d5b);
+  --mq-yellow: var(--kedi-yellow, #ffc629);
+  --mq-blue: #0d478c;
+  --mq-deep: #06172f;
+  --mq-surface: #f7f7fb;
+  --mq-soft: #eef1f7;
+  --mq-white: #ffffff;
+  --mq-ink: #0b2d5b;
+  --mq-muted: rgba(11, 45, 91, 0.58);
+  --mq-line: rgba(11, 45, 91, 0.12);
+}
+
+.mq-modal,
+.mq-modal *,
+.mq-pill,
+.mq-pill * {
+  box-sizing: border-box;
+}
+
+/* Match KEDI's site typography for the utility UI; canvas output is separate. */
+.mq-dialog,
+.mq-pill,
+.mq-modal button {
+  font-family: "NeueMontreal", "Be Vietnam Pro", system-ui, sans-serif;
+}
+
+/* Prevent project-level text decoration rules from changing the utility UI. */
+.mq-modal button,
+.mq-pill {
+  text-decoration: none;
+}
+
+/* Selection trigger: same navy surface + restrained yellow accent used by KEDI header. */
+.mq-pill {
+  color: var(--mq-white);
+  border: 1px solid rgba(255, 198, 41, 0.42);
+  background: linear-gradient(135deg, var(--mq-navy) 0%, var(--mq-blue) 100%);
+  box-shadow:
+    0 10px 28px -10px rgba(3, 18, 48, 0.62),
+    0 0 0 1px rgba(255, 198, 41, 0.06),
+    0 0 20px -12px rgba(255, 198, 41, 0.75);
+}
+.mq-pill:hover {
+  filter: none;
+  border-color: rgba(255, 198, 41, 0.72);
+  box-shadow:
+    0 12px 30px -10px rgba(3, 18, 48, 0.68),
+    0 0 24px -10px rgba(255, 198, 41, 0.62);
+}
+
+/* Modal shell mirrors the KEDI mega-menu: navy header, soft neutral body, yellow micro-accents. */
+.mq-overlay {
+  background: rgba(3, 18, 48, 0.74);
+  backdrop-filter: blur(5px);
+}
+.mq-dialog {
+  color: var(--mq-ink);
+  background: var(--mq-surface);
+  border: 1px solid rgba(255, 198, 41, 0.24);
+  box-shadow:
+    0 28px 80px rgba(3, 18, 48, 0.42),
+    0 0 26px rgba(255, 198, 41, 0.08);
+}
+/* Header is intentionally unfilled so the dialog reads as one continuous KEDI surface. */
+.mq-head {
+  background: transparent;
+  border-bottom-color: var(--mq-line);
+}
+.mq-head span {
+  color: var(--mq-ink);
+  letter-spacing: -0.01em;
+}
+.mq-close {
+  color: rgba(11, 45, 91, 0.72);
+  background: var(--mq-soft);
+  border: 1px solid rgba(11, 45, 91, 0.1);
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.mq-close:hover {
+  color: var(--mq-navy);
+  background: rgba(255, 198, 41, 0.18);
+  border-color: rgba(255, 198, 41, 0.72);
+}
+
+.mq-body {
+  background: var(--mq-surface);
+}
+.mq-canvas {
+  border: 1px solid rgba(11, 45, 91, 0.08);
+  box-shadow: 0 14px 34px -16px rgba(3, 18, 48, 0.48);
+}
+.mq-label {
+  color: var(--mq-muted);
+}
+
+/* Theme selector: yellow only marks selection, never becomes a loud modal surface. */
+.mq-sw {
+  border: 1px solid rgba(11, 45, 91, 0.1);
+  box-shadow: 0 4px 12px -8px rgba(3, 18, 48, 0.45);
+}
+.mq-sw.on {
+  box-shadow:
+    0 0 0 2px var(--mq-surface),
+    0 0 0 4px var(--mq-yellow),
+    0 5px 15px -8px rgba(3, 18, 48, 0.5);
+}
+
+/* KEDI segmented control treatment. */
+.mq-size {
+  color: rgba(11, 45, 91, 0.68);
+  background: var(--mq-white);
+  border-color: rgba(11, 45, 91, 0.14);
+}
+.mq-size:hover {
+  color: var(--mq-navy);
+  border-color: rgba(255, 198, 41, 0.72);
+  background: rgba(255, 198, 41, 0.07);
+}
+.mq-size.on {
+  color: var(--mq-yellow);
+  background: var(--mq-navy);
+  border-color: var(--mq-navy);
+  box-shadow: 0 7px 18px -12px rgba(3, 18, 48, 0.7);
+}
+
+/* Actions follow KEDI hierarchy: yellow primary, neutral secondary, navy external share. */
+.mq-btn {
+  border: 1px solid transparent;
+}
+.mq-dl {
+  color: var(--mq-navy);
+  background: var(--mq-yellow);
+  box-shadow: 0 10px 22px -14px rgba(181, 126, 0, 0.7);
+}
+.mq-dl:hover {
+  filter: none;
+  background: #ffd34f;
+}
+.mq-copy {
+  color: var(--mq-navy);
+  background: var(--mq-white);
+  border-color: rgba(11, 45, 91, 0.14);
+}
+.mq-copy:hover {
+  color: var(--mq-navy);
+  background: var(--mq-soft);
+  border-color: rgba(11, 45, 91, 0.2);
+}
+.mq-fb {
+  color: var(--mq-white);
+  background: var(--mq-navy);
+  border-color: var(--mq-navy);
+}
+.mq-fb:hover {
+  filter: none;
+  background: var(--mq-blue);
+  border-color: var(--mq-blue);
+}
+
+/* Keep semantic feedback colors functional and slightly muted against KEDI surfaces. */
+.mq-status.ok { color: #167549; }
+.mq-status.err { color: #c93636; }

@@ -9,11 +9,22 @@ const ParticlesBackground = () => {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
+    let mounted = true;
+
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
-    });
+    })
+      .then(() => {
+        if (mounted) setInit(true);
+      })
+      .catch((error) => {
+        // Background effect là optional; lỗi engine không được làm hỏng app.
+        console.warn("[particles] engine initialization failed", error);
+      });
+
+    return () => {
+      mounted = false;
+    };
   }, []);
 
   const particlesLoaded = async (container?: Container): Promise<void> => {

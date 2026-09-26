@@ -1,33 +1,40 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import {useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { clientsItem } from "@/constants";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Clients() {
-	useEffect(() => {
-  const rows = document.querySelectorAll(".client-row");
+  useEffect(() => {
+    const rows = document.querySelectorAll(".client-row");
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-        } else {
-          entry.target.classList.remove("is-visible");
-        }
-      });
-    },
-    {
-      threshold: 0.4,
+    // WebView/browser cũ có thể không có IntersectionObserver.
+    // Trong trường hợp đó vẫn hiển thị nội dung thay vì làm crash toàn trang.
+    if (typeof window.IntersectionObserver !== "function") {
+      rows.forEach((row) => row.classList.add("is-visible"));
+      return;
     }
-  );
 
-  rows.forEach(row => observer.observe(row));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          } else {
+            entry.target.classList.remove("is-visible");
+          }
+        });
+      },
+      {
+        threshold: 0.4,
+      },
+    );
 
-  return () => observer.disconnect();
-}, []);
+    rows.forEach((row) => observer.observe(row));
+
+    return () => observer.disconnect();
+  }, []);
 
   // 👇 MỞ SẴN ITEM ĐẦU TIÊN
   const [activeAccordion, setActiveAccordion] = useState<number | null>(

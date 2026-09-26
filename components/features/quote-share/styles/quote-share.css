@@ -1,0 +1,67 @@
+/* MONA Quote Share — pill + modal */
+.mq-pill{
+  position:absolute; z-index:99990; transform:translateX(-50%);
+  display:none; align-items:center; gap:6px;
+  padding:9px 14px; border:0; border-radius:999px; cursor:pointer;
+  font-family:"Be Vietnam Pro",system-ui,sans-serif; font-size:14px; font-weight:600; line-height:1; color:#fff;
+  background:linear-gradient(135deg,#7C0FD1,#FF6E00);
+  box-shadow:0 8px 22px -6px rgba(124,15,209,.55); white-space:nowrap;
+  animation:mqpop .14s ease;
+}
+.mq-pill.show{display:inline-flex;}
+.mq-pill:hover{filter:brightness(1.06);}
+.mq-pill svg{flex-shrink:0;}
+@keyframes mqpop{from{opacity:0;transform:translate(-50%,4px) scale(.9);}to{opacity:1;}}
+
+body.mq-lock{overflow:hidden;}
+
+.mq-modal{position:fixed; inset:0; z-index:99991; display:none;}
+.mq-modal.open{display:block;}
+.mq-overlay{position:absolute; inset:0; background:rgba(16,12,24,.7); backdrop-filter:blur(3px);}
+.mq-dialog{
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:min(880px,calc(100vw - 32px)); max-height:calc(100vh - 32px); overflow:auto;
+  background:#fff; border-radius:18px; box-shadow:0 24px 60px -12px rgba(16,24,40,.4);
+  font-family:"Be Vietnam Pro",system-ui,sans-serif;
+}
+.mq-head{display:flex; align-items:center; justify-content:space-between; padding:18px 22px; border-bottom:1px solid #efeef2;}
+.mq-head span{font-size:18px; font-weight:700; color:#1b1726;}
+.mq-close{border:0; background:#f2f1f5; width:34px; height:34px; border-radius:50%; font-size:22px; line-height:1; color:#5b5570; cursor:pointer;}
+.mq-close:hover{background:#e8e6ee;}
+
+.mq-body{display:flex; gap:24px; padding:22px;}
+.mq-preview{flex:1; min-width:0; display:flex; align-items:flex-start; justify-content:center;}
+.mq-canvas{max-width:100%; max-height:62vh; width:auto; height:auto; border-radius:12px; box-shadow:0 10px 30px -10px rgba(0,0,0,.3);}
+.mq-controls{width:260px; flex-shrink:0; display:flex; flex-direction:column; gap:20px;}
+.mq-label{font-size:13px; font-weight:600; color:#6b6580; margin-bottom:9px;}
+
+.mq-swatches{display:flex; gap:10px; flex-wrap:wrap;}
+.mq-sw{width:34px; height:34px; border-radius:50%; border:0; cursor:pointer; position:relative; transition:transform .12s;}
+.mq-sw:hover{transform:scale(1.08);}
+.mq-sw.on{box-shadow:0 0 0 2px #fff,0 0 0 4px #7C0FD1;}
+
+.mq-sizes{display:flex; gap:8px;}
+.mq-size{flex:1; padding:9px 6px; border:1.5px solid #e4e2ea; background:#fff; border-radius:9px; font-size:13px; font-weight:600; color:#5b5570; cursor:pointer; transition:.15s;}
+.mq-size:hover{border-color:#c9b6e6;}
+.mq-size.on{border-color:#7C0FD1; color:#7C0FD1; background:#f8f2ff;}
+
+.mq-actions{display:flex; flex-direction:column; gap:10px; margin-top:auto;}
+.mq-btn{padding:12px 14px; border:0; border-radius:10px; font-family:inherit; font-size:14px; font-weight:600; cursor:pointer; transition:.15s; text-align:center;}
+.mq-dl{background:linear-gradient(135deg,#7C0FD1,#FF6E00); color:#fff;}
+.mq-dl:hover{filter:brightness(1.06);}
+.mq-copy{background:#f2f1f5; color:#3a3450;}
+.mq-copy:hover{background:#e8e6ee;}
+.mq-fb{background:#1877f2; color:#fff;}
+.mq-fb:hover{filter:brightness(1.05);}
+
+.mq-status{min-height:18px; font-size:12.5px; font-weight:600; text-align:center;}
+.mq-status.ok{color:#178a4a;}
+.mq-status.err{color:#d23a3a;}
+
+@media (max-width:680px){
+  .mq-body{flex-direction:column;}
+  .mq-controls{width:100%;}
+  .mq-canvas{max-height:46vh;}
+  .mq-actions{flex-direction:row; flex-wrap:wrap;}
+  .mq-btn{flex:1; min-width:120px;}
+}
