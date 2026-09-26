@@ -29,9 +29,9 @@ export function isNavItemActive(
 export const navigationConfig = [
   {
     type: 'link',
-    href: '/introduction',
-    labelKey: 'introduction',
-    label: 'Giới thiệu',
+    href: '/',
+    labelKey: 'home',
+    label: 'Trang chủ',
     hoverColor: 'hover:bg-kedi-yellow/10 hover:text-kedi-yellow',
   },
   {
@@ -53,13 +53,6 @@ export const navigationConfig = [
     href: '/du-an',
     labelKey: 'projects',
     label: 'Dự án',
-    hoverColor: 'hover:bg-kedi-yellow/10 hover:text-kedi-yellow',
-  },
-  {
-    type: 'link',
-    href: '/khach-hang',
-    labelKey: 'clients',
-    label: 'Khách hàng',
     hoverColor: 'hover:bg-kedi-yellow/10 hover:text-kedi-yellow',
   },
   {
@@ -88,12 +81,5 @@ export const navigationConfig = [
       },
       { href: '/blog/education', labelKey: 'education', label: 'Giáo dục' },
     ],
-  },
-  {
-    type: 'link',
-    href: '/hoat-dong',
-    labelKey: 'activities',
-    label: 'Hoạt động',
-    hoverColor: 'hover:bg-kedi-yellow/10 hover:text-kedi-yellow',
   },
 ];

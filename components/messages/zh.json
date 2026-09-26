@@ -1,5 +1,6 @@
 {
   "navigation": {
+    "home": "首页",
     "introduction": "介绍",
     "services": "服务",
     "projects": "项目",
@@ -7,7 +8,8 @@
     "blog": "博客",
     "activities": "活动",
     "partnership": "与KEDI合作",
-    "digitalTransformation": "数字化转型"
+    "digitalTransformation": "数字化转型",
+    "ai": "人工智能"
   },
   "nav": {
     "services": "服务",

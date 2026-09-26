@@ -1,5 +1,6 @@
 {
   "navigation": {
+    "home": "홈",
     "introduction": "소개",
     "services": "서비스",
     "projects": "프로젝트",
@@ -7,7 +8,8 @@
     "blog": "블로그",
     "activities": "활동",
     "partnership": "KEDI와 파트너십",
-    "digitalTransformation": "디지털 전환"
+    "digitalTransformation": "디지털 전환",
+    "ai": "인공지능"
   },
   "nav": {
     "services": "서비스",

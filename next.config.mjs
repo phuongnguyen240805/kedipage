@@ -73,20 +73,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/gioi-thieu',
-        destination: '/introduction',
-      },
-      {
         source: '/du-an',
         destination: '/portfolio',
-      },
-      {
-        source: '/khach-hang',
-        destination: '/clients-section',
-      },
-      {
-        source: '/hoat-dong',
-        destination: '/activities',
       },
       {
         source: '/hop-tac-lam-an-voi-kedi',

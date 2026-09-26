@@ -1,5 +1,6 @@
 {
   "navigation": {
+    "home": "Accueil",
     "introduction": "Introduction",
     "services": "Services",
     "projects": "Projets",
@@ -7,7 +8,8 @@
     "blog": "Blog",
     "activities": "Activités",
     "partnership": "Devenir partenaire de KEDI",
-    "digitalTransformation": "Transformation numérique"
+    "digitalTransformation": "Transformation numérique",
+    "ai": "IA"
   },
   "nav": {
     "services": "Services",
