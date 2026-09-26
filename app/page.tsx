@@ -16,10 +16,10 @@ export default function Home() {
 
     const initializeScroll = async () => {
       try {
-        const module = await import("locomotive-scroll");
+        const loadedModule = await import("locomotive-scroll");
         if (cancelled) return;
 
-        const LocomotiveScroll = module.default;
+        const LocomotiveScroll = loadedModule.default;
         scrollInstance = new LocomotiveScroll();
       } catch (error) {
         // Smooth scroll là enhancement, không được phép làm crash homepage.
