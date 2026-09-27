@@ -1,7 +1,5 @@
 'use client';
 
-import Image from 'next/image';
-
 export default function OverviewSection() {
   return (
     <section id="overview" className="w-full mx-auto py-20 px-4 lg:px-0">
@@ -15,20 +13,7 @@ export default function OverviewSection() {
         </p>
       </div>
       <div className="relative w-full overflow-hidden max-w-7xl mx-auto">
-        {/* Đặt chiều cao cụ thể, ví dụ 400px hoặc tỷ lệ phù hợp để ảnh không bị co dãn */}
-        <div
-          className="relative w-full max-w-full mx-auto"
-          style={{ height: 600 }}
-        >
-          <Image
-            src="/assets/toolsngon/assets/dashboard-2.png"
-            alt="hero_img"
-            fill
-            className="object-contain"
-            sizes="100vw"
-            priority
-          />
-        </div>
+        <div className="tools-ui-board" aria-hidden="true" />
       </div>
     </section>
   );

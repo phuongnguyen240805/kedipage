@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
+import VerticalProductFrame from '../shared/VerticalProductFrame';
 
 // 🧩 Hook phát hiện phần tử vào viewport
 function useInView(options = {}) {
@@ -63,7 +64,8 @@ const ClientSelectTrial = dynamic(
 // 🚀 Component chính cho trang Mẫu Website
 export default function PageSelectTrial() {
   return (
-    <div className="flex flex-col gap-6 px-6 py-10">
+    <VerticalProductFrame product="restaurant-ai">
+      <div className="flex flex-col gap-6 px-6 py-10">
       {/* Header */}
       <h1 className="text-3xl font-bold text-center text-gray-800">
         Mẫu Website
@@ -77,6 +79,7 @@ export default function PageSelectTrial() {
       <LazySection>
         <ClientSelectTrial />
       </LazySection>
-    </div>
+      </div>
+    </VerticalProductFrame>
   );
 }

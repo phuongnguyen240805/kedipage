@@ -12,6 +12,7 @@ import {
   VISIBLE_SERVICE_CATEGORY_KEYS,
   type Service,
 } from '../services-dropdown/datas/services-data';
+import SoftwareSolutionFamilyGrid from './SoftwareSolutionFamilyGrid';
 
 type MenuService = Service & {
   mock?: boolean;
@@ -47,15 +48,6 @@ const CATEGORY_META: Record<
 };
 
 const MOCK_SERVICES: Partial<Record<string, MenuService[]>> = {
-  software_solutions: [
-    {
-      title: 'KEDI CRM',
-      mock: true,
-      mockBadge: 'UI DEMO',
-      mockDescription: 'Mock item để test mật độ và nhịp layout mega menu.',
-      mockIcon: 'CRM',
-    },
-  ],
   course_instructor: [
     {
       title: 'Cổng học viên',
@@ -361,7 +353,15 @@ const ServicesDropdown = () => {
             </div>
 
             <div className="grid min-h-0 flex-1 grid-cols-2 content-start gap-x-3 gap-y-1 overflow-y-auto pr-1 [scrollbar-width:thin]">
-              {visibleServices.map((service, index) => {
+              {activeTab === 'software_solutions' ? (
+                <SoftwareSolutionFamilyGrid
+                  services={realServices}
+                  getTitle={getTitle}
+                  getDescription={getDescription}
+                  getImage={getImage}
+                  onNavigate={closeMegaMenu}
+                />
+              ) : visibleServices.map((service, index) => {
                 const title = getTitle(service);
                 const description = getDescription(service);
                 const image = getImage(service);

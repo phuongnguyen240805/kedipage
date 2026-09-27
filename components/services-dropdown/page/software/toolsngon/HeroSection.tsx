@@ -47,7 +47,7 @@ const FeatureSection = dynamic(() => import('./FeatureSection'), {
 const ApprovedSection = dynamic(() => import('./ApprovedSection'), {
   ssr: false,
 });
-const Testimonials = dynamic(() => import('./Testimonials'), { ssr: false });
+const Testimonials = dynamic(() => import('./TestimonialsSafe'), { ssr: false });
 const PricingSection = dynamic(() => import('./PricingSection'), {
   ssr: false,
 });
@@ -138,40 +138,27 @@ export default function HeroSection() {
 
               {/* Logo Trust */}
               <div className="flex items-center gap-4 mt-10 justify-center lg:justify-start flex-wrap">
-                <Image
-                  src="/assets/toolsngon/assets/trust-pilot--white-logo.svg"
-                  alt="Trustpilot"
-                  width={176}
-                  height={44}
-                  className="w-24 lg:w-44 h-auto"
-                />
-                <Image
-                  src="/assets/toolsngon/assets/g2-logo.svg"
-                  alt="G2"
-                  width={176}
-                  height={44}
-                  className="w-24 lg:w-44 h-auto"
-                />
-                <Image
-                  src="/assets/toolsngon/assets/app-store-logo.webp"
-                  alt="App Store"
-                  width={176}
-                  height={44}
-                  className="w-24 lg:w-44 h-auto"
-                />
+                {['Trustpilot', 'G2', 'App Store'].map((label) => (
+                  <span key={label} className="tools-trust-badge">
+                    {label}
+                  </span>
+                ))}
               </div>
             </div>
 
             {/* Bên phải - Banner chính */}
             <div className="lg:mt-0 mt-8">
-              <Image
-                src="/assets/toolsngon/assets/placeholder-hero.jpg"
-                alt="Banner"
-                width={800}
-                height={600}
-                className="object-cover w-full h-auto rounded-xl shadow-lg"
-                priority
-              />
+              <div className="tools-visual" aria-hidden="true">
+                <div className="tools-visual-icon">
+                  <Image
+                    src="/service-menu/software/tools-ngon.svg"
+                    alt=""
+                    width={420}
+                    height={320}
+                    priority
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

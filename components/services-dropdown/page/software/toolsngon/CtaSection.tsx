@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 export default function CtaSection() {
   return (
     <section
@@ -7,14 +5,7 @@ export default function CtaSection() {
       className="container mx-auto py-16 px-4 lg:px-0 flex items-center relative overflow-hidden"
     >
       <div
-        className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-24 p-6 w-full rounded-2xl"
-        style={{
-          backgroundImage:
-            "url('/assets/toolsngon/assets/banner1-background.svg')",
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
+        className="tools-cta-panel flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-24 p-6 w-full rounded-2xl"
       >
         {/* Text Content */}
         <div className="w-full lg:w-1/2">
@@ -35,14 +26,7 @@ export default function CtaSection() {
 
         {/* Image Content */}
         <div className="w-full lg:w-[400px] h-auto rounded-xl overflow-hidden">
-          <Image
-            src="/assets/toolsngon/assets/dropship-ad-library-ad-spend.avif"
-            alt="Dropship Ad Library"
-            width={400}
-            height={300}
-            className="rounded-xl object-cover"
-            priority
-          />
+          <div className="tools-cta-visual" aria-hidden="true" />
         </div>
       </div>
     </section>
