@@ -1,3 +1,6 @@
+import { growthProductExperienceCss } from "./growth-product-experience";
+import { softwareExperienceQualityCss } from "./software-experience-quality";
+
 /**
  * Shared visual signatures for the Software Solutions family.
  *
@@ -132,4 +135,4 @@ export const softwareVisualSignatureCss = `
 @media(prefers-reduced-motion:reduce){
   .kedi-os-route .e-anh,.kedi-profiles-route .e-anh{transform:none}
 }
-`;
+` + growthProductExperienceCss + softwareExperienceQualityCss;

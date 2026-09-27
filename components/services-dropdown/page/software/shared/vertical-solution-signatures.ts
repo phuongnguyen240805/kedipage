@@ -1,3 +1,6 @@
+import { softwareExperienceQualityCss } from "./software-experience-quality";
+import { verticalSolutionExperienceCss } from "./vertical-solution-experience";
+
 /** KEDI visual skins for vertical software solutions. Content is untouched. */
 export const verticalSolutionCss = `
 .kedi-vertical-product{--vp-max:1320px;--vp-radius:26px;--vp-line:rgba(17,32,58,.12);--vp-shadow:0 30px 90px -48px rgba(13,30,58,.42);position:relative;isolation:isolate;overflow-x:clip}
@@ -97,4 +100,4 @@ export const verticalSolutionCss = `
   [data-vertical-product="nhtq"] .nhtq-capture-transfer-list{grid-template-columns:1fr}
   [data-vertical-product="tools-ngon"] .tools-visual{min-height:330px}
 }
-`;
+` + verticalSolutionExperienceCss + softwareExperienceQualityCss;

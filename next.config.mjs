@@ -1,9 +1,13 @@
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin();
+const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone',
   reactStrictMode: true,
   // swcMinify: false, // Tắt minify
   productionBrowserSourceMaps: false, // Tắt source maps
@@ -15,6 +19,10 @@ const nextConfig = {
     IPINFO_TOKEN: process.env.IPINFO_TOKEN,
   },
   experimental: {
+    // Keep Next standalone output rooted at this app even when the repo lives
+    // inside a parent pnpm/monorepo workspace. OpenNext expects:
+    // .next/standalone/.next/server/pages-manifest.json
+    outputFileTracingRoot: projectRoot,
     optimizePackageImports: ['lucide-react'],
   },
   webpack: (config, options) => {
