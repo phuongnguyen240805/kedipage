@@ -1,12 +1,12 @@
 'use client';
 
 import { Marquee } from '@/components';
+import ClientsKedi from '@/components/home-page/ClientsKedi';
 import {
   FinalCta,
   HomeGallery,
   HomeHero,
   HomeInsights,
-  HomeProjects,
   KediEcosystem,
   NeedNavigator,
   ServiceCapabilities,
@@ -18,10 +18,10 @@ export default function Home() {
     <div className="bg-kedi-navy">
       <HomeHero />
 
-      <div className="relative z-10 bg-kedi-navy py-4 sm:py-6">
+      <div className="relative z-10 overflow-hidden bg-[#161B25] py-0">
         <Marquee
-          title="AI  CRM  COMMERCE  AUTOMATION  ANALYTICS  CLOUD"
-          className="py-2 text-[46px] leading-none tracking-[-0.035em] sm:text-[58px] lg:text-[82px]"
+          title="THIẾT KẾ & PHÁT TRIỂN"
+          className="pt-[0.14em] pb-[0.08em] text-[92px] leading-[1] tracking-[-0.045em] sm:text-[126px] md:text-[156px] lg:text-[190px] xl:text-[220px]"
         />
       </div>
 
@@ -30,8 +30,8 @@ export default function Home() {
       <HomeGallery />
       <SolutionFlow />
       <ServiceCapabilities />
-      <HomeProjects />
       <HomeInsights />
+      <ClientsKedi />
       <FinalCta />
     </div>
   );

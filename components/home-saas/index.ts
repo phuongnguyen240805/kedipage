@@ -1,6 +1,6 @@
-export { default as HomeHero } from './v3/HomeHeroV3';
+export { default as HomeHero } from '../home-page/Hero';
 export { default as NeedNavigator } from './v3/NeedNavigatorV3';
-export { default as KediEcosystem } from './v3/KediEcosystemV3';
+export { default as KediEcosystem } from './v3/LegacyFeaturedProjectsKedi';
 export { default as HomeGallery } from './v3/HomeGallery';
 export { default as SolutionFlow } from './v3/SolutionFlowV3';
 export { default as ServiceCapabilities } from './v3/ServiceCapabilitiesV3';

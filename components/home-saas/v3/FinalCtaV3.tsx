@@ -9,7 +9,7 @@ export default function FinalCtaV3() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="relative z-40 bg-white px-5 pb-20 sm:px-8 lg:px-12 lg:pb-28 xl:px-16">
+    <section className="relative z-40 bg-white px-5 pb-20 pt-14 sm:px-8 sm:pt-16 lg:px-12 lg:pb-28 lg:pt-24 xl:px-16">
       <div className="relative mx-auto max-w-[1440px] overflow-hidden rounded-[34px] bg-kedi-yellow px-6 py-12 text-kedi-navy shadow-[0_30px_90px_rgba(11,45,91,.12)] sm:px-10 lg:min-h-[470px] lg:px-14 lg:py-16">
         <Image unoptimized
           src="/homepage/cta-background.webp"

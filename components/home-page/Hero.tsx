@@ -8,7 +8,13 @@ import Boderyelow from "../ui/boder-yelow";
 export default function Hero() {
   return (
     <section
-      className="w-full h-screen sm:mb-[-10px] xm:mb-[-10px]"
+      className="relative isolate w-full h-screen overflow-hidden bg-kedi-navy bg-cover bg-center bg-no-repeat sm:mb-[-10px] xm:mb-[-10px]"
+      style={{
+        backgroundImage:
+          "radial-gradient(circle at 72% 28%, rgba(255,198,41,.16), transparent 32%), radial-gradient(circle at 58% 58%, rgba(68,170,255,.12), transparent 28%), linear-gradient(90deg, rgba(8,34,77,.88) 0%, rgba(8,34,77,.76) 34%, rgba(8,34,77,.42) 63%, rgba(8,34,77,.20) 100%), url('/homepage/hero-background-future-network.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
       data-scroll
       data-scroll-speed="-.3"
     >
@@ -34,11 +40,11 @@ export default function Hero() {
                   >
                     <Boderyelow>
                       <Image
-                        width={120}
-                        height={50}
-                        src='https://res.cloudinary.com/dzkcqktcl/image/upload/v1769418552/ChatGPT_Image_16_08_00_26_thg_1__2026-removebg-preview_g1msvy.png'
-                        alt="Ochi Studio logo"
-                        className=" object-contain rounded-lg md:rounded-xl"
+                        width={132}
+                        height={52}
+                        src="/brand/kedi-logo-reverse.png"
+                        alt="Kedi.Media logo"
+                        className="h-auto w-[110px] object-contain md:w-[132px]"
                       />
                     </Boderyelow>
                   </motion.span>

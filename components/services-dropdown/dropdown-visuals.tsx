@@ -1,0 +1,439 @@
+'use client';
+
+import {
+  BarChart3,
+  BookOpen,
+  Bot,
+  Boxes,
+  Camera,
+  Cloud,
+  CreditCard,
+  Filter,
+  Gem,
+  Globe2,
+  GraduationCap,
+  LayoutGrid,
+  Mail,
+  Megaphone,
+  Monitor,
+  Network,
+  Package,
+  Play,
+  Printer,
+  Search,
+  Send,
+  Shirt,
+  ShoppingBag,
+  ShoppingCart,
+  Smartphone,
+  Store,
+  Truck,
+  UserRound,
+  Users,
+  Utensils,
+  Video,
+  Workflow,
+  Wrench,
+  Zap,
+  type LucideIcon,
+} from 'lucide-react';
+import type { Service } from './datas/services-data';
+
+type ToneKey =
+  | 'business'
+  | 'selling'
+  | 'platform'
+  | 'ai'
+  | 'growth'
+  | 'production'
+  | 'industry'
+  | 'luxury'
+  | 'hospitality'
+  | 'utility'
+  | 'edtech';
+
+type VisualMeta = {
+  title?: string;
+  description?: string;
+  icon: LucideIcon;
+  tone: ToneKey;
+};
+
+const TONES: Record<
+  ToneKey,
+  { background: string; foreground: string; line: string; glow: string }
+> = {
+  business: {
+    background: 'linear-gradient(145deg,#eef6ff 0%,#dbeafe 55%,#cffafe 100%)',
+    foreground: '#1d4ed8',
+    line: 'rgba(29,78,216,.18)',
+    glow: 'rgba(14,165,233,.28)',
+  },
+  selling: {
+    background: 'linear-gradient(145deg,#fff7ed 0%,#ffedd5 55%,#fed7aa 100%)',
+    foreground: '#c2410c',
+    line: 'rgba(194,65,12,.18)',
+    glow: 'rgba(251,146,60,.28)',
+  },
+  platform: {
+    background: 'linear-gradient(145deg,#eef2ff 0%,#dbeafe 58%,#cffafe 100%)',
+    foreground: '#1e40af',
+    line: 'rgba(30,64,175,.18)',
+    glow: 'rgba(59,130,246,.3)',
+  },
+  ai: {
+    background: 'linear-gradient(145deg,#eef2ff 0%,#ede9fe 55%,#e0f2fe 100%)',
+    foreground: '#6d28d9',
+    line: 'rgba(109,40,217,.18)',
+    glow: 'rgba(139,92,246,.3)',
+  },
+  growth: {
+    background: 'linear-gradient(145deg,#fdf2f8 0%,#fae8ff 50%,#ffedd5 100%)',
+    foreground: '#be185d',
+    line: 'rgba(190,24,93,.18)',
+    glow: 'rgba(236,72,153,.3)',
+  },
+  production: {
+    background: 'linear-gradient(145deg,#fff7ed 0%,#fef3c7 55%,#fed7aa 100%)',
+    foreground: '#b45309',
+    line: 'rgba(180,83,9,.18)',
+    glow: 'rgba(245,158,11,.3)',
+  },
+  industry: {
+    background: 'linear-gradient(145deg,#ecfeff 0%,#ccfbf1 55%,#dbeafe 100%)',
+    foreground: '#0f766e',
+    line: 'rgba(15,118,110,.18)',
+    glow: 'rgba(20,184,166,.28)',
+  },
+  luxury: {
+    background: 'linear-gradient(145deg,#18181b 0%,#27272a 58%,#3f3f46 100%)',
+    foreground: '#facc15',
+    line: 'rgba(250,204,21,.24)',
+    glow: 'rgba(250,204,21,.2)',
+  },
+  hospitality: {
+    background: 'linear-gradient(145deg,#fff7ed 0%,#ffedd5 58%,#fef3c7 100%)',
+    foreground: '#c2410c',
+    line: 'rgba(194,65,12,.18)',
+    glow: 'rgba(251,146,60,.26)',
+  },
+  utility: {
+    background: 'linear-gradient(145deg,#fffbeb 0%,#fef3c7 52%,#fde68a 100%)',
+    foreground: '#92400e',
+    line: 'rgba(146,64,14,.18)',
+    glow: 'rgba(245,158,11,.28)',
+  },
+  edtech: {
+    background: 'linear-gradient(145deg,#ecfdf5 0%,#ccfbf1 55%,#dbeafe 100%)',
+    foreground: '#047857',
+    line: 'rgba(4,120,87,.18)',
+    glow: 'rgba(16,185,129,.26)',
+  },
+};
+
+const META: Record<string, VisualMeta> = {
+  // Business services
+  'services.items.seo_service.title': {
+    title: 'Dịch vụ SEO',
+    description: 'Tăng hiện diện tìm kiếm, traffic và cơ hội tiếp cận khách hàng.',
+    icon: Search,
+    tone: 'business',
+  },
+  'services.items.corporate_video.title': {
+    title: 'Quay video doanh nghiệp',
+    description: 'Video giới thiệu thương hiệu, sản phẩm, đội ngũ và doanh nghiệp.',
+    icon: Video,
+    tone: 'business',
+  },
+  'services.items.corporate_photography.title': {
+    title: 'Chụp hình doanh nghiệp',
+    description: 'Hình ảnh chuyên nghiệp cho profile, truyền thông và nhận diện thương hiệu.',
+    icon: Camera,
+    tone: 'business',
+  },
+  'services.items.website_design.title': {
+    title: 'Thiết kế website',
+    description: 'Website doanh nghiệp tối ưu thương hiệu, trải nghiệm và chuyển đổi.',
+    icon: Monitor,
+    tone: 'business',
+  },
+  'services.items.landing_page_design.title': {
+    title: 'Thiết kế landing page',
+    description: 'Landing page tập trung CTA và mục tiêu chuyển đổi của từng chiến dịch.',
+    icon: LayoutGrid,
+    tone: 'business',
+  },
+  'services.items.ready_website.title': {
+    title: 'Website sẵn có',
+    description: 'Mẫu website triển khai nhanh, dễ tùy biến và thuận tiện vận hành.',
+    icon: LayoutGrid,
+    tone: 'business',
+  },
+  'services.items.cloud_hosting.title': {
+    title: 'Cloud Hosting',
+    description: 'Hạ tầng hosting ổn định, bảo mật và tối ưu hiệu suất hệ thống.',
+    icon: Cloud,
+    tone: 'business',
+  },
+  'services.items.wedding_invitation.title': {
+    title: 'Mẫu Thiệp Online',
+    description: 'Thiệp online hiện đại, dễ chia sẻ và phù hợp nhiều phong cách.',
+    icon: Mail,
+    tone: 'business',
+  },
+  'services.items.domain_registration.title': {
+    title: 'Domain riêng',
+    description: 'Tên miền riêng rõ thương hiệu, dễ nhớ và thuận tiện xây dựng hiện diện số.',
+    icon: Globe2,
+    tone: 'business',
+  },
+  'services.items.digitalTransformation.title': {
+    title: 'Chuyển đổi số doanh nghiệp',
+    description: 'Chuẩn hóa quy trình, dữ liệu và công cụ số cho vận hành doanh nghiệp.',
+    icon: Network,
+    tone: 'business',
+  },
+
+  // Selling
+  'services.items.ecommerce_website.title': {
+    title: 'Website bán hàng',
+    description: 'Storefront bán hàng tối ưu sản phẩm, đơn hàng và trải nghiệm mua sắm.',
+    icon: ShoppingBag,
+    tone: 'selling',
+  },
+  'services.items.ecommerce_templates.title': {
+    title: 'Mẫu web bán hàng',
+    description: 'Kho giao diện bán hàng triển khai nhanh cho nhiều ngành và mô hình.',
+    icon: LayoutGrid,
+    tone: 'selling',
+  },
+  'services.items.brand_building.title': {
+    title: 'Xây kênh TikTok',
+    description: 'Xây kênh và hệ thống video ngắn để mở rộng hiện diện và tăng trưởng.',
+    icon: Smartphone,
+    tone: 'selling',
+  },
+  'services.items.warehouse_management.title': {
+    title: 'Quản lý kho',
+    description: 'Theo dõi nhập, xuất, tồn và quy trình vận hành kho tập trung.',
+    icon: Package,
+    tone: 'selling',
+  },
+  'services.items.wholesale_management.title': {
+    title: 'Quản lý bán hàng',
+    description: 'Quản lý đơn hàng, khách hàng và hoạt động bán hàng trên một hệ thống.',
+    icon: ShoppingCart,
+    tone: 'selling',
+  },
+  'services.items.printer_integration.title': {
+    title: 'Tích hợp máy in',
+    description: 'Kết nối quy trình bán hàng với in hóa đơn và thiết bị tại điểm bán.',
+    icon: Printer,
+    tone: 'selling',
+  },
+  'services.items.payment_gateway.title': {
+    title: 'Cổng thanh toán',
+    description: 'Tích hợp thanh toán online cho quy trình đặt hàng và thu tiền.',
+    icon: CreditCard,
+    tone: 'selling',
+  },
+  'services.items.agency_management.title': {
+    title: 'Quản lý đại lý',
+    description: 'Theo dõi mạng lưới đại lý, bán hàng và vận hành theo điểm bán.',
+    icon: Store,
+    tone: 'selling',
+  },
+
+  // Software routes
+  '/kedi-os': {
+    title: 'Kedi OS',
+    description: 'Lớp điều phối trung tâm cho vận hành, dữ liệu và các module KEDI.',
+    icon: Boxes,
+    tone: 'platform',
+  },
+  '/kedi-crm': {
+    title: 'Kedi CRM',
+    description: 'Quản lý pipeline, khách hàng và lịch sử hoạt động bán hàng.',
+    icon: Users,
+    tone: 'platform',
+  },
+  '/kedi-commerce': {
+    title: 'Kedi Commerce',
+    description: 'Catalog, đơn hàng, tồn kho và lớp vận hành thương mại.',
+    icon: ShoppingBag,
+    tone: 'platform',
+  },
+  '/kedi-agents': {
+    title: 'Kedi Agents',
+    description: 'AI workforce hỗ trợ phân vai tác vụ và xử lý công việc lặp lại.',
+    icon: Bot,
+    tone: 'ai',
+  },
+  '/kedi-outreach': {
+    title: 'Kedi Outreach',
+    description: 'Prospecting, messaging và chăm sóc khách hàng theo workflow.',
+    icon: Send,
+    tone: 'growth',
+  },
+  '/kedi-profiles': {
+    title: 'Kedi Profiles',
+    description: 'Quản lý môi trường trình duyệt, tài khoản và nhiều profile làm việc.',
+    icon: UserRound,
+    tone: 'ai',
+  },
+  '/kedi-ai-flow': {
+    title: 'Kedi AI Flow',
+    description: 'Thiết kế và vận hành quy trình AI bằng workflow dạng node.',
+    icon: Workflow,
+    tone: 'ai',
+  },
+  '/kedi-video': {
+    title: 'Kedi Video',
+    description: 'Workflow video từ sản xuất, biên tập đến render nội dung.',
+    icon: Play,
+    tone: 'growth',
+  },
+  '/kedi-pod': {
+    title: 'Kedi POD',
+    description: 'Thiết kế, sản xuất và fulfillment cho mô hình Print-on-Demand.',
+    icon: Shirt,
+    tone: 'production',
+  },
+  '/kedi-funnel': {
+    title: 'Kedi Funnel',
+    description: 'Landing page, form và hành trình chuyển đổi tập trung.',
+    icon: Filter,
+    tone: 'growth',
+  },
+  '/kedi-seo': {
+    title: 'Kedi SEO',
+    description: 'Tối ưu tìm kiếm, keyword cluster và nội dung SEO/GEO.',
+    icon: Search,
+    tone: 'growth',
+  },
+  '/kedi-ads': {
+    title: 'Kedi Ads',
+    description: 'Quản lý chiến dịch, ngân sách và hiệu suất quảng cáo.',
+    icon: Megaphone,
+    tone: 'growth',
+  },
+  '/kedi-analytics': {
+    title: 'Kedi Analytics',
+    description: 'KPI, báo cáo và phân tích dữ liệu kinh doanh, marketing.',
+    icon: BarChart3,
+    tone: 'platform',
+  },
+  '/kedi-automate': {
+    title: 'Kedi Automate',
+    description: 'Tự động hóa quy trình đa ứng dụng bằng trigger và action.',
+    icon: Zap,
+    tone: 'platform',
+  },
+  '/nhtq/': {
+    title: 'NHTQ',
+    description: 'Logistics Trung Quốc – Việt Nam với kho, tracking và tuyến vận chuyển.',
+    icon: Truck,
+    tone: 'industry',
+  },
+  '/phan-mem-dao-tao-noi-bo/': {
+    title: 'KEDI SkillHub',
+    description: 'Đào tạo nội bộ theo khóa học, lộ trình và tiến độ nhân sự.',
+    icon: GraduationCap,
+    tone: 'industry',
+  },
+  '/phan-mem-quan-ly-tiem-vang/': {
+    title: 'KEDI JMS',
+    description: 'Quản lý tiệm vàng, hàng hóa, giá, tồn kho và bán hàng.',
+    icon: Gem,
+    tone: 'luxury',
+  },
+  '/select-trial': {
+    title: 'Restaurant AI',
+    description: 'Giải pháp hospitality cho đặt bàn, order, menu và chăm sóc khách hàng.',
+    icon: Utensils,
+    tone: 'hospitality',
+  },
+  '/tools-ngon': {
+    title: 'Tools Ngon',
+    description: 'Bộ công cụ tiện ích dùng nhanh cho nhiều nhu cầu triển khai.',
+    icon: Wrench,
+    tone: 'utility',
+  },
+  '/edutech/': {
+    title: 'KEDI EduTech',
+    description: 'Hệ sinh thái LMS, lịch học, nội dung và hành trình học viên.',
+    icon: BookOpen,
+    tone: 'edtech',
+  },
+};
+
+const DEFAULT_META: VisualMeta = {
+  icon: Boxes,
+  tone: 'platform',
+};
+
+function getMeta(service: Service) {
+  return (
+    (service.titleKey ? META[service.titleKey] : undefined) ??
+    (service.href ? META[service.href] : undefined) ??
+    DEFAULT_META
+  );
+}
+
+function getTone(meta: VisualMeta, groupKey?: string) {
+  if (groupKey === 'business_services') return TONES.business;
+  if (groupKey === 'selling') return TONES.selling;
+  return TONES[meta.tone];
+}
+
+export function getServiceMenuTitle(service: Service, fallback: string) {
+  return getMeta(service).title ?? fallback;
+}
+
+export function getServiceMenuDescription(service: Service, fallback: string) {
+  return getMeta(service).description ?? fallback;
+}
+
+export function ServiceThumbnail({
+  service,
+  groupKey,
+  className = 'h-[58px] w-[78px]',
+}: {
+  service: Service;
+  groupKey?: string;
+  className?: string;
+}) {
+  const meta = getMeta(service);
+  const tone = getTone(meta, groupKey);
+  const Icon = meta.icon;
+
+  return (
+    <span
+      aria-hidden="true"
+      className={`relative isolate grid shrink-0 place-items-center overflow-hidden rounded-[11px] ${className}`}
+      style={{
+        background: tone.background,
+        boxShadow: `inset 0 0 0 1px ${tone.line}`,
+      }}
+    >
+      <span
+        className="absolute -right-2 -top-2 h-9 w-9 rounded-full blur-[6px]"
+        style={{ background: tone.glow }}
+      />
+      <span
+        className="absolute bottom-[8px] left-[9px] h-[3px] w-[20px] rounded-full"
+        style={{ background: tone.line }}
+      />
+      <span
+        className="absolute bottom-[8px] right-[9px] h-[3px] w-[8px] rounded-full"
+        style={{ background: tone.line }}
+      />
+      <Icon
+        size={28}
+        strokeWidth={2.15}
+        style={{ color: tone.foreground }}
+        className="relative z-10 transition-transform duration-300 group-hover:scale-105"
+      />
+    </span>
+  );
+}

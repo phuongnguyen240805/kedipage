@@ -9,10 +9,6 @@ const PortfolioSection = dynamic(
   () => import('@/components/portfolio/portfolio-section')
 );
 
-const PortfolioPartners = dynamic(
-  () => import('@/components/portfolio/portfolio-partners')
-);
-
 const PortfolioCloudSection = dynamic(
   () => import('@/components/portfolio/portfolio-cloud-banner'),
   { ssr: false }
@@ -33,7 +29,6 @@ const PortfolioPage = memo(() => {
             <PortfolioList />
         </div>
           <PortfolioSection />
-         <PortfolioPartners />
           <PortfolioCloudSection />
     </section>
   );

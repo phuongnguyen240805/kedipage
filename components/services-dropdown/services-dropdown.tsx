@@ -8,11 +8,19 @@ import { useTranslation } from 'react-i18next';
 import '@/app/globals.css';
 import {
   serviceCategories,
-  SOFTWARE_SERVICE_MENU_IMAGES,
   VISIBLE_SERVICE_CATEGORY_KEYS,
   type Service,
 } from '../services-dropdown/datas/services-data';
 import SoftwareSolutionFamilyGrid from './SoftwareSolutionFamilyGrid';
+import {
+  ServiceThumbnail,
+  getServiceMenuDescription,
+  getServiceMenuTitle,
+} from './dropdown-visuals';
+import {
+  SOFTWARE_MENU_FAMILIES,
+  getSoftwareFamilyByKey,
+} from './software-menu-families';
 
 type MenuService = Service & {
   mock?: boolean;
@@ -27,15 +35,15 @@ const CATEGORY_META: Record<
 > = {
   business_services: {
     eyebrow: 'Dịch vụ tăng trưởng',
-    description: 'Website, SEO, video và giải pháp triển khai cho doanh nghiệp.',
+    description: 'Website, SEO, media và hạ tầng triển khai cho doanh nghiệp dịch vụ.',
   },
   selling: {
-    eyebrow: 'Bán hàng đa kênh',
-    description: 'Website bán hàng, nội dung, chuyển đổi và công cụ vận hành.',
+    eyebrow: 'Bán hàng & vận hành',
+    description: 'Website bán hàng, nội dung, chuyển đổi và công cụ giúp tăng doanh số.',
   },
   software_solutions: {
-    eyebrow: 'Phần mềm đóng gói',
-    description: 'Các hệ thống KEDI đã chuẩn hóa cho từng nhu cầu vận hành.',
+    eyebrow: 'Giải pháp phần mềm',
+    description: 'Hệ thống KEDI cho vận hành, AI, tăng trưởng và từng ngành chuyên biệt.',
   },
   hosting_infrastructure: {
     eyebrow: 'Hạ tầng số',
@@ -80,10 +88,17 @@ const MOCK_SERVICES: Partial<Record<string, MenuService[]>> = {
   ],
 };
 
-const CLOUDINARY_BASE =
-  'https://res.cloudinary.com/dptsqgnaj/image/upload/c_fill,g_center,f_auto,q_auto';
-
 const KEDI_DROPDOWN_EASE = [0.22, 1, 0.36, 1] as const;
+
+function dedupeServices<T extends Service>(services: T[]) {
+  const seen = new Set<string>();
+  return services.filter((service) => {
+    const key = `${service.href ?? ''}|${service.titleKey ?? service.title ?? ''}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
 
 const ServicesDropdown = () => {
   const { t } = useTranslation();
@@ -91,15 +106,26 @@ const ServicesDropdown = () => {
     (category) => Boolean(serviceCategories[category])
   );
   const [activeTab, setActiveTab] = useState<string>(categoryKeys[0]);
+  const [activeSoftwareFamilyKey, setActiveSoftwareFamilyKey] = useState(
+    SOFTWARE_MENU_FAMILIES[0]?.key ?? 'business-platform'
+  );
   const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const prefersReducedMotion = useReducedMotion();
 
   const activeCategory =
     serviceCategories[activeTab] ?? serviceCategories[categoryKeys[0]];
   const activeIndex = Math.max(0, categoryKeys.indexOf(activeTab));
-  const realServices = activeCategory?.services ?? [];
+  const realServices = dedupeServices(activeCategory?.services ?? []);
   const mockServices = MOCK_SERVICES[activeTab] ?? [];
   const visibleServices: MenuService[] = [...realServices, ...mockServices];
+  const isSoftwareSolutions = activeTab === 'software_solutions';
+  const activeSoftwareFamily = getSoftwareFamilyByKey(activeSoftwareFamilyKey);
+  const activeSoftwareServices = activeSoftwareFamily.hrefs
+    .map((href) => realServices.find((service) => service.href === href))
+    .filter((service): service is Service => Boolean(service));
+  const panelServices = isSoftwareSolutions ? activeSoftwareServices : realServices;
+  const panelFirstService = panelServices.find((service) => Boolean(service.href));
+  const panelFirstServiceHref = panelFirstService?.href ?? '/';
   const meta =
     CATEGORY_META[activeTab] ??
     ({
@@ -137,20 +163,15 @@ const ServicesDropdown = () => {
         )
     );
 
+  const getMenuTitle = (service: MenuService) =>
+    getServiceMenuTitle(service, getTitle(service));
+
+  const getMenuDescription = (service: MenuService) =>
+    getServiceMenuDescription(service, getDescription(service));
+
   const getCategoryTitle = (category: string) => {
     const titleKey = serviceCategories[category]?.titleKey;
     return translate(titleKey, category);
-  };
-
-  const getImage = (service: MenuService, width = 180, height = 120) => {
-    const localSoftwareImage = service.href
-      ? SOFTWARE_SERVICE_MENU_IMAGES[service.href]
-      : undefined;
-    if (localSoftwareImage) return localSoftwareImage;
-    if (service.imageUrl) return service.imageUrl;
-    if (!service.cloudinaryId) return null;
-
-    return `${CLOUDINARY_BASE},w_${width},h_${height}/${service.cloudinaryId}`;
   };
 
   const clearHoverTimer = () => {
@@ -181,9 +202,6 @@ const ServicesDropdown = () => {
       })
     );
   };
-
-  const firstRealService = realServices.find((service) => Boolean(service.href));
-  const firstRealServiceHref = firstRealService?.href ?? '/';
 
   return (
     <motion.div
@@ -274,27 +292,18 @@ const ServicesDropdown = () => {
                       </span>
 
                       <span className="row-span-2 flex items-center -space-x-2">
-                        {services.slice(0, 3).map((service, index) => {
-                          const src = getImage(service, 56, 56);
-                          return (
-                            <span
-                              key={`${category}-preview-${index}`}
-                              className="relative grid h-7 w-7 place-items-center overflow-hidden rounded-full border-2 border-[#eceef5] bg-kedi-navy text-[8px] font-black text-kedi-yellow"
-                            >
-                              {src ? (
-                                <Image
-                                  src={src}
-                                  alt=""
-                                  width={28}
-                                  height={28}
-                                  className="h-full w-full object-cover"
-                                />
-                              ) : (
-                                <span>{service.icon ?? 'K'}</span>
-                              )}
-                            </span>
-                          );
-                        })}
+                        {services.slice(0, 3).map((service, index) => (
+                          <span
+                            key={`${category}-preview-${index}`}
+                            className="relative overflow-hidden rounded-full border-2 border-[#eceef5]"
+                          >
+                            <ServiceThumbnail
+                              service={service}
+                              groupKey={category}
+                              className="h-7 w-7 rounded-full"
+                            />
+                          </span>
+                        ))}
                       </span>
 
                       <span className="line-clamp-2 self-start pr-1 text-[10px] leading-[1.35] text-kedi-navy/50 xl:text-[11px]">
@@ -356,35 +365,26 @@ const ServicesDropdown = () => {
               {activeTab === 'software_solutions' ? (
                 <SoftwareSolutionFamilyGrid
                   services={realServices}
-                  getTitle={getTitle}
-                  getDescription={getDescription}
-                  getImage={getImage}
+                  getTitle={getMenuTitle}
+                  getDescription={getMenuDescription}
                   onNavigate={closeMegaMenu}
+                  onFamilyPreview={setActiveSoftwareFamilyKey}
                 />
               ) : visibleServices.map((service, index) => {
-                const title = getTitle(service);
-                const description = getDescription(service);
-                const image = getImage(service);
+                const title = getMenuTitle(service);
+                const description = getMenuDescription(service);
                 const href = service.href ?? '#';
                 const itemClass =
                   'group flex min-h-[74px] items-center gap-3 rounded-[14px] px-2.5 py-2.5 text-left transition-all duration-200 hover:bg-kedi-yellow/10 hover:translate-x-0.5';
 
                 const content = (
                   <>
-                    <span className="relative grid h-[50px] w-[70px] shrink-0 place-items-center overflow-hidden rounded-[11px] bg-[#eef1f7] text-[10px] font-black text-kedi-navy">
-                      {image ? (
-                        <Image
-                          src={image}
-                          alt={title}
-                          width={140}
-                          height={100}
-                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        />
-                      ) : (
-                        <span className="px-1 text-center leading-tight">
-                          {service.mockIcon ?? service.icon ?? 'KEDI'}
-                        </span>
-                      )}
+                    <span className="relative shrink-0">
+                      <ServiceThumbnail
+                        service={service}
+                        groupKey={activeTab}
+                        className="h-[50px] w-[70px]"
+                      />
 
                       {service.mock && (
                         <span className="absolute bottom-1 left-1 rounded bg-kedi-yellow px-1.5 py-0.5 text-[7px] font-black uppercase text-kedi-navy">
@@ -470,70 +470,86 @@ const ServicesDropdown = () => {
 
             <div className="relative z-10 flex h-full flex-col">
               <span className="w-fit rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-[9px] font-black uppercase tracking-[0.14em] text-kedi-yellow">
-                KEDI Service Map
+                {isSoftwareSolutions ? 'KEDI Software Family' : 'KEDI Service Map'}
               </span>
 
-              <h3 className="mt-8 max-w-[230px] text-[25px] font-black leading-[1.02] tracking-[-0.035em] xl:text-[31px]">
-                Chọn đúng nhóm.
-                <span className="mt-1 block text-kedi-yellow">Đi đúng lộ trình.</span>
-              </h3>
+              {isSoftwareSolutions ? (
+                <>
+                  <h3 className="mt-5 max-w-[250px] text-[24px] font-black leading-[1.02] tracking-[-0.035em] xl:text-[28px]">
+                    {activeSoftwareFamily.title}
+                  </h3>
+                  <p className="mt-3 max-w-[250px] text-[11px] leading-relaxed text-white/60 xl:text-[12px]">
+                    {activeSoftwareFamily.description}
+                  </p>
+                  <div
+                    className="relative mt-4 aspect-[16/9] w-full overflow-hidden rounded-[16px] border border-white/10 bg-white/[0.04] shadow-[0_18px_42px_-24px_rgba(0,0,0,.75)]"
+                    style={{ boxShadow: `0 18px 42px -24px ${activeSoftwareFamily.accent}` }}
+                  >
+                    <Image
+                      src={activeSoftwareFamily.previewImage}
+                      alt={`Minh họa ${activeSoftwareFamily.title}`}
+                      fill
+                      sizes="(min-width: 1280px) 300px, 238px"
+                      className="object-cover"
+                    />
+                  </div>
+                </>
+              ) : (
+                <>
+                  <h3 className="mt-8 max-w-[230px] text-[25px] font-black leading-[1.02] tracking-[-0.035em] xl:text-[31px]">
+                    Chọn đúng nhóm.
+                    <span className="mt-1 block text-kedi-yellow">Đi đúng lộ trình.</span>
+                  </h3>
 
-              <p className="mt-4 max-w-[240px] text-[11px] leading-relaxed text-white/60 xl:text-[12px]">
-                Chọn một nhóm nhu cầu để KEDI gom đúng các dịch vụ liên quan, sau đó
-                đi thẳng vào trang chi tiết của từng giải pháp.
-              </p>
+                  <p className="mt-4 max-w-[240px] text-[11px] leading-relaxed text-white/60 xl:text-[12px]">
+                    Chọn một nhóm nhu cầu để KEDI gom đúng các dịch vụ liên quan, sau đó
+                    đi thẳng vào trang chi tiết của từng giải pháp.
+                  </p>
+                </>
+              )}
 
-              <div className="mt-6 grid grid-cols-2 gap-2">
+              <div className={`${isSoftwareSolutions ? 'mt-4' : 'mt-6'} grid grid-cols-2 gap-2`}>
                 <div className="rounded-[14px] border border-white/10 bg-white/[0.06] p-3">
                   <strong className="block text-[22px] font-black text-kedi-yellow">
-                    {realServices.length}
+                    {isSoftwareSolutions ? activeSoftwareServices.length : realServices.length}
                   </strong>
                   <span className="mt-1 block text-[9px] uppercase tracking-[0.08em] text-white/45">
-                    giải pháp
+                    {isSoftwareSolutions ? 'trong nhóm' : 'giải pháp'}
                   </span>
                 </div>
                 <div className="rounded-[14px] border border-white/10 bg-white/[0.06] p-3">
                   <strong className="block text-[22px] font-black text-kedi-yellow">
-                    {mockServices.length}
+                    {isSoftwareSolutions ? SOFTWARE_MENU_FAMILIES.length : mockServices.length}
                   </strong>
                   <span className="mt-1 block text-[9px] uppercase tracking-[0.08em] text-white/45">
-                    sắp có
+                    {isSoftwareSolutions ? 'nhóm phần mềm' : 'sắp có'}
                   </span>
                 </div>
               </div>
 
-              <div className="mt-6 flex -space-x-2">
-                {realServices.slice(0, 4).map((service, index) => {
-                  const src = getImage(service, 64, 64);
-                  return (
-                    <span
-                      key={`active-preview-${index}`}
-                      className="relative grid h-10 w-10 place-items-center overflow-hidden rounded-full border-2 border-kedi-navy bg-white/10 text-[9px] font-black text-kedi-yellow"
-                    >
-                      {src ? (
-                        <Image
-                          src={src}
-                          alt=""
-                          width={40}
-                          height={40}
-                          className="h-full w-full object-cover"
-                        />
-                      ) : (
-                        <span>{service.icon ?? 'K'}</span>
-                      )}
-                    </span>
-                  );
-                })}
-              </div>
+              {!isSoftwareSolutions && <div className="mt-6 flex -space-x-2">
+                {panelServices.slice(0, 4).map((service, index) => (
+                  <span
+                    key={`active-preview-${index}`}
+                    className="relative overflow-hidden rounded-full border-2 border-kedi-navy"
+                  >
+                    <ServiceThumbnail
+                      service={service}
+                      groupKey={activeTab}
+                      className="h-10 w-10 rounded-full"
+                    />
+                  </span>
+                ))}
+              </div>}
 
               <div className="mt-auto pt-6">
-                {firstRealService ? (
+                {panelFirstService ? (
                   <Link
-                    href={firstRealServiceHref}
+                    href={panelFirstServiceHref}
                     onClick={closeMegaMenu}
                     className="flex h-11 w-full items-center justify-between rounded-[14px] bg-kedi-yellow px-4 text-[11px] font-black uppercase tracking-[0.06em] text-kedi-navy transition-transform hover:-translate-y-0.5"
                   >
-                    <span>Xem gợi ý đầu tiên</span>
+                    <span>{isSoftwareSolutions ? 'Mở sản phẩm đầu tiên' : 'Xem gợi ý đầu tiên'}</span>
                     <span aria-hidden="true">→</span>
                   </Link>
                 ) : (
@@ -543,7 +559,9 @@ const ServicesDropdown = () => {
                 )}
 
                 <p className="mt-3 text-center text-[9px] leading-relaxed text-white/35">
-                  Nhấn vào từng dịch vụ để xem trang chi tiết.
+                  {isSoftwareSolutions
+                    ? 'Hover hoặc focus từng family để đổi ảnh preview.'
+                    : 'Nhấn vào từng dịch vụ để xem trang chi tiết.'}
                 </p>
               </div>
             </div>

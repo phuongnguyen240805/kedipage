@@ -4,6 +4,8 @@ export type SoftwareMenuFamily = {
   key: string;
   title: string;
   description: string;
+  previewImage: string;
+  accent: string;
   hrefs: string[];
 };
 
@@ -12,31 +14,41 @@ export const SOFTWARE_MENU_FAMILIES: SoftwareMenuFamily[] = [
   {
     key: "business-platform",
     title: "Business Platform",
-    description: "Vận hành, khách hàng, thương mại và dữ liệu.",
+    description: "OS, CRM, commerce, analytics và automation cho vận hành cốt lõi.",
+    previewImage: "/service-menu/families/business-platform.webp",
+    accent: "#3b82f6",
     hrefs: ["/kedi-os", "/kedi-crm", "/kedi-commerce", "/kedi-analytics", "/kedi-automate"],
   },
   {
     key: "ai-automation",
     title: "AI & Automation",
-    description: "Agent, AI workflow và môi trường vận hành đa tài khoản.",
+    description: "AI workforce, workflow canvas và môi trường profile làm việc.",
+    previewImage: "/service-menu/families/ai-automation.webp",
+    accent: "#7c3aed",
     hrefs: ["/kedi-agents", "/kedi-ai-flow", "/kedi-profiles"],
   },
   {
     key: "growth-content",
     title: "Growth & Content",
-    description: "Outreach, video, funnel, SEO và quảng cáo.",
+    description: "Outreach, video, funnel, SEO và quảng cáo cho tăng trưởng.",
+    previewImage: "/service-menu/families/growth-content.webp",
+    accent: "#db2777",
     hrefs: ["/kedi-outreach", "/kedi-video", "/kedi-funnel", "/kedi-seo", "/kedi-ads"],
   },
   {
     key: "commerce-production",
     title: "Commerce Production",
-    description: "Quy trình sản xuất và vận hành sản phẩm theo đơn.",
+    description: "Thiết kế, sản xuất và fulfillment theo mô hình POD.",
+    previewImage: "/service-menu/families/commerce-production.webp",
+    accent: "#ea580c",
     hrefs: ["/kedi-pod"],
   },
   {
     key: "industry-solutions",
     title: "Giải pháp theo ngành",
-    description: "Các hệ thống đóng gói theo nghiệp vụ chuyên biệt.",
+    description: "Logistics, đào tạo, retail, hospitality và hệ sinh thái giáo dục.",
+    previewImage: "/service-menu/families/industry-solutions.webp",
+    accent: "#0f766e",
     hrefs: [
       "/nhtq/",
       "/phan-mem-dao-tao-noi-bo/",
@@ -48,10 +60,16 @@ export const SOFTWARE_MENU_FAMILIES: SoftwareMenuFamily[] = [
   {
     key: "utility-platform",
     title: "Utility Platform",
-    description: "Bộ công cụ dùng chung cho nhiều nhu cầu triển khai.",
+    description: "Bộ công cụ tiện ích dùng nhanh cho nhiều workflow triển khai.",
+    previewImage: "/service-menu/families/utility-platform.webp",
+    accent: "#d97706",
     hrefs: ["/tools-ngon"],
   },
 ];
+
+export function getSoftwareFamilyByKey(key: string): SoftwareMenuFamily {
+  return SOFTWARE_MENU_FAMILIES.find((family) => family.key === key) ?? SOFTWARE_MENU_FAMILIES[0]!;
+}
 
 export function getSoftwareFamilyGroups(services: Service[]) {
   const byHref = new Map(services.filter((item) => item.href).map((item) => [item.href as string, item]));
