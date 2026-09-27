@@ -18,7 +18,7 @@ export default function SolutionFlowV3() {
       className="relative z-30 -mt-8 overflow-hidden rounded-t-[32px] bg-[#082b57] px-5 py-20 text-white shadow-[0_-24px_70px_rgba(0,0,0,.2)] sm:px-8 lg:rounded-t-[44px] lg:px-12 lg:py-28 xl:px-16"
       style={{
         backgroundImage:
-          "linear-gradient(90deg, rgba(8,43,87,.9) 0%, rgba(8,43,87,.76) 52%, rgba(8,43,87,.9) 100%), url('/homepage/growth-systems-ladder.png')",
+          "linear-gradient(90deg, rgba(8,43,87,.9) 0%, rgba(8,43,87,.76) 52%, rgba(8,43,87,.9) 100%), url('/homepage/growth-systems-ladder.webp')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -42,7 +42,7 @@ export default function SolutionFlowV3() {
                   transition={reduceMotion ? { duration: 0 } : { duration: 0.55, ease: EASE }}
                   className="absolute inset-0"
                 >
-                  <Image
+                  <Image unoptimized
                     src={activeItem.image}
                     alt={activeItem.title}
                     fill
@@ -112,7 +112,7 @@ export default function SolutionFlowV3() {
                   <p className="mt-4 max-w-xl text-sm leading-7 text-white/[0.55] sm:text-base">{item.description}</p>
 
                   <div className="relative mt-7 h-[170px] overflow-hidden rounded-[20px] lg:hidden">
-                    <Image src={item.image} alt="" fill sizes="100vw" className="object-cover" />
+                    <Image unoptimized src={item.image} alt="" fill sizes="100vw" className="object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#061a36]/[0.55] to-transparent" />
                   </div>
                 </div>

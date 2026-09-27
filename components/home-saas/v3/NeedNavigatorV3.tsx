@@ -37,7 +37,7 @@ export default function NeedNavigatorV3() {
                 className="group relative flex min-h-[430px] flex-col overflow-hidden rounded-[28px] border border-kedi-navy/10 bg-white shadow-[0_18px_48px_rgba(11,45,91,.07)] transition-[border-color,box-shadow] duration-300 hover:border-kedi-yellow hover:shadow-[0_30px_70px_rgba(11,45,91,.14)]"
               >
                 <div className="relative h-[185px] overflow-hidden bg-kedi-navy">
-                  <Image
+                  <Image unoptimized
                     src={item.image}
                     alt={item.title}
                     fill

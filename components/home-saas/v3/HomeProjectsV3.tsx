@@ -32,7 +32,7 @@ function ProjectCard({
         href="/du-an"
         className="group relative flex h-full min-h-[420px] flex-col overflow-hidden rounded-[30px] bg-kedi-navy text-white shadow-[0_22px_60px_rgba(11,45,91,.15)] lg:min-h-0"
       >
-        <Image
+        <Image unoptimized
           src={card.image}
           alt={card.title}
           fill

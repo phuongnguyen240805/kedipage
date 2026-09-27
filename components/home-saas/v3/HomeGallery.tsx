@@ -14,7 +14,7 @@ function GalleryCard({ item }: { item: (typeof galleryItemsV3)[number] }) {
       href={item.href}
       className="group relative flex h-[64vh] min-h-[500px] w-[min(78vw,620px)] shrink-0 snap-center flex-col overflow-hidden rounded-[32px] border border-white/[0.12] bg-[#0b2d5b] text-white shadow-[0_30px_90px_rgba(0,0,0,.28)] lg:h-[50vh] lg:min-h-[360px] lg:max-h-[460px] lg:w-[min(40vw,580px)]"
     >
-      <Image
+      <Image unoptimized
         src={item.image}
         alt={item.title}
         fill
@@ -58,7 +58,7 @@ export default function HomeGallery() {
         className="relative z-20 overflow-hidden bg-kedi-navy px-5 py-20 text-white sm:px-8 lg:hidden"
         style={{
           backgroundImage:
-            "linear-gradient(180deg, rgba(11,45,91,.76) 0%, rgba(11,45,91,.9) 58%, rgba(11,45,91,.98) 100%), url('/homepage/golden-data-journey.png')",
+            "linear-gradient(180deg, rgba(11,45,91,.76) 0%, rgba(11,45,91,.9) 58%, rgba(11,45,91,.98) 100%), url('/homepage/golden-data-journey.webp')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -81,7 +81,7 @@ export default function HomeGallery() {
           className={`${reduceMotion ? 'relative' : 'sticky top-16 h-[calc(100svh-64px)]'} flex flex-col justify-center overflow-hidden px-12 py-6 xl:px-16`}
           style={{
             backgroundImage:
-              "linear-gradient(90deg, rgba(11,45,91,.92) 0%, rgba(11,45,91,.72) 46%, rgba(11,45,91,.82) 100%), url('/homepage/golden-data-journey.png')",
+              "linear-gradient(90deg, rgba(11,45,91,.92) 0%, rgba(11,45,91,.72) 46%, rgba(11,45,91,.82) 100%), url('/homepage/golden-data-journey.webp')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
