@@ -1,3 +1,6 @@
+import { softwareVisualSignatureCss } from "../software-visual-signatures";
+import { softwareLayoutArchetypeCss } from "../software-layout-archetypes";
+
 export const kediProductTypographyCss = `
 .kedi-product-route .edu{
   --ff:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
@@ -62,4 +65,4 @@ export const kediProductCss = kediProductTypographyCss + `
   .kedi-product-route .ko-gallery-grid{grid-template-columns:1fr}
   .kedi-product-route .e-gau-lon{width:118px}
 }
-`;
+` + softwareVisualSignatureCss + softwareLayoutArchetypeCss;

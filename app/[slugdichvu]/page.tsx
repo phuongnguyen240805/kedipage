@@ -111,7 +111,7 @@ const getComponentBySlug = (slug: string) => {
     "select-trial": () =>
       import("@/components/services-dropdown/page/software/SelectTrial/page"),
     "tools-ngon": () =>
-      import("@/components/services-dropdown/page/software/toolsngon/HeroSection"),
+      import("@/components/services-dropdown/page/software/toolsngon/page"),
     edutech: () =>
       import("@/components/services-dropdown/page/software/Edutech/page"),
     "bo-ai-agent": () =>

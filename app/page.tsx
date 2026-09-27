@@ -3,6 +3,7 @@
 import { Marquee } from '@/components';
 import {
   FinalCta,
+  HomeGallery,
   HomeHero,
   HomeInsights,
   HomeProjects,
@@ -11,37 +12,10 @@ import {
   ServiceCapabilities,
   SolutionFlow,
 } from '@/components/home-saas';
-import HomeVisualEnhancer from '@/components/home-saas/HomeVisualEnhancer';
-import { useEffect } from 'react';
 
 export default function Home() {
-  useEffect(() => {
-    let scrollInstance: { destroy?: () => void } | null = null;
-    let cancelled = false;
-
-    const initializeScroll = async () => {
-      try {
-        const loadedModule = await import('locomotive-scroll');
-        if (cancelled) return;
-
-        const LocomotiveScroll = loadedModule.default;
-        scrollInstance = new LocomotiveScroll();
-      } catch (error) {
-        console.warn('[locomotive-scroll] initialization failed', error);
-      }
-    };
-
-    void initializeScroll();
-
-    return () => {
-      cancelled = true;
-      scrollInstance?.destroy?.();
-    };
-  }, []);
-
   return (
-    <div className="kedi-home-visual-v2 overflow-hidden bg-kedi-navy">
-      <HomeVisualEnhancer />
+    <div className="bg-kedi-navy">
       <HomeHero />
 
       <div className="relative z-10 bg-kedi-navy py-4 sm:py-6">
@@ -53,6 +27,7 @@ export default function Home() {
 
       <NeedNavigator />
       <KediEcosystem />
+      <HomeGallery />
       <SolutionFlow />
       <ServiceCapabilities />
       <HomeProjects />

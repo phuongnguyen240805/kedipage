@@ -2,6 +2,8 @@
 
 import EdutechMotionRuntime from "../shared/EdutechMotionRuntime";
 import { getProductMascotSrc, kediMascotMotionCss, replaceLegacyGoldenMascots } from "../shared/edutech-product/mascots";
+import { softwareLayoutArchetypeCss } from "../shared/software-layout-archetypes";
+import { softwareVisualSignatureCss } from "../shared/software-visual-signatures";
 import { kediProductTypographyCss } from "../shared/edutech-product/style";
 import { kediLmsMarkup } from "./kedi-lms-content";
 import { kediLmsCss } from "./kedi-lms-style";
@@ -37,7 +39,7 @@ export default function ClientEdutech({ routeKey }: { routeKey?: string }) {
   return (
     <EdutechMotionRuntime
       className={routeKey ? `kedi-lms-route kedi-product-route ${routeKey}-route` : "kedi-lms-route"}
-      css={kediLmsCss + (routeKey ? kediProductTypographyCss : "") + kediMascotMotionCss}
+      css={kediLmsCss + (routeKey ? kediProductTypographyCss : "") + softwareVisualSignatureCss + softwareLayoutArchetypeCss + kediMascotMotionCss}
       revealScript={kediLmsRevealScript}
       motionScript={resolvedMotionScript}
       markup={resolvedMarkup}

@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import EdutechMotionRuntime from "../EdutechMotionRuntime";
 import { kediLmsCss } from "../../Edutech/kedi-lms-style";
 import { kediLmsMotionScript, kediLmsRevealScript } from "../../Edutech/kedi-lms-motion";
@@ -13,6 +12,7 @@ import GallerySection from "./GallerySection";
 import HeroSection from "./HeroSection";
 import Marquee from "./Marquee";
 import ModuleBookSection from "./ModuleBookSection";
+import ProductSectionSlot from "./ProductSectionSlot";
 import PainSection from "./PainSection";
 import RoadmapSection from "./RoadmapSection";
 import WorkflowSection from "./WorkflowSection";
@@ -82,9 +82,15 @@ export default function ProductLandingPage({ config }: Props) {
           mascot={config.hero.mascot}
           stats={config.hero.stats}
         />
-        {config.sectionOrder.map((key, index) => (
-          <React.Fragment key={`${key}-${index}`}>{renderSection(key)}</React.Fragment>
-        ))}
+        {config.sectionOrder.map((key, index) => {
+          const section = renderSection(key);
+          if (!section) return null;
+          return (
+            <ProductSectionSlot key={`${key}-${index}`} sectionKey={key} index={index}>
+              {section}
+            </ProductSectionSlot>
+          );
+        })}
       </div>
     </EdutechMotionRuntime>
   );

@@ -7,21 +7,11 @@ export default function ApprovedSection() {
     <section id="approved" className="py-16 relative container mx-auto">
       <div className="mx-auto mb-12 text-center">
         <div className="flex items-center justify-center gap-2 col-span-5 col-start-4 px-4 lg:px-0">
-          <Image
-            src="/assets/toolsngon/assets/rightLeaf.svg"
-            alt=""
-            width={24}
-            height={24}
-          />
+          <span className="tools-trust-leaf" aria-hidden="true" />
           <p className="text-xl dark:text-slate-200 text-slate-900">
             Hơn 5,000 người tin tưởng sử dụng
           </p>
-          <Image
-            src="/assets/toolsngon/assets/rightLeaf.svg"
-            alt=""
-            width={24}
-            height={24}
-          />
+          <span className="tools-trust-leaf tools-trust-leaf--right" aria-hidden="true" />
         </div>
       </div>
 
@@ -65,23 +55,10 @@ export default function ApprovedSection() {
         </div>
 
         <div className="flex items-center justify-center gap-4 mt-8">
-          {[
-            '/assets/trust-pilot--white-logo.svg',
-            '/assets/g2-logo.svg',
-            '/assets/app-store-logo.webp',
-          ].map((src, idx) => (
-            <div
-              key={idx}
-              className="relative h-20 lg:h-24 w-auto aspect-[3/1]" // <- tăng kích thước tại đây
-            >
-              <Image
-                src={src}
-                alt=""
-                fill
-                className="object-contain"
-                sizes="(min-width: 1024px) 176px, 96px"
-              />
-            </div>
+          {['Trustpilot', 'G2', 'App Store'].map((label) => (
+            <span key={label} className="tools-trust-badge">
+              {label}
+            </span>
           ))}
         </div>
       </div>
