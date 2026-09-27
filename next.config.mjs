@@ -8,6 +8,10 @@ const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
+  // Keep dev output separate from production/OpenNext output. A production
+  // build can safely run while the dev server is alive without replacing
+  // chunks that the dev runtime still references.
+  distDir: process.env.NODE_ENV === 'development' ? '.next-dev' : '.next',
   reactStrictMode: true,
   // swcMinify: false, // Tắt minify
   productionBrowserSourceMaps: false, // Tắt source maps

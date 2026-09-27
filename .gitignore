@@ -21,6 +21,7 @@ bun-lockb
 # NEXT.JS & BUILD OUTPUTS
 # ==============================================================================
 .next/
+.next-dev/
 out/
 build/
 dist/
