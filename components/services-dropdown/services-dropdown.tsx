@@ -1,9 +1,8 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import '@/app/globals.css';
 import {
@@ -16,6 +15,8 @@ import {
   ServiceThumbnail,
   getServiceMenuDescription,
   getServiceMenuTitle,
+  preloadMenuThumbnail,
+  preloadServiceThumbnails,
 } from './dropdown-visuals';
 import {
   SOFTWARE_MENU_FAMILIES,
@@ -112,12 +113,21 @@ const ServicesDropdown = () => {
   const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const prefersReducedMotion = useReducedMotion();
 
+  useEffect(() => {
+    for (const category of VISIBLE_SERVICE_CATEGORY_KEYS) {
+      const services = serviceCategories[category]?.services;
+      if (services) preloadServiceThumbnails(services, category);
+    }
+    for (const family of SOFTWARE_MENU_FAMILIES) {
+      preloadMenuThumbnail(family.previewImage);
+    }
+  }, []);
+
   const activeCategory =
     serviceCategories[activeTab] ?? serviceCategories[categoryKeys[0]];
   const activeIndex = Math.max(0, categoryKeys.indexOf(activeTab));
   const realServices = dedupeServices(activeCategory?.services ?? []);
   const mockServices = MOCK_SERVICES[activeTab] ?? [];
-  const visibleServices: MenuService[] = [...realServices, ...mockServices];
   const isSoftwareSolutions = activeTab === 'software_solutions';
   const activeSoftwareFamily = getSoftwareFamilyByKey(activeSoftwareFamilyKey);
   const activeSoftwareServices = activeSoftwareFamily.hrefs
@@ -361,78 +371,100 @@ const ServicesDropdown = () => {
               </div>
             </div>
 
-            <div className="grid min-h-0 flex-1 grid-cols-2 content-start gap-x-3 gap-y-1 overflow-y-auto pr-1 [scrollbar-width:thin]">
-              {activeTab === 'software_solutions' ? (
-                <SoftwareSolutionFamilyGrid
-                  services={realServices}
-                  getTitle={getMenuTitle}
-                  getDescription={getMenuDescription}
-                  onNavigate={closeMegaMenu}
-                  onFamilyPreview={setActiveSoftwareFamilyKey}
-                />
-              ) : visibleServices.map((service, index) => {
-                const title = getMenuTitle(service);
-                const description = getMenuDescription(service);
-                const href = service.href ?? '#';
-                const itemClass =
-                  'group flex min-h-[74px] items-center gap-3 rounded-[14px] px-2.5 py-2.5 text-left transition-all duration-200 hover:bg-kedi-yellow/10 hover:translate-x-0.5';
-
-                const content = (
-                  <>
-                    <span className="relative shrink-0">
-                      <ServiceThumbnail
-                        service={service}
-                        groupKey={activeTab}
-                        className="h-[50px] w-[70px]"
-                      />
-
-                      {service.mock && (
-                        <span className="absolute bottom-1 left-1 rounded bg-kedi-yellow px-1.5 py-0.5 text-[7px] font-black uppercase text-kedi-navy">
-                          {service.mockBadge ?? 'DEMO'}
-                        </span>
-                      )}
-                    </span>
-
-                    <span className="min-w-0 flex-1">
-                      <span className="flex items-start gap-2">
-                        <span className="line-clamp-2 text-[12px] font-black leading-[1.28] text-kedi-navy transition-colors group-hover:text-[#0d478c] xl:text-[13.5px]">
-                          {title}
-                        </span>
-                        {!service.mock && (
-                          <span className="ml-auto shrink-0 text-[14px] font-black text-kedi-navy/25 transition-all group-hover:translate-x-0.5 group-hover:text-[#b57e00]">
-                            ↗
-                          </span>
-                        )}
-                      </span>
-
-                      <span className="mt-1 line-clamp-2 block text-[10px] leading-[1.4] text-kedi-navy/48 xl:text-[11px]">
-                        {description}
-                      </span>
-                    </span>
-                  </>
+            {/* Panels stay mounted so item thumbnails are not recreated on hover. */}
+            <div className="relative min-h-0 flex-1">
+              {categoryKeys.map((category) => {
+                const isPanelActive = category === activeTab;
+                const categoryServices = dedupeServices(
+                  serviceCategories[category]?.services ?? []
                 );
-
-                if (service.mock) {
-                  return (
-                    <div
-                      key={`mock-${activeTab}-${index}-${title}`}
-                      className={`${itemClass} cursor-default border border-dashed border-kedi-navy/10`}
-                      aria-disabled="true"
-                    >
-                      {content}
-                    </div>
-                  );
-                }
+                const categoryItems: MenuService[] = [
+                  ...categoryServices,
+                  ...(MOCK_SERVICES[category] ?? []),
+                ];
 
                 return (
-                  <Link
-                    key={`${href}-${index}`}
-                    href={href}
-                    onClick={closeMegaMenu}
-                    className={itemClass}
+                  <div
+                    key={category}
+                    aria-hidden={!isPanelActive}
+                    className={`absolute inset-0 overflow-y-auto overscroll-contain pr-1 [scrollbar-width:thin] ${
+                      isPanelActive ? 'visible z-10' : 'pointer-events-none invisible'
+                    }`}
                   >
-                    {content}
-                  </Link>
+                    {category === 'software_solutions' ? (
+                      <SoftwareSolutionFamilyGrid
+                        services={categoryServices}
+                        getTitle={getMenuTitle}
+                        getDescription={getMenuDescription}
+                        onNavigate={closeMegaMenu}
+                        onFamilyPreview={setActiveSoftwareFamilyKey}
+                      />
+                    ) : (
+                      <div className="grid grid-cols-2 content-start gap-x-3 gap-y-1">
+                        {categoryItems.map((service, index) => {
+                          const title = getMenuTitle(service);
+                          const description = getMenuDescription(service);
+                          const href = service.href ?? '#';
+                          const itemClass =
+                            'group flex min-h-[74px] items-center gap-3 rounded-[14px] px-2.5 py-2.5 text-left transition-all duration-200 hover:bg-kedi-yellow/10 hover:translate-x-0.5';
+                          const content = (
+                            <>
+                              <span className="relative shrink-0">
+                                <ServiceThumbnail
+                                  service={service}
+                                  groupKey={category}
+                                  className="h-[50px] w-[70px]"
+                                />
+                                {service.mock && (
+                                  <span className="absolute bottom-1 left-1 rounded bg-kedi-yellow px-1.5 py-0.5 text-[7px] font-black uppercase text-kedi-navy">
+                                    {service.mockBadge ?? 'DEMO'}
+                                  </span>
+                                )}
+                              </span>
+                              <span className="min-w-0 flex-1">
+                                <span className="flex items-start gap-2">
+                                  <span className="line-clamp-2 text-[12px] font-black leading-[1.28] text-kedi-navy transition-colors group-hover:text-[#0d478c] xl:text-[13.5px]">
+                                    {title}
+                                  </span>
+                                  {!service.mock && (
+                                    <span className="ml-auto shrink-0 text-[14px] font-black text-kedi-navy/25 transition-all group-hover:translate-x-0.5 group-hover:text-[#b57e00]">
+                                      ↗
+                                    </span>
+                                  )}
+                                </span>
+                                <span className="mt-1 line-clamp-2 block text-[10px] leading-[1.4] text-kedi-navy/48 xl:text-[11px]">
+                                  {description}
+                                </span>
+                              </span>
+                            </>
+                          );
+
+                          if (service.mock) {
+                            return (
+                              <div
+                                key={`mock-${category}-${title}`}
+                                className={`${itemClass} cursor-default border border-dashed border-kedi-navy/10`}
+                                aria-disabled="true"
+                              >
+                                {content}
+                              </div>
+                            );
+                          }
+
+                          return (
+                            <Link
+                              key={href || `${category}-${index}`}
+                              href={href}
+                              onClick={closeMegaMenu}
+                              className={itemClass}
+                            >
+                              {content}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
                 );
               })}
             </div>
@@ -481,18 +513,6 @@ const ServicesDropdown = () => {
                   <p className="mt-3 max-w-[250px] text-[11px] leading-relaxed text-white/60 xl:text-[12px]">
                     {activeSoftwareFamily.description}
                   </p>
-                  <div
-                    className="relative mt-4 aspect-[16/9] w-full overflow-hidden rounded-[16px] border border-white/10 bg-white/[0.04] shadow-[0_18px_42px_-24px_rgba(0,0,0,.75)]"
-                    style={{ boxShadow: `0 18px 42px -24px ${activeSoftwareFamily.accent}` }}
-                  >
-                    <Image
-                      src={activeSoftwareFamily.previewImage}
-                      alt={`Minh họa ${activeSoftwareFamily.title}`}
-                      fill
-                      sizes="(min-width: 1280px) 300px, 238px"
-                      className="object-cover"
-                    />
-                  </div>
                 </>
               ) : (
                 <>
@@ -507,6 +527,29 @@ const ServicesDropdown = () => {
                   </p>
                 </>
               )}
+
+              <div
+                aria-hidden={!isSoftwareSolutions}
+                className={`aspect-[16/9] w-full overflow-hidden rounded-[16px] border border-white/10 bg-white/[0.04] shadow-[0_18px_42px_-24px_rgba(0,0,0,.75)] ${
+                  isSoftwareSolutions
+                    ? 'relative mt-4'
+                    : 'pointer-events-none absolute left-0 top-0 -z-10 opacity-0'
+                }`}
+                style={{ boxShadow: `0 18px 42px -24px ${activeSoftwareFamily.accent}` }}
+              >
+                {SOFTWARE_MENU_FAMILIES.map((family) => (
+                  <img
+                    key={family.key}
+                    src={family.previewImage}
+                    alt=""
+                    decoding="async"
+                    draggable={false}
+                    className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-200 ${
+                      family.key === activeSoftwareFamilyKey ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  />
+                ))}
+              </div>
 
               <div className={`${isSoftwareSolutions ? 'mt-4' : 'mt-6'} grid grid-cols-2 gap-2`}>
                 <div className="rounded-[14px] border border-white/10 bg-white/[0.06] p-3">

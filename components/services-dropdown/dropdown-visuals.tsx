@@ -485,194 +485,90 @@ function getMenuThumbnailImage(service: Service, groupKey?: string) {
   return mappedRoute ? SOFTWARE_THUMBNAIL_IMAGES[mappedRoute] ?? null : null;
 }
 
-const THUMBNAIL_MEMORY_CACHE = new Set<string>();
-const WARMED_THUMBNAIL_GROUPS = new Set<string>();
-const THUMBNAIL_CACHE_EVENT = 'kedi:service-thumbnail-cached';
+// Module scope on purpose: category hover must reuse the already decoded
+// bitmap instead of starting a new request for the same thumbnail URL.
+const decodedThumbnailSrcs = new Set<string>();
+const thumbnailElements = new Map<string, HTMLImageElement>();
 
-// Keep real image bytes alive across category unmount/remount cycles.
-// This is deliberately module-scoped: changing tabs must not cancel an
-// in-flight thumbnail request or force the same asset to be fetched again.
-const THUMBNAIL_BLOB_URL_CACHE = new Map<string, string>();
-const THUMBNAIL_BLOB_PROMISE_CACHE = new Map<string, Promise<string>>();
+export function preloadMenuThumbnail(src: string) {
+  if (typeof window === 'undefined' || !src || thumbnailElements.has(src)) return;
 
-function loadThumbnailOnce(src: string) {
-  const cachedUrl = THUMBNAIL_BLOB_URL_CACHE.get(src);
-  if (cachedUrl) return Promise.resolve(cachedUrl);
-
-  const pending = THUMBNAIL_BLOB_PROMISE_CACHE.get(src);
-  if (pending) return pending;
-
-  const promise = fetch(src, { cache: 'force-cache' })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`Thumbnail request failed: ${response.status} ${src}`);
-      }
-      return response.blob();
-    })
-    .then((blob) => {
-      const objectUrl = URL.createObjectURL(blob);
-      THUMBNAIL_BLOB_URL_CACHE.set(src, objectUrl);
-      THUMBNAIL_MEMORY_CACHE.add(src);
-      THUMBNAIL_BLOB_PROMISE_CACHE.delete(src);
-      return objectUrl;
-    })
-    .catch((error) => {
-      THUMBNAIL_BLOB_PROMISE_CACHE.delete(src);
-      throw error;
-    });
-
-  THUMBNAIL_BLOB_PROMISE_CACHE.set(src, promise);
-  return promise;
+  const image = new Image();
+  image.decoding = 'async';
+  image.onload = () => {
+    if (image.naturalWidth > 0) decodedThumbnailSrcs.add(src);
+  };
+  thumbnailElements.set(src, image);
+  image.src = src;
 }
 
+function isThumbnailReady(src: string) {
+  if (decodedThumbnailSrcs.has(src)) return true;
+  const image = thumbnailElements.get(src);
+  if (image?.complete && image.naturalWidth > 0) {
+    decodedThumbnailSrcs.add(src);
+    return true;
+  }
+  return false;
+}
 
-type ThumbnailCacheEventDetail = {
-  src: string;
-  groupKey?: string;
-};
-
-function publishThumbnailCached(src: string, groupKey?: string) {
-  THUMBNAIL_MEMORY_CACHE.add(src);
-  if (groupKey) WARMED_THUMBNAIL_GROUPS.add(groupKey);
-
-  window.dispatchEvent(
-    new CustomEvent<ThumbnailCacheEventDetail>(THUMBNAIL_CACHE_EVENT, {
-      detail: { src, groupKey },
-    })
-  );
+export function preloadServiceThumbnails(services: Service[], groupKey?: string) {
+  for (const service of services) {
+    const src = getMenuThumbnailImage(service, groupKey);
+    if (src) preloadMenuThumbnail(src);
+  }
 }
 
 export function ServiceThumbnail({
   service,
   groupKey,
   className = 'h-[58px] w-[78px]',
-  loadImage = false,
 }: {
   service: Service;
   groupKey?: string;
   className?: string;
-  loadImage?: boolean;
 }) {
   const meta = getMeta(service);
   const tone = getTone(meta, groupKey);
   const Icon = meta.icon;
-  const compactPreview = className.includes('h-7') || className.includes('h-10');
   const imageSrc = getMenuThumbnailImage(service, groupKey);
-  const cachedBlobUrlAtRender = imageSrc
-    ? THUMBNAIL_BLOB_URL_CACHE.get(imageSrc) ?? null
-    : null;
-  const cachedAtRender = Boolean(
-    imageSrc && (cachedBlobUrlAtRender || THUMBNAIL_MEMORY_CACHE.has(imageSrc))
-  );
-  const groupWarmedAtRender = Boolean(
-    compactPreview && groupKey && WARMED_THUMBNAIL_GROUPS.has(groupKey)
-  );
-  const canLoadImage =
-    Boolean(imageSrc) && (!compactPreview || loadImage || cachedAtRender || groupWarmedAtRender);
-
-  const [allowImageLoad, setAllowImageLoad] = useState(
-    cachedAtRender || groupWarmedAtRender
-  );
-  const [imageLoaded, setImageLoaded] = useState(cachedAtRender);
-  const [imageFailed, setImageFailed] = useState(false);
-  const [renderImageSrc, setRenderImageSrc] = useState<string | null>(
-    cachedBlobUrlAtRender
-  );
+  const [ready, setReady] = useState(() => Boolean(imageSrc && isThumbnailReady(imageSrc)));
+  const [failed, setFailed] = useState(false);
 
   useEffect(() => {
-    if (!imageSrc || !canLoadImage) {
-      setAllowImageLoad(false);
+    if (!imageSrc || failed) return;
+
+    if (isThumbnailReady(imageSrc)) {
+      setReady(true);
       return;
     }
 
-    if (THUMBNAIL_MEMORY_CACHE.has(imageSrc)) {
-      setAllowImageLoad(true);
-      setImageLoaded(true);
-      setImageFailed(false);
-      return;
-    }
+    preloadMenuThumbnail(imageSrc);
+    const image = thumbnailElements.get(imageSrc);
+    if (!image) return;
 
-    if (compactPreview && groupKey && WARMED_THUMBNAIL_GROUPS.has(groupKey)) {
-      setAllowImageLoad(true);
-      setImageLoaded(false);
-      setImageFailed(false);
-      return;
-    }
-
-    setImageLoaded(false);
-    setImageFailed(false);
-    setAllowImageLoad(false);
-
-    const timer = window.setTimeout(() => {
-      setAllowImageLoad(true);
-    }, 140);
-
-    return () => window.clearTimeout(timer);
-  }, [canLoadImage, compactPreview, groupKey, imageSrc]);
-
-  useEffect(() => {
-    if (!imageSrc || !compactPreview) return;
-
-    const handleThumbnailCached = (event: Event) => {
-      const detail = (event as CustomEvent<ThumbnailCacheEventDetail>).detail;
-      if (!detail) return;
-
-      if (detail.src === imageSrc && THUMBNAIL_MEMORY_CACHE.has(imageSrc)) {
-        setAllowImageLoad(true);
-        setImageLoaded(true);
-        setImageFailed(false);
-        return;
-      }
-
-      if (groupKey && detail.groupKey === groupKey) {
-        setAllowImageLoad(true);
-        setImageFailed(false);
-      }
+    const markReady = () => {
+      if (image.naturalWidth <= 0) return;
+      decodedThumbnailSrcs.add(imageSrc);
+      setReady(true);
+      setFailed(false);
     };
+    const markFailed = () => setFailed(true);
 
-    window.addEventListener(THUMBNAIL_CACHE_EVENT, handleThumbnailCached);
-    return () => window.removeEventListener(THUMBNAIL_CACHE_EVENT, handleThumbnailCached);
-  }, [compactPreview, groupKey, imageSrc]);
-
-
-  // Production cache: fetch each thumbnail at most once per page session.
-  // The promise continues even if this component unmounts while the user
-  // quickly hovers to another category. Returning later reuses the Blob URL.
-  useEffect(() => {
-    if (!imageSrc || !allowImageLoad || imageFailed) {
-      if (!imageSrc || !allowImageLoad) setRenderImageSrc(null);
+    if (image.complete) {
+      if (image.naturalWidth > 0) markReady();
+      else markFailed();
       return;
     }
 
-    const cachedUrl = THUMBNAIL_BLOB_URL_CACHE.get(imageSrc);
-    if (cachedUrl) {
-      setRenderImageSrc(cachedUrl);
-      setImageLoaded(true);
-      setImageFailed(false);
-      return;
-    }
-
-    let cancelled = false;
-    setRenderImageSrc(null);
-    setImageLoaded(false);
-
-    loadThumbnailOnce(imageSrc)
-      .then((objectUrl) => {
-        if (cancelled) return;
-        setRenderImageSrc(objectUrl);
-        setImageFailed(false);
-      })
-      .catch(() => {
-        if (cancelled) return;
-        setRenderImageSrc(null);
-        setImageLoaded(false);
-        setImageFailed(true);
-      });
-
+    image.addEventListener('load', markReady);
+    image.addEventListener('error', markFailed);
     return () => {
-      cancelled = true;
+      image.removeEventListener('load', markReady);
+      image.removeEventListener('error', markFailed);
     };
-  }, [allowImageLoad, imageFailed, imageSrc]);
+  }, [failed, imageSrc]);
+
   return (
     <span
       aria-hidden="true"
@@ -701,23 +597,23 @@ export function ServiceThumbnail({
         className="relative z-10 transition-transform duration-300 group-hover:scale-105"
       />
 
-      {renderImageSrc && imageSrc && !imageFailed ? (
+      {imageSrc && !failed ? (
         <img
-          src={renderImageSrc}
+          src={imageSrc}
           alt=""
           decoding="async"
-          className={`absolute inset-0 z-20 h-full w-full object-cover transition-[opacity,transform] duration-150 group-hover:scale-[1.035] ${
-            imageLoaded ? 'opacity-100' : 'opacity-0'
+          draggable={false}
+          className={`absolute inset-0 z-20 h-full w-full object-cover group-hover:scale-[1.035] ${
+            ready
+              ? 'opacity-100 transition-transform duration-300'
+              : 'opacity-0 transition-opacity duration-150'
           }`}
           onLoad={() => {
-            publishThumbnailCached(imageSrc, groupKey);
-            setImageLoaded(true);
-            setImageFailed(false);
+            decodedThumbnailSrcs.add(imageSrc);
+            setReady(true);
+            setFailed(false);
           }}
-          onError={() => {
-            setImageLoaded(false);
-            setImageFailed(true);
-          }}
+          onError={() => setFailed(true)}
         />
       ) : null}
     </span>

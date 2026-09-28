@@ -28,6 +28,7 @@ const Header = ({ className }: { className?: string }) => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [hasOpenedServices, setHasOpenedServices] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [isCompact, setIsCompact] = useState(false);
   const lastScrollY = useRef(0);
@@ -164,15 +165,25 @@ const Header = ({ className }: { className?: string }) => {
                           aria-haspopup="menu"
                           aria-expanded={isServicesOpen}
                           aria-controls="kedi-services-dropdown"
-                          onClick={() => setIsServicesOpen((prev) => !prev)}
+                          onClick={() => {
+                            if (!isServicesOpen) setHasOpenedServices(true);
+                            setIsServicesOpen((prev) => !prev);
+                          }}
                         >
                           {item.labelKey ? t(`navigation.${item.labelKey}`) : ""}
                         </button>
 
-                        {isServicesOpen && (
+                        {hasOpenedServices && (
                           <div
                             ref={servicesDropdownRef}
                             id="kedi-services-dropdown"
+                            aria-hidden={!isServicesOpen}
+                            className={cn(
+                              "transition-opacity duration-150",
+                              isServicesOpen
+                                ? "visible opacity-100"
+                                : "pointer-events-none invisible opacity-0"
+                            )}
                           >
                             <ServicesDropdown />
                           </div>
