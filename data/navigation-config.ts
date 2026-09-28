@@ -63,6 +63,16 @@ export const navigationConfig = [
     dropdownType: 'blog',
     hoverColor: 'hover:bg-kedi-yellow/10 hover:text-kedi-yellow',
     items: [
+      {
+        href: '/blog/viet-phan-mem-thoi-dai-ai',
+        labelKey: 'aiEraSoftware',
+        label: 'Viết phần mềm thời đại AI',
+      },
+      {
+        href: '/blog/tu-dong-hoa-doanh-nghiep',
+        labelKey: 'businessAutomation',
+        label: 'Tự động hoá doanh nghiệp',
+      },
       { href: '/blog/seo-guide', labelKey: 'seoGuide', label: 'Cẩm nang SEO' },
       {
         href: '/blog/digital-marketing',

@@ -15,7 +15,7 @@ export default function ClientsKedi() {
   return (
     <section
       id="clients"
-      className="relative z-40 overflow-hidden bg-[#eef4fa] px-5 py-20 text-kedi-navy sm:px-8 lg:px-12 lg:py-28 xl:px-16"
+      className="relative z-40 overflow-hidden bg-[#eef4fa] py-20 text-kedi-navy lg:py-28"
       style={{
         backgroundImage:
           "linear-gradient(90deg, rgba(246,249,252,.96) 0%, rgba(246,249,252,.90) 46%, rgba(246,249,252,.80) 100%), url('/homepage/golden-insights-light.webp')",
@@ -27,7 +27,7 @@ export default function ClientsKedi() {
       <div className="pointer-events-none absolute -right-40 bottom-0 h-[480px] w-[480px] rounded-full bg-[#2e76c5]/[0.10] blur-[140px]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-kedi-yellow/70 to-transparent" />
 
-      <div className="relative mx-auto max-w-[1440px]">
+      <div className="relative mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-14 xl:px-20 2xl:px-24">
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

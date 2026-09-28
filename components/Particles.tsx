@@ -99,15 +99,88 @@ const ParticlesBackground = () => {
     []
   );
 
+  const cursorOptions: ISourceOptions = useMemo(
+    () => ({
+      fullScreen: {
+        enable: true,
+        // Above redesigned section backgrounds (z-20/z-30), below ElasticCursor (z-100).
+        zIndex: 90,
+      },
+      background: {
+        color: { value: "transparent" },
+      },
+      fpsLimit: 120,
+      interactivity: {
+        detectsOn: "window",
+        events: {
+          onHover: {
+            enable: true,
+            mode: ["grab", "bubble"],
+          },
+        },
+        modes: {
+          grab: {
+            distance: 190,
+            links: {
+              opacity: 0.95,
+              color: "#FFC629",
+              width: 2,
+            },
+          },
+          bubble: {
+            distance: 170,
+            size: 8,
+            duration: 0.25,
+            opacity: 1,
+            color: "#FFC629",
+          },
+        },
+      },
+      particles: {
+        color: { value: "#FFC629" },
+        links: {
+          color: "#FFC629",
+          distance: 155,
+          enable: true,
+          opacity: 0.16,
+          width: 1,
+        },
+        move: {
+          enable: true,
+          speed: 0.42,
+          direction: "none",
+          outModes: { default: "out" },
+        },
+        number: {
+          density: { enable: true },
+          value: 90,
+        },
+        opacity: {
+          value: { min: 0.18, max: 0.46 },
+        },
+        size: {
+          value: { min: 1.2, max: 2.7 },
+        },
+      },
+      detectRetina: true,
+    }),
+    []
+  );
+
   if (init) {
     return (
-      <Particles
-        id="tsparticles"
-        particlesLoaded={particlesLoaded}
-        options={options}
-        // Bạn cũng có thể thêm className nếu cần chỉnh thêm CSS
-        // className="absolute top-0 left-0 -z-10" 
-      />
+      <>
+        <Particles
+          id="tsparticles"
+          particlesLoaded={particlesLoaded}
+          options={options}
+        />
+        <Particles
+          id="tsparticles-cursor"
+          options={cursorOptions}
+          className="pointer-events-none"
+        />
+      </>
     );
   }
 

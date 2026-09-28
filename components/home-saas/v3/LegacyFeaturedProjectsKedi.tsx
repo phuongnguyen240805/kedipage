@@ -70,7 +70,7 @@ export default function LegacyFeaturedProjectsKedi() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-7">
+        <div className="relative grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-7">
           {projects.map((project) => (
             <motion.div
               key={project.id}
@@ -112,25 +112,29 @@ export default function LegacyFeaturedProjectsKedi() {
               </Link>
             </motion.div>
           ))}
+
+          <AnimatePresence>
+            {hoveredTitle ? (
+              <motion.div
+                key={hoveredTitle}
+                initial={reduceMotion ? false : { opacity: 0, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={reduceMotion ? undefined : { opacity: 0, scale: 0.99 }}
+                transition={
+                  reduceMotion
+                    ? { duration: 0 }
+                    : { duration: 0.28, ease: [0.22, 1, 0.36, 1] }
+                }
+                className="pointer-events-none absolute inset-0 z-20 hidden items-center justify-center lg:flex"
+              >
+                <div className="max-w-[92%] whitespace-nowrap text-center font-FoundersGrotesk text-[clamp(72px,8vw,150px)] font-semibold uppercase leading-[0.8] tracking-[-0.055em] text-kedi-yellow drop-shadow-[0_12px_34px_rgba(0,0,0,.35)]">
+                  {hoveredTitle}
+                </div>
+              </motion.div>
+            ) : null}
+          </AnimatePresence>
         </div>
       </div>
-
-      <AnimatePresence>
-        {hoveredTitle ? (
-          <motion.div
-            key={hoveredTitle}
-            initial={reduceMotion ? false : { opacity: 0, y: 28, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={reduceMotion ? undefined : { opacity: 0, y: -18, scale: 0.99 }}
-            transition={reduceMotion ? { duration: 0 } : { duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
-            className="pointer-events-none fixed inset-0 z-[90] hidden items-center justify-center lg:flex"
-          >
-            <div className="max-w-[92vw] whitespace-nowrap text-center font-FoundersGrotesk text-[clamp(92px,11vw,190px)] font-semibold uppercase leading-[0.8] tracking-[-0.055em] text-kedi-yellow drop-shadow-[0_12px_34px_rgba(0,0,0,.35)]">
-              {hoveredTitle}
-            </div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
     </section>
   );
 }
