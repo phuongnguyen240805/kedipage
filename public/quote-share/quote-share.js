@@ -145,6 +145,46 @@
   });
   document.addEventListener('scroll', hidePill, { passive: true });
 
+  // Same-origin iframe bridge used by the two cloned MONA Blog pages. Their
+  // selection lives in a different document, so the React frame forwards the
+  // selected text + its rectangle to this parent quote engine.
+  window.addEventListener('message', function (event) {
+    if (event.origin !== window.location.origin) return;
+    var data = event.data || {};
+    if (data.source !== 'kedi-blog-clone') return;
+
+    if (data.type === 'kedi-quote-share-hide') {
+      hidePill();
+      return;
+    }
+    if (data.type !== 'kedi-quote-share-selection') return;
+
+    var text = String(data.text || '').replace(/\s+/g, ' ').trim();
+    var rect = data.rect || {};
+    var top = Number(rect.top);
+    var left = Number(rect.left);
+    var width = Number(rect.width);
+    var bottom = Number(rect.bottom);
+
+    if (
+      text.length < MIN_LEN ||
+      !Number.isFinite(top) ||
+      !Number.isFinite(left) ||
+      !Number.isFinite(width) ||
+      !Number.isFinite(bottom)
+    ) {
+      hidePill();
+      return;
+    }
+
+    showPill(text, {
+      top: top,
+      left: left,
+      width: width,
+      bottom: bottom
+    });
+  });
+
   // ---------- meta của bài ----------
   function readMeta() {
     var h1 = document.querySelector('.mona-content h1, .blog-large-content h1, article h1, h1.entry-title, h1');

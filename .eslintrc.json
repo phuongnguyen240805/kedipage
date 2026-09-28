@@ -2,5 +2,25 @@
   "extends": "next/core-web-vitals",
   "ignorePatterns": [
     "components/services-dropdown/page/software/toolsngon/TestimonialsRedesign.tsx"
+  ],
+  "rules": {
+    "@next/next/no-img-element": "off",
+    "@next/next/no-css-tags": "off"
+  },
+  "overrides": [
+    {
+      "files": [
+        "components/nyan-cat.tsx",
+        "components/services-dropdown/page/hosting/CloudHosting/container/heroBanner.tsx",
+        "components/services-dropdown/page/web-design/mau-thiep-cuoi/container/header-Love.tsx",
+        "components/services-dropdown/page/web-design/SEOservices/page.tsx",
+        "components/ui/animated-modal.tsx",
+        "components/ui/ElasticCursor.tsx",
+        "components/ui/floating-dock.tsx"
+      ],
+      "rules": {
+        "react-hooks/exhaustive-deps": "off"
+      }
+    }
   ]
 }

@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Mail, MapPin, Facebook, Linkedin, Youtube } from 'lucide-react';
+import { Phone, Globe2, MapPin, Facebook, Linkedin, Youtube } from 'lucide-react';
 import { Button } from '../ui/button';
 
 
@@ -94,10 +94,29 @@ const Footer: React.FC = () => {
             </h3>
             <div className="space-y-3 text-sm text-gray-600">
               <div className="flex items-start space-x-2">
-                <Mail className="w-4 h-4 text-kedi-navy mt-1" />
+                <Phone className="w-4 h-4 text-kedi-navy mt-1" />
                 <div>
-                  <p>{t('footer.email')}</p>
-                  <p className="text-kedi-navy">{contactInfo.email}</p>
+                  <p>Số điện thoại</p>
+                  <a
+                    href={`tel:${contactInfo.phone}`}
+                    className="text-kedi-navy hover:text-kedi-yellow transition-colors"
+                  >
+                    {contactInfo.phone}
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start space-x-2">
+                <Globe2 className="w-4 h-4 text-kedi-navy mt-1" />
+                <div>
+                  <p>Website</p>
+                  <a
+                    href={contactInfo.websiteUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-kedi-navy hover:text-kedi-yellow transition-colors"
+                  >
+                    {contactInfo.website}
+                  </a>
                 </div>
               </div>
               <div className="flex items-start space-x-2">

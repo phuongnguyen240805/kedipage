@@ -70,7 +70,7 @@ export default function ClientsKedi() {
                   className="absolute inset-x-0 top-0 h-px origin-left bg-gradient-to-r from-kedi-yellow via-kedi-yellow/45 to-transparent"
                 />
 
-                <div className="grid min-h-[78px] items-center gap-4 py-5 sm:grid-cols-[1fr_1fr_auto] sm:gap-6 sm:py-6">
+                <div className="grid min-h-[78px] items-center gap-4 px-5 py-5 sm:grid-cols-[1fr_1fr_auto] sm:gap-6 sm:px-6 sm:py-6 lg:px-8 xl:px-10">
                   <a
                     href={item.href.trim()}
                     target="_blank"
@@ -115,7 +115,7 @@ export default function ClientsKedi() {
                       transition={reduceMotion ? { duration: 0 } : { height: { duration: 0.52, ease: EASE }, opacity: { duration: 0.3, delay: 0.08 } }}
                       className="overflow-hidden"
                     >
-                      <div className="grid gap-7 pb-8 pt-2 sm:pb-10 lg:grid-cols-[170px_minmax(0,1fr)] lg:gap-10 lg:pb-12">
+                      <div className="grid gap-7 px-5 pb-8 pt-2 sm:px-6 sm:pb-10 lg:grid-cols-[170px_minmax(0,1fr)] lg:gap-10 lg:px-8 lg:pb-12 xl:px-10">
                         <motion.div
                           initial={reduceMotion ? false : { opacity: 0, scale: 0.92, rotate: -2 }}
                           animate={{ opacity: 1, scale: 1, rotate: 0 }}

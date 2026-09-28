@@ -134,8 +134,10 @@ export const mediaBrandingLinks = [
 ];
 
 export const contactInfo = {
-  email: 'info@kedi.global',
-  address: '1073/23 Cách Mạng Tháng Tám, phường Tân Sơn Nhì, TPHCM',
+  phone: '0899332468',
+  website: 'kedi.media',
+  websiteUrl: 'https://kedi.media',
+  address: '188 Nguyễn Lân, Hà Nội',
 };
 
 export const companiesInfo = [

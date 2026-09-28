@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   BarChart3,
   BookOpen,
@@ -486,6 +486,15 @@ function getMenuThumbnailImage(service: Service, groupKey?: string) {
   return mappedRoute ? SOFTWARE_THUMBNAIL_IMAGES[mappedRoute] ?? null : null;
 }
 
+const THUMBNAIL_MEMORY_CACHE = new Set<string>();
+const WARMED_THUMBNAIL_GROUPS = new Set<string>();
+const THUMBNAIL_CACHE_EVENT = 'kedi:service-thumbnail-cached';
+
+type ThumbnailCacheEventDetail = {
+  src: string;
+  groupKey?: string;
+};
+
 export function ServiceThumbnail({
   service,
   groupKey,
@@ -499,9 +508,81 @@ export function ServiceThumbnail({
   const tone = getTone(meta, groupKey);
   const Icon = meta.icon;
   const compactPreview = className.includes('h-7') || className.includes('h-10');
-  const imageSrc = compactPreview ? null : getMenuThumbnailImage(service, groupKey);
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const resolvedImageSrc = getMenuThumbnailImage(service, groupKey);
+  const startsCached = Boolean(
+    resolvedImageSrc && THUMBNAIL_MEMORY_CACHE.has(resolvedImageSrc)
+  );
+  const startsGroupWarmed = Boolean(
+    groupKey && WARMED_THUMBNAIL_GROUPS.has(groupKey)
+  );
+  const [allowImageLoad, setAllowImageLoad] = useState(
+    startsCached || (compactPreview && startsGroupWarmed)
+  );
+  const [imageLoaded, setImageLoaded] = useState(startsCached);
   const [imageFailed, setImageFailed] = useState(false);
+
+  useEffect(() => {
+    if (!resolvedImageSrc) {
+      setAllowImageLoad(false);
+      setImageLoaded(false);
+      setImageFailed(false);
+      return;
+    }
+
+    if (THUMBNAIL_MEMORY_CACHE.has(resolvedImageSrc)) {
+      setAllowImageLoad(true);
+      setImageLoaded(true);
+      setImageFailed(false);
+      return;
+    }
+
+    if (compactPreview) {
+      const groupAlreadyWarmed = Boolean(
+        groupKey && WARMED_THUMBNAIL_GROUPS.has(groupKey)
+      );
+      setAllowImageLoad(groupAlreadyWarmed);
+      setImageLoaded(false);
+      setImageFailed(false);
+      return;
+    }
+
+    setAllowImageLoad(false);
+    setImageLoaded(false);
+    setImageFailed(false);
+
+    const timer = window.setTimeout(() => setAllowImageLoad(true), 140);
+    return () => window.clearTimeout(timer);
+  }, [compactPreview, groupKey, resolvedImageSrc, service.href, service.titleKey]);
+
+  useEffect(() => {
+    if (!resolvedImageSrc) return;
+
+    const handleCached = (event: Event) => {
+      const cachedEvent = event as CustomEvent<ThumbnailCacheEventDetail>;
+      const detail = cachedEvent.detail;
+      if (!detail) return;
+
+      if (detail.src === resolvedImageSrc) {
+        setAllowImageLoad(true);
+        setImageLoaded(true);
+        setImageFailed(false);
+        return;
+      }
+
+      // Once the active category has loaded one real thumbnail, its compact
+      // sidebar/right previews may load their own thumbnails as well.
+      if (compactPreview && groupKey && detail.groupKey === groupKey) {
+        setAllowImageLoad(true);
+        setImageLoaded(THUMBNAIL_MEMORY_CACHE.has(resolvedImageSrc));
+        setImageFailed(false);
+      }
+    };
+
+    window.addEventListener(THUMBNAIL_CACHE_EVENT, handleCached);
+    return () => window.removeEventListener(THUMBNAIL_CACHE_EVENT, handleCached);
+  }, [compactPreview, groupKey, resolvedImageSrc]);
+
+  const imageSrc = allowImageLoad ? resolvedImageSrc : null;
 
   return (
     <span
@@ -537,13 +618,24 @@ export function ServiceThumbnail({
           alt=""
           fill
           sizes="(max-width: 1280px) 70px, 78px"
-          loading="lazy"
+          loading={compactPreview ? 'eager' : 'lazy'}
+          fetchPriority="low"
           decoding="async"
           quality={45}
           className={`z-20 object-cover transition-[opacity,transform] duration-200 group-hover:scale-[1.035] ${
             imageLoaded ? 'opacity-100' : 'opacity-0'
           }`}
-          onLoad={() => setImageLoaded(true)}
+          onLoad={() => {
+            THUMBNAIL_MEMORY_CACHE.add(imageSrc);
+            if (groupKey) WARMED_THUMBNAIL_GROUPS.add(groupKey);
+            setImageLoaded(true);
+            setImageFailed(false);
+            window.dispatchEvent(
+              new CustomEvent<ThumbnailCacheEventDetail>(THUMBNAIL_CACHE_EVENT, {
+                detail: { src: imageSrc, groupKey },
+              })
+            );
+          }}
           onError={() => {
             setImageLoaded(false);
             setImageFailed(true);

@@ -74,15 +74,22 @@ export default function BlogMonaCloneFrame({ slug, title }: Props) {
 
     scheduleMeasure();
 
-    if ('ResizeObserver' in win) {
-      resizeObserver = new win.ResizeObserver(scheduleMeasure);
+    const ResizeObserverCtor = (
+      win as unknown as { ResizeObserver?: typeof ResizeObserver }
+    ).ResizeObserver;
+
+    if (ResizeObserverCtor) {
+      resizeObserver = new ResizeObserverCtor(scheduleMeasure);
       resizeObserver.observe(doc.documentElement);
       if (doc.body) resizeObserver.observe(doc.body);
       const main = doc.querySelector('main');
       if (main) resizeObserver.observe(main);
     }
 
-    mutationObserver = new win.MutationObserver(scheduleMeasure);
+    const MutationObserverCtor = (win as Window & {
+      MutationObserver: typeof MutationObserver;
+    }).MutationObserver;
+    mutationObserver = new MutationObserverCtor(scheduleMeasure);
     mutationObserver.observe(doc.documentElement, {
       subtree: true,
       childList: true,
@@ -128,6 +135,87 @@ export default function BlogMonaCloneFrame({ slug, title }: Props) {
       passive: true,
     });
 
+    // Quote Share lives in the parent KEDI document. A selection created inside
+    // an iframe belongs to a different document, so forward the selected text
+    // and its viewport rectangle to the parent quote engine.
+    const quoteAllow =
+      '.mona-content, .entry-content, .blog-large-content, article, main, [data-quote-source]';
+    const quoteDeny =
+      'header, footer, nav, aside, form, button, input, textarea, .popup, .menu-extra, .breadcrumb, .wpcf7, .contact-box, [data-quote-ignore]';
+
+    const postQuoteHide = () => {
+      window.postMessage(
+        { type: 'kedi-quote-share-hide', source: 'kedi-blog-clone', slug },
+        window.location.origin,
+      );
+    };
+
+    const postQuoteSelection = () => {
+      const selection = win.getSelection();
+      if (!selection || selection.rangeCount === 0 || selection.isCollapsed) {
+        postQuoteHide();
+        return;
+      }
+
+      const text = (selection.toString() || '').replace(/\s+/g, ' ').trim();
+      if (text.length < 12) {
+        postQuoteHide();
+        return;
+      }
+
+      const range = selection.getRangeAt(0);
+      const node = range.commonAncestorContainer;
+      const element =
+        node.nodeType === 1 ? (node as Element) : node.parentElement;
+
+      if (!element || element.closest(quoteDeny) || !element.closest(quoteAllow)) {
+        postQuoteHide();
+        return;
+      }
+
+      const selectionRect = range.getBoundingClientRect();
+      const frameRect = frame.getBoundingClientRect();
+      const top = frameRect.top + selectionRect.top;
+      const left = frameRect.left + selectionRect.left;
+
+      window.postMessage(
+        {
+          type: 'kedi-quote-share-selection',
+          source: 'kedi-blog-clone',
+          slug,
+          text,
+          rect: {
+            top,
+            left,
+            width: selectionRect.width,
+            height: selectionRect.height,
+            bottom: frameRect.top + selectionRect.bottom,
+          },
+        },
+        window.location.origin,
+      );
+    };
+
+    const handleQuoteMouseUp = () => win.setTimeout(postQuoteSelection, 15);
+    const handleQuoteTouchEnd = () => win.setTimeout(postQuoteSelection, 80);
+    const handleQuoteKeyUp = (event: KeyboardEvent) => {
+      if (
+        event.shiftKey ||
+        event.key === 'ArrowLeft' ||
+        event.key === 'ArrowRight' ||
+        event.key === 'ArrowUp' ||
+        event.key === 'ArrowDown'
+      ) {
+        win.setTimeout(postQuoteSelection, 15);
+      }
+    };
+
+    doc.addEventListener('mousedown', postQuoteHide, { passive: true });
+    doc.addEventListener('mouseup', handleQuoteMouseUp, { passive: true });
+    doc.addEventListener('touchend', handleQuoteTouchEnd, { passive: true });
+    doc.addEventListener('keyup', handleQuoteKeyUp);
+    doc.addEventListener('scroll', postQuoteHide, { capture: true, passive: true });
+
     timer = win.setInterval(scheduleMeasure, 750);
     win.setTimeout(() => {
       if (timer !== null) win.clearInterval(timer);
@@ -142,9 +230,14 @@ export default function BlogMonaCloneFrame({ slug, title }: Props) {
       mutationObserver?.disconnect();
       win.removeEventListener('resize', scheduleMeasure);
       doc.removeEventListener(iframePointerEvent, forwardPointerMove as EventListener);
+      doc.removeEventListener('mousedown', postQuoteHide);
+      doc.removeEventListener('mouseup', handleQuoteMouseUp);
+      doc.removeEventListener('touchend', handleQuoteTouchEnd);
+      doc.removeEventListener('keyup', handleQuoteKeyUp);
+      doc.removeEventListener('scroll', postQuoteHide, true);
       if (timer !== null) win.clearInterval(timer);
     };
-  }, [measureFrame]);
+  }, [measureFrame, slug]);
 
   useEffect(() => {
     const frame = iframeRef.current as

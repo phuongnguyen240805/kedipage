@@ -14,6 +14,14 @@ const config = {
     "./animation/**/*.{js,ts,jsx,tsx,mdx}", // Đã thêm các thư mục animation/container của bạn
     "./container/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  blocklist: [
+    "duration-[0.3s]",
+    "duration-[1s]",
+    "duration-[6000ms]",
+    "ease-[.215,.61,.355,1]",
+    "ease-[.4,0,.2,1]",
+    "ease-[0.22,1,0.36,1]",
+  ],
   prefix: "",
   theme: {
     // 1. Cấu hình Breakpoints (Screens) đồng bộ với globals.css
