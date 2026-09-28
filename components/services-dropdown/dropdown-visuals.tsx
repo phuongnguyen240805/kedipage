@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import {
   BarChart3,
@@ -490,6 +489,43 @@ const THUMBNAIL_MEMORY_CACHE = new Set<string>();
 const WARMED_THUMBNAIL_GROUPS = new Set<string>();
 const THUMBNAIL_CACHE_EVENT = 'kedi:service-thumbnail-cached';
 
+// Keep real image bytes alive across category unmount/remount cycles.
+// This is deliberately module-scoped: changing tabs must not cancel an
+// in-flight thumbnail request or force the same asset to be fetched again.
+const THUMBNAIL_BLOB_URL_CACHE = new Map<string, string>();
+const THUMBNAIL_BLOB_PROMISE_CACHE = new Map<string, Promise<string>>();
+
+function loadThumbnailOnce(src: string) {
+  const cachedUrl = THUMBNAIL_BLOB_URL_CACHE.get(src);
+  if (cachedUrl) return Promise.resolve(cachedUrl);
+
+  const pending = THUMBNAIL_BLOB_PROMISE_CACHE.get(src);
+  if (pending) return pending;
+
+  const promise = fetch(src, { cache: 'force-cache' })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Thumbnail request failed: ${response.status} ${src}`);
+      }
+      return response.blob();
+    })
+    .then((blob) => {
+      const objectUrl = URL.createObjectURL(blob);
+      THUMBNAIL_BLOB_URL_CACHE.set(src, objectUrl);
+      THUMBNAIL_MEMORY_CACHE.add(src);
+      THUMBNAIL_BLOB_PROMISE_CACHE.delete(src);
+      return objectUrl;
+    })
+    .catch((error) => {
+      THUMBNAIL_BLOB_PROMISE_CACHE.delete(src);
+      throw error;
+    });
+
+  THUMBNAIL_BLOB_PROMISE_CACHE.set(src, promise);
+  return promise;
+}
+
+
 type ThumbnailCacheEventDetail = {
   src: string;
   groupKey?: string;
@@ -522,7 +558,12 @@ export function ServiceThumbnail({
   const Icon = meta.icon;
   const compactPreview = className.includes('h-7') || className.includes('h-10');
   const imageSrc = getMenuThumbnailImage(service, groupKey);
-  const cachedAtRender = Boolean(imageSrc && THUMBNAIL_MEMORY_CACHE.has(imageSrc));
+  const cachedBlobUrlAtRender = imageSrc
+    ? THUMBNAIL_BLOB_URL_CACHE.get(imageSrc) ?? null
+    : null;
+  const cachedAtRender = Boolean(
+    imageSrc && (cachedBlobUrlAtRender || THUMBNAIL_MEMORY_CACHE.has(imageSrc))
+  );
   const groupWarmedAtRender = Boolean(
     compactPreview && groupKey && WARMED_THUMBNAIL_GROUPS.has(groupKey)
   );
@@ -534,6 +575,9 @@ export function ServiceThumbnail({
   );
   const [imageLoaded, setImageLoaded] = useState(cachedAtRender);
   const [imageFailed, setImageFailed] = useState(false);
+  const [renderImageSrc, setRenderImageSrc] = useState<string | null>(
+    cachedBlobUrlAtRender
+  );
 
   useEffect(() => {
     if (!imageSrc || !canLoadImage) {
@@ -590,6 +634,45 @@ export function ServiceThumbnail({
     return () => window.removeEventListener(THUMBNAIL_CACHE_EVENT, handleThumbnailCached);
   }, [compactPreview, groupKey, imageSrc]);
 
+
+  // Production cache: fetch each thumbnail at most once per page session.
+  // The promise continues even if this component unmounts while the user
+  // quickly hovers to another category. Returning later reuses the Blob URL.
+  useEffect(() => {
+    if (!imageSrc || !allowImageLoad || imageFailed) {
+      if (!imageSrc || !allowImageLoad) setRenderImageSrc(null);
+      return;
+    }
+
+    const cachedUrl = THUMBNAIL_BLOB_URL_CACHE.get(imageSrc);
+    if (cachedUrl) {
+      setRenderImageSrc(cachedUrl);
+      setImageLoaded(true);
+      setImageFailed(false);
+      return;
+    }
+
+    let cancelled = false;
+    setRenderImageSrc(null);
+    setImageLoaded(false);
+
+    loadThumbnailOnce(imageSrc)
+      .then((objectUrl) => {
+        if (cancelled) return;
+        setRenderImageSrc(objectUrl);
+        setImageFailed(false);
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setRenderImageSrc(null);
+        setImageLoaded(false);
+        setImageFailed(true);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [allowImageLoad, imageFailed, imageSrc]);
   return (
     <span
       aria-hidden="true"
@@ -618,18 +701,12 @@ export function ServiceThumbnail({
         className="relative z-10 transition-transform duration-300 group-hover:scale-105"
       />
 
-      {allowImageLoad && imageSrc && !imageFailed ? (
-        <Image
-          src={imageSrc}
+      {renderImageSrc && imageSrc && !imageFailed ? (
+        <img
+          src={renderImageSrc}
           alt=""
-          fill
-          sizes="(max-width: 1280px) 70px, 78px"
-          loading="eager"
           decoding="async"
-          fetchPriority="low"
-          quality={45}
-          unoptimized={imageSrc.startsWith('/service-menu/software-thumbnails/')}
-          className={`z-20 object-cover transition-[opacity,transform] duration-150 group-hover:scale-[1.035] ${
+          className={`absolute inset-0 z-20 h-full w-full object-cover transition-[opacity,transform] duration-150 group-hover:scale-[1.035] ${
             imageLoaded ? 'opacity-100' : 'opacity-0'
           }`}
           onLoad={() => {
