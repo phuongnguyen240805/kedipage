@@ -495,94 +495,100 @@ type ThumbnailCacheEventDetail = {
   groupKey?: string;
 };
 
+function publishThumbnailCached(src: string, groupKey?: string) {
+  THUMBNAIL_MEMORY_CACHE.add(src);
+  if (groupKey) WARMED_THUMBNAIL_GROUPS.add(groupKey);
+
+  window.dispatchEvent(
+    new CustomEvent<ThumbnailCacheEventDetail>(THUMBNAIL_CACHE_EVENT, {
+      detail: { src, groupKey },
+    })
+  );
+}
+
 export function ServiceThumbnail({
   service,
   groupKey,
   className = 'h-[58px] w-[78px]',
+  loadImage = false,
 }: {
   service: Service;
   groupKey?: string;
   className?: string;
+  loadImage?: boolean;
 }) {
   const meta = getMeta(service);
   const tone = getTone(meta, groupKey);
   const Icon = meta.icon;
   const compactPreview = className.includes('h-7') || className.includes('h-10');
-  const resolvedImageSrc = getMenuThumbnailImage(service, groupKey);
-  const startsCached = Boolean(
-    resolvedImageSrc && THUMBNAIL_MEMORY_CACHE.has(resolvedImageSrc)
+  const imageSrc = getMenuThumbnailImage(service, groupKey);
+  const cachedAtRender = Boolean(imageSrc && THUMBNAIL_MEMORY_CACHE.has(imageSrc));
+  const groupWarmedAtRender = Boolean(
+    compactPreview && groupKey && WARMED_THUMBNAIL_GROUPS.has(groupKey)
   );
-  const startsGroupWarmed = Boolean(
-    groupKey && WARMED_THUMBNAIL_GROUPS.has(groupKey)
-  );
+  const canLoadImage =
+    Boolean(imageSrc) && (!compactPreview || loadImage || cachedAtRender || groupWarmedAtRender);
+
   const [allowImageLoad, setAllowImageLoad] = useState(
-    startsCached || (compactPreview && startsGroupWarmed)
+    cachedAtRender || groupWarmedAtRender
   );
-  const [imageLoaded, setImageLoaded] = useState(startsCached);
+  const [imageLoaded, setImageLoaded] = useState(cachedAtRender);
   const [imageFailed, setImageFailed] = useState(false);
 
   useEffect(() => {
-    if (!resolvedImageSrc) {
+    if (!imageSrc || !canLoadImage) {
       setAllowImageLoad(false);
-      setImageLoaded(false);
-      setImageFailed(false);
       return;
     }
 
-    if (THUMBNAIL_MEMORY_CACHE.has(resolvedImageSrc)) {
+    if (THUMBNAIL_MEMORY_CACHE.has(imageSrc)) {
       setAllowImageLoad(true);
       setImageLoaded(true);
       setImageFailed(false);
       return;
     }
 
-    if (compactPreview) {
-      const groupAlreadyWarmed = Boolean(
-        groupKey && WARMED_THUMBNAIL_GROUPS.has(groupKey)
-      );
-      setAllowImageLoad(groupAlreadyWarmed);
+    if (compactPreview && groupKey && WARMED_THUMBNAIL_GROUPS.has(groupKey)) {
+      setAllowImageLoad(true);
       setImageLoaded(false);
       setImageFailed(false);
       return;
     }
 
-    setAllowImageLoad(false);
     setImageLoaded(false);
     setImageFailed(false);
+    setAllowImageLoad(false);
 
-    const timer = window.setTimeout(() => setAllowImageLoad(true), 140);
+    const timer = window.setTimeout(() => {
+      setAllowImageLoad(true);
+    }, 140);
+
     return () => window.clearTimeout(timer);
-  }, [compactPreview, groupKey, resolvedImageSrc, service.href, service.titleKey]);
+  }, [canLoadImage, compactPreview, groupKey, imageSrc]);
 
   useEffect(() => {
-    if (!resolvedImageSrc) return;
+    if (!imageSrc || !compactPreview) return;
 
-    const handleCached = (event: Event) => {
-      const cachedEvent = event as CustomEvent<ThumbnailCacheEventDetail>;
-      const detail = cachedEvent.detail;
+    const handleThumbnailCached = (event: Event) => {
+      const detail = (event as CustomEvent<ThumbnailCacheEventDetail>).detail;
       if (!detail) return;
 
-      if (detail.src === resolvedImageSrc) {
+      if (detail.src === imageSrc && THUMBNAIL_MEMORY_CACHE.has(imageSrc)) {
         setAllowImageLoad(true);
         setImageLoaded(true);
         setImageFailed(false);
         return;
       }
 
-      // Once the active category has loaded one real thumbnail, its compact
-      // sidebar/right previews may load their own thumbnails as well.
-      if (compactPreview && groupKey && detail.groupKey === groupKey) {
+      if (groupKey && detail.groupKey === groupKey) {
         setAllowImageLoad(true);
-        setImageLoaded(THUMBNAIL_MEMORY_CACHE.has(resolvedImageSrc));
         setImageFailed(false);
       }
     };
 
-    window.addEventListener(THUMBNAIL_CACHE_EVENT, handleCached);
-    return () => window.removeEventListener(THUMBNAIL_CACHE_EVENT, handleCached);
-  }, [compactPreview, groupKey, resolvedImageSrc]);
-
-  const imageSrc = allowImageLoad ? resolvedImageSrc : null;
+    window.addEventListener(THUMBNAIL_CACHE_EVENT, handleThumbnailCached);
+    return () => window.removeEventListener(THUMBNAIL_CACHE_EVENT, handleThumbnailCached);
+  }, [compactPreview, groupKey, imageSrc]);
 
   return (
     <span
@@ -612,29 +618,24 @@ export function ServiceThumbnail({
         className="relative z-10 transition-transform duration-300 group-hover:scale-105"
       />
 
-      {imageSrc && !imageFailed ? (
+      {allowImageLoad && imageSrc && !imageFailed ? (
         <Image
           src={imageSrc}
           alt=""
           fill
           sizes="(max-width: 1280px) 70px, 78px"
-          loading={compactPreview ? 'eager' : 'lazy'}
-          fetchPriority="low"
+          loading="eager"
           decoding="async"
-          quality={45}
-          className={`z-20 object-cover transition-[opacity,transform] duration-200 group-hover:scale-[1.035] ${
+          fetchPriority="low"
+          quality={45}
+          unoptimized={imageSrc.startsWith('/service-menu/software-thumbnails/')}
+          className={`z-20 object-cover transition-[opacity,transform] duration-150 group-hover:scale-[1.035] ${
             imageLoaded ? 'opacity-100' : 'opacity-0'
           }`}
           onLoad={() => {
-            THUMBNAIL_MEMORY_CACHE.add(imageSrc);
-            if (groupKey) WARMED_THUMBNAIL_GROUPS.add(groupKey);
+            publishThumbnailCached(imageSrc, groupKey);
             setImageLoaded(true);
             setImageFailed(false);
-            window.dispatchEvent(
-              new CustomEvent<ThumbnailCacheEventDetail>(THUMBNAIL_CACHE_EVENT, {
-                detail: { src: imageSrc, groupKey },
-              })
-            );
           }}
           onError={() => {
             setImageLoaded(false);

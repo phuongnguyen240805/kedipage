@@ -14,6 +14,248 @@ type Props = {
 const INITIAL_HEIGHT = 720;
 const MIN_HEIGHT = 240;
 
+const KEDI_BLOG_BRAND_CSS = String.raw`
+:root {
+  --kedi-blog-navy: #0B2D5B;
+  --kedi-blog-navy-2: #174A82;
+  --kedi-blog-yellow: #FFC629;
+  --kedi-blog-yellow-2: #FFD75E;
+  --kedi-blog-yellow-soft: #FFF5CC;
+  --kedi-blog-surface: #F5F9FD;
+  --kedi-blog-ink: #102A43;
+  --kedi-blog-muted: #5A7188;
+  --kedi-blog-line: #D9E5EF;
+}
+
+body.kedi-blog-brand {
+  background: #fff !important;
+  color: var(--kedi-blog-ink) !important;
+}
+
+body.kedi-blog-brand .sec-blogt {
+  background:
+    radial-gradient(circle at 84% 10%, rgba(255, 198, 41, .20), transparent 26%),
+    linear-gradient(180deg, #f5f9fd 0%, #ffffff 82%) !important;
+}
+body.kedi-blog-brand .blogt-dot { opacity: .16 !important; filter: hue-rotate(185deg) saturate(.75); }
+body.kedi-blog-brand .blogpc3-top .title,
+body.kedi-blog-brand .blogr > .title,
+body.kedi-blog-brand .blogpc3-content .link,
+body.kedi-blog-brand .blogr-link {
+  color: var(--kedi-blog-navy) !important;
+  -webkit-text-fill-color: var(--kedi-blog-navy) !important;
+}
+body.kedi-blog-brand .blogpc3-top .des,
+body.kedi-blog-brand .blogpc3-content .des,
+body.kedi-blog-brand .blogr-top,
+body.kedi-blog-brand .blogr-author {
+  color: var(--kedi-blog-muted) !important;
+}
+body.kedi-blog-brand .blogpc3-logo {
+  width: min(190px, 44vw) !important;
+  min-height: 50px;
+  padding: 9px 14px;
+  border: 1px solid var(--kedi-blog-line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .92);
+  box-shadow: 0 18px 42px -32px rgba(11, 45, 91, .55);
+}
+body.kedi-blog-brand .blogpc3-logo img {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  max-height: 44px;
+  object-fit: contain;
+}
+body.kedi-blog-brand .blogpc3-slide,
+body.kedi-blog-brand .blogr-inner {
+  border: 1px solid var(--kedi-blog-line) !important;
+  background: #fff !important;
+  box-shadow: 0 22px 52px -38px rgba(11, 45, 91, .42) !important;
+}
+body.kedi-blog-brand .blogpc3-slide { border-radius: 26px; overflow: hidden; }
+body.kedi-blog-brand .blogr-inner { border-radius: 20px; transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+body.kedi-blog-brand .blogr-inner:hover {
+  border-color: rgba(255, 198, 41, .72) !important;
+  box-shadow: 0 24px 56px -34px rgba(11, 45, 91, .48) !important;
+  transform: translateY(-2px);
+}
+body.kedi-blog-brand .blogpc3-content-tag {
+  background: var(--kedi-blog-yellow-soft) !important;
+  color: var(--kedi-blog-navy) !important;
+  border-color: rgba(255, 198, 41, .58) !important;
+}
+body.kedi-blog-brand .blogpc3-content-tag .icon img {
+  width: 20px !important;
+  height: 20px !important;
+  object-fit: contain;
+}
+body.kedi-blog-brand .blogt-link .text,
+body.kedi-blog-brand .blogt-link .icon,
+body.kedi-blog-brand .c-pri,
+body.kedi-blog-brand .blogr-author .text {
+  color: var(--kedi-blog-navy-2) !important;
+}
+body.kedi-blog-brand .blogr-img .inner,
+body.kedi-blog-brand .blogpc3-img .inner {
+  overflow: hidden;
+  border-radius: 16px;
+}
+body.kedi-blog-brand .blogr-right .widget {
+  overflow: hidden;
+  border: 1px solid var(--kedi-blog-line);
+  border-radius: 20px;
+  background: var(--kedi-blog-surface);
+  box-shadow: 0 20px 46px -34px rgba(11, 45, 91, .45);
+}
+body.kedi-blog-brand .blogr-right .widget img {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+}
+body.kedi-blog-brand #media_image-7 img,
+body.kedi-blog-brand #media_image-6 img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+body.kedi-blog-brand .sec-blogb {
+  background:
+    radial-gradient(circle at 82% 14%, rgba(255, 198, 41, .22), transparent 30%),
+    linear-gradient(135deg, var(--kedi-blog-navy), var(--kedi-blog-navy-2)) !important;
+}
+body.kedi-blog-brand .sec-blogb .title,
+body.kedi-blog-brand .sec-blogb .des {
+  color: #fff !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+body.kedi-blog-brand .sec-blogb .blogb-bg { opacity: .22 !important; }
+body.kedi-blog-brand .sec-blogb .blogb-bg img { object-fit: cover; }
+body.kedi-blog-brand .sec-blogb .blogb-decor img { max-width: 320px !important; object-fit: contain; }
+body.kedi-blog-brand .sec-blogb .blogb-decor2 img {
+  width: 64px !important;
+  height: 64px !important;
+  object-fit: contain;
+}
+body.kedi-blog-brand .btn-orange {
+  background: linear-gradient(180deg, var(--kedi-blog-yellow-2), var(--kedi-blog-yellow)) !important;
+  border-color: var(--kedi-blog-yellow) !important;
+  color: var(--kedi-blog-navy) !important;
+  box-shadow: 0 16px 34px -22px rgba(255, 198, 41, .68) !important;
+}
+body.kedi-blog-brand .btn-orange .txt {
+  color: var(--kedi-blog-navy) !important;
+  -webkit-text-fill-color: var(--kedi-blog-navy) !important;
+}
+body.kedi-blog-brand .btn-orange:hover { background: #fff !important; }
+body.kedi-blog-brand .blogf { display: none !important; }
+
+@media (max-width: 767px) {
+  body.kedi-blog-brand .blogpc3-logo { width: 150px !important; }
+  body.kedi-blog-brand .blogpc3-slide { border-radius: 20px; }
+}
+`;
+
+const BLOG_INTRO_COPY: Record<BlogCloneSlug, string> = {
+  'viet-phan-mem-thoi-dai-ai':
+    'Góc nhìn về cách phát triển phần mềm trong thời đại AI: AI-Native SDLC, Spec-Driven Development, AI-DLC, Agentic SDLC, Kanban và các kỹ thuật lập trình cùng AI.',
+  'tu-dong-hoa-doanh-nghiep':
+    'Loạt bài đi sâu vào những quy trình doanh nghiệp có thể tự động hoá, cách triển khai, chi phí và kinh nghiệm vận hành thực tế.',
+};
+
+function replaceCloneImage(
+  image: HTMLImageElement | null,
+  src: string,
+  alt = '',
+) {
+  if (!image) return;
+  image.src = src;
+  image.srcset = '';
+  image.removeAttribute('sizes');
+  image.alt = alt;
+}
+
+function applyKediBlogBranding(doc: Document, slug: BlogCloneSlug) {
+  const body = doc.body;
+  if (!body) return;
+
+  body.classList.add('kedi-blog-brand');
+
+  if (!doc.getElementById('kedi-blog-brand-style')) {
+    const style = doc.createElement('style');
+    style.id = 'kedi-blog-brand-style';
+    style.textContent = KEDI_BLOG_BRAND_CSS;
+    doc.head.appendChild(style);
+  }
+
+  replaceCloneImage(
+    doc.querySelector<HTMLImageElement>('.blogpc3-logo img'),
+    '/brand/kedi-logo-navy.png',
+    'Kedi.Media',
+  );
+
+  doc
+    .querySelectorAll<HTMLImageElement>('.blogpc3-content-tag .icon img')
+    .forEach((image) => replaceCloneImage(image, '/brand/kedi-icon.png'));
+
+  const intro = doc.querySelector<HTMLElement>('.blogpc3-top .des p');
+  if (intro) intro.textContent = BLOG_INTRO_COPY[slug];
+
+  doc.querySelectorAll<HTMLElement>('.blogpc3-content-tag .text').forEach((node) => {
+    node.textContent = 'KEDI chọn lọc';
+  });
+
+  const primaryPromo = doc.querySelector<HTMLElement>('#media_image-7');
+  replaceCloneImage(
+    primaryPromo?.querySelector<HTMLImageElement>('img') ?? null,
+    '/homepage/golden-data-journey.webp',
+    'KEDI - hệ sinh thái tăng trưởng',
+  );
+  const primaryPromoLink = primaryPromo?.querySelector<HTMLAnchorElement>('a');
+  if (primaryPromoLink) {
+    primaryPromoLink.href = '/blog';
+    primaryPromoLink.target = '_top';
+    primaryPromoLink.removeAttribute('rel');
+  }
+
+  const automationPromo = doc.querySelector<HTMLElement>('#media_image-6');
+  replaceCloneImage(
+    automationPromo?.querySelector<HTMLImageElement>('img') ?? null,
+    '/homepage/ai-automation-card.webp',
+    'KEDI - AI và Automation',
+  );
+  const automationPromoLink = automationPromo?.querySelector<HTMLAnchorElement>('a');
+  if (automationPromoLink) {
+    automationPromoLink.href = '/chuyen-doi-so';
+    automationPromoLink.target = '_top';
+    automationPromoLink.removeAttribute('rel');
+  }
+
+  replaceCloneImage(
+    doc.querySelector<HTMLImageElement>('.sec-blogb .blogb-bg img'),
+    '/homepage/cta-background.webp',
+  );
+  replaceCloneImage(
+    doc.querySelector<HTMLImageElement>('.sec-blogb .blogb-decor img'),
+    '/homepage/golden-mascot-transparent.webp',
+    'KEDI',
+  );
+  replaceCloneImage(
+    doc.querySelector<HTMLImageElement>('.sec-blogb .blogb-decor2 img'),
+    '/brand/kedi-icon.png',
+    'KEDI',
+  );
+
+  const cta = doc.querySelector<HTMLAnchorElement>('.sec-blogb .btn');
+  if (cta) {
+    cta.href = 'tel:0899332468';
+    cta.target = '_top';
+  }
+
+  const ctaText = doc.querySelector<HTMLElement>('.sec-blogb .btn .txt');
+  if (ctaText) ctaText.textContent = 'Liên hệ KEDI';
+}
+
+
 export default function BlogMonaCloneFrame({ slug, title }: Props) {
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const [height, setHeight] = useState(INITIAL_HEIGHT);
@@ -61,6 +303,8 @@ export default function BlogMonaCloneFrame({ slug, title }: Props) {
     const doc = frame?.contentDocument;
     const win = frame?.contentWindow;
     if (!frame || !doc || !win) return;
+
+    applyKediBlogBranding(doc, slug);
 
     let raf = 0;
     let resizeObserver: ResizeObserver | null = null;

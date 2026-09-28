@@ -267,28 +267,28 @@ export const journeyItemsV3 = [
     title: 'Convert',
     detail: 'Funnel / Commerce',
     description: 'Biến sự quan tâm thành lead, cuộc hội thoại hoặc đơn hàng bằng hành trình chuyển đổi rõ ràng.',
-    image: '/homepage/web-growth-card.webp',
+    image: '/service-menu/software-thumbnails/11-kedi-funnel.png',
   },
   {
     step: '03',
     title: 'Manage',
     detail: 'CRM / Profiles',
     description: 'Giữ toàn bộ ngữ cảnh khách hàng và hoạt động vận hành ở đúng nơi cần thiết.',
-    image: '/homepage/commerce-crm-card.webp',
+    image: '/service-menu/software-thumbnails/02-crm-pipeline-dashboard.png',
   },
   {
     step: '04',
     title: 'Automate',
     detail: 'Agents / AI Flow',
     description: 'Đưa các tác vụ lặp lại và luồng phối hợp xuyên ứng dụng sang workflow có kiểm soát.',
-    image: '/homepage/ai-automation-card.webp',
+    image: '/service-menu/software-thumbnails/07-ai-workflow-pipeline.png',
   },
   {
     step: '05',
     title: 'Measure',
     detail: 'Analytics',
     description: 'Kết nối tín hiệu để theo dõi hiệu quả, phát hiện vấn đề và ra quyết định nhanh hơn.',
-    image: '/homepage/hero-banner-alt-2.webp',
+    image: '/service-menu/software-thumbnails/04-analytics-dashboard.png',
   },
 ];
 
