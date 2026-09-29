@@ -26,7 +26,7 @@ export default function HomeInsightsV3() {
         <SectionIntro
           eyebrow="KEDI insights"
           title={<>Kiến thức để <span className="text-[#92700b]">ra quyết định tốt hơn.</span></>}
-          description="Các nhóm nội dung chính được đưa lên homepage bằng card có hình ảnh rõ ràng thay vì các khối chữ tĩnh."
+          description="Kiến thức về thiết kế website, UI/UX, SEO và tối ưu chuyển đổi giúp doanh nghiệp xây dựng nền tảng số hiệu quả và bền vững."
           light
         />
 

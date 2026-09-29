@@ -66,7 +66,7 @@ export default function LegacyFeaturedProjectsKedi() {
             </h2>
           </div>
           <p className="max-w-md text-sm leading-7 text-white/55 lg:text-right">
-            Website, commerce, AI và growth được thể hiện qua các visual nổi bật trong hệ sinh thái KEDI.
+            Các dự án website được phát triển theo mục tiêu thương hiệu, bán hàng và tăng trưởng, với giao diện rõ ràng, responsive và tối ưu trải nghiệm người dùng.
           </p>
         </div>
 

@@ -7,6 +7,16 @@ const serviceHrefs = Object.values(serviceCategories).flatMap((category) =>
     .filter((href): href is string => Boolean(href))
 );
 
+const aiProductHrefs = [
+  '/bo-ai-agent',
+  '/kedi-agents',
+  '/kedi-ai-flow',
+  '/kedi-profiles',
+  '/kedi-automate',
+  '/kedi-outreach',
+  '/kedi-analytics',
+];
+
 export function isNavItemActive(
   item: (typeof navigationConfig)[number],
   pathname: string
@@ -17,6 +27,12 @@ export function isNavItemActive(
 
   if (item.dropdownType === 'services') {
     return serviceHrefs.some(
+      (href) => pathname === href || pathname.startsWith(`${href}/`)
+    );
+  }
+
+  if (item.dropdownType === 'ai') {
+    return aiProductHrefs.some(
       (href) => pathname === href || pathname.startsWith(`${href}/`)
     );
   }
@@ -43,6 +59,7 @@ export const navigationConfig = [
   },
   {
     type: 'link',
+    dropdownType: 'ai',
     href: '/bo-ai-agent',
     labelKey: 'ai',
     label: 'AI',

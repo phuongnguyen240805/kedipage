@@ -99,7 +99,7 @@ export default function SolutionFlowV3() {
         <SectionIntro
           eyebrow="Connected journey"
           title={<>Từ một công cụ đến <span className="text-kedi-yellow">một hệ thống vận hành.</span></>}
-          description="Cuộn bánh xe ở cột bên phải. Bước đang chọn luôn nằm rõ ở giữa, bước trước và sau được giữ mờ ở hai mép để tạo cảm giác liên tục."
+          description="Quy trình website được triển khai xuyên suốt từ định hướng, UI/UX và nội dung đến phát triển, tối ưu hiệu suất và đưa vào vận hành."
         />
 
         <div className="mt-14 grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-stretch lg:gap-14">

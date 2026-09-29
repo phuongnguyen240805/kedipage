@@ -18,7 +18,7 @@ export default function NeedNavigatorV3() {
         <SectionIntro
           eyebrow="Start from the business need"
           title={<>Bạn đang muốn <span className="text-[#92700b]">cải thiện điều gì?</span></>}
-          description="Bắt đầu từ bài toán kinh doanh, sau đó KEDI mới dẫn tới nhóm sản phẩm và dịch vụ phù hợp."
+          description="Thiết kế website bắt đầu từ mục tiêu kinh doanh, sau đó KEDI xây dựng cấu trúc, nội dung và trải nghiệm phù hợp để thu hút đúng khách hàng và hỗ trợ chuyển đổi."
           light
         />
 

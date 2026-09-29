@@ -95,7 +95,7 @@ export default function HomeGallery() {
                 </h2>
               </div>
               <p className="col-span-4 max-w-lg justify-self-end text-sm leading-6 text-white/[0.55] xl:col-span-5 xl:text-base xl:leading-7">
-                Scroll để đi qua từng lớp năng lực: trải nghiệm số, bán hàng, AI, growth và intelligence.
+                Khám phá cách KEDI xây dựng website từ bố cục, hình ảnh và nội dung đến trải nghiệm responsive trên từng điểm chạm.
               </p>
             </div>
 

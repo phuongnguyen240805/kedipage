@@ -20,6 +20,7 @@ import HostlineSection from "./hostline-section";
 import { FiMenu, FiX } from "react-icons/fi";
 import MobileNav from "@/components/layouts/MobileNav";
 import ServicesDropdown from "../services-dropdown/services-dropdown";
+import AIMegaMenu from "./ai-mega-menu";
 
 const navTextClass =
   "text-[13px] lg:text-[14px] font-medium uppercase tracking-[0.08em] whitespace-nowrap px-0 py-0 h-auto bg-transparent text-current transition-colors duration-300";
@@ -29,13 +30,18 @@ const Header = ({ className }: { className?: string }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [hasOpenedServices, setHasOpenedServices] = useState(false);
+  const [isAiOpen, setIsAiOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [isCompact, setIsCompact] = useState(false);
   const lastScrollY = useRef(0);
   const mobileMenuOpenRef = useRef(false);
   const servicesMenuOpenRef = useRef(false);
+  const aiMenuOpenRef = useRef(false);
+  const aiCloseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const servicesTriggerRef = useRef<HTMLButtonElement>(null);
   const servicesDropdownRef = useRef<HTMLDivElement>(null);
+  const aiTriggerRef = useRef<HTMLAnchorElement>(null);
+  const aiDropdownRef = useRef<HTMLDivElement>(null);
 
   const router = useRouter();
   const pathname = usePathname();
@@ -43,6 +49,32 @@ const Header = ({ className }: { className?: string }) => {
 
   mobileMenuOpenRef.current = isMobileMenuOpen;
   servicesMenuOpenRef.current = isServicesOpen;
+  aiMenuOpenRef.current = isAiOpen;
+
+  const clearAiCloseTimer = useCallback(() => {
+    if (!aiCloseTimerRef.current) return;
+    clearTimeout(aiCloseTimerRef.current);
+    aiCloseTimerRef.current = null;
+  }, []);
+
+  const openAiMenu = useCallback(() => {
+    clearAiCloseTimer();
+    setIsServicesOpen(false);
+    setIsAiOpen(true);
+  }, [clearAiCloseTimer]);
+
+  const scheduleAiClose = useCallback(
+    (delay = 140) => {
+      clearAiCloseTimer();
+      aiCloseTimerRef.current = setTimeout(() => {
+        setIsAiOpen(false);
+        aiCloseTimerRef.current = null;
+      }, delay);
+    },
+    [clearAiCloseTimer]
+  );
+
+  useEffect(() => () => clearAiCloseTimer(), [clearAiCloseTimer]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -52,7 +84,12 @@ const Header = ({ className }: { className?: string }) => {
 
       setIsCompact(y > 16);
 
-      if (mobileMenuOpenRef.current || servicesMenuOpenRef.current || y < 16) {
+      if (
+        mobileMenuOpenRef.current ||
+        servicesMenuOpenRef.current ||
+        aiMenuOpenRef.current ||
+        y < 16
+      ) {
         setIsVisible(true);
       } else if (delta > 8 && y > 72) {
         setIsVisible(false);
@@ -69,8 +106,10 @@ const Header = ({ className }: { className?: string }) => {
   }, []);
 
   useEffect(() => {
+    clearAiCloseTimer();
     setIsServicesOpen(false);
-  }, [pathname]);
+    setIsAiOpen(false);
+  }, [pathname, clearAiCloseTimer]);
 
   useEffect(() => {
     if (!isServicesOpen) return;
@@ -94,6 +133,33 @@ const Header = ({ className }: { className?: string }) => {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [isServicesOpen]);
+
+  useEffect(() => {
+    if (!isAiOpen) return;
+
+    const handlePointerDown = (event: PointerEvent) => {
+      const target = event.target as Node;
+      if (aiTriggerRef.current?.contains(target)) return;
+      if (aiDropdownRef.current?.contains(target)) return;
+      clearAiCloseTimer();
+      setIsAiOpen(false);
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      clearAiCloseTimer();
+      setIsAiOpen(false);
+      aiTriggerRef.current?.focus();
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isAiOpen, clearAiCloseTimer]);
 
   const toggleSearch = useCallback(() => setIsSearchOpen((prev) => !prev), []);
   const toggleMobileMenu = useCallback(
@@ -145,10 +211,30 @@ const Header = ({ className }: { className?: string }) => {
                 return (
                   <NavigationMenuItem
                     key={key}
+                    data-ai-open={item.dropdownType === "ai" ? isAiOpen : undefined}
+                    onMouseEnter={item.dropdownType === "ai" ? openAiMenu : undefined}
+                    onMouseLeave={
+                      item.dropdownType === "ai" ? () => scheduleAiClose() : undefined
+                    }
+                    onFocusCapture={item.dropdownType === "ai" ? openAiMenu : undefined}
+                    onBlurCapture={
+                      item.dropdownType === "ai"
+                        ? (event) => {
+                            const next = event.relatedTarget as Node | null;
+                            if (!next || !event.currentTarget.contains(next)) {
+                              scheduleAiClose(80);
+                            }
+                          }
+                        : undefined
+                    }
                     className={cn(
                       boxEffectClass,
                       item.dropdownType === "services" &&
                         isServicesOpen &&
+                        "bg-kedi-yellow/15 text-kedi-yellow",
+                      item.dropdownType === "ai" && "kedi-ai-menu-item",
+                      item.dropdownType === "ai" &&
+                        isAiOpen &&
                         "bg-kedi-yellow/15 text-kedi-yellow"
                     )}
                   >
@@ -166,6 +252,8 @@ const Header = ({ className }: { className?: string }) => {
                           aria-expanded={isServicesOpen}
                           aria-controls="kedi-services-dropdown"
                           onClick={() => {
+                            clearAiCloseTimer();
+                            setIsAiOpen(false);
                             if (!isServicesOpen) setHasOpenedServices(true);
                             setIsServicesOpen((prev) => !prev);
                           }}
@@ -188,6 +276,40 @@ const Header = ({ className }: { className?: string }) => {
                             <ServicesDropdown />
                           </div>
                         )}
+                      </>
+                    ) : item.dropdownType === "ai" ? (
+                      <>
+                        <Link
+                          ref={aiTriggerRef}
+                          href={item.href ?? "/bo-ai-agent"}
+                          className={cn(
+                            "hover:bg-transparent focus:bg-transparent hover:text-current",
+                            navTextClass
+                          )}
+                          aria-haspopup="menu"
+                          aria-expanded={isAiOpen}
+                          aria-controls="kedi-ai-mega-menu"
+                          onClick={() => {
+                            clearAiCloseTimer();
+                            setIsAiOpen(false);
+                          }}
+                        >
+                          {item.labelKey ? t(`navigation.${item.labelKey}`) : "AI"}
+                        </Link>
+
+                        <div
+                          ref={aiDropdownRef}
+                          onMouseEnter={openAiMenu}
+                          onMouseLeave={() => scheduleAiClose()}
+                        >
+                          <AIMegaMenu
+                            isOpen={isAiOpen}
+                            onNavigate={() => {
+                              clearAiCloseTimer();
+                              setIsAiOpen(false);
+                            }}
+                          />
+                        </div>
                       </>
                     ) : item.type === "link" ? (
                       item.href && item.label ? (
