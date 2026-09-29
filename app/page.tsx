@@ -2,8 +2,8 @@
 
 import { Marquee } from '@/components';
 import ClientsKedi from '@/components/home-page/ClientsKedi';
+import { HomeContactSection } from '@/components/home-contact';
 import {
-  FinalCta,
   HomeGallery,
   HomeHero,
   HomeInsights,
@@ -32,7 +32,7 @@ export default function Home() {
       <ServiceCapabilities />
       <HomeInsights />
       <ClientsKedi />
-      <FinalCta />
+      <HomeContactSection />
     </div>
   );
 }

@@ -2,9 +2,9 @@
 
 import Image from 'next/image';
 import {
+  ChangeEvent,
   FormEvent,
   KeyboardEvent,
-  MouseEvent,
   useEffect,
   useRef,
   useState,
@@ -20,8 +20,20 @@ type ChatMessage = {
 const KEDI_MASCOT = '/homepage/golden-mascot-transparent.png';
 const ZALO_ICON = '/customer-care/zalo.png';
 
-const configuredZaloUrl = process.env.NEXT_PUBLIC_KEDI_ZALO_URL?.trim() || '';
-const configuredMessengerUrl = process.env.NEXT_PUBLIC_KEDI_MESSENGER_URL?.trim() || '';
+const ZALO_URL =
+  process.env.NEXT_PUBLIC_KEDI_ZALO_URL?.trim() ||
+  'https://zalo.me/4408585214232537731';
+
+// m.me is the standard Messenger deep/universal link: on mobile it hands off
+// to the Messenger app when available; otherwise it opens the web conversation.
+const MESSENGER_URL =
+  process.env.NEXT_PUBLIC_KEDI_MESSENGER_URL?.trim() ||
+  'https://m.me/thietkewebsitemonamedia';
+
+const EXTERNAL_CHANNEL_PROPS = {
+  target: '_blank' as const,
+  rel: 'noopener noreferrer nofollow external',
+};
 
 const INITIAL_MESSAGES: ChatMessage[] = [
   {
@@ -104,19 +116,6 @@ export default function CustomerCareWidget() {
     ]);
   };
 
-  const handleChannelClick = (
-    event: MouseEvent<HTMLAnchorElement>,
-    configuredUrl: string,
-    channelName: string,
-  ) => {
-    if (configuredUrl) return;
-    event.preventDefault();
-    setOpen(true);
-    addSystemMessage(
-      `${channelName} chưa được cấu hình. Hãy đặt biến môi trường tương ứng để bật liên kết trực tiếp.`,
-    );
-  };
-
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const message = input.trim();
@@ -129,6 +128,7 @@ export default function CustomerCareWidget() {
       { id: userId, role: 'user', text: message },
     ]);
     setInput('');
+    if (textareaRef.current) textareaRef.current.style.height = '44px';
     setTyping(true);
 
     if (replyTimerRef.current) clearTimeout(replyTimerRef.current);
@@ -145,6 +145,15 @@ export default function CustomerCareWidget() {
     }, 650);
   };
 
+  const handleInputChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    const target = event.currentTarget;
+    setInput(target.value);
+
+    // Auto-grow like a modern AI composer without letting the input take over the chat.
+    target.style.height = '44px';
+    target.style.height = `${Math.min(target.scrollHeight, 112)}px`;
+  };
+
   const handleTextareaKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
     if (event.key !== 'Enter' || event.shiftKey) return;
     event.preventDefault();
@@ -156,10 +165,7 @@ export default function CustomerCareWidget() {
     addSystemMessage(`${kind} đã chọn: ${file.name}`);
   };
 
-  const channelTargetProps = (configuredUrl: string) =>
-    configuredUrl
-      ? { target: '_blank' as const, rel: 'noopener noreferrer nofollow external' }
-      : {};
+
 
   return (
     <div className={styles.widget} data-kedi-customer-care="true">
@@ -172,10 +178,9 @@ export default function CustomerCareWidget() {
       <div className={`${styles.satellites} ${open ? styles.satellitesHidden : ''}`}>
         <a
           className={styles.satellite}
-          href={configuredZaloUrl || '#kedi-chat'}
+          href={ZALO_URL}
           aria-label="Nhắn KEDI qua Zalo"
-          onClick={(event) => handleChannelClick(event, configuredZaloUrl, 'Zalo')}
-          {...channelTargetProps(configuredZaloUrl)}
+          {...EXTERNAL_CHANNEL_PROPS}
         >
           <Image
             src={ZALO_ICON}
@@ -189,12 +194,9 @@ export default function CustomerCareWidget() {
 
         <a
           className={styles.satellite}
-          href={configuredMessengerUrl || '#kedi-chat'}
+          href={MESSENGER_URL}
           aria-label="Nhắn KEDI qua Messenger"
-          onClick={(event) =>
-            handleChannelClick(event, configuredMessengerUrl, 'Messenger')
-          }
-          {...channelTargetProps(configuredMessengerUrl)}
+          {...EXTERNAL_CHANNEL_PROPS}
         >
           <svg
             viewBox="0 0 48 48"
@@ -304,19 +306,15 @@ export default function CustomerCareWidget() {
         <div className={styles.channelLine}>
           Nói chuyện với Kedi qua{' '}
           <a
-            href={configuredZaloUrl || '#kedi-chat'}
-            onClick={(event) => handleChannelClick(event, configuredZaloUrl, 'Zalo')}
-            {...channelTargetProps(configuredZaloUrl)}
+            href={ZALO_URL}
+            {...EXTERNAL_CHANNEL_PROPS}
           >
             Zalo
           </a>{' '}
           hoặc{' '}
           <a
-            href={configuredMessengerUrl || '#kedi-chat'}
-            onClick={(event) =>
-              handleChannelClick(event, configuredMessengerUrl, 'Messenger')
-            }
-            {...channelTargetProps(configuredMessengerUrl)}
+            href={MESSENGER_URL}
+            {...EXTERNAL_CHANNEL_PROPS}
           >
             Messenger
           </a>{' '}
@@ -324,39 +322,61 @@ export default function CustomerCareWidget() {
         </div>
 
         <form className={styles.composer} onSubmit={handleSubmit}>
-          <button
-            className={styles.composerIcon}
-            type="button"
-            title="Gửi hình"
-            aria-label="Chọn hình ảnh"
-            onClick={() => imageInputRef.current?.click()}
-          >
-            🖼
-          </button>
-          <button
-            className={styles.composerIcon}
-            type="button"
-            title="Gửi file"
-            aria-label="Chọn tệp"
-            onClick={() => fileInputRef.current?.click()}
-          >
-            📎
-          </button>
+          <div className={styles.composerShell}>
+            <textarea
+              ref={textareaRef}
+              value={input}
+              rows={1}
+              maxLength={2000}
+              placeholder="Nhập tin nhắn cho Kedi AI..."
+              aria-label="Nội dung tin nhắn"
+              onChange={handleInputChange}
+              onKeyDown={handleTextareaKeyDown}
+            />
 
-          <textarea
-            ref={textareaRef}
-            value={input}
-            rows={1}
-            maxLength={2000}
-            placeholder="Anh/chị cần Kedi hỗ trợ gì?"
-            aria-label="Nội dung tin nhắn"
-            onChange={(event) => setInput(event.target.value)}
-            onKeyDown={handleTextareaKeyDown}
-          />
+            <div className={styles.composerToolbar}>
+              <div className={styles.composerTools}>
+                <button
+                  className={styles.composerIcon}
+                  type="button"
+                  title="Gửi hình ảnh"
+                  aria-label="Chọn hình ảnh"
+                  onClick={() => imageInputRef.current?.click()}
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4.75 4.75h14.5v14.5H4.75z" />
+                    <circle cx="9" cy="9" r="1.5" />
+                    <path d="m6.5 17 4-4 2.5 2.5 2-2 2.5 3.5" />
+                  </svg>
+                </button>
+                <button
+                  className={styles.composerIcon}
+                  type="button"
+                  title="Đính kèm tệp"
+                  aria-label="Chọn tệp"
+                  onClick={() => fileInputRef.current?.click()}
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m8.5 12.5 6.1-6.1a3 3 0 0 1 4.25 4.24l-7.3 7.3a4.5 4.5 0 0 1-6.36-6.36l7.07-7.07" />
+                  </svg>
+                </button>
+              </div>
 
-          <button className={styles.sendButton} type="submit" disabled={!input.trim() || typing}>
-            Gửi
-          </button>
+              <span className={styles.composerHint}>Enter để gửi · Shift + Enter xuống dòng</span>
+
+              <button
+                className={styles.sendButton}
+                type="submit"
+                aria-label="Gửi tin nhắn"
+                title="Gửi tin nhắn"
+                disabled={!input.trim() || typing}
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 19V5m0 0-6 6m6-6 6 6" />
+                </svg>
+              </button>
+            </div>
+          </div>
 
           <input
             ref={imageInputRef}

@@ -382,79 +382,165 @@
 }
 
 .composer {
-  padding: 12px;
+  padding: 10px 12px 12px;
   border-top: 1px solid var(--kedi-cc-border);
-  display: flex;
-  gap: 8px;
-  align-items: flex-end;
   background: #ffffff;
   flex: 0 0 auto;
 }
 
+.composerShell {
+  width: 100%;
+  border: 1px solid #d9e0e9;
+  border-radius: 18px;
+  background: #f8fafc;
+  box-shadow: 0 1px 2px rgba(11, 45, 91, 0.04);
+  overflow: hidden;
+  transition:
+    border-color 0.16s ease,
+    box-shadow 0.16s ease,
+    background 0.16s ease;
+}
+
+.composerShell:focus-within {
+  border-color: rgba(255, 198, 41, 0.92);
+  background: #ffffff;
+  box-shadow:
+    0 0 0 3px rgba(255, 198, 41, 0.14),
+    0 4px 14px rgba(11, 45, 91, 0.08);
+}
+
 .composer textarea {
-  flex: 1 1 auto;
-  min-width: 0;
-  min-height: 40px;
-  max-height: 100px;
-  padding: 10px 12px;
-  border: 1px solid var(--kedi-cc-border);
-  border-radius: 12px;
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  max-height: 112px;
+  padding: 12px 14px 6px;
+  border: 0;
   resize: none;
+  overflow-y: auto;
   font-family: inherit;
   font-size: 16px;
-  line-height: 1.25;
+  line-height: 1.35;
   color: var(--kedi-cc-fg);
-  background: var(--kedi-cc-bg);
+  background: transparent;
   outline: none;
 }
 
-.composer textarea:focus {
-  border-color: var(--kedi-cc-yellow);
-  box-shadow: 0 0 0 3px rgba(255, 198, 41, 0.14);
+.composer textarea::placeholder {
+  color: #8a96a5;
+  opacity: 1;
+}
+
+.composerToolbar {
+  min-height: 42px;
+  padding: 2px 6px 6px 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.composerTools {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 0 0 auto;
 }
 
 .composerIcon {
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   padding: 0;
-  background: var(--kedi-cc-bot);
-  border: 1px solid var(--kedi-cc-border);
-  border-radius: 10px;
+  background: transparent;
+  border: 0;
+  border-radius: 9px;
   cursor: pointer;
-  font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 0 0 38px;
-  color: inherit;
-  transition: background 0.15s ease, transform 0.1s ease;
+  flex: 0 0 34px;
+  color: #66758a;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease,
+    transform 0.1s ease;
+}
+
+.composerIcon svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .composerIcon:hover {
-  background: #e9edf2;
+  color: var(--kedi-cc-navy);
+  background: rgba(255, 198, 41, 0.16);
+}
+
+.composerIcon:active {
+  transform: scale(0.94);
+}
+
+.composerHint {
+  min-width: 0;
+  margin-left: 2px;
+  color: #9aa5b3;
+  font-size: 10.5px;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .sendButton {
-  min-width: 54px;
-  height: 40px;
-  padding: 0 18px;
+  width: 36px;
+  height: 36px;
+  margin-left: auto;
+  padding: 0;
+  flex: 0 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--kedi-cc-yellow);
   color: var(--kedi-cc-navy);
   border: 0;
-  border-radius: 10px;
+  border-radius: 50%;
   cursor: pointer;
-  font-weight: 700;
-  font-size: 13px;
-  transition: transform 0.1s ease, filter 0.15s ease;
+  transition:
+    transform 0.12s ease,
+    filter 0.15s ease,
+    box-shadow 0.15s ease;
+  box-shadow: 0 3px 9px rgba(255, 198, 41, 0.24);
+  transform: translateY(3px);
+}
+
+.sendButton svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .sendButton:hover:not(:disabled) {
-  transform: translateY(-1px);
-  filter: brightness(1.03);
+  transform: translateY(2px);
+  filter: brightness(1.02);
+  box-shadow: 0 5px 12px rgba(255, 198, 41, 0.3);
+}
+
+.sendButton:active:not(:disabled) {
+  transform: translateY(3px) scale(0.95);
 }
 
 .sendButton:disabled {
-  opacity: 0.45;
+  background: #e4e8ed;
+  color: #a4aebb;
+  box-shadow: none;
   cursor: not-allowed;
 }
 
@@ -610,25 +696,29 @@
   .composer {
     padding-bottom: max(12px, env(safe-area-inset-bottom));
   }
+
+  .composerShell {
+    border-radius: 17px;
+  }
+
+  .composerHint {
+    display: none;
+  }
 }
 
 @media (max-width: 390px) {
   .composer {
-    gap: 6px;
     padding-left: 8px;
     padding-right: 8px;
   }
 
-  .composerIcon {
-    width: 34px;
-    height: 38px;
-    flex-basis: 34px;
-    font-size: 16px;
+  .composer textarea {
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
-  .sendButton {
-    min-width: 48px;
-    padding: 0 12px;
+  .composerToolbar {
+    padding-left: 6px;
   }
 }
 

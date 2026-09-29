@@ -15,7 +15,6 @@ import {
   managementSolutionsLinks,
   mediaBrandingLinks,
   contactInfo,
-  companiesInfo,
   bottomLeftSection,
   bottomRightSection,
 } from '@/components/footer/dataFooter';
@@ -129,45 +128,16 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Call to Action - spans both columns on mobile */}
-          <div className="col-span-2 md:col-span-1 mt-8 relative overflow-visible">
-            <div className="bg-kedi-yellow p-1 text-kedi-navy text-center relative z-0">
-              <p className="text-sm font-medium font-[Archivo_Black,Arial,sans-serif]">{t('footer.callToAction')}</p>
-            </div>
+          {/* KEDI golden 3D mascot */}
+          <div className="col-span-2 md:col-span-1 mt-2 flex min-h-[118px] items-center justify-center">
             <Image
-              src="https://mona.media/template/assets/images/ft-hl-avt.avif"
-              alt="Avatar"
-              className="w-20 h-20 object-cover absolute -top-10 left-1/2 transform -translate-x-1/2 z-10"
-              width={80}
-              height={80}
+              src="/homepage/golden-mascot-transparent.webp"
+              alt="KEDI golden 3D mascot"
+              className="h-auto w-[112px] object-contain drop-shadow-[0_14px_28px_rgba(11,45,91,0.20)]"
+              width={112}
+              height={112}
             />
           </div>
-        </div>
-
-        {/* Company Info Section */}
-        <div className="flex flex-col md:flex-row justify-between gap-8 mb-8">
-          {companiesInfo.map((company) => (
-            <div key={company.name} className="flex-1 text-center">
-              <div className="flex items-center justify-center space-x-2 mb-2">
-                <div
-                  className={`w-8 h-8 ${company.bgColor} rounded flex items-center justify-center`}
-                >
-                  <span className="text-white font-bold text-sm font-[Archivo_Black,Arial,sans-serif]">
-                    {company.logoText}
-                  </span>
-                </div>
-                <span className="font-bold font-[Archivo_Black,Arial,sans-serif]">{company.name}</span>
-              </div>
-              <p className="text-sm text-gray-600">{t(company.fullName)}</p>
-              <p className="text-sm text-gray-600">{t(company.taxCode)}</p>
-              <p className="text-sm text-gray-600">
-                <span className="text-kedi-navy font-semibold font-[Archivo_Black,Arial,sans-serif]">
-                  {t(company.bankName)}
-                </span>
-              </p>
-              <p className="text-sm text-gray-600">{t(company.bankAccount)}</p>
-            </div>
-          ))}
         </div>
 
         <div className="border-t border-gray-200 pt-8" />
