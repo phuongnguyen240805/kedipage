@@ -10,7 +10,7 @@ import Footer from "@/components/footer/footer";
 import SocketContextProvider from "@/contexts/socketio";
 import Header from "@/components/layouts/header";
 import PreloaderWrapper from "@/components/PreloaderWrapper";
-import ChatwootWidget from "@/components/ChatProvider/ChatwootWidget";
+import CustomerCareWidget from "@/components/customer-care/CustomerCareWidget";
 import { QuoteShareProvider } from "@/components/features/quote-share";
 
 import Script from "next/script"; 
@@ -27,13 +27,6 @@ export default function RootLayout({ children, params }: { children: React.React
         <link rel="apple-touch-icon" href="/brand/kedi-app-icon.png" />
       </head>
       <body>
-        <ChatwootWidget
-          baseUrl="https://chatwoot.ryon.website"
-          websiteToken="mRrYWRN5PpP1GMemgHCuQkbG"
-          locale="vi"
-          position="right"
-        />
-
         <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
           <Script 
             src="https://app.rybbit.io/api/script.js" 
@@ -62,6 +55,7 @@ export default function RootLayout({ children, params }: { children: React.React
         </ThemeProvider>
 
         <QuoteShareProvider />
+        <CustomerCareWidget />
       </body>
     </html>
   );

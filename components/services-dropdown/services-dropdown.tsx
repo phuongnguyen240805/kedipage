@@ -230,7 +230,7 @@ const ServicesDropdown = () => {
       style={{ transformOrigin: 'top center' }}
     >
       <motion.div
-        className="relative mx-auto h-[588px] w-full max-w-[1540px] overflow-hidden rounded-[26px] border border-kedi-yellow/45 bg-[#f7f7fb] p-4 text-kedi-navy shadow-[0_28px_80px_rgba(3,18,48,0.38),0_0_24px_rgba(255,198,41,0.16)] lg:p-5"
+        className="relative mx-auto h-[588px] max-h-[calc(100dvh-5.25rem)] w-full max-w-[1540px] overflow-hidden rounded-[26px] border border-kedi-yellow/45 bg-[#f7f7fb] p-4 text-kedi-navy shadow-[0_28px_80px_rgba(3,18,48,0.38),0_0_24px_rgba(255,198,41,0.16)] lg:p-5"
         initial={prefersReducedMotion ? false : { opacity: 0.72, y: -6 }}
         animate={{ opacity: 1, y: 0 }}
         transition={
@@ -251,7 +251,7 @@ const ServicesDropdown = () => {
           }
         />
 
-        <div className="grid h-full min-h-0 grid-cols-[260px_minmax(0,1fr)_238px] gap-0 overflow-hidden rounded-[22px] xl:grid-cols-[340px_minmax(0,1fr)_300px]">
+        <div className="grid h-full min-h-0 grid-cols-[230px_minmax(0,1fr)_210px] gap-0 overflow-hidden rounded-[22px] xl:grid-cols-[300px_minmax(0,1fr)_260px] 2xl:grid-cols-[340px_minmax(0,1fr)_300px]">
           <motion.aside
             className="flex min-h-0 flex-col rounded-l-[22px] rounded-r-none bg-[#eceef5] p-2 will-change-transform"
             initial={prefersReducedMotion ? false : { opacity: 0, y: -8 }}

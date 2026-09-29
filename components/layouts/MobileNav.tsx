@@ -6,17 +6,33 @@ import { ChevronRight, ArrowLeft, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 
-import ServiceItem from '../services-dropdown/service-item';
 import {
   serviceCategories,
   VISIBLE_SERVICE_CATEGORY_KEYS,
+  type Service,
 } from '../services-dropdown/datas/services-data';
+import {
+  ServiceThumbnail,
+  getServiceMenuDescription,
+  getServiceMenuTitle,
+} from '../services-dropdown/dropdown-visuals';
 import LanguageSwitcher from '@/components/layouts/LanguageSwitcher';
 import { Button } from '../ui/button';
 import { isNavItemActive, navigationConfig } from '../../data/navigation-config';
 import { usePathname } from 'next/navigation';
 import Boderyelow from '../ui/boder-yelow';
 import BrandLogo from './brand-logo';
+
+function dedupeMobileServices(services: Service[]) {
+  const seen = new Set<string>();
+
+  return services.filter((service) => {
+    const key = `${service.href ?? ''}|${service.titleKey ?? service.title ?? ''}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
 
 export default function MobileNav({
   isOpen,
@@ -50,6 +66,9 @@ export default function MobileNav({
     []
   );
 
+  const translatedBack = String(t('common.back'));
+  const backLabel = translatedBack === 'common.back' ? 'Quay lại' : translatedBack;
+
   if (!isOpen) return null;
 
   const PanelHeader = ({
@@ -59,27 +78,30 @@ export default function MobileNav({
     title: string;
     onBack: () => void;
   }) => (
-    <div className="px-4 py-3 border-b border-white/15 flex items-center justify-between sticky top-0 bg-kedi-navy z-20">
+    <div className="sticky top-0 z-20 grid min-h-14 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2 border-b border-white/15 bg-kedi-navy px-3 pb-3 pt-[max(.75rem,env(safe-area-inset-top))] sm:px-4">
       <Button
         onClick={onBack}
-        className="bg-white/10 text-kedi-yellow hover:bg-white/20 px-3 py-1.5 h-auto rounded-lg text-sm font-bold flex items-center gap-1 shadow-none"
+        aria-label={backLabel}
+        className="grid h-10 w-10 place-items-center rounded-xl bg-white/10 p-0 text-kedi-yellow shadow-none hover:bg-white/20 sm:flex sm:w-auto sm:gap-1.5 sm:px-3"
       >
-        <ArrowLeft size={16} /> {t('common.back') || 'Quay lại'}
+        <ArrowLeft size={17} />
+        <span className="hidden text-sm font-bold sm:inline">{backLabel}</span>
       </Button>
-      <div className="flex-1 text-center font-bold text-white truncate px-2 uppercase text-[13px]">
+      <div className="min-w-0 truncate px-1 text-center text-[12px] font-black uppercase tracking-[0.04em] text-white sm:px-2 sm:text-[13px]">
         {title}
       </div>
       <Button
         onClick={closeAll}
-        className="p-2 bg-white/10 hover:bg-white/20 rounded-xl text-gray-300 shadow-none"
+        aria-label="Đóng menu"
+        className="grid h-10 w-10 place-items-center rounded-xl bg-white/10 p-0 text-gray-300 shadow-none hover:bg-white/20"
       >
-        <X size={20} />
+        <X size={19} />
       </Button>
     </div>
   );
 
   const content = (
-    <div className="fixed inset-0 z-[99999] lg:hidden bg-kedi-navy overflow-hidden font-sans">
+    <div className="fixed inset-0 z-[99999] h-[100dvh] overflow-hidden bg-kedi-navy font-sans lg:hidden">
       {/* 1. MÀN HÌNH CHÍNH */}
       <div
         className={`absolute inset-0 bg-kedi-navy transition-transform duration-300 z-10 ${activePanel === 'main' ? 'translate-x-0' : '-translate-x-full'}`}
@@ -99,7 +121,7 @@ export default function MobileNav({
           </div>
         </div>
 
-        <nav className="p-4 overflow-y-auto h-full pb-32 space-y-1">
+        <nav className="h-[calc(100dvh-3.5rem)] space-y-1 overflow-y-auto overscroll-contain p-4 pb-[calc(env(safe-area-inset-bottom)+2rem)] [-webkit-overflow-scrolling:touch]">
           {navigationConfig.map((item, idx) => {
             const label = item.labelKey
               ? t(`navigation.${item.labelKey}`)
@@ -159,7 +181,7 @@ export default function MobileNav({
 
       {/* 2. PANEL DỊCH VỤ */}
       <div
-        className={`absolute inset-0 bg-kedi-navy transition-transform duration-300 z-20 overflow-y-auto ${activePanel === 'services' ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`absolute inset-0 z-20 h-[100dvh] overflow-y-auto overscroll-contain bg-kedi-navy transition-transform duration-300 [-webkit-overflow-scrolling:touch] ${activePanel === 'services' ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <PanelHeader
           title={
@@ -172,7 +194,7 @@ export default function MobileNav({
           }
         />
 
-        <div className="p-4 pb-20">
+        <div className="px-3 pb-[calc(env(safe-area-inset-bottom)+1.5rem)] pt-3 sm:px-5 sm:pt-4">
           {!activeCategory ? (
             /* --- Màn hình chọn danh mục lớn --- */
             <div className="space-y-2">
@@ -195,27 +217,68 @@ export default function MobileNav({
             </div>
           ) : (
             /* --- Màn hình hiển thị các dịch vụ con --- */
-            <div className="grid gap-4 animate-in fade-in slide-in-from-right-4 duration-300">
-              {serviceCategories[activeCategory]?.services.map(
-                (service, idx) => (
-                  <Boderyelow key={idx} className="!p-0">
-                    <div
-                      className={`w-full ${!service.href ? 'opacity-40 pointer-events-none' : ''}`}
-                    >
-                      <ServiceItem
+            <div className="grid gap-2.5 animate-in fade-in slide-in-from-right-4 duration-300 md:grid-cols-2 md:gap-3">
+              {dedupeMobileServices(serviceCategories[activeCategory]?.services ?? []).map(
+                (service, idx) => {
+                  const fallbackTitle =
+                    service.title ??
+                    (service.titleKey ? String(t(service.titleKey)) : 'Dịch vụ KEDI');
+                  const fallbackDescription =
+                    service.description ??
+                    (service.descriptionKey ? String(t(service.descriptionKey)) : '');
+                  const title = getServiceMenuTitle(service, fallbackTitle);
+                  const description = getServiceMenuDescription(
+                    service,
+                    fallbackDescription
+                  );
+                  const href = service.href ?? '#';
+
+                  const content = (
+                    <>
+                      <ServiceThumbnail
                         service={service}
-                        index={idx}
-                        layout={
-                          service.layoutType ||
-                          serviceCategories[activeCategory].layout ||
-                          'compact-list'
-                        }
-                        t={t}
-                        onNavigate={closeAll}
+                        groupKey={activeCategory}
+                        className="h-[54px] w-[72px] rounded-[12px] sm:h-[66px] sm:w-[88px]"
                       />
-                    </div>
-                  </Boderyelow>
-                )
+
+                      <span className="min-w-0 self-center">
+                        <span className="line-clamp-2 block text-[14px] font-black leading-[1.2] text-white sm:text-[15px]">
+                          {title}
+                        </span>
+                        <span className="mt-1 line-clamp-2 block text-[11px] leading-[1.35] text-white/55 sm:text-[12px]">
+                          {description}
+                        </span>
+                      </span>
+
+                      <ChevronRight
+                        size={17}
+                        className="shrink-0 self-center text-kedi-yellow/75 transition-transform duration-200 group-hover:translate-x-0.5"
+                      />
+                    </>
+                  );
+
+                  const cardClass =
+                    'group grid min-h-[78px] w-full grid-cols-[72px_minmax(0,1fr)_18px] items-center gap-3 rounded-[16px] border border-white/10 bg-white/[0.045] px-2.5 py-2.5 text-left shadow-[0_10px_30px_rgba(0,0,0,.08)] transition-all duration-200 active:scale-[.99] active:border-kedi-yellow/55 active:bg-kedi-yellow/[0.08] sm:min-h-[94px] sm:grid-cols-[88px_minmax(0,1fr)_18px] sm:px-3';
+
+                  if (!service.href) {
+                    return (
+                      <div key={`disabled-${idx}-${title}`} className={`${cardClass} opacity-45`} aria-disabled="true">
+                        {content}
+                      </div>
+                    );
+                  }
+
+                  return (
+                    <Link
+                      key={`${href}-${idx}-${title}`}
+                      href={href}
+                      onClick={closeAll}
+                      className={cardClass}
+                    >
+                      {content}
+                    </Link>
+                  );
+                }
               )}
             </div>
           )}
@@ -223,7 +286,7 @@ export default function MobileNav({
       </div>
       {/* 3. PANEL BLOG */}
       <div
-        className={`absolute inset-0 bg-kedi-navy transition-transform duration-300 z-30 overflow-y-auto ${activePanel === 'blog' ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`absolute inset-0 z-30 h-[100dvh] overflow-y-auto overscroll-contain bg-kedi-navy transition-transform duration-300 [-webkit-overflow-scrolling:touch] ${activePanel === 'blog' ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <PanelHeader
           title={t('nav.blog') || 'Blog'}
