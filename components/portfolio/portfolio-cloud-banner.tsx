@@ -80,7 +80,7 @@ const logos = [
 
 export default function PortfolioCloudSection() {
   return (
-    <section className="relative bg-purple-800 text-white sm:py-20 overflow-hidden">
+    <section className="relative bg-kedi-navy text-white sm:py-20 overflow-hidden">
       {/* Sóng trên */}
       <div
         className="absolute top-0 left-0 w-full overflow-hidden"
@@ -94,7 +94,7 @@ export default function PortfolioCloudSection() {
           preserveAspectRatio="none"
         >
           <path
-            fill="#F7EEFE"
+            fill="#f4f6f9"
             d="M0,80 C150,120 350,120 500,90 C650,60 850,60 1000,90 C1150,120 1350,120 1440,100 L1440 0 L0 0 Z"
           />
         </svg>
@@ -145,7 +145,7 @@ export default function PortfolioCloudSection() {
             <p className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 leading-snug">
               Khách hàng đã làm với KEDI
             </p>
-            <p className="text-xl sm:text-2xl md:text-3xl font-extrabold bg-pink-600 inline-block px-4 py-1 rounded mb-2 leading-snug whitespace-nowrap">
+            <p className="text-xl sm:text-2xl md:text-3xl font-extrabold bg-kedi-yellow text-kedi-navy inline-block px-4 py-1 rounded-xl mb-2 leading-snug whitespace-nowrap">
               thì không có chuyện ký 1 hợp đồng rồi rời đi
             </p>
             <p className="text-xl sm:text-2xl md:text-3xl font-bold leading-snug">
@@ -162,7 +162,7 @@ export default function PortfolioCloudSection() {
           {/* Text chính */}
           <div className="mb-10 px-2">
             <p className="text-lg font-bold mb-2">Khách hàng đã làm với KEDI</p>
-            <p className="text-lg font-extrabold bg-pink-600 inline-block px-3 py-1 rounded mb-2">
+            <p className="text-lg font-extrabold bg-kedi-yellow text-kedi-navy inline-block px-3 py-1 rounded-lg mb-2">
               thì không có chuyện ký 1 hợp đồng rồi rời đi
             </p>
             <p className="text-lg font-bold">
@@ -208,9 +208,9 @@ export default function PortfolioCloudSection() {
         </div>
 
         {/* Phần chữ dưới cùng */}
-        <div className="mt-6 md:mt-10 max-w-xl mx-auto bg-purple-700 rounded-lg p-6 md:p-8 text-center">
+        <div className="mt-6 md:mt-10 max-w-xl mx-auto bg-white/[0.06] border border-white/10 rounded-[24px] p-6 md:p-8 text-center">
            <FadeIn>
-          <p className="inline-block bg-pink-500 rounded px-3 py-1 mb-3 text-sm font-semibold">
+          <p className="inline-block bg-kedi-yellow text-kedi-navy rounded-full px-4 py-1.5 mb-3 text-sm font-bold">
             Hơn thế nữa
           </p>
           <p className="text-base md:text-lg font-semibold">

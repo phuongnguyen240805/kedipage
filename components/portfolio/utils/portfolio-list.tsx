@@ -62,19 +62,19 @@ export default function PortfolioList() {
   const currentItems = filteredItems.slice(0, visibleCount);
 
   return (
-    <section id="section-mau-web" className="py-20 w-full ">
+    <section id="section-mau-web" className="w-full bg-[#f4f6f9] py-20 text-kedi-navy">
       <div className="container mx-auto px-4 max-w-[calc(100%-60px)]">
         {/* Header Title */}
         <FadeIn direction="up" amount={0.2}>
           <div className="text-center mb-12">
             <ScrollRevealHighlight className="max-w-3xl mx-auto rounded-xl p-3 items-center justify-center ">
-              <h1 className="max-w-3xl mx-auto text-5xl md:text-5xl font-bold text-white mb-4 uppercase">
+              <h1 className="max-w-3xl mx-auto text-4xl md:text-5xl font-black text-kedi-navy mb-4 uppercase tracking-[-0.035em]">
                 Mẫu dự án tiêu biểu
               </h1>
             </ScrollRevealHighlight>
-            <p className="text-white text-lg md:text-xl max-w-3xl mx-auto font-light tracking-wide italic leading-relaxed">
+            <p className="text-kedi-navy/60 text-base md:text-lg max-w-3xl mx-auto font-medium leading-relaxed">
               Khám phá các dự án{" "}
-              <span className="text-[#b9973f] font-semibold">
+              <span className="text-[#92700b] font-bold">
                 đã triển khai thành công
               </span>{" "}
               với hiệu quả tối ưu nhất.
@@ -93,7 +93,7 @@ export default function PortfolioList() {
                     className="flex flex-1 items-center py-2 md:py-0 relative"
                     ref={dropdownRef}
                   >
-                    <Search className="w-5 h-5 text-purple-600 flex-shrink-0" />
+                    <Search className="w-5 h-5 text-[#b57e00] flex-shrink-0" />
                     <input
                       type="text"
                       placeholder="Tìm kiếm dự án hoặc ngành nghề..."
@@ -167,7 +167,7 @@ export default function PortfolioList() {
                   {/* Link bọc toàn bộ để tối ưu SEO và trải nghiệm người dùng */}
                   <Link
                     href={`/du-an/${item.slug}`}
-                    className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col h-full relative"
+                    className="group bg-white rounded-[20px] overflow-hidden border border-kedi-navy/10 shadow-[0_14px_40px_-32px_rgba(11,45,91,.35)] hover:-translate-y-1 hover:shadow-[0_24px_60px_-34px_rgba(11,45,91,.42)] transition-all duration-500 flex flex-col h-full relative"
                   >
                     {/* Image Container */}
                     <div className="relative aspect-[4/3] overflow-hidden bg-gray-50">
@@ -184,15 +184,15 @@ export default function PortfolioList() {
 
                     {/* Nội dung Card */}
                     <div className="p-4 flex flex-col flex-grow">
-                      <span className="text-[10px] font-black text-purple-600 bg-purple-50 self-start px-2 py-1 rounded mb-2 uppercase">
+                      <span className="text-[10px] font-black text-[#7b5f07] bg-kedi-yellow/15 self-start px-2.5 py-1 rounded-full mb-2 uppercase tracking-[0.06em]">
                         {item.category}
                       </span>
-                      <h3 className="text-base font-bold text-gray-900 mb-4 line-clamp-2 group-hover:text-[#f98a22] transition-colors leading-tight">
+                      <h3 className="text-base font-bold text-kedi-navy mb-4 line-clamp-2 group-hover:text-[#92700b] transition-colors leading-tight">
                         {item.title}
                       </h3>
                       {/* Nút giả - dạng Text Underline đơn giản */}
                       <div className="mt-auto flex justify-start">
-                        <div className="group/btn cursor-pointer text-blue-600 font-bold text-sm flex items-center gap-1 transition-all duration-300">
+                        <div className="group/btn cursor-pointer text-kedi-navy font-bold text-sm flex items-center gap-1 transition-all duration-300 group-hover:text-[#92700b]">
                           {/* Phần chữ: Hover vào group thì gạch dưới */}
                           <span className="group-hover/btn:underline underline-offset-4 decoration-2">
                             Xem chi tiết
@@ -225,7 +225,7 @@ export default function PortfolioList() {
             <div className="flex justify-center mt-20">
               <button
                 onClick={handleLoadMore}
-                className="group relative inline-flex items-center gap-4 px-12 py-5 bg-gradient-to-r from-[#f98a22] to-[#ff5d22] text-white font-black text-xl rounded-2xl shadow-lg hover:-translate-y-1 transition-all active:scale-95"
+                className="group relative inline-flex items-center gap-4 px-10 md:px-12 py-4 md:py-5 bg-kedi-yellow text-kedi-navy font-black text-base md:text-lg rounded-2xl shadow-[0_16px_40px_rgba(255,198,41,.22)] hover:-translate-y-1 hover:bg-[#ffd95e] transition-all active:scale-95"
               >
                 <Plus className="w-6 h-6 stroke-[4px]" />
                 KHÁM PHÁ THÊM DỰ ÁN

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { Minus, Plus, Quote } from 'lucide-react';
 import { useState } from 'react';
@@ -15,6 +16,7 @@ const teamMembers = [
     role: 'CEO',
     description: 'Định hướng chiến lược, kết nối đội ngũ và đảm bảo mỗi dự án được triển khai đúng mục tiêu kinh doanh của khách hàng.',
     skills: ['Strategy', 'Leadership', 'Business'],
+    image: '/homepage/team/my-linh.webp',
   },
   {
     id: 2,
@@ -24,6 +26,7 @@ const teamMembers = [
     role: 'Business Development',
     description: 'Đồng hành từ giai đoạn tìm hiểu nhu cầu, tư vấn giải pháp đến xây dựng phương án hợp tác phù hợp cho từng doanh nghiệp.',
     skills: ['BD', 'Consulting', 'Partnership'],
+    image: '/homepage/team/duc-thinh.webp',
   },
   {
     id: 3,
@@ -33,6 +36,7 @@ const teamMembers = [
     role: 'Tech Lead',
     description: 'Phụ trách định hướng kỹ thuật, kiến trúc hệ thống và tiêu chuẩn triển khai để sản phẩm ổn định, dễ mở rộng và dễ bảo trì.',
     skills: ['Architecture', 'Engineering', 'Delivery'],
+    image: null,
   },
   {
     id: 4,
@@ -42,6 +46,7 @@ const teamMembers = [
     role: 'Senior Frontend Developer',
     description: 'Xây dựng trải nghiệm giao diện, tương tác và hiệu năng phía frontend với trọng tâm là tính nhất quán, responsive và dễ sử dụng.',
     skills: ['Frontend', 'UI Engineering', 'Performance'],
+    image: '/homepage/team/the-cong.webp',
   },
   {
     id: 5,
@@ -51,6 +56,7 @@ const teamMembers = [
     role: 'Senior Backend Developer',
     description: 'Phát triển backend, API và luồng dữ liệu phục vụ các hệ thống web, phần mềm và quy trình tự động hóa của KEDI.',
     skills: ['Backend', 'API', 'Data'],
+    image: null,
   },
   {
     id: 6,
@@ -60,6 +66,7 @@ const teamMembers = [
     role: 'Sales Manager',
     description: 'Phụ trách kết nối nhu cầu thực tế của khách hàng với đội triển khai, theo sát tiến độ tư vấn và trải nghiệm trong suốt quá trình hợp tác.',
     skills: ['Sales', 'Customer Success', 'Growth'],
+    image: '/homepage/team/phi-den.webp',
   },
   {
     id: 7,
@@ -69,6 +76,7 @@ const teamMembers = [
     role: 'Tech Supporter',
     description: 'Hỗ trợ kỹ thuật, tiếp nhận vấn đề và phối hợp xử lý để website và hệ thống của khách hàng duy trì trạng thái vận hành ổn định.',
     skills: ['Support', 'Troubleshooting', 'Operations'],
+    image: '/homepage/team/dinh-anh.webp',
   },
   {
     id: 8,
@@ -78,6 +86,7 @@ const teamMembers = [
     role: 'AI Operations',
     description: 'Các AI Agent hỗ trợ đội ngũ KEDI trong nghiên cứu, xử lý dữ liệu, tự động hóa tác vụ và tăng tốc những quy trình có thể chuẩn hóa.',
     skills: ['AI Agent', 'Automation', 'Research'],
+    image: null,
   },
   {
     id: 9,
@@ -87,6 +96,7 @@ const teamMembers = [
     role: 'Partner Network',
     description: 'Mạng lưới đối tác đồng hành cùng KEDI ở các mảng chuyên môn bổ trợ, giúp mở rộng năng lực triển khai khi dự án cần thêm nguồn lực phù hợp.',
     skills: ['Partner', 'Specialist', 'Collaboration'],
+    image: null,
   },
 ] as const;
 
@@ -196,12 +206,25 @@ export default function ClientsKedi() {
                           initial={reduceMotion ? false : { opacity: 0, scale: 0.92, rotate: -2 }}
                           animate={{ opacity: 1, scale: 1, rotate: 0 }}
                           transition={reduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.12, ease: EASE }}
-                          className="grid h-[150px] w-[150px] place-items-center overflow-hidden rounded-[24px] border border-kedi-navy/10 bg-[linear-gradient(145deg,#0b2d5b,#174f85)] text-white shadow-[0_22px_60px_rgba(11,45,91,.18)]"
+                          className="relative grid h-[150px] w-[150px] place-items-center overflow-hidden rounded-[24px] border border-kedi-navy/10 bg-[linear-gradient(145deg,#0b2d5b,#174f85)] text-white shadow-[0_22px_60px_rgba(11,45,91,.18)]"
                         >
-                          <div className="text-center">
-                            <span className="block text-[42px] font-black leading-none tracking-[-0.05em] text-kedi-yellow">{item.initials}</span>
-                            <span className="mt-3 block text-[9px] font-semibold uppercase tracking-[0.16em] text-white/55">KEDI Team</span>
-                          </div>
+                          {item.image ? (
+                            <>
+                              <Image
+                                src={item.image}
+                                alt={`${item.name} - ${item.role}`}
+                                fill
+                                sizes="150px"
+                                className="object-cover object-center"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-kedi-navy/20 via-transparent to-transparent" />
+                            </>
+                          ) : (
+                            <div className="text-center">
+                              <span className="block text-[42px] font-black leading-none tracking-[-0.05em] text-kedi-yellow">{item.initials}</span>
+                              <span className="mt-3 block text-[9px] font-semibold uppercase tracking-[0.16em] text-white/55">KEDI Team</span>
+                            </div>
+                          )}
                         </motion.div>
 
                         <motion.div

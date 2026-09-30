@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { ArrowUpRight } from 'lucide-react';
 import FadeIn from '../ui/Fadeoad';
 
 const portfolioSolutions = [
@@ -8,40 +9,40 @@ const portfolioSolutions = [
     id: 'website',
     label: 'KEDI.Media / Website',
     title: 'GIẢI PHÁP PREMIUM WEBSITE CHUYÊN NGHIỆP, SÁNG TẠO CHO DOANH NGHIỆP',
-    detailLink: 'https://mona.media/thiet-ke-website-tai-hcm/',
+    detailLink: '/thiet-ke-website-tai-hcm',
     balls: [
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765192719/brand3-ball-2_wmigjz.png',
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765192719/brand3-ball-2_wmigjz.png',
+      '/brand/kedi-icon.png',
+      '/brand/kedi-icon.png',
     ],
   },
   {
     id: 'digital',
-    label: 'Kedi.Media / Digital',
+    label: 'KEDI.Media / Digital',
     title: 'GIẢI PHÁP MARKETING GIÚP TĂNG KHÁCH HÀNG & DOANH THU LIÊN TỤC',
-    detailLink: 'https://mona.media/dich-vu-seo/',
+    detailLink: '/dich-vu-seo',
     balls: [
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765192719/brand3-ball-2_wmigjz.png',
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765192719/brand3-ball-2_wmigjz.png',
+      '/brand/kedi-icon.png',
+      '/brand/kedi-icon.png',
     ],
   },
   {
     id: 'studio',
-    label: 'Kedi.Media / Studio',
+    label: 'KEDI.Media / Studio',
     title: 'GIẢI PHÁP THƯƠNG HIỆU MEDIA SÁNG TẠO, CHẤT LƯỢNG CAO CHO BẠN',
-    detailLink: 'https://mona.media/chup-anh-profile-cong-ty/',
+    detailLink: '/chup-anh-profile-cong-ty',
     balls: [
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765192719/brand3-ball-2_wmigjz.png',
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765192719/brand3-ball-2_wmigjz.png',
+      '/brand/kedi-icon.png',
+      '/brand/kedi-icon.png',
     ],
   },
   {
     id: 'branding',
-    label: 'Kedi.Media / Branding',
+    label: 'KEDI.Media / Branding',
     title: 'GIẢI PHÁP GIÚP TĂNG NHẬN DIỆN VÀ SỰ CHUYÊN NGHIỆP CHO DOANH NGHIỆP',
-    detailLink: 'https://mona.media/branding-la-gi/',
+    detailLink: '/introduction',
     balls: [
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765192719/brand3-ball-2_wmigjz.png',
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765192719/brand3-ball-2_wmigjz.png',
+      '/brand/kedi-icon.png',
+      '/brand/kedi-icon.png',
     ],
   },
 ];
@@ -53,28 +54,28 @@ export default function PortfolioSection() {
       {/* Top decoration image */}
       <div className="w-full relative z-10">
         <Image
-          src="https://mona.media/template/assets/images/du_an_tong-21_11_23/divider-1.png"
-          alt="Connect decoration top"
+          src="/homepage/golden-data-journey.webp"
+          alt="KEDI visual system"
           width={1280}
           height={200}
-          className="w-full h-auto object-cover block"
+          className="h-24 w-full object-cover block opacity-30"
         />
       </div>
       </FadeIn>
 
       {/* Main content with background and enhanced bottom rounded corners */}
-      <div className="py-28 px-4 text-white overflow-hidden bg-[#200046] relative -mt-20 rounded-b-[600px] md:rounded-b-[500px] sm:rounded-b-[300px]">
+      <div className="py-24 md:py-28 px-4 text-white overflow-hidden bg-kedi-navy relative -mt-10 rounded-b-[72px] md:rounded-b-[110px]">
         {/* Background image layer with no gap */}
         <FadeIn>
         <div className="absolute inset-0 z-0 overflow-hidden">
           <Image
-            src="https://mona.media/template/assets/images/du_an_tong-21_11_23/brand-main-bg.png"
-            alt="Background"
+            src="/homepage/golden-insights-light.webp"
+            alt="KEDI background"
             fill
-            className="object-cover opacity-80"
+            className="object-cover opacity-10 mix-blend-screen"
             style={{
-              borderBottomLeftRadius: '300px',
-              borderBottomRightRadius: '300px',
+              borderBottomLeftRadius: '110px',
+              borderBottomRightRadius: '110px',
               zIndex: -1,
             }}
           />
@@ -87,7 +88,7 @@ export default function PortfolioSection() {
           <div className="text-center mb-10">
             <h2 className="text-xl md:text-2xl font-bold mb-2">
               <FadeIn>
-              <span className="inline-block bg-pink-500 text-white px-3 py-1 rounded-md">
+              <span className="inline-block bg-kedi-yellow text-kedi-navy px-4 py-2 rounded-full">
                 KEDI thiết kế sẵn lộ trình và giải pháp
               </span>
               </FadeIn>
@@ -105,7 +106,7 @@ export default function PortfolioSection() {
             {portfolioSolutions.map((item) => (
               <div
                 key={item.id} // Dùng id làm key để tránh cảnh báo React
-                className="relative bg-[#7B2CBF] rounded-xl p-8 overflow-hidden shadow-lg hover:bg-[#6B2DCD] transition-colors duration-300"
+                className="relative bg-white/[0.07] border border-white/10 rounded-[24px] p-8 overflow-hidden shadow-[0_24px_70px_-45px_rgba(0,0,0,.75)] hover:-translate-y-1 hover:border-kedi-yellow/45 hover:bg-white/[0.1] transition-all duration-300"
               >
                 <FadeIn>
                 {/* Floating balls (background decoration) */}
@@ -133,35 +134,23 @@ export default function PortfolioSection() {
                 <div className="relative z-10">
                   <div className="flex items-center gap-2 mb-2">
                     <Image
-                      src="https://mona.media/template/assets/images/du_an_tong-21_11_23/mona-icon-small.png"
-                      alt="Kedi Logo"
+                      src="/brand/kedi-icon.png"
+                      alt="KEDI"
                       width={18}
                       height={18}
                     />
                     <span className="font-bold text-base">{item.label}</span>
-                    <Image
-                      src="https://res.cloudinary.com/dzkcqktcl/image/upload/v1765193022/mona-icon-link-small_ifho7k.png"
-                      alt="Link Icon"
-                      width={14}
-                      height={14}
-                    />
+                    <ArrowUpRight className="h-3.5 w-3.5 text-kedi-yellow" />
                   </div>
 
                   <p className="font-bold text-base mb-3">{item.title}</p>
 
                   <a
                     href={item.detailLink}
-                    className="inline-flex items-center gap-3 text-white border border-white px-3 py-1 rounded-full text-xs hover:bg-white hover:text-purple-700 transition"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-white border border-kedi-yellow/50 px-4 py-2 rounded-full text-xs font-bold hover:bg-kedi-yellow hover:text-kedi-navy transition"
                   >
                     <span>Xem chi tiết</span>
-                    <Image
-                      src="https://mona.media/template/assets/images/du_an_tong-21_11_23/icon-arrow-right-2.svg"
-                      alt="Arrow"
-                      width={20}
-                      height={20}
-                    />
+                    <ArrowUpRight className="h-4 w-4" />
                   </a>
                 </div>
                 </FadeIn>

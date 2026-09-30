@@ -90,7 +90,6 @@ export const navigationConfig = [
         labelKey: 'businessAutomation',
         label: 'Tự động hoá doanh nghiệp',
       },
-      { href: '/blog/seo-guide', labelKey: 'seoGuide', label: 'Cẩm nang SEO' },
       {
         href: '/blog/digital-marketing',
         labelKey: 'digitalMarketing',
@@ -101,12 +100,6 @@ export const navigationConfig = [
         labelKey: 'webDesignExperience',
         label: 'Kinh nghiệm thiết kế website',
       },
-      {
-        href: '/blog/hosting-knowledge',
-        labelKey: 'hostingKnowledge',
-        label: 'Kiến thức Hosting',
-      },
-      { href: '/blog/education', labelKey: 'education', label: 'Giáo dục' },
     ],
   },
 ];

@@ -194,6 +194,36 @@ const META: Record<string, VisualMeta> = {
     icon: Network,
     tone: 'business',
   },
+  'services.items.digital_marketing_consulting.title': {
+    title: 'Tư vấn digital marketing',
+    description: 'Kéo khách từ nhiều kênh, đo bằng số thật.',
+    icon: Megaphone,
+    tone: 'business',
+  },
+  'services.items.ai_video_service.title': {
+    title: 'Dựng video AI',
+    description: 'Dựng phim câu chuyện công ty bằng AI.',
+    icon: Play,
+    tone: 'business',
+  },
+  'services.items.custom_software_development.title': {
+    title: 'Viết phần mềm theo yêu cầu',
+    description: 'CRM, ERP, HRM làm riêng cho doanh nghiệp.',
+    icon: Boxes,
+    tone: 'business',
+  },
+  'services.items.custom_ai_agent.title': {
+    title: 'Viết AI Agent theo yêu cầu',
+    description: 'Đặt riêng một trợ lý AI cho đúng việc của mình.',
+    icon: Bot,
+    tone: 'business',
+  },
+  'services.items.ai_transformation_consulting.title': {
+    title: 'Tư vấn chuyển đổi AI',
+    description: 'Đưa AI vào vận hành của cả công ty.',
+    icon: Workflow,
+    tone: 'business',
+  },
 
   // Selling
   'services.items.ecommerce_website.title': {
@@ -441,6 +471,11 @@ const REUSED_GENERATED_THUMBNAIL_BY_TITLE_KEY: Record<string, string> = {
   'services.items.wedding_invitation.title': '/select-trial',
   'services.items.domain_registration.title': '/kedi-seo',
   'services.items.digitalTransformation.title': '/kedi-os',
+  'services.items.digital_marketing_consulting.title': '/kedi-ads',
+  'services.items.ai_video_service.title': '/kedi-video',
+  'services.items.custom_software_development.title': '/kedi-os',
+  'services.items.custom_ai_agent.title': '/kedi-agents',
+  'services.items.ai_transformation_consulting.title': '/kedi-automate',
   'services.items.ecommerce_website.title': '/kedi-commerce',
   'services.items.ecommerce_templates.title': '/kedi-commerce',
   'services.items.brand_building.title': '/kedi-outreach',

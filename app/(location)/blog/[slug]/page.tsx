@@ -1,12 +1,15 @@
 // app/blog/[slug]/page.tsx
 import { fetchArticleBySlug, getArticleContent } from '@/lib/strapiApi';
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 import { Suspense } from 'react';
 import RightSidebar from '@/components/blog/TableOfConten/Sidebar';
 import TableOfContents from '@/components/blog/TableOfConten/TableOfContents';
 import Boderyelow from '@/components/ui/boder-yelow';
 
 // Dữ liệu tĩnh dự phòng khi không có bài viết từ BE
+const REMOVED_BLOG_SLUGS = new Set(['seo-guide', 'hosting-knowledge', 'education']);
+
 const fallbackData = {
   title: "Hướng dẫn tối ưu hóa giao diện người dùng chuyên nghiệp 2024",
   author: "KEDI Team",
@@ -29,6 +32,11 @@ export default async function BlogPost({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+
+  if (REMOVED_BLOG_SLUGS.has(slug)) {
+    redirect('/blog');
+  }
+
   let displayData;
 
   try {

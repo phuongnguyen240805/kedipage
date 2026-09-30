@@ -1,16 +1,5 @@
 // ✅ dataFooter.ts - phiên bản tương thích hoàn toàn i18n JSON mới
 export const aboutKediLinks = [
-  { href: '/gioi-thieu-ve-kedi', label: 'footer.aboutKedi.links.intro' },
-  {
-    href: '/du-an-thanh-cong',
-    label: 'footer.aboutKedi.links.successProjects',
-  },
-  {
-    href: '/su-thanh-cong-cua-kedi',
-    label: 'footer.aboutKedi.links.kediSuccess',
-  },
-  { href: '/khach-hang', label: 'footer.aboutKedi.links.clients' },
-  { href: '/tuyen-dung', label: 'footer.aboutKedi.links.careers' },
   { href: '/lien-he', label: 'footer.aboutKedi.links.contact' },
   { href: '/blog', label: 'footer.aboutKedi.links.blog' },
   { href: '/ban-tin-kedi', label: 'footer.aboutKedi.links.newsletter' },
@@ -25,6 +14,10 @@ export const websiteSolutionsLinks = [
   {
     href: '/dich-vu-web-hosting',
     label: 'footer.websiteSolutions.links.webHosting',
+  },
+  {
+    href: '/he-thong-lms',
+    label: 'footer.managementSolutions.links.lms',
   },
   {
     href: '/mua-ssl-cho-website',
@@ -78,39 +71,6 @@ export const onlineMarketingLinks = [
     href: '/chinh-sach-affiliate',
     label: 'footer.onlineMarketing.links.affiliatePolicy',
   },
-];
-
-export const hostingVpsServerLinks = [
-  {
-    href: '/hosting-cao-cap',
-    label: 'footer.hostingVpsServer.links.premiumHosting',
-  },
-  { href: '/thue-server', label: 'footer.hostingVpsServer.links.serverRental' },
-  { href: '/cloud-vps', label: 'footer.hostingVpsServer.links.cloudVps' },
-  {
-    href: '/email-doanh-nghiep',
-    label: 'footer.hostingVpsServer.links.enterpriseEmail',
-  },
-  { href: '/drm', label: 'footer.hostingVpsServer.links.drm' },
-  {
-    href: '/video-protect-solution',
-    label: 'footer.hostingVpsServer.links.videoProtect',
-  },
-  { href: '/chuyen-hosting', label: 'footer.hostingVpsServer.links.migration' },
-];
-
-export const managementSolutionsLinks = [
-  { href: '/he-thong-lms', label: 'footer.managementSolutions.links.lms' },
-  { href: '/he-thong-nhtq', label: 'footer.managementSolutions.links.nhtq' },
-  {
-    href: '/he-thong-quan-ly-ban-hang-da-kenh',
-    label: 'footer.managementSolutions.links.multiChannel',
-  },
-  {
-    href: '/phan-mem-quan-ly-nha-hang',
-    label: 'footer.managementSolutions.links.restaurant',
-  },
-  { href: '/phan-mem-vang', label: 'footer.managementSolutions.links.gold' },
 ];
 
 export const mediaBrandingLinks = [

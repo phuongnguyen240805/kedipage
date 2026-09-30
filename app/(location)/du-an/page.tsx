@@ -20,7 +20,7 @@ const PortfolioPage = memo(() => {
   const [isPending ] = useTransition();
 
   return (
-    <section className="min-h-screen overflow-visible">
+    <section className="min-h-screen overflow-visible bg-[#f4f6f9] text-kedi-navy">
      
      
         <div

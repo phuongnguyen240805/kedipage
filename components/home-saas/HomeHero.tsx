@@ -37,8 +37,8 @@ export default function HomeHero() {
             {...enter(0.12)}
             className="max-w-[980px] text-[50px] font-semibold leading-[0.92] tracking-[-0.055em] sm:text-[68px] lg:text-[78px] xl:text-[92px]"
           >
-            Một hệ sinh thái.
-            <span className="mt-2 block text-kedi-yellow">Nhiều năng lực tăng trưởng.</span>
+            Kiến tạo trải nghiệm số
+            <span className="mt-2 block text-kedi-yellow">phục vụ mô hình của bạn tăng trưởng.</span>
           </motion.h1>
 
           <motion.p

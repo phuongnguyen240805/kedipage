@@ -11,8 +11,6 @@ import {
   aboutKediLinks,
   websiteSolutionsLinks,
   onlineMarketingLinks,
-  hostingVpsServerLinks,
-  managementSolutionsLinks,
   mediaBrandingLinks,
   contactInfo,
   bottomLeftSection,
@@ -56,8 +54,51 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* ✅ RESPONSIVE GRID: 2 columns on mobile, 4 columns on desktop */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-          {/* Row 1: Về Kedi & Giải pháp website */}
-          {renderLinkList(t('footer.aboutKediTitle'), aboutKediLinks, t)}
+          {/* Về Kedi + Liên hệ */}
+          <div>
+            {renderLinkList(t('footer.aboutKediTitle'), aboutKediLinks, t)}
+
+            <div className="mt-8">
+              <h3 className="text-kedi-navy font-semibold mb-4 font-[Archivo_Black,Arial,sans-serif]">
+                {t('footer.contact')}
+              </h3>
+              <div className="space-y-3 text-sm text-gray-600">
+                <div className="flex items-start space-x-2">
+                  <Phone className="w-4 h-4 text-kedi-navy mt-1" />
+                  <div>
+                    <p>Số điện thoại</p>
+                    <a
+                      href={`tel:${contactInfo.phone}`}
+                      className="text-kedi-navy hover:text-kedi-yellow transition-colors"
+                    >
+                      {contactInfo.phone}
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <Globe2 className="w-4 h-4 text-kedi-navy mt-1" />
+                  <div>
+                    <p>Website</p>
+                    <a
+                      href={contactInfo.websiteUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-kedi-navy hover:text-kedi-yellow transition-colors"
+                    >
+                      {contactInfo.website}
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <MapPin className="w-4 h-4 text-kedi-navy mt-1" />
+                  <div>
+                    <p>{t('footer.address')}</p>
+                    <p>{contactInfo.address}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           {renderLinkList(
             t('footer.websiteSolutionsTitle'),
             websiteSolutionsLinks,
@@ -69,157 +110,100 @@ const Footer: React.FC = () => {
             onlineMarketingLinks,
             t
           )}
-          {renderLinkList(
-            t('footer.hostingVpsServerTitle'),
-            hostingVpsServerLinks,
-            t
-          )}
+          <div>
+            {renderLinkList(
+              t('footer.mediaBrandingTitle'),
+              mediaBrandingLinks,
+              t
+            )}
 
-          {renderLinkList(
-            t('footer.managementSolutionsTitle'),
-            managementSolutionsLinks,
-            t
-          )}
-          {renderLinkList(
-            t('footer.mediaBrandingTitle'),
-            mediaBrandingLinks,
-            t
-          )}
-
-          {/* Contact Section - spans both columns on mobile */}
-          <div className="col-span-2 md:col-span-1">
-            <h3 className="text-kedi-navy font-semibold mb-4 font-[Archivo_Black,Arial,sans-serif]">
-              {t('footer.contact')}
-            </h3>
-            <div className="space-y-3 text-sm text-gray-600">
-              <div className="flex items-start space-x-2">
-                <Phone className="w-4 h-4 text-kedi-navy mt-1" />
-                <div>
-                  <p>Số điện thoại</p>
-                  <a
-                    href={`tel:${contactInfo.phone}`}
-                    className="text-kedi-navy hover:text-kedi-yellow transition-colors"
-                  >
-                    {contactInfo.phone}
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-start space-x-2">
-                <Globe2 className="w-4 h-4 text-kedi-navy mt-1" />
-                <div>
-                  <p>Website</p>
-                  <a
-                    href={contactInfo.websiteUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-kedi-navy hover:text-kedi-yellow transition-colors"
-                  >
-                    {contactInfo.website}
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-start space-x-2">
-                <MapPin className="w-4 h-4 text-kedi-navy mt-1" />
-                <div>
-                  <p>{t('footer.address')}</p>
-                  <p>{contactInfo.address}</p>
-                </div>
-              </div>
+            <div className="mt-5 flex justify-start">
+              <Image
+                src="/homepage/golden-mascot-transparent.webp"
+                alt="KEDI golden 3D mascot"
+                className="h-auto w-[96px] object-contain drop-shadow-[0_12px_24px_rgba(11,45,91,0.18)]"
+                width={96}
+                height={96}
+              />
             </div>
-          </div>
-
-          {/* KEDI golden 3D mascot */}
-          <div className="col-span-2 md:col-span-1 mt-2 flex min-h-[118px] items-center justify-center">
-            <Image
-              src="/homepage/golden-mascot-transparent.webp"
-              alt="KEDI golden 3D mascot"
-              className="h-auto w-[112px] object-contain drop-shadow-[0_14px_28px_rgba(11,45,91,0.20)]"
-              width={112}
-              height={112}
-            />
           </div>
         </div>
 
-        <div className="border-t border-gray-200 pt-8" />
-
-        {/* Bottom Section - Stack on mobile */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
+        <div className="border-t border-gray-200 pt-5">
+          {/* Compact legal / certification row */}
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex min-w-0 items-center gap-3">
               <Image
                 src="/brand/kedi-icon.png"
                 alt="Kedi.Media icon"
-                width={32}
-                height={32}
-                className="w-8 h-8 object-contain"
+                width={30}
+                height={30}
+                className="h-[30px] w-[30px] shrink-0 object-contain"
               />
-              <div>
-                <span className="font-bold font-[Archivo_Black,Arial,sans-serif]">
+              <div className="flex min-w-0 flex-col gap-0.5 sm:flex-row sm:items-center sm:gap-3">
+                <span className="shrink-0 whitespace-nowrap font-bold font-[Archivo_Black,Arial,sans-serif]">
                   {t(bottomLeftSection.companyName)}
                 </span>
-                <p className="text-xs text-gray-500">
+                <span className="whitespace-nowrap text-xs text-gray-500">
                   {t(bottomLeftSection.description)}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-26 h-10 bg-blue-600 rounded flex items-center justify-center">
-                <span className="text-white text-xs font-bold font-[Archivo_Black,Arial,sans-serif]">
-                  {t(bottomRightSection.notification)}
                 </span>
               </div>
-              <span className="text-xs text-gray-500">
+            </div>
+
+            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 lg:flex-nowrap lg:justify-end">
+              <div className="inline-flex h-9 shrink-0 items-center justify-center whitespace-nowrap rounded-md bg-blue-600 px-4 text-xs font-bold text-white font-[Archivo_Black,Arial,sans-serif]">
+                {t(bottomRightSection.notification)}
+              </div>
+              <span className="shrink-0 whitespace-nowrap text-xs text-gray-500">
                 {t(bottomRightSection.notificationSub)}
               </span>
-            </div>
-            <div className="w-12 h-8 bg-green-600 rounded flex items-center justify-center">
-              <span className="text-white text-xs font-bold font-[Archivo_Black,Arial,sans-serif]">
+              <div className="inline-flex h-9 shrink-0 items-center justify-center whitespace-nowrap rounded-md bg-green-600 px-3 text-[11px] font-bold text-white font-[Archivo_Black,Arial,sans-serif]">
                 {t(bottomRightSection.dmca)}
-              </span>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Footer Bottom - Stack on mobile */}
-        <div className="flex flex-col md:flex-row justify-between items-center mt-6 pt-6 border-t border-gray-100 gap-4">
-          <div className="flex items-center space-x-2">
-            <span className="text-sm text-gray-500">
-              {t('footer.allRights')}
-            </span>
-            <Button
-              onClick={() => navigateTo('/dieu-khoan')}
-              onKeyDown={(e) => handleKeyPress(e, '/dieu-khoan')}
-              className="text-kedi-navy hover:text-kedi-navy/80 cursor-pointer"
-            >
-              {t('footer.terms')}
-            </Button>
-          </div>
+          {/* Terms + social */}
+          <div className="mt-4 flex flex-col gap-3 border-t border-gray-100 pt-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="whitespace-nowrap text-sm text-gray-500">
+                {t('footer.allRights')}
+              </span>
+              <Button
+                onClick={() => navigateTo('/dieu-khoan')}
+                onKeyDown={(e) => handleKeyPress(e, '/dieu-khoan')}
+                className="h-9 whitespace-nowrap rounded-xl bg-kedi-yellow px-5 text-sm font-semibold text-kedi-navy hover:bg-kedi-yellow/90 cursor-pointer"
+              >
+                {t('footer.terms')}
+              </Button>
+            </div>
 
-          <div className="flex space-x-2">
-            <Button
-              onClick={() => navigateTo('/facebook')}
-              onKeyDown={(e) => handleKeyPress(e, '/facebook')}
-              className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 cursor-pointer"
-            >
-              <Facebook className="w-4 h-4 text-white" />
-            </Button>
-            <Button
-              onClick={() => navigateTo('/linkedin')}
-              onKeyDown={(e) => handleKeyPress(e, '/linkedin')}
-              className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-600 cursor-pointer"
-            >
-              <Linkedin className="w-4 h-4 text-white" />
-            </Button>
-            <Button
-              onClick={() => navigateTo('/youtube')}
-              onKeyDown={(e) => handleKeyPress(e, '/youtube')}
-              className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 cursor-pointer"
-            >
-              <Youtube className="w-4 h-4 text-white" />
-            </Button>
+            <div className="flex shrink-0 gap-2">
+              <Button
+                onClick={() => navigateTo('/facebook')}
+                onKeyDown={(e) => handleKeyPress(e, '/facebook')}
+                aria-label="Facebook"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-600 p-0 hover:bg-blue-700 cursor-pointer"
+              >
+                <Facebook className="h-4 w-4 text-white" />
+              </Button>
+              <Button
+                onClick={() => navigateTo('/linkedin')}
+                onKeyDown={(e) => handleKeyPress(e, '/linkedin')}
+                aria-label="LinkedIn"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-500 p-0 hover:bg-blue-600 cursor-pointer"
+              >
+                <Linkedin className="h-4 w-4 text-white" />
+              </Button>
+              <Button
+                onClick={() => navigateTo('/youtube')}
+                onKeyDown={(e) => handleKeyPress(e, '/youtube')}
+                aria-label="YouTube"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-red-600 p-0 hover:bg-red-700 cursor-pointer"
+              >
+                <Youtube className="h-4 w-4 text-white" />
+              </Button>
+            </div>
           </div>
         </div>
       </div>

@@ -73,11 +73,18 @@ export const serviceCategories: ServiceCategories = {
     layout: 'horizontal',
     gridCols: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3',
     services: [
+      // Keep the first group aligned with the reference menu order.
       {
-        href: '/dich-vu-seo',
-        titleKey: 'services.items.seo_service.title',
-        descriptionKey: 'services.items.seo_service.description',
-        cloudinaryId: 'mega-menu-new-content-1_ow6vmw',
+        href: '/thiet-ke-website-tai-hcm',
+        titleKey: 'services.items.website_design.title',
+        descriptionKey: 'services.items.website_design.description',
+        cloudinaryId: 'mega-menu-new-content-3_my0bou',
+      },
+      {
+        href: '/blog/digital-marketing',
+        titleKey: 'services.items.digital_marketing_consulting.title',
+        title: 'Tư vấn digital marketing',
+        description: 'Kéo khách từ nhiều kênh, đo bằng số thật.',
       },
       {
         href: '/quay-phim-gioi-thieu-doanh-nghiep',
@@ -86,16 +93,36 @@ export const serviceCategories: ServiceCategories = {
         cloudinaryId: 'mcydo0digxtpcvzd8ser',
       },
       {
+        href: '/kedi-video',
+        titleKey: 'services.items.ai_video_service.title',
+        title: 'Dựng video AI',
+        description: 'Dựng phim câu chuyện công ty bằng AI.',
+      },
+      {
+        href: '/kedi-os',
+        titleKey: 'services.items.custom_software_development.title',
+        title: 'Viết phần mềm theo yêu cầu',
+        description: 'CRM, ERP, HRM làm riêng cho doanh nghiệp.',
+      },
+      {
+        href: '/bo-ai-agent',
+        titleKey: 'services.items.custom_ai_agent.title',
+        title: 'Viết AI Agent theo yêu cầu',
+        description: 'Đặt riêng một trợ lý AI cho đúng việc của mình.',
+      },
+      {
+        href: '/chuyen-doi-so',
+        titleKey: 'services.items.ai_transformation_consulting.title',
+        title: 'Tư vấn chuyển đổi AI',
+        description: 'Đưa AI vào vận hành của cả công ty.',
+      },
+
+      // Existing KEDI items that are not in the reference image stay after it.
+      {
         href: '/chup-anh-profile-cong-ty',
         titleKey: 'services.items.corporate_photography.title',
         descriptionKey: 'services.items.corporate_photography.description',
         cloudinaryId: 'mega-menu-new-content-2_vpuill',
-      },
-      {
-        href: '/thiet-ke-website',
-        titleKey: 'services.items.website_design.title',
-        descriptionKey: 'services.items.website_design.description',
-        cloudinaryId: 'mega-menu-new-content-3_my0bou',
       },
       {
         href: '/thiet-ke-landing-page',
@@ -110,12 +137,6 @@ export const serviceCategories: ServiceCategories = {
         cloudinaryId: 'mega-menu-new-content-5_q7yan9',
       },
       {
-        href: '/cloud-hosting',
-        titleKey: 'services.items.cloud_hosting.title',
-        descriptionKey: 'services.items.cloud_hosting.description',
-        cloudinaryId: 'mega-menu-new-content-3_my0bou',
-      },
-        {
         href: '/mau-thiep-cuoi',
         titleKey: 'services.items.wedding_invitation.title',
         descriptionKey: 'services.items.wedding_invitation.description',
@@ -127,7 +148,7 @@ export const serviceCategories: ServiceCategories = {
         descriptionKey: 'services.items.domain_registration.description',
         cloudinaryId: 'mega-menu-new-content-5_q7yan9',
       },
-       {
+      {
         href: '/chuyen-doi-so',
         titleKey: 'services.items.digitalTransformation.title',
         descriptionKey: 'services.items.digitalTransformation.description',
@@ -156,20 +177,6 @@ export const serviceCategories: ServiceCategories = {
         descriptionKey: 'services.items.ecommerce_templates.description',
         cloudinaryId: 'mega-menu-new-content-5_q7yan9',
         layoutType: 'feature-card',
-      },
-      {
-        href: '/cloud-hosting',
-        titleKey: 'services.items.cloud_hosting.title',
-        descriptionKey: 'services.items.cloud_hosting.description',
-        cloudinaryId: 'mega-menu-new-content-6_gjxdld',
-        layoutType: 'feature-card',
-      },
-      {
-        href: '/dich-vu-seo',
-        titleKey: 'services.items.seo_service.title',
-        descriptionKey: 'services.items.seo_service.description',
-        cloudinaryId: 'mega-menu-new-content-1_ow6vmw',
-        layoutType: 'feature-card-right',
       },
       {
         href: '/quay-phim-gioi-thieu-doanh-nghiep',
