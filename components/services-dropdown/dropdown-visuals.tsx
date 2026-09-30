@@ -506,6 +506,8 @@ const REUSED_GENERATED_THUMBNAIL_BY_HREF: Record<string, string> = {
 };
 
 function getMenuThumbnailImage(service: Service, groupKey?: string) {
+  if (service.imageUrl) return service.imageUrl;
+
   const softwareThumbnail = getSoftwareThumbnailImage(service);
   if (softwareThumbnail) return softwareThumbnail;
 

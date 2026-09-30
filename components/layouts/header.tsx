@@ -31,6 +31,7 @@ const Header = ({ className }: { className?: string }) => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [hasOpenedServices, setHasOpenedServices] = useState(false);
   const [isAiOpen, setIsAiOpen] = useState(false);
+  const [hasOpenedAi, setHasOpenedAi] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [isCompact, setIsCompact] = useState(false);
   const lastScrollY = useRef(0);
@@ -59,6 +60,7 @@ const Header = ({ className }: { className?: string }) => {
 
   const openAiMenu = useCallback(() => {
     clearAiCloseTimer();
+    setHasOpenedAi(true);
     setIsServicesOpen(false);
     setIsAiOpen(true);
   }, [clearAiCloseTimer]);
@@ -297,19 +299,21 @@ const Header = ({ className }: { className?: string }) => {
                           {item.labelKey ? t(`navigation.${item.labelKey}`) : "AI"}
                         </Link>
 
-                        <div
-                          ref={aiDropdownRef}
-                          onMouseEnter={openAiMenu}
-                          onMouseLeave={() => scheduleAiClose()}
-                        >
-                          <AIMegaMenu
-                            isOpen={isAiOpen}
-                            onNavigate={() => {
-                              clearAiCloseTimer();
-                              setIsAiOpen(false);
-                            }}
-                          />
-                        </div>
+                        {hasOpenedAi && (
+                          <div
+                            ref={aiDropdownRef}
+                            onMouseEnter={openAiMenu}
+                            onMouseLeave={() => scheduleAiClose()}
+                          >
+                            <AIMegaMenu
+                              isOpen={isAiOpen}
+                              onNavigate={() => {
+                                clearAiCloseTimer();
+                                setIsAiOpen(false);
+                              }}
+                            />
+                          </div>
+                        )}
                       </>
                     ) : item.type === "link" ? (
                       item.href && item.label ? (

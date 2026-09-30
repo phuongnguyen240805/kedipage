@@ -36,59 +36,59 @@ const CATEGORY_META: Record<
   { description: string; eyebrow: string }
 > = {
   business_services: {
-    eyebrow: 'Dịch vụ tăng trưởng',
-    description: 'Website, SEO, media và hạ tầng triển khai cho doanh nghiệp dịch vụ.',
+    eyebrow: 'Dá»‹ch vá»¥ tÄƒng trÆ°á»Ÿng',
+    description: 'Website, SEO, media vÃ  háº¡ táº§ng triá»ƒn khai cho doanh nghiá»‡p dá»‹ch vá»¥.',
   },
   selling: {
-    eyebrow: 'Bán hàng & vận hành',
-    description: 'Website bán hàng, nội dung, chuyển đổi và công cụ giúp tăng doanh số.',
+    eyebrow: 'BÃ¡n hÃ ng & váº­n hÃ nh',
+    description: 'Website bÃ¡n hÃ ng, ná»™i dung, chuyá»ƒn Ä‘á»•i vÃ  cÃ´ng cá»¥ giÃºp tÄƒng doanh sá»‘.',
   },
   software_solutions: {
-    eyebrow: 'Giải pháp phần mềm',
-    description: 'Hệ thống KEDI cho vận hành, AI, tăng trưởng và từng ngành chuyên biệt.',
+    eyebrow: 'Giáº£i phÃ¡p pháº§n má»m',
+    description: 'Há»‡ thá»‘ng KEDI cho váº­n hÃ nh, AI, tÄƒng trÆ°á»Ÿng vÃ  tá»«ng ngÃ nh chuyÃªn biá»‡t.',
   },
   ai_agents: {
     eyebrow: 'AI workforce',
-    description: 'Các AI Agent KEDI hỗ trợ bán hàng, chăm sóc, vận hành và tuyển dụng.',
+    description: 'CÃ¡c AI Agent KEDI há»— trá»£ bÃ¡n hÃ ng, chÄƒm sÃ³c, váº­n hÃ nh vÃ  tuyá»ƒn dá»¥ng.',
   },
   hosting_infrastructure: {
-    eyebrow: 'Hạ tầng số',
-    description: 'Hosting, VPS, tên miền, SSL và hạ tầng cho sản phẩm số.',
+    eyebrow: 'Háº¡ táº§ng sá»‘',
+    description: 'Hosting, VPS, tÃªn miá»n, SSL vÃ  háº¡ táº§ng cho sáº£n pháº©m sá»‘.',
   },
   course_instructor: {
     eyebrow: 'EdTech',
-    description: 'Website khóa học, LMS và công cụ cho giảng viên kinh doanh online.',
+    description: 'Website khÃ³a há»c, LMS vÃ  cÃ´ng cá»¥ cho giáº£ng viÃªn kinh doanh online.',
   },
 };
 
 const MOCK_SERVICES: Partial<Record<string, MenuService[]>> = {
   course_instructor: [
     {
-      title: 'Cổng học viên',
+      title: 'Cá»•ng há»c viÃªn',
       mock: true,
       mockBadge: 'UI DEMO',
-      mockDescription: 'Mock item chờ dữ liệu và đường dẫn thật.',
+      mockDescription: 'Mock item chá» dá»¯ liá»‡u vÃ  Ä‘Æ°á»ng dáº«n tháº­t.',
       mockIcon: 'HV',
     },
     {
-      title: 'App học viên',
+      title: 'App há»c viÃªn',
       mock: true,
       mockBadge: 'UI DEMO',
-      mockDescription: 'Mock item chờ dữ liệu và đường dẫn thật.',
+      mockDescription: 'Mock item chá» dá»¯ liá»‡u vÃ  Ä‘Æ°á»ng dáº«n tháº­t.',
       mockIcon: 'APP',
     },
     {
-      title: 'Thanh toán khóa học',
+      title: 'Thanh toÃ¡n khÃ³a há»c',
       mock: true,
       mockBadge: 'UI DEMO',
-      mockDescription: 'Mock item chờ dữ liệu và đường dẫn thật.',
+      mockDescription: 'Mock item chá» dá»¯ liá»‡u vÃ  Ä‘Æ°á»ng dáº«n tháº­t.',
       mockIcon: 'PAY',
     },
     {
-      title: 'Automation chăm sóc học viên',
+      title: 'Automation chÄƒm sÃ³c há»c viÃªn',
       mock: true,
       mockBadge: 'UI DEMO',
-      mockDescription: 'Mock item chờ dữ liệu và đường dẫn thật.',
+      mockDescription: 'Mock item chá» dá»¯ liá»‡u vÃ  Ä‘Æ°á»ng dáº«n tháº­t.',
       mockIcon: 'AUTO',
     },
   ],
@@ -146,7 +146,7 @@ const ServicesDropdown = () => {
     CATEGORY_META[activeTab] ??
     ({
       eyebrow: 'KEDI Services',
-      description: 'Giải pháp được thiết kế theo nhu cầu thực tế của doanh nghiệp.',
+      description: 'Giáº£i phÃ¡p Ä‘Æ°á»£c thiáº¿t káº¿ theo nhu cáº§u thá»±c táº¿ cá»§a doanh nghiá»‡p.',
     } as const);
 
   // UI branding only: keep original href/API values untouched, but never show MONA
@@ -167,7 +167,7 @@ const ServicesDropdown = () => {
   const getTitle = (service: MenuService) =>
     brandDisplayText(
       service.title ??
-        translate(service.titleKey, service.titleKey ?? 'Dịch vụ đang cập nhật')
+        translate(service.titleKey, service.titleKey ?? 'Dá»‹ch vá»¥ Ä‘ang cáº­p nháº­t')
     );
 
   const getDescription = (service: MenuService) =>
@@ -175,7 +175,7 @@ const ServicesDropdown = () => {
       service.mockDescription ??
         translate(
           service.descriptionKey,
-          service.descriptionKey ? service.descriptionKey : 'KEDI đang cập nhật mô tả.'
+          service.descriptionKey ? service.descriptionKey : 'KEDI Ä‘ang cáº­p nháº­t mÃ´ táº£.'
         )
     );
 
@@ -186,7 +186,7 @@ const ServicesDropdown = () => {
     getServiceMenuDescription(service, getDescription(service));
 
   const getCategoryTitle = (category: string) => {
-    if (category === 'ai_agents') return 'Bộ AI Agent';
+    if (category === 'ai_agents') return 'Bá»™ AI Agent';
     const titleKey = serviceCategories[category]?.titleKey;
     return translate(titleKey, category);
   };
@@ -222,7 +222,7 @@ const ServicesDropdown = () => {
 
   return (
     <motion.div
-      className="fixed left-0 right-0 top-16 z-[9999] w-full px-4 pt-3 antialiased will-change-transform xl:px-8"
+      className="fixed left-0 right-0 top-16 z-[9999] w-full px-4 pt-3 will-change-transform xl:px-8"
       initial={
         prefersReducedMotion
           ? false
@@ -281,7 +281,7 @@ const ServicesDropdown = () => {
               <div
                 className="relative z-10 flex flex-col gap-1"
                 role="tablist"
-                aria-label="Nhóm dịch vụ KEDI"
+                aria-label="NhÃ³m dá»‹ch vá»¥ KEDI"
               >
                 {categoryKeys.map((category) => {
                   const isActive = category === activeTab;
@@ -324,7 +324,7 @@ const ServicesDropdown = () => {
                       </span>
 
                       <span className="line-clamp-2 self-start pr-1 text-[10px] leading-[1.35] text-kedi-navy/50 xl:text-[11px]">
-                        {categoryMeta?.description ?? 'Xem nhóm giải pháp KEDI'}
+                        {categoryMeta?.description ?? 'Xem nhÃ³m giáº£i phÃ¡p KEDI'}
                       </span>
                     </button>
                   );
@@ -342,7 +342,7 @@ const ServicesDropdown = () => {
                     KEDI.Media
                   </p>
                   <p className="mt-0.5 text-[10px] leading-[1.35] text-white/60">
-                    Chọn nhóm bên trên để đổi nhanh nội dung.
+                    Chá»n nhÃ³m bÃªn trÃªn Ä‘á»ƒ Ä‘á»•i nhanh ná»™i dung.
                   </p>
                 </div>
               </div>
@@ -379,12 +379,12 @@ const ServicesDropdown = () => {
                   onClick={closeMegaMenu}
                   className="hidden shrink-0 items-center gap-2 text-[12px] font-black text-kedi-navy/70 transition-colors duration-200 hover:text-[#b57e00] xl:flex"
                 >
-                  <span>Xem tất cả Bộ AI Agent</span>
-                  <span aria-hidden="true">→</span>
+                  <span>Xem táº¥t cáº£ Bá»™ AI Agent</span>
+                  <span aria-hidden="true">â†’</span>
                 </Link>
               ) : (
                 <div className="hidden shrink-0 rounded-full bg-kedi-navy px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.08em] text-kedi-yellow xl:block">
-                  {realServices.length} dịch vụ thật
+                  {realServices.length} dá»‹ch vá»¥ tháº­t
                 </div>
               )}
             </div>
@@ -453,7 +453,7 @@ const ServicesDropdown = () => {
                                   </span>
                                   {!service.mock && (
                                     <span className="ml-auto shrink-0 text-[14px] font-black text-kedi-navy/25 transition-all group-hover:translate-x-0.5 group-hover:text-[#b57e00]">
-                                      ↗
+                                      â†—
                                     </span>
                                   )}
                                 </span>
@@ -496,11 +496,11 @@ const ServicesDropdown = () => {
 
             <div className="mt-4 flex shrink-0 items-center justify-between gap-4 border-t border-kedi-navy/10 pt-3 text-[10px] text-kedi-navy/45 xl:text-[11px]">
               <span>
-                KEDI chọn lọc giải pháp theo đúng mục tiêu triển khai của bạn.
+                KEDI chá»n lá»c giáº£i phÃ¡p theo Ä‘Ãºng má»¥c tiÃªu triá»ƒn khai cá»§a báº¡n.
               </span>
               {mockServices.length > 0 && (
                 <span className="rounded-full bg-[#eef1f7] px-2.5 py-1 font-bold text-kedi-navy/60">
-                  {mockServices.length} nội dung đang cập nhật
+                  {mockServices.length} ná»™i dung Ä‘ang cáº­p nháº­t
                 </span>
               )}
             </div>
@@ -542,13 +542,13 @@ const ServicesDropdown = () => {
               ) : (
                 <>
                   <h3 className="mt-8 max-w-[230px] text-[25px] font-black leading-[1.02] tracking-[-0.035em] xl:text-[31px]">
-                    Chọn đúng nhóm.
-                    <span className="mt-1 block text-kedi-yellow">Đi đúng lộ trình.</span>
+                    Chá»n Ä‘Ãºng nhÃ³m.
+                    <span className="mt-1 block text-kedi-yellow">Äi Ä‘Ãºng lá»™ trÃ¬nh.</span>
                   </h3>
 
                   <p className="mt-4 max-w-[240px] text-[11px] leading-relaxed text-white/60 xl:text-[12px]">
-                    Chọn một nhóm nhu cầu để KEDI gom đúng các dịch vụ liên quan, sau đó
-                    đi thẳng vào trang chi tiết của từng giải pháp.
+                    Chá»n má»™t nhÃ³m nhu cáº§u Ä‘á»ƒ KEDI gom Ä‘Ãºng cÃ¡c dá»‹ch vá»¥ liÃªn quan, sau Ä‘Ã³
+                    Ä‘i tháº³ng vÃ o trang chi tiáº¿t cá»§a tá»«ng giáº£i phÃ¡p.
                   </p>
                 </>
               )}
@@ -582,7 +582,7 @@ const ServicesDropdown = () => {
                     {isSoftwareSolutions ? activeSoftwareServices.length : realServices.length}
                   </strong>
                   <span className="mt-1 block text-[9px] uppercase tracking-[0.08em] text-white/45">
-                    {isSoftwareSolutions ? 'trong nhóm' : 'giải pháp'}
+                    {isSoftwareSolutions ? 'trong nhÃ³m' : 'giáº£i phÃ¡p'}
                   </span>
                 </div>
                 <div className="rounded-[14px] border border-white/10 bg-white/[0.06] p-3">
@@ -590,7 +590,7 @@ const ServicesDropdown = () => {
                     {isSoftwareSolutions ? SOFTWARE_MENU_FAMILIES.length : mockServices.length}
                   </strong>
                   <span className="mt-1 block text-[9px] uppercase tracking-[0.08em] text-white/45">
-                    {isSoftwareSolutions ? 'nhóm phần mềm' : 'sắp có'}
+                    {isSoftwareSolutions ? 'nhÃ³m pháº§n má»m' : 'sáº¯p cÃ³'}
                   </span>
                 </div>
               </div>
@@ -617,19 +617,19 @@ const ServicesDropdown = () => {
                     onClick={closeMegaMenu}
                     className="flex h-11 w-full items-center justify-between rounded-[14px] bg-kedi-yellow px-4 text-[11px] font-black uppercase tracking-[0.06em] text-kedi-navy transition-transform hover:-translate-y-0.5"
                   >
-                    <span>{isSoftwareSolutions ? 'Mở sản phẩm đầu tiên' : 'Xem gợi ý đầu tiên'}</span>
-                    <span aria-hidden="true">→</span>
+                    <span>{isSoftwareSolutions ? 'Má»Ÿ sáº£n pháº©m Ä‘áº§u tiÃªn' : 'Xem gá»£i Ã½ Ä‘áº§u tiÃªn'}</span>
+                    <span aria-hidden="true">â†’</span>
                   </Link>
                 ) : (
                   <div className="flex h-11 items-center rounded-[14px] border border-white/10 px-4 text-[10px] text-white/45">
-                    Dữ liệu đang được cập nhật
+                    Dá»¯ liá»‡u Ä‘ang Ä‘Æ°á»£c cáº­p nháº­t
                   </div>
                 )}
 
                 <p className="mt-3 text-center text-[9px] leading-relaxed text-white/35">
                   {isSoftwareSolutions
-                    ? 'Hover hoặc focus từng family để đổi ảnh preview.'
-                    : 'Nhấn vào từng dịch vụ để xem trang chi tiết.'}
+                    ? 'Hover hoáº·c focus tá»«ng family Ä‘á»ƒ Ä‘á»•i áº£nh preview.'
+                    : 'Nháº¥n vÃ o tá»«ng dá»‹ch vá»¥ Ä‘á»ƒ xem trang chi tiáº¿t.'}
                 </p>
               </div>
             </div>
