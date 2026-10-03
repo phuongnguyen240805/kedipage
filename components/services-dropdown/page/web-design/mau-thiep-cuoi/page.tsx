@@ -6,11 +6,11 @@ import RSVPFooter from "./container/RSVPFooter";
 
 export default function ThiepcuoiPage() {
   return (
-    <>
+    <main className="overflow-x-hidden bg-white text-[#0B2D5B]">
       <HeaderLove /> 
       <JourneySection />
       <FeaturesSection/>
       <RSVPFooter/>
-    </>
+    </main>
   );
 }

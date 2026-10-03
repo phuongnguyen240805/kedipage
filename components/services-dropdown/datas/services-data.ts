@@ -437,7 +437,7 @@ export const serviceCategories: ServiceCategories = {
         layoutType: 'card-image-top',
       },
       {
-        href: '/bo-ai-agent#danh-sach',
+        href: '/kedi-quan-tri',
         title: 'Kedi Quản Trị',
         description: 'Theo dõi dữ liệu và hỗ trợ điều hành doanh nghiệp.',
         imageUrl: '/software-clone/ai-agent/assets/kedi-quan-tri.png',

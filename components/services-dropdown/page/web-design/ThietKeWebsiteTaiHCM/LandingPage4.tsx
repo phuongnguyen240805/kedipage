@@ -22,15 +22,15 @@ export default function LandingPage4() {
   }
 
   return (
-    <section className="relative w-full min-h-screen  overflow-hidden font-sans py-20 flex flex-col items-center">
+    <section className="relative flex min-h-screen w-full flex-col items-center overflow-hidden bg-[#081F40] py-20 font-sans">
       {/* --- BACKGROUND DECORATION --- */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Radial Gradient Background */}
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,_rgba(124,58,237,0.15),_transparent_70%)]"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,_rgba(255,198,41,0.14),_transparent_68%)]"></div>
 
         {/* Glowing Orbs (Giả lập ánh sáng 2 bên) */}
-        <div className="absolute top-1/3 -left-[10%] w-[500px] h-[500px] bg-blue-900/40 rounded-full blur-[100px] mix-blend-screen"></div>
-        <div className="absolute top-1/3 -right-[10%] w-[500px] h-[500px] bg-fuchsia-900/40 rounded-full blur-[100px] mix-blend-screen"></div>
+        <div className="absolute top-1/3 -left-[10%] w-[500px] h-[500px] bg-[#43C6FF]/10 rounded-full blur-[100px] mix-blend-screen"></div>
+        <div className="absolute top-1/3 -right-[10%] w-[500px] h-[500px] bg-[#FFC629]/10 rounded-full blur-[100px] mix-blend-screen"></div>
 
         {/* Dotted Lines (SVG) */}
         <svg className="absolute inset-0 w-full h-full opacity-20 stroke-white/30">
@@ -47,7 +47,7 @@ export default function LandingPage4() {
       {/* --- HEADER --- */}
       <div className="relative z-10 text-center mb-24 px-4 space-y-6">
         <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-          <span className="text-orange-500 drop-shadow-lg">
+          <span className="text-[#FFC629] drop-shadow-lg">
             Nghiên cứu từng ngành
           </span>
           <br />
@@ -57,9 +57,9 @@ export default function LandingPage4() {
         {/* Badge: Đó chính là BẠN */}
         <div className="inline-block transform -rotate-2 hover:rotate-0 transition-transform duration-300">
           <div className="relative group cursor-default">
-            <div className="absolute -inset-1 bg-green-500 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-            <div className="relative border-2 border-dashed border-green-500 bg-[#0f392b]/80 backdrop-blur-md px-8 py-2 rounded-lg">
-              <span className="text-green-400 font-bold text-xl md:text-2xl uppercase tracking-wider">
+            <div className="absolute -inset-1 bg-[#FFC629] rounded-lg blur opacity-20 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+            <div className="relative border-2 border-dashed border-[#FFC629]/60 bg-[#0B2D5B]/80 backdrop-blur-md px-8 py-2 rounded-lg">
+              <span className="text-[#FFC629] font-bold text-xl md:text-2xl uppercase tracking-wider">
                 Đó chính là BẠN!
               </span>
             </div>
@@ -79,19 +79,19 @@ export default function LandingPage4() {
           />
           <FloatingIcon
             icon={<Search size={24} />}
-            color="bg-green-500"
+            color="bg-[#43C6FF]"
             position="top-10 right-[25%]"
             delay="1s"
           />
           <FloatingIcon
             icon={<Network size={24} />}
-            color="bg-pink-500"
+            color="bg-[#FFC629]"
             position="bottom-20 right-[15%]"
             delay="2s"
           />
           <FloatingIcon
             icon={<BarChart3 size={24} />}
-            color="bg-blue-500"
+            color="bg-[#0B2D5B]"
             position="bottom-10 left-[15%]"
             delay="1.5s"
           />
@@ -158,7 +158,7 @@ export default function LandingPage4() {
             <Tooltip
               text="Tìm lợi thế cạnh tranh"
               icon="📊"
-              color="text-green-400"
+              color="text-[#43C6FF]"
               position="-top-12 -left-4"
             />
 
@@ -202,7 +202,7 @@ export default function LandingPage4() {
                 {/* UI giả lập nút bấm video */}
                 <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-transparent transition-colors">
                   <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform">
-                    <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-purple-600 border-b-[6px] border-b-transparent ml-1"></div>
+                    <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-[#FFC629] border-b-[6px] border-b-transparent ml-1"></div>
                   </div>
                 </div>
               </div>
@@ -216,7 +216,7 @@ export default function LandingPage4() {
                       Updated 2 hours ago
                     </p>
                   </div>
-                  <div className="p-2 bg-purple-50 rounded-lg text-purple-600">
+                  <div className="p-2 bg-[#FFC629]/15 rounded-lg text-[#0B2D5B]">
                     <FolderOpen size={20} />
                   </div>
                 </div>
@@ -231,12 +231,12 @@ export default function LandingPage4() {
             <Tooltip
               text="Trưng bày sản phẩm thu hút"
               icon="✨"
-              color="text-pink-400"
+              color="text-[#FFC629]"
               position="-top-12 -right-4"
             />
 
             <div className="bg-white p-3 rounded-2xl shadow-2xl w-52">
-              <div className="relative w-full h-32 bg-pink-50 rounded-xl overflow-hidden mb-3 flex items-center justify-center">
+              <div className="relative w-full h-32 bg-[#FFC629]/10 rounded-xl overflow-hidden mb-3 flex items-center justify-center">
                 <Image
                   src={landingData.LandingPage4.images[0]}
                   alt="Laptop"
@@ -275,7 +275,7 @@ function TooltipComponent({
 }: TooltipProps) {
   return (
     <div
-      className={`absolute ${position} z-50 flex items-center bg-gray-900/95 backdrop-blur text-white px-4 py-2 rounded-full shadow-xl border border-white/10 whitespace-nowrap animate-fadeIn`}
+      className={`absolute ${position} z-50 flex items-center bg-[#0B2D5B]/95 backdrop-blur text-white px-4 py-2 rounded-full shadow-xl border border-white/10 whitespace-nowrap animate-fadeIn`}
       role="status"
       aria-label={text}
     >
@@ -330,10 +330,10 @@ function SimpleFileCardComponent({
 }: SimpleFileCardProps) {
   return (
     <div className="bg-white p-4 rounded-xl shadow-lg w-48 h-56 flex flex-col items-center justify-center text-center space-y-3">
-      <div className="p-3 rounded-full bg-orange-50">{icon}</div>
+      <div className="p-3 rounded-full bg-[#FFC629]/10">{icon}</div>
       <div>
         {type ? (
-          <span className="bg-orange-100 text-orange-600 text-[10px] px-2 py-0.5 rounded font-bold uppercase">
+          <span className="bg-[#FFC629]/15 text-[#0B2D5B] text-[10px] px-2 py-0.5 rounded font-bold uppercase">
             {type}
           </span>
         ) : null}

@@ -25,7 +25,7 @@ export default function Hero() {
           <div className="w-full flex justify-between gap-[20px] px-[10px] md:pl-[20px] lg:pl-[30px]">
             <div>
               <h1 className="text-[10vw] leading-[1.1] md:text-6xl lg:text-7xl text-white tracking-[-0.02em] font-semibold font-Sans uppercase">
-                Chúng tôi thiết kế <br />
+                Kiến tạo <br />
                 <div className="flex items-center gap-[5px] md:gap-[10px]">
                   <motion.span
                     initial={{ width: 0 }}
@@ -50,7 +50,7 @@ export default function Hero() {
                   </motion.span>
                   <span>trải nghiệm số</span>
                 </div>
-                giúp doanh nghiệp tăng trưởng
+                phục vụ mô hình của bạn tăng trưởng
               </h1>
             </div>
           </div>

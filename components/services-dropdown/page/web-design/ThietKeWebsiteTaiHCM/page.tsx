@@ -8,7 +8,7 @@ import LandingPage4 from './LandingPage4';
 import LandingPage5 from './LandingPage5';
 
 // 🧩 Hook phát hiện phần tử vào viewport (giữ nguyên)
-function useInView(options = {}) {
+function useInView() {
   const [inView, setInView] = React.useState(false);
   const ref = React.useRef<HTMLDivElement | null>(null);
 
@@ -24,14 +24,13 @@ function useInView(options = {}) {
       },
       {
         threshold: 0.1,
-        rootMargin: '200px',
-        ...options,
+        rootMargin: '240px',
       }
     );
 
     observer.observe(ref.current);
     return () => observer.disconnect();
-  }, [options]);
+  }, []);
 
   return { ref, inView };
 }
@@ -45,7 +44,7 @@ function LazySection({ children }: { children: React.ReactNode }) {
       {inView ? (
         children
       ) : (
-        <div className="min-h-[400px] bg-gray-50 animate-pulse rounded-2xl" />
+        <div className="min-h-[420px] bg-[#0B2D5B]" aria-hidden="true" />
       )}
     </div>
   );
@@ -54,7 +53,7 @@ function LazySection({ children }: { children: React.ReactNode }) {
 // 🚀 Component chính — áp LazySection cho TỪNG section
 export default function PageThietKeWebsiteTaiHCM() {
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-0 overflow-x-hidden bg-[#0B2D5B] text-white">
       <LazySection>
         <LandingPage1 />
       </LazySection>

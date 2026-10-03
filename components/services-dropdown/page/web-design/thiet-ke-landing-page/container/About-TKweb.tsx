@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -6,56 +7,58 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-  const sectionRef = useRef(null);
-  const titleRef = useRef(null);
-  const leftRef = useRef(null);
-  const mainImgRef = useRef(null);
-  const smallImg1Ref = useRef(null);
-  const smallImg2Ref = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const smallImg1Ref = useRef<HTMLDivElement>(null);
+  const smallImg2Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
-      // Sử dụng mm.add để phân tách hiệu ứng Desktop và Mobile
-      let mm = gsap.matchMedia();
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const ctx = gsap.context(() => {
+      const mm = gsap.matchMedia();
 
       mm.add("(min-width: 768px)", () => {
-        // --- CHỈ CHẠY TRÊN DESKTOP ---
         gsap.to(titleRef.current, {
-          x: 200,
+          x: 145,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
             end: "bottom top",
-            scrub: 2,
+            scrub: 1.6,
           },
         });
 
         gsap.to(smallImg1Ref.current, {
-          y: -250,
-          scrollTrigger: { trigger: sectionRef.current, scrub: 2 },
+          y: -135,
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1.8,
+          },
         });
 
         gsap.to(smallImg2Ref.current, {
-          y: 100,
-          scrollTrigger: { trigger: sectionRef.current, scrub: 2 },
+          y: 78,
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1.8,
+          },
         });
       });
 
       mm.add("(max-width: 767px)", () => {
-        // --- CHỈ CHẠY TRÊN MOBILE (Giảm biên độ để không vỡ layout) ---
         gsap.to(titleRef.current, {
-          x: 50, // Giảm biên độ bay
+          x: 28,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
             end: "bottom top",
             scrub: 1,
           },
-        });
-
-        gsap.to(smallImg1Ref.current, {
-          y: -50,
-          scrollTrigger: { trigger: sectionRef.current, scrub: 1 },
         });
       });
     }, sectionRef);
@@ -66,64 +69,102 @@ const About = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen w-full md:w-[85vw] mx-auto flex flex-col items-center justify-start md:justify-between py-12 md:py-0 md:flex-row overflow-x-hidden md:overflow-visible"
+      className="relative isolate min-h-screen w-full overflow-hidden bg-[#0B2D5B] py-24 md:py-32"
     >
-      {/* 1. TIÊU ĐỀ: Căn giữa trên mobile, tuyệt đối trên desktop */}
-      <h1
-        ref={titleRef}
-        className="relative text-center md:left-[-19%] mb-6 md:mb-0 md:absolute top-0 md:top-10 text-[15vw] md:text-[10vw] font-serif whitespace-nowrap pointer-events-none select-none z-10 md:z-40 text-white italic leading-none w-full md:w-auto"
-        style={{ fontFamily: "'Kaushan Script', cursive" }}
-      >
-        About Us
-      </h1>
-
-      {/* 2. KHỐI CHỮ: Đảm bảo padding đủ rộng để không chạm mép màn hình */}
       <div
-        ref={leftRef}
-        className="w-full md:w-[45%] px-8 md:px-0 text-white font-light text-lg md:text-3xl z-30 leading-relaxed mix-blend-difference mb-12 md:mb-0 text-justify md:text-left"
-      >
-        We&apos;re{" "}
-        <span className="text-zinc-400 font-medium">fashion studio</span> based
-        in California. We create unique designs that will blow your mind.
-        <br />
-        <br />
-        Fashion is an <span className="italic">ART</span> that cannot be grasped
-        by everyone. We offer creative products to a wide range of people.
-      </div>
+        className="pointer-events-none absolute -left-32 top-1/4 h-[32rem] w-[32rem] rounded-full blur-3xl"
+        style={{ background: "rgba(255,198,41,0.1)" }}
+      />
+      <div
+        className="pointer-events-none absolute -right-40 bottom-0 h-[30rem] w-[30rem] rounded-full blur-3xl"
+        style={{ background: "rgba(67,198,255,0.07)" }}
+      />
 
-      {/* 3. KHỐI ẢNH: Thu nhỏ ảnh phụ trên mobile */}
-      <div className="w-full md:w-1/2 relative flex justify-center px-4 md:px-0">
-        <div className="relative w-[85%] md:w-[90%] z-10">
-          {/* Ảnh chính */}
-          <img
-            ref={mainImgRef}
-            src="https://github.com/codebucks27/wibe-studio/blob/main/src/assets/Images/1.webp?raw=true"
-            alt="Main Model"
-            className="w-full h-auto shadow-xl rounded-sm"
-          />
+      <div className="relative mx-auto flex min-h-[760px] w-full max-w-[1400px] flex-col justify-center gap-16 px-6 md:px-10 lg:flex-row lg:items-center lg:gap-20 lg:px-16">
+        <h2
+          ref={titleRef}
+          className="pointer-events-none absolute left-[-4vw] top-4 z-0 whitespace-nowrap text-[16vw] font-black uppercase leading-none tracking-[-0.07em] text-white/[0.035] md:top-0 md:text-[10vw]"
+        >
+          Landing Page
+        </h2>
 
-          {/* Ảnh nhỏ 1: Thu nhỏ lại trên mobile để không tràn */}
-          <div
-            ref={smallImg1Ref}
-            className="absolute w-[30%] md:w-[35%] -left-[8%] md:-left-[20%] -bottom-[5%] md:-bottom-[10%] z-20"
-          >
-            <img
-              src="https://kenh14cdn.com/2018/6/20/photo-20-1529428447777426609279.jpg"
-              alt="Detail 1"
-              className="w-full h-auto rounded-sm shadow-2xl border border-white/20"
-            />
+        <div className="relative z-20 w-full lg:w-[44%]">
+          <div className="mb-6 flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.24em] text-[#FFC629]">
+            <span className="h-px w-10 bg-[#FFC629]" />
+            Design for conversion
           </div>
 
-          {/* Ảnh nhỏ 2: Căn chỉnh lại vị trí để không bị khuất */}
-          <div
-            ref={smallImg2Ref}
-            className="absolute w-[35%] md:w-[35%] -right-[5%] md:-right-[15%] top-[10%] md:top-[15%] z-20"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=1995&auto=format&fit=crop"
-              alt="Detail 2"
-              className="w-full h-auto shadow-2xl border border-white/20 rounded-sm"
-            />
+          <h3 className="max-w-2xl text-4xl font-black leading-[1.02] tracking-[-0.045em] text-white md:text-6xl">
+            Đẹp là điểm bắt đầu.
+            <span className="mt-2 block text-[#FFC629]">
+              Chuyển đổi mới là mục tiêu.
+            </span>
+          </h3>
+
+          <p className="mt-7 max-w-xl text-base leading-8 text-white/66 md:text-lg">
+            KEDI thiết kế landing page như một hành trình có chủ đích: thông
+            điệp rõ, cấu trúc dễ hiểu, hình ảnh đủ khác biệt và CTA xuất hiện
+            đúng lúc để dẫn người xem từ sự tò mò đến hành động.
+          </p>
+
+          <div className="mt-9 flex flex-wrap gap-2.5">
+            {["Strategy", "UX Structure", "Visual Direction", "Conversion"].map(
+              (label) => (
+                <span
+                  key={label}
+                  className="rounded-full border border-white/12 bg-white/[0.055] px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-white/74 backdrop-blur-xl"
+                >
+                  {label}
+                </span>
+              ),
+            )}
+          </div>
+        </div>
+
+        <div className="relative z-10 flex w-full justify-center lg:w-[56%]">
+          <div className="relative w-[88%] max-w-[720px]">
+            <div className="overflow-hidden rounded-[2rem] border border-white/12 bg-white/[0.06] p-2 shadow-[0_35px_100px_rgba(0,0,0,0.28)] backdrop-blur-xl md:p-3">
+              <img
+                src="/project1.webp"
+                alt="KEDI landing page project preview"
+                className="aspect-[4/3] w-full rounded-[1.55rem] object-cover"
+              />
+            </div>
+
+            <div
+              ref={smallImg1Ref}
+              className="absolute -bottom-[8%] -left-[8%] w-[34%] md:-left-[14%]"
+            >
+              <div className="-rotate-3 overflow-hidden rounded-[1.35rem] border border-white/15 bg-[#081F40] p-1.5 shadow-[0_24px_70px_rgba(0,0,0,0.38)]">
+                <img
+                  src="/project3.webp"
+                  alt="KEDI mobile landing page preview"
+                  className="aspect-[4/5] w-full rounded-[1rem] object-cover"
+                />
+              </div>
+            </div>
+
+            <div
+              ref={smallImg2Ref}
+              className="absolute -right-[5%] top-[8%] w-[31%] md:-right-[10%]"
+            >
+              <div className="rotate-2 overflow-hidden rounded-[1.35rem] border border-white/15 bg-[#081F40] p-1.5 shadow-[0_24px_70px_rgba(0,0,0,0.38)]">
+                <img
+                  src="/project5.webp"
+                  alt="KEDI landing page visual detail"
+                  className="aspect-square w-full rounded-[1rem] object-cover"
+                />
+              </div>
+            </div>
+
+            <div className="absolute -bottom-5 right-[5%] hidden rounded-2xl border border-white/12 bg-[#081F40]/80 px-5 py-4 shadow-[0_20px_55px_rgba(0,0,0,0.28)] backdrop-blur-2xl md:block">
+              <div className="text-[10px] font-extrabold uppercase tracking-[0.22em] text-[#FFC629]">
+                KEDI approach
+              </div>
+              <div className="mt-1 text-sm font-bold text-white">
+                Strategy → UX → Visual → Convert
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -3,8 +3,8 @@ import FadeIn from '@/components/ui/Fadeoad';
 
 const JourneySection = () => {
   return (
-      <section className="py-24 px-4  overflow-hidden bg-white font-serif" id="story">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section className="overflow-hidden bg-[#FFFDFC] px-4 py-24 font-serif" id="story">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 lg:grid-cols-2">
           {/* Khối hình ảnh bên trái */}
           <div className="relative">
             {/* Hiệu ứng trang trí phía sau */}
@@ -43,23 +43,22 @@ const JourneySection = () => {
           <div className="space-y-8">
               <FadeIn>
             <header>
-              <h2 className="text-[#cb8096] italic text-3xl font-serif mb-2">
-                Hành Trình
+              <p className="mb-3 text-xs font-extrabold uppercase tracking-[0.24em] text-[#0B2D5B]/55">03 BƯỚC ĐỂ BẮT ĐẦU</p>
+              <h2 className="mb-2 font-serif text-3xl italic text-[#f44e77]">
+                Hành trình của một tấm thiệp
               </h2>
               <h3 className="text-4xl md:text-5xl font-sans leading-tight text-black">
-                Từ một buổi chiều mưa đến mãi mãi
+                Từ ý tưởng đến lời mời mang dấu ấn riêng
               </h3>
             </header>
             </FadeIn>
               <FadeIn>
-            <div className="space-y-6 text-lg leading-relaxed text-black font-sans">
+            <div className="space-y-6 font-sans text-lg leading-relaxed text-[#0B2D5B]/75">
               <p>
-                Mọi chuyện bắt đầu từ một cuộc gặp gỡ tình cờ trong một quán cà phê nhỏ ở London giữa một cơn mưa bất chợt.
-                Sau khi cùng nhau che một chiếc ô và trò chuyện ba tiếng đồng hồ về những cuốn sách quý hiếm, chúng tôi biết đây là một điều gì đó đặc biệt.
+                Bắt đầu bằng việc chọn phong cách phù hợp với sự kiện của bạn. Từ bố cục, màu sắc đến hình ảnh, mỗi chi tiết đều có thể điều chỉnh để thiệp không giống một mẫu có sẵn.
               </p>
               <p>
-                Ba năm, sáu quốc gia và vô số kỷ niệm trôi qua, Julian đã cầu hôn trên một vách đá ở Santorini.
-                Chúng tôi vô cùng vui mừng được mời các bạn trở lại nơi chúng tôi đã đính hôn để cùng nhau kỷ niệm khởi đầu cuộc sống chung.
+                Sau khi hoàn thiện nội dung, bạn có thể chia sẻ thiệp trực tuyến, cập nhật thông tin khi cần và theo dõi phản hồi của khách mời trong một trải nghiệm thống nhất.
               </p>
             </div>
             </FadeIn>
@@ -67,16 +66,16 @@ const JourneySection = () => {
             {/* Timeline tóm tắt */}
             <div className="flex gap-4 pt-4">
               {[
-                { year: '2021', label: 'Gặp nhau' },
-                { year: '2023', label: 'Đính hôn' },
-                { year: '2024', label: 'Lễ cưới' }
+                { year: '01', label: 'Chọn mẫu' },
+                { year: '02', label: 'Cá nhân hóa' },
+                { year: '03', label: 'Chia sẻ' }
               ].map((milestone, index) => (
                 <div 
                   key={index} 
-                  className="text-center p-4 bg-[#cb8096]/5 dark:bg-[#cb8096]/10 rounded-xl flex-1 transition-transform hover:scale-105"
+                  className="flex-1 rounded-2xl border border-[#0B2D5B]/8 bg-white p-4 text-center shadow-sm transition-transform hover:-translate-y-1"
                 >
-                  <p className="text-[#cb8096] font-bold text-2xl">{milestone.year}</p>
-                  <p className="text-sm font-medium opacity-60 uppercase tracking-widest dark:text-black">
+                  <p className="text-2xl font-bold text-[#f44e77]">{milestone.year}</p>
+                  <p className="text-sm font-medium uppercase tracking-widest text-[#0B2D5B]/55">
                     {milestone.label}
                   </p>
                 </div>

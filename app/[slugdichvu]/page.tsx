@@ -29,6 +29,7 @@ const getAllSlugs = () => [
   "tools-ngon",
   "edutech",
   "bo-ai-agent",
+  "kedi-quan-tri",
 
   // HỆ SẢN PHẨM KEDI
   "kedi-os",
@@ -116,6 +117,8 @@ const getComponentBySlug = (slug: string) => {
       import("@/components/services-dropdown/page/software/Edutech/page"),
     "bo-ai-agent": () =>
       import("@/components/services-dropdown/page/software/BoAiAgent/page"),
+    "kedi-quan-tri": () =>
+      import("@/components/services-dropdown/page/software/KediQuanTri/page"),
 
     // 🧩 HỆ SẢN PHẨM KEDI — 13 route clone trực tiếp UI /edutech; Kedi AI Flow giữ layout riêng
     "kedi-os": () =>

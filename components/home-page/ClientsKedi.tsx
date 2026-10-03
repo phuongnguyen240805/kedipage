@@ -56,7 +56,7 @@ const teamMembers = [
     role: 'Senior Backend Developer',
     description: 'Phát triển backend, API và luồng dữ liệu phục vụ các hệ thống web, phần mềm và quy trình tự động hóa của KEDI.',
     skills: ['Backend', 'API', 'Data'],
-    image: null,
+    image: '/homepage/team/nguyen-phuong.jpg',
   },
   {
     id: 6,

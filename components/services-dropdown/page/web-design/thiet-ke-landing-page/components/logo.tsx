@@ -1,98 +1,101 @@
 "use client";
 
-import { motion, Variants, AnimatePresence } from "framer-motion";
-import React, { useState, useEffect } from "react";
+import { AnimatePresence, motion, Variants } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 
-// Thêm Interface để nhận hàm callback từ Home
 interface LogoProps {
   onLoadingComplete?: () => void;
 }
 
-// Styled Components cho lớp màn đen
 const IntroBox = styled(motion.div)`
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   z-index: 50;
-  background-color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(255, 198, 41, 0.12), transparent 32%),
+    #081f40;
 `;
 
 const Container = styled(motion.div)`
   position: absolute;
   z-index: 51;
   width: fit-content;
-  display: flex;
-  align-items: flex-end;
 
   a {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    gap: 0.75rem;
     text-decoration: none;
   }
 
-  svg {
-    width: 4rem;
+  img {
+    width: 7.2rem;
     height: auto;
-    overflow: visible;
-    stroke-linejoin: round;
-    stroke-linecap: round;
+    object-fit: contain;
+  }
 
-    path {
-      stroke: #fff;
-      stroke-width: 0.5px;
+  @media (max-width: 767px) {
+    img {
+      width: 6rem;
     }
   }
 `;
 
-const Text = styled(motion.span)`
-  font-size: 1.5rem;
-  color: #fff;
-  padding-bottom: 0.5rem;
-  font-family: "Sirin Stencil", sans-serif;
+const Badge = styled(motion.span)`
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  padding: 0.42rem 0.72rem;
+  color: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
   white-space: nowrap;
 `;
 
-// Animation Variants
 const containerVariants: Variants = {
   hidden: {
-    top: "50%", // Để 50% cho chuẩn giữa màn hình khi bắt đầu
+    top: "50%",
     left: "50%",
     x: "-50%",
     y: "-50%",
-    scale: 2,
+    scale: 1.25,
   },
   visible: {
-    top: "1rem",
-    left: "2rem", // Chỉnh lên 2rem hoặc 3rem để dịch qua phải một chút như bạn muốn
+    top: "1.25rem",
+    left: "1.5rem",
     x: "0%",
     y: "0%",
     scale: 1,
-    transition: { duration: 2, delay: 4, ease: [0.76, 0, 0.24, 1] },
+    transition: {
+      duration: 0.78,
+      delay: 0.95,
+      ease: [0.19, 1, 0.22, 1],
+    },
   },
 };
 
-const pathVariants: Variants = {
-  hidden: { opacity: 0, pathLength: 0 },
+const markVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.86, y: 8 },
   visible: {
     opacity: 1,
-    pathLength: 1,
-    transition: { duration: 2, delay: 0.5, ease: "easeInOut" },
+    scale: 1,
+    y: 0,
+    transition: { duration: 0.55, delay: 0.08, ease: [0.19, 1, 0.22, 1] },
   },
 };
 
-const textVariants: Variants = {
-  hidden: { opacity: 0, x: -50 },
+const badgeVariants: Variants = {
+  hidden: { opacity: 0, x: -10 },
   visible: {
     opacity: 1,
-    x: -5,
-    transition: { duration: 2, delay: 3, ease: "easeInOut" },
+    x: 0,
+    transition: { duration: 0.45, delay: 0.35, ease: [0.19, 1, 0.22, 1] },
   },
 };
 
@@ -100,16 +103,12 @@ const Logo: React.FC<LogoProps> = ({ onLoadingComplete }) => {
   const [isIntroDone, setIsIntroDone] = useState(false);
 
   useEffect(() => {
-    // 1. Sau 6 giây: Đánh dấu intro xong để màn đen trượt lên
-    const timer = setTimeout(() => {
+    const timer = window.setTimeout(() => {
       setIsIntroDone(true);
-      // 2. Gọi hàm callback để báo cho CoverVideo bắt đầu chạy
-      if (onLoadingComplete) {
-        onLoadingComplete();
-      }
-    }, 6000);
+      onLoadingComplete?.();
+    }, 1750);
 
-    return () => clearTimeout(timer);
+    return () => window.clearTimeout(timer);
   }, [onLoadingComplete]);
 
   return (
@@ -117,11 +116,11 @@ const Logo: React.FC<LogoProps> = ({ onLoadingComplete }) => {
       <AnimatePresence mode="wait">
         {!isIntroDone && (
           <IntroBox
-            key="intro-overlay"
+            key="kedi-landing-intro"
             initial={{ opacity: 1 }}
             exit={{
               y: "-100%",
-              transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1] },
+              transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
             }}
           />
         )}
@@ -132,18 +131,13 @@ const Logo: React.FC<LogoProps> = ({ onLoadingComplete }) => {
         initial="hidden"
         animate="visible"
       >
-        <Link href="/">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <motion.path
-              variants={pathVariants}
-              d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"
-            />
-          </svg>
-          <Text variants={textVariants}>Thiết Kế Web</Text>
+        <Link href="/" aria-label="Về trang chủ KEDI">
+          <motion.img
+            variants={markVariants}
+            src="/brand/kedi-logo-reverse.png"
+            alt="KEDI"
+          />
+          <Badge variants={badgeVariants}>Landing Page</Badge>
         </Link>
       </Container>
     </>
