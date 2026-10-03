@@ -20,10 +20,6 @@ const SYSTEM_LABELS: Record<string, string> = {
 };
 
 const EASE = [0.22, 1, 0.36, 1] as const;
-const DESKTOP_BREAKPOINT = 1025;
-const WHEEL_THRESHOLD = 56;
-const WHEEL_LOCK_MS = 520;
-
 export default function AgentExplorerSection({ data }: { data: AiAgentPageData }) {
   const reduceMotion = useReducedMotion();
   const [filter, setFilter] = useState<'all' | AiAgentCategory>('all');
@@ -32,11 +28,7 @@ export default function AgentExplorerSection({ data }: { data: AiAgentPageData }
     [data.agents, filter]
   );
   const [selectedId, setSelectedId] = useState(data.agents[0]?.id ?? 1);
-  const desktopPanelRef = useRef<HTMLDivElement | null>(null);
-  const activeIndexRef = useRef(0);
-  const wheelAccumulatorRef = useRef(0);
-  const wheelLockedRef = useRef(false);
-  const wheelResetTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const listRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (!filteredAgents.some((agent) => agent.id === selectedId)) {
@@ -45,72 +37,38 @@ export default function AgentExplorerSection({ data }: { data: AiAgentPageData }
   }, [data.agents, filteredAgents, selectedId]);
 
   useEffect(() => {
-    const index = filteredAgents.findIndex((agent) => agent.id === selectedId);
-    activeIndexRef.current = index >= 0 ? index : 0;
-  }, [filteredAgents, selectedId]);
-
-  useEffect(() => {
-    const panel = desktopPanelRef.current;
-    if (!panel || reduceMotion) return;
-
-    const handleNativeWheel = (event: WheelEvent) => {
-      if (window.innerWidth < DESKTOP_BREAKPOINT) return;
-      if (Math.abs(event.deltaX) > Math.abs(event.deltaY) || Math.abs(event.deltaY) < 2) return;
-
-      const currentIndex = activeIndexRef.current;
-      const direction = event.deltaY > 0 ? 1 : -1;
-      const canMove = direction > 0
-        ? currentIndex < filteredAgents.length - 1
-        : currentIndex > 0;
-
-      // Match the homepage Connected Journey: keep the wheel inside the
-      // carousel while there is another Agent, then release to the page.
-      if (!canMove) {
-        wheelAccumulatorRef.current = 0;
-        return;
+    const list = listRef.current;
+    if (!list) return;
+    let frame = 0;
+    const pick = () => {
+      frame = 0;
+      const rows = Array.from(list.querySelectorAll<HTMLButtonElement>('[data-agent-id]'));
+      const readingLine = window.innerHeight * 0.45;
+      let row = rows.find((item) => {
+        const box = item.getBoundingClientRect();
+        return box.top <= readingLine && box.bottom >= readingLine;
+      });
+      if (!row && rows.length) {
+        if (rows[0].getBoundingClientRect().top > readingLine) row = rows[0];
+        else if (rows[rows.length - 1].getBoundingClientRect().bottom < readingLine) row = rows[rows.length - 1];
       }
-
-      event.preventDefault();
-      if (wheelLockedRef.current) return;
-
-      wheelAccumulatorRef.current += event.deltaY;
-      if (wheelResetTimerRef.current) clearTimeout(wheelResetTimerRef.current);
-      wheelResetTimerRef.current = setTimeout(() => {
-        wheelAccumulatorRef.current = 0;
-      }, 140);
-
-      if (Math.abs(wheelAccumulatorRef.current) < WHEEL_THRESHOLD) return;
-
-      wheelAccumulatorRef.current = 0;
-      wheelLockedRef.current = true;
-      const nextIndex = Math.min(
-        filteredAgents.length - 1,
-        Math.max(0, currentIndex + direction),
-      );
-      activeIndexRef.current = nextIndex;
-      const nextAgent = filteredAgents[nextIndex];
-      if (nextAgent) setSelectedId(nextAgent.id);
-
-      window.setTimeout(() => {
-        wheelLockedRef.current = false;
-      }, WHEEL_LOCK_MS);
+      if (row) setSelectedId(Number(row.dataset.agentId));
     };
-
-    panel.addEventListener('wheel', handleNativeWheel, { passive: false });
+    const schedulePick = () => {
+      if (!frame) frame = window.requestAnimationFrame(pick);
+    };
+    window.addEventListener('scroll', schedulePick, { passive: true });
+    window.addEventListener('resize', schedulePick);
+    const observer = new ResizeObserver(schedulePick);
+    observer.observe(list);
+    schedulePick();
     return () => {
-      panel.removeEventListener('wheel', handleNativeWheel);
-      if (wheelResetTimerRef.current) clearTimeout(wheelResetTimerRef.current);
+      window.removeEventListener('scroll', schedulePick);
+      window.removeEventListener('resize', schedulePick);
+      observer.disconnect();
+      window.cancelAnimationFrame(frame);
     };
-  }, [filteredAgents, reduceMotion]);
-
-  const goToIndex = (index: number) => {
-    const nextIndex = Math.min(filteredAgents.length - 1, Math.max(0, index));
-    const nextAgent = filteredAgents[nextIndex];
-    if (!nextAgent) return;
-    activeIndexRef.current = nextIndex;
-    setSelectedId(nextAgent.id);
-  };
-
+  }, [filteredAgents]);
   const selected = data.agents.find((agent) => agent.id === selectedId) ?? filteredAgents[0] ?? data.agents[0];
   const selectedPosition = Math.max(0, filteredAgents.findIndex((agent) => agent.id === selected?.id));
   const progress = filteredAgents.length ? ((selectedPosition + 1) / filteredAgents.length) * 100 : 0;
@@ -150,7 +108,7 @@ export default function AgentExplorerSection({ data }: { data: AiAgentPageData }
   );
 
   return (
-    <PageSection id="danh-sach" tone="light">
+    <PageSection id="danh-sach" tone="light" className="!overflow-clip">
       <BrandGhostBackground src="/homepage/golden-data-journey.webp" position="right" opacity={0.11} imageClassName="scale-[1.22] translate-x-[8%] translate-y-[2%]" />
       <SectionHeading
         eyebrow="Đội ngũ Gâu Đần"
@@ -235,8 +193,8 @@ export default function AgentExplorerSection({ data }: { data: AiAgentPageData }
 
       <div className="kedi-agent-clone kedi-agent-clone-body">
         <div className="min-w-0">
-          {/* Mobile/tablet keeps the native readable list. */}
-          <div className="kedi-agent-clone-rows lg:hidden">
+          {/* Rows follow the page scroll; the dock tracks the reading line. */}
+          <div ref={listRef} className="kedi-agent-clone-rows">
             {filteredAgents.map((agent, index) => {
               const active = selected?.id === agent.id;
               return (
@@ -244,16 +202,17 @@ export default function AgentExplorerSection({ data }: { data: AiAgentPageData }
                   key={`mobile-${agent.id}`}
                   type="button"
                   onClick={() => setSelectedId(agent.id)}
-                  onViewportEnter={() => setSelectedId(agent.id)}
-                  viewport={{ amount: 0.55 }}
+                  data-agent-id={agent.id}
+                  onMouseEnter={() => setSelectedId(agent.id)}
+                  viewport={{ once: true, amount: 0.08 }}
                   onMouseMove={(event) => {
                     const box = event.currentTarget.getBoundingClientRect();
                     event.currentTarget.style.setProperty('--mx', `${event.clientX - box.left}px`);
                     event.currentTarget.style.setProperty('--my', `${event.clientY - box.top}px`);
                   }}
-                  initial={reduceMotion ? false : { opacity: 0.45, y: 18 }}
+                  initial={reduceMotion ? false : { opacity: 0, y: 26 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={reduceMotion ? { duration: 0 } : { duration: 0.42, ease: EASE }}
+                  transition={reduceMotion ? { duration: 0 } : { duration: 0.9, ease: EASE }}
                   className={`kedi-agent-clone-row ${active ? 'is-active' : ''}`}
                 >
                   {renderAgentContent(agent, index)}
@@ -262,90 +221,6 @@ export default function AgentExplorerSection({ data }: { data: AiAgentPageData }
             })}
           </div>
 
-          {/* Desktop mirrors the homepage Connected Journey wheel carousel. */}
-          <div
-            ref={desktopPanelRef}
-            tabIndex={0}
-            aria-label="Danh sách AI Agent. Dùng bánh xe chuột hoặc phím mũi tên để chuyển Agent."
-            onKeyDown={(event) => {
-              if (event.key === 'ArrowDown') {
-                event.preventDefault();
-                goToIndex(selectedPosition + 1);
-              }
-              if (event.key === 'ArrowUp') {
-                event.preventDefault();
-                goToIndex(selectedPosition - 1);
-              }
-            }}
-            className="kedi-agent-wheel-panel hidden lg:block"
-          >
-            <div className="pointer-events-none absolute inset-x-0 top-0 z-40 h-[24%] bg-gradient-to-b from-[#f4f6f9] via-[#f4f6f9]/80 to-transparent" />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-40 h-[24%] bg-gradient-to-t from-[#f4f6f9] via-[#f4f6f9]/80 to-transparent" />
-            <div className="pointer-events-none absolute inset-x-12 top-1/2 z-0 h-[330px] -translate-y-1/2 rounded-[34px] bg-kedi-yellow/[0.055] blur-3xl" />
-
-            <div className="absolute right-3 top-3 z-50 flex items-center gap-2 rounded-full border border-kedi-navy/10 bg-white/85 px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.14em] text-kedi-navy/55 shadow-sm backdrop-blur-xl">
-              <span className="h-1.5 w-1.5 rounded-full bg-kedi-yellow shadow-[0_0_12px_rgba(255,198,41,.6)]" />
-              Wheel scroll
-              <span className="text-[#92700b]">{String(selectedPosition + 1).padStart(2, '0')}/{String(filteredAgents.length).padStart(2, '0')}</span>
-            </div>
-
-            <div className="absolute bottom-10 left-[21px] top-10 z-10 w-px bg-kedi-navy/10" />
-            <motion.div
-              animate={reduceMotion ? undefined : { height: `${progress}%` }}
-              transition={reduceMotion ? { duration: 0 } : { type: 'spring', stiffness: 170, damping: 28, mass: 0.8 }}
-              className="absolute left-[21px] top-10 z-10 w-px origin-top bg-kedi-yellow"
-              style={{ maxHeight: 'calc(100% - 5rem)' }}
-            />
-
-            {filteredAgents.map((agent, index) => {
-              const distance = index - selectedPosition;
-              const absDistance = Math.abs(distance);
-              const active = distance === 0;
-              const adjacent = absDistance === 1;
-              const y = active
-                ? 0
-                : distance > 0
-                  ? 300 + Math.max(0, absDistance - 1) * 122
-                  : -300 - Math.max(0, absDistance - 1) * 122;
-
-              return (
-                <motion.button
-                  key={`desktop-${agent.id}`}
-                  type="button"
-                  onClick={() => goToIndex(index)}
-                  onMouseMove={(event) => {
-                    const box = event.currentTarget.getBoundingClientRect();
-                    event.currentTarget.style.setProperty('--mx', `${event.clientX - box.left}px`);
-                    event.currentTarget.style.setProperty('--my', `${event.clientY - box.top}px`);
-                  }}
-                  initial={false}
-                  animate={
-                    reduceMotion
-                      ? { y, x: active ? -8 : 0, opacity: active ? 1 : adjacent ? 0.3 : 0, scale: active ? 1 : adjacent ? 0.93 : 0.86 }
-                      : {
-                          y,
-                          x: active ? -8 : 0,
-                          opacity: active ? 1 : adjacent ? 0.3 : 0,
-                          scale: active ? 1 : adjacent ? 0.93 : 0.86,
-                          filter: active ? 'blur(0px)' : adjacent ? 'blur(1.5px)' : 'blur(7px)',
-                        }
-                  }
-                  transition={
-                    reduceMotion
-                      ? { duration: 0 }
-                      : { type: 'spring', stiffness: 185, damping: 27, mass: 0.9 }
-                  }
-                  style={{
-                    zIndex: active ? 30 : adjacent ? 20 : 5,
-                    pointerEvents: active || adjacent ? 'auto' : 'none',
-                  }}
-                  className={`kedi-agent-clone-row kedi-agent-wheel-row ${active ? 'is-active' : ''}`}
-                >
-                  {renderAgentContent(agent, index)}
-                </motion.button>
-              );
-            })}
-          </div>
         </div>
 
         {selected ? (
