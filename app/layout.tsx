@@ -1,5 +1,7 @@
 'use client';
 import "./globals.css";
+import "@/components/liquid-glass/glass-system.css";
+import "@/components/liquid-glass/home-liquid.css";
 import "@/components/features/quote-share/styles/quote-share.css";
 import "@/components/features/quote-share/styles/quote-share.override.css";
 import ElasticCursor from "@/components/ui/ElasticCursor";
@@ -11,6 +13,8 @@ import SocketContextProvider from "@/contexts/socketio";
 import Header from "@/components/layouts/header";
 import PreloaderWrapper from "@/components/PreloaderWrapper";
 import CustomerCareWidget from "@/components/customer-care/CustomerCareWidget";
+import LiquidEffects from "@/components/liquid-glass/LiquidEffects";
+import { GlassSurface } from "@/components/liquid-glass/GlassSurface";
 import { QuoteShareProvider } from "@/components/features/quote-share";
 
 import Script from "next/script"; 
@@ -26,7 +30,8 @@ export default function RootLayout({ children, params }: { children: React.React
         <link rel="icon" href="/brand/kedi-app-icon.png" />
         <link rel="apple-touch-icon" href="/brand/kedi-app-icon.png" />
       </head>
-      <body>
+      <body className="kedi-glass">
+        <LiquidEffects />
         <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
           <Script 
             src="https://app.rybbit.io/api/script.js" 
@@ -40,9 +45,9 @@ export default function RootLayout({ children, params }: { children: React.React
             <SocketContextProvider>
               <TooltipProvider>
                 <Header />
-                <main className="min-h-screen pt-14 lg:pt-16">
+                <GlassSurface asChild material="background"><main className="min-h-screen pt-14 lg:pt-16">
                   {children}
-                </main>
+                </main></GlassSurface>
               
                   <Footer />
               

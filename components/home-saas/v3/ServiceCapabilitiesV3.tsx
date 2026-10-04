@@ -39,7 +39,7 @@ export default function ServiceCapabilitiesV3() {
               >
                 <Link
                   href={service.href}
-                  className={`group grid gap-5 border-b border-kedi-navy/[0.12] py-7 transition-all duration-300 sm:px-3 lg:grid-cols-[54px_1fr_42px] lg:items-center lg:gap-6 ${
+                  className={`liquid-service-link liquid-touch-item group grid gap-5 border-b border-kedi-navy/[0.12] py-7 transition-all duration-300 sm:px-3 lg:grid-cols-[54px_1fr_42px] lg:items-center lg:gap-6 ${
                     index === activeIndex ? 'bg-[#f6f8fb] lg:px-5' : 'hover:bg-[#f8f9fb]'
                   }`}
                 >
@@ -49,7 +49,7 @@ export default function ServiceCapabilitiesV3() {
                     <p className="mt-3 max-w-2xl text-sm leading-6 text-kedi-navy/[0.55]">{service.description}</p>
                     <div className="mt-4 flex flex-wrap gap-2">
                       {service.tags.map((tag) => (
-                        <span key={tag} className="rounded-full border border-kedi-navy/[0.12] px-3 py-1 text-[9px] font-semibold uppercase tracking-[0.08em] text-kedi-navy/[0.48]">
+                        <span data-glass="chip" key={tag} className="rounded-full border border-kedi-navy/[0.12] px-3 py-1 text-[9px] font-semibold uppercase tracking-[0.08em] text-kedi-navy/[0.48]">
                           {tag}
                         </span>
                       ))}

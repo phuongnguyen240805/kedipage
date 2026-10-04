@@ -6,6 +6,7 @@ import CustomerForm from './type/CustomerForm';
 import PartnerForm from './type/PartnerForm';
 import CandidateForm from './type/CandidateForm';
 import Boderyelow from '../ui/boder-yelow';
+import { GlassSurface } from '@/components/liquid-glass/GlassSurface';
 
 const RegisterMain = () => {
   const [activeTab, setActiveTab] = useState('customer');
@@ -47,7 +48,7 @@ const RegisterMain = () => {
         </div>
 
         {/* Right Side: Form Container */}
-        <div className="w-full lg:w-1/2 flex flex-col bg-[#101322] p-8 lg:p-16 overflow-y-auto border-l border-white/5">
+        <GlassSurface tone="dark" className="w-full lg:w-1/2 flex flex-col bg-[#101322] p-8 lg:p-16 overflow-y-auto border-l border-white/5">
           <div className="max-w-md mx-auto w-full">
             <div className="mb-10 text-center lg:text-left">
               <h2 className="text-4xl font-black tracking-tight mb-3 uppercase">KHỞI TẠO KẾT NỐI</h2>
@@ -76,7 +77,7 @@ const RegisterMain = () => {
               {activeTab === 'candidate' && <CandidateForm />}
             </div>
           </div>
-        </div>
+        </GlassSurface>
 
         <style jsx global>{`
           .underline-input {

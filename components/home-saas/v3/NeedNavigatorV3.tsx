@@ -34,7 +34,7 @@ export default function NeedNavigatorV3() {
             >
               <Link
                 href={item.href}
-                className="group relative flex min-h-[430px] flex-col overflow-hidden rounded-[28px] border border-kedi-navy/10 bg-white shadow-[0_18px_48px_rgba(11,45,91,.07)] transition-[border-color,box-shadow] duration-300 hover:border-kedi-yellow hover:shadow-[0_30px_70px_rgba(11,45,91,.14)]"
+                className="liquid-card liquid-touch-item group relative flex min-h-[430px] flex-col overflow-hidden rounded-[28px] border border-kedi-navy/10 bg-white shadow-[0_18px_48px_rgba(11,45,91,.07)] transition-[border-color,box-shadow] duration-300 hover:border-kedi-yellow hover:shadow-[0_30px_70px_rgba(11,45,91,.14)]"
               >
                 <div className="relative h-[185px] overflow-hidden bg-kedi-navy">
                   <Image unoptimized
@@ -48,7 +48,7 @@ export default function NeedNavigatorV3() {
                   <div className="absolute left-5 top-5 rounded-full border border-white/20 bg-kedi-navy/75 px-3 py-1.5 text-[10px] font-bold tracking-[0.14em] text-white backdrop-blur-md">
                     {item.index}
                   </div>
-                  <span className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full border border-white/25 bg-white/10 text-white backdrop-blur-md transition-all duration-300 group-hover:border-kedi-yellow group-hover:bg-kedi-yellow group-hover:text-kedi-navy">
+                  <span className="liquid-orb absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full border border-white/25 bg-white/10 text-white backdrop-blur-md transition-all duration-300 group-hover:border-kedi-yellow group-hover:bg-kedi-yellow group-hover:text-kedi-navy">
                     <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </span>
                 </div>
@@ -58,7 +58,7 @@ export default function NeedNavigatorV3() {
                   <p className="mt-4 text-sm leading-6 text-kedi-navy/[0.58]">{item.description}</p>
                   <div className="mt-auto flex flex-wrap gap-2 pt-6">
                     {item.tags.map((tag) => (
-                      <span key={tag} className="rounded-full bg-[#eff2f6] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-kedi-navy/60 transition-colors duration-300 group-hover:bg-kedi-yellow/[0.15]">
+                      <span data-glass="chip" key={tag} className="rounded-full bg-[#eff2f6] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-kedi-navy/60 transition-colors duration-300 group-hover:bg-kedi-yellow/[0.15]">
                         {tag}
                       </span>
                     ))}

@@ -7,7 +7,6 @@ import {
   NavigationMenuContent,
   NavigationMenuLink,
 } from '@/components/ui/navigation-menu';
-import Boderyelow from '../ui/boder-yelow';
 import { cn } from '@/lib/utils';
 
 interface BlogItem {
@@ -26,9 +25,8 @@ const BlogDropdown = ({ items }: BlogDropdownProps) => {
   const pathname = usePathname();
 
   return (
-    <NavigationMenuContent className="min-w-[220px] w-[240px] animate-in slide-in-from-top-2 bg-transparent p-0 duration-300">
-      <Boderyelow className="rounded-xl bg-kedi-navy">
-        <ul className="flex flex-col gap-1 rounded-xl bg-kedi-navy p-2 text-white">
+    <NavigationMenuContent data-glass-tone="dark" className="min-w-[220px] w-[240px] animate-in slide-in-from-top-2 p-2 duration-300">
+        <ul className="liquid-menu-stack text-white">
           {items.map((item) => {
             const isActive =
               pathname === item.href || pathname.startsWith(`${item.href}/`);
@@ -37,6 +35,7 @@ const BlogDropdown = ({ items }: BlogDropdownProps) => {
               <li key={item.href}>
                 <NavigationMenuLink asChild>
                   <Link
+                    data-glass="item"
                     href={item.href}
                     className={cn(
                       'block select-none rounded-lg p-3 leading-none no-underline outline-none transition-all duration-300',
@@ -59,7 +58,6 @@ const BlogDropdown = ({ items }: BlogDropdownProps) => {
             );
           })}
         </ul>
-      </Boderyelow>
     </NavigationMenuContent>
   );
 };

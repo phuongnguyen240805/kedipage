@@ -137,7 +137,7 @@ function Chip({
   className?: string;
 }) {
   return (
-    <Link href={item.href} onClick={onNavigate} className={cn('mai-chip', className)}>
+    <Link data-glass="item" href={item.href} onClick={onNavigate} className={cn('mai-chip', className)}>
       <span className="mai-ic">
         <Image src={item.image} alt="" width={100} height={76} />
       </span>
@@ -241,7 +241,7 @@ export default function AIMegaMenu({ isOpen, onNavigate }: AIMegaMenuProps) {
         data-open={isOpen ? 'true' : 'false'}
         className="kedi-ai-mega fixed left-1/2 top-16 z-[9999] w-[min(1180px,94vw)]"
       >
-        <div className="kedi-ai-mega-panel">
+        <div data-glass="menu" data-glass-tone="light" className="kedi-ai-mega-panel">
           <div className="mai-grid">
             <section className="mai-col" aria-labelledby="kedi-ai-products-title">
               <Heading title="AI Agent đang bán" href="/bo-ai-agent" linkLabel="Xem tất cả →" onNavigate={onNavigate} />

@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
+import { GlassSurface } from '@/components/liquid-glass/GlassSurface';
 import React, { useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import {
@@ -158,7 +159,7 @@ const RegisterForm = ({
   ];
 
   return (
-    <div
+    <GlassSurface tone="light" material="surface"
       className={`relative border border-gray-100 max-w-sm rounded-2xl p-6 shadow-2xl shadow-gray-200/80 ${getPositionClasses()} overflow-hidden bg-transparent`}
     >
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-purple-100/60 blur-[60px] -z-10"></div>
@@ -230,7 +231,7 @@ const RegisterForm = ({
           <div className="absolute inset-0 h-full w-full scale-0 rounded-xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/20"></div>
         </Button>
       </div>
-    </div>
+    </GlassSurface>
   );
 };
 

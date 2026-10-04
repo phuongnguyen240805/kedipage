@@ -41,7 +41,7 @@ export default function HomeInsightsV3() {
             >
               <Link
                 href={item.href}
-                className="group flex min-h-[430px] flex-col overflow-hidden rounded-[28px] border border-kedi-navy/10 bg-[#f7f8fa] transition-all duration-300 hover:-translate-y-1 hover:border-kedi-yellow hover:shadow-[0_24px_60px_rgba(11,45,91,.1)]"
+                className="liquid-card liquid-touch-item group relative flex min-h-[430px] flex-col overflow-hidden rounded-[28px] border border-kedi-navy/10 bg-[#f7f8fa] transition-all duration-300 hover:-translate-y-1 hover:border-kedi-yellow hover:shadow-[0_24px_60px_rgba(11,45,91,.1)]"
               >
                 <div className="relative h-[225px] overflow-hidden bg-kedi-navy">
                   <Image unoptimized

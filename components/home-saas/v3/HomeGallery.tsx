@@ -12,7 +12,7 @@ function GalleryCard({ item }: { item: (typeof galleryItemsV3)[number] }) {
   return (
     <Link
       href={item.href}
-      className="group relative flex h-[64vh] min-h-[500px] w-[min(78vw,620px)] shrink-0 snap-center flex-col overflow-hidden rounded-[32px] border border-white/[0.12] bg-[#0b2d5b] text-white shadow-[0_30px_90px_rgba(0,0,0,.28)] lg:h-[50vh] lg:min-h-[360px] lg:max-h-[460px] lg:w-[min(40vw,580px)]"
+      className="liquid-touch-item group relative flex h-[64vh] min-h-[500px] w-[min(78vw,620px)] shrink-0 snap-center flex-col overflow-hidden rounded-[32px] border border-white/[0.12] bg-[#0b2d5b] text-white shadow-[0_30px_90px_rgba(0,0,0,.28)] lg:h-[50vh] lg:min-h-[360px] lg:max-h-[460px] lg:w-[min(40vw,580px)]"
     >
       <Image unoptimized
         src={item.image}
@@ -28,7 +28,7 @@ function GalleryCard({ item }: { item: (typeof galleryItemsV3)[number] }) {
             <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-kedi-yellow">{item.eyebrow}</p>
             <span className="mt-2 block text-xs font-semibold text-white/[0.42]">{item.index}</span>
           </div>
-          <span className="grid h-11 w-11 place-items-center rounded-full border border-white/20 bg-white/10 backdrop-blur-md transition-all duration-300 group-hover:border-kedi-yellow group-hover:bg-kedi-yellow group-hover:text-kedi-navy">
+          <span className="liquid-orb grid h-11 w-11 place-items-center rounded-full border border-white/20 bg-white/10 backdrop-blur-md transition-all duration-300 group-hover:border-kedi-yellow group-hover:bg-kedi-yellow group-hover:text-kedi-navy">
             <ArrowUpRight className="h-4 w-4" />
           </span>
         </div>

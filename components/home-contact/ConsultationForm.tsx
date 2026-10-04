@@ -4,6 +4,7 @@ import { ChangeEvent, FormEvent, useMemo, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { LockKeyhole, Paperclip, Zap } from 'lucide-react';
 import styles from './home-contact.module.css';
+import LiquidSelect from '@/components/liquid-glass/LiquidSelect';
 
 type ContactTab = 'customer' | 'partner' | 'candidate';
 
@@ -200,18 +201,19 @@ export default function ConsultationForm() {
 
           {activeTab === 'partner' ? (
             <div className={styles.fieldRow}>
-              <select
+              <LiquidSelect
+                label="Loại đối tác"
                 className={`${styles.input} ${styles.select}`}
                 required
                 value={formData.partnerType}
-                onChange={updateField('partnerType')}
+                onValueChange={(value) => setFormData(current => ({ ...current, partnerType: value }))}
               >
                 <option value="" disabled>
                   Bạn là cá nhân hay doanh nghiệp?
                 </option>
                 <option value="Cá nhân">Cá nhân</option>
                 <option value="Doanh nghiệp">Doanh nghiệp</option>
-              </select>
+              </LiquidSelect>
             </div>
           ) : null}
 
@@ -242,11 +244,12 @@ export default function ConsultationForm() {
           {activeTab === 'customer' ? (
             <>
               <div className={styles.fieldRow}>
-                <select
+                <LiquidSelect
+                  label="Dịch vụ bạn quan tâm"
                   className={`${styles.input} ${styles.select}`}
                   required
                   value={formData.service}
-                  onChange={updateField('service')}
+                  onValueChange={(value) => setFormData(current => ({ ...current, service: value }))}
                 >
                   <option value="" disabled>
                     Vui lòng chọn dịch vụ mà bạn quan tâm
@@ -256,7 +259,7 @@ export default function ConsultationForm() {
                       {service}
                     </option>
                   ))}
-                </select>
+                </LiquidSelect>
               </div>
 
               <div className={`${styles.fieldRow} ${styles.textareaRow}`}>
@@ -288,11 +291,12 @@ export default function ConsultationForm() {
           {activeTab === 'candidate' ? (
             <>
               <div className={styles.fieldRow}>
-                <select
+                <LiquidSelect
+                  label="Vị trí ứng tuyển"
                   className={`${styles.input} ${styles.select}`}
                   required
                   value={formData.position}
-                  onChange={updateField('position')}
+                  onValueChange={(value) => setFormData(current => ({ ...current, position: value }))}
                 >
                   <option value="" disabled>
                     Bạn muốn ứng tuyển vị trí nào ở KEDI?
@@ -302,7 +306,7 @@ export default function ConsultationForm() {
                       {position}
                     </option>
                   ))}
-                </select>
+                </LiquidSelect>
               </div>
 
               <div className={styles.fileField}>

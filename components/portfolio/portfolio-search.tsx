@@ -1,4 +1,6 @@
+
 'use client';
+import LiquidSelect from '@/components/liquid-glass/LiquidSelect';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Button } from '../ui/button';
 import { FiSearch, FiX } from 'react-icons/fi';
@@ -211,16 +213,16 @@ export default function ProjectSearch({ onSearch }: ProjectSearchProps) {
           onFocus={() => setDropdownVisible(true)}
         />
         <div className="h-6 w-px bg-gray-300 self-center" />
-        <select
+        <LiquidSelect label="Ngành dự án"
           className="px-3 py-3 text-sm text-[#2c2c2c] focus:outline-none bg-white"
-          onChange={(e) => toggleSuggestion(e.target.value)}
+          onValueChange={toggleSuggestion}
         >
           <option value="">Tất cả các ngành</option>
           <option value="Buddy">Buddy</option>
           <option value="Premium Website">Premium Website</option>
           <option value="SEO-Marketing">SEO-Marketing</option>
           <option value="LMS">LMS</option>
-        </select>
+        </LiquidSelect>
 
         <Button
           type="button"
@@ -238,7 +240,7 @@ export default function ProjectSearch({ onSearch }: ProjectSearchProps) {
 
       {/* Dropdown Gợi Ý */}
       {dropdownVisible && (
-        <div className="absolute bg-white w-full border border-gray-200 rounded-md shadow-md mt-1 z-10 p-4 text-sm">
+        <div data-glass="menu" data-glass-tone="light" className="absolute bg-white w-full border border-gray-200 rounded-md shadow-md mt-1 z-10 p-4 text-sm">
           {/* Lịch sử tìm kiếm */}
           {searchInput.trim() === '' && searchHistory.length > 0 && (
             <>

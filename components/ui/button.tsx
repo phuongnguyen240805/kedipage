@@ -65,6 +65,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : "button";
     return (
       <Comp
+        data-glass={variant === 'link' ? 'none' : 'control'}
         className={cn(
           buttonVariants({ variant, size, className }),
           "cursor-can-hover"

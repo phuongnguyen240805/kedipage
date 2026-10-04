@@ -62,7 +62,7 @@ export default function PortfolioList() {
   const currentItems = filteredItems.slice(0, visibleCount);
 
   return (
-    <section id="section-mau-web" className="w-full bg-[#f4f6f9] py-20 text-kedi-navy">
+    <section data-glass="background" data-glass-tone="light" id="section-mau-web" className="w-full bg-[#f4f6f9] py-20 text-kedi-navy">
       <div className="container mx-auto px-4 max-w-[calc(100%-60px)]">
         {/* Header Title */}
         <FadeIn direction="up" amount={0.2}>
@@ -87,7 +87,7 @@ export default function PortfolioList() {
           <FadeIn direction="up" amount={0.1} delay={0.1}>
             <div className="max-w-5xl mx-auto">
               <Boderyelow>
-                <div className="flex bg-white rounded-xl flex-col md:flex-row items-stretch md:items-center min-h-[50px] md:min-h-[64px] px-4 relative">
+                <div data-glass="panel" className="flex bg-white rounded-xl flex-col md:flex-row items-stretch md:items-center min-h-[50px] md:min-h-[64px] px-4 relative">
                   {/* Search Area */}
                   <div
                     className="flex flex-1 items-center py-2 md:py-0 relative"
@@ -108,26 +108,26 @@ export default function PortfolioList() {
 
                     {/* Menu gợi ý nhanh dựa trên Category */}
                     {isFocused && (
-                      <div className="absolute top-[calc(100%+10px)] left-0 w-full md:w-[120%] bg-white rounded-xl shadow-2xl border border-gray-100 py-4 z-[110] overflow-hidden">
+                      <div data-glass="menu" className="absolute top-[calc(100%+10px)] left-0 w-full md:w-[120%] bg-white rounded-xl shadow-2xl border border-gray-100 py-4 z-[110] overflow-hidden">
                         <div className="mb-2">
                           <h4 className="px-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">
                             Gợi ý ngành nghề
                           </h4>
                           <div className="flex flex-col">
                             {DROPDOWN_CATEGORIES.map((cat) => (
-                              <div
+                              <button type="button" data-glass="item"
                                 key={cat}
                                 onClick={() => {
                                   setSelectedCategory(cat);
                                   setIsFocused(false);
                                 }}
-                                className="px-4 py-2 hover:bg-gray-50 flex items-center gap-3 cursor-pointer transition-colors"
+                                className="px-4 py-2 hover:bg-gray-50 flex items-center gap-3 cursor-pointer transition-colors text-left"
                               >
                                 <Search size={14} className="text-gray-300" />
                                 <span className="text-sm text-gray-600">
                                   {cat}
                                 </span>
-                              </div>
+                              </button>
                             ))}
                           </div>
                         </div>
@@ -166,6 +166,7 @@ export default function PortfolioList() {
                 <Boderyelow>
                   {/* Link bọc toàn bộ để tối ưu SEO và trải nghiệm người dùng */}
                   <Link
+                    data-glass="panel"
                     href={`/du-an/${item.slug}`}
                     className="group bg-white rounded-[20px] overflow-hidden border border-kedi-navy/10 shadow-[0_14px_40px_-32px_rgba(11,45,91,.35)] hover:-translate-y-1 hover:shadow-[0_24px_60px_-34px_rgba(11,45,91,.42)] transition-all duration-500 flex flex-col h-full relative"
                   >

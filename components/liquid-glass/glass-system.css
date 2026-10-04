@@ -1,0 +1,131 @@
+/* Shared material tokens. Keep layout, colour, dimensions and actions at the call site. */
+.kedi-glass {
+  --glass-blur: 12px;
+  --glass-highlight: rgba(255,255,255,.58);
+  --glass-shade: rgba(11,45,91,.1);
+  --glass-panel: rgba(16,46,84,.94);
+  --glass-panel-ink: #f3f7fd;
+  --glass-panel-edge: rgba(225,240,255,.35);
+  --glass-item: rgba(218,237,255,.12);
+  --glass-focus: #ffc629;
+  --glass-field-edge: rgba(138,170,202,.32);
+  --glass-control-gap: 16px;
+  --glass-nav-gap: 16px;
+  --glass-menu-item-gap: 8px;
+  --glass-panel-radius: 20px;
+  --glass-item-radius: 12px;
+  --glass-material: linear-gradient(145deg,rgba(255,255,255,.25),rgba(255,255,255,.03) 52%,rgba(155,197,229,.12));
+  --glass-inset: inset 0 1px 1px var(--glass-highlight), inset 0 -1px 2px var(--glass-shade);
+}
+.kedi-glass [data-glass-tone="light"] {
+  --glass-panel: rgba(244,248,253,.95);
+  --glass-panel-ink: #0b2d5b;
+  --glass-panel-edge: rgba(255,255,255,.85);
+  --glass-item: rgba(11,45,91,.08);
+}
+/* Legacy HTML controls are covered here; new components use data-glass explicitly. */
+.kedi-glass :where(button:not([role="checkbox"]):not([role="switch"]), select,
+  a.btn, a.btn-link, a.btn-big-link, a.btn-second, .btn-big, input[type="submit"]:not(.btn-hidden-submit),
+  a[class*="rounded"][class*="inline-flex"], a[class*="rounded"][class*="items-center"],
+  [data-glass="control"], [data-glass="chip"],
+  span[class*="rounded-full"][class*="px-"], div[class*="rounded-full"][class*="px-"]):not([data-glass="none"]) {
+  isolation: isolate;
+  background-image: var(--glass-material) !important;
+  box-shadow: var(--glass-inset), 0 3px 12px rgba(0,20,45,.07) !important;
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(125%);
+  backdrop-filter: blur(var(--glass-blur)) saturate(125%);
+  transition-property: background-color, border-color, box-shadow, color;
+  transition-duration: 180ms;
+}
+/* Fields keep their native editing/validation behavior and page text colours. */
+.kedi-glass :where(input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]):not([type="submit"]):not([type="button"]):not([type="reset"]), textarea, select, .liquid-select-trigger, [data-glass="field"]):not([data-glass="none"]) {
+  background-image: var(--glass-material) !important;
+  border: 1px solid var(--glass-field-edge) !important;
+  border-radius: 12px !important;
+  box-shadow: var(--glass-inset), 0 2px 8px rgba(0,20,45,.04);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  backdrop-filter: blur(6px) saturate(120%);
+  transition: border-color 180ms, box-shadow 180ms, background-color 180ms;
+}
+.kedi-glass :where(input,textarea)[data-glass="none"] { background-image: none !important; }
+.kedi-glass :where(input,textarea):not([data-glass="none"]):not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]) { min-height: 44px; }
+.kedi-glass :where(input,textarea,[data-glass="field"]):is(:focus-visible,:focus-within):not([data-glass="none"]) { border-color: var(--glass-focus) !important; outline: 2px solid rgba(255,198,41,.28); outline-offset: 2px; }
+.kedi-glass :where(input,textarea):is(:disabled,[readonly]) { opacity: .65; backdrop-filter: none; -webkit-backdrop-filter: none; }
+/* Panel overlays preserve the existing base colour and border radius. */
+.kedi-glass [data-glass="panel"] {
+  border: 1px solid var(--glass-panel-edge);
+  border-radius: var(--glass-panel-radius);
+  background-image: var(--glass-material);
+  box-shadow: var(--glass-inset), 0 12px 36px rgba(0,20,45,.1);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(125%);
+  backdrop-filter: blur(var(--glass-blur)) saturate(125%);
+}
+.kedi-glass [data-glass="background"] { background-image: radial-gradient(ellipse at 12% 0%,rgba(136,190,229,.09),transparent 55%),linear-gradient(145deg,rgba(255,255,255,.035),transparent 60%); }
+.kedi-golden-frame { border: 1px solid rgba(255,198,41,.5); border-radius: var(--frame-radius); box-shadow: 0 0 15px rgba(255,198,41,.2); transition: border-color 180ms,box-shadow 180ms; }
+.kedi-golden-frame:hover { border-color: #ffc629; box-shadow: 0 0 24px rgba(255,198,41,.3); }
+.kedi-frame-content { border-radius: inherit; }
+.kedi-frame-content > :only-child { border-radius: inherit; }
+.liquid-header-controls { gap: var(--glass-control-gap); }
+.liquid-header-links { gap: var(--glass-nav-gap); }
+.liquid-header-support { padding-left: var(--glass-control-gap); margin-left: 4px; }
+@media (min-width:1280px) { .liquid-header-controls { --glass-control-gap: 20px; } }
+@media (min-width:1536px) { .liquid-header-links { --glass-nav-gap: 24px; } }
+.kedi-glass :where([data-glass="chip"], span[class*="rounded-full"][class*="px-"], div[class*="rounded-full"][class*="px-"]) {
+  --glass-blur: 6px;
+  border: 1px solid rgba(144,172,205,.2);
+}
+.kedi-glass :where([data-glass="surface"], [data-glass="menu"], [role="listbox"]) {
+  background: linear-gradient(145deg,rgba(255,255,255,.11),transparent 60%), var(--glass-panel) !important;
+  color: var(--glass-panel-ink);
+  border: 1px solid var(--glass-panel-edge) !important;
+  border-radius: var(--glass-panel-radius);
+  box-shadow: inset 0 1px 1px var(--glass-highlight), 0 18px 48px rgba(0,16,40,.2) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+}
+.kedi-glass [data-glass="menu"], .kedi-glass [data-glass="surface"] { border-radius: var(--glass-panel-radius); background-clip: padding-box; }
+.kedi-glass :where([data-glass="item"], [role="menuitem"], [role="menuitemradio"], [role="menuitemcheckbox"], [role="option"]) {
+  position: relative;
+  border-radius: var(--glass-item-radius);
+  background-image: linear-gradient(130deg,rgba(255,255,255,.08),transparent) !important;
+  transition: background-color 180ms, box-shadow 180ms;
+}
+.kedi-glass [data-glass="menu"] a { border-radius: var(--glass-item-radius); box-shadow: inset 0 1px 1px rgba(255,255,255,.28); }
+.liquid-menu-stack { display: flex; flex-direction: column; gap: var(--glass-menu-item-gap); }
+.kedi-glass .liquid-menu-stack [data-glass="item"] { padding: 10px 12px; }
+.kedi-glass .liquid-menu-stack > [data-glass="item"] { margin-top: 0; min-height: 44px; }
+.kedi-glass [data-glass="menu"] :where([data-glass="item"], [role="menuitem"], [role="menuitemradio"], [role="menuitemcheckbox"]) { min-height: 44px; }
+.kedi-glass :where([data-glass="item"], [role="menuitem"], [role="menuitemradio"], [role="menuitemcheckbox"], [role="option"]) + :where([data-glass="item"], [role="menuitem"], [role="menuitemradio"], [role="menuitemcheckbox"], [role="option"]) { margin-top: var(--glass-menu-item-gap); }
+.kedi-glass [data-glass="menu"] a:not(.mai-hero):hover { background-color: var(--glass-item); box-shadow: inset 0 1px 1px var(--glass-highlight), inset 0 0 0 1px rgba(151,188,219,.28); }
+.kedi-glass :where([data-glass="item"], [role="menuitem"], [role="menuitemradio"], [role="menuitemcheckbox"], [role="option"]):is(:hover,:focus-visible,[data-highlighted],[aria-selected="true"],[data-state="checked"]) {
+  background-color: var(--glass-item) !important;
+  color: var(--glass-panel-ink) !important;
+  box-shadow: inset 0 1px 1px var(--glass-highlight), inset 0 0 0 1px rgba(151,188,219,.28);
+}
+.kedi-glass :where(button, [data-glass="control"], [data-glass="item"]):focus-visible { outline: 2px solid var(--glass-focus); outline-offset: 3px; }
+.kedi-glass :where(button,[data-glass="control"]):disabled { backdrop-filter: none; -webkit-backdrop-filter: none; }
+.kedi-glass .liquid-ripple-host { position: relative; }
+.liquid-ripple-clip { position: absolute; inset: 0; z-index: 6; pointer-events: none; border-radius: inherit; overflow: hidden; }
+.liquid-ripple {
+  position: absolute; pointer-events: none; z-index: 6; width: var(--ripple-size); height: var(--ripple-size);
+  left: var(--ripple-x); top: var(--ripple-y); border-radius: 50%;
+  border: 1px solid rgba(175,212,240,.7); background: rgba(165,211,245,.22);
+  transform: translate(-50%,-50%) scale(0);
+  animation: liquid-ripple-expand 600ms cubic-bezier(.16,1,.3,1) forwards;
+  clip-path: inset(0 round 50%);
+}
+@keyframes liquid-ripple-expand { to { transform: translate(-50%,-50%) scale(1); opacity: 0; } }
+.liquid-select-trigger { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; text-align: left; }
+.liquid-select-trigger[data-glass="control"] { background-image: linear-gradient(145deg,rgba(255,255,255,.2),rgba(255,255,255,.02)) !important; }
+.liquid-select-trigger > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.liquid-select-content { z-index: 100010; width: var(--radix-select-trigger-width); max-width: calc(100vw - 24px); overflow: hidden; }
+.liquid-select-viewport { padding: 8px; max-height: min(320px,var(--radix-select-content-available-height)); overflow-y: auto; }
+.liquid-select-item { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; padding: 10px 12px; font-size: 14px; outline: none; cursor: pointer; }
+.liquid-select-item[data-disabled] { opacity: .45; pointer-events: none; }
+@media (max-width: 767px) { .kedi-glass { --glass-blur: 8px; } }
+@media (prefers-reduced-motion:reduce) { .liquid-ripple { display: none; } }
+@media (prefers-reduced-transparency:reduce) {
+  .kedi-glass { --glass-panel: #102e54; --glass-item: #28517e; }
+  .kedi-glass [data-glass-tone="light"] { --glass-panel: #f4f8fd; --glass-item: #e2ebf6; }
+  .kedi-glass :where(button,input,textarea,select,[data-glass]) { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+}

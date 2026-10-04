@@ -21,6 +21,7 @@ import { FiMenu, FiX } from "react-icons/fi";
 import MobileNav from "@/components/layouts/MobileNav";
 import ServicesDropdown from "../services-dropdown/services-dropdown";
 import AIMegaMenu from "./ai-mega-menu";
+import LiquidNavigation from "@/components/liquid-glass/LiquidNavigation";
 
 const navTextClass =
   "text-[13px] lg:text-[14px] font-medium uppercase tracking-[0.08em] whitespace-nowrap px-0 py-0 h-auto bg-transparent text-current transition-colors duration-300";
@@ -182,7 +183,8 @@ const Header = ({ className }: { className?: string }) => {
         "transition-[transform,box-shadow] duration-500 ease-in-out will-change-transform",
         isVisible ? "translate-y-0" : "-translate-y-full",
         isCompact ? "shadow-[0_8px_24px_rgba(0,0,0,0.28)]" : "shadow-none",
-        className
+        className,
+        "liquid-header"
       )}
     >
       <div className="flex h-14 w-full items-center justify-between gap-3 px-4 md:px-6 lg:h-16 lg:gap-6 lg:px-8">
@@ -196,8 +198,9 @@ const Header = ({ className }: { className?: string }) => {
         </Link>
 
         <nav className="hidden min-w-0 flex-1 items-center justify-center lg:flex">
+          <LiquidNavigation>
           <NavigationMenu viewport={false} className="max-w-none">
-            <NavigationMenuList className="flex items-center gap-0.5 xl:gap-1">
+            <NavigationMenuList className="liquid-header-links flex items-center">
               {navigationConfig.map((item: any) => {
                 const key = item.label || item.href || JSON.stringify(item);
                 const label = item.label ? t(`navigation.${item.labelKey}`) : "";
@@ -213,6 +216,8 @@ const Header = ({ className }: { className?: string }) => {
                 return (
                   <NavigationMenuItem
                     key={key}
+                    data-liquid-nav-item=""
+                    data-liquid-active={isActive}
                     data-ai-open={item.dropdownType === "ai" ? isAiOpen : undefined}
                     onMouseEnter={item.dropdownType === "ai" ? openAiMenu : undefined}
                     onMouseLeave={
@@ -266,6 +271,7 @@ const Header = ({ className }: { className?: string }) => {
                         {hasOpenedServices && (
                           <div
                             ref={servicesDropdownRef}
+                            data-liquid-menu-content=""
                             id="kedi-services-dropdown"
                             aria-hidden={!isServicesOpen}
                             className={cn(
@@ -302,6 +308,7 @@ const Header = ({ className }: { className?: string }) => {
                         {hasOpenedAi && (
                           <div
                             ref={aiDropdownRef}
+                            data-liquid-menu-content=""
                             onMouseEnter={openAiMenu}
                             onMouseLeave={() => scheduleAiClose()}
                           >
@@ -356,20 +363,21 @@ const Header = ({ className }: { className?: string }) => {
               })}
             </NavigationMenuList>
           </NavigationMenu>
+          </LiquidNavigation>
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-2.5 lg:flex xl:gap-3">
+        <div data-liquid-controls="" className="liquid-header-controls hidden shrink-0 items-center lg:flex">
           <SearchDropdown isOpen={isSearchOpen} onToggle={toggleSearch} />
-          <div className="h-5 w-px bg-white/20" />
+          <div aria-hidden="true" className="liquid-header-divider h-5 w-px bg-white/20" />
           <LanguageSwitcher />
-          <div className="border-l border-white/20 pl-2.5 xl:pl-3">
+          <div className="liquid-header-support border-l border-white/20">
             <HostlineSection />
           </div>
         </div>
 
         <button
           type="button"
-          className="ml-auto flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/25 text-white transition-colors duration-200 hover:border-kedi-yellow hover:text-kedi-yellow lg:hidden"
+          className="liquid-button ml-auto flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/25 text-white transition-colors duration-200 hover:border-kedi-yellow hover:text-kedi-yellow lg:hidden"
           onClick={toggleMobileMenu}
           aria-label={isMobileMenuOpen ? "Đóng menu" : "Mở menu"}
         >

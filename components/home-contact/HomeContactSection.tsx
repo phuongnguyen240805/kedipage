@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Globe2, MapPin, MessageCircleMore, PhoneCall } from 'lucide-react';
 import { contactInfo } from '@/components/footer/dataFooter';
 import ConsultationForm from './ConsultationForm';
+import { GlassSurface } from '@/components/liquid-glass/GlassSurface';
 import styles from './home-contact.module.css';
 
 type MapView = 'terrain' | 'satellite';
@@ -54,7 +55,7 @@ export default function HomeContactSection() {
       </div>
 
       <div className={styles.container}>
-        <div className={styles.card}>
+        <GlassSurface tone="dark" className={styles.card}>
           <div className={styles.backgroundDecor} aria-hidden="true">
             <span className={styles.decorOrbOne} />
             <span className={styles.decorOrbTwo} />
@@ -163,12 +164,12 @@ export default function HomeContactSection() {
             </div>
 
             <div className={styles.formColumn}>
-              <div className={styles.formCard}>
+              <GlassSurface tone="light" material="surface" className={styles.formCard}>
                 <ConsultationForm />
-              </div>
+              </GlassSurface>
             </div>
           </div>
-        </div>
+        </GlassSurface>
       </div>
     </section>
   );

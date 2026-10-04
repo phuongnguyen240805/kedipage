@@ -1,9 +1,11 @@
+
 'use client';
+import LiquidSelect from '@/components/liquid-glass/LiquidSelect';
 
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 // Import các icon cần thiết từ Lucide
-import { Mail, Phone, MapPin, X, CheckCircle2, ChevronDown } from 'lucide-react';
+import { Mail, Phone, MapPin, X, CheckCircle2 } from 'lucide-react';
 
 interface RegisterModalProps {
   isOpen: boolean;
@@ -122,10 +124,9 @@ function InputField({ label, type = "text", placeholder, options }: InputFieldPr
       <label className="block text-[10px] font-bold text-zinc-500 uppercase mb-2 tracking-widest">{label}</label>
       {type === "select" ? (
         <div className="relative">
-          <select className="w-full bg-zinc-800 border border-white/5 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500 appearance-none transition-colors cursor-pointer">
+          <LiquidSelect label={label} tone="dark" defaultValue={options?.[0]} className="w-full bg-zinc-800 border border-white/5 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500 appearance-none transition-colors cursor-pointer">
             {options?.map(opt => <option key={opt} value={opt} className="bg-zinc-900">{opt}</option>)}
-          </select>
-          <ChevronDown size={16} className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-500 pointer-events-none" />
+          </LiquidSelect>
         </div>
       ) : (
         <input 

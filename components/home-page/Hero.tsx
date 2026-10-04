@@ -1,26 +1,29 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Boderyelow from "../ui/boder-yelow";
+import HeroGlassLens from '@/components/liquid-glass/HeroGlassLens';
 
 export default function Hero() {
+  const reduceMotion = useReducedMotion();
   return (
     <section
-      className="relative isolate w-full h-screen overflow-hidden bg-kedi-navy bg-cover bg-center bg-no-repeat sm:mb-[-10px] xm:mb-[-10px]"
+      className="home-hero relative isolate w-full overflow-hidden bg-kedi-navy bg-cover bg-center bg-no-repeat sm:mb-[-10px] xm:mb-[-10px]"
+      data-scroll
+      data-scroll-speed="-.3"
+    >
+      <div id="home-glass-scene" className="home-glass-scene" aria-hidden="true"
       style={{
         backgroundImage:
           "radial-gradient(circle at 72% 28%, rgba(255,198,41,.16), transparent 32%), radial-gradient(circle at 58% 58%, rgba(68,170,255,.12), transparent 28%), linear-gradient(90deg, rgba(8,34,77,.88) 0%, rgba(8,34,77,.76) 34%, rgba(8,34,77,.42) 63%, rgba(8,34,77,.20) 100%), url('/homepage/hero-background-future-network.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      data-scroll
-      data-scroll-speed="-.3"
-    >
-      <div className="w-full h-full flex flex-col justify-between">
-        <div />
-        <div className="w-full flex flex-col justify-between h-[75vh] sm:h-[85vh] xm:h-[85vh]">
+      />
+      <div className="hero-layout w-full">
+        <div className="hero-content-stack w-full flex flex-col justify-between">
           {/* Điều chỉnh Padding linh hoạt cho Mobile */}
           <div className="w-full flex justify-between gap-[20px] px-[10px] md:pl-[20px] lg:pl-[30px]">
             <div>
@@ -28,12 +31,12 @@ export default function Hero() {
                 Kiến tạo <br />
                 <div className="flex items-center gap-[5px] md:gap-[10px]">
                   <motion.span
-                    initial={{ width: 0 }}
+                    initial={reduceMotion ? false : { width: 0 }}
                     animate={{ width: "auto" }}
                     transition={{
                       ease: [0.86, 0, 0.07, 0.995],
-                      duration: 1,
-                      delay: 1.5,
+                      duration: reduceMotion ? 0 : 1,
+                      delay: reduceMotion ? 0 : 1.5,
                     }}
                     // Chiều cao của Box ảnh cũng tự động nhỏ lại trên Mobile
                     className="flex items-center overflow-hidden h-[9vw] md:h-[50px] lg:h-[60px]"
@@ -52,11 +55,12 @@ export default function Hero() {
                 </div>
                 phục vụ mô hình của bạn tăng trưởng
               </h1>
+              <HeroGlassLens />
             </div>
           </div>
 
           {/* Phần Footer của Hero: Giảm Margin và chiều cao trên mobile */}
-          <div className="w-full flex flex-col min-h-[20vh] border-t border-white/20 py-[20px] mb-[40px] md:mb-[80px] gap-[20px] md:gap-[30px]">
+          <div className="hero-bottom-glass w-full flex flex-col border-t border-white/20 gap-[20px] md:gap-[30px]">
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center padding-x gap-[20px]">
               <div className="w-full lg:w-1/2">
                 <p className="text-[14px] md:text-base text-white/80 font-NeueMontreal">
@@ -69,35 +73,20 @@ export default function Hero() {
                   Từ website đầu tiên đến chiến lược tăng trưởng dài hạn
                 </p>
 
-                <div className="flex items-center gap-[5px] group">
-                  <div className="rounded-[50px] border border-white/50 hover:bg-white py-[4px] px-[15px] cursor-pointer transition-colors duration-300">
-                    <Link
-                      className="text-[12px] md:text-sm text-white uppercase group-hover:text-black transition-all"
-                      href="/thiet-ke-landing-page"
-                    >
-                      bắt đầu dự án
-                    </Link>
-                  </div>
-
-                  <div className="hidden lg:flex items-center justify-center w-[33px] h-[33px] border border-white/50 rounded-full hover:bg-white group transition-all cursor-pointer">
-                    <ArrowUpRight
-                      size={20}
-                      strokeWidth={1.25}
-                      className="text-white group-hover:text-black"
-                    />
-                  </div>
-                </div>
+                <Link className="hero-project-button liquid-button" href="/thiet-ke-landing-page">
+                  bắt đầu dự án <ArrowUpRight size={20} strokeWidth={1.25} />
+                </Link>
               </div>
             </div>
 
             {/* Cuộn xuống hint - chỉ hiện trên màn hình lớn */}
             <div className="hidden lg:flex items-center justify-center overflow-hidden">
               <motion.p
-                initial={{ y: "-100%", opacity: 0 }}
-                animate={{ y: "100%", opacity: 0.5 }}
+                initial={reduceMotion ? false : { y: "-100%", opacity: 0 }}
+                animate={{ y: reduceMotion ? 0 : "100%", opacity: 0.5 }}
                 transition={{
-                  duration: 1.8,
-                  repeat: Infinity,
+                  duration: reduceMotion ? 0 : 1.8,
+                  repeat: reduceMotion ? 0 : Infinity,
                   ease: [0.3, 0.86, 0.36, 0.95],
                 }}
                 className="text-[10px] text-white uppercase tracking-widest"

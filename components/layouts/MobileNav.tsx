@@ -22,6 +22,7 @@ import { isNavItemActive, navigationConfig } from '../../data/navigation-config'
 import { usePathname } from 'next/navigation';
 import Boderyelow from '../ui/boder-yelow';
 import BrandLogo from './brand-logo';
+import LiquidNavigation from '@/components/liquid-glass/LiquidNavigation';
 
 function dedupeMobileServices(services: Service[]) {
   const seen = new Set<string>();
@@ -101,7 +102,7 @@ export default function MobileNav({
   );
 
   const content = (
-    <div className="fixed inset-0 z-[99999] h-[100dvh] overflow-hidden bg-kedi-navy font-sans lg:hidden">
+    <div className="liquid-mobile fixed inset-0 z-[99999] h-[100dvh] overflow-hidden bg-kedi-navy font-sans lg:hidden">
       {/* 1. MÀN HÌNH CHÍNH */}
       <div
         className={`absolute inset-0 bg-kedi-navy transition-transform duration-300 z-10 ${activePanel === 'main' ? 'translate-x-0' : '-translate-x-full'}`}
@@ -122,6 +123,7 @@ export default function MobileNav({
         </div>
 
         <nav className="h-[calc(100dvh-3.5rem)] space-y-1 overflow-y-auto overscroll-contain p-4 pb-[calc(env(safe-area-inset-bottom)+2rem)] [-webkit-overflow-scrolling:touch]">
+          <LiquidNavigation className="liquid-mobile-stack">
           {navigationConfig.map((item, idx) => {
             const label = item.labelKey
               ? t(`navigation.${item.labelKey}`)
@@ -148,9 +150,12 @@ export default function MobileNav({
             );
 
             return (
-              <Boderyelow key={idx} className="!p-0">
+              <div key={idx} className="mobile-liquid-frame">
+              <Boderyelow className="!p-0">
                 {item.type === 'link' ? (
                   <Link
+                    data-liquid-nav-item=""
+                    data-liquid-active={isActive}
                     href={item.href || '#'}
                     onClick={closeAll}
                     className={`block w-full rounded-xl transition-colors duration-300 ${
@@ -161,6 +166,8 @@ export default function MobileNav({
                   </Link>
                 ) : (
                   <button
+                    data-liquid-nav-item=""
+                    data-liquid-active={isActive}
                     className={`w-full rounded-xl transition-colors duration-300 ${
                       isActive ? 'bg-kedi-yellow' : 'hover:bg-kedi-yellow/10'
                     }`}
@@ -174,8 +181,10 @@ export default function MobileNav({
                   </button>
                 )}
               </Boderyelow>
+              </div>
             );
           })}
+          </LiquidNavigation>
         </nav>
       </div>
 

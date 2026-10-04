@@ -65,7 +65,7 @@ export default function LanguageSwitcher() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="flex h-9 items-center gap-1.5 rounded-full border border-white/20 bg-transparent px-2.5 text-white transition-colors duration-200 hover:border-kedi-yellow hover:text-kedi-yellow focus:outline-none data-[state=open]:border-kedi-yellow data-[state=open]:text-kedi-yellow">
+      <DropdownMenuTrigger aria-label="Chọn ngôn ngữ" data-glass="control" className="flex h-10 items-center gap-2 rounded-full border border-white/20 bg-transparent px-3.5 text-white transition-colors duration-200 hover:border-kedi-yellow hover:text-kedi-yellow focus:outline-none data-[state=open]:border-kedi-yellow data-[state=open]:text-kedi-yellow">
         <Globe className="h-3.5 w-3.5" />
         <span className="text-[12px] font-medium uppercase tracking-wider">{locale}</span>
       </DropdownMenuTrigger>

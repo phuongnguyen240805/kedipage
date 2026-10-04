@@ -1,4 +1,6 @@
+
 'use client';
+import LiquidSelect from '@/components/liquid-glass/LiquidSelect';
 
 import React, { useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
@@ -35,12 +37,12 @@ const CandidateForm = () => {
           <input type="tel" required placeholder="Số điện thoại " className={inputStyle} value={data.phone} onChange={(e) => setData({ ...data, phone: e.target.value })} />
         </div>
         <input type="text" required placeholder="Vị trí ứng tuyển " className={inputStyle} value={data.position} onChange={(e) => setData({ ...data, position: e.target.value })} />
-        <select required className={inputStyle} value={data.experience} onChange={(e) => setData({ ...data, experience: e.target.value })}>
+        <LiquidSelect label="Kinh nghiệm" tone="dark" required className={inputStyle} value={data.experience} onValueChange={(value) => setData({ ...data, experience: value })}>
           <option value="" className="bg-black">Kinh nghiệm</option>
           <option value="0-1" className="bg-black">Dưới 1 năm</option>
           <option value="1-3" className="bg-black">1 - 3 năm</option>
           <option value="3-5" className="bg-black">3 - 5 năm</option>
-        </select>
+        </LiquidSelect>
         <input type="url" placeholder="Link Portfolio (Behance, GitHub...)" className={inputStyle} value={data.portfolio} onChange={(e) => setData({ ...data, portfolio: e.target.value })} />
       </div>
       

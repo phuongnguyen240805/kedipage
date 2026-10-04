@@ -1,4 +1,6 @@
-"use client";
+
+'use client';
+import LiquidSelect from '@/components/liquid-glass/LiquidSelect';
 
 import React, { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -100,11 +102,11 @@ const PartnerForm = () => {
             onChange={(e) => setData({ ...data, phone: e.target.value })} // Thêm onChange
           />
         </div>
-        <select
+        <LiquidSelect label="Lĩnh vực hợp tác" tone="dark"
           required
           className={inputStyle}
           value={data.businessType}
-          onChange={(e) => setData({ ...data, businessType: e.target.value })} // Thêm onChange
+          onValueChange={(value) => setData({ ...data, businessType: value })}
         >
           <option value="" className="bg-black">
             Lĩnh vực hợp tác{" "}
@@ -118,7 +120,7 @@ const PartnerForm = () => {
           <option value="supply" className="bg-black">
             Cung ứng / Logistics
           </option>
-        </select>
+        </LiquidSelect>
         <input
           type="url"
           placeholder="Website công ty"

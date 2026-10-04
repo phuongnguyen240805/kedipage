@@ -50,7 +50,7 @@ const renderLinkList = (
 const Footer: React.FC = () => {
   const { t } = useTranslation();
   return (
-    <footer className="bg-white py-12 px-6 z-9999 relative ">
+    <footer data-glass="background" data-glass-tone="light" className="bg-white py-12 px-6 z-9999 relative ">
       <div className="max-w-7xl mx-auto">
         {/* ✅ RESPONSIVE GRID: 2 columns on mobile, 4 columns on desktop */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">

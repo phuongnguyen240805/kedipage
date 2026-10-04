@@ -15,7 +15,7 @@ import {
 
 export default function Home() {
   return (
-    <div className="bg-kedi-navy">
+    <div className="home-liquid bg-kedi-navy">
       <HomeHero />
 
       <div className="relative z-10 overflow-hidden bg-[#161B25] py-0">

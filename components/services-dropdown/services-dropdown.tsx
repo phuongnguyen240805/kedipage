@@ -237,6 +237,8 @@ const ServicesDropdown = () => {
       style={{ transformOrigin: 'top center' }}
     >
       <motion.div
+        data-glass="menu"
+        data-glass-tone="light"
         className="relative mx-auto h-[588px] max-h-[calc(100dvh-5.25rem)] w-full max-w-[1540px] overflow-hidden rounded-[26px] border border-kedi-yellow/45 bg-[#f7f7fb] p-4 text-kedi-navy shadow-[0_28px_80px_rgba(3,18,48,0.38),0_0_24px_rgba(255,198,41,0.16)] lg:p-5"
         initial={prefersReducedMotion ? false : { opacity: 0.72, y: -6 }}
         animate={{ opacity: 1, y: 0 }}
