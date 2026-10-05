@@ -6,6 +6,9 @@ routes = [
   { pattern = "www.kedi.media", custom_domain = true }
 ]
 main = ".open-next/worker.js"
+# next-themes serializes a function into browser JavaScript. Retaining names
+# inserts a Worker-only __name helper into that serialized function.
+keep_names = false
 compatibility_date = "2026-09-14"
 compatibility_flags = ["nodejs_compat", "global_fetch_strictly_public"]
 
