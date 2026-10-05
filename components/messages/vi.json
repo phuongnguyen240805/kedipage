@@ -1,4 +1,5 @@
 {
+  "account": { "ladipage": "Truy cập Ladipage", "loading": "Đang kiểm tra tài khoản", "you": "Bạn", "greeting": "Chào, {{name}}", "manage": "Quản lý tài khoản tại Ladipage", "retry": "Thử lại kết nối tài khoản" },
   "navigation": {
     "home": "Trang chủ",
     "introduction": "Giới thiệu",

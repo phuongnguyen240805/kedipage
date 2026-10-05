@@ -1,0 +1,9 @@
+/* Keep the SSO controls and navigation readable on smaller desktop screens. */
+@media (min-width: 1025px) and (max-width: 1279px) {
+  .liquid-header .liquid-header-controls { --glass-control-gap: 8px; }
+  .liquid-header .liquid-header-links { --glass-nav-gap: 8px; }
+  .liquid-header .liquid-header-links > li { padding-inline: 6px; }
+  .liquid-header > div { gap: 12px; }
+  .liquid-header .ladipage-access-label { display: none; }
+  .liquid-header .ladipage-access-compact { display: inline; }
+}

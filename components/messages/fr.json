@@ -1,4 +1,5 @@
 {
+  "account": { "ladipage": "Ouvrir Ladipage", "loading": "Vérification du compte", "you": "vous", "greeting": "Bonjour, {{name}}", "manage": "Gérer le compte dans Ladipage", "retry": "Réessayer la connexion au compte" },
   "navigation": {
     "home": "Accueil",
     "introduction": "Introduction",

@@ -23,6 +23,9 @@ import { usePathname } from 'next/navigation';
 import Boderyelow from '../ui/boder-yelow';
 import BrandLogo from './brand-logo';
 import LiquidNavigation from '@/components/liquid-glass/LiquidNavigation';
+import type { KediAccount } from '@/hooks/use-kedi-account';
+import KediAccountMenu from './kedi-account-menu';
+import LadipageAccess from './ladipage-access';
 
 function dedupeMobileServices(services: Service[]) {
   const seen = new Set<string>();
@@ -38,9 +41,11 @@ function dedupeMobileServices(services: Service[]) {
 export default function MobileNav({
   isOpen,
   onClose,
+  account,
 }: {
   isOpen?: boolean;
   onClose?: () => void;
+  account: KediAccount;
 }) {
   const { t } = useTranslation();
   const pathname = usePathname();
@@ -50,9 +55,20 @@ export default function MobileNav({
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+    if (!account.user && activePanel === 'blog') setActivePanel('main');
+  }, [account.user, activePanel]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const body = document.body;
+    const hadStyle = body.hasAttribute('style');
+    const overflow = body.style.getPropertyValue('overflow');
+    const priority = body.style.getPropertyPriority('overflow');
+    body.style.setProperty('overflow', 'hidden');
     return () => {
-      document.body.style.overflow = 'auto';
+      if (overflow) body.style.setProperty('overflow', overflow, priority);
+      else body.style.removeProperty('overflow');
+      if (!hadStyle && !body.style.cssText) body.removeAttribute('style');
     };
   }, [isOpen]);
 
@@ -123,8 +139,12 @@ export default function MobileNav({
         </div>
 
         <nav className="h-[calc(100dvh-3.5rem)] space-y-1 overflow-y-auto overscroll-contain p-4 pb-[calc(env(safe-area-inset-bottom)+2rem)] [-webkit-overflow-scrolling:touch]">
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-2 border-b border-white/15 pb-4">
+            <KediAccountMenu account={account} />
+            {!account.loading && !account.user && <LadipageAccess href={account.ladipageUrl} onNavigate={closeAll} />}
+          </div>
           <LiquidNavigation className="liquid-mobile-stack">
-          {navigationConfig.map((item, idx) => {
+          {navigationConfig.filter(item => item.dropdownType !== 'blog' || Boolean(account.user)).map((item, idx) => {
             const label = item.labelKey
               ? t(`navigation.${item.labelKey}`)
               : item.label || 'Link';
@@ -303,7 +323,7 @@ export default function MobileNav({
         />
 
         <div className="p-4 grid gap-3 pb-32">
-          {blogPosts.length > 0 ? (
+          {account.user && blogPosts.length > 0 ? (
             blogPosts.map((post: any, idx: number) => (
               <Boderyelow key={idx} className="!p-0">
                 <Link

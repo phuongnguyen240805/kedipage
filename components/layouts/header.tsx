@@ -16,17 +16,21 @@ import { isNavItemActive, navigationConfig } from "../../data/navigation-config"
 import NavLink from "./nav-link";
 import BlogDropdown from "./blog-dropdown";
 import SearchDropdown from "./search-dropdown";
-import HostlineSection from "./hostline-section";
 import { FiMenu, FiX } from "react-icons/fi";
 import MobileNav from "@/components/layouts/MobileNav";
 import ServicesDropdown from "../services-dropdown/services-dropdown";
 import AIMegaMenu from "./ai-mega-menu";
 import LiquidNavigation from "@/components/liquid-glass/LiquidNavigation";
+import { useKediAccount } from "@/hooks/use-kedi-account";
+import LadipageAccess from "./ladipage-access";
+import KediAccountMenu from "./kedi-account-menu";
+import "./header-sso.css";
 
 const navTextClass =
   "text-[13px] lg:text-[14px] font-medium uppercase tracking-[0.08em] whitespace-nowrap px-0 py-0 h-auto bg-transparent text-current transition-colors duration-300";
 
 const Header = ({ className }: { className?: string }) => {
+  const account = useKediAccount();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -187,7 +191,7 @@ const Header = ({ className }: { className?: string }) => {
         "liquid-header"
       )}
     >
-      <div className="flex h-14 w-full items-center justify-between gap-3 px-4 md:px-6 lg:h-16 lg:gap-6 lg:px-8">
+      <div className="flex h-14 w-full items-center justify-between gap-3 px-4 md:px-6 lg:grid lg:h-16 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:gap-6 lg:px-8">
         <Link
           href="/"
           className="flex shrink-0 items-center transition-opacity duration-200 hover:opacity-90"
@@ -197,11 +201,11 @@ const Header = ({ className }: { className?: string }) => {
           <BrandLogo className="h-8 lg:h-10" />
         </Link>
 
-        <nav className="hidden min-w-0 flex-1 items-center justify-center lg:flex">
+        <nav className="hidden min-w-0 items-center justify-center lg:flex">
           <LiquidNavigation>
           <NavigationMenu viewport={false} className="max-w-none">
             <NavigationMenuList className="liquid-header-links flex items-center">
-              {navigationConfig.map((item: any) => {
+              {navigationConfig.filter(item => item.dropdownType !== "blog" || Boolean(account.user)).map((item: any) => {
                 const key = item.label || item.href || JSON.stringify(item);
                 const label = item.label ? t(`navigation.${item.labelKey}`) : "";
                 const isActive = isNavItemActive(item, pathname);
@@ -366,13 +370,12 @@ const Header = ({ className }: { className?: string }) => {
           </LiquidNavigation>
         </nav>
 
-        <div data-liquid-controls="" className="liquid-header-controls hidden shrink-0 items-center lg:flex">
+        <div data-liquid-controls="" className="liquid-header-controls hidden shrink-0 items-center justify-self-end lg:flex">
+          {!account.loading && !account.user && <LadipageAccess href={account.ladipageUrl} />}
+          <KediAccountMenu account={account} />
           <SearchDropdown isOpen={isSearchOpen} onToggle={toggleSearch} />
           <div aria-hidden="true" className="liquid-header-divider h-5 w-px bg-white/20" />
           <LanguageSwitcher />
-          <div className="liquid-header-support border-l border-white/20">
-            <HostlineSection />
-          </div>
         </div>
 
         <button
@@ -385,7 +388,7 @@ const Header = ({ className }: { className?: string }) => {
         </button>
       </div>
 
-      <MobileNav isOpen={isMobileMenuOpen} onClose={closeMobileMenu} />
+      <MobileNav isOpen={isMobileMenuOpen} onClose={closeMobileMenu} account={account} />
     </header>
   );
 };

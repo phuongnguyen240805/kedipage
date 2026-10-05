@@ -1,4 +1,5 @@
 {
+  "account": { "ladipage": "Ladipage 열기", "loading": "계정 확인 중", "you": "사용자", "greeting": "안녕하세요, {{name}}", "manage": "Ladipage에서 계정 관리", "retry": "계정 연결 다시 시도" },
   "navigation": {
     "home": "홈",
     "introduction": "소개",

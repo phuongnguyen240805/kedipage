@@ -1,4 +1,5 @@
 {
+  "account": { "ladipage": "打开 Ladipage", "loading": "正在检查账户", "you": "用户", "greeting": "你好，{{name}}", "manage": "在 Ladipage 管理账户", "retry": "重试账户连接" },
   "navigation": {
     "home": "首页",
     "introduction": "介绍",
