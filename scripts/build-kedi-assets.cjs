@@ -1,6 +1,7 @@
 const {fs,path,root,imageExt,walk}=require('./kedi-assets-common.cjs');
 const crypto=require('node:crypto');
 const sharp=require('sharp');
+const {writeJson}=require('./atomic-json.cjs');
 const home=path.join(root,'kedi-assest');
 const dist=path.join(home,'dist');
 const sources=path.join(home,'source');
@@ -87,7 +88,7 @@ async function main() {
     manifest['/'+relative]=await buildImage('/'+relative,fs.readFileSync(file),relative);
     if(++done%100===0)console.log(`Local images: ${done}/${localFiles.length}`);
   });
-  fs.writeFileSync(manifestPath,JSON.stringify(manifest,null,2)+'\n');
+  await writeJson(manifestPath,manifest);
   const inventory=JSON.parse(fs.readFileSync(path.join(home,'remote-inventory.json'),'utf8'));
   for(const key of Object.keys(manifest))if(!key.startsWith('/')&&!inventory[key])delete manifest[key];
   const oldFailures=fs.existsSync(path.join(home,'unavailable-images.json'))?JSON.parse(fs.readFileSync(path.join(home,'unavailable-images.json'),'utf8')):[];
@@ -95,14 +96,14 @@ async function main() {
   await pool(Object.keys(inventory),8,async(url)=>{
     try{manifest[url]=await buildImage(url,await download(url));}
     catch(error){if(!manifest[url])failures.push({url,error:process.argv.includes('--offline')?(oldFailures.find(f=>f.url===url)?.error||error.message):error.message,files:inventory[url]});}
-    if(++done%25===0){console.log(`Remote images: ${done}/${Object.keys(inventory).length}; unavailable: ${failures.length}`);fs.writeFileSync(manifestPath,JSON.stringify(manifest,null,2)+'\n');}
+    if(++done%25===0)console.log(`Remote images: ${done}/${Object.keys(inventory).length}; unavailable: ${failures.length}`);
   });
-  fs.writeFileSync(manifestPath,JSON.stringify(manifest,null,2)+'\n');
+  await writeJson(manifestPath,manifest);
   const aliasPath=path.join(home,'updated-urls.json');
   const aliases=fs.existsSync(aliasPath)?JSON.parse(fs.readFileSync(aliasPath,'utf8')):{};
   for(const [key,entry]of Object.entries(manifest))if(previous[key]&&previous[key].src!==entry.src)aliases[previous[key].src]=entry.src;
-  fs.writeFileSync(aliasPath,JSON.stringify(aliases,null,2)+'\n');
-  fs.writeFileSync(path.join(home,'unavailable-images.json'),JSON.stringify(failures,null,2)+'\n');
+  await writeJson(aliasPath,aliases);
+  await writeJson(path.join(home,'unavailable-images.json'),failures);
   fs.writeFileSync(path.join(dist,'_headers'),`/*\n  Access-Control-Allow-Origin: *\n  X-Content-Type-Options: nosniff\n  Cache-Control: public, max-age=86400\n/images/*\n  ! Cache-Control\n  Cache-Control: public, max-age=31536000, immutable\n`);
   // Remove unused generated variants only; never delete original source files.
   const used=new Set(Object.values(manifest).flatMap(entry=>[entry.src,...Object.values(entry.variants)]).map(url=>new URL(url).pathname));
@@ -113,7 +114,7 @@ async function main() {
   const files=walk(dist);
   if(files.length>20000)throw new Error(`Free plan file limit exceeded: ${files.length}`);
   const report={localImages:localFiles.length,remoteImages:Object.keys(inventory).length,remoteMigrated:Object.keys(inventory).length-failures.length,unavailable:failures.length,assetFiles:files.length,assetBytes:files.reduce((n,f)=>n+fs.statSync(f).size,0),canonicalBytes:Object.values(manifest).reduce((n,e)=>n+fs.statSync(path.join(dist,new URL(e.src).pathname)).size,0)};
-  fs.writeFileSync(path.join(home,'build-report.json'),JSON.stringify(report,null,2)+'\n');
+  await writeJson(path.join(home,'build-report.json'),report);
   console.log(JSON.stringify(report,null,2));
 }
 main().catch(error=>{console.error(error);process.exitCode=1;});

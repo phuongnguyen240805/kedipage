@@ -44,6 +44,7 @@ beforeEach(() => {
   sessionRoute = loadSource('app/api/auth/sso/session/route.ts', mocks).GET;
   fetchCalls = [];
   global.fetch = async (...args) => {
+    if (args[1]?.method === 'HEAD') return new Response(null, { status: 303 });
     fetchCalls.push(args);
     return new Response(JSON.stringify({
       user: { id: 7, username: 'minh', nickname: 'Minh', avatar: '/avatar.png', roles: ['admin'] },
@@ -70,6 +71,23 @@ async function begin() {
   const verifier = server.readSsoVerifier(transaction.value, state);
   return { response, authorization, transaction, state, verifier };
 }
+
+test('unavailable authorization keeps guests on Kedi without credentials or redirect loops', async () => {
+  for (const mode of ['500', '404', 'network']) {
+    global.fetch = async (url, options) => {
+      assert.equal(new URL(url).origin, 'https://ladipage.example');
+      assert.equal(options.method, 'HEAD');
+      assert.equal(options.redirect, 'manual');
+      assert.equal(options.headers, undefined);
+      if (mode === 'network') throw new Error('offline');
+      return new Response(null, { status: Number(mode) });
+    };
+    const response = await start(new NextRequest('https://kedi.media/api/auth/sso/start?returnTo=%2Fdu-an%3Ffilter%3Dweb%23item'));
+    assert.equal(response.status, 303);
+    assert.equal(response.headers.get('location'), 'https://kedi.media/du-an?filter=web&sso=unavailable#item');
+    assert.equal(response.cookies.get(server.SSO_TRANSACTION_COOKIE), undefined);
+  }
+});
 
 function callbackRequest(transaction, state, extra = { code: 'c'.repeat(43) }) {
   const url = new URL(callbackUrl);

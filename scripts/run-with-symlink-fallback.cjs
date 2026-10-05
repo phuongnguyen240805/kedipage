@@ -4,6 +4,7 @@
  */
 const path = require('path');
 const { spawn } = require('child_process');
+require('./cloudflare-env.cjs');
 
 const args = process.argv.slice(2);
 if (args.length === 0) {
