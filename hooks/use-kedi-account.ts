@@ -82,26 +82,28 @@ export function useKediAccount(): KediAccount {
       const returnTo = `${window.location.pathname}${window.location.search}${window.location.hash}`;
       window.location.replace(`/api/auth/sso/start?returnTo=${encodeURIComponent(returnTo)}`);
     };
-    const onFocus = () => {
-      if (document.visibilityState !== "visible") return;
+    let wasHidden = document.visibilityState === "hidden";
+    const onVisibilityChange = () => {
+      if (document.visibilityState !== "visible") {
+        wasHidden = true;
+        return;
+      }
+      if (!wasHidden) return;
+      wasHidden = false;
       // Cross-site browsers can partition the bridge's storage. A return from
       // the Ladipage tab must therefore allow a fresh authorization handoff.
       attempted.current = false;
       outcome = null;
       void refresh(true);
     };
-    const interval = window.setInterval(() => { if (document.visibilityState === "visible") void refresh(false); }, 15_000);
-    window.addEventListener("focus", onFocus);
     window.addEventListener("message", onLogin);
-    document.addEventListener("visibilitychange", onFocus);
+    document.addEventListener("visibilitychange", onVisibilityChange);
     return () => {
       disposed = true;
       controller.abort();
       loginBridge?.remove();
-      window.clearInterval(interval);
-      window.removeEventListener("focus", onFocus);
       window.removeEventListener("message", onLogin);
-      document.removeEventListener("visibilitychange", onFocus);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
     };
   }, []);
   return account;

@@ -288,12 +288,14 @@ test('guest Kedi handles login, rejects duplicate signals and reconnects after r
   global.window = {
     location: { href: 'https://kedi.media/?sso=guest', pathname: '/', search: '', hash: '', replace: path => redirects.push(path) },
     history: { replaceState() {} },
-    setInterval: () => 1, clearInterval() {},
+    setInterval: () => { throw new Error('SSO must not poll on a timer'); },
     addEventListener: (type, fn) => listeners.set(type, fn), removeEventListener: type => listeners.delete(type),
   };
   global.document = {
     createElement: () => { frameCount++; frame = { contentWindow: {}, remove() { this.removed = true; } }; return frame; },
-    body: { appendChild() {} }, addEventListener() {}, removeEventListener() {}, visibilityState: 'visible',
+    body: { appendChild() {} },
+    addEventListener: (type, fn) => listeners.set(`document:${type}`, fn),
+    removeEventListener: type => listeners.delete(`document:${type}`), visibilityState: 'visible',
   };
   global.fetch = async () => new Response(JSON.stringify({ enabled: true, user: null, ladipageUrl: 'https://ladipage.example/' }));
   const hook = loadSource('hooks/use-kedi-account.ts', {
@@ -308,7 +310,14 @@ test('guest Kedi handles login, rejects duplicate signals and reconnects after r
     assert.equal(redirects.length, 0);
     // Returning from an independent, cross-site Ladipage tab must retry SSO
     // even when the initial authorization already ended as a guest.
-    listeners.get('focus')();
+    assert.equal(listeners.has('focus'), false);
+    listeners.get('document:visibilitychange')();
+    await settle();
+    assert.equal(redirects.length, 0);
+    global.document.visibilityState = 'hidden';
+    listeners.get('document:visibilitychange')();
+    global.document.visibilityState = 'visible';
+    listeners.get('document:visibilitychange')();
     await settle();
     assert.deepEqual(redirects, ['/api/auth/sso/start?returnTo=%2F']);
     redirects.length = 0;
