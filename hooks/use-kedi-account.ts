@@ -19,7 +19,7 @@ export function useKediAccount(): KediAccount {
 
   useEffect(() => {
     const currentUrl = new URL(window.location.href);
-    const outcome = currentUrl.searchParams.get("sso");
+    let outcome = currentUrl.searchParams.get("sso");
     if (outcome) {
       attempted.current = true;
       currentUrl.searchParams.delete("sso");
@@ -82,7 +82,14 @@ export function useKediAccount(): KediAccount {
       const returnTo = `${window.location.pathname}${window.location.search}${window.location.hash}`;
       window.location.replace(`/api/auth/sso/start?returnTo=${encodeURIComponent(returnTo)}`);
     };
-    const onFocus = () => { if (document.visibilityState === "visible") void refresh(true); };
+    const onFocus = () => {
+      if (document.visibilityState !== "visible") return;
+      // Cross-site browsers can partition the bridge's storage. A return from
+      // the Ladipage tab must therefore allow a fresh authorization handoff.
+      attempted.current = false;
+      outcome = null;
+      void refresh(true);
+    };
     const interval = window.setInterval(() => { if (document.visibilityState === "visible") void refresh(false); }, 15_000);
     window.addEventListener("focus", onFocus);
     window.addEventListener("message", onLogin);

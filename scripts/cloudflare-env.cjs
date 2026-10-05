@@ -10,7 +10,9 @@ if (fs.existsSync(file)) {
   // These placeholders must not override configured values or become URLs.
   for (const [key, value] of Object.entries(process.env)) {
     if (value !== '...') continue;
-    if (existing[key] === undefined) delete process.env[key];
+    // Keep an explicit empty value: Next must not refill a production
+    // placeholder from .env.local during the build.
+    if (existing[key] === undefined) process.env[key] = '';
     else process.env[key] = existing[key];
   }
 }

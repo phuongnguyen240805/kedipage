@@ -306,6 +306,12 @@ test('guest Kedi handles login, rejects duplicate signals and reconnects after r
     await settle();
     assert.equal(frame.src, 'https://ladipage.example/api/auth/sso/login-sync');
     assert.equal(redirects.length, 0);
+    // Returning from an independent, cross-site Ladipage tab must retry SSO
+    // even when the initial authorization already ended as a guest.
+    listeners.get('focus')();
+    await settle();
+    assert.deepEqual(redirects, ['/api/auth/sso/start?returnTo=%2F']);
+    redirects.length = 0;
     const signal = { origin: 'https://ladipage.example', source: frame.contentWindow, data: { type: 'ladipage:login-complete', loginId: '12345678-1234-1234-1234-123456789abc' } };
     listeners.get('message')(signal);
     listeners.get('message')(signal);
