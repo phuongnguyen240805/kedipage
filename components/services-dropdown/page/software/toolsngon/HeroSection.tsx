@@ -151,7 +151,7 @@ export default function HeroSection() {
               <div className="tools-visual" aria-hidden="true">
                 <div className="tools-visual-icon">
                   <Image
-                    src="/service-menu/software/tools-ngon.svg"
+                    src="https://assets.kedi.media/images/63d7a7123dff3c45bcc8.svg"
                     alt=""
                     width={420}
                     height={320}

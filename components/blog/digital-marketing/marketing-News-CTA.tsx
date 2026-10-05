@@ -125,7 +125,7 @@ const NewsCTA = () => {
           <div className="w-60 h-60 -left-18  lg:w-60 lg:h-60 relative  backdrop-blur-sm">
             <div className="text-center relative -left-2 z-10  ">
               <Image
-                src="https://mona.media/template/assets/images/blog/blogrc2-icon.png"
+                src="https://assets.kedi.media/images/19c10ce6eb3657b3bf16-826.webp"
                 alt="Icon"
                 width={60}
                 height={60}

@@ -125,7 +125,7 @@ const About = () => {
           <div className="relative w-[88%] max-w-[720px]">
             <div className="overflow-hidden rounded-[2rem] border border-white/12 bg-white/[0.06] p-2 shadow-[0_35px_100px_rgba(0,0,0,0.28)] backdrop-blur-xl md:p-3">
               <img
-                src="/project1.webp"
+                src="https://assets.kedi.media/images/9691808476f532a0f44c-663.webp"
                 alt="KEDI landing page project preview"
                 className="aspect-[4/3] w-full rounded-[1.55rem] object-cover"
               />
@@ -137,7 +137,7 @@ const About = () => {
             >
               <div className="-rotate-3 overflow-hidden rounded-[1.35rem] border border-white/15 bg-[#081F40] p-1.5 shadow-[0_24px_70px_rgba(0,0,0,0.38)]">
                 <img
-                  src="/project3.webp"
+                  src="https://assets.kedi.media/images/9a9924f7b3c908c9ad33-663.webp"
                   alt="KEDI mobile landing page preview"
                   className="aspect-[4/5] w-full rounded-[1rem] object-cover"
                 />
@@ -150,7 +150,7 @@ const About = () => {
             >
               <div className="rotate-2 overflow-hidden rounded-[1.35rem] border border-white/15 bg-[#081F40] p-1.5 shadow-[0_24px_70px_rgba(0,0,0,0.38)]">
                 <img
-                  src="/project5.webp"
+                  src="https://assets.kedi.media/images/13728fcc9b4fcc50b8be-663.webp"
                   alt="KEDI landing page visual detail"
                   className="aspect-square w-full rounded-[1rem] object-cover"
                 />

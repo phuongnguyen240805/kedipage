@@ -27,8 +27,9 @@ export default function RootLayout({ children, params }: { children: React.React
     <html lang={locale} suppressHydrationWarning>
       <head>
         <meta name="google" content="notranslate" />
-        <link rel="icon" href="/brand/kedi-app-icon.png" />
-        <link rel="apple-touch-icon" href="/brand/kedi-app-icon.png" />
+        <link rel="preconnect" href="https://assets.kedi.media" />
+        <link rel="icon" href="https://assets.kedi.media/brand/kedi-app-icon.png" />
+        <link rel="apple-touch-icon" href="https://assets.kedi.media/brand/kedi-app-icon.png" />
       </head>
       <body className="kedi-glass">
         <LiquidEffects />

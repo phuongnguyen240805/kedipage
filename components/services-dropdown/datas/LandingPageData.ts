@@ -13,10 +13,10 @@ export const seoEducationData = {
     problems,
     benefits,
     tableImageSrc:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198321/bundle-package-02_kvawvc.jpg',
+      'https://assets.kedi.media/images/ece81b666d3c043b8b31-1904.webp',
     tableImageAlt: 'Hình ảnh minh họa traffic SEO',
     imageSrc:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765268567/dvs-top-pan-01_aivtq7.avif',
+      'https://assets.kedi.media/images/2faaed0b30b8a5fe50df-695.webp',
     imageAlt: 'Hình ảnh minh họa SEO cho giáo dục',
     bgColor: '#F2E7FA',
     className: 'm-0',
@@ -34,7 +34,7 @@ export const seoEducationData = {
     ],
     images: [
       {
-        src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198321/bundle-package-02_kvawvc.jpg',
+        src: 'https://assets.kedi.media/images/ece81b666d3c043b8b31-1904.webp',
         alt: 'Hình ảnh minh họa top keyword SEO 1',
       },
     ],
@@ -48,19 +48,19 @@ export const seoEducationData = {
     features: [],
     images: [
       {
-        src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198321/bundle-package-02_kvawvc.jpg',
+        src: 'https://assets.kedi.media/images/ece81b666d3c043b8b31-1904.webp',
         alt: 'Hình ảnh minh họa top keyword SEO 1',
       },
       {
-        src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198321/bundle-package-02_kvawvc.jpg',
+        src: 'https://assets.kedi.media/images/ece81b666d3c043b8b31-1904.webp',
         alt: 'Hình ảnh minh họa top keyword SEO 1',
       },
       {
-        src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198321/bundle-package-02_kvawvc.jpg',
+        src: 'https://assets.kedi.media/images/ece81b666d3c043b8b31-1904.webp',
         alt: 'Hình ảnh minh họa top keyword SEO 1',
       },
       {
-        src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198321/bundle-package-02_kvawvc.jpg',
+        src: 'https://assets.kedi.media/images/ece81b666d3c043b8b31-1904.webp',
         alt: 'Hình ảnh minh họa top keyword SEO 1',
       },
     ],
@@ -74,11 +74,11 @@ export const seoEducationData = {
     features: [],
     images: [
       {
-        src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765268567/dvs-top-pan-01_aivtq7.avif',
+        src: 'https://assets.kedi.media/images/2faaed0b30b8a5fe50df-695.webp',
         alt: 'Hình ảnh minh họa top keyword SEO 1',
       },
       {
-        src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765268567/dvs-top-pan-01_aivtq7.avif',
+        src: 'https://assets.kedi.media/images/2faaed0b30b8a5fe50df-695.webp',
         alt: 'Hình ảnh minh họa top keyword SEO 2',
       },
     ],

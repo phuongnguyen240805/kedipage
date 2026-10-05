@@ -128,8 +128,8 @@
 .mona-jms .mcs .mcs-a[aria-current=page]{background:#fffaf0!important;border-color:var(--clone-yellow)!important;box-shadow:var(--kedi-brand-shadow)!important}
 .mona-jms .mcs-tag{background:var(--kedi-brand-yellow-soft)!important;color:var(--clone-navy)!important}
 .mona-jms :is(.mcs .mcs-ft a,.blogt-link,a:hover){color:var(--clone-navy-2)!important}
-.mona-jms :is(.mq-pill,.mq-dl){background:linear-gradient(135deg,var(--clone-navy),var(--clone-navy-2))!important;color:#fff!important}
-.mona-jms .mq-size.on{border-color:var(--clone-yellow)!important;color:var(--clone-navy)!important;background:#fffaf0!important}
+.mona-jms :is(.kedi-quote-pill,.kedi-quote-dl){background:linear-gradient(135deg,var(--clone-navy),var(--clone-navy-2))!important;color:#fff!important}
+.mona-jms .kedi-quote-size.on{border-color:var(--clone-yellow)!important;color:var(--clone-navy)!important;background:#fffaf0!important}
 .mona-jms #monaPodBar{background:var(--clone-navy)!important;border-color:rgba(255,198,41,.42)!important}
 .mona-jms #monaPodBar .mpb-play,
 .mona-jms #monaPodBar .mpb-pr,

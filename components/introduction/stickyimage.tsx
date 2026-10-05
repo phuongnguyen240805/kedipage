@@ -5,23 +5,23 @@ import Image from 'next/image';
 const images = [
   {
     id: 1,
-    src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+    src: 'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     title: 'Project One',
   },
   {
     id: 2,
-    src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+    src: 'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     title: 'Project Two',
   },
   {
     id: 3,
-    src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+    src: 'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     title: 'Project Three',
   },
 ];
 
 const stickyImage =
-  'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png';
+  'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp';
 export default function SplitScrollLayout() {
   return (
     <div className="w-full min-h-screen rounded-xl bg-[#F3F3F3] text-black font-sans">

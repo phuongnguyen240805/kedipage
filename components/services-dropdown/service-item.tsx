@@ -1,10 +1,8 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import {
-  Service,
-  SOFTWARE_SERVICE_MENU_IMAGES,
-} from './datas/services-data';
+import type { Service } from './datas/services-data';
+import { getMenuThumbnailImage } from './service-thumbnails';
 import { TFunction } from 'i18next';
 import { cn } from "@/lib/utils";
 
@@ -56,9 +54,7 @@ const ServiceItem = ({
   const description = service.descriptionKey ? translate(service.descriptionKey, service.description) : service.description;
 
   const renderImage = (width: number, height: number, alt: string) => {
-    const localSoftwareImage = service.href
-      ? SOFTWARE_SERVICE_MENU_IMAGES[service.href]
-      : undefined;
+    const localSoftwareImage = getMenuThumbnailImage(service);
     if (localSoftwareImage || service.imageUrl || service.cloudinaryId) {
       const src = localSoftwareImage || service.imageUrl || `https://res.cloudinary.com/dptsqgnaj/image/upload/c_fill,g_center,w_${width},h_${height},f_auto,q_auto/${service.cloudinaryId}`;
       return (

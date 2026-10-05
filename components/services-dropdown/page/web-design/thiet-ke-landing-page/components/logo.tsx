@@ -134,7 +134,7 @@ const Logo: React.FC<LogoProps> = ({ onLoadingComplete }) => {
         <Link href="/" aria-label="Về trang chủ KEDI">
           <motion.img
             variants={markVariants}
-            src="/brand/kedi-logo-reverse.png"
+            src="https://assets.kedi.media/images/521d6ee8430017434c68-380.webp"
             alt="KEDI"
           />
           <Badge variants={badgeVariants}>Landing Page</Badge>

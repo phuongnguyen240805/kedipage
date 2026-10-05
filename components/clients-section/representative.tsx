@@ -41,7 +41,7 @@ export default function RepresentativeSection() {
       <div 
         className="absolute top-0 left-0 w-full h-[900px] z-[2] pointer-events-none opacity-50 mix-blend-screen"
         style={{
-          backgroundImage: `url('https://mona.media/template/assets/images/customer-intro/img-mask-cmt.png')`,
+          backgroundImage: `url('https://assets.kedi.media/images/48b84e227b0c6874fe63-1729.webp')`,
           backgroundSize: '100% auto',
           backgroundPosition: 'top center',
           backgroundRepeat: 'no-repeat',
@@ -59,8 +59,8 @@ export default function RepresentativeSection() {
           tagLine="DỰ ÁN TIÊU BIỂU"
           tagLineColor="#E1306C"
           subTagLine="Khách hàng nói gì về chúng tôi?"
-          primaryLogo="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765195391/400x400_eocvkh.png"
-          secondaryLogo="https://mona.media/template/assets/images/customer-intro/img-mona.svg"
+          primaryLogo="https://assets.kedi.media/images/564e8976be69b11737af-400.webp"
+          secondaryLogo="https://assets.kedi.media/images/2876bb32f875284007ab.svg"
           heading={
             <>
               Dự án thiết kế app <br /> đặt vé máy bay siêu tốc
@@ -77,8 +77,8 @@ export default function RepresentativeSection() {
             "Giao diện UX/UI hiện đại, đúng gu khách hàng mục tiêu.",
           ]}
           youtubeVideoId="dQw4w9WgXcQ"
-          leftImage="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765189615/ab-eight-4-high-1920w_zj5kqk.avif"
-          rightImage="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765189615/ab-eight-4-high-1920w_zj5kqk.avif"
+          leftImage="https://assets.kedi.media/images/d02f13b75ebf3483a402-601.webp"
+          rightImage="https://assets.kedi.media/images/d02f13b75ebf3483a402-601.webp"
           buttons={[
             { label: "Xem chi tiết dự án", variant: "default" },
             { label: "Liên hệ ngay", variant: "outline" },
@@ -90,8 +90,8 @@ export default function RepresentativeSection() {
 
         {/* LAYOUT 2 */}
         <VariantLayout2
-          primaryLogo="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765195391/400x400_eocvkh.png"
-          secondaryLogo="https://mona.media/template/assets/images/customer-intro/img-mona.svg"
+          primaryLogo="https://assets.kedi.media/images/564e8976be69b11737af-400.webp"
+          secondaryLogo="https://assets.kedi.media/images/2876bb32f875284007ab.svg"
           heading="Giải pháp CRM quản lý 5000+ nhân sự"
           subHeading={
             <p>
@@ -104,8 +104,8 @@ export default function RepresentativeSection() {
             "Giảm 80% thời gian xử lý giấy tờ hành chính.",
           ]}
           youtubeVideoId="dQw4w9WgXcQ"
-          leftDecorImage="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765189615/ab-eight-4-high-1920w_zj5kqk.avif"
-          rightDecorImage="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765189615/ab-eight-4-high-1920w_zj5kqk.avif"
+          leftDecorImage="https://assets.kedi.media/images/d02f13b75ebf3483a402-601.webp"
+          rightDecorImage="https://assets.kedi.media/images/d02f13b75ebf3483a402-601.webp"
           summaryTitle="VỀ TẬP ĐOÀN ABC"
           summaryContent="Là tập đoàn bán lẻ hàng đầu Việt Nam với chuỗi 200 cửa hàng trên toàn quốc, luôn đi đầu trong việc ứng dụng công nghệ số vào quản trị."
           buttons={[
@@ -119,8 +119,8 @@ export default function RepresentativeSection() {
 
         {/* LAYOUT 3 */}
         <VariantLayout3
-          primaryLogo="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765195391/400x400_eocvkh.png"
-          secondaryLogo="https://mona.media/template/assets/images/customer-intro/img-mona.svg"
+          primaryLogo="https://assets.kedi.media/images/564e8976be69b11737af-400.webp"
+          secondaryLogo="https://assets.kedi.media/images/2876bb32f875284007ab.svg"
           heading="Giải pháp Quản lý kho vận Logistics"
           subHeading={
             <p>
@@ -135,8 +135,8 @@ export default function RepresentativeSection() {
           summaryTitle="SƠ LƯỢC VỀ CÔNG TY ABC"
           summaryContent="Đơn vị vận tải hàng đầu miền Nam với đội xe hơn 200 chiếc và hệ thống kho bãi hiện đại tại các nút giao thông trọng điểm."
           youtubeVideoId="dQw4w9WgXcQ"
-          topDecorImage="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765189615/ab-eight-4-high-1920w_zj5kqk.avif"
-          bottomDecorImage="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765189615/ab-eight-4-high-1920w_zj5kqk.avif"
+          topDecorImage="https://assets.kedi.media/images/d02f13b75ebf3483a402-601.webp"
+          bottomDecorImage="https://assets.kedi.media/images/d02f13b75ebf3483a402-601.webp"
           buttons={[
             { label: "Xem chi tiết", variant: "default" },
             { label: "Liên hệ ngay", variant: "outline" },

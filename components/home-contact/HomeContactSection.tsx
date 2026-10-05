@@ -149,8 +149,8 @@ export default function HomeContactSection() {
               <div className={styles.mascotStage} aria-hidden="true">
                 <div className={styles.mascotHalo} />
                 <Image
-                  unoptimized
-                  src="/kedi-products/crm/mascot.png"
+
+                  src="https://assets.kedi.media/images/876ae45bf4e69d827499-1254.webp"
                   alt=""
                   width={800}
                   height={800}

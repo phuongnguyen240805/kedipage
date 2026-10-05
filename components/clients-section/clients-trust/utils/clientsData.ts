@@ -1,7 +1,7 @@
 export const otherClients = [
   {
     id: 1,
-    img: 'https://mona.media/template/assets/hq-images/customer-intro/solution_kimthanh.jpg',
+    img: 'https://assets.kedi.media/images/7850adff3742eb17a76e-692.webp',
     title: 'Kedi Media và thương hiệu thời trang nổi tiếng Châu Á - Levents',
     desc: 'Tự hào là đơn vị đồng hành với Levents trên internet với bộ giải pháp Website...',
     solutionLink: '#',
@@ -9,7 +9,7 @@ export const otherClients = [
   },
   {
     id: 2,
-    img: 'https://mona.media/template/assets/hq-images/customer-intro/solution_kimthanh.jpg',
+    img: 'https://assets.kedi.media/images/7850adff3742eb17a76e-692.webp',
     title: 'Kedi Media và chuỗi hệ thống mắt kính Mắt Việt',
     desc: 'Sau dự án thiết kế website bán hàng, Kedi Media tiếp tục hỗ trợ Mắt Việt tăng trưởng...',
     solutionLink: '#',
@@ -17,7 +17,7 @@ export const otherClients = [
   },
   {
     id: 3,
-    img: 'https://mona.media/template/assets/hq-images/customer-intro/solution_kimthanh.jpg',
+    img: 'https://assets.kedi.media/images/7850adff3742eb17a76e-692.webp',
     title: 'Kedi Media và hệ thống Anh Ngữ The Forum Center',
     desc: 'Đây là hợp đồng dịch vụ thứ 3 mà chúng tôi hợp tác, trước đó là 2 dự án Website & App',
     solutionLink: '#',
@@ -31,5 +31,5 @@ export const kimThanhClient = {
   description:
     'Chúng tôi bắt đầu hợp tác từ dự án thiết kế website, sau đó là web-app. Hiện tại, Kedi Media và Kim Thành đang tiếp tục với gói dịch vụ Marketing.',
   image:
-    'https://mona.media/template/assets/hq-images/customer-intro/solution_kimthanh.jpg',
+    'https://assets.kedi.media/images/7850adff3742eb17a76e-692.webp',
 };

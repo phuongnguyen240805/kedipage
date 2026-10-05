@@ -1,6 +1,12 @@
 # Legacy duplicate of wrangler.toml. Wrangler uses wrangler.toml by default.
 # Keep in sync; do not add [build].command here (it re-enters build:cf).
 name = "kedi-web"
+workers_dev = true
+account_id = "a220275c9c8460745e0351255c7459fd"
+routes = [
+  { pattern = "kedi.media", custom_domain = true },
+  { pattern = "www.kedi.media", custom_domain = true }
+]
 main = ".open-next/worker.js"
 compatibility_date = "2026-09-14"
 compatibility_flags = ["nodejs_compat", "global_fetch_strictly_public"]
@@ -14,9 +20,6 @@ NEXTJS_ENV = "production"
 
 [observability]
 enabled = true
-
-[images]
-binding = "IMAGES"
 
 [[services]]
 binding = "WORKER_SELF_REFERENCE"

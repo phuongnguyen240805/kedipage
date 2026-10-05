@@ -31,7 +31,7 @@ const VideoStreaming = () => {
               <Boderyelow>
                 <div className="rounded-2xl overflow-hidden relative">
                   <img 
-                    src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1000" 
+                    src="https://assets.kedi.media/images/72ed8d5df0438df780f1-1000.webp"
                     alt="Yoga streaming" 
                     className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -65,7 +65,7 @@ const VideoStreaming = () => {
               <Boderyelow>
                 <div className="rounded-2xl overflow-hidden relative group">
                   <img 
-                    src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800" 
+                    src="https://assets.kedi.media/images/59ab9e054683bd66aba6-800.webp"
                     alt="Gaming stream" 
                     className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
                   />
@@ -103,7 +103,7 @@ const VideoStreaming = () => {
               <Boderyelow>
                 <div className="rounded-2xl overflow-hidden relative group">
                   <img 
-                    src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=600" 
+                    src="https://assets.kedi.media/images/85014be3a06cdff65c40-600.webp"
                     alt="Cooking stream" 
                     className="h-40 w-full object-cover transition-transform duration-1000 group-hover:rotate-1 group-hover:scale-110"
                   />

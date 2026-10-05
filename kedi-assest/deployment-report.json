@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-05",
+  "accountId": "a220275c9c8460745e0351255c7459fd",
+  "cdnWorker": "kedi-assest",
+  "cdnHostname": "assets.kedi.media",
+  "cdnVersion": "59b57604-9829-4f8e-919a-a52c1046674b",
+  "webWorker": "kedi-web",
+  "webVersion": "6bfeabf6-32e9-4223-b9d2-e4b73afeb643",
+  "previousWebVersion": "563955d5-0774-40ba-876e-7e72cb7d30c8",
+  "localImagesMoved": 679,
+  "remoteImagesMigrated": 446,
+  "unavailableRemoteImages": 27,
+  "uniqueCdnImagesVerified": 1113,
+  "localOriginalBytes": 159299937,
+  "localDefaultOptimizedBytes": 31764836,
+  "heroOriginalBytes": 2889007,
+  "heroOptimizedBytes": 29098,
+  "productionRoutesVerified": 8,
+  "responsiveViewportsVerified": [
+    "1280x900",
+    "390x844"
+  ],
+  "r2Required": false,
+  "runtimeImageTransformationsRequired": false,
+  "notes": "27 pre-existing remote URLs returned HTTP 404 and remain unchanged; see unavailable-images.json. Original images are retained for rebuilding and rollback.",
+  "deployedAt": "2026-10-05T06:46:33.134Z",
+  "command": "pnpm run build:cf && pnpm run deploy:only",
+  "dropdownThumbnails": {
+    "mappedServices": 43,
+    "softwareArtwork": 20,
+    "familyPreviews": 6,
+    "cdnAll200": true,
+    "desktopVerified": true,
+    "mobileVerified": true,
+    "checkedAt": "2026-10-05T06:46:33.238Z"
+  }
+}

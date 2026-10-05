@@ -9,7 +9,7 @@ export type LandingImage = {
 
 export const landingPageGD1Images = {
   main: {
-    src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765196269/laptop-pc_qqw5ea.png',
+    src: 'https://assets.kedi.media/images/bb329824152f1fc98891-1461.webp',
     alt: 'E-learning Devices Mockup',
   },
 };
@@ -17,7 +17,7 @@ export const landingPageGD1Images = {
 export const landingPageGD2Images: LandingImage[] = [
   {
     id: 1,
-    src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765189615/ab-eight-4-high-1920w_zj5kqk.avif',
+    src: 'https://assets.kedi.media/images/d02f13b75ebf3483a402-601.webp',
     alt: 'Giao diện khóa học trang trí',
   },
 ];
@@ -25,104 +25,104 @@ export const landingPageGD2Images: LandingImage[] = [
 export const landingPageGD3Screenshots: LandingImage[] = [
   {
     id: 1,
-    src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198321/bundle-package-01_ilg6jr.jpg',
+    src: 'https://assets.kedi.media/images/d78cbec1ac07fb0944f7-1904.webp',
     alt: 'Bundle package 01',
   },
   {
     id: 2,
-    src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198321/bundle-package-02_kvawvc.jpg',
+    src: 'https://assets.kedi.media/images/ece81b666d3c043b8b31-1904.webp',
     alt: 'Bundle package 02',
   },
   {
     id: 3,
-    src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198322/bundle-package-03_ktfo5a.jpg',
+    src: 'https://assets.kedi.media/images/d17717ae540aefbba967-1911.webp',
     alt: 'Bundle package 03',
   },
   {
     id: 4,
-    src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198324/bundle-package-04_in4vvf.jpg',
+    src: 'https://assets.kedi.media/images/db7fc8f2fddf94cbe1ca-1909.webp',
     alt: 'Bundle package 04',
   },
   {
     id: 5,
-    src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198321/bundle-package-01_ilg6jr.jpg',
+    src: 'https://assets.kedi.media/images/d78cbec1ac07fb0944f7-1904.webp',
     alt: 'Bundle package 05',
   },
 ];
 
 export const landingPageGD4Assets = {
   logoKedi:
-    'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198765/logo-mona_dxpuvu.png',
-  logoKha: 'https://mona.media/template/assets/images/about/logo-kha.png',
-  trophy: 'https://mona.media/template/assets/images/about/ic-cup-home.png',
+    'https://assets.kedi.media/images/adecd3fb596c248b8031-343.webp',
+  logoKha: 'https://assets.kedi.media/images/84842285ca01a0ab72c1-142.webp',
+  trophy: 'https://assets.kedi.media/images/ba22ca3138c575330439-217.webp',
 };
 
 export const landingPageGD5Marquee: LandingImage[] = [
   {
     id: 1,
-    src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198321/bundle-package-01_ilg6jr.jpg',
+    src: 'https://assets.kedi.media/images/d78cbec1ac07fb0944f7-1904.webp',
     alt: 'Ảnh 1',
     slug: 'bundle-package-01',
   },
   {
     id: 2,
-    src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198321/bundle-package-02_kvawvc.jpg',
+    src: 'https://assets.kedi.media/images/ece81b666d3c043b8b31-1904.webp',
     alt: 'Ảnh 2',
     slug: 'bundle-package-02',
   },
   {
     id: 3,
-    src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198322/bundle-package-03_ktfo5a.jpg',
+    src: 'https://assets.kedi.media/images/d17717ae540aefbba967-1911.webp',
     alt: 'Ảnh 3',
     slug: 'bundle-package-03',
   },
   {
     id: 4,
-    src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198324/bundle-package-04_in4vvf.jpg',
+    src: 'https://assets.kedi.media/images/db7fc8f2fddf94cbe1ca-1909.webp',
     alt: 'Ảnh 4',
     slug: 'bundle-package-04',
   },
   {
     id: 5,
-    src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198321/bundle-package-01_ilg6jr.jpg',
+    src: 'https://assets.kedi.media/images/d78cbec1ac07fb0944f7-1904.webp',
     alt: 'Ảnh 5',
     slug: 'bundle-package-05',
   },
   // --- 5 Ảnh cho hàng dưới (Lấy lại ảnh cũ nhưng đổi ID và thứ tự) ---
   {
     id: 6,
-    src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198322/bundle-package-03_ktfo5a.jpg', // Đảo vị trí
+    src: 'https://assets.kedi.media/images/d17717ae540aefbba967-1911.webp', // Đảo vị trí
     alt: 'Ảnh 6',
     slug: 'bundle-package-06',
   },
   {
     id: 7,
-    src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198321/bundle-package-01_ilg6jr.jpg',
+    src: 'https://assets.kedi.media/images/d78cbec1ac07fb0944f7-1904.webp',
     alt: 'Ảnh 7',
     slug: 'bundle-package-07',
   },
   {
     id: 8,
-    src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198321/bundle-package-01_ilg6jr.jpg',
+    src: 'https://assets.kedi.media/images/d78cbec1ac07fb0944f7-1904.webp',
     alt: 'Ảnh 8',
     slug: 'bundle-package-08',
   },
   {
     id: 9,
-    src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198324/bundle-package-04_in4vvf.jpg',
+    src: 'https://assets.kedi.media/images/db7fc8f2fddf94cbe1ca-1909.webp',
     alt: 'Ảnh 9',
     slug: 'bundle-package-09',
   },
   {
     id: 10,
-    src: 'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198321/bundle-package-01_ilg6jr.jpg',
+    src: 'https://assets.kedi.media/images/d78cbec1ac07fb0944f7-1904.webp',
     alt: 'Ảnh 10',
     slug: 'bundle-package-10',
   },
 ];
 
 export const landingPageGD5Background =
-  'https://mona.media/template/assets/images/tkw-ban-khoa-hoc/grid.png';
+  'https://assets.kedi.media/images/28f5d5f83891830f04c7-1810.webp';
 
 // =============================================
 // LANDINGPAGE 6 - Feature Sections Data
@@ -144,7 +144,7 @@ export const landingPageGD6Data = {
   // Section 3: Ảnh tĩnh không có icon play
   section3: {
     imageSrc:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198324/bundle-package-04_in4vvf.jpg',
+      'https://assets.kedi.media/images/db7fc8f2fddf94cbe1ca-1909.webp',
     title: 'Kho giao diện kéo thả đẹp và luôn được cập nhật xuyên suốt',
   },
 };

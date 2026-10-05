@@ -29,7 +29,7 @@ export default function Training() {
                 <img
                   alt="Training session"
                   className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-1000"
-                  src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070"
+                  src="https://assets.kedi.media/images/46986b6b0306748dcfd2-1920.webp"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
 

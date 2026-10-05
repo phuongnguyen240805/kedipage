@@ -55,7 +55,7 @@ export default function ServiceCapabilitiesV3() {
                       ))}
                     </div>
                     <div className="relative mt-5 h-[170px] overflow-hidden rounded-[20px] lg:hidden">
-                      <Image unoptimized src={service.image} alt={service.title} fill sizes="100vw" className="object-cover" />
+                      <Image  src={service.image} alt={service.title} fill sizes="100vw" className="object-cover" />
                       <div className="absolute inset-0 bg-gradient-to-t from-kedi-navy/[0.35] to-transparent" />
                     </div>
                   </div>
@@ -82,7 +82,7 @@ export default function ServiceCapabilitiesV3() {
                   transition={reduceMotion ? { duration: 0 } : { duration: 0.5, ease: EASE }}
                   className="absolute inset-0"
                 >
-                  <Image unoptimized
+                  <Image
                     src={activeService.image}
                     alt={activeService.title}
                     fill

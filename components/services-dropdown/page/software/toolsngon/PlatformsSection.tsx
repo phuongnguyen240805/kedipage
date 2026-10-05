@@ -8,43 +8,43 @@ import 'swiper/css';
 
 const topLogos = [
   {
-    src: 'https://asset.brandfetch.io/idoSSZyxKB/idj7LVOPQD.png?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/1612687849eb1198d317-400.webp',
     alt: 'Hellium',
   },
   {
-    src: 'https://cdn.brandfetch.io/id6KQUPKmw/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/b8043428441153c3d0bb-400.webp',
     alt: 'Freepik',
   },
   {
-    src: 'https://asset.brandfetch.io/idoSSZyxKB/idGpv38qKt.png?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/fdb6b2bef23aeaa4a062-400.webp',
     alt: 'Shophunter',
   },
   {
-    src: 'https://asset.brandfetch.io/idoSSZyxKB/idj0qewM1H.png?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/0474fbd96abd7c4bc03b-400.webp',
     alt: 'ChatGPT',
   },
   {
-    src: 'https://asset.brandfetch.io/idoSSZyxKB/idXQNCdDFz.png?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/cf9ac38e83b8b23ebe9d-400.webp',
     alt: 'Dropship Io',
   },
   {
-    src: 'https://asset.brandfetch.io/idoSSZyxKB/idlsXYKlTK.png?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/24b851ebf1fc34f0fe3b-400.webp',
     alt: 'PipiAds',
   },
   {
-    src: 'https://asset.brandfetch.io/idoSSZyxKB/ideRDveXwp.png?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/17aca75817c43647eb99-400.webp',
     alt: 'Winninghunter',
   },
   {
-    src: 'https://cdn.brandfetch.io/idsoL9l3tb/w/180/h/180/theme/dark/logo.png?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/7ded9a51008bc9553e82-180.webp',
     alt: 'PinSPY',
   },
   {
-    src: 'https://cdn.brandfetch.io/id9mVQlyB1/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/1397545aa0699e65d299-400.webp',
     alt: 'Canva',
   },
   {
-    src: 'https://cdn.brandfetch.io/idt3n8W3ef/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/6397f10617079d67ad59-200.webp',
     alt: 'Semrush',
   },
   {
@@ -52,11 +52,11 @@ const topLogos = [
     alt: 'Shoplus',
   },
   {
-    src: 'https://asset.brandfetch.io/idoSSZyxKB/idGvtJLtIa.png?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/11f0149c705a7746989e-400.webp',
     alt: 'Kalodata',
   },
   {
-    src: 'https://play-lh.googleusercontent.com/0654HX7dcGrIxNgjROl2__z2RIW8nkDVZMqm8NiR5p9O0OM-OVNTRG0H8-0fjC8lj-0=w240-h480-rw',
+    src: 'https://assets.kedi.media/images/227bdf136240e80cd475-240.webp',
     alt: 'Placeit',
   },
   {
@@ -64,62 +64,62 @@ const topLogos = [
     alt: 'Quillbot',
   },
   {
-    src: 'https://asset.brandfetch.io/idoSSZyxKB/idu0cWy29Z.png?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/16ef76bc347bed88fc63-400.webp',
     alt: 'Capcut Pro',
   },
   {
-    src: 'https://asset.brandfetch.io/idoSSZyxKB/idAL8D8t4E.png?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/27fbdc94ef800944b9f1-400.webp',
     alt: 'Claude AI',
   },
   {
-    src: 'https://asset.brandfetch.io/idoSSZyxKB/idnA4r-ycO.png?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/9f4379fa86f4cf576b20-400.webp',
     alt: 'Suno AI',
   },
 ];
 
 const bottomLogos = [
   {
-    src: 'https://asset.brandfetch.io/idoSSZyxKB/idpxW8Oj3B.png?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/e0b3c6f7cd737ded699b-400.webp',
     alt: 'Runway',
   },
   {
-    src: 'https://asset.brandfetch.io/idoSSZyxKB/id9ihprqGm.png?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/a436590dce3a5d94f4de-400.webp',
     alt: 'Midjourney',
   },
   {
-    src: 'https://asset.brandfetch.io/idoSSZyxKB/idjCEzPbbh.png?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/7df3fad9d695c017485d-400.webp',
     alt: 'ElevenLabs',
   },
   {
-    src: 'https://asset.brandfetch.io/idoSSZyxKB/idHaXqUEn5.png?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/a697adee8f8998b34ffd-400.webp',
     alt: 'Hailuo',
   },
   {
-    src: 'https://asset.brandfetch.io/idoSSZyxKB/idecCcyKPO.png?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/ac1ee5fc893b4dd4c8b7-400.webp',
     alt: 'Heygen',
   },
   {
-    src: 'https://asset.brandfetch.io/idoSSZyxKB/idsVxRIRBz.png?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/7762fd56b6c22be28e1c-400.webp',
     alt: 'Leonardo',
   },
   {
-    src: 'https://asset.brandfetch.io/idoSSZyxKB/idMWewJJqI.png?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/731f5243f3d648f9d0e3-400.webp',
     alt: 'Grok',
   },
   {
-    src: 'https://asset.brandfetch.io/idoSSZyxKB/id-_eJ4wmG.png?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/4cb1b08d051482ebc29a-400.webp',
     alt: 'Vbee',
   },
   {
-    src: 'https://asset.brandfetch.io/idoSSZyxKB/idwwtV4RMe.png?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/ac47f1bfaa786f68293a-400.webp',
     alt: 'Kit AI',
   },
   {
-    src: 'https://asset.brandfetch.io/idoSSZyxKB/idRtKZy7IP.png?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/8cf309e2a15f3fb3d899-400.webp',
     alt: 'Minimax',
   },
   {
-    src: 'https://asset.brandfetch.io/idoSSZyxKB/idsTHo-U7s.png?c=1dxbfHSJFAPEGdCLU4o5B',
+    src: 'https://assets.kedi.media/images/60d9e5a30edec2f1a5a9-400.webp',
     alt: 'Dzine AI',
   },
 ];
@@ -170,7 +170,7 @@ export default function PlatformsSection() {
                   width={160}
                   height={160}
                   className="object-contain w-[160px] h-[160px]"
-                  unoptimized
+
                 />
               </div>
             </SwiperSlide>
@@ -212,7 +212,7 @@ export default function PlatformsSection() {
                   width={160}
                   height={160}
                   className="object-contain w-[160px] h-[160px]"
-                  unoptimized
+
                 />
               </div>
             </SwiperSlide>

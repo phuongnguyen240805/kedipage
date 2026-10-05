@@ -2,6 +2,8 @@
 # DEPENDENCIES & PACKAGE MANAGERS
 # ==============================================================================
 node_modules/
+kedi-assest/dist/
+kedi-assest/.wrangler/
 /.pnp
 .pnp.*
 .yarn/*
@@ -39,6 +41,7 @@ dist/
 .env.local
 .env.*.local
 .env.production.local
+.env.cf.prodution
 .envrc
 *.pem
 *.key

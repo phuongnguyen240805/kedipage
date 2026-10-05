@@ -6,8 +6,8 @@ import type { QuoteShareBrowserConfig } from "./quote-share.types";
  */
 export const quoteShareConfig: QuoteShareBrowserConfig = {
   site: "kedi.media",
-  logoDark: "/brand/kedi-logo-navy.png",
-  logoWhite: "/brand/kedi-logo-reverse.png",
+  logoDark: "https://assets.kedi.media/images/faea1e69567763e173ea-380.webp",
+  logoWhite: "https://assets.kedi.media/images/521d6ee8430017434c68-380.webp",
   downloadPrefix: "kedi-quote",
   brandLabel: "KEDI",
   themes: {
@@ -42,7 +42,7 @@ export const quoteShareConfig: QuoteShareBrowserConfig = {
   },
   minLength: 12,
   maxLength: 600,
-  allow: ".mona-content, .entry-content, .blog-large-content, article, main, [data-quote-source]",
+  allow: ".entry-content, .blog-large-content, article, main, [data-quote-source]",
   deny: "header, footer, nav, aside, form, button, input, textarea, .popup, .menu-extra, .breadcrumb, .wpcf7, .contact-box, [data-quote-ignore]",
 };
 

@@ -1,4 +1,5 @@
 import type { Service } from "./datas/services-data";
+import { SOFTWARE_THUMBNAIL_IMAGES } from "./service-thumbnails";
 
 export type SoftwareMenuFamily = {
   key: string;
@@ -15,7 +16,7 @@ export const SOFTWARE_MENU_FAMILIES: SoftwareMenuFamily[] = [
     key: "business-platform",
     title: "Business Platform",
     description: "OS, CRM, commerce, analytics và automation cho vận hành cốt lõi.",
-    previewImage: "/service-menu/families/business-platform.webp",
+    previewImage: SOFTWARE_THUMBNAIL_IMAGES['/kedi-os']!,
     accent: "#3b82f6",
     hrefs: ["/kedi-os", "/kedi-crm", "/kedi-commerce", "/kedi-analytics", "/kedi-automate"],
   },
@@ -23,7 +24,7 @@ export const SOFTWARE_MENU_FAMILIES: SoftwareMenuFamily[] = [
     key: "ai-automation",
     title: "AI & Automation",
     description: "AI workforce, workflow canvas và môi trường profile làm việc.",
-    previewImage: "/service-menu/families/ai-automation.webp",
+    previewImage: SOFTWARE_THUMBNAIL_IMAGES['/kedi-agents']!,
     accent: "#7c3aed",
     hrefs: ["/kedi-agents", "/kedi-ai-flow", "/kedi-profiles"],
   },
@@ -31,7 +32,7 @@ export const SOFTWARE_MENU_FAMILIES: SoftwareMenuFamily[] = [
     key: "growth-content",
     title: "Growth & Content",
     description: "Outreach, video, funnel, SEO và quảng cáo cho tăng trưởng.",
-    previewImage: "/service-menu/families/growth-content.webp",
+    previewImage: SOFTWARE_THUMBNAIL_IMAGES['/kedi-outreach']!,
     accent: "#db2777",
     hrefs: ["/kedi-outreach", "/kedi-video", "/kedi-funnel", "/kedi-seo", "/kedi-ads"],
   },
@@ -39,7 +40,7 @@ export const SOFTWARE_MENU_FAMILIES: SoftwareMenuFamily[] = [
     key: "commerce-production",
     title: "Commerce Production",
     description: "Thiết kế, sản xuất và fulfillment theo mô hình POD.",
-    previewImage: "/service-menu/families/commerce-production.webp",
+    previewImage: SOFTWARE_THUMBNAIL_IMAGES['/kedi-pod']!,
     accent: "#ea580c",
     hrefs: ["/kedi-pod"],
   },
@@ -47,7 +48,7 @@ export const SOFTWARE_MENU_FAMILIES: SoftwareMenuFamily[] = [
     key: "industry-solutions",
     title: "Giải pháp theo ngành",
     description: "Logistics, đào tạo, retail, hospitality và hệ sinh thái giáo dục.",
-    previewImage: "/service-menu/families/industry-solutions.webp",
+    previewImage: SOFTWARE_THUMBNAIL_IMAGES['/nhtq']!,
     accent: "#0f766e",
     hrefs: [
       "/nhtq/",
@@ -61,7 +62,7 @@ export const SOFTWARE_MENU_FAMILIES: SoftwareMenuFamily[] = [
     key: "utility-platform",
     title: "Utility Platform",
     description: "Bộ công cụ tiện ích dùng nhanh cho nhiều workflow triển khai.",
-    previewImage: "/service-menu/families/utility-platform.webp",
+    previewImage: SOFTWARE_THUMBNAIL_IMAGES['/tools-ngon']!,
     accent: "#d97706",
     hrefs: ["/tools-ngon"],
   },

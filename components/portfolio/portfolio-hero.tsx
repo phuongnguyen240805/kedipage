@@ -25,7 +25,7 @@ export default function PortfolioHero() {
       <div
         className="absolute inset-0 z-0 select-none opacity-25"
         style={{
-          backgroundImage: "url('/homepage/golden-data-journey.webp')",
+          backgroundImage: "url('https://assets.kedi.media/images/236244d3329e087e4868-1672.webp')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -92,7 +92,7 @@ export default function PortfolioHero() {
                 // Đây là phần bạn đang nhìn thấy (Ảnh tĩnh)
                 <div className="absolute inset-0 z-20 flex items-center justify-center">
                   <img
-                    src="/homepage/golden-data-journey.webp"
+                    src="https://assets.kedi.media/images/236244d3329e087e4868-1672.webp"
                     className="w-full h-full object-cover opacity-55"
                     alt="thumbnail"
                   />

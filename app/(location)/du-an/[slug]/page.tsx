@@ -27,7 +27,7 @@ const MOCK_PROJECTS: any = {
     year: "2023",
     team: "6 người",
 
-    mainImage: "https://mona.media/wp-content/uploads/2024/01/lap-1-19.png",
+    mainImage: "https://assets.kedi.media/images/276eda31207a9a7a9ecc-1126.webp",
     mainVideoUrl: "https://youtu.be/HFQrc7WuGTk?si=k3SmTRoFmYrintAu",
     mobileVideoUrl:
       "https://mona.media/wp-content/uploads/2024/01/web-cinestar-cu%CC%83.mp4",
@@ -35,10 +35,10 @@ const MOCK_PROJECTS: any = {
       "https://mona.media/wp-content/uploads/2024/01/web-cinestar-cu%CC%83.mp4",
 
     gallery: [
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015",
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070",
-      "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=2070",
+      "https://assets.kedi.media/images/53086f47b424b2182033-1920.webp",
+      "https://assets.kedi.media/images/5df17c730683c6450a81-1920.webp",
+      "https://assets.kedi.media/images/74763caa022619cdc5b6-1920.webp",
+      "https://assets.kedi.media/images/54d5888228e3a6b73a47-1920.webp",
     ],
 
     problemTitle:

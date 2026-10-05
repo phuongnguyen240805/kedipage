@@ -1,14 +1,14 @@
 const slides = [
   {
     id: 'slide-1',
-    image: 'https://mona.media/wp-content/uploads/2023/09/seo-la-gi-1.jpg',
+    image: 'https://assets.kedi.media/images/a68f62f05704f7a24b53-1280.webp',
     title: 'SEO là gì? Tất tần tật về SEO và Nghề SEO trong Marketing',
     tag: 'SEO',
     author: {
       name: 'KEDI.Media',
       title: 'ADMIN',
       avatar:
-        'https://mona.media/wp-content/uploads/2023/02/monasoftware_logo.svg',
+        'https://assets.kedi.media/images/a5c2b1cb7b8ae4c2b67b.svg',
     },
     stats: {
       views: '5.6k',
@@ -25,7 +25,7 @@ const slides = [
     author: {
       name: 'Lý Quốc Siêu',
       title: 'Marketing Leader',
-      avatar: 'https://mona.media/template/assets/images/blog/icon-user.png',
+      avatar: 'https://assets.kedi.media/images/db53ef07fbf3447f2a1f-40.webp',
     },
     stats: {
       views: '1.4k',
@@ -43,7 +43,7 @@ const slides = [
       name: 'KEDI.Media',
       title: 'ADMIN',
       avatar:
-        'https://mona.media/wp-content/uploads/2023/02/monasoftware_logo.svg',
+        'https://assets.kedi.media/images/a5c2b1cb7b8ae4c2b67b.svg',
     },
     stats: {
       views: '1.4k',
@@ -53,7 +53,7 @@ const slides = [
   },
   {
     id: 'slide-4',
-    image: 'https://mona.media/wp-content/uploads/2021/08/case-study.png',
+    image: 'https://assets.kedi.media/images/8f09faf200b85dd709d2-1777.webp',
     title:
       'Case Study là gì? Cách sử dụng Case Study trong chiến lược Marketing',
     tag: 'Kiến thức kinh doanh',
@@ -61,7 +61,7 @@ const slides = [
       name: 'KEDI.Media',
       title: 'ADMIN',
       avatar:
-        'https://mona.media/wp-content/uploads/2023/02/monasoftware_logo.svg',
+        'https://assets.kedi.media/images/a5c2b1cb7b8ae4c2b67b.svg',
     },
     stats: {
       views: '1.4k',

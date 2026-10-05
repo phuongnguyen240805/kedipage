@@ -11,6 +11,7 @@ import zh from '../components/messages/zh.json';
 
 if (!i18n.isInitialized) {
   i18n.use(initReactI18next).init({
+    showSupportNotice: false,
     resources: {
       en: { translation: en },
       vi: { translation: vi },

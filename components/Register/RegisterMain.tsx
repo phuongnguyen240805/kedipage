@@ -19,7 +19,7 @@ const RegisterMain = () => {
           {/* Background Image Overlay */}
           <div className="absolute inset-0 z-0">
             <Image 
-              src="https://res.cloudinary.com/dzkcqktcl/image/upload/v1769356982/unnamed_rn5jxn.png" 
+              src="https://assets.kedi.media/images/8573f66857419dae6077-512.webp"
               alt="Background" 
               fill
               className="object-cover opacity-50" // Chỉnh opacity nếu muốn text nổi hơn

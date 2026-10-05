@@ -73,7 +73,7 @@ export default function LegacyTrustSection({ data }: { data: AiAgentPageData }) 
   return (
     <section id="vi-sao-tin-duoc" className="kedi-ai-legacy bag bag-truth bag-dk">
       <BrandGhostBackground
-        src="/homepage/golden-data-journey.webp"
+        src="https://assets.kedi.media/images/236244d3329e087e4868-1672.webp"
         dark
         position="right"
         opacity={0.10}

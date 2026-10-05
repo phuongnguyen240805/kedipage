@@ -39,6 +39,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import type { Service } from './datas/services-data';
+import { getMenuThumbnailImage } from './service-thumbnails';
 
 type ToneKey =
   | 'business'
@@ -426,102 +427,6 @@ export function getServiceMenuDescription(service: Service, fallback: string) {
 }
 
 
-const SOFTWARE_THUMBNAIL_IMAGES: Record<string, string> = {
-  '/kedi-os': '/service-menu/software-thumbnails/01-os-ecosystem-dashboard.png',
-  '/kedi-crm': '/service-menu/software-thumbnails/02-crm-pipeline-dashboard.png',
-  '/kedi-commerce': '/service-menu/software-thumbnails/03-commerce-ecosystem-hub.png',
-  '/kedi-analytics': '/service-menu/software-thumbnails/04-analytics-dashboard.png',
-  '/kedi-automate': '/service-menu/software-thumbnails/05-automation-hub-network.png',
-  '/kedi-agents': '/service-menu/software-thumbnails/06-ai-agent-orchestration-hub.png',
-  '/kedi-ai-flow': '/service-menu/software-thumbnails/07-ai-workflow-pipeline.png',
-  '/kedi-profiles': '/service-menu/software-thumbnails/08-identity-dashboard.png',
-  '/kedi-outreach': '/service-menu/software-thumbnails/09-multichannel-outreach-network.png',
-  '/kedi-video': '/service-menu/software-thumbnails/10-video-editing-suite.png',
-  '/kedi-funnel': '/service-menu/software-thumbnails/11-kedi-funnel.png',
-  '/kedi-seo': '/service-menu/software-thumbnails/12-kedi-seo.png',
-  '/kedi-ads': '/service-menu/software-thumbnails/13-kedi-ads.png',
-  '/kedi-pod': '/service-menu/software-thumbnails/14-kedi-pod.png',
-  '/nhtq': '/service-menu/software-thumbnails/15-nhtq.png',
-  '/phan-mem-dao-tao-noi-bo': '/service-menu/software-thumbnails/16-kedi-skillhub.png',
-  '/phan-mem-quan-ly-tiem-vang': '/service-menu/software-thumbnails/17-kedi-jms.png',
-  '/select-trial': '/service-menu/software-thumbnails/18-restaurant-ai.png',
-  '/tools-ngon': '/service-menu/software-thumbnails/19-tools-ngon.png',
-  '/edutech': '/service-menu/software-thumbnails/20-kedi-edutech.png',
-};
-
-function normalizeServiceHref(href?: string) {
-  if (!href) return '';
-  const cleanHref = href.split('?')[0]?.split('#')[0] ?? href;
-  if (cleanHref.length > 1 && cleanHref.endsWith('/')) return cleanHref.slice(0, -1);
-  return cleanHref;
-}
-
-function getSoftwareThumbnailImage(service: Service) {
-  return SOFTWARE_THUMBNAIL_IMAGES[normalizeServiceHref(service.href)] ?? null;
-}
-
-const REUSED_GENERATED_THUMBNAIL_BY_TITLE_KEY: Record<string, string> = {
-  'services.items.seo_service.title': '/kedi-seo',
-  'services.items.corporate_video.title': '/kedi-video',
-  'services.items.corporate_photography.title': '/kedi-profiles',
-  'services.items.website_design.title': '/kedi-funnel',
-  'services.items.landing_page_design.title': '/kedi-funnel',
-  'services.items.ready_website.title': '/kedi-commerce',
-  'services.items.cloud_hosting.title': '/kedi-os',
-  'services.items.wedding_invitation.title': '/select-trial',
-  'services.items.domain_registration.title': '/kedi-seo',
-  'services.items.digitalTransformation.title': '/kedi-os',
-  'services.items.digital_marketing_consulting.title': '/kedi-ads',
-  'services.items.ai_video_service.title': '/kedi-video',
-  'services.items.custom_software_development.title': '/kedi-os',
-  'services.items.custom_ai_agent.title': '/kedi-agents',
-  'services.items.ai_transformation_consulting.title': '/kedi-automate',
-  'services.items.ecommerce_website.title': '/kedi-commerce',
-  'services.items.ecommerce_templates.title': '/kedi-commerce',
-  'services.items.brand_building.title': '/kedi-outreach',
-  'services.items.warehouse_management.title': '/nhtq',
-  'services.items.wholesale_management.title': '/kedi-commerce',
-  'services.items.printer_integration.title': '/kedi-pod',
-  'services.items.payment_gateway.title': '/kedi-commerce',
-  'services.items.agency_management.title': '/kedi-crm',
-};
-
-const REUSED_GENERATED_THUMBNAIL_BY_HREF: Record<string, string> = {
-  '/dich-vu-seo': '/kedi-seo',
-  '/quay-phim-gioi-thieu-doanh-nghiep': '/kedi-video',
-  '/chup-anh-profile-cong-ty': '/kedi-profiles',
-  '/thiet-ke-website': '/kedi-funnel',
-  '/thiet-ke-landing-page': '/kedi-funnel',
-  '/web-co-san': '/kedi-commerce',
-  '/cloud-hosting': '/kedi-os',
-  '/mau-thiep-cuoi': '/select-trial',
-  '/dang-ky-ten-mien': '/kedi-seo',
-  '/chuyen-doi-so': '/kedi-os',
-  '/thiet-ke-website-ban-hang': '/kedi-commerce',
-  '/mau-web-danh-muc/mau-web-ban-hang': '/kedi-commerce',
-  '/dich-vu-xay-kenh-tiktok': '/kedi-outreach',
-  '/phan-mem-quan-ly-kho-bai-container': '/nhtq',
-  '/phan-mem-quan-ly-ban-hang': '/kedi-commerce',
-  '/tich-hop-thanh-toan-visa-vao-website': '/kedi-commerce',
-};
-
-function getMenuThumbnailImage(service: Service, groupKey?: string) {
-  if (service.imageUrl) return service.imageUrl;
-
-  const softwareThumbnail = getSoftwareThumbnailImage(service);
-  if (softwareThumbnail) return softwareThumbnail;
-
-  if (groupKey !== 'business_services' && groupKey !== 'selling') return null;
-
-  const mappedRoute =
-    (service.titleKey
-      ? REUSED_GENERATED_THUMBNAIL_BY_TITLE_KEY[service.titleKey]
-      : undefined) ??
-    REUSED_GENERATED_THUMBNAIL_BY_HREF[normalizeServiceHref(service.href)];
-
-  return mappedRoute ? SOFTWARE_THUMBNAIL_IMAGES[mappedRoute] ?? null : null;
-}
-
 // Module scope on purpose: category hover must reuse the already decoded
 // bitmap instead of starting a new request for the same thumbnail URL.
 const decodedThumbnailSrcs = new Set<string>();
@@ -551,7 +456,7 @@ function isThumbnailReady(src: string) {
 
 export function preloadServiceThumbnails(services: Service[], groupKey?: string) {
   for (const service of services) {
-    const src = getMenuThumbnailImage(service, groupKey);
+    const src = getMenuThumbnailImage(service);
     if (src) preloadMenuThumbnail(src);
   }
 }
@@ -568,7 +473,7 @@ export function ServiceThumbnail({
   const meta = getMeta(service);
   const tone = getTone(meta, groupKey);
   const Icon = meta.icon;
-  const imageSrc = getMenuThumbnailImage(service, groupKey);
+  const imageSrc = getMenuThumbnailImage(service);
   const [ready, setReady] = useState(() => Boolean(imageSrc && isThumbnailReady(imageSrc)));
   const [failed, setFailed] = useState(false);
 

@@ -119,7 +119,7 @@ const Footer: React.FC = () => {
 
             <div className="mt-5 flex justify-start">
               <Image
-                src="/homepage/golden-mascot-transparent.webp"
+                src="https://assets.kedi.media/images/9d29af5e18269d6c53c0-1600.webp"
                 alt="KEDI golden 3D mascot"
                 className="h-auto w-[96px] object-contain drop-shadow-[0_12px_24px_rgba(11,45,91,0.18)]"
                 width={96}
@@ -134,7 +134,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex min-w-0 items-center gap-3">
               <Image
-                src="/brand/kedi-icon.png"
+                src="https://assets.kedi.media/images/cbe0eb58b4ee5d7a8419-512.webp"
                 alt="Kedi.Media icon"
                 width={30}
                 height={30}

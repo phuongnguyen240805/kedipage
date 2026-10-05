@@ -82,7 +82,7 @@ export default function HeroIntroduction() {
                         onClick={() => setIsPlaying(true)}
                       >
                         <img
-                          src="https://img.youtube.com/vi/HFQrc7WuGTk/maxresdefault.jpg"
+                          src="https://assets.kedi.media/images/b1698c1c45ac090577ae-1280.webp"
                           alt="Video Cover"
                           className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-1000"
                         />

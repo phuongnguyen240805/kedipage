@@ -25,7 +25,7 @@ export const CATEGORIES = [
 export const THIEP_CUOI: WebsiteSample[] = [
   {
     id: 1,
-    image: 'https://mona.media/wp-content/uploads/2023/03/screencapture-xaynhadep2-monamedia-net-2025-01-08-14_07_44.png',
+    image: 'https://assets.kedi.media/images/11ce969f33cb4528d2c8-1920.webp',
     demoUrl: 'https://cinelove.me/template/pc/thiep-cuoi-52?onlyPreview=true',
     detailUrl: '/web-co-san/cong-ty-xay-dung',
     likes: '120',
@@ -36,7 +36,7 @@ export const THIEP_CUOI: WebsiteSample[] = [
   },
   {
     id: 2,
-    image: 'https://mona.media/wp-content/uploads/2023/03/screencapture-cafengon-monamedia-net-2025-01-16-15_49_29.png',
+    image: 'https://assets.kedi.media/images/4f9c0a3cc6f99c6d7538-1920.webp',
     demoUrl: 'https://cafengon.monamedia.net',
     detailUrl: '/mau-website/ban-ca-phe-hien-dai-va-sang-trong',
     likes: '340',
@@ -47,7 +47,7 @@ export const THIEP_CUOI: WebsiteSample[] = [
   },
   {
     id: 3,
-    image: 'https://mona.media/wp-content/uploads/2023/03/screencapture-office-sup-monamedia-net-2024-05-27-16_50_28.png',
+    image: 'https://assets.kedi.media/images/9c05f2a382ecdb8c983c-1920.webp',
     demoUrl: 'https://cinelove.me/template/thiep-cuoi-53?onlyPreview=true',
     detailUrl: '/mau-website/ban-van-phong-pham-tien-ich',
     likes: '85',
@@ -58,7 +58,7 @@ export const THIEP_CUOI: WebsiteSample[] = [
   },
   {
     id: 4,
-    image: 'https://mona.media/wp-content/uploads/2023/03/screencapture-roam-world-monamedia-net-2024-07-01-15_13_54.png',
+    image: 'https://assets.kedi.media/images/e15208d39a6aecb639e3-1920.webp',
     demoUrl: 'https://cinelove.me/template/thiep-cuoi-53?onlyPreview=true',
     detailUrl: '/mau-website/dich-vu-du-lich-don-gian-hien-dai',
     likes: '210',
@@ -69,7 +69,7 @@ export const THIEP_CUOI: WebsiteSample[] = [
   },
   {
     id: 5,
-    image: 'https://mona.media/wp-content/uploads/2023/03/screencapture-mona-tour-monamedia-net-2024-05-22-13_13_29-1-768x3570.png',
+    image: 'https://assets.kedi.media/images/cc891393b021acabc121-768.webp',
     demoUrl: 'https://cinelove.me/template/thiep-cuoi-53?onlyPreview=true',
     detailUrl: '/mau-website/du-lich-lu-hanh-ban-tour',
     likes: '156',
@@ -80,7 +80,7 @@ export const THIEP_CUOI: WebsiteSample[] = [
   },
   {
     id: 6,
-    image: 'https://mona.media/wp-content/uploads/2023/03/screencapture-sacdep24-monamedia-net-2025-01-08-13_40_50-768x4640.png',
+    image: 'https://assets.kedi.media/images/e147e3778707ca7a8e2d-768.webp',
     demoUrl: 'https://cinelove.me/template/thiep-cuoi-53?onlyPreview=true',
     detailUrl: '/mau-website/ban-my-pham-doc-dao-va-hap-dan',
     likes: '425',
@@ -91,7 +91,7 @@ export const THIEP_CUOI: WebsiteSample[] = [
   },
   {
     id: 7,
-    image: 'https://mona.media/wp-content/uploads/2023/03/screencapture-primeluxe-monamedia-net-2024-09-05-11_25_06-768x3268.png',
+    image: 'https://assets.kedi.media/images/3e6d9be8979a75986514-768.webp',
     demoUrl: 'https://cinelove.me/template/thiep-cuoi-53?onlyPreview=true',
     detailUrl: '/mau-website/mau-website-gioi-thieu-bat-dong-san-hien-dai',
     likes: '312',
@@ -102,7 +102,7 @@ export const THIEP_CUOI: WebsiteSample[] = [
   },
   {
     id: 8,
-    image: 'https://mona.media/wp-content/uploads/2023/03/screencapture-dulichviet-monamedia-net-2025-01-14-09_32_29-768x4295.png',
+    image: 'https://assets.kedi.media/images/4a058c45da6f8cfdc524-768.webp',
     demoUrl: 'https://cinelove.me/template/thiep-cuoi-53?onlyPreview=true',
     detailUrl: '/mau-website/mau-website-du-lich-lu-hanh-doc-dao-giao-dien-tinh-te',
     likes: '198',
@@ -113,7 +113,7 @@ export const THIEP_CUOI: WebsiteSample[] = [
   },
   {
     id: 9,
-    image: 'https://mona.media/wp-content/uploads/2023/03/screencapture-primeluxe-monamedia-net-2024-09-05-11_25_06-768x3268.png',
+    image: 'https://assets.kedi.media/images/3e6d9be8979a75986514-768.webp',
     demoUrl: 'https://cinelove.me/template/thiep-cuoi-53?onlyPreview=true',
     detailUrl: '/mau-website/mau-website-gioi-thieu-bat-dong-san-hien-dai',
     likes: '275',
@@ -124,7 +124,7 @@ export const THIEP_CUOI: WebsiteSample[] = [
   },
   {
     id: 10,
-    image: 'https://mona.media/wp-content/uploads/2023/03/screencapture-primeluxe-monamedia-net-2024-09-05-11_25_06-768x3268.png',
+    image: 'https://assets.kedi.media/images/3e6d9be8979a75986514-768.webp',
     demoUrl: 'https://cinelove.me/template/thiep-cuoi-53?onlyPreview=true',
     detailUrl: '/mau-website/mau-website-gioi-thieu-bat-dong-san-hien-dai',
     likes: '142',
@@ -135,7 +135,7 @@ export const THIEP_CUOI: WebsiteSample[] = [
   },
   {
     id: 11,
-    image: 'https://mona.media/wp-content/uploads/2023/03/screencapture-xaynhadep2-monamedia-net-2025-01-08-14_07_44.png',
+    image: 'https://assets.kedi.media/images/11ce969f33cb4528d2c8-1920.webp',
     demoUrl: 'https://cinelove.me/template/pc/thiep-cuoi-52?onlyPreview=true',
     detailUrl: '/web-co-san/cong-ty-xay-dung',
     likes: '120',
@@ -146,7 +146,7 @@ export const THIEP_CUOI: WebsiteSample[] = [
   },
   {
     id: 12,
-    image: 'https://mona.media/wp-content/uploads/2023/03/screencapture-cafengon-monamedia-net-2025-01-16-15_49_29.png',
+    image: 'https://assets.kedi.media/images/4f9c0a3cc6f99c6d7538-1920.webp',
     demoUrl: 'https://cafengon.monamedia.net',
     detailUrl: '/mau-website/ban-ca-phe-hien-dai-va-sang-trong',
     likes: '340',
@@ -157,7 +157,7 @@ export const THIEP_CUOI: WebsiteSample[] = [
   },
   {
     id: 13,
-    image: 'https://mona.media/wp-content/uploads/2023/03/screencapture-office-sup-monamedia-net-2024-05-27-16_50_28.png',
+    image: 'https://assets.kedi.media/images/9c05f2a382ecdb8c983c-1920.webp',
     demoUrl: 'https://cinelove.me/template/thiep-cuoi-53?onlyPreview=true',
     detailUrl: '/mau-website/ban-van-phong-pham-tien-ich',
     likes: '85',
@@ -168,7 +168,7 @@ export const THIEP_CUOI: WebsiteSample[] = [
   },
   {
     id: 14,
-    image: 'https://mona.media/wp-content/uploads/2023/03/screencapture-roam-world-monamedia-net-2024-07-01-15_13_54.png',
+    image: 'https://assets.kedi.media/images/e15208d39a6aecb639e3-1920.webp',
     demoUrl: 'https://cinelove.me/template/thiep-cuoi-53?onlyPreview=true',
     detailUrl: '/mau-website/dich-vu-du-lich-don-gian-hien-dai',
     likes: '210',
@@ -179,7 +179,7 @@ export const THIEP_CUOI: WebsiteSample[] = [
   },
   {
     id: 15,
-    image: 'https://mona.media/wp-content/uploads/2023/03/screencapture-mona-tour-monamedia-net-2024-05-22-13_13_29-1-768x3570.png',
+    image: 'https://assets.kedi.media/images/cc891393b021acabc121-768.webp',
     demoUrl: 'https://cinelove.me/template/thiep-cuoi-53?onlyPreview=true',
     detailUrl: '/mau-website/du-lich-lu-hanh-ban-tour',
     likes: '156',
@@ -190,7 +190,7 @@ export const THIEP_CUOI: WebsiteSample[] = [
   },
   {
     id: 16,
-    image: 'https://mona.media/wp-content/uploads/2023/03/screencapture-sacdep24-monamedia-net-2025-01-08-13_40_50-768x4640.png',
+    image: 'https://assets.kedi.media/images/e147e3778707ca7a8e2d-768.webp',
     demoUrl: 'https://cinelove.me/template/thiep-cuoi-53?onlyPreview=true',
     detailUrl: '/mau-website/ban-my-pham-doc-dao-va-hap-dan',
     likes: '425',
@@ -201,7 +201,7 @@ export const THIEP_CUOI: WebsiteSample[] = [
   },
   {
     id: 17,
-    image: 'https://mona.media/wp-content/uploads/2023/03/screencapture-primeluxe-monamedia-net-2024-09-05-11_25_06-768x3268.png',
+    image: 'https://assets.kedi.media/images/3e6d9be8979a75986514-768.webp',
     demoUrl: 'https://cinelove.me/template/thiep-cuoi-53?onlyPreview=true',
     detailUrl: '/mau-website/mau-website-gioi-thieu-bat-dong-san-hien-dai',
     likes: '312',
@@ -212,7 +212,7 @@ export const THIEP_CUOI: WebsiteSample[] = [
   },
   {
     id: 18,
-    image: 'https://mona.media/wp-content/uploads/2023/03/screencapture-dulichviet-monamedia-net-2025-01-14-09_32_29-768x4295.png',
+    image: 'https://assets.kedi.media/images/4a058c45da6f8cfdc524-768.webp',
     demoUrl: 'https://cinelove.me/template/thiep-cuoi-53?onlyPreview=true',
     detailUrl: '/mau-website/mau-website-du-lich-lu-hanh-doc-dao-giao-dien-tinh-te',
     likes: '198',
@@ -223,7 +223,7 @@ export const THIEP_CUOI: WebsiteSample[] = [
   },
   {
     id: 19,
-    image: 'https://mona.media/wp-content/uploads/2023/03/screencapture-primeluxe-monamedia-net-2024-09-05-11_25_06-768x3268.png',
+    image: 'https://assets.kedi.media/images/3e6d9be8979a75986514-768.webp',
     demoUrl: 'https://cinelove.me/template/thiep-cuoi-53?onlyPreview=true',
     detailUrl: '/mau-website/mau-website-gioi-thieu-bat-dong-san-hien-dai',
     likes: '275',
@@ -234,7 +234,7 @@ export const THIEP_CUOI: WebsiteSample[] = [
   },
   {
     id: 20,
-    image: 'https://mona.media/wp-content/uploads/2023/03/screencapture-primeluxe-monamedia-net-2024-09-05-11_25_06-768x3268.png',
+    image: 'https://assets.kedi.media/images/3e6d9be8979a75986514-768.webp',
     demoUrl: 'https://cinelove.me/template/thiep-cuoi-53?onlyPreview=true',
     detailUrl: '/mau-website/mau-website-gioi-thieu-bat-dong-san-hien-dai',
     likes: '142',

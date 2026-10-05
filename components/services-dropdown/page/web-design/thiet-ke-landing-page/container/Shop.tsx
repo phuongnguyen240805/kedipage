@@ -8,12 +8,12 @@ import React, { useLayoutEffect, useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
-  { img: "/project1.webp", title: "E-commerce", tag: "Sell" },
-  { img: "/project2.webp", title: "Education", tag: "Learn" },
-  { img: "/project3.webp", title: "Corporate", tag: "Trust" },
-  { img: "/project4.webp", title: "Hospitality", tag: "Experience" },
-  { img: "/project5.webp", title: "Personal Brand", tag: "Position" },
-  { img: "/project6.webp", title: "Campaign", tag: "Convert" },
+  { img: "https://assets.kedi.media/images/9691808476f532a0f44c-663.webp", title: "E-commerce", tag: "Sell" },
+  { img: "https://assets.kedi.media/images/0c5a919cfb23466f6bbb-663.webp", title: "Education", tag: "Learn" },
+  { img: "https://assets.kedi.media/images/9a9924f7b3c908c9ad33-663.webp", title: "Corporate", tag: "Trust" },
+  { img: "https://assets.kedi.media/images/12633d47131c440ae0a5-663.webp", title: "Hospitality", tag: "Experience" },
+  { img: "https://assets.kedi.media/images/13728fcc9b4fcc50b8be-663.webp", title: "Personal Brand", tag: "Position" },
+  { img: "https://assets.kedi.media/images/3527a743c77f4cf83cca-663.webp", title: "Campaign", tag: "Convert" },
 ];
 
 const Product = ({

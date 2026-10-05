@@ -1,0 +1,55 @@
+{
+  "checkedAt": "2026-10-05T06:30:08.450Z",
+  "routes": [
+    {
+      "route": "/",
+      "status": 200,
+      "images": 43,
+      "cdnImages": 43
+    },
+    {
+      "route": "/bo-ai-agent",
+      "status": 200,
+      "images": 55,
+      "cdnImages": 55
+    },
+    {
+      "route": "/kedi-profiles",
+      "status": 200,
+      "images": 25,
+      "cdnImages": 25
+    },
+    {
+      "route": "/phan-mem-dao-tao-noi-bo",
+      "status": 200,
+      "images": 412,
+      "cdnImages": 412
+    },
+    {
+      "route": "/nhtq",
+      "status": 200,
+      "images": 429,
+      "cdnImages": 429
+    },
+    {
+      "route": "/du-an",
+      "status": 200,
+      "images": 32,
+      "cdnImages": 32
+    },
+    {
+      "route": "/blog/viet-phan-mem-thoi-dai-ai",
+      "status": 200,
+      "images": 7,
+      "cdnImages": 7
+    },
+    {
+      "route": "/blog-clone/viet-phan-mem-thoi-dai-ai/index.html",
+      "status": 200,
+      "images": 42,
+      "cdnImages": 42
+    }
+  ],
+  "wwwStatus": 200,
+  "pngIconStatus": 200
+}

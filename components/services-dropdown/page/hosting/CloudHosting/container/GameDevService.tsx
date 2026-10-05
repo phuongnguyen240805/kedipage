@@ -4,9 +4,9 @@ import Boderyelow from "@/components/ui/boder-yelow"; // Đảm bảo bọc vi�
 
 const GameDevService = () => {
   const games = [
-    { id: 1, img: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800', active: false },
-    { id: 2, img: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200', active: true, desc: "Tận dụng và kế thừa các sản phẩm đa dạng trong hệ sinh thái đám mây của chúng tôi giúp bạn không còn lo lắng về vấn đề vận hành hệ thống" },
-    { id: 3, img: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=800', active: false },
+    { id: 1, img: 'https://assets.kedi.media/images/59ab9e054683bd66aba6-800.webp', active: false },
+    { id: 2, img: 'https://assets.kedi.media/images/10423dfa7e083806cc15-1200.webp', active: true, desc: "Tận dụng và kế thừa các sản phẩm đa dạng trong hệ sinh thái đám mây của chúng tôi giúp bạn không còn lo lắng về vấn đề vận hành hệ thống" },
+    { id: 3, img: 'https://assets.kedi.media/images/9b638c5c6a097cff4a3c-800.webp', active: false },
   ];
 
   return (

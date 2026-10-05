@@ -11,7 +11,7 @@ const projects = [
     title: 'WEB & GROWTH',
     eyebrow: 'Digital experience',
     href: '/du-an',
-    image: 'https://cdn.pixabay.com/photo/2018/05/18/15/30/web-design-3411373_1280.jpg',
+    image: 'https://assets.kedi.media/images/7397df650c8381e0a289-1280.webp',
     imageClassName: 'object-center',
   },
   {
@@ -19,7 +19,7 @@ const projects = [
     title: 'COMMERCE & CRM',
     eyebrow: 'Revenue operations',
     href: '/du-an',
-    image: 'https://cdn.pixabay.com/photo/2023/07/19/14/48/customer-data-8137152_1280.jpg',
+    image: 'https://assets.kedi.media/images/7d8321735650b4583dd3-1280.webp',
     imageClassName: 'object-center',
   },
   {
@@ -27,7 +27,7 @@ const projects = [
     title: 'AI & AUTOMATION',
     eyebrow: 'Intelligent operations',
     href: '/du-an',
-    image: 'https://cdn.pixabay.com/photo/2024/10/03/12/59/ai-generated-9093687_1280.png',
+    image: 'https://assets.kedi.media/images/59ec088673286955cd18-1280.webp',
     imageClassName: 'object-center',
   },
   {
@@ -35,7 +35,7 @@ const projects = [
     title: 'GROWTH ENGINE',
     eyebrow: 'Demand generation',
     href: '/du-an',
-    image: 'https://cdn.pixabay.com/photo/2023/10/10/06/41/chart-8305514_1280.jpg',
+    image: 'https://assets.kedi.media/images/fd83cbddc20ffee0875a-1280.webp',
     imageClassName: 'object-[center_68%]',
   },
 ] as const;
@@ -50,7 +50,7 @@ export default function LegacyFeaturedProjectsKedi() {
       className="relative z-30 overflow-hidden bg-kedi-navy px-5 py-20 text-white sm:px-8 lg:px-12 lg:py-28 xl:px-16"
       style={{
         backgroundImage:
-          "linear-gradient(180deg, rgba(11,45,91,.92) 0%, rgba(11,45,91,.97) 100%), url('/homepage/dashboard-connected-network.png')",
+          "linear-gradient(180deg, rgba(11,45,91,.92) 0%, rgba(11,45,91,.97) 100%), url('https://assets.kedi.media/images/a4390beb231fcc64abce-1672.webp')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}

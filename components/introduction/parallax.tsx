@@ -5,18 +5,18 @@ import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const images = [
-  'https://res.cloudinary.com/dzkcqktcl/image/upload/v1765198321/bundle-package-02_kvawvc.jpg',
-  'https://res.cloudinary.com/dzkcqktcl/image/upload/v1765198321/bundle-package-02_kvawvc.jpg',
-  'https://res.cloudinary.com/dzkcqktcl/image/upload/v1765198321/bundle-package-02_kvawvc.jpg',
-  'https://res.cloudinary.com/dzkcqktcl/image/upload/v1765198321/bundle-package-02_kvawvc.jpg',
-  'https://res.cloudinary.com/dzkcqktcl/image/upload/v1765198321/bundle-package-02_kvawvc.jpg',
-  'https://res.cloudinary.com/dzkcqktcl/image/upload/v1765198321/bundle-package-02_kvawvc.jpg',
-  'https://res.cloudinary.com/dzkcqktcl/image/upload/v1765198321/bundle-package-02_kvawvc.jpg',
-  'https://res.cloudinary.com/dzkcqktcl/image/upload/v1765198321/bundle-package-02_kvawvc.jpg',
-  'https://res.cloudinary.com/dzkcqktcl/image/upload/v1765198321/bundle-package-02_kvawvc.jpg',
-  'https://res.cloudinary.com/dzkcqktcl/image/upload/v1765198321/bundle-package-02_kvawvc.jpg',
-  'https://res.cloudinary.com/dzkcqktcl/image/upload/v1765198321/bundle-package-02_kvawvc.jpg',
-  'https://res.cloudinary.com/dzkcqktcl/image/upload/v1765198321/bundle-package-02_kvawvc.jpg',
+  'https://assets.kedi.media/images/65858900daf9e803683a-1904.webp',
+  'https://assets.kedi.media/images/65858900daf9e803683a-1904.webp',
+  'https://assets.kedi.media/images/65858900daf9e803683a-1904.webp',
+  'https://assets.kedi.media/images/65858900daf9e803683a-1904.webp',
+  'https://assets.kedi.media/images/65858900daf9e803683a-1904.webp',
+  'https://assets.kedi.media/images/65858900daf9e803683a-1904.webp',
+  'https://assets.kedi.media/images/65858900daf9e803683a-1904.webp',
+  'https://assets.kedi.media/images/65858900daf9e803683a-1904.webp',
+  'https://assets.kedi.media/images/65858900daf9e803683a-1904.webp',
+  'https://assets.kedi.media/images/65858900daf9e803683a-1904.webp',
+  'https://assets.kedi.media/images/65858900daf9e803683a-1904.webp',
+  'https://assets.kedi.media/images/65858900daf9e803683a-1904.webp',
 ];
 
 type ColumnProps = {

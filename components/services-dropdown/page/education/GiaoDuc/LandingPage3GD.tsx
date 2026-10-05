@@ -86,7 +86,7 @@ export default function LandingPage3GD() {
 
         <div className="mb-8 group cursor-pointer">
           <img
-            src="https://mona.media/template/assets/images/tkw-ban-khoa-hoc/logo-kha.png"
+            src="https://assets.kedi.media/images/f4bde35a61a543c0571a-401.webp"
             alt="KHA"
             className="h-8 w-auto object-contain"
           />

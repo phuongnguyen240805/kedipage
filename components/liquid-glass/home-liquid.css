@@ -42,7 +42,7 @@
 .liquid-button:focus-visible, .liquid-touch-item:focus-visible { outline: 2px solid #ffc629; outline-offset: 4px; }
 .home-liquid .home-hero { height: auto; min-height: 100vh; min-height: 100svh; }
 /* Restore the original full-screen image canvas; content may grow on short screens. */
-.home-liquid .hero-content-stack { min-height: 100vh; min-height: 100svh; gap: 40px; padding-top: clamp(48px,8vh,88px); }
+.home-liquid .hero-content-stack { min-height: 100vh; min-height: 100svh; gap: 40px; padding-top: calc(clamp(48px,8vh,88px) + 86px); }
 .home-glass-scene { position: absolute; inset: 0; z-index: -1; background-position: center; background-size: cover; }
 .home-liquid .home-hero h1 { text-shadow: 0 2px 24px rgba(0,15,35,.2); }
 .hero-glass-lens {
@@ -87,12 +87,12 @@
 .liquid-mobile [class*="border-kedi-yellow/50"] { border-color: rgba(255,255,255,.28); box-shadow: inset 0 1px 1px rgba(255,255,255,.2), 0 6px 20px rgba(0,15,35,.1); background: rgba(255,255,255,.05); }
 .liquid-mobile button { position: relative; overflow: hidden; }
 @media (max-width:1023px) {
-  .home-liquid .hero-content-stack { gap: 36px; padding-top: 48px; }
+  .home-liquid .hero-content-stack { gap: 36px; padding-top: 134px; }
   .home-liquid .hero-bottom-glass { margin-bottom: 0; padding-bottom: 54px; }
   .hero-glass-lens { width: min(100%,400px); }
 }
 @media (max-width:639px) {
-  .home-liquid .hero-content-stack { padding-top: 32px; gap: 36px; }
+  .home-liquid .hero-content-stack { padding-top: 114px; gap: 36px; }
   .hero-glass-lens { width: 100%; border-radius: 20px; min-height: 62px; }
   .hero-glass-content { gap: 10px; padding: 12px; }
   .hero-glass-title { font-size: 13px; }

@@ -33,7 +33,7 @@ export default function BrandGhostBackground({
       className={`pointer-events-none absolute inset-0 z-0 overflow-hidden ${className}`}
     >
       <Image
-        src="/homepage/hero-background-future-network.webp"
+        src="https://assets.kedi.media/images/538c5a3c16e795a56c8a-1913.webp"
         alt=""
         fill
         sizes="100vw"

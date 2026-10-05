@@ -79,7 +79,7 @@ export default function dichVuSeo() {
         description="Đang được sử dụng bởi CEO Khánh Hùng tại KHA và hơn 200+ anh chị giảng viên khác tại kedi"
         videoSrc="https://www.w3schools.com/html/mov_bbb.mp4"
         videoAlt="Video giới thiệu giải pháp SEO"
-        mascotSrc="https://mona.media/template/assets/images/dvs/domain-panda.png"
+        mascotSrc="https://assets.kedi.media/images/a193883339392cfed98f-237.webp"
         mascotAlt="Mascot KEDI Media"
         features={[
           'Giao diện độc quyền',

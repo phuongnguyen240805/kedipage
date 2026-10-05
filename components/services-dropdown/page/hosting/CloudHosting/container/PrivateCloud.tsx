@@ -11,7 +11,7 @@ const PrivateCloud = () => {
       bgColor: "bg-blue-600",
     },
     {
-      img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800",
+      img: "https://assets.kedi.media/images/f28b370a5dcbf76240f1-800.webp",
       type: "image",
     },
     {
@@ -21,7 +21,7 @@ const PrivateCloud = () => {
       bgColor: "bg-blue-700",
     },
     {
-      img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800",
+      img: "https://assets.kedi.media/images/8325d3069e14f69cb645-800.webp",
       type: "image",
     },
     {

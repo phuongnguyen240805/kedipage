@@ -12,13 +12,13 @@ export default function ClientsGetCloseSection() {
       {/* Background hình mây */}
       <div className="absolute top-0 left-0 w-full pointer-events-none z-0">
         <Image
-          src="https://res.cloudinary.com/dzkcqktcl/image/upload/v1765203361/clound_hon5cw.png"
+          src="https://assets.kedi.media/images/a51349f420e0daa93f3d-1728.webp"
           alt="background cloud"
           width={1920}
           height={400}
           priority
           className="w-full h-auto opacity-80"
-          unoptimized
+
         />
       </div>
 
@@ -28,7 +28,7 @@ export default function ClientsGetCloseSection() {
         <div className="absolute bottom-0 left-0 w-[20%] min-w-[150px] z-10 hidden lg:block">
           <FadeIn>
             <Image
-              src="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765188469/mona-journey-person-left_t7wmbz.png"
+              src="https://assets.kedi.media/images/eb93882acd56f068dacf-456.webp"
               alt="Người trái"
               width={400}
               height={600}
@@ -40,7 +40,7 @@ export default function ClientsGetCloseSection() {
         <div className="absolute bottom-0 right-0 w-[20%] min-w-[150px] z-10 hidden lg:block">
           <FadeIn>
             <Image
-              src="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765188640/mona-journey-person-right_xnay9v.png"
+              src="https://assets.kedi.media/images/65408ad221b46a340040-491.webp"
               alt="Người phải"
               width={400}
               height={600}

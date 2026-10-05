@@ -78,7 +78,7 @@ const Langdingblog1 = () => {
                 <div className="flex-1 w-full">
                   <div className="relative w-full aspect-video md:aspect-[4/3] rounded-xl overflow-hidden shadow-sm">
                     <Image
-                      src="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765183829/thumbnail-cong-cu-seo_bqydzt.png"
+                      src="https://assets.kedi.media/images/3038d92f36efa11200a1-935.webp"
                       alt="Kiến thức SEO tối ưu công cụ tìm kiếm"
                       fill
                       className="object-cover"

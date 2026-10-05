@@ -18,13 +18,13 @@ const base = "https://zoozalo.com/design/images";
 export const outreachAssets = {
   mascot: createProductMascot('kedi-outreach', 'Kedi Outreach mascot 3D').src,
   ctaMascot: createProductMascot('kedi-outreach', 'Kedi Outreach mascot 3D').src,
-  promo: `${base}/promo-banner.jpg?v=2`,
-  overview: `${base}/ui-demo/01-overview.jpg`,
-  send: `${base}/ui-demo/02-send.jpg`,
-  reup: `${base}/ui-demo/03-reup.jpg`,
-  timeline: `${base}/ui-demo/04-timeline.jpg`,
-  groupMembers: `${base}/ui-demo/05-group-members.jpg`,
-  nearby: `${base}/ui-demo/06-nearby.jpg`,
+  promo: "https://assets.kedi.media/images/3410c8f533baabdbd909-1920.webp",
+  overview: "https://assets.kedi.media/images/04803014a2dcd6b3185b-1280.webp",
+  send: "https://assets.kedi.media/images/7de7fc531c6c86c45fa5-1280.webp",
+  reup: "https://assets.kedi.media/images/68ed41bda4767e4fc97a-1280.webp",
+  timeline: "https://assets.kedi.media/images/7827c8db6990c585267c-1280.webp",
+  groupMembers: "https://assets.kedi.media/images/e9cb877c418f9162991c-1024.webp",
+  nearby: "https://assets.kedi.media/images/f5488c6148d1443e2496-1024.webp",
 } as const;
 
 export const mascot: ProductImage = {

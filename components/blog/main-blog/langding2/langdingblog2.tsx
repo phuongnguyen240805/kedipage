@@ -7,7 +7,7 @@ import { landingData } from '@/components/blog/data/ContentColumndata';
 
 const LangdingBlog2 = () => {
   const fallback =
-    'https://mona.media/wp-content/uploads/2024/06/tang-doanh-so-ban-hang-voi-marketing.png';
+    'https://assets.kedi.media/images/a1c6257fa815206b807e-577.webp';
   const accentColors = ['#3B82F6', '#F97316', '#8B5CF6', '#EC4899'];
   const textColors = ['#ffffff', '#ffffff', '#ffffff', '#ffffff'];
 

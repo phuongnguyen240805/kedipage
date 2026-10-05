@@ -189,13 +189,13 @@ function applyKediBlogBranding(doc: Document, slug: BlogCloneSlug) {
 
   replaceCloneImage(
     doc.querySelector<HTMLImageElement>('.blogpc3-logo img'),
-    '/brand/kedi-logo-navy.png',
+    'https://assets.kedi.media/images/faea1e69567763e173ea-380.webp',
     'Kedi.Media',
   );
 
   doc
     .querySelectorAll<HTMLImageElement>('.blogpc3-content-tag .icon img')
-    .forEach((image) => replaceCloneImage(image, '/brand/kedi-icon.png'));
+    .forEach((image) => replaceCloneImage(image, 'https://assets.kedi.media/images/cbe0eb58b4ee5d7a8419-512.webp'));
 
   const intro = doc.querySelector<HTMLElement>('.blogpc3-top .des p');
   if (intro) intro.textContent = BLOG_INTRO_COPY[slug];
@@ -207,7 +207,7 @@ function applyKediBlogBranding(doc: Document, slug: BlogCloneSlug) {
   const primaryPromo = doc.querySelector<HTMLElement>('#media_image-7');
   replaceCloneImage(
     primaryPromo?.querySelector<HTMLImageElement>('img') ?? null,
-    '/homepage/golden-data-journey.webp',
+    'https://assets.kedi.media/images/236244d3329e087e4868-1672.webp',
     'KEDI - hệ sinh thái tăng trưởng',
   );
   const primaryPromoLink = primaryPromo?.querySelector<HTMLAnchorElement>('a');
@@ -220,7 +220,7 @@ function applyKediBlogBranding(doc: Document, slug: BlogCloneSlug) {
   const automationPromo = doc.querySelector<HTMLElement>('#media_image-6');
   replaceCloneImage(
     automationPromo?.querySelector<HTMLImageElement>('img') ?? null,
-    '/homepage/ai-automation-card.webp',
+    'https://assets.kedi.media/images/57ff22a320819508743d-1448.webp',
     'KEDI - AI và Automation',
   );
   const automationPromoLink = automationPromo?.querySelector<HTMLAnchorElement>('a');
@@ -232,16 +232,16 @@ function applyKediBlogBranding(doc: Document, slug: BlogCloneSlug) {
 
   replaceCloneImage(
     doc.querySelector<HTMLImageElement>('.sec-blogb .blogb-bg img'),
-    '/homepage/cta-background.webp',
+    'https://assets.kedi.media/images/df9c0f9c2227d25f4363-1920.webp',
   );
   replaceCloneImage(
     doc.querySelector<HTMLImageElement>('.sec-blogb .blogb-decor img'),
-    '/homepage/golden-mascot-transparent.webp',
+    'https://assets.kedi.media/images/9d29af5e18269d6c53c0-1600.webp',
     'KEDI',
   );
   replaceCloneImage(
     doc.querySelector<HTMLImageElement>('.sec-blogb .blogb-decor2 img'),
-    '/brand/kedi-icon.png',
+    'https://assets.kedi.media/images/cbe0eb58b4ee5d7a8419-512.webp',
     'KEDI',
   );
 
@@ -270,14 +270,24 @@ export default function BlogMonaCloneFrame({ slug, title }: Props) {
     const body = doc.body;
     const main = doc.querySelector('main');
 
-    // MONA sets body overflow/height in its global stylesheet. Inside the clone
-    // iframe we want the document to grow naturally and let KEDI own scrolling.
-    root.style.setProperty('height', 'auto', 'important');
-    root.style.setProperty('min-height', '0', 'important');
-    root.style.setProperty('overflow-y', 'visible', 'important');
-    body?.style.setProperty('height', 'auto', 'important');
-    body?.style.setProperty('min-height', '0', 'important');
-    body?.style.setProperty('overflow-y', 'visible', 'important');
+    // Let the embedded document grow naturally while the parent owns scrolling.
+    // Avoid identical style writes: the mutation observer would schedule another
+    // measurement on every frame even when the layout has not changed.
+    for (const element of [root, body]) {
+      if (!element) continue;
+      for (const [property, value] of [
+        ['height', 'auto'],
+        ['min-height', '0px'],
+        ['overflow-y', 'visible'],
+      ]) {
+        if (
+          element.style.getPropertyValue(property) !== value ||
+          element.style.getPropertyPriority(property) !== 'important'
+        ) {
+          element.style.setProperty(property, value, 'important');
+        }
+      }
+    }
 
     const mainBottom = main
       ? Math.ceil(main.getBoundingClientRect().bottom + (win?.scrollY || 0))
@@ -285,8 +295,6 @@ export default function BlogMonaCloneFrame({ slug, title }: Props) {
 
     const nextHeight = Math.max(
       MIN_HEIGHT,
-      root.scrollHeight || 0,
-      root.offsetHeight || 0,
       body?.scrollHeight || 0,
       body?.offsetHeight || 0,
       mainBottom,
@@ -389,7 +397,7 @@ export default function BlogMonaCloneFrame({ slug, title }: Props) {
 
     const postQuoteHide = () => {
       window.postMessage(
-        { type: 'kedi-quote-share-hide', source: 'kedi-blog-clone', slug },
+        { type: 'kedi-quote-share-hide', source: 'kedi-blog-frame', slug },
         window.location.origin,
       );
     };
@@ -425,7 +433,7 @@ export default function BlogMonaCloneFrame({ slug, title }: Props) {
       window.postMessage(
         {
           type: 'kedi-quote-share-selection',
-          source: 'kedi-blog-clone',
+          source: 'kedi-blog-frame',
           slug,
           text,
           rect: {
@@ -484,6 +492,16 @@ export default function BlogMonaCloneFrame({ slug, title }: Props) {
   }, [measureFrame, slug]);
 
   useEffect(() => {
+    const frame = iframeRef.current;
+    const doc = frame?.contentDocument;
+    // An SSR iframe can finish loading before React attaches its onLoad handler.
+    // Only initialize the requested document, never the initial about:blank page.
+    if (frame && doc?.readyState === 'complete' && doc.URL === frame.src) {
+      handleLoad();
+    }
+  }, [handleLoad]);
+
+  useEffect(() => {
     const frame = iframeRef.current as
       | (HTMLIFrameElement & { __kediCleanup?: () => void })
       | null;
@@ -495,7 +513,7 @@ export default function BlogMonaCloneFrame({ slug, title }: Props) {
         slug?: string;
         height?: number;
       };
-      if (data?.type !== 'kedi-blog-clone-height' || data.slug !== slug) return;
+      if (data?.type !== 'kedi-blog-frame-height' || data.slug !== slug) return;
       if (typeof data.height !== 'number' || !Number.isFinite(data.height)) return;
       setHeight(Math.max(MIN_HEIGHT, Math.ceil(data.height)));
     };

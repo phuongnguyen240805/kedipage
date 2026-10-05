@@ -108,6 +108,15 @@ npm run cf-typegen
 
 ## 8. Script san co
 
+Ảnh được deploy riêng bằng Workers Static Assets tại `assets.kedi.media`, project
+`kedi-assest`. Không cần R2 hay Cloudflare Images. Bản gốc nằm trong
+`kedi-assest/source/`; quy trình build tạo WebP và các kích thước responsive.
+Xem [hướng dẫn quản lý và deploy ảnh](kedi-assest/README.md).
+
+- `pnpm assets:sync`: tải ảnh ngoài mới, tối ưu và cập nhật đường dẫn.
+- `pnpm assets:deploy`: deploy CDN ảnh.
+- `pnpm run deploy`: deploy CDN trước, sau đó build và deploy website.
+
 - `npm run dev`: chay development server
 - `npm run build`: build Next.js
 - `npm run start`: chay production server tren `0.0.0.0:3000`

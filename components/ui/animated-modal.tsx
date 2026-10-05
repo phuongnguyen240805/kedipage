@@ -78,11 +78,17 @@ export const ModalBody = ({
     }
   }, []);
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    if (!open) return;
+    const body = document.body;
+    const hadStyle = body.hasAttribute("style");
+    const overflow = body.style.getPropertyValue("overflow");
+    const priority = body.style.getPropertyPriority("overflow");
+    body.style.setProperty("overflow", "hidden");
+    return () => {
+      if (overflow) body.style.setProperty("overflow", overflow, priority);
+      else body.style.removeProperty("overflow");
+      if (!hadStyle && !body.style.cssText) body.removeAttribute("style");
+    };
   }, [open]);
 
   const modalRef = useRef(null);

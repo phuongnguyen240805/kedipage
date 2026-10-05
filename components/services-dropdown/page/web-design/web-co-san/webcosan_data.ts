@@ -25,7 +25,7 @@ export const WEBSITE_SAMPLES: WebsiteSample[] = [
     id: 1,
     title: 'Mẫu Website Giới Thiệu Công Ty Xây Dựng',
     image:
-      'https://mona.media/wp-content/uploads/2023/03/screencapture-xaynhadep2-monamedia-net-2025-01-08-14_07_44.png',
+      'https://assets.kedi.media/images/11ce969f33cb4528d2c8-1920.webp',
     tags: ['XÂY DỰNG', 'DỊCH VỤ'],
     demoUrl: 'https://demo.monamedia.net/xaydung1',
     detailUrl: '/mau-website/cong-ty-xay-dung',
@@ -34,7 +34,7 @@ export const WEBSITE_SAMPLES: WebsiteSample[] = [
     id: 2,
     title: 'Mẫu Website Bán Cà Phê Hiện Đại Và Sang Trọng',
     image:
-      'https://mona.media/wp-content/uploads/2023/03/screencapture-cafengon-monamedia-net-2025-01-16-15_49_29.png',
+      'https://assets.kedi.media/images/4f9c0a3cc6f99c6d7538-1920.webp',
     tags: ['BÁN LẺ TRỰC TUYẾN', 'GIỚI THIỆU SẢN PHẨM', 'BÁN LẺ'],
     demoUrl: 'https://cafengon.monamedia.net',
     detailUrl: '/mau-website/ban-ca-phe-hien-dai-va-sang-trong',
@@ -43,7 +43,7 @@ export const WEBSITE_SAMPLES: WebsiteSample[] = [
     id: 3,
     title: 'Mẫu Website Bán Văn Phòng Phẩm Tiện Ích',
     image:
-      'https://mona.media/wp-content/uploads/2023/03/screencapture-office-sup-monamedia-net-2024-05-27-16_50_28.png',
+      'https://assets.kedi.media/images/9c05f2a382ecdb8c983c-1920.webp',
     tags: ['ĐỒ CHƠI - GIẢI TRÍ', 'GIÀY DÉP', 'ĐIỆN MÁY'],
     demoUrl: 'https://demo.monamedia.net/xaydung1',
     detailUrl: '/mau-website/ban-van-phong-pham-tien-ich',
@@ -52,7 +52,7 @@ export const WEBSITE_SAMPLES: WebsiteSample[] = [
     id: 4,
     title: 'Mẫu Website Dịch Vụ Du Lịch Đơn Giản - Hiện Đại',
     image:
-      'https://mona.media/wp-content/uploads/2023/03/screencapture-roam-world-monamedia-net-2024-07-01-15_13_54.png',
+      'https://assets.kedi.media/images/e15208d39a6aecb639e3-1920.webp',
     tags: ['BOOKING - ĐẶT VÉ', 'DU LỊCH'],
     demoUrl: 'https://demo.monamedia.net/xaydung1',
     detailUrl: '/mau-website/dich-vu-du-lich-don-gian-hien-dai',
@@ -61,7 +61,7 @@ export const WEBSITE_SAMPLES: WebsiteSample[] = [
     id: 5,
     title: 'Mẫu Website Du Lịch Lữ Hành Bán Tour',
     image:
-      'https://mona.media/wp-content/uploads/2023/03/screencapture-mona-tour-monamedia-net-2024-05-22-13_13_29-1-768x3570.png',
+      'https://assets.kedi.media/images/cc891393b021acabc121-768.webp',
     tags: ['XÂY DỰNG', 'DỊCH VỤ'],
     demoUrl: 'https://demo.monamedia.net/xaydung1',
     detailUrl: '/mau-website/du-lich-lu-hanh-ban-tour',
@@ -70,7 +70,7 @@ export const WEBSITE_SAMPLES: WebsiteSample[] = [
     id: 6,
     title: 'Mẫu Website Bán Mỹ Phẩm Độc Đáo Và Hấp Dẫn',
     image:
-      'https://mona.media/wp-content/uploads/2023/03/screencapture-sacdep24-monamedia-net-2025-01-08-13_40_50-768x4640.png',
+      'https://assets.kedi.media/images/e147e3778707ca7a8e2d-768.webp',
     tags: ['BÁN LẺ TRỰC TUYẾN', 'GIỚI THIỆU SẢN PHẨM', 'BÁN LẺ'],
     demoUrl: 'https://demo.monamedia.net/xaydung1',
     detailUrl: '/mau-website/ban-my-pham-doc-dao-va-hap-dan',
@@ -79,7 +79,7 @@ export const WEBSITE_SAMPLES: WebsiteSample[] = [
     id: 7,
     title: 'Mẫu Website Giới Thiệu Bất Động Sản Hiện Đại',
     image:
-      'https://mona.media/wp-content/uploads/2023/03/screencapture-primeluxe-monamedia-net-2024-09-05-11_25_06-768x3268.png',
+      'https://assets.kedi.media/images/3e6d9be8979a75986514-768.webp',
     tags: ['ĐỒ CHƠI - GIẢI TRÍ', 'GIÀY DÉP', 'ĐIỆN MÁY'],
     demoUrl: 'https://demo.monamedia.net/xaydung1',
     detailUrl: '/mau-website/mau-website-gioi-thieu-bat-dong-san-hien-dai',
@@ -88,7 +88,7 @@ export const WEBSITE_SAMPLES: WebsiteSample[] = [
     id: 8,
     title: 'Mẫu Website Du Lịch - Lữ Hành Độc Đáo Giao Diện Tinh Tế',
     image:
-      'https://mona.media/wp-content/uploads/2023/03/screencapture-dulichviet-monamedia-net-2025-01-14-09_32_29-768x4295.png',
+      'https://assets.kedi.media/images/4a058c45da6f8cfdc524-768.webp',
     tags: ['BOOKING - ĐẶT VÉ', 'DU LỊCH'],
     demoUrl: 'https://demo.monamedia.net/xaydung1',
     detailUrl:
@@ -98,7 +98,7 @@ export const WEBSITE_SAMPLES: WebsiteSample[] = [
     id: 9,
     title: 'Mẫu Website Giới Thiệu Bất Động Sản Hiện Đại',
     image:
-      'https://mona.media/wp-content/uploads/2023/03/screencapture-primeluxe-monamedia-net-2024-09-05-11_25_06-768x3268.png',
+      'https://assets.kedi.media/images/3e6d9be8979a75986514-768.webp',
     tags: ['ĐỒ CHƠI - GIẢI TRÍ', 'GIÀY DÉP', 'ĐIỆN MÁY'],
     demoUrl: 'https://demo.monamedia.net/xaydung1',
     detailUrl: '/mau-website/mau-website-gioi-thieu-bat-dong-san-hien-dai',
@@ -107,7 +107,7 @@ export const WEBSITE_SAMPLES: WebsiteSample[] = [
     id: 10,
     title: 'Mẫu Website Du Lịch - Lữ Hành Độc Đáo Giao Diện Tinh Tế',
     image:
-      'https://mona.media/wp-content/uploads/2023/03/screencapture-dulichviet-monamedia-net-2025-01-14-09_32_29-768x4295.png',
+      'https://assets.kedi.media/images/4a058c45da6f8cfdc524-768.webp',
     tags: ['BOOKING - ĐẶT VÉ', 'DU LỊCH'],
     demoUrl: 'https://demo.monamedia.net/xaydung1',
     detailUrl:
@@ -117,7 +117,7 @@ export const WEBSITE_SAMPLES: WebsiteSample[] = [
     id: 11,
     title: 'Mẫu Website Du Lịch - Lữ Hành Độc Đáo Giao Diện Tinh Tế',
     image:
-      'https://mona.media/wp-content/uploads/2023/03/screencapture-dulichviet-monamedia-net-2025-01-14-09_32_29-768x4295.png',
+      'https://assets.kedi.media/images/4a058c45da6f8cfdc524-768.webp',
     tags: ['BOOKING - ĐẶT VÉ', 'DU LỊCH'],
     demoUrl: 'https://demo.monamedia.net/xaydung1',
     detailUrl:

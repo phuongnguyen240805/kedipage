@@ -8,25 +8,25 @@ gsap.registerPlugin(ScrollTrigger);
 
 const processSteps = [
   {
-    image: "/project2.webp",
+    image: "https://assets.kedi.media/images/0c5a919cfb23466f6bbb-663.webp",
     eyebrow: "01 / Strategy",
     title: "Chốt mục tiêu",
     desc: "Xác định đối tượng, offer, thông điệp chính và hành động cần người xem thực hiện.",
   },
   {
-    image: "/project4.webp",
+    image: "https://assets.kedi.media/images/12633d47131c440ae0a5-663.webp",
     eyebrow: "02 / Structure",
     title: "Dựng hành trình",
     desc: "Sắp xếp hierarchy nội dung để mỗi section trả lời đúng một câu hỏi của người xem.",
   },
   {
-    image: "/project7.webp",
+    image: "https://assets.kedi.media/images/e7750c04dcc5f0153678-663.webp",
     eyebrow: "03 / Visual",
     title: "Tạo khác biệt",
     desc: "Xây visual direction, motion và hệ component đủ nổi bật nhưng vẫn phục vụ nội dung.",
   },
   {
-    image: "/project9.webp",
+    image: "https://assets.kedi.media/images/a6998d4fc83fe96aba48-663.webp",
     eyebrow: "04 / Launch",
     title: "Tối ưu để chạy",
     desc: "Kiểm tra responsive, hiệu năng và điểm chuyển đổi trước khi đưa landing page vào vận hành.",

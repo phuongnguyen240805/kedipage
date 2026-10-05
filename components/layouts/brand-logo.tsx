@@ -9,8 +9,8 @@ const BrandLogo = ({
   className?: string;
 }) => {
   const logoSrc = dark
-    ? '/brand/kedi-logo-navy.png'
-    : '/brand/kedi-logo-reverse.png';
+    ? 'https://assets.kedi.media/images/faea1e69567763e173ea-380.webp'
+    : 'https://assets.kedi.media/images/521d6ee8430017434c68-380.webp';
 
   return (
     <div
@@ -23,6 +23,7 @@ const BrandLogo = ({
         src={logoSrc}
         alt="Kedi.Media"
         fill
+        
         className="object-contain object-left"
         sizes="(max-width: 1024px) 122px, 152px"
         priority

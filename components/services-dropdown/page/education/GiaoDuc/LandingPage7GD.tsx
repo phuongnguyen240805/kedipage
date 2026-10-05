@@ -271,7 +271,7 @@ export default function LandingPage7GD() {
                 {/* Ảnh lock/safe được yêu cầu, giữ hiệu ứng sáng */}
                 <div className="relative z-10 transform hover:scale-105 transition-transform duration-500 drop-shadow-[0_0_35px_rgba(59,130,246,0.45)]">
                   <Image
-                    src="https://mona.media/template/assets/hq-images/tkw-ban-khoa-hoc/encode-img-pc.png"
+                    src="https://assets.kedi.media/images/31926010b01e4b2eb33d-468.webp"
                     alt="Mã hóa an toàn"
                     width={320}
                     height={320}

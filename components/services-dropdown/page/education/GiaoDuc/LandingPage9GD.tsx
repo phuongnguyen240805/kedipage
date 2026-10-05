@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Star, Check } from 'lucide-react';
 import FadeIn from '@/components/ui/Fadeoad';
 
-const logoKedi = 'https://mona.media/template/assets/images/about/logo-mona.png';
+const logoKedi = 'https://assets.kedi.media/images/7ff27ce71f80eaf595cc-343.webp';
 
 const LandingPage9GD = () => {
   const items = [

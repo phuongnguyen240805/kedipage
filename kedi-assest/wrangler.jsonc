@@ -1,0 +1,13 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "kedi-assest",
+  "account_id": "a220275c9c8460745e0351255c7459fd",
+  "compatibility_date": "2026-10-05",
+  "workers_dev": true,
+  "routes": [{ "pattern": "assets.kedi.media", "custom_domain": true }],
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "none",
+    "not_found_handling": "none"
+  }
+}

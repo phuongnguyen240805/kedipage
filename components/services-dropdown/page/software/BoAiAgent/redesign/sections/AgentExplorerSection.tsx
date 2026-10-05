@@ -109,7 +109,7 @@ export default function AgentExplorerSection({ data }: { data: AiAgentPageData }
 
   return (
     <PageSection id="danh-sach" tone="light" className="!overflow-clip">
-      <BrandGhostBackground src="/homepage/golden-data-journey.webp" position="right" opacity={0.11} imageClassName="scale-[1.22] translate-x-[8%] translate-y-[2%]" />
+      <BrandGhostBackground src="https://assets.kedi.media/images/236244d3329e087e4868-1672.webp" position="right" opacity={0.11} imageClassName="scale-[1.22] translate-x-[8%] translate-y-[2%]" />
       <SectionHeading
         eyebrow="Đội ngũ Gâu Đần"
         title="15 AI Agent. Mỗi con gánh một phần việc rõ ràng."

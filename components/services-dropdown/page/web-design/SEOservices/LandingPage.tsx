@@ -261,7 +261,7 @@ const LandingPage: React.FC<SEOLandingPageProps> = ({
             {Array.from({ length: 3 }).map((_, i) => (
               <Image
                 key={`arrow-down-${i}-${Math.random()}`}
-                src="https://mona.media/template/assets/images/dvs/arrow-down-white.png"
+                src="https://assets.kedi.media/images/cbe9cb73662248d1fcd5-262.webp"
                 alt="Arrow Down"
                 width={32}
                 height={32}

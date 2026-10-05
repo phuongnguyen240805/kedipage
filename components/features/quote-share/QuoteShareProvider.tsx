@@ -51,7 +51,7 @@ function ensureScript(id: string, src: string, ready: () => boolean): Promise<vo
 /**
  * Global KEDI Quote Share bootstrapper.
  *
- * Mount once in app/layout.tsx. The MONA engine itself owns selection events,
+ * Mount once in app/layout.tsx. The quote engine owns selection events,
  * modal creation and canvas rendering; this component only provides KEDI
  * branding and deterministic script load order.
  */
@@ -59,7 +59,7 @@ export default function QuoteShareProvider() {
   useEffect(() => {
     const w = window as QuoteShareWindow;
 
-    w.MONA_QUOTE_CFG = quoteShareConfig;
+    w.KEDI_QUOTE_CFG = quoteShareConfig;
 
     let cancelled = false;
 
@@ -71,7 +71,7 @@ export default function QuoteShareProvider() {
         await ensureScript(
           ENGINE_SCRIPT_ID,
           quoteShareScripts.engine,
-          () => Boolean(w.__monaQuoteInit),
+          () => Boolean(w.__kediQuoteInit),
         );
       } catch (error) {
         if (process.env.NODE_ENV !== "production") {
@@ -84,8 +84,8 @@ export default function QuoteShareProvider() {
 
     return () => {
       // The provider lives at RootLayout scope, so the engine is intentionally
-      // retained for the whole SPA lifetime. The upstream engine guards itself
-      // with window.__monaQuoteInit to prevent duplicate listeners during HMR.
+      // retained for the whole SPA lifetime. The engine guards itself
+      // with window.__kediQuoteInit to prevent duplicate listeners during HMR.
       cancelled = true;
     };
   }, []);

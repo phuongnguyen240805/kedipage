@@ -8,7 +8,7 @@ const logos = [
   {
     id: 1,
     name: "Anh Công",
-    src: "https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193649/cl_h5vbog.png",
+    src: "https://assets.kedi.media/images/d4c51f5d9873859a9207-57.webp",
     bgColor: "bg-[#b75b4d]", // nâu đỏ
     borderColor: "border-orange-400",
     style: { top: "17%", left: "11%", transform: "translateX(-50%)" },
@@ -17,7 +17,7 @@ const logos = [
   {
     id: 2,
     name: "Anh Xuân",
-    src: "https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193649/cl_h5vbog.png",
+    src: "https://assets.kedi.media/images/d4c51f5d9873859a9207-57.webp",
     bgColor: "bg-[#3840a1]", // xanh đậm
     borderColor: "border-blue-600",
     style: { top: "21%", left: "40%" },
@@ -26,7 +26,7 @@ const logos = [
   {
     id: 3,
     name: "Anh Phú",
-    src: "https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193649/cl_h5vbog.png",
+    src: "https://assets.kedi.media/images/d4c51f5d9873859a9207-57.webp",
     bgColor: "bg-[#b75b4d]", // nâu đỏ
     borderColor: "border-orange-400",
     style: { top: "27%", right: "0%" },
@@ -35,7 +35,7 @@ const logos = [
   {
     id: 4,
     name: "Chị Hoàng Linh",
-    src: "https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193649/cl_h5vbog.png",
+    src: "https://assets.kedi.media/images/d4c51f5d9873859a9207-57.webp",
     bgColor: "bg-[#22a4ff]", // xanh sáng
     borderColor: "border-sky-500",
     style: { bottom: "30%", right: "0%" },
@@ -48,7 +48,7 @@ const logos = [
   {
     id: 5,
     name: "Nguyen Giang 1",
-    src: "https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193649/cl_h5vbog.png",
+    src: "https://assets.kedi.media/images/d4c51f5d9873859a9207-57.webp",
     bgColor: "bg-[#22a4ff]", // xanh sáng
     borderColor: "border-sky-500",
     style: { bottom: "5%", left: "70%", transform: "translateX(-50%)" },
@@ -57,7 +57,7 @@ const logos = [
   {
     id: 6,
     name: "Nguyen Giang 2",
-    src: "https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193649/cl_h5vbog.png",
+    src: "https://assets.kedi.media/images/d4c51f5d9873859a9207-57.webp",
     bgColor: "bg-[#f78a0c]", // cam
     borderColor: "border-orange-400",
     style: { bottom: "10%", left: "20%" },
@@ -70,7 +70,7 @@ const logos = [
   {
     id: 7,
     name: "Anh Tuấn",
-    src: "https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193649/cl_h5vbog.png",
+    src: "https://assets.kedi.media/images/d4c51f5d9873859a9207-57.webp",
     bgColor: "bg-[#8726cf]", // tím
     borderColor: "border-purple-600",
     style: { top: "55%", left: "0%" },

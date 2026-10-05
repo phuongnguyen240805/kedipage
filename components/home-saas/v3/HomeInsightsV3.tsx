@@ -17,7 +17,7 @@ export default function HomeInsightsV3() {
       className="relative z-40 -mt-1 overflow-hidden bg-white px-5 py-20 text-kedi-navy sm:px-8 lg:px-12 lg:py-28 xl:px-16"
       style={{
         backgroundImage:
-          "linear-gradient(90deg, rgba(255,255,255,.97) 0%, rgba(255,255,255,.9) 48%, rgba(255,255,255,.82) 100%), url('/homepage/golden-insights-light.webp')",
+          "linear-gradient(90deg, rgba(255,255,255,.97) 0%, rgba(255,255,255,.9) 48%, rgba(255,255,255,.82) 100%), url('https://assets.kedi.media/images/967982d61246b36f6da7-1672.webp')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -44,7 +44,7 @@ export default function HomeInsightsV3() {
                 className="liquid-card liquid-touch-item group relative flex min-h-[430px] flex-col overflow-hidden rounded-[28px] border border-kedi-navy/10 bg-[#f7f8fa] transition-all duration-300 hover:-translate-y-1 hover:border-kedi-yellow hover:shadow-[0_24px_60px_rgba(11,45,91,.1)]"
               >
                 <div className="relative h-[225px] overflow-hidden bg-kedi-navy">
-                  <Image unoptimized
+                  <Image
                     src={item.image}
                     alt={item.title}
                     fill

@@ -17,8 +17,8 @@ type ChatMessage = {
   text: string;
 };
 
-const KEDI_MASCOT = '/homepage/golden-mascot-transparent.png';
-const ZALO_ICON = '/customer-care/zalo.png';
+const KEDI_MASCOT = 'https://assets.kedi.media/images/524ce34f65d03d10768c-1600.webp';
+const ZALO_ICON = 'https://assets.kedi.media/images/2de530a0f360a25ba68a-60.webp';
 
 const ZALO_URL =
   process.env.NEXT_PUBLIC_KEDI_ZALO_URL?.trim() ||
@@ -184,6 +184,7 @@ export default function CustomerCareWidget() {
         >
           <Image
             src={ZALO_ICON}
+            
             alt="Zalo"
             width={60}
             height={60}

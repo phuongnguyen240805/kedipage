@@ -33,7 +33,7 @@ export default function KediEcosystemV3() {
       className="relative z-30 -mt-1 overflow-hidden rounded-t-[32px] bg-[#071f3f] px-5 py-20 text-white sm:px-8 lg:rounded-t-[44px] lg:px-12 lg:py-28 xl:px-16"
       style={{
         backgroundImage:
-          "linear-gradient(180deg, rgba(7,31,63,.74) 0%, rgba(7,31,63,.86) 54%, rgba(7,31,63,.95) 100%), url('/homepage/dashboard-connected-network.webp')",
+          "linear-gradient(180deg, rgba(7,31,63,.74) 0%, rgba(7,31,63,.86) 54%, rgba(7,31,63,.95) 100%), url('https://assets.kedi.media/images/94c9859974531a4d80ea-1672.webp')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -91,7 +91,7 @@ export default function KediEcosystemV3() {
                 >
                   {active ? <span className="absolute inset-y-3 left-0 w-1 rounded-full bg-kedi-yellow" /> : null}
                   <span className={`grid h-14 w-14 shrink-0 place-items-center overflow-hidden rounded-2xl ${active ? 'bg-[#eef2f7]' : 'bg-white/[0.07]'}`}>
-                    <Image unoptimized src={product.icon} alt="" width={56} height={56} className="h-full w-full object-cover" />
+                    <Image  src={product.icon} alt="" width={56} height={56} className="h-full w-full object-cover" />
                   </span>
                   <span className="min-w-0">
                     <span className={`block text-[10px] font-semibold uppercase tracking-[0.12em] ${active ? 'text-kedi-navy/[0.45]' : 'text-kedi-yellow/70'}`}>
@@ -143,7 +143,7 @@ export default function KediEcosystemV3() {
                   </div>
 
                   <div className="relative min-h-[360px] overflow-hidden rounded-[30px] border border-white/10 bg-[#0b2d5b] shadow-[0_32px_90px_rgba(0,0,0,.3)] sm:min-h-[430px]">
-                    <Image unoptimized
+                    <Image
                       src={activeProduct.visual}
                       alt={activeProduct.name}
                       fill
@@ -153,7 +153,7 @@ export default function KediEcosystemV3() {
                     <div className="absolute inset-0 bg-gradient-to-tr from-[#071f3f]/80 via-transparent to-kedi-yellow/10" />
                     <div className="absolute inset-x-5 top-5 flex items-center justify-between rounded-2xl border border-white/10 bg-[#061b37]/[0.72] px-4 py-3 backdrop-blur-xl">
                       <div className="flex items-center gap-3">
-                        <Image unoptimized src={activeProduct.icon} alt="" width={38} height={38} className="h-10 w-10 rounded-xl" />
+                        <Image  src={activeProduct.icon} alt="" width={38} height={38} className="h-10 w-10 rounded-xl" />
                         <div>
                           <p className="text-sm font-semibold">{activeProduct.name}</p>
                           <p className="text-[9px] uppercase tracking-[0.12em] text-white/40">Live product stage</p>

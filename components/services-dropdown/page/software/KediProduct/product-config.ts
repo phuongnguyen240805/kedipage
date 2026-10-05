@@ -151,12 +151,12 @@ export const productConfigs: Record<KediProductKey, KediProductConfig> = {
       { step: '04', title: 'Thu output về project', body: 'Kết quả được tự động lưu, đặt tên và phân nhóm để tiếp tục hậu kỳ hoặc bàn giao.' },
     ],
     gallery: [
-      { src: 'https://labs.toby.vn/images/website/workflow-ref-img.jpg', alt: 'Reference image trong workflow TobyFlow', title: 'Reference image' },
-      { src: 'https://labs.toby.vn/images/website/workflow-chatgpt-result.jpeg', alt: 'Kết quả ChatGPT trong workflow TobyFlow', title: 'ChatGPT result' },
-      { src: 'https://labs.toby.vn/images/website/workflow-grok-result.jpeg', alt: 'Kết quả Grok trong workflow TobyFlow', title: 'Grok result' },
-      { src: 'https://labs.toby.vn/storage/media/2026/09/9b83e838-7590-4543-bade-bfee425d69d6.jpeg', alt: 'Genjutsu Google Flow workflow', title: 'Genjutsu Google Flow' },
-      { src: 'https://labs.toby.vn/storage/media/2026/08/07ecfa94-4016-4400-8eb4-0b433259b861.jpeg', alt: 'Google Flow Dancing motion control', title: 'Motion control' },
-      { src: 'https://labs.toby.vn/storage/media/2026/06/2be10744-b574-4026-9b8b-5fea58059bb8.jpeg', alt: 'Office Fashion Lookbook workflow', title: 'Lookbook workflow' },
+      { src: 'https://assets.kedi.media/images/69ad64cd164301bc6fc3-736.webp', alt: 'Reference image trong workflow TobyFlow', title: 'Reference image' },
+      { src: 'https://assets.kedi.media/images/3697430054135e5584c9-1280.webp', alt: 'Kết quả ChatGPT trong workflow TobyFlow', title: 'ChatGPT result' },
+      { src: 'https://assets.kedi.media/images/c4ce3deb6acabf3f5937-1376.webp', alt: 'Kết quả Grok trong workflow TobyFlow', title: 'Grok result' },
+      { src: 'https://assets.kedi.media/images/56942dd8a9ba89c9d500-1376.webp', alt: 'Genjutsu Google Flow workflow', title: 'Genjutsu Google Flow' },
+      { src: 'https://assets.kedi.media/images/c24b6f13808eca35d220-1376.webp', alt: 'Google Flow Dancing motion control', title: 'Motion control' },
+      { src: 'https://assets.kedi.media/images/045f0c71d0ebf24d8f5e-1376.webp', alt: 'Office Fashion Lookbook workflow', title: 'Lookbook workflow' },
     ],
     trustTitle: 'Tự động hóa nhưng vẫn giữ quyền kiểm soát dữ liệu và output',
     trustItems: [

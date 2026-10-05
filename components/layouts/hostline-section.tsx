@@ -10,7 +10,7 @@ const HostlineSection = ({ isMobile }: HostlineSectionProps) => {
     <div className={`relative flex items-center ${isMobile ? 'space-x-2' : ''}`}>
       <Link href="/" className="flex items-center" aria-label="Hotline">
         <Image
-          src="/software-clone/ai-agent/assets/kedi-cham-soc-lead.png"
+          src="https://assets.kedi.media/images/591351c34c9b2bfc2ed8-1254.webp"
           alt="Kedi AI Support"
           width={82}
           height={82}

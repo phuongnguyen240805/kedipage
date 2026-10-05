@@ -18,8 +18,8 @@ export const kediSeoConfig: ProductLandingConfig = {
     primaryCta: { label: "Xem toolkit", href: "#bo-san-pham" },
     secondaryCta: { label: "Xem dashboard", href: "#giao-dien" },
     statusNote: "SEO · GEO · AI visibility · API",
-    mainImage: { src: `${base}/serpupdate-dashboard-en.webp`, alt: "SERP dashboard tham chiếu từ crawl SERPUpdate", caption: "rank tracking · AI visibility" },
-    secondaryImage: { src: `${base}/serpupdate-extension-en.webp`, alt: "SEO extension reference", caption: "on-page & GEO checks" },
+    mainImage: { src: "https://assets.kedi.media/images/f7ab1ff978e780a020dd-1920.webp", alt: "SERP dashboard tham chiếu từ crawl SERPUpdate", caption: "rank tracking · AI visibility" },
+    secondaryImage: { src: "https://assets.kedi.media/images/181b8b3a8e8bd18ed799-1920.webp", alt: "SEO extension reference", caption: "on-page & GEO checks" },
     floatingBadges: ["Top 100 · AI Overview", "Extension · API · Content"],
     mascot: kediMascot,
     stats: [
@@ -46,10 +46,10 @@ export const kediSeoConfig: ProductLandingConfig = {
     eyebrow: "02 · Toolkit",
     title: "Bốn module, một vòng SEO & GEO",
     items: [
-      { name: "SERP Checker", short: "Theo dõi organic, AI Overview và brand mention trong cùng lượt đo.", description: "Rank tracking tập trung từ keyword tới region để team nhìn được organic visibility và các bề mặt AI search trên cùng một dashboard.", bullets: ["Top organic ranking", "AI Overview / brand mention", "Theo dõi theo quốc gia và location"], image: { src: `${base}/serpupdate-dashboard-en.webp`, alt: "SERP checker dashboard reference" }, tag: "measure" },
-      { name: "SEO / GEO Extension", short: "Audit ngay trong browser để biết trang đang thiếu gì trước khi tối ưu.", description: "Extension biến on-page và GEO criteria thành checklist tức thời, hỗ trợ entity và cấu trúc nội dung mà không cần mở dashboard riêng cho từng trang.", bullets: ["SEO + GEO criteria", "Moz reference signals", "AI suggestion cho entity và structure"], image: { src: `${base}/serpupdate-extension-en.webp`, alt: "SEO extension reference" }, tag: "audit" },
-      { name: "AI Content Automation", short: "Research, outline và sản xuất content bám theo dữ liệu SEO/GEO.", description: "Lớp content automation được thiết kế để dùng keyword, entity và project context thay vì sinh bài độc lập ngoài data loop.", bullets: ["Research và outline", "Entity-aware content", "Bulk publishing workflow"], image: { src: `${base}/serpupdate-ai-content-en.webp`, alt: "AI content automation reference" }, tag: "content" },
-      { name: "SERP API", short: "Đưa search data vào pipeline nội bộ mà không bắt buộc dùng dashboard.", description: "API phục vụ agency hoặc hệ thống cần query SERP programmatically, nhận JSON và nối kết quả vào automation/reporting riêng.", bullets: ["JSON response", "Automation-friendly", "Phù hợp tracking quy mô lớn"], image: { src: `${base}/serpupdate-serp-api-en.webp`, alt: "SERP API reference" }, tag: "api" },
+      { name: "SERP Checker", short: "Theo dõi organic, AI Overview và brand mention trong cùng lượt đo.", description: "Rank tracking tập trung từ keyword tới region để team nhìn được organic visibility và các bề mặt AI search trên cùng một dashboard.", bullets: ["Top organic ranking", "AI Overview / brand mention", "Theo dõi theo quốc gia và location"], image: { src: "https://assets.kedi.media/images/f7ab1ff978e780a020dd-1920.webp", alt: "SERP checker dashboard reference" }, tag: "measure" },
+      { name: "SEO / GEO Extension", short: "Audit ngay trong browser để biết trang đang thiếu gì trước khi tối ưu.", description: "Extension biến on-page và GEO criteria thành checklist tức thời, hỗ trợ entity và cấu trúc nội dung mà không cần mở dashboard riêng cho từng trang.", bullets: ["SEO + GEO criteria", "Moz reference signals", "AI suggestion cho entity và structure"], image: { src: "https://assets.kedi.media/images/181b8b3a8e8bd18ed799-1920.webp", alt: "SEO extension reference" }, tag: "audit" },
+      { name: "AI Content Automation", short: "Research, outline và sản xuất content bám theo dữ liệu SEO/GEO.", description: "Lớp content automation được thiết kế để dùng keyword, entity và project context thay vì sinh bài độc lập ngoài data loop.", bullets: ["Research và outline", "Entity-aware content", "Bulk publishing workflow"], image: { src: "https://assets.kedi.media/images/e2d139f033958b36bb0c-1920.webp", alt: "AI content automation reference" }, tag: "content" },
+      { name: "SERP API", short: "Đưa search data vào pipeline nội bộ mà không bắt buộc dùng dashboard.", description: "API phục vụ agency hoặc hệ thống cần query SERP programmatically, nhận JSON và nối kết quả vào automation/reporting riêng.", bullets: ["JSON response", "Automation-friendly", "Phù hợp tracking quy mô lớn"], image: { src: "https://assets.kedi.media/images/3cdf0718c4ca5e2bbf95-1920.webp", alt: "SERP API reference" }, tag: "api" },
     ],
   },
   workflow: {
@@ -100,10 +100,10 @@ export const kediSeoConfig: ProductLandingConfig = {
     quote: "SEO data nên được nhìn từ nhiều góc nhưng không bị chia thành nhiều sản phẩm: dashboard rank, extension audit, content automation và API cùng xuất hiện trong một narrative.",
     sourceNote: "Ảnh giao diện lấy từ crawl SERPUpdate làm visual reference cho Kedi SEO; logo khách hàng và testimonial nguồn không được tái sử dụng.",
     items: [
-      { src: `${base}/serpupdate-dashboard-en.webp`, alt: "SERP dashboard", title: "SERP Dashboard", description: "Rank và visibility theo keyword" },
-      { src: `${base}/serpupdate-extension-en.webp`, alt: "SEO extension", title: "Extension", description: "On-page & GEO audit trong browser" },
-      { src: `${base}/serpupdate-ai-content-en.webp`, alt: "AI content automation", title: "AI Content", description: "Research, outline và production" },
-      { src: `${base}/serpupdate-serp-api-en.webp`, alt: "SERP API", title: "SERP API", description: "Search data cho workflow nội bộ" },
+      { src: "https://assets.kedi.media/images/f7ab1ff978e780a020dd-1920.webp", alt: "SERP dashboard", title: "SERP Dashboard", description: "Rank và visibility theo keyword" },
+      { src: "https://assets.kedi.media/images/181b8b3a8e8bd18ed799-1920.webp", alt: "SEO extension", title: "Extension", description: "On-page & GEO audit trong browser" },
+      { src: "https://assets.kedi.media/images/e2d139f033958b36bb0c-1920.webp", alt: "AI content automation", title: "AI Content", description: "Research, outline và production" },
+      { src: "https://assets.kedi.media/images/3cdf0718c4ca5e2bbf95-1920.webp", alt: "SERP API", title: "SERP API", description: "Search data cho workflow nội bộ" },
     ],
   },
   comparison: {

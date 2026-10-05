@@ -88,7 +88,7 @@ export default function Langdingwebcs1() {
                 // Đây là phần bạn đang nhìn thấy (Ảnh tĩnh)
                 <div className="absolute inset-0 z-20 flex items-center justify-center">
                   <img
-                    src={`https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`}
+                    src={"https://assets.kedi.media/images/3edbc5e94865cf224927-480.webp"}
                     className="w-full h-full object-cover opacity-50"
                     alt="thumbnail"
                   />

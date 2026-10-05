@@ -10,9 +10,9 @@ export type LandingMedia = {
 export const LandingPage1: LandingMedia = {
   images: [
     // Dashboard / hero
-    'https://mona.media/template/assets/images/tkw-never-stop/banner-tkw-social-1920.webp',
+    'https://assets.kedi.media/images/625d20fb4b3283bf7951-590.webp',
     // People / team image
-    'https://mona.media/template/assets/images/tkw-never-stop/acino-ahy-400-up.webp',
+    'https://assets.kedi.media/images/834cce399d3bcff5a9cd-414.webp',
   ],
   video:
     'https://video.monamedia.net/list/themona/smil:1730862717-f91e8203730bb6fd35eb509aef4dd4dbfc39a4e0-672ade7d19507-website.smil/playlist.m3u8',
@@ -27,7 +27,7 @@ export const LandingPage2: LandingMedia = {
 
 export const LandingPage3: LandingMedia = {
   images: [
-    'https://mona.media/template/assets/hq-images/tkw-never-stop/feature4-800.webp',
+    'https://assets.kedi.media/images/877e566d10f2c724c874-740.webp',
     '/assets/img-banner.avif',
     '/assets/image/card-1.avif',
   ],
@@ -36,7 +36,7 @@ export const LandingPage3: LandingMedia = {
 export const LandingPage4: LandingMedia = {
   images: [
     '/assets/img-banner.avif',
-    'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765183827/thumbnail-huong-dan-cach-lam-seo_qrq4me.png?variant=landing-portfolio-1',
+    'https://assets.kedi.media/images/7ef60d1cf7ab1974cd52-935.webp',
     '/assets/image/card-1.avif',
   ],
 };
@@ -47,8 +47,8 @@ export const LandingPage5: LandingMedia = {
     '/assets/image-Photoroom.png',
     '/assets/img-banner.avif',
     '/assets/me.jpg',
-    'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765183827/thumbnail-huong-dan-cach-lam-seo_qrq4me.png',
-    'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765183827/thumbnail-huong-dan-cach-lam-seo_qrq4me.png',
+    'https://assets.kedi.media/images/7ef60d1cf7ab1974cd52-935.webp',
+    'https://assets.kedi.media/images/7ef60d1cf7ab1974cd52-935.webp',
   ],
 };
 

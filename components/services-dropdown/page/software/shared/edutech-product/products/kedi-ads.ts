@@ -19,7 +19,7 @@ export const kediAdsConfig: ProductLandingConfig = {
     secondaryCta: { label: "Xem visual", href: "#giao-dien" },
     statusNote: "multi-account · realtime · reporting · team",
     mainImage: { src: `${base}/videos/hero.mp4`, alt: "Ads management hero video từ crawl AdsMeta", caption: "account · campaign · spend", kind: "video" },
-    secondaryImage: { src: `${base}/uploads/community/post_cmokw59zz0003jw656zel1d9p_1780543270026.jpg`, alt: "AdsMeta community banner reference", caption: "campaign management reference" },
+    secondaryImage: { src: "https://assets.kedi.media/images/dccdc8449f5cf5064ec5-970.webp", alt: "AdsMeta community banner reference", caption: "campaign management reference" },
     floatingBadges: ["Chrome sync", "Admin · Analyst · Viewer"],
     mascot: kediMascot,
     stats: [
@@ -91,8 +91,8 @@ export const kediAdsConfig: ProductLandingConfig = {
     sourceNote: "Video và banner lấy từ output crawl AdsMeta. Chúng dùng để kiểm tra motion/layout; production cần thay bằng asset Kedi Ads được phê duyệt.",
     items: [
       { src: `${base}/videos/hero.mp4`, alt: "AdsMeta hero video", title: "Dashboard Motion", description: "Video tổng quan account và campaign", kind: "video" },
-      { src: `${base}/uploads/community/post_cmokw59zz0003jw656zel1d9p_1780543270026.jpg`, alt: "AdsMeta banner one", title: "Community 01", description: "Banner visual từ crawl" },
-      { src: `${base}/uploads/community/post_cmompngcg0000rlqy7phqfmre_1780552738970.jpg`, alt: "AdsMeta banner two", title: "Community 02", description: "Banner visual từ crawl" },
+      { src: "https://assets.kedi.media/images/dccdc8449f5cf5064ec5-970.webp", alt: "AdsMeta banner one", title: "Community 01", description: "Banner visual từ crawl" },
+      { src: "https://assets.kedi.media/images/5507c1e4c2b6509bb18c-970.webp", alt: "AdsMeta banner two", title: "Community 02", description: "Banner visual từ crawl" },
     ],
   },
   comparison: {

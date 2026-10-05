@@ -22,7 +22,7 @@ export const projects: Project[] = [
     title: 'Kết hợp hoàn hảo giữa truyền thống và hiện đại',
     slug: 'acecook-1',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'SEO-Marketing',
   },
@@ -31,7 +31,7 @@ export const projects: Project[] = [
     title: 'Hệ thống rạp chiếu phim hiện đại bậc nhất',
     slug: 'acecook-2',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'Website',
   },
@@ -40,7 +40,7 @@ export const projects: Project[] = [
     title: 'Hệ sinh thái Woofoo với 13,2 triệu sub trên Youtube',
     slug: 'acecook-3',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'Order System',
   },
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     title: 'Dự án website hiện đại, đậm vị Việt Nam',
     slug: 'acecook-4',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'premium',
   },
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     title: 'Kết hợp hoàn hảo giữa truyền thống và hiện đại',
     slug: 'acecook-5',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'premium',
   },
@@ -67,7 +67,7 @@ export const projects: Project[] = [
     title: 'Hệ thống rạp chiếu phim hiện đại bậc nhất',
     slug: 'acecook-6',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'premium',
   },
@@ -76,7 +76,7 @@ export const projects: Project[] = [
     title: 'Hệ sinh thái Woofoo với 13,2 triệu sub trên Youtube',
     slug: 'acecook-7',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'premium',
   },
@@ -85,7 +85,7 @@ export const projects: Project[] = [
     title: 'Dự án website hiện đại, đậm vị Việt Nam',
     slug: 'acecook-8',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'premium',
   },
@@ -94,7 +94,7 @@ export const projects: Project[] = [
     title: 'Dự án mới phát triển đa nền tảng',
     slug: 'acecook-9',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'premium',
   },
@@ -103,7 +103,7 @@ export const projects: Project[] = [
     title: 'Giao diện tối ưu UX/UI',
     slug: 'acecook-10',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'premium',
   },
@@ -112,7 +112,7 @@ export const projects: Project[] = [
     title: 'Dự án mới phát triển đa nền tảng',
     slug: 'acecook-11',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'premium',
   },
@@ -121,7 +121,7 @@ export const projects: Project[] = [
     title: 'Giao diện tối ưu UX/UI',
     slug: 'acecook-12',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'premium',
   },
@@ -130,7 +130,7 @@ export const projects: Project[] = [
     title: 'Dự án mới phát triển đa nền tảng',
     slug: 'acecook-13',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'premium',
   },
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     title: 'Giao diện tối ưu UX/UI',
     slug: 'acecook-14',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'premium',
   },
@@ -148,7 +148,7 @@ export const projects: Project[] = [
     title: 'Dự án mới phát triển đa nền tảng',
     slug: 'acecook-15',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'premium',
   },
@@ -157,7 +157,7 @@ export const projects: Project[] = [
     title: 'Giao diện tối ưu UX/UI',
     slug: 'acecook-16',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'premium',
   },
@@ -166,7 +166,7 @@ export const projects: Project[] = [
     title: 'Dự án mới phát triển đa nền tảng',
     slug: 'acecook-17',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'premium',
   },
@@ -175,7 +175,7 @@ export const projects: Project[] = [
     title: 'Giao diện tối ưu UX/UI',
     slug: 'acecook-18',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'premium',
   },
@@ -184,7 +184,7 @@ export const projects: Project[] = [
     title: 'Dự án mới phát triển đa nền tảng',
     slug: 'acecook-19',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'premium',
   },
@@ -193,7 +193,7 @@ export const projects: Project[] = [
     title: 'Giao diện tối ưu UX/UI',
     slug: 'acecook-20',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'media',
   },
@@ -202,7 +202,7 @@ export const projects: Project[] = [
     title: 'Dự án mới phát triển đa nền tảng',
     slug: 'acecook-21',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'media',
   },
@@ -211,7 +211,7 @@ export const projects: Project[] = [
     title: 'Giao diện tối ưu UX/UI',
     slug: 'acecook-23',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'premium',
   },
@@ -220,7 +220,7 @@ export const projects: Project[] = [
     title: 'Dự án mới phát triển đa nền tảng',
     slug: 'acecook-24',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'premium',
   },
@@ -229,7 +229,7 @@ export const projects: Project[] = [
     title: 'Giao diện tối ưu UX/UI',
     slug: 'acecook-25',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'premium',
   },
@@ -238,7 +238,7 @@ export const projects: Project[] = [
     title: 'Dự án mới phát triển đa nền tảng',
     slug: 'acecook-26',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'buddy',
   },
@@ -247,7 +247,7 @@ export const projects: Project[] = [
     title: 'Giao diện tối ưu UX/UI',
     slug: 'acecook-27',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'premium',
   },
@@ -256,7 +256,7 @@ export const projects: Project[] = [
     title: 'Dự án mới phát triển đa nền tảng',
     slug: 'acecook-28',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'seo',
   },
@@ -265,7 +265,7 @@ export const projects: Project[] = [
     title: 'Giao diện tối ưu UX/UI',
     slug: 'acecook-29',
     image:
-      'https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png',
+      'https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp',
     tag: 'Premium Website Design',
     category: 'software',
   },

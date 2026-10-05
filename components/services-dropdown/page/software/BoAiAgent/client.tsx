@@ -17,8 +17,8 @@ const kediAiAgentMarkup = boAiAgentMarkup
   .replaceAll('href="https://mona.media/mo-hinh-phat-trien-phan-mem/"', 'href="/blog/viet-phan-mem-thoi-dai-ai"')
   .replaceAll('href="https://mona.media/wp-content/uploads/mona2/MONA-AI-Native-SDLC-2026.pdf"', 'href="/blog/viet-phan-mem-thoi-dai-ai"')
   .replace(/href="https:\/\/mona\.media\/[^"]+"/g, 'href="#danh-sach"')
-  .replace(/src="https:\/\/mona\.media\/wp-content\/themes\/monatheme\/template\/assets\/images\/gau-webmaster\/agents\/sm\/[^"]+"/g, 'src="/software-clone/ai-agent/assets/kedi-automate.png"')
-  .replace(/src="https:\/\/mona\.media\/wp-content\/themes\/monatheme\/template\/assets\/images\/gau-webmaster\/ah\/[^"]+"/g, 'src="/software-clone/ai-agent/assets/kedi-cham-soc-lead.png"');
+  .replace(/src="https:\/\/mona\.media\/wp-content\/themes\/monatheme\/template\/assets\/images\/gau-webmaster\/agents\/sm\/[^"]+"/g, 'src="https://assets.kedi.media/images/ffc1569337686919aa34-1254.webp"')
+  .replace(/src="https:\/\/mona\.media\/wp-content\/themes\/monatheme\/template\/assets\/images\/gau-webmaster\/ah\/[^"]+"/g, 'src="https://assets.kedi.media/images/591351c34c9b2bfc2ed8-1254.webp"');
 
 export default function ClientBoAiAgent() {
   return (

@@ -1,30 +1,29 @@
 /*!
- * MONA Quote Share — bôi đen 1 đoạn trong bài → tạo ảnh quote card đẹp để share.
- * Thuần client-side (Canvas 2D), không lib ngoài, không gọi server. Logo THE MONA nhúng từ file gốc.
- * KEDI integration: window.MONA_QUOTE_CFG = { logoDark, logoWhite, site, downloadPrefix }
+ * KEDI Quote Share — chọn văn bản để tạo ảnh trích dẫn và chia sẻ.
+ * Vẽ bằng Canvas 2D trên trình duyệt; dùng logo KEDI và QR dẫn về bài viết.
+ * Cấu hình: window.KEDI_QUOTE_CFG = { logoDark, logoWhite, site, downloadPrefix }
  */
 (function () {
   'use strict';
-  if (window.__monaQuoteInit) return;
-  window.__monaQuoteInit = true;
+  if (window.__kediQuoteInit) return;
+  window.__kediQuoteInit = true;
 
-  var CFG = window.MONA_QUOTE_CFG || {};
-  var SITE = CFG.site || 'mona.media';
-  var LOGO_DARK = CFG.logoDark || '';   // chữ đen → cho nền sáng
-  var LOGO_WHITE = CFG.logoWhite || ''; // chữ trắng → cho nền tối
-  var DOWNLOAD_PREFIX = CFG.downloadPrefix || 'mona-quote';
+  var CFG = window.KEDI_QUOTE_CFG || {};
+  var SITE = CFG.site || 'kedi.media';
+  var LOGO_DARK = CFG.logoDark || 'https://assets.kedi.media/images/faea1e69567763e173ea-380.webp';   // chữ đen → cho nền sáng
+  var LOGO_WHITE = CFG.logoWhite || 'https://assets.kedi.media/images/521d6ee8430017434c68-380.webp'; // chữ trắng → cho nền tối
+  var DOWNLOAD_PREFIX = CFG.downloadPrefix || 'kedi-quote';
 
   var MIN_LEN = Number(CFG.minLength) || 12;   // số ký tự tối thiểu của đoạn bôi đen
   var MAX_LEN = Number(CFG.maxLength) || 600;  // quá dài thì cắt cho vừa card
 
   // Vùng cho phép bôi đen (nội dung bài/trang)
-  var ALLOW = CFG.allow || '.mona-content, .entry-content, .blog-large-content, article, main, [data-quote-source]';
+  var ALLOW = CFG.allow || '.entry-content, .blog-large-content, article, main, [data-quote-source]';
   // Vùng loại trừ (không tạo quote ở nav/footer/form/nút...)
   // KHÔNG dùng [class*="form"] — match nhầm class body "single-format-standard"
   var DENY = CFG.deny || 'header, footer, nav, aside, form, button, input, textarea, .popup, .menu-extra, .breadcrumb, .wpcf7, .contact-box';
 
-  // Theme geometry/behavior stays MONA-compatible; colors are injected by KEDI config.
-  // Keep the legacy ids (tim/cam/den) so saved state and DOM behavior remain stable.
+  // KEDI canvas themes can be customized through the site configuration.
   var THEME_CFG = CFG.themes || {};
   var BRAND_THEME = THEME_CFG.brand || {};
   var PRIMARY_THEME = THEME_CFG.primary || {};
@@ -33,33 +32,33 @@
   var THEMES = [
     {
       id: 'brand',
-      label: BRAND_THEME.label || CFG.brandLabel || 'MONA',
-      grad: BRAND_THEME.grad || ['#7C0FD1', '#FF6E00'],
+      label: BRAND_THEME.label || CFG.brandLabel || 'KEDI',
+      grad: BRAND_THEME.grad || ['#071F42', '#0D478C', '#FFC629'],
       fg: BRAND_THEME.fg || '#ffffff',
       logo: BRAND_THEME.logo || 'white'
     },
     {
-      id: 'tim',
-      label: PRIMARY_THEME.label || 'Tím',
-      bg: PRIMARY_THEME.bg || '#7C0FD1',
+      id: 'primary',
+      label: PRIMARY_THEME.label || 'KEDI Navy',
+      bg: PRIMARY_THEME.bg || '#0B2D5B',
       fg: PRIMARY_THEME.fg || '#ffffff',
       logo: PRIMARY_THEME.logo || 'white'
     },
     {
-      id: 'cam',
-      label: ACCENT_THEME.label || 'Cam',
-      bg: ACCENT_THEME.bg || '#FF6E00',
-      fg: ACCENT_THEME.fg || '#ffffff',
-      logo: ACCENT_THEME.logo || 'white'
+      id: 'accent',
+      label: ACCENT_THEME.label || 'KEDI Cream',
+      bg: ACCENT_THEME.bg || '#FFF3C4',
+      fg: ACCENT_THEME.fg || '#0B2D5B',
+      logo: ACCENT_THEME.logo || 'dark'
     },
     {
-      id: 'den',
-      label: DARK_THEME.label || 'Đen',
-      bg: DARK_THEME.bg || '#16121F',
+      id: 'dark',
+      label: DARK_THEME.label || 'KEDI Deep Navy',
+      bg: DARK_THEME.bg || '#06172F',
       fg: DARK_THEME.fg || '#ffffff',
       logo: DARK_THEME.logo || 'white'
     },
-    { id: 'trang', label: 'Trắng', bg: '#ffffff', fg: '#16121F', logo: 'dark', border: true }
+    { id: 'trang', label: 'Trắng', bg: '#ffffff', fg: '#0B2D5B', logo: 'dark', border: true }
   ];
 
   var SIZES = [
@@ -112,7 +111,8 @@
     if (pill) return pill;
     pill = document.createElement('button');
     pill.type = 'button';
-    pill.className = 'mq-pill';
+    pill.dataset.glass = 'none';
+    pill.className = 'kedi-quote-pill';
     pill.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M9.6 5C6.5 5 4 7.5 4 10.6c0 2.6 1.8 4.8 4.2 5.4-.1 1.4-.7 2.4-1.7 3.1-.3.2-.4.6-.2.9.2.3.6.4.9.2C9.9 19 11.6 16.5 11.6 12V8.2C11.6 6.4 10.9 5 9.6 5zm9 0C15.5 5 13 7.5 13 10.6c0 2.6 1.8 4.8 4.2 5.4-.1 1.4-.7 2.4-1.7 3.1-.3.2-.4.6-.2.9.2.3.6.4.9.2C18.9 19 20.6 16.5 20.6 12V8.2C20.6 6.4 19.9 5 18.6 5z"/></svg><span>Tạo ảnh Quote</span>';
     pill.addEventListener('mousedown', function (e) { e.preventDefault(); });
     pill.addEventListener('click', function () {
@@ -145,13 +145,13 @@
   });
   document.addEventListener('scroll', hidePill, { passive: true });
 
-  // Same-origin iframe bridge used by the two cloned MONA Blog pages. Their
+  // Same-origin iframe bridge for embedded blog pages. Their
   // selection lives in a different document, so the React frame forwards the
   // selected text + its rectangle to this parent quote engine.
   window.addEventListener('message', function (event) {
     if (event.origin !== window.location.origin) return;
     var data = event.data || {};
-    if (data.source !== 'kedi-blog-clone') return;
+    if (data.source !== 'kedi-blog-frame') return;
 
     if (data.type === 'kedi-quote-share-hide') {
       hidePill();
@@ -187,7 +187,7 @@
 
   // ---------- meta của bài ----------
   function readMeta() {
-    var h1 = document.querySelector('.mona-content h1, .blog-large-content h1, article h1, h1.entry-title, h1');
+    var h1 = document.querySelector('[data-quote-source] h1, .blog-large-content h1, article h1, h1.entry-title, h1');
     state.title = (h1 ? h1.textContent : document.title).replace(/\s+/g, ' ').trim();
     var au = document.querySelector('[rel="author"], .author-name, .post-author a, meta[name="author"]');
     state.author = au ? (au.content || au.textContent).trim() : '';
@@ -232,7 +232,7 @@
     readMeta();
     if (!modal) buildModal();
     modal.classList.add('open');
-    document.body.classList.add('mq-lock');
+    document.body.classList.add('kedi-quote-lock');
     render();
     // font có thể load trễ → render lại cho chữ đúng Be Vietnam Pro
     if (document.fonts && document.fonts.ready) {
@@ -246,41 +246,46 @@
   }
   function closeModal() {
     if (modal) modal.classList.remove('open');
-    document.body.classList.remove('mq-lock');
+    document.body.classList.remove('kedi-quote-lock');
   }
 
   function buildModal() {
     modal = document.createElement('div');
-    modal.className = 'mq-modal';
+    modal.className = 'kedi-quote-modal';
     modal.innerHTML =
-      '<div class="mq-overlay"></div>' +
-      '<div class="mq-dialog">' +
-        '<div class="mq-head"><span>Chia sẻ Quote</span><button class="mq-close" aria-label="Đóng">&times;</button></div>' +
-        '<div class="mq-body">' +
-          '<div class="mq-preview"><canvas class="mq-canvas"></canvas></div>' +
-          '<div class="mq-controls">' +
-            '<div class="mq-group"><div class="mq-label">Nền</div><div class="mq-swatches" data-row="theme"></div></div>' +
-            '<div class="mq-group"><div class="mq-label">Kích thước</div><div class="mq-sizes" data-row="size"></div></div>' +
-            '<div class="mq-actions">' +
-              '<button class="mq-btn mq-dl">⬇ Tải về</button>' +
-              '<button class="mq-btn mq-copy">⧉ Copy ảnh</button>' +
-              '<button class="mq-btn mq-fb">f Share Facebook</button>' +
+      '<div class="kedi-quote-overlay"></div>' +
+      '<div class="kedi-quote-dialog">' +
+        '<div class="kedi-quote-head"><span>Chia sẻ Quote</span><button class="kedi-quote-close" aria-label="Đóng">&times;</button></div>' +
+        '<div class="kedi-quote-body">' +
+          '<div class="kedi-quote-preview"><canvas class="kedi-quote-canvas"></canvas></div>' +
+          '<div class="kedi-quote-controls">' +
+            '<div class="kedi-quote-group"><div class="kedi-quote-label">Nền</div><div class="kedi-quote-swatches" data-row="theme"></div></div>' +
+            '<div class="kedi-quote-group"><div class="kedi-quote-label">Kích thước</div><div class="kedi-quote-sizes" data-row="size"></div></div>' +
+            '<div class="kedi-quote-actions">' +
+              '<button class="kedi-quote-btn kedi-quote-dl">⬇ Tải về</button>' +
+              '<button class="kedi-quote-btn kedi-quote-copy">⧉ Copy ảnh</button>' +
+              '<button class="kedi-quote-btn kedi-quote-fb">f Share Facebook</button>' +
             '</div>' +
-            '<div class="mq-status"></div>' +
+            '<div class="kedi-quote-status"></div>' +
           '</div>' +
         '</div>' +
       '</div>';
+    // Quote controls own their colors and focus states; skip global glass styling.
+    modal.querySelectorAll('button').forEach(function (button) {
+      button.dataset.glass = 'none';
+    });
     document.body.appendChild(modal);
 
-    canvas = modal.querySelector('.mq-canvas');
+    canvas = modal.querySelector('.kedi-quote-canvas');
     ctx = canvas.getContext('2d');
-    statusEl = modal.querySelector('.mq-status');
+    statusEl = modal.querySelector('.kedi-quote-status');
 
     // swatches nền
-    var swWrap = modal.querySelector('.mq-swatches');
+    var swWrap = modal.querySelector('.kedi-quote-swatches');
     THEMES.forEach(function (t) {
       var b = document.createElement('button');
-      b.className = 'mq-sw' + (t.id === state.theme ? ' on' : '');
+      b.className = 'kedi-quote-sw' + (t.id === state.theme ? ' on' : '');
+      b.dataset.glass = 'none';
       b.dataset.id = t.id;
       b.title = t.label;
       if (t.grad) b.style.background = 'linear-gradient(135deg,' + t.grad.join(',') + ')';
@@ -288,7 +293,7 @@
       if (t.border) b.style.boxShadow = 'inset 0 0 0 1px #d0d0d0';
       b.addEventListener('click', function () {
         state.theme = t.id;
-        swWrap.querySelectorAll('.mq-sw').forEach(function (x) { x.classList.remove('on'); });
+        swWrap.querySelectorAll('.kedi-quote-sw').forEach(function (x) { x.classList.remove('on'); });
         b.classList.add('on');
         render();
       });
@@ -296,26 +301,27 @@
     });
 
     // sizes
-    var szWrap = modal.querySelector('.mq-sizes');
+    var szWrap = modal.querySelector('.kedi-quote-sizes');
     SIZES.forEach(function (s) {
       var b = document.createElement('button');
-      b.className = 'mq-size' + (s.id === state.size ? ' on' : '');
+      b.className = 'kedi-quote-size' + (s.id === state.size ? ' on' : '');
+      b.dataset.glass = 'none';
       b.dataset.id = s.id;
       b.textContent = s.label;
       b.addEventListener('click', function () {
         state.size = s.id;
-        szWrap.querySelectorAll('.mq-size').forEach(function (x) { x.classList.remove('on'); });
+        szWrap.querySelectorAll('.kedi-quote-size').forEach(function (x) { x.classList.remove('on'); });
         b.classList.add('on');
         render();
       });
       szWrap.appendChild(b);
     });
 
-    modal.querySelector('.mq-overlay').addEventListener('click', closeModal);
-    modal.querySelector('.mq-close').addEventListener('click', closeModal);
-    modal.querySelector('.mq-dl').addEventListener('click', download);
-    modal.querySelector('.mq-copy').addEventListener('click', copyImg);
-    modal.querySelector('.mq-fb').addEventListener('click', shareFB);
+    modal.querySelector('.kedi-quote-overlay').addEventListener('click', closeModal);
+    modal.querySelector('.kedi-quote-close').addEventListener('click', closeModal);
+    modal.querySelector('.kedi-quote-dl').addEventListener('click', download);
+    modal.querySelector('.kedi-quote-copy').addEventListener('click', copyImg);
+    modal.querySelector('.kedi-quote-fb').addEventListener('click', shareFB);
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
     });
@@ -397,13 +403,13 @@
     var y = topQuote + fs;
     lines.forEach(function (ln) { ctx.fillText(ln, padding, y); y += lh; });
 
-    // ----- FOOTER: QR (góc phải, quét về bài) + logo THE MONA + tiêu đề + URL bài -----
+    // ----- FOOTER: QR (góc phải, quét về bài) + logo KEDI + tiêu đề + URL bài -----
     var qrSize = FH;
     var qx = s.w - padding - qrSize;
     var qy = s.h - padding - qrSize;
     drawQR(ctx, state.fullUrl, qx, qy, qrSize, '#16121F');
 
-    // logo THE MONA — bên trái QR, căn giữa dọc theo QR
+    // logo KEDI — bên trái QR, căn giữa dọc theo QR
     var lw = Math.round(U * 0.20);
     var fallbackRatio = 80 / 492;
     var logoRatio = fallbackRatio;
@@ -444,8 +450,8 @@
   // ---------- actions ----------
   function flash(msg, ok) {
     statusEl.textContent = msg;
-    statusEl.className = 'mq-status ' + (ok === false ? 'err' : 'ok');
-    setTimeout(function () { statusEl.textContent = ''; statusEl.className = 'mq-status'; }, 2600);
+    statusEl.className = 'kedi-quote-status ' + (ok === false ? 'err' : 'ok');
+    setTimeout(function () { statusEl.textContent = ''; statusEl.className = 'kedi-quote-status'; }, 2600);
   }
   function fileName() {
     var slug = (state.title || DOWNLOAD_PREFIX).toLowerCase()
@@ -480,9 +486,9 @@
   }
 
   // load font cho canvas (Be Vietnam Pro — đủ dấu tiếng Việt)
-  if (!document.querySelector('link[data-mq-font]')) {
+  if (!document.querySelector('link[data-kedi-quote-font]')) {
     var l = document.createElement('link');
-    l.rel = 'stylesheet'; l.setAttribute('data-mq-font', '1');
+    l.rel = 'stylesheet'; l.setAttribute('data-kedi-quote-font', '1');
     l.href = 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;900&display=swap';
     document.head.appendChild(l);
   }

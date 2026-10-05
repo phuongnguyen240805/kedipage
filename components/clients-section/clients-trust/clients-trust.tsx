@@ -13,9 +13,9 @@ import Image from "next/image";
 
 const otherClients = [
   // ... data giữ nguyên của bạn
-  { id: 1, img: "https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765201163/solution_kimthanh_elkvoi.jpg", title: "Kedi Media và Levents", desc: "Tự hào đồng hành cùng thương hiệu thời trang nổi tiếng Châu Á...", solutionLink: "#", websiteLink: "#" },
-  { id: 2, img: "https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765201163/solution_kimthanh_elkvoi.jpg", title: "Chuỗi hệ thống Mắt Việt", desc: "Tăng trưởng doanh thu vượt trội sau dự án thiết kế website bán hàng...", solutionLink: "#", websiteLink: "#" },
-  { id: 3, img: "https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765201163/solution_kimthanh_elkvoi.jpg", title: "Anh Ngữ The Forum Center", desc: "Tiếp tục tin tưởng với hợp đồng dịch vụ thứ 3 về Website & App...", solutionLink: "#", websiteLink: "#" },
+  { id: 1, img: "https://assets.kedi.media/images/a166974d513fa7b2f3bb-692.webp", title: "Kedi Media và Levents", desc: "Tự hào đồng hành cùng thương hiệu thời trang nổi tiếng Châu Á...", solutionLink: "#", websiteLink: "#" },
+  { id: 2, img: "https://assets.kedi.media/images/a166974d513fa7b2f3bb-692.webp", title: "Chuỗi hệ thống Mắt Việt", desc: "Tăng trưởng doanh thu vượt trội sau dự án thiết kế website bán hàng...", solutionLink: "#", websiteLink: "#" },
+  { id: 3, img: "https://assets.kedi.media/images/a166974d513fa7b2f3bb-692.webp", title: "Anh Ngữ The Forum Center", desc: "Tiếp tục tin tưởng với hợp đồng dịch vụ thứ 3 về Website & App...", solutionLink: "#", websiteLink: "#" },
 ];
 
 export default function ClientsTrust() {
@@ -59,7 +59,7 @@ export default function ClientsTrust() {
                   </Button>
                   <Button variant="outline" className="border-2 text-black border-slate-200 py-6 px-8 rounded-xl hover:bg-slate-50 gap-2">
                     <span>Truy cập Website</span>
-                    <Image src="https://res.cloudinary.com/dzkcqktcl/image/upload/v1765202707/iocn-dv_rtmf7t.png" alt="icon" width={18} height={18} />
+                    <Image src="https://assets.kedi.media/images/e669c1ca87c983f9383c-24.webp" alt="icon" width={18} height={18} />
                   </Button>
                 </div>
               </FadeIn>
@@ -69,7 +69,7 @@ export default function ClientsTrust() {
               <div className="relative">
                 <div className="absolute -inset-4 bg-purple-100 rounded-full blur-2xl opacity-50"></div>
                 <Image
-                  src="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765201163/solution_kimthanh_elkvoi.jpg"
+                  src="https://assets.kedi.media/images/a166974d513fa7b2f3bb-692.webp"
                   alt="Kim Thành"
                   width={400}
                   height={400}

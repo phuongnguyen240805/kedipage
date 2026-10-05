@@ -22,37 +22,37 @@ const PRODUCT_GRID: MenuItem[] = [
     title: 'Kedi Agents',
     description: 'AI workforce cho các tác vụ vận hành.',
     href: '/kedi-agents',
-    image: '/service-menu/software-thumbnails/06-ai-agent-orchestration-hub.png',
+    image: 'https://assets.kedi.media/images/b2f4c57419c0472962fe-1448.webp',
   },
   {
     title: 'Kedi AI Flow',
     description: 'Workflow AI trực quan theo node và luồng.',
     href: '/kedi-ai-flow',
-    image: '/service-menu/software-thumbnails/07-ai-workflow-pipeline.png',
+    image: 'https://assets.kedi.media/images/75c732db00946d6f7616-1448.webp',
   },
   {
     title: 'Kedi Profiles',
     description: 'Profile/browser đa tài khoản cho đội vận hành.',
     href: '/kedi-profiles',
-    image: '/service-menu/software-thumbnails/08-identity-dashboard.png',
+    image: 'https://assets.kedi.media/images/99323483c39afb2bf107-1448.webp',
   },
   {
     title: 'AI chăm sóc khách hàng',
     description: 'Giữ lead và chăm sóc khách hàng tự động.',
     href: '/kedi-agents',
-    image: '/service-menu/software-thumbnails/02-crm-pipeline-dashboard.png',
+    image: 'https://assets.kedi.media/images/7f5ff0f733f0c2639940-1448.webp',
   },
   {
     title: 'Kedi Automate',
     description: 'Kết nối trigger, action và workflow tự động.',
     href: '/kedi-automate',
-    image: '/service-menu/software-thumbnails/05-automation-hub-network.png',
+    image: 'https://assets.kedi.media/images/0581ffe23b72cf08557e-1448.webp',
   },
   {
     title: 'Kedi Analytics',
     description: 'Theo dõi dữ liệu, KPI và hiệu suất vận hành.',
     href: '/kedi-analytics',
-    image: '/service-menu/software-thumbnails/04-analytics-dashboard.png',
+    image: 'https://assets.kedi.media/images/d4d7037142a7979dedc2-1448.webp',
   },
 ];
 
@@ -61,31 +61,31 @@ const SOLUTIONS: MenuItem[] = [
     title: 'Chuyển đổi AI toàn phần',
     description: 'Lộ trình AI cho doanh nghiệp từ tác vụ đến vận hành.',
     href: '/bo-ai-agent',
-    image: '/service-menu/software-thumbnails/01-os-ecosystem-dashboard.png',
+    image: 'https://assets.kedi.media/images/a241ea36712347159a37-1448.webp',
   },
   {
     title: 'Viết AI Agent theo yêu cầu',
     description: 'Thiết kế AI Agent đúng nghiệp vụ doanh nghiệp.',
     href: '/kedi-agents',
-    image: '/service-menu/software-thumbnails/06-ai-agent-orchestration-hub.png',
+    image: 'https://assets.kedi.media/images/b2f4c57419c0472962fe-1448.webp',
   },
   {
     title: 'Phần mềm theo yêu cầu',
     description: 'CRM, workflow và phần mềm tích hợp AI.',
     href: '/blog/viet-phan-mem-thoi-dai-ai',
-    image: '/service-menu/software-thumbnails/07-ai-workflow-pipeline.png',
+    image: 'https://assets.kedi.media/images/75c732db00946d6f7616-1448.webp',
   },
   {
     title: 'SEO & AEO thời đại AI',
     description: 'Tối ưu tìm kiếm và khả năng được AI trích dẫn.',
     href: '/kedi-seo',
-    image: '/service-menu/software-thumbnails/12-kedi-seo.png',
+    image: 'https://assets.kedi.media/images/af21941720b40a4053f3-1448.webp',
   },
   {
     title: 'Kiến thức AI cho doanh nghiệp',
     description: 'Phân tích và hướng dẫn ứng dụng AI vào vận hành.',
     href: '/blog/tu-dong-hoa-doanh-nghiep',
-    image: '/service-menu/software-thumbnails/04-analytics-dashboard.png',
+    image: 'https://assets.kedi.media/images/d4d7037142a7979dedc2-1448.webp',
   },
 ];
 
@@ -251,7 +251,7 @@ export default function AIMegaMenu({ isOpen, onNavigate }: AIMegaMenuProps) {
                   title: 'Bộ AI Agent KEDI',
                   description: 'AI workforce cho bán hàng, chăm khách và vận hành doanh nghiệp.',
                   href: '/bo-ai-agent',
-                  image: '/service-menu/software-thumbnails/06-ai-agent-orchestration-hub.png',
+                  image: 'https://assets.kedi.media/images/b2f4c57419c0472962fe-1448.webp',
                   tag: 'KEDI ĐANG TỰ XÀI',
                 }}
                 onNavigate={onNavigate}
@@ -262,7 +262,7 @@ export default function AIMegaMenu({ isOpen, onNavigate }: AIMegaMenuProps) {
                   title: 'Kedi Outreach',
                   description: 'Prospecting, messaging và engagement đa kênh.',
                   href: '/kedi-outreach',
-                  image: '/service-menu/software-thumbnails/09-multichannel-outreach-network.png',
+                  image: 'https://assets.kedi.media/images/a21342ae667ba37e80eb-1448.webp',
                 }}
                 onNavigate={onNavigate}
                 className="mai-hero mai-hero-o"
@@ -291,7 +291,7 @@ export default function AIMegaMenu({ isOpen, onNavigate }: AIMegaMenuProps) {
               <Heading
                 title="Tài nguyên AI"
                 href="/blog"
-                icon="/service-menu/software-thumbnails/07-ai-workflow-pipeline.png"
+                icon="https://assets.kedi.media/images/75c732db00946d6f7616-1448.webp"
                 onNavigate={onNavigate}
               />
               <div className="mai-links">
@@ -319,7 +319,7 @@ export default function AIMegaMenu({ isOpen, onNavigate }: AIMegaMenuProps) {
               <Heading
                 title="Công cụ AI trong công việc"
                 href="/tools-ngon"
-                icon="/service-menu/software-thumbnails/19-tools-ngon.png"
+                icon="https://assets.kedi.media/images/15104d47b4891ba0aa90-1448.webp"
                 onNavigate={onNavigate}
               />
               <div className="mai-links mai-links2">

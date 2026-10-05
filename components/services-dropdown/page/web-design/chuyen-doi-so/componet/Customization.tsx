@@ -68,7 +68,7 @@ export default function Customization() {
                   <div className="relative rounded-xl overflow-hidden bg-zinc-800 shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/5">
                     <div className="aspect-video bg-zinc-800 flex items-center justify-center relative">
                       <img 
-                        src="https://erpviet.vn/thumb/diepanh/x1-copy-63_400_225.png.pagespeed.ic.bEB_VR5Xw9.webp" 
+                        src="https://assets.kedi.media/images/42a8161227c5707936e2-400.webp"
                         alt="ERP Preview" 
                         className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-1000" 
                       />

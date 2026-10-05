@@ -40,7 +40,7 @@ export default function LegacyComparisonSection({ data }: { data: AiAgentPageDat
   return (
     <section id="so-sanh" className="kedi-ai-legacy bag bag-vs">
       <BrandGhostBackground
-        src="/homepage/golden-insights-light.webp"
+        src="https://assets.kedi.media/images/967982d61246b36f6da7-1672.webp"
         position="right"
         opacity={0.045}
         imageClassName="scale-[1.14] translate-x-[14%] translate-y-[4%]"

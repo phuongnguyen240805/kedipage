@@ -162,7 +162,7 @@ export default function HomeHero() {
             transition={reduceMotion ? undefined : { duration: 6, repeat: Infinity, ease: 'easeInOut' }}
             className="absolute -bottom-6 left-4 hidden items-center gap-3 rounded-2xl border border-white/12 bg-[#082b57]/95 px-4 py-3 shadow-2xl backdrop-blur-xl sm:flex"
           >
-            <Image src="/service-menu/software/kedi-crm.svg" alt="Kedi CRM" width={36} height={36} className="h-9 w-9 rounded-lg" />
+            <Image src="https://assets.kedi.media/images/232238a305ad430068d1.svg" alt="Kedi CRM" width={36} height={36} className="h-9 w-9 rounded-lg" />
             <div>
               <p className="text-xs font-semibold">Kedi CRM</p>
               <p className="text-[10px] text-white/45">Customer system</p>
@@ -174,7 +174,7 @@ export default function HomeHero() {
             transition={reduceMotion ? undefined : { duration: 7, repeat: Infinity, ease: 'easeInOut' }}
             className="absolute -right-3 -top-5 hidden items-center gap-3 rounded-2xl border border-kedi-yellow/30 bg-[#082b57]/95 px-4 py-3 shadow-2xl backdrop-blur-xl sm:flex"
           >
-            <Image src="/service-menu/software/kedi-analytics.svg" alt="Kedi Analytics" width={36} height={36} className="h-9 w-9 rounded-lg" />
+            <Image src="https://assets.kedi.media/images/1eab0faefd144c10b142.svg" alt="Kedi Analytics" width={36} height={36} className="h-9 w-9 rounded-lg" />
             <div>
               <p className="text-xs font-semibold">Kedi Analytics</p>
               <p className="text-[10px] text-white/45">Business intelligence</p>

@@ -90,7 +90,7 @@ export default function SolutionFlowV3() {
       className="relative z-30 -mt-8 overflow-hidden rounded-t-[32px] bg-[#082b57] px-5 py-20 text-white shadow-[0_-24px_70px_rgba(0,0,0,.2)] sm:px-8 lg:rounded-t-[44px] lg:px-12 lg:py-28 xl:px-16"
       style={{
         backgroundImage:
-          "linear-gradient(90deg, rgba(8,43,87,.9) 0%, rgba(8,43,87,.76) 52%, rgba(8,43,87,.9) 100%), url('/homepage/growth-systems-ladder.webp')",
+          "linear-gradient(90deg, rgba(8,43,87,.9) 0%, rgba(8,43,87,.76) 52%, rgba(8,43,87,.9) 100%), url('https://assets.kedi.media/images/a782b4ff726b887981e6-1672.webp')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -115,7 +115,7 @@ export default function SolutionFlowV3() {
                   className="absolute inset-0"
                 >
                   <Image
-                    unoptimized
+
                     src={activeItem.image}
                     alt={activeItem.title}
                     fill
@@ -203,7 +203,7 @@ export default function SolutionFlowV3() {
                     <h3 className="mt-4 text-[34px] font-semibold tracking-[-0.04em]">{item.title}</h3>
                     <p className="mt-3 text-sm leading-7 text-white/60">{item.description}</p>
                     <div className="relative mt-6 h-[170px] overflow-hidden rounded-[18px]">
-                      <Image unoptimized src={item.image} alt="" fill sizes="100vw" className="object-cover" />
+                      <Image  src={item.image} alt="" fill sizes="100vw" className="object-cover" />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#061a36]/55 to-transparent" />
                     </div>
                   </div>

@@ -61,7 +61,7 @@ const HeroBanner = () => {
           <div 
             className="absolute inset-0 z-0 bg-cover bg-center"
             style={{ 
-              backgroundImage: `linear-gradient(to right, rgba(0, 51, 153, 1) 0%, rgba(0, 51, 153, 0.8) 40%, rgba(0, 51, 153, 0.4) 100%), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=2000')` 
+              backgroundImage: `linear-gradient(to right, rgba(0, 51, 153, 1) 0%, rgba(0, 51, 153, 0.8) 40%, rgba(0, 51, 153, 0.4) 100%), url('https://assets.kedi.media/images/995de5a83b2fda98b1b3-1920.webp')`
             }}
           >
             <div className="absolute inset-0 bg-blue-900/20 backdrop-blur-[1px]"></div>

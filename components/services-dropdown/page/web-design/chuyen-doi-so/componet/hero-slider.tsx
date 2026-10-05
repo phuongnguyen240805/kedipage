@@ -13,13 +13,13 @@ import 'swiper/css/navigation';
 const SLIDE_DATA = [
   {
     id: 1,
-    image: "https://erpviet.vn/upload/banner/Banner2024/sao-khue-web.jpg.pagespeed.ce._axt2zXXQ-.jpg", // Thay bằng đường dẫn ảnh của bạn
+    image: "https://assets.kedi.media/images/dcbb5e1bea489ae6e51d-1920.webp", // Thay bằng đường dẫn ảnh của bạn
     title: "Giải pháp thiết kế riêng",
     desc: "Bứt phá với 60+ ứng dụng cốt lõi"
   },
   {
     id: 2,
-    image: "https://erpviet.vn/upload/banner/Banner2024/ERPVIET/erpviet.jpg.pagespeed.ce.vVqKBxP2vr.jpg",
+    image: "https://assets.kedi.media/images/b34f94286b05941ee213-1920.webp",
     title: "Hỗ trợ doanh nghiệp",
     desc: "Quản lý dự án & Kế toán tài chính"
   },

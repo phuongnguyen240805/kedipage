@@ -56,7 +56,7 @@ const EnterpriseHero = () => {
           <div className="hidden lg:flex flex-col gap-6 absolute left-0 xl:left-0 top-1/2 -translate-y-1/2 -translate-x-1/4 tilt-left z-20">
             <div className="glass-card w-44 h-28 xl:w-56 xl:h-36 rounded-xl overflow-hidden group cursor-pointer border-white/10 shadow-2xl">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4529AfXr9R1F2h73hNI_YhHWtFNEuye3R1EDgNuzYJN9bKHh4YVq7t1Ufbz0jEtB7KWSj5ISzog3t9TH5Gp9GPVJtRiIJM8iusMUsvPonMmzUjAJAeoEmJ3HxHouDWg8prpzkjyoqD1Qweq4P7QMwY6PWs6R2zoFLK8tlvZ-uAubRhJdvV410XCRcUCgGYYd-o8mfH_gW37Pf0wbz9KTwBfcqOth2XTZbtjZ1goYRjPVStguRYQP2xPBUVhmyaQ2uirs7pH-UqSNG"
+                src="https://assets.kedi.media/images/0a3a0ed8b2cad488544a-512.webp"
                 alt="Infrastructure"
                 fill
                 className="object-cover opacity-50 group-hover:opacity-80 transition-opacity"
@@ -68,7 +68,7 @@ const EnterpriseHero = () => {
             </div>
             <div className="glass-card w-36 h-24 xl:w-48 xl:h-32 rounded-xl overflow-hidden group cursor-pointer translate-x-8 border-white/10 shadow-2xl">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsXJT3cb0hm1m5vMECKUJA9_YPFuwagqZCIkeEo18tRix11Vh3vGf1xPyKNn_4WT1maSnw2Lhu7TCyXKM9MV0SObOEVmkUNShgwMx0xklfo3RDOXN3t7IPFhVJCEcqt1VbzZluli8me_xA-sSfFCwQZ_G5LMShdPMHGjNe4vxoJNV8mL2ob_wXlznsFBHg5nSI8k1ebzzDU1QKsniVpeWsxm9LYo0NTRqGjjgc8fJwoQfVqz_CvEtE9M9sJf3vdh-3JZ8IwlkbCLWQ"
+                src="https://assets.kedi.media/images/08097652dcc1a981f554-512.webp"
                 alt="Analytics"
                 fill
                 className="object-cover opacity-50 group-hover:opacity-80 transition-opacity"
@@ -90,7 +90,7 @@ const EnterpriseHero = () => {
                 {!isPlaying ? (
                   <>
                     <Image
-                      src="https://img.youtube.com/vi/czmj2NNaPJI/maxresdefault.jpg"
+                      src="https://assets.kedi.media/images/fa9c027cc36afabd0e13-1280.webp"
                       alt="Video Thumbnail"
                       fill
                       className="object-cover opacity-75 transition-opacity duration-700"
@@ -135,7 +135,7 @@ const EnterpriseHero = () => {
           <div className="hidden lg:flex flex-col gap-6 absolute right-0 xl:right-0 top-1/2 -translate-y-1/2 translate-x-1/4 tilt-right z-20">
             <div className="glass-card w-44 h-28 xl:w-56 xl:h-36 rounded-xl overflow-hidden group cursor-pointer border-white/10 shadow-2xl">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt6rPIeNj3SjrzWbgN2R9W1s1uOlFOfQjw_wtNxQInRO4mSnhD_uME_h9Kgevl96jgUn-4_je4KPAZzeDQTj5z-KCwbAeCrlBZU0JvHtLuReTHSFEmxVJFJK0As5TvvkRXyn_a1TWT1mwx6j6neC4Zq3olLLj1tumIcHK6g6ssaI9GEoUiDNExZzPcv4xn9IQbtwxJFSVPafuOtfk06Pvz4dPxIscIOGBuR_5IwNEfGXxX_Ra5ZfF-RDkoD9V72mG0VKFGia6RVkQ4"
+                src="https://assets.kedi.media/images/bec099e60e59df5a6f1a-512.webp"
                 alt="Research"
                 fill
                 className="object-cover opacity-50 group-hover:opacity-80 transition-opacity"
@@ -147,7 +147,7 @@ const EnterpriseHero = () => {
             </div>
             <div className="glass-card w-36 h-24 xl:w-48 xl:h-32 rounded-xl overflow-hidden group cursor-pointer -translate-x-8 border-white/10 shadow-2xl">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZWZ-Hbx9wcYl4VDI-VeSugyt4-DxM3li-zv3r716ETlUoSprt3RbINhS3xmK7nssf_hzyDBDwWSbG_tC2nYQt4Jh4L1tGNAeKdtoGhpswXCpW6VKNXs8WZDgEcjJ4KeHSnQ6boKRa-R3nTO7GBRL1nQ8VsrZGvl6umhtHzCDFIvtneI-bFKzErcqRLCyPSe_qEYZGMwpD2ayz9dzcuP5SRDuF5N9kcJZ4bhcVfDfvwAtQJI5-07Afnoc7KjLBE2kcn0fAn0rZrfMB"
+                src="https://assets.kedi.media/images/71303418050e7245b68d-512.webp"
                 alt="Global"
                 fill
                 className="object-cover opacity-50 group-hover:opacity-80 transition-opacity"

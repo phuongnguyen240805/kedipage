@@ -11,13 +11,13 @@ import { kediLmsCss } from "./kedi-lms-style";
 import { kediLmsMotionScript, kediLmsRevealScript } from "./kedi-lms-motion";
 
 const KEDI_LMS_AI_ASSET_REPLACEMENTS: ReadonlyArray<readonly [string, string]> = [
-  ["/kedi-lms/gau-lien-lac.png", "/kedi-lms/kedi-lien-lac.png"],
-  ["/kedi-lms/gau-luyen-thi.png", "/kedi-lms/kedi-luyen-thi.png"],
-  ["/kedi-lms/gau-tro-giang.png", "/kedi-lms/kedi-tro-giang.png"],
-  ["/kedi-lms/kedi-edutech-og.webp", "/kedi-lms/kedi-edutech-hero-ai.webp"],
+  ["/kedi-lms/gau-lien-lac.png", "https://assets.kedi.media/images/b8c998b835361aa6fdca-533.webp"],
+  ["/kedi-lms/gau-luyen-thi.png", "https://assets.kedi.media/images/54986f1f0efc6c552fd6-533.webp"],
+  ["/kedi-lms/gau-tro-giang.png", "https://assets.kedi.media/images/186372e1f09dfa1a8a43-533.webp"],
+  ["/kedi-lms/kedi-edutech-og.webp", "https://assets.kedi.media/images/0833456c1cd2af25b822-1536.webp"],
   [
     "/kedi-lms/kedi-edutech-thoi-khoa-bieu.webp",
-    "/kedi-lms/kedi-edutech-schedule-ai.webp",
+    "https://assets.kedi.media/images/bc1ec43e233e53459ec9-1536.webp",
   ],
   ["Gấu KEDI", "Chó Golden KEDI"],
 ];

@@ -10,7 +10,7 @@ const StickyImageColumn: React.FC<StickyImageColumnProps> = ({
   activeImage,
 }) => {
   const fallback =
-    'https://mona.media/wp-content/uploads/2024/06/tang-doanh-so-ban-hang-voi-marketing.png';
+    'https://assets.kedi.media/images/a1c6257fa815206b807e-577.webp';
 
   const imageToShow = activeImage ?? fallback;
 

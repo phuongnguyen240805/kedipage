@@ -10,12 +10,12 @@ const WebMobileService = () => {
   ];
 
   const techLogos = [
-    { name: 'Python', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-    { name: 'Node.js', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-    { name: 'Java', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
-    { name: 'MySQL', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-    { name: 'PHP', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg' },
-    { name: 'SQL Server', url: 'http://cloudfly.vn/image/solution/sql.svg' },
+    { name: 'Python', url: 'https://assets.kedi.media/images/71493b4a732f0532b3a0.svg' },
+    { name: 'Node.js', url: 'https://assets.kedi.media/images/3218687c5ea24a4d4c0a.svg' },
+    { name: 'Java', url: 'https://assets.kedi.media/images/7582e518a9c02425f971.svg' },
+    { name: 'MySQL', url: 'https://assets.kedi.media/images/f73fa5d6b9da33fbf540.svg' },
+    { name: 'PHP', url: 'https://assets.kedi.media/images/f22619a19c99a123e467.svg' },
+    { name: 'SQL Server', url: 'https://assets.kedi.media/images/ce63504e1a5f36b465ce.svg' },
   ];
 
   return (

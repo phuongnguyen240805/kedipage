@@ -11,8 +11,8 @@ export default function FinalCtaV3() {
   return (
     <section className="relative z-40 bg-white px-5 pb-20 pt-14 sm:px-8 sm:pt-16 lg:px-12 lg:pb-28 lg:pt-24 xl:px-16">
       <div className="relative mx-auto max-w-[1440px] overflow-hidden rounded-[34px] bg-kedi-yellow px-6 py-12 text-kedi-navy shadow-[0_30px_90px_rgba(11,45,91,.12)] sm:px-10 lg:min-h-[470px] lg:px-14 lg:py-16">
-        <Image unoptimized
-          src="/homepage/cta-background.webp"
+        <Image
+          src="https://assets.kedi.media/images/df9c0f9c2227d25f4363-1920.webp"
           alt=""
           fill
           sizes="100vw"
@@ -60,8 +60,8 @@ export default function FinalCtaV3() {
             animate={reduceMotion ? undefined : { y: [0, -8, 0] }}
             transition={reduceMotion ? undefined : { duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
           >
-            <Image unoptimized
-              src="/homepage/golden-mascot-transparent.webp"
+            <Image
+              src="https://assets.kedi.media/images/9d29af5e18269d6c53c0-1600.webp"
               alt="KEDI Golden mascot"
               width={1600}
               height={1600}

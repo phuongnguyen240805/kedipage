@@ -27,7 +27,7 @@ export default function ProductLandingPage({ config }: Props) {
   );
 
   const motionScript = kediLmsMotionScript
-    .split("/kedi-lms/kedi-head-mark.png").join(config.motionMarkSrc ?? "/brand/kedi-icon.png")
+    .split("https://assets.kedi.media/images/840c0f0bef8d08992546-256.webp").join(config.motionMarkSrc ?? "https://assets.kedi.media/images/cbe0eb58b4ee5d7a8419-512.webp")
     .split("/kedi-lms/gau-luyen-thi.png").join(config.motionMascotSrc ?? config.hero.mascot.src);
 
   const renderSection = (key: ProductSectionKey) => {

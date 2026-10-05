@@ -45,7 +45,7 @@ export function ClientCard({ client }: { client: Client }) {
           >
             <span>Xem Website</span>
             <Image
-              src="https://mona.media/template/assets/images/customer-intro/iocn-dv.png"
+              src="https://assets.kedi.media/images/e669c1ca87c983f9383c-24.webp"
               alt="Link icon"
               width={16}
               height={16}

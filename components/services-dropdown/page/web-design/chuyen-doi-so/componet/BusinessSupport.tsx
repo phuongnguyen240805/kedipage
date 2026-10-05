@@ -21,7 +21,7 @@ const supportData = [
     features: [
 
     ],
-    image: "https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png",
+    image: "https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp",
     accent: "from-purple-900 to-indigo-900"
   },
   {
@@ -31,7 +31,7 @@ const supportData = [
     features: [
      
     ],
-    image: "https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png",
+    image: "https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp",
     accent: "from-purple-800 to-fuchsia-900"
   },
   {
@@ -41,7 +41,7 @@ const supportData = [
     features: [
     
     ],
-    image: "https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png",
+    image: "https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp",
     accent: "from-pink-900 to-purple-900"
   },
   {
@@ -51,7 +51,7 @@ const supportData = [
     features: [
      
     ],
-    image: "https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193233/Cinestar_blpx4c.png",
+    image: "https://assets.kedi.media/images/a79b477679ff3b9fe883-456.webp",
     accent: "from-blue-900 to-indigo-900"
   }
 ];
@@ -104,7 +104,7 @@ export default function BusinessSupportSlider() {
                   
                   {/* Image & Overlay Content */}
                   <div className={`relative aspect-video bg-gradient-to-br ${item.accent} p-6 flex flex-col justify-center items-center overflow-hidden`}>
-                    <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+                    <div className="absolute inset-0 opacity-10 bg-[url('https://assets.kedi.media/images/acb288e1bc5ee834750c-24.webp')]"></div>
                     
                     <div className="relative z-10 w-full max-w-[200px] transform group-hover:scale-110 transition-transform duration-700">
                       <div className="border-[4px] border-zinc-800 rounded-lg overflow-hidden bg-black shadow-2xl">

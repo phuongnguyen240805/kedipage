@@ -25,7 +25,7 @@ export default function PartnershipAffiliate() {
         <div className="relative w-full max-w-5xl mx-auto mt-28">
           <div className="relative z-10">
             <Image
-              src="https://mona.media/template/assets/images/affiliate/banner-img-1920w.avif"
+              src="https://assets.kedi.media/images/52b5f65c9bb84cab54a7-900.webp"
               alt="Team Kedi"
               width={640}
               height={360}

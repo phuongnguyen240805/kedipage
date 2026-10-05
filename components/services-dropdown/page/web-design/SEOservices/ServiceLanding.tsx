@@ -31,7 +31,7 @@ const ServiceLanding: React.FC<ServiceLandingProps> = ({
   mascotAlt,
   brandText,
   ctaButtonText,
-  bgImage = "url('https://mona.media/template/assets/images/dvs-bigupdate/bg-intro-banner.png')",
+  bgImage = "url('https://assets.kedi.media/images/841c14cde78ac5c47564-1728.webp')",
   className = '',
 }) => {
   return (

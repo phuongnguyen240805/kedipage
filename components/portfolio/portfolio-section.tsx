@@ -11,8 +11,8 @@ const portfolioSolutions = [
     title: 'GIẢI PHÁP PREMIUM WEBSITE CHUYÊN NGHIỆP, SÁNG TẠO CHO DOANH NGHIỆP',
     detailLink: '/thiet-ke-website-tai-hcm',
     balls: [
-      '/brand/kedi-icon.png',
-      '/brand/kedi-icon.png',
+      'https://assets.kedi.media/images/cbe0eb58b4ee5d7a8419-512.webp',
+      'https://assets.kedi.media/images/cbe0eb58b4ee5d7a8419-512.webp',
     ],
   },
   {
@@ -21,8 +21,8 @@ const portfolioSolutions = [
     title: 'GIẢI PHÁP MARKETING GIÚP TĂNG KHÁCH HÀNG & DOANH THU LIÊN TỤC',
     detailLink: '/dich-vu-seo',
     balls: [
-      '/brand/kedi-icon.png',
-      '/brand/kedi-icon.png',
+      'https://assets.kedi.media/images/cbe0eb58b4ee5d7a8419-512.webp',
+      'https://assets.kedi.media/images/cbe0eb58b4ee5d7a8419-512.webp',
     ],
   },
   {
@@ -31,8 +31,8 @@ const portfolioSolutions = [
     title: 'GIẢI PHÁP THƯƠNG HIỆU MEDIA SÁNG TẠO, CHẤT LƯỢNG CAO CHO BẠN',
     detailLink: '/chup-anh-profile-cong-ty',
     balls: [
-      '/brand/kedi-icon.png',
-      '/brand/kedi-icon.png',
+      'https://assets.kedi.media/images/cbe0eb58b4ee5d7a8419-512.webp',
+      'https://assets.kedi.media/images/cbe0eb58b4ee5d7a8419-512.webp',
     ],
   },
   {
@@ -41,8 +41,8 @@ const portfolioSolutions = [
     title: 'GIẢI PHÁP GIÚP TĂNG NHẬN DIỆN VÀ SỰ CHUYÊN NGHIỆP CHO DOANH NGHIỆP',
     detailLink: '/introduction',
     balls: [
-      '/brand/kedi-icon.png',
-      '/brand/kedi-icon.png',
+      'https://assets.kedi.media/images/cbe0eb58b4ee5d7a8419-512.webp',
+      'https://assets.kedi.media/images/cbe0eb58b4ee5d7a8419-512.webp',
     ],
   },
 ];
@@ -54,7 +54,7 @@ export default function PortfolioSection() {
       {/* Top decoration image */}
       <div className="w-full relative z-10">
         <Image
-          src="/homepage/golden-data-journey.webp"
+          src="https://assets.kedi.media/images/236244d3329e087e4868-1672.webp"
           alt="KEDI visual system"
           width={1280}
           height={200}
@@ -69,7 +69,7 @@ export default function PortfolioSection() {
         <FadeIn>
         <div className="absolute inset-0 z-0 overflow-hidden">
           <Image
-            src="/homepage/golden-insights-light.webp"
+            src="https://assets.kedi.media/images/967982d61246b36f6da7-1672.webp"
             alt="KEDI background"
             fill
             className="object-cover opacity-10 mix-blend-screen"
@@ -134,7 +134,7 @@ export default function PortfolioSection() {
                 <div className="relative z-10">
                   <div className="flex items-center gap-2 mb-2">
                     <Image
-                      src="/brand/kedi-icon.png"
+                      src="https://assets.kedi.media/images/cbe0eb58b4ee5d7a8419-512.webp"
                       alt="KEDI"
                       width={18}
                       height={18}

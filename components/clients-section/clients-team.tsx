@@ -15,7 +15,7 @@ export default function ClientsTeam() {
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
           <div className="absolute top-6 left-6 w-24 h-24 rounded-full border-t-4 border-orange-300 opacity-70" />
           <Image
-            src="https://mona.media/template/assets/images/customer-intro/ic-el4.svg"
+            src="https://assets.kedi.media/images/8044474f864b5ddfa599.svg"
             alt="Decorative Left"
             width={800}
             height={800}
@@ -73,7 +73,7 @@ export default function ClientsTeam() {
         {/* Mũi tên chỉ xuống */}
         <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-10 animate-bounce">
           <Image
-            src="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765193848/counter-bear-deco_fbdeay.png"
+            src="https://assets.kedi.media/images/cbb6ee8c53adc6782448-335.webp"
             alt="Arrow Down"
             width={60}
             height={60}
@@ -97,7 +97,7 @@ export default function ClientsTeam() {
           <FadeIn>
             <div className="transform hover:scale-80 transition-transform duration-300">
               <Image
-                src="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198324/bundle-package-04_in4vvf.jpg"
+                src="https://assets.kedi.media/images/db7fc8f2fddf94cbe1ca-1909.webp"
                 alt="Thống kê doanh thu 1"
                 width={420}
                 height={250}
@@ -109,7 +109,7 @@ export default function ClientsTeam() {
           <div className="transform hover:scale-80 transition-transform duration-300">
             <FadeIn>
               <Image
-                src="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198324/bundle-package-04_in4vvf.jpg"
+                src="https://assets.kedi.media/images/db7fc8f2fddf94cbe1ca-1909.webp"
                 alt="Thống kê doanh thu 2"
                 width={200}
                 height={200}
@@ -124,7 +124,7 @@ export default function ClientsTeam() {
           <div className="transform hover:scale-80 transition-transform duration-300">
             <FadeIn>
               <Image
-                src="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198324/bundle-package-04_in4vvf.jpg"
+                src="https://assets.kedi.media/images/db7fc8f2fddf94cbe1ca-1909.webp"
                 alt="Thống kê doanh thu 3"
                 width={200}
                 height={200}
@@ -135,7 +135,7 @@ export default function ClientsTeam() {
           <div className="transform hover:scale-80 transition-transform duration-300">
             <FadeIn>
               <Image
-                src="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765198324/bundle-package-04_in4vvf.jpg"
+                src="https://assets.kedi.media/images/db7fc8f2fddf94cbe1ca-1909.webp"
                 alt="Thống kê doanh thu 4"
                 width={420}
                 height={250}

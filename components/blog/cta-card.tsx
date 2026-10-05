@@ -93,7 +93,7 @@ const CTACard: React.FC<CTACardProps> = ({ onClickGift, className = '' }) => {
             {/* Khối 1: Logo */}
             <div className="flex items-center justify-center px-4 py-2 border-r border-pink-400/110">
               <Image
-                src="https://mona.media/wp-content/uploads/2023/03/media-less-white-logo.png"
+                src="https://assets.kedi.media/images/0f6ff1f42ceb1372d87c-643.webp"
                 alt="kedimedia"
                 width={120}
                 height={40}

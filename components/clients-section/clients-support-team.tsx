@@ -32,7 +32,7 @@ export default function ClientsSupportTeam() {
           {/* Mobile: Full 2 cột, cao 300px / Desktop: Col 3, Row 2 */}
           <div className="col-span-2 h-[300px] md:h-auto md:col-span-3 md:row-span-2 transform hover:scale-105 transition-transform duration-300">
             <Image
-              src="https://mona.media/template/assets/images/customer-intro/s2.jpg"
+              src="https://assets.kedi.media/images/4f35079be7725ce4078c-260.webp"
               alt="Support Team Member 1"
               width={400}
               height={600}
@@ -44,7 +44,7 @@ export default function ClientsSupportTeam() {
           {/* Mobile: 1 cột, cao 200px / Desktop: Col 3, Row 1 */}
           <div className="col-span-1 h-[200px] md:h-auto md:col-span-3 md:row-span-1 transform hover:scale-105 transition-transform duration-300">
             <Image
-              src="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765200840/s2_xkpkij.jpg"
+              src="https://assets.kedi.media/images/945f2c80c0d57f916de9-260.webp"
               alt="Support Team Member 2"
               width={400}
               height={300}
@@ -56,7 +56,7 @@ export default function ClientsSupportTeam() {
           {/* Mobile: 1 cột, cao 200px / Desktop: Col 3, Row 1 */}
           <div className="col-span-1 h-[200px] md:h-auto md:col-span-3 md:row-span-1 transform hover:scale-105 transition-transform duration-300">
             <Image
-              src="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765200840/s2_xkpkij.jpg"
+              src="https://assets.kedi.media/images/945f2c80c0d57f916de9-260.webp"
               alt="Support Team Member 3"
               width={400}
               height={300}
@@ -68,7 +68,7 @@ export default function ClientsSupportTeam() {
           {/* Mobile: Full 2 cột, cao 300px / Desktop: Col 3, Row 2 */}
           <div className="col-span-2 h-[300px] md:h-auto md:col-span-3 md:row-span-2 transform hover:scale-105 transition-transform duration-300">
             <Image
-              src="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765200840/s2_xkpkij.jpg"
+              src="https://assets.kedi.media/images/945f2c80c0d57f916de9-260.webp"
               alt="Support Team Member 4"
               width={400}
               height={600}
@@ -80,7 +80,7 @@ export default function ClientsSupportTeam() {
           {/* Mobile: 1 cột, cao 180px / Desktop: Col 2, Row 1 */}
           <div className="col-span-1 h-[180px] md:h-auto md:col-span-2 md:row-span-1 transform hover:scale-105 transition-transform duration-300">
             <Image
-              src="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765200840/s2_xkpkij.jpg"
+              src="https://assets.kedi.media/images/945f2c80c0d57f916de9-260.webp"
               alt="Support Team Member 5"
               width={300}
               height={300}
@@ -92,7 +92,7 @@ export default function ClientsSupportTeam() {
           {/* Mobile: 1 cột, cao 180px / Desktop: Col 2, Row 1 */}
           <div className="col-span-1 h-[180px] md:h-auto md:col-span-2 md:row-span-1 transform hover:scale-105 transition-transform duration-300">
             <Image
-              src="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765200840/s2_xkpkij.jpg"
+              src="https://assets.kedi.media/images/945f2c80c0d57f916de9-260.webp"
               alt="Support Team Member 6"
               width={300}
               height={300}
@@ -104,7 +104,7 @@ export default function ClientsSupportTeam() {
           {/* Mobile: Full 2 cột (cho đẹp đội hình), cao 180px / Desktop: Col 2, Row 1 */}
           <div className="col-span-2 h-[180px] md:h-auto md:col-span-2 md:row-span-1 transform hover:scale-105 transition-transform duration-300">
             <Image
-              src="https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765200840/s2_xkpkij.jpg"
+              src="https://assets.kedi.media/images/945f2c80c0d57f916de9-260.webp"
               alt="Support Team Member 7"
               width={300}
               height={300}

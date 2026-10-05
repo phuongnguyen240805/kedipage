@@ -19,42 +19,42 @@ export const testimonialImages: TestimonialImages = {
   verticalColumns: [
     {
       id: 'vertical-A',
-      src: 'https://mona.media/wp-content/uploads/2023/03/screencapture-sacdep24-monamedia-net-2025-01-08-13_40_50-768x4640.png',
+      src: 'https://assets.kedi.media/images/e147e3778707ca7a8e2d-768.webp',
       alt: 'Testimonial A',
       width: 250, // ĐỒNG NHẤT
       height: 180, // ĐỒNG NHẤT
     },
     {
       id: 'vertical-B',
-      src: 'https://mona.media/wp-content/uploads/2023/03/screencapture-sacdep24-monamedia-net-2025-01-08-13_40_50-768x4640.png',
+      src: 'https://assets.kedi.media/images/e147e3778707ca7a8e2d-768.webp',
       alt: 'Testimonial B',
       width: 250, // ĐỒNG NHẤT
       height: 180, // ĐỒNG NHẤT
     },
     {
       id: 'vertical-C',
-      src: 'https://mona.media/wp-content/uploads/2023/03/screencapture-sacdep24-monamedia-net-2025-01-08-13_40_50-768x4640.png',
+      src: 'https://assets.kedi.media/images/e147e3778707ca7a8e2d-768.webp',
       alt: 'Testimonial C',
       width: 250, // ĐỒNG NHẤT
       height: 180, // ĐỒNG NHẤT
     },
     {
       id: 'vertical-D',
-      src: 'https://mona.media/wp-content/uploads/2023/03/screencapture-primeluxe-monamedia-net-2024-09-05-11_25_06-768x3268.png',
+      src: 'https://assets.kedi.media/images/3e6d9be8979a75986514-768.webp',
       alt: 'Testimonial D',
       width: 250, // ĐỒNG NHẤT
       height: 180, // ĐỒNG NHẤT
     },
     {
       id: 'vertical-E',
-      src: 'https://mona.media/wp-content/uploads/2023/03/screencapture-sacdep24-monamedia-net-2025-01-08-13_40_50-768x4640.png',
+      src: 'https://assets.kedi.media/images/e147e3778707ca7a8e2d-768.webp',
       alt: 'Testimonial E',
       width: 250, // ĐỒNG NHẤT
       height: 180, // ĐỒNG NHẤT
     },
     {
       id: 'vertical-F',
-      src: 'https://mona.media/wp-content/uploads/2023/03/screencapture-mona-tour-monamedia-net-2024-05-22-13_13_29-1-400x1859.png',
+      src: 'https://assets.kedi.media/images/98e9853eab18beaba7f6-400.webp',
       alt: 'Testimonial F',
       width: 250, // ĐỒNG NHẤT
       height: 180, // ĐỒNG NHẤT

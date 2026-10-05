@@ -28,7 +28,7 @@ export type QuoteShareBrowserConfig = {
 };
 
 export type QuoteShareWindow = Window & {
-  MONA_QUOTE_CFG?: QuoteShareBrowserConfig;
-  __monaQuoteInit?: boolean;
+  KEDI_QUOTE_CFG?: QuoteShareBrowserConfig;
+  __kediQuoteInit?: boolean;
   qrcode?: unknown;
 };

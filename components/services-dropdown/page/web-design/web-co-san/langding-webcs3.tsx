@@ -73,7 +73,7 @@ export default function Langdingwebsc3() {
             <div className="text-center group">
               <div className="relative mb-8 transition-transform duration-500 group-hover:-translate-y-4">
                 <Image
-                  src="https://mona.media/template/assets/images/page-mau-website/experience-01.avif" // Thay đường dẫn ảnh của bạn
+                  src="https://assets.kedi.media/images/7a4b77ea841f84506829-574.webp" // Thay đường dẫn ảnh của bạn
                   alt="Cơ hội trải nghiệm giao diện thực tế"
                   width={600}
                   height={400}
@@ -95,7 +95,7 @@ export default function Langdingwebsc3() {
             <div className="text-center group">
               <div className="relative mb-8 transition-transform duration-500 group-hover:-translate-y-4">
                 <Image
-                  src="https://mona.media/template/assets/images/page-mau-website/experience-02.avif" // Thay đường dẫn ảnh của bạn
+                  src="https://assets.kedi.media/images/537e5d7f2688f4e381a9-571.webp" // Thay đường dẫn ảnh của bạn
                   alt="Website với đa dạng ngành nghề"
                   width={600}
                   height={400}

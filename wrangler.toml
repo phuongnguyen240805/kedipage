@@ -1,4 +1,10 @@
 name = "kedi-web"
+workers_dev = true
+account_id = "a220275c9c8460745e0351255c7459fd"
+routes = [
+  { pattern = "kedi.media", custom_domain = true },
+  { pattern = "www.kedi.media", custom_domain = true }
+]
 main = ".open-next/worker.js"
 compatibility_date = "2026-09-14"
 compatibility_flags = ["nodejs_compat", "global_fetch_strictly_public"]
@@ -12,10 +18,6 @@ NEXTJS_ENV = "production"
 
 [observability]
 enabled = true
-
-# Cloudflare Images binding — OpenNext uses this for /_next/image resizing.
-[images]
-binding = "IMAGES"
 
 # Self-reference required by OpenNext caching / revalidation.
 # Service name must match the Worker name.

@@ -1,0 +1,137 @@
+[
+  {
+    "url": "https://mona.media/wp-content/uploads/2023/06/huong-dan-lap-ke-hoach-seo.png",
+    "migrated": false,
+    "file": "components/blog/data/seo-slides-show-data.ts"
+  },
+  {
+    "url": "https://mona.media/wp-content/uploads/2023/03/dich-vu-tu-van-seo-cho-doanh-nghiep.png",
+    "migrated": false,
+    "file": "components/blog/data/seo-slides-show-data.ts"
+  },
+  {
+    "url": "https://res.cloudinary.com/dzkcqktcl/image/upload/f_auto,q_auto/v1765201163/iocn-dv.png",
+    "migrated": false,
+    "file": "components/clients-section/clients-trust/clients-trust.tsx"
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?q=80&w=2000",
+    "migrated": false,
+    "file": "components/services-dropdown/page/hosting/CloudHosting/container/GameDevService.tsx"
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=800",
+    "migrated": false,
+    "file": "components/services-dropdown/page/hosting/CloudHosting/container/VideoStreaming.tsx"
+  },
+  {
+    "url": "https://mona.media/assets/images/chuan-image/ab-three-cover-top.svg",
+    "migrated": false,
+    "file": "public/blog-clone/mona-common/css/merge.min.css"
+  },
+  {
+    "url": "https://mona.media/template/assets/images/home-mau-website/bg-border.png",
+    "migrated": false,
+    "file": "public/blog-clone/mona-common/css/merge.min.css"
+  },
+  {
+    "url": "https://mona.media/template/assets/images/home-mau-website/avs-br-03.png",
+    "migrated": false,
+    "file": "public/blog-clone/mona-common/css/merge.min.css"
+  },
+  {
+    "url": "https://mona.media/template/assets/images/home-mau-website/bg-dvs-twice-sec.png",
+    "migrated": false,
+    "file": "public/blog-clone/mona-common/css/merge.min.css"
+  },
+  {
+    "url": "https://mona.media/template/assets/images/du-an-mau/mask.png",
+    "migrated": false,
+    "file": "public/blog-clone/mona-common/css/merge.min.css"
+  },
+  {
+    "url": "https://mona.media/template/assets/images/du-an-mau/br-02.png",
+    "migrated": false,
+    "file": "public/blog-clone/mona-common/css/merge.min.css"
+  },
+  {
+    "url": "https://mona.media/template/assets/images/fb-dvs/txt-cus-line.png",
+    "migrated": false,
+    "file": "public/blog-clone/mona-common/css/merge.min.css"
+  },
+  {
+    "url": "https://mona.media/template/assets/images/fb-dvs/line-03.png",
+    "migrated": false,
+    "file": "public/blog-clone/mona-common/css/merge.min.css"
+  },
+  {
+    "url": "https://mona.media/template/assets/images/fb-dvs/cus-img.png",
+    "migrated": false,
+    "file": "public/blog-clone/mona-common/css/merge.min.css"
+  },
+  {
+    "url": "https://mona.media/template/assets/images/fb-dvs/line.png",
+    "migrated": false,
+    "file": "public/blog-clone/mona-common/css/merge.min.css"
+  },
+  {
+    "url": "https://mona.media/template/assets/images/fb-dvs/line-01.png",
+    "migrated": false,
+    "file": "public/blog-clone/mona-common/css/merge.min.css"
+  },
+  {
+    "url": "https://mona.media/template/assets/images/fb-dvs/line-02.png",
+    "migrated": false,
+    "file": "public/blog-clone/mona-common/css/merge.min.css"
+  },
+  {
+    "url": "https://mona.media/template/assets/images/fb-dvs/mask-01.png",
+    "migrated": false,
+    "file": "public/blog-clone/mona-common/css/merge.min.css"
+  },
+  {
+    "url": "https://mona.media/template/assets/images/fb-dvs/mask-02.png",
+    "migrated": false,
+    "file": "public/blog-clone/mona-common/css/merge.min.css"
+  },
+  {
+    "url": "https://mona.media/template/assets/images/fb-dvs/bg-violet.png",
+    "migrated": false,
+    "file": "public/blog-clone/mona-common/css/merge.min.css"
+  },
+  {
+    "url": "https://mona.media/template/assets/images/fb-dvs/bg-violet-02.png",
+    "migrated": false,
+    "file": "public/blog-clone/mona-common/css/merge.min.css"
+  },
+  {
+    "url": "https://mona.media/template/assets/images/fb-dvs/bg-violet-03.png",
+    "migrated": false,
+    "file": "public/blog-clone/mona-common/css/merge.min.css"
+  },
+  {
+    "url": "https://mona.media/template/assets/images/fb-dvs/bg-pink.png",
+    "migrated": false,
+    "file": "public/blog-clone/mona-common/css/merge.min.css"
+  },
+  {
+    "url": "https://mona.media/template/assets/images/fb-dvs/dvs-about-img-cir.png",
+    "migrated": false,
+    "file": "public/blog-clone/mona-common/css/merge.min.css"
+  },
+  {
+    "url": "https://mona.media/template/assets/images/fb-dvs/dvs-about-sec-footer-mask.png",
+    "migrated": false,
+    "file": "public/blog-clone/mona-common/css/merge.min.css"
+  },
+  {
+    "url": "https://mona.media/template/assets/images/fb-dvs/care-arrow.png",
+    "migrated": false,
+    "file": "public/blog-clone/mona-common/css/merge.min.css"
+  },
+  {
+    "url": "https://mona.media/template/assets/videos/login/video-demo-pin.png",
+    "migrated": false,
+    "file": "public/blog-clone/mona-common/css/root.min.css"
+  }
+]

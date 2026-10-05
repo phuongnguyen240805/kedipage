@@ -52,7 +52,7 @@ const LandingPage1GD = () => {
               </span>
               <div className="mt-2">
                 <img
-                  src="https://mona.media/template/assets/images/logo/logo/media-white-logo-less.svg"
+                  src="https://assets.kedi.media/images/2518b80a2e36a3d30065.svg"
                   alt="Kedi Media"
                   className="h-10 w-auto"
                 />
@@ -66,7 +66,7 @@ const LandingPage1GD = () => {
                 giảng viên khác
               </span>
               <img
-                src="https://mona.media/template/assets/images/tkw-ban-khoa-hoc/logo-kha.png"
+                src="https://assets.kedi.media/images/f4bde35a61a543c0571a-401.webp"
                 alt="KHA"
                 className="h-6 md:h-8 w-auto object-contain flex-shrink-0"
               />

@@ -15,7 +15,7 @@ const JourneySection = () => {
                 <img
                   alt="Couple walking"
                   className="rounded-2xl shadow-lg w-full h-full object-cover"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWKTOvCnVFYA25JfohHswK4CBjgEer59Xh5w3ZeJpJTsUaITajInvOR3BERt2UJw5kgrHAkPNDOEN-9jCJIJKjkOSu5oUsMGWzkc9inKWb0blpNgA7ArK2_S6om0GfUOdDo53uWuUO8lPa8c3iUrDLwhFYCOZnwt3_mwi62uUGALZaYQ6DHanputJoVls8irojJlhSB0wZDGLp_Vr4aSIJFL747gBybWTr0CQVO1oUelhX1IvtauOh7JTrycwsoTPlh-qj7UoBxEKL"
+                  src="https://assets.kedi.media/images/bd16afa6d20a352d6b9a-512.webp"
                 />
               </div>
               </FadeIn>
@@ -24,7 +24,7 @@ const JourneySection = () => {
                 <img
                   alt="Wedding flowers"
                   className="rounded-2xl shadow-lg w-full h-full object-cover"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8CNRFEECFNj-yR_NCEFYfpZYzf1iMymaSucKXNBZtYIUfP5Z_5CW0dQ5Vbb49IRIQJCdc3ElrdhOJLxjJCqXZMEyulm-sPOqGdQrjAEgoBB7rTo338LMjoJalE02JRCq4oo8jeO-fs0OsyzQLYN3DeBXYm_Tp300PS621k09JbruRxD9a03uvIz7hEXDKP0-TUB5SgGCunGS-GW2BMPYry8tRYCf1gXY-KHX-xvte5zYSBO1bBqmkbexGbixmuIcKHwlD1aQAvnOR"
+                  src="https://assets.kedi.media/images/45c6b00770d3e2533039-512.webp"
                 />
               </div>
               </FadeIn>
@@ -33,7 +33,7 @@ const JourneySection = () => {
                 <img
                   alt="Sunset proposal"
                   className="rounded-2xl shadow-lg w-full h-full object-cover"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzOoDmwqzj3J3uRgP4Q44xVoaRo-HLJxH1PZQOgXurYYPS1oKappoKJtfbRdCEaQff4fDQnrs76E-e_hNSI6vcnJ9xucY1c74A6YVXYrLUt-Ox2BNnte9rHm4xJgdi-YpCsWaTac5-gpiRovlw4iKC4kqbfCWOgucb_RpyisQ45-srEPzE-WscBB8j5r4lHYCLo6K9ui8-mCM3213a240Z9mzF2698PlA9yTD_azBF-KmbxrehwSjH5rTcN6kEIyR4t8oEkfCRjqFI"
+                  src="https://assets.kedi.media/images/ee9c6c053c18a1250137-512.webp"
                 />
               </div>
            

@@ -17,7 +17,7 @@ export default function Hero() {
       <div id="home-glass-scene" className="home-glass-scene" aria-hidden="true"
       style={{
         backgroundImage:
-          "radial-gradient(circle at 72% 28%, rgba(255,198,41,.16), transparent 32%), radial-gradient(circle at 58% 58%, rgba(68,170,255,.12), transparent 28%), linear-gradient(90deg, rgba(8,34,77,.88) 0%, rgba(8,34,77,.76) 34%, rgba(8,34,77,.42) 63%, rgba(8,34,77,.20) 100%), url('/homepage/hero-background-future-network.png')",
+          "radial-gradient(circle at 72% 28%, rgba(255,198,41,.16), transparent 32%), radial-gradient(circle at 58% 58%, rgba(68,170,255,.12), transparent 28%), linear-gradient(90deg, rgba(8,34,77,.88) 0%, rgba(8,34,77,.76) 34%, rgba(8,34,77,.42) 63%, rgba(8,34,77,.20) 100%), url('https://assets.kedi.media/images/f8b21b396183be7e7ee5-1913.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -39,15 +39,15 @@ export default function Hero() {
                       delay: reduceMotion ? 0 : 1.5,
                     }}
                     // Chiều cao của Box ảnh cũng tự động nhỏ lại trên Mobile
-                    className="flex items-center overflow-hidden h-[9vw] md:h-[50px] lg:h-[60px]"
+                    className="flex items-center overflow-hidden h-[7.5vw] md:h-[40px] lg:h-[46px]"
                   >
                     <Boderyelow>
                       <Image
                         width={132}
                         height={52}
-                        src="/brand/kedi-logo-reverse.png"
+                        src="https://assets.kedi.media/images/521d6ee8430017434c68-380.webp"
                         alt="Kedi.Media logo"
-                        className="h-auto w-[110px] object-contain md:w-[132px]"
+                        className="h-full w-[110px] object-contain px-2 py-1 md:w-[132px]"
                       />
                     </Boderyelow>
                   </motion.span>

@@ -9,17 +9,17 @@ const StartupService = () => {
     {
       title: "Tiết kiệm thời gian",
       desc: "Giảm thiểu thời gian triển khai, loại bỏ mọi sự phức tạp để Startup của bạn ra mắt sản phẩm sớm nhất với nền tảng đám mây của chúng tôi",
-      icon: "https://cloudfly.vn/image/solution/icon_lock.svg",
+      icon: "https://assets.kedi.media/images/a9de01b2cef633a8d776.svg",
     },
     {
       title: "Thanh toán tự động",
       desc: "Tiết kiệm chi phí vận hành tối đa cho Startup của bạn với hệ thống thanh toán theo chu kỳ theo giờ, tháng, năm linh hoạt và có thể dự đoán được",
-      icon: "https://cloudfly.vn/image/solution/icon_calendar.svg",
+      icon: "https://assets.kedi.media/images/db8c02d79afd149dadd8.svg",
     },
     {
       title: "Hạn chế rủi ro",
       desc: "Rút ngắn quy trình vận hành doanh nghiệp, hạn chế rủi ro và phát triển nhanh chóng cho Startup của bạn",
-      icon: "https://cloudfly.vn/image/solution/icon_darts.svg",
+      icon: "https://assets.kedi.media/images/f33cb208631bfe8ebea4.svg",
     }
   ];
 

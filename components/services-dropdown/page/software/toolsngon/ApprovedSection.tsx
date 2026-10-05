@@ -19,25 +19,25 @@ export default function ApprovedSection() {
         <div className="flex flex-col lg:flex-row items-center gap-2 justify-center bg-blue-200/50 border-blue-500 border rounded-2xl p-2">
           <div className="flex -space-x-4 items-center justify-center">
             {[
-              '651ef29d1dd245d6478fa41e_Group%20417.webp',
-              '651ef29d819bbe057a520e22_Group%20424.webp',
-              '651ef29dd040c8ebf5dba446_Group%20425.webp',
-              '651ef29dc73864e085307d33_Group%20427.webp',
-              '651ef29de675573506c0e015_Group%20428.webp',
-              '651ef29c912d191888cc24e3_Group%20430.webp',
-              '651ef29c2bf0011833da4f5f_Group%20429.webp',
-              '651ef29ce790fe18172f222e_Group%20431.webp',
-              '651ef29ca20c548195e446da_Group%20415.webp',
-              '651ef29caf0c3b34a405d646_Group%20433.webp',
-              '651ef29c0bcc2eb5951edda4_Group%20436.webp',
-              '651ef29ce8f0f5dbfc66cee7_Group%20435.webp',
-              '651ef29ca20c548195e446da_Group%20415.webp',
-              '651ef29cd2f39ddc14002ab4_Group%20418.webp',
-              '651f139ce9b1681b512fbc7b_Group%20438.webp',
+              "https://assets.kedi.media/images/77edc9a87b38ccf164dc-132.webp",
+              "https://assets.kedi.media/images/c228f2273cada761ecb1-132.webp",
+              "https://assets.kedi.media/images/a9faf772dee64f99632b-132.webp",
+              "https://assets.kedi.media/images/595216fca720acbca7d9-132.webp",
+              "https://assets.kedi.media/images/d5edab20c57a963c018d-132.webp",
+              "https://assets.kedi.media/images/8ec5c6312557927aef6c-132.webp",
+              "https://assets.kedi.media/images/b5778f15dc070aa65935-132.webp",
+              "https://assets.kedi.media/images/e2167713584c38432acc-132.webp",
+              "https://assets.kedi.media/images/b9495ae6be885e93a97e-132.webp",
+              "https://assets.kedi.media/images/14be1bb68760543ece36-132.webp",
+              "https://assets.kedi.media/images/1300107ce30150b11921-132.webp",
+              "https://assets.kedi.media/images/7856445256178fabe009-132.webp",
+              "https://assets.kedi.media/images/b9495ae6be885e93a97e-132.webp",
+              "https://assets.kedi.media/images/37b44012f6e617f35bdc-132.webp",
+              "https://assets.kedi.media/images/22bd9d227ef6c2b58980-132.webp",
             ].map((fileName, idx) => (
               <Image
                 key={idx}
-                src={`https://cdn.prod.website-files.com/60352a9beb7f922ce2aa6d6a/${fileName}`}
+                src={fileName}
                 alt=""
                 width={56} // w-14 = 56px
                 height={56}

@@ -32,7 +32,7 @@ export const aiAgentPageData: AiAgentPageData = {
       role: 'AI Agent quản trị doanh nghiệp, bộ não điều hành',
       description:
         'Chủ doanh nghiệp hỏi một câu khó: “tăng giá 30% hay giảm giá lấy quy mô?”, “bao nhiêu tiền đang treo vì quên chăm khách?”. Kedi Quản Trị ngồi trên toàn bộ dữ liệu 10 năm (hợp đồng, báo giá, giờ công, hội thoại khách) rồi trả lời kèm số, kèm lập luận, kèm việc cần làm. Kết nối thẳng CRM, ERP có sẵn của doanh nghiệp.',
-      image: '/software-clone/ai-agent/assets/kedi-quan-tri.png',
+      image: 'https://assets.kedi.media/images/83793324438da23d02b6-1254.webp',
       status: 'chay',
       system: 'core',
       systemLabel: 'Đầu não của KEDI 1.0',
@@ -45,7 +45,7 @@ export const aiAgentPageData: AiAgentPageData = {
       role: 'AI Agent quản trị website',
       description:
         'Thả vào nhóm Zalo của khách. Chủ doanh nghiệp nhắn một câu, “đổi banner”, “viết 5 bài chuẩn SEO”, “web load chậm xử lý đi”, là Kedi Webmaster điều phối hơn 20 agent con bên dưới để tự làm, không cần thuê designer, content hay lập trình viên.',
-      image: '/software-clone/ai-agent/assets/kedi-automate.png',
+      image: 'https://assets.kedi.media/images/ffc1569337686919aa34-1254.webp',
       status: 'ban',
       system: 'web',
       systemLabel: 'Cổng của KEDI Web 1.0',
@@ -57,7 +57,7 @@ export const aiAgentPageData: AiAgentPageData = {
       role: 'AI Agent trả lời tự động & quản lý Lead',
       description:
         'Trực tổng đài đa kênh (website, Messenger, Zalo OA, tổng đài ảo), gom mọi cuộc trò chuyện về một hồ sơ lead, tự nhắc deal và nuôi khách tới lúc chốt. Chính con bot đang trả lời khách trên hệ thống KEDI là Kedi Chăm Sóc Lead.',
-      image: '/software-clone/ai-agent/assets/kedi-cham-soc-lead.png',
+      image: 'https://assets.kedi.media/images/591351c34c9b2bfc2ed8-1254.webp',
       status: 'ban',
       system: 'sales',
       systemLabel: 'Cổng của KEDI Sales 1.0',
@@ -69,7 +69,7 @@ export const aiAgentPageData: AiAgentPageData = {
       role: 'AI Agent chatbot chốt đơn tự động',
       description:
         'Bản cho bán lẻ & e-commerce: dí khách chốt đơn đa kênh (Web, Shopee, TikTok Shop, Messenger, Zalo), tự lên đơn, tạo mã QR VietQR, đối soát đã thanh toán, gom đơn ba sàn và đẩy sang đơn vị vận chuyển, rồi nuôi lại khách qua Zalo.',
-      image: '/software-clone/ai-agent/assets/kedi-commerce.png',
+      image: 'https://assets.kedi.media/images/a311c77623a4801446b4-1254.webp',
       status: 'ban',
       system: 'commerce',
       systemLabel: 'Cổng của KEDI Commerce 1.0',
@@ -81,7 +81,7 @@ export const aiAgentPageData: AiAgentPageData = {
       role: 'AI Agent soạn hợp đồng & pháp chế',
       description:
         'Account nhắn tự nhiên trong Telegram, Gấu đọc tài liệu nguồn rồi soạn hợp đồng, biên bản, phụ lục, giấy đề nghị thanh toán; tự suy đúng pháp nhân & VAT, render khuôn vàng không lọt ô trống. Sếp bấm Duyệt là tự ký nháy, in và ký điện tử AMIS WeSign.',
-      image: '/software-clone/ai-agent/assets/kedi-phap-che.png',
+      image: 'https://assets.kedi.media/images/295cb4008f1c6be28348-1254.webp',
       status: 'ban',
       system: 'legal',
       systemLabel: 'Cổng của KEDI Legal 1.0',
@@ -93,7 +93,7 @@ export const aiAgentPageData: AiAgentPageData = {
       role: 'AI Agent báo giá tự động',
       description:
         'Account nhắn yêu cầu, Gấu research số liệu thật (DataForSEO), bóc scope rồi dựng báo giá & proposal SEO, website, phần mềm, media; xuất Google Doc/Sheet/Slides chia sẻ sẵn, đúng nhận diện KEDI, số liệu trung thực để gửi khách trong vài phút.',
-      image: '/software-clone/ai-agent/assets/kedi-analytics.png',
+      image: 'https://assets.kedi.media/images/1cc6fe0ca1b1ce625199-1254.webp',
       status: 'ban',
       system: 'sales',
       systemLabel: 'Cổng của KEDI Sales 1.0',
@@ -105,7 +105,7 @@ export const aiAgentPageData: AiAgentPageData = {
       role: 'AI Agent tư vấn viên & chăm sóc y tế cho người già',
       description:
         'Trực Web · Zalo · Messenger 24/7. Tư vấn người quan tâm chọn cơ sở, đồng hành cùng người cao tuổi: nhắc thuốc, nhắc lịch khám, hỏi đáp sức khoẻ, hoá giải lo lắng cảm xúc; trả lời trong 30 giây kể cả lễ Tết.',
-      image: '/software-clone/ai-agent/assets/kedi-chat.png',
+      image: 'https://assets.kedi.media/images/f9867e1686ccb246845a-1254.webp',
       status: 'trienkhai',
       system: 'care',
       systemLabel: 'Cổng của KEDI Care 1.0',
@@ -117,7 +117,7 @@ export const aiAgentPageData: AiAgentPageData = {
       role: 'AI kết nối bệnh nhân & người nhà',
       description:
         '7h sáng tự gửi nhật ký chăm sóc: bữa ăn, giấc ngủ, sinh hiệu kèm ảnh. Cảnh báo sức khoẻ chủ động, nhắc viện phí kèm mã QR VietQR điền sẵn, để người nhà luôn an tâm thay vì gọi điện hỏi liên tục.',
-      image: '/software-clone/ai-agent/assets/kedi-cham-soc-lead.png',
+      image: 'https://assets.kedi.media/images/591351c34c9b2bfc2ed8-1254.webp',
       status: 'trienkhai',
       system: 'care',
       systemLabel: 'Cổng của KEDI Care 1.0',
@@ -129,7 +129,7 @@ export const aiAgentPageData: AiAgentPageData = {
       role: 'AI Agent hỗ trợ quản lý & vận hành viện dưỡng lão, bệnh viện',
       description:
         'Báo cáo sáng tự động (doanh thu, công nợ, công suất, lead), hỏi đáp số liệu tự nhiên, và hành động ngay trong chat: duyệt việc, giao nhắc, cảnh báo công nợ & hợp đồng đến hạn.',
-      image: '/software-clone/ai-agent/assets/kedi-quan-tri.png',
+      image: 'https://assets.kedi.media/images/83793324438da23d02b6-1254.webp',
       status: 'trienkhai',
       system: 'care',
       systemLabel: 'Cổng của KEDI Care 1.0',
@@ -141,7 +141,7 @@ export const aiAgentPageData: AiAgentPageData = {
       role: 'AI Agent trợ giảng eLearning',
       description:
         'Sát cánh cùng giảng viên trong mọi khâu xây dựng & bán khoá học online: lên kịch bản bài giảng, soạn slide & quiz, dựng video, viết landing khoá học, chạy phễu quảng cáo và chốt học viên, biến một chuyên gia thành một “trung tâm đào tạo”.',
-      image: '/software-clone/ai-agent/assets/kedi-lop-pho.png',
+      image: 'https://assets.kedi.media/images/175d69dbf56dceef5cf6-1254.webp',
       status: 'xay',
       system: 'elearning',
       systemLabel: 'Cổng của KEDI eLearning 1.0',
@@ -165,7 +165,7 @@ export const aiAgentPageData: AiAgentPageData = {
       role: 'AI Agent tuyển dụng · phỏng vấn tự động · tự động hóa 80% quy trình',
       description:
         'Không lọc bằng CV: Gấu cho ứng viên xử 3 tình huống khách hàng thật, chấm điểm khách quan kèm bằng chứng từng câu, tự gửi email, tự xếp lịch phỏng vấn với leader. KEDI đang tuyển Account bằng chính con này: khoảng 12.000đ tiền ads cho một CV qua vòng trong, 80% quy trình tự chạy, leader chỉ còn duyệt hồ sơ và phỏng vấn 1-1.',
-      image: '/software-clone/ai-agent/assets/kedi-tuyen-dung.png',
+      image: 'https://assets.kedi.media/images/969f1e73f9b54bb82eaf-1254.webp',
       status: 'chay',
       system: 'hrm',
       systemLabel: 'Cổng của KEDI HRM 1.0',
@@ -177,7 +177,7 @@ export const aiAgentPageData: AiAgentPageData = {
       role: 'AI chăm sóc khách hàng · hỗ trợ account, sale, tư vấn viên và hành động giúp',
       description:
         'Đứng cạnh đội account/sale như một co-pilot: nhận lead nóng, điều phối gọi gấp trong 3 phút, trả lời giùm lúc khách nhắn ngoài giờ, dựng tài liệu & nhắc deal, và tự hành động thay (tạo phiếu, cập nhật hồ sơ, gửi tin) tới khi ký hợp đồng.',
-      image: '/software-clone/ai-agent/assets/kedi-cham-soc-lead.png',
+      image: 'https://assets.kedi.media/images/591351c34c9b2bfc2ed8-1254.webp',
       status: 'noibo',
       system: 'sales',
       systemLabel: 'Cổng của KEDI Sales 1.0',
@@ -189,7 +189,7 @@ export const aiAgentPageData: AiAgentPageData = {
       role: 'AI Agent gọi điện telesales, gọi ra & remarketing bằng voice',
       description:
         'Gọi ra vài ngàn cuộc mỗi ngày bằng giọng nói tự nhiên như người thật: chào hỏi, tư vấn liệu trình, lắng nghe khách trả lời rồi lọc đúng người quan tâm. Đánh thức data khách cũ, remarketing tự động bằng voice, không cần thêm nhân viên.',
-      image: '/software-clone/ai-agent/assets/kedi-chat.png',
+      image: 'https://assets.kedi.media/images/f9867e1686ccb246845a-1254.webp',
       status: 'trienkhai',
       system: 'sales',
       systemLabel: 'Cổng của KEDI Sales 1.0',
@@ -201,7 +201,7 @@ export const aiAgentPageData: AiAgentPageData = {
       role: 'AI Agent email remarketing',
       description:
         'Đêm nào cũng đọc lại hồ sơ khách cũ đã nguội, rồi tự viết email cá nhân hóa nhắn lại từng người: có câu chuyện, có offer, và khi khách trả lời thì tự trả lời tiếp. Không spam, không hứa lèo.',
-      image: '/software-clone/ai-agent/assets/kedi-thuc-khuya.png',
+      image: 'https://assets.kedi.media/images/401e8f24206a1518b8c0-1254.webp',
       status: 'chay',
       systemLabel: 'Remarketing tự động',
       categories: ['sales'],
@@ -351,25 +351,25 @@ export const aiAgentPageData: AiAgentPageData = {
       {
         agent: 'Kedi Chăm Sóc Lead',
         action: 'Gom hội thoại đa kênh về một hồ sơ lead, tự nhắc deal và nuôi khách tới lúc chốt.',
-        image: '/software-clone/ai-agent/assets/kedi-cham-soc-lead.png',
+        image: 'https://assets.kedi.media/images/591351c34c9b2bfc2ed8-1254.webp',
         state: '24/7',
       },
       {
         agent: 'Kedi Báo Giá',
         action: 'Research dữ liệu, bóc scope và dựng báo giá/proposal đúng brand để gửi khách.',
-        image: '/software-clone/ai-agent/assets/kedi-analytics.png',
+        image: 'https://assets.kedi.media/images/1cc6fe0ca1b1ce625199-1254.webp',
         state: 'Tự động',
       },
       {
         agent: 'Kedi Webmaster',
         action: 'Nhận yêu cầu bằng lời rồi điều phối các agent con để viết nội dung, sửa web và tối ưu tốc độ.',
-        image: '/software-clone/ai-agent/assets/kedi-automate.png',
+        image: 'https://assets.kedi.media/images/ffc1569337686919aa34-1254.webp',
         state: 'Đang chạy',
       },
       {
         agent: 'Kedi Tuyển Dụng',
         action: 'Sàng lọc tình huống, chấm điểm, gửi email và xếp lịch phỏng vấn với leader.',
-        image: '/software-clone/ai-agent/assets/kedi-tuyen-dung.png',
+        image: 'https://assets.kedi.media/images/969f1e73f9b54bb82eaf-1254.webp',
         state: '80% quy trình',
       },
     ],
@@ -403,7 +403,7 @@ export const aiAgentPageData: AiAgentPageData = {
         title: 'Chốt đơn tự động đa kênh',
         description: 'Dí khách chốt đơn đa kênh, tự lên đơn, tạo QR thanh toán, gom đơn ba sàn.',
         agent: 'Kedi Chốt Đơn',
-        image: '/software-clone/ai-agent/assets/kedi-commerce.png',
+        image: 'https://assets.kedi.media/images/a311c77623a4801446b4-1254.webp',
       },
       {
         index: '02',
@@ -411,7 +411,7 @@ export const aiAgentPageData: AiAgentPageData = {
         title: 'Trả lời & quản lý lead 24/7',
         description: 'Trực đa kênh 24/7, gom hội thoại về một hồ sơ lead, tự nhắc deal tới khi chốt.',
         agent: 'Kedi Chăm Sóc Lead',
-        image: '/software-clone/ai-agent/assets/kedi-cham-soc-lead.png',
+        image: 'https://assets.kedi.media/images/591351c34c9b2bfc2ed8-1254.webp',
       },
       {
         index: '03',
@@ -419,7 +419,7 @@ export const aiAgentPageData: AiAgentPageData = {
         title: 'AI Agent quản trị website',
         description: 'Nhắn một câu trong Zalo, hơn 20 agent con tự viết bài SEO, sửa web, tối ưu tốc độ.',
         agent: 'Kedi Webmaster',
-        image: '/software-clone/ai-agent/assets/kedi-automate.png',
+        image: 'https://assets.kedi.media/images/ffc1569337686919aa34-1254.webp',
       },
       {
         index: '04',
@@ -427,7 +427,7 @@ export const aiAgentPageData: AiAgentPageData = {
         title: 'Soạn hợp đồng & trình ký tự động',
         description: 'Đọc tài liệu nguồn, soạn hợp đồng, biên bản chuẩn pháp nhân & VAT, ký nháy điện tử AMIS WeSign.',
         agent: 'Kedi Pháp Chế',
-        image: '/software-clone/ai-agent/assets/kedi-phap-che.png',
+        image: 'https://assets.kedi.media/images/295cb4008f1c6be28348-1254.webp',
       },
       {
         index: '05',
@@ -435,7 +435,7 @@ export const aiAgentPageData: AiAgentPageData = {
         title: 'Báo giá SEO · website · media tự động',
         description: 'Research số liệu thật, dựng báo giá & proposal đúng brand ra Google Doc/Slides để gửi khách ngay.',
         agent: 'Kedi Báo Giá',
-        image: '/software-clone/ai-agent/assets/kedi-analytics.png',
+        image: 'https://assets.kedi.media/images/1cc6fe0ca1b1ce625199-1254.webp',
       },
       {
         index: '06',
@@ -443,7 +443,7 @@ export const aiAgentPageData: AiAgentPageData = {
         title: 'Sản xuất nội dung & SEO',
         description: 'Đào từ khoá, dựng dàn ý, viết bài chuẩn SEO, làm ảnh và banner theo lịch nội dung.',
         agent: 'Kedi Webmaster',
-        image: '/software-clone/ai-agent/assets/kedi-automate.png',
+        image: 'https://assets.kedi.media/images/ffc1569337686919aa34-1254.webp',
       },
       {
         index: '07',
@@ -451,7 +451,7 @@ export const aiAgentPageData: AiAgentPageData = {
         title: 'AI Agent quản trị nội bộ',
         description: 'Báo cáo sáng tự động, hỏi đáp số liệu tự nhiên, duyệt việc và cảnh báo công nợ trong chat.',
         agent: 'Kedi Quản Trị',
-        image: '/software-clone/ai-agent/assets/kedi-quan-tri.png',
+        image: 'https://assets.kedi.media/images/83793324438da23d02b6-1254.webp',
       },
       {
         index: '08',
@@ -459,7 +459,7 @@ export const aiAgentPageData: AiAgentPageData = {
         title: 'Tự động sàng lọc & phỏng vấn',
         description: 'Sàng lọc ứng viên, phỏng vấn vòng đầu qua chat, chấm điểm ứng viên và hẹn lịch vòng sau.',
         agent: 'Kedi Tuyển Dụng',
-        image: '/software-clone/ai-agent/assets/kedi-tuyen-dung.png',
+        image: 'https://assets.kedi.media/images/969f1e73f9b54bb82eaf-1254.webp',
       },
     ],
   },

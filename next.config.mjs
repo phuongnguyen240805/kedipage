@@ -43,12 +43,14 @@ const nextConfig = {
     return config;
   },
   images: {
-    // Default /_next/image optimizer. OpenNext resizes via the IMAGES binding
-    // (not /cdn-cgi/image, which does not run on workers.dev).
+    // Image sizes are generated offline and served directly by kedi-assest.
+    loader: 'custom',
+    loaderFile: './lib/cloudflare-image-loader.ts',
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     remotePatterns: [
+      'assets.kedi.media',
       'utfs.io',
       'in8cddcab4.ufs.sh',
       'github.com',

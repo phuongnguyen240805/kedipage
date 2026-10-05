@@ -16,7 +16,7 @@ const teamMembers = [
     role: 'CEO',
     description: 'Định hướng chiến lược, kết nối đội ngũ và đảm bảo mỗi dự án được triển khai đúng mục tiêu kinh doanh của khách hàng.',
     skills: ['Strategy', 'Leadership', 'Business'],
-    image: '/homepage/team/my-linh.webp',
+    image: 'https://assets.kedi.media/images/13598ec04995d202918f-1200.webp',
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const teamMembers = [
     role: 'Business Development',
     description: 'Đồng hành từ giai đoạn tìm hiểu nhu cầu, tư vấn giải pháp đến xây dựng phương án hợp tác phù hợp cho từng doanh nghiệp.',
     skills: ['BD', 'Consulting', 'Partnership'],
-    image: '/homepage/team/duc-thinh.webp',
+    image: 'https://assets.kedi.media/images/fb752fde56c870c91cd4-843.webp',
   },
   {
     id: 3,
@@ -46,7 +46,7 @@ const teamMembers = [
     role: 'Senior Frontend Developer',
     description: 'Xây dựng trải nghiệm giao diện, tương tác và hiệu năng phía frontend với trọng tâm là tính nhất quán, responsive và dễ sử dụng.',
     skills: ['Frontend', 'UI Engineering', 'Performance'],
-    image: '/homepage/team/the-cong.webp',
+    image: 'https://assets.kedi.media/images/5ca4b7ada8171cb8b1d4-800.webp',
   },
   {
     id: 5,
@@ -56,7 +56,7 @@ const teamMembers = [
     role: 'Senior Backend Developer',
     description: 'Phát triển backend, API và luồng dữ liệu phục vụ các hệ thống web, phần mềm và quy trình tự động hóa của KEDI.',
     skills: ['Backend', 'API', 'Data'],
-    image: '/homepage/team/nguyen-phuong.jpg',
+    image: 'https://assets.kedi.media/images/7e6f3f8147241cb9028c-256.webp',
   },
   {
     id: 6,
@@ -66,7 +66,7 @@ const teamMembers = [
     role: 'Sales Manager',
     description: 'Phụ trách kết nối nhu cầu thực tế của khách hàng với đội triển khai, theo sát tiến độ tư vấn và trải nghiệm trong suốt quá trình hợp tác.',
     skills: ['Sales', 'Customer Success', 'Growth'],
-    image: '/homepage/team/phi-den.webp',
+    image: 'https://assets.kedi.media/images/6e96cdbc1d797c9ccad1-952.webp',
   },
   {
     id: 7,
@@ -76,7 +76,7 @@ const teamMembers = [
     role: 'Tech Supporter',
     description: 'Hỗ trợ kỹ thuật, tiếp nhận vấn đề và phối hợp xử lý để website và hệ thống của khách hàng duy trì trạng thái vận hành ổn định.',
     skills: ['Support', 'Troubleshooting', 'Operations'],
-    image: '/homepage/team/dinh-anh.webp',
+    image: 'https://assets.kedi.media/images/12c28bb8555787444467-1200.webp',
   },
   {
     id: 8,
@@ -110,7 +110,7 @@ export default function ClientsKedi() {
       className="relative z-40 overflow-hidden bg-[#eef4fa] py-20 text-kedi-navy lg:py-28"
       style={{
         backgroundImage:
-          "linear-gradient(90deg, rgba(246,249,252,.96) 0%, rgba(246,249,252,.90) 46%, rgba(246,249,252,.80) 100%), url('/homepage/golden-insights-light.webp')",
+          "linear-gradient(90deg, rgba(246,249,252,.96) 0%, rgba(246,249,252,.90) 46%, rgba(246,249,252,.80) 100%), url('https://assets.kedi.media/images/967982d61246b36f6da7-1672.webp')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}

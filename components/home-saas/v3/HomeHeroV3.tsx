@@ -18,14 +18,14 @@ const floatingProducts = [
   {
     name: 'Kedi Analytics',
     detail: 'Business intelligence',
-    image: '/service-menu/software/kedi-analytics.svg',
+    image: 'https://assets.kedi.media/images/1eab0faefd144c10b142.svg',
     className: '-right-2 top-3',
     duration: 6.8,
   },
   {
     name: 'Kedi CRM',
     detail: 'Customer system',
-    image: '/service-menu/software/kedi-crm.svg',
+    image: 'https://assets.kedi.media/images/232238a305ad430068d1.svg',
     className: 'bottom-5 left-0',
     duration: 7.4,
   },
@@ -66,8 +66,8 @@ export default function HomeHeroV3() {
       onMouseLeave={resetPointer}
       className="relative isolate min-h-[calc(100svh-56px)] overflow-hidden bg-kedi-navy px-5 pb-16 pt-12 text-white sm:px-8 lg:min-h-[780px] lg:px-12 lg:pb-20 lg:pt-20 xl:px-16"
     >
-      <Image unoptimized
-        src="/homepage/hero-background-future-network.webp"
+      <Image
+        src="https://assets.kedi.media/images/538c5a3c16e795a56c8a-1913.webp"
         alt=""
         fill
         priority
@@ -229,8 +229,8 @@ export default function HomeHeroV3() {
             transition={reduceMotion ? undefined : { duration: 6.4, repeat: Infinity, ease: 'easeInOut' }}
             className="pointer-events-none absolute -bottom-8 right-[-10px] z-30 hidden w-[230px] drop-shadow-[0_30px_46px_rgba(0,0,0,.35)] sm:block xl:w-[285px]"
           >
-            <Image unoptimized
-              src="/homepage/golden-mascot-transparent.webp"
+            <Image
+              src="https://assets.kedi.media/images/9d29af5e18269d6c53c0-1600.webp"
               alt="KEDI Golden mascot"
               width={1600}
               height={1600}
@@ -246,7 +246,7 @@ export default function HomeHeroV3() {
               transition={reduceMotion ? undefined : { duration: product.duration, repeat: Infinity, ease: 'easeInOut' }}
               className={`absolute z-40 hidden items-center gap-3 rounded-2xl border border-white/[0.12] bg-[#082b57]/[0.96] px-4 py-3 shadow-2xl backdrop-blur-xl sm:flex ${product.className}`}
             >
-              <Image unoptimized src={product.image} alt="" width={36} height={36} className="h-9 w-9 rounded-lg" />
+              <Image  src={product.image} alt="" width={36} height={36} className="h-9 w-9 rounded-lg" />
               <div>
                 <p className="text-xs font-semibold">{product.name}</p>
                 <p className="text-[10px] text-white/[0.45]">{product.detail}</p>
