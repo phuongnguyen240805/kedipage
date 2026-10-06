@@ -37,7 +37,7 @@ beforeEach(() => {
   process.env.SSO_KEDIPAGE_REDIRECT_URI = callbackUrl;
   process.env.SSO_BACKEND_API_URL = 'https://backend.example/api';
   process.env.SSO_KEDIPAGE_CLIENT_SECRET = 's'.repeat(48);
-  server = loadSource('lib/sso/server.ts');
+  server = loadSource('lib/sso/server.ts', { './session': loadSource('lib/sso/session.ts') });
   const mocks = { '@/lib/sso/server': server };
   start = loadSource('app/api/auth/sso/start/route.ts', mocks).GET;
   callback = loadSource('app/api/auth/sso/callback/route.ts', mocks).GET;
@@ -71,6 +71,56 @@ async function begin() {
   const verifier = server.readSsoVerifier(transaction.value, state);
   return { response, authorization, transaction, state, verifier };
 }
+
+const blogPaths = [
+  '/blog', '/blog/', '/blog/digital-marketing', '/blog/web-design-experience',
+  '/blog/viet-phan-mem-thoi-dai-ai', '/blog/tu-dong-hoa-doanh-nghiep',
+  '/blog/example-article', '/blog/future/nested/article',
+  '/blog-clone/viet-phan-mem-thoi-dai-ai/index.html',
+  '/blog-clone/tu-dong-hoa-doanh-nghiep/',
+];
+
+test('Blog routes, articles and raw HTML reject guests including RSC/prefetch requests', async () => {
+  const { middleware, config } = loadSource('middleware.ts', { '@/lib/sso/session': server });
+  const { getMiddlewareMatchers } = require('next/dist/build/analysis/get-page-static-info');
+  const { getMiddlewareRouteMatcher } = require('next/dist/shared/lib/router/utils/middleware-route-matcher');
+  const matches = getMiddlewareRouteMatcher(getMiddlewareMatchers(config.matcher, {}));
+  for (const pathname of blogPaths) {
+    assert.ok(matches(pathname, new NextRequest(`https://kedi.media${pathname}`), {}));
+    for (const headers of [{}, { RSC: '1', 'next-router-prefetch': '1' }]) {
+      const response = await middleware(new NextRequest(`https://kedi.media${pathname}`, { headers }));
+      assert.equal(response.status, 303);
+      assert.equal(response.headers.get('location'), 'https://kedi.media/');
+      assert.equal(response.headers.get('cache-control'), 'private, no-store');
+    }
+  }
+  assert.equal(fetchCalls.length, 0);
+  for (const pathname of ['/', '/du-an', '/blogger', '/api/auth/sso/session']) {
+    assert.equal(matches(pathname, new NextRequest(`https://kedi.media${pathname}`), {}), false);
+  }
+});
+
+test('Blog requires backend validation and rejects forged, revoked or unavailable sessions', async () => {
+  const { middleware } = loadSource('middleware.ts', { '@/lib/sso/session': server });
+  const request = token => new NextRequest('https://kedi.media/blog', {
+    headers: { cookie: `${server.SSO_SESSION_COOKIE}=${token}` },
+  });
+  const accepted = await middleware(request('t'.repeat(43)));
+  assert.equal(accepted.headers.get('x-middleware-next'), '1');
+  assert.equal(fetchCalls.length, 1);
+  assert.equal(JSON.parse(fetchCalls[0][1].body).sessionToken, 't'.repeat(43));
+  const malformed = await middleware(request('fake'));
+  assert.equal(malformed.status, 303);
+  assert.equal(malformed.cookies.get(server.SSO_SESSION_COOKIE).maxAge, 0);
+  global.fetch = async () => new Response(null, { status: 401 });
+  const revoked = await middleware(request('t'.repeat(43)));
+  assert.equal(revoked.status, 303);
+  assert.equal(revoked.cookies.get(server.SSO_SESSION_COOKIE).maxAge, 0);
+  global.fetch = async () => { throw new Error('offline'); };
+  const outage = await middleware(request('t'.repeat(43)));
+  assert.equal(outage.status, 303);
+  assert.equal(outage.cookies.get(server.SSO_SESSION_COOKIE), undefined);
+});
 
 test('unavailable authorization keeps guests on Kedi without credentials or redirect loops', async () => {
   for (const mode of ['500', '404', 'network']) {
