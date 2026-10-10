@@ -326,7 +326,7 @@ test('login notification accepts only the embedded bridge and its registered ori
   assert.equal(notification.acceptLadipageLogin(event, url, bridge), true);
 });
 
-test('guest Kedi handles login, rejects duplicate signals and reconnects after reload', async () => {
+test('opening Kedi stays on the public page, while login and tab return still synchronize SSO', async () => {
   const notification = loadSource('lib/sso/login-notification.ts');
   const originalWindow = global.window;
   const originalDocument = global.document;
@@ -336,7 +336,7 @@ test('guest Kedi handles login, rejects duplicate signals and reconnects after r
   const listeners = new Map();
   const redirects = [];
   global.window = {
-    location: { href: 'https://kedi.media/?sso=guest', pathname: '/', search: '', hash: '', replace: path => redirects.push(path) },
+    location: { href: 'https://kedi.media/', pathname: '/', search: '', hash: '', replace: path => redirects.push(path) },
     history: { replaceState() {} },
     setInterval: () => { throw new Error('SSO must not poll on a timer'); },
     addEventListener: (type, fn) => listeners.set(type, fn), removeEventListener: type => listeners.delete(type),

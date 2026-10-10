@@ -72,7 +72,9 @@ export function useKediAccount(): KediAccount {
         }
       }
     };
-    void refresh(true);
+    // Opening a public page only checks the existing Kedi session. Start a
+    // cross-site handoff after a Ladipage login signal or an actual tab return.
+    void refresh(false);
     const onLogin = (event: MessageEvent) => {
       if (!acceptLadipageLogin(event, ladipageUrl, loginBridge?.contentWindow ?? null)
         || event.data.loginId === lastLoginId) return;
